@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://AriFarugie.github.io/methods/workshops/workshop1.html</loc>
-    <lastmod>2025-12-12T10:07:01.090Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AriFarugie.github.io/methods/workshops/inhalteWS1.html</loc>
-    <lastmod>2025-12-12T10:07:01.090Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AriFarugie.github.io/methods/index.html</loc>
-    <lastmod>2025-12-12T10:07:01.090Z</lastmod>
+    <loc>https://AriFarugie.github.io/methods/ueber-mich.html</loc>
+    <lastmod>2025-12-12T10:10:37.058Z</lastmod>
   </url>
   <url>
     <loc>https://AriFarugie.github.io/methods/workshops/index.html</loc>
-    <lastmod>2025-12-12T10:07:01.090Z</lastmod>
+    <lastmod>2025-12-12T10:10:37.058Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AriFarugie.github.io/methods/index.html</loc>
+    <lastmod>2025-12-12T10:10:37.058Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AriFarugie.github.io/methods/workshops/inhalteWS1.html</loc>
+    <lastmod>2025-12-12T10:10:37.058Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AriFarugie.github.io/methods/workshops/workshop1.html</loc>
+    <lastmod>2025-12-12T10:10:37.058Z</lastmod>
   </url>
 </urlset>
