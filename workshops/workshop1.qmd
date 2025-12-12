@@ -1,0 +1,9 @@
+---
+title: "Workshop 1 – Einführung in R"
+---
+
+# Workshop 1 – Einführung in R
+
+Dies ist die Übersichtsseite für Workshop 1.
+
+👉 [Zu den Inhalten](inhalteWS1.qmd)
