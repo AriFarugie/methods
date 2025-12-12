@@ -2,13 +2,26 @@ project:
   type: website
 
 website:
-  title: "Methods & Workshops"
+  title: "Methods"
   navbar:
-    right:
-      - href: index.qmd
-        text: Start
-      - href: workshops/index.qmd
-        text: Workshops
+    left:
+      - text: "Startseite"
+        href: index.qmd
+      - text: "Über mich"
+        href: ueber-mich.qmd
+      - text: "Materialien"
+        href: materialien.qmd
+      - text: "Workshops"
+        menu:
+          - text: "Workshop 1 – Einführung in R"
+            href: workshops/workshop1/index.qmd
+          - text: "Workshop 2 – Datenvisualisierung"
+            href: workshops/workshop2/index.qmd
+          - text: "Workshop 3 – Qualitative Methoden"
+            href: workshops/workshop3/index.qmd
+          - text: "Workshop 4 – Statistik & Modelle"
+            href: workshops/workshop4/index.qmd
+
 
 format:
   html:
