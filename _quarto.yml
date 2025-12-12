@@ -13,6 +13,8 @@ website:
         href: materialien.qmd
       - text: "Workshops"
         menu:
+          - text: "Workshops Überblick"
+            href: workshops/overview.qmd
           - text: "Workshop 1 – Einführung in R"
             href: workshops/workshop1/index.qmd
           - text: "Workshop 2 – Datenvisualisierung"
