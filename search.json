@@ -1,24 +1,17 @@
 [
   {
-    "objectID": "workshops.html",
-    "href": "workshops.html",
+    "objectID": "ueber-mich.html",
+    "href": "ueber-mich.html",
+    "title": "Über mich",
+    "section": "",
+    "text": "Hier kommt eine kurze Vorstellung hin.\n\nBeruflicher Hintergrund (z.B. Forschung, Lehre, Schwerpunkte).\nFachliche Interessen (z.B. Statistik, R, Umweltpsychologie etc.).\nLink zu Profilen (z.B. ORCID, Google Scholar, Uni-Seite), falls gewünscht.\n\n\nHinweis für mich:\n1–3 Abschnitte in vollständigen Sätzen.\nGern auch ein Foto, z.B. mit Markdown:\n![Alt-Text](/pfad/zum/bild.jpg)"
+  },
+  {
+    "objectID": "workshops/index.html",
+    "href": "workshops/index.html",
     "title": "Workshops",
     "section": "",
     "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite."
-  },
-  {
-    "objectID": "workshops/workshop1.html",
-    "href": "workshops/workshop1.html",
-    "title": "Workshop 1 – Einführung in R",
-    "section": "",
-    "text": "Workshop 1 – Einführung in R\nDies ist die Übersichtsseite für Workshop 1.\n👉 Zu den Inhalten"
-  },
-  {
-    "objectID": "workshops/inhalteWS1.html",
-    "href": "workshops/inhalteWS1.html",
-    "title": "Workshop 1 – Inhalte",
-    "section": "",
-    "text": "Inhalte\nHier kommen später die Inhalte rein."
   },
   {
     "objectID": "index.html",
@@ -49,17 +42,17 @@
     "text": "📬 Kontakt\nBei Fragen erreichst du mich jederzeit unter:\narieja.farugie@… (einfügen)"
   },
   {
-    "objectID": "workshops/index.html",
-    "href": "workshops/index.html",
-    "title": "Workshops",
+    "objectID": "workshops/inhalteWS1.html",
+    "href": "workshops/inhalteWS1.html",
+    "title": "Workshop 1 – Inhalte",
     "section": "",
-    "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite."
+    "text": "Inhalte\nHier kommen später die Inhalte rein."
   },
   {
-    "objectID": "ueber-mich.html",
-    "href": "ueber-mich.html",
-    "title": "Über mich",
+    "objectID": "workshops/workshop1.html",
+    "href": "workshops/workshop1.html",
+    "title": "Workshop 1 – Einführung in R",
     "section": "",
-    "text": "Hier kommt eine kurze Vorstellung hin.\n\nBeruflicher Hintergrund (z.B. Forschung, Lehre, Schwerpunkte).\nFachliche Interessen (z.B. Statistik, R, Umweltpsychologie etc.).\nLink zu Profilen (z.B. ORCID, Google Scholar, Uni-Seite), falls gewünscht.\n\n\nHinweis für mich:\n1–3 Abschnitte in vollständigen Sätzen.\nGern auch ein Foto, z.B. mit Markdown:\n![Alt-Text](/pfad/zum/bild.jpg)"
+    "text": "Workshop 1 – Einführung in R\nDies ist die Übersichtsseite für Workshop 1.\n👉 Zu den Inhalten"
   }
 ]
