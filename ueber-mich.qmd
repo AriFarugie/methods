@@ -1,0 +1,14 @@
+---
+title: "Über mich"
+---
+
+Hier kommt eine kurze Vorstellung hin.
+
+- Beruflicher Hintergrund (z.B. Forschung, Lehre, Schwerpunkte).
+- Fachliche Interessen (z.B. Statistik, R, Umweltpsychologie etc.).
+- Link zu Profilen (z.B. ORCID, Google Scholar, Uni-Seite), falls gewünscht.
+
+> Hinweis für mich:  
+> 1–3 Abschnitte in vollständigen Sätzen.  
+> Gern auch ein Foto, z.B. mit Markdown:  
+> `![Alt-Text](/pfad/zum/bild.jpg)`
