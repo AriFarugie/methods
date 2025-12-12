@@ -1,0 +1,28 @@
+---
+title: "Welcome"
+---
+
+Willkommen auf meiner Workshop-Seite!\
+Hier findest du Materialien, Unterlagen, Übungen und Infos zu meinen Methoden-Workshops.
+
+------------------------------------------------------------------------
+
+## 🔍 Aktuelle Workshops
+
+-   **Workshop 1 – Einführung in R & RStudio**
+-   **Workshop 2 – Datenvisualisierung mit ggplot2**
+-   **Workshop 3 – Einführung in qualitative Methoden**
+
+------------------------------------------------------------------------
+
+## 📚 Materialien
+
+Die Materialien werden schrittweise ergänzt.\
+Falls du an einem bestimmten Workshop teilnimmst, bekommst du die Zugangsinformationen direkt von mir.
+
+------------------------------------------------------------------------
+
+## 📬 Kontakt
+
+Bei Fragen erreichst du mich jederzeit unter:\
+**arieja.farugie\@…** (einfügen)
