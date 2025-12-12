@@ -59,7 +59,7 @@ Download (kostenlos):
 ## 🎛️ Interaktive Shiny-App: Korrelation & Punktwolke
 
 <iframe 
-  src="https://arifarugie.github.io/methods/shinylive-app/" 
+  src="methods/shinylive-app/" 
   width="100%" 
   height="600px"
   style="border: 1px solid #333; border-radius: 8px;"
