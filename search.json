@@ -1,24 +1,52 @@
 [
   {
-    "objectID": "ueber-mich.html",
-    "href": "ueber-mich.html",
-    "title": "Über mich",
+    "objectID": "materialien.html",
+    "href": "materialien.html",
+    "title": "Materialien",
     "section": "",
-    "text": "Hier kommt eine kurze Vorstellung hin.\n\nBeruflicher Hintergrund (z.B. Forschung, Lehre, Schwerpunkte).\nFachliche Interessen (z.B. Statistik, R, Umweltpsychologie etc.).\nLink zu Profilen (z.B. ORCID, Google Scholar, Uni-Seite), falls gewünscht.\n\n\nHinweis für mich:\n1–3 Abschnitte in vollständigen Sätzen.\nGern auch ein Foto, z.B. mit Markdown:\n![Alt-Text](/pfad/zum/bild.jpg)"
+    "text": "Hier können zentrale Materialien gesammelt werden."
   },
   {
-    "objectID": "workshops/workshop1.html",
-    "href": "workshops/workshop1.html",
-    "title": "Workshop 1 – Einführung in R",
-    "section": "",
-    "text": "Workshop 1 – Einführung in R\nDies ist die Übersichtsseite für Workshop 1.\n👉 Zu den Inhalten"
+    "objectID": "materialien.html#software-die-du-benötigst",
+    "href": "materialien.html#software-die-du-benötigst",
+    "title": "Materialien",
+    "section": "🔧 Software, die du benötigst",
+    "text": "🔧 Software, die du benötigst\nFür die Teilnahme an den Workshops wird folgende Software benötigt:\n\n1. R (Programmiersprache)\nDownload (kostenlos):\n➡️ R Download (CRAN)\n\n\n2. RStudio Desktop (IDE)\nDownload (kostenlos):\n➡️ RStudio Desktop Download"
   },
   {
-    "objectID": "workshops/inhalteWS1.html",
-    "href": "workshops/inhalteWS1.html",
-    "title": "Workshop 1 – Inhalte",
+    "objectID": "materialien.html#literaturliste",
+    "href": "materialien.html#literaturliste",
+    "title": "Materialien",
+    "section": "📚 Literaturliste",
+    "text": "📚 Literaturliste\n\nEinführende Literatur\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2024). R für Data Science: Daten importieren, bereinigen, umformen und visualisieren. O’Reilly.\nLuhmann, M. (2020). R für Einsteiger: Einführung in die Statistiksoftware für die Sozialwissenschaften (5. Aufl.). Beltz.\n\n(Platzhalter – später ergänzen)\n- Autor/in (Jahr): Titel. Verlag.\n- Autor/in (Jahr): Titel. Verlag.\n\n\nVertiefende Literatur\n(Platzhalter – später ergänzen)\n- Autor/in (Jahr): Titel. Verlag.\n- Autor/in (Jahr): Titel. Verlag."
+  },
+  {
+    "objectID": "materialien.html#nach-workshop-sortiert",
+    "href": "materialien.html#nach-workshop-sortiert",
+    "title": "Materialien",
+    "section": "📁 Nach Workshop sortiert",
+    "text": "📁 Nach Workshop sortiert\n\nWorkshop 1: kurze Beschreibung + Link zu den jeweiligen Materialien\n\nWorkshop 2: …\n\nWorkshop 3: …\n\nWorkshop 4: …\n\n\nHinweis für mich:\nDiese Seite ist eine Art „Material-Sammelstelle“.\nSpäter konkrete Links zu Dateien oder externen Seiten einfügen."
+  },
+  {
+    "objectID": "materialien.html#interaktive-shiny-app-korrelation-punktwolke",
+    "href": "materialien.html#interaktive-shiny-app-korrelation-punktwolke",
+    "title": "Materialien",
+    "section": "🎛️ Interaktive Shiny-App: Korrelation & Punktwolke",
+    "text": "🎛️ Interaktive Shiny-App: Korrelation & Punktwolke"
+  },
+  {
+    "objectID": "workshops/overview.html",
+    "href": "workshops/overview.html",
+    "title": "Überblick",
     "section": "",
-    "text": "Inhalte\nHier kommen später die Inhalte rein."
+    "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite."
+  },
+  {
+    "objectID": "workshops/index.html",
+    "href": "workshops/index.html",
+    "title": "Workshops",
+    "section": "",
+    "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite."
   },
   {
     "objectID": "index.html",
@@ -49,17 +77,24 @@
     "text": "📬 Kontakt\nBei Fragen erreichst du mich jederzeit unter:\narieja.farugie@… (einfügen)"
   },
   {
-    "objectID": "workshops/index.html",
-    "href": "workshops/index.html",
-    "title": "Workshops",
+    "objectID": "workshops/inhalteWS1.html",
+    "href": "workshops/inhalteWS1.html",
+    "title": "Workshop 1 – Inhalte",
     "section": "",
-    "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite."
+    "text": "Inhalte\nHier kommen später die Inhalte rein."
   },
   {
-    "objectID": "workshops/overview.html",
-    "href": "workshops/overview.html",
-    "title": "Überblick",
+    "objectID": "workshops/workshop1.html",
+    "href": "workshops/workshop1.html",
+    "title": "Workshop 1 – Einführung in R",
     "section": "",
-    "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite."
+    "text": "Workshop 1 – Einführung in R\nDies ist die Übersichtsseite für Workshop 1.\n👉 Zu den Inhalten"
+  },
+  {
+    "objectID": "ueber-mich.html",
+    "href": "ueber-mich.html",
+    "title": "Über mich",
+    "section": "",
+    "text": "Hier kommt eine kurze Vorstellung hin.\n\nBeruflicher Hintergrund (z.B. Forschung, Lehre, Schwerpunkte).\nFachliche Interessen (z.B. Statistik, R, Umweltpsychologie etc.).\nLink zu Profilen (z.B. ORCID, Google Scholar, Uni-Seite), falls gewünscht.\n\n\nHinweis für mich:\n1–3 Abschnitte in vollständigen Sätzen.\nGern auch ein Foto, z.B. mit Markdown:\n![Alt-Text](/pfad/zum/bild.jpg)"
   }
 ]
