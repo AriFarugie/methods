@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - shinylive-app/**
 
 website:
   title: "Methods"
