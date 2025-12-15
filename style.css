@@ -26,9 +26,9 @@ a:hover {
 main.content,
 .quarto-container,
 .page-content {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1rem 2rem 1rem;
+  padding: 2.5rem 1rem 3rem 1rem;
 }
 
 /* Navbar (Bootstrap/Quarto) */
@@ -76,6 +76,15 @@ h1, h2, h3, h4 {
   margin-top: 1.5rem;
 }
 
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
 /* Footer (Quarto default footer) */
 
 .footer,
@@ -110,67 +119,13 @@ code {
 
 .workshop-layout {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 /* Linke Spalte: Navigation */
 
 .workshop-nav {
-  flex: 0 0 220px;
-  font-size: 0.95rem;
-  border-right: 1px solid #333;
-  padding-right: 1rem;
-  position: sticky;
-  top: 1rem;
-  align-self: flex-start;
-}
-
-.workshop-nav h2 {
-  margin-top: 0;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #aaaaaa;
-}
-
-.workshop-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.workshop-nav li {
-  margin-bottom: 0.5rem;
-}
-
-.workshop-nav a {
-  color: #e0e0e0;
-  text-decoration: none;
-}
-
-.workshop-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Rechte Spalte: Inhalt */
-
-.workshop-content {
-  flex: 1;
-  min-width: 0;
-}
-
-/* Responsiv: auf schmalen Screens Navigation oben */
-
-@media (max-width: 700px) {
-  .workshop-layout {
-    flex-direction: column;
-  }
-
-  .workshop-nav {
-    border-right: none;
-    border-bottom: 1px solid #333;
-    padding-right: 0;
-    padding-bottom: 1rem;
-    position: static;
-  }
-}
+  flex
