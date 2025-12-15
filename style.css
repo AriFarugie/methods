@@ -26,9 +26,9 @@ a:hover {
 main.content,
 .quarto-container,
 .page-content {
-  max-width: 1100px;
+  max-width: 1250px;
   margin: 0 auto;
-  padding: 2.5rem 1rem 3rem 1rem;
+  padding: 2.5rem 1.5rem 3rem 1.5rem;
 }
 
 /* Navbar (Bootstrap/Quarto) */
@@ -60,72 +60,3 @@ main.content,
 }
 
 .dropdown-item {
-  color: #e0e0e0;
-}
-
-.dropdown-item:hover,
-.dropdown-item:focus {
-  background-color: #2a2a2a;
-  color: #ffffff;
-}
-
-/* Überschriften im Inhalt */
-
-h1, h2, h3, h4 {
-  color: #ffffff;
-  margin-top: 1.5rem;
-}
-
-h1 {
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-size: 1.4rem;
-}
-
-/* Footer (Quarto default footer) */
-
-.footer,
-.site-footer {
-  border-top: 1px solid #333;
-  background-color: #1e1e1e;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  color: #aaaaaa;
-}
-
-/* Tabellen, Codeblöcke etc. */
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table th,
-table td {
-  border: 1px solid #333;
-  padding: 0.5rem;
-}
-
-pre,
-code {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-}
-
-/* Workshop-Layout mit linker Navigation */
-
-.workshop-layout {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-/* Linke Spalte: Navigation */
-
-.workshop-nav {
-  flex
