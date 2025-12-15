@@ -80,57 +80,47 @@ pre, code {
 }
 
 /* ============================================================
-   WORKSHOP LAYOUT — Linke Seiten-Navigation
+   WORKSHOP LAYOUT — Optimiert für mehr Content-Breite
    ============================================================ */
 
 .workshop-layout {
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 200px 1fr; /* links schmaler, rechts breiter */
+  gap: 3rem; /* mehr Abstand zwischen Navi & Inhalt */
+  max-width: 1200px; /* erlaubt mehr Breite */
+  margin: 0 auto; /* zentriert */
+  padding-left: 1rem;
 }
 
-/* Left navigation column */
+/* Linke Navigation etwas schmaler */
 .workshop-nav {
-  flex: 0 0 220px;
-  font-size: 0.95rem;
-  border-right: 1px solid #333;
   padding-right: 1rem;
+  border-right: 1px solid #333;
   position: sticky;
-  top: 5rem; /* unter der Quarto Navbar */
-  align-self: flex-start;
+  top: 5rem;
+  height: fit-content;
 }
 
-.workshop-nav h2 {
-  margin-top: 0;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #aaaaaa;
-}
-
-.workshop-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.workshop-nav li {
-  margin-bottom: 0.5rem;
-}
-
-.workshop-nav a {
-  color: #e0e0e0;
-  text-decoration: none;
-}
-
-.workshop-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Content area */
+/* Content größer wirken lassen */
 .workshop-content {
-  flex: 1;
-  min-width: 0;
+  max-width: 900px;
 }
+
+/* Mobile */
+@media (max-width: 800px) {
+  .workshop-layout {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
+
+  .workshop-nav {
+    border-right: none;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    position: static;
+  }
+}
+
 
 /* ============================================================
    MOBILE ADJUSTMENTS
