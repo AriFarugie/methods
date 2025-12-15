@@ -11,8 +11,10 @@ title: "Workshop 1 – Einführung in R & RStudio"
 - [Lernziele](#lernziele)
 - [Ablauf / Agenda](#ablauf-agenda)
 - [Materialien](#materialien)
-<li><a href="workshop.qmd">➡️ Zum Workshop (Inhalte)</a></li>
+- [➡️ Zum Workshop (Inhalte)](workshop.qmd)
+:::
 
+::: {.workshop-content}
 
 ## Kurzbeschreibung {#kurzbeschreibung}
 
