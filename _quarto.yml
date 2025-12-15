@@ -6,7 +6,7 @@ project:
 website:
   title: "Methods"
   navbar:
-    left:
+    right:
       - text: "Startseite"
         href: index.qmd
       - text: "Über mich"
