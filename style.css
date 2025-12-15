@@ -1,4 +1,6 @@
-/* Grundlayout im Dark Mode */
+/* ============================================================
+   GLOBAL STYLES – Dark Mode, Minimal Mistakes Inspiriert
+   ============================================================ */
 
 * {
   box-sizing: border-box;
@@ -21,17 +23,9 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Zentrierter Inhaltsbereich (Quarto main content) */
-
-main.content,
-.quarto-container,
-.page-content {
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem 3rem 1.5rem;
-}
-
-/* Navbar (Bootstrap/Quarto) */
+/* ============================================================
+   QUARTO NAVBAR (ersetzt Jekyll .site-header)
+   ============================================================ */
 
 .navbar {
   background-color: #1e1e1e !important;
@@ -39,24 +33,135 @@ main.content,
 }
 
 .navbar-brand,
-.navbar-brand:hover {
-  color: #ffffff !important;
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-.navbar-nav .nav-link {
+.navbar-nav .nav-link,
+.navbar-title {
   color: #e0e0e0 !important;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
   color: #ffffff !important;
 }
 
-.dropdown-menu {
+/* Dropdowns */
+.nav-item .dropdown-menu {
   background-color: #1e1e1e;
   border: 1px solid #333;
 }
 
 .dropdown-item {
+  color: #e0e0e0 !important;
+}
+
+.dropdown-item:hover {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+/* ============================================================
+   PAGE LAYOUT
+   ============================================================ */
+
+main.content {
+  padding: 2rem 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #ffffff;
+}
+
+/* Code-Blöcke */
+pre, code {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   WORKSHOP LAYOUT — Linke Seiten-Navigation
+   ============================================================ */
+
+.workshop-layout {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Left navigation column */
+.workshop-nav {
+  flex: 0 0 220px;
+  font-size: 0.95rem;
+  border-right: 1px solid #333;
+  padding-right: 1rem;
+  position: sticky;
+  top: 5rem; /* unter der Quarto Navbar */
+  align-self: flex-start;
+}
+
+.workshop-nav h2 {
+  margin-top: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #aaaaaa;
+}
+
+.workshop-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.workshop-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.workshop-nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+.workshop-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Content area */
+.workshop-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ============================================================
+   MOBILE ADJUSTMENTS
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+  .workshop-layout {
+    flex-direction: column;
+  }
+
+  .workshop-nav {
+    border-right: none;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    position: static;
+  }
+
+  main.content {
+    padding: 1rem;
+  }
+}
+
+/* ============================================================
+   SHINY IFRAME EINBETTUNG (Dark Mode wrapper)
+   ============================================================ */
+
+.shiny-frame {
+  border: 1px solid #333;
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
