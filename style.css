@@ -1,4 +1,4 @@
-/* Grundlayout im Dark Mode, grob angelehnt an Minimal Mistakes [web:55][web:59] */
+/* Grundlayout im Dark Mode */
 
 * {
   box-sizing: border-box;
@@ -21,97 +21,64 @@ a:hover {
   text-decoration: underline;
 }
 
-.wrapper {
+/* Zentrierter Inhaltsbereich (Quarto main content) */
+
+main.content,
+.quarto-container,
+.page-content {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1rem 2rem 1rem;
 }
 
-/* Header + Navigation */
+/* Navbar (Bootstrap/Quarto) */
 
-.site-header {
-  background-color: #1e1e1e;
+.navbar {
+  background-color: #1e1e1e !important;
   border-bottom: 1px solid #333;
 }
 
-.site-title a {
-  color: #ffffff;
+.navbar-brand,
+.navbar-brand:hover {
+  color: #ffffff !important;
   font-weight: 600;
   font-size: 1.1rem;
 }
 
-.site-header .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
+.navbar-nav .nav-link {
+  color: #e0e0e0 !important;
 }
 
-.site-nav .menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 1rem;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #ffffff !important;
 }
 
-.site-nav .menu > li > a {
-  color: #e0e0e0;
-  padding: 0.25rem 0;
-}
-
-/* Dropdown */
-
-.has-dropdown {
-  position: relative;
-}
-
-.has-dropdown .dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
+.dropdown-menu {
   background-color: #1e1e1e;
   border: 1px solid #333;
-  list-style: none;
-  margin: 0;
-  padding: 0.25rem 0;
-  min-width: 180px;
-  z-index: 1000;
 }
 
-.has-dropdown .dropdown li a {
-  display: block;
-  padding: 0.4rem 0.75rem;
+.dropdown-item {
   color: #e0e0e0;
 }
 
-.has-dropdown .dropdown li a:hover {
+.dropdown-item:hover,
+.dropdown-item:focus {
   background-color: #2a2a2a;
+  color: #ffffff;
 }
 
-/* Anzeige beim Hover */
+/* Überschriften im Inhalt */
 
-.has-dropdown:hover .dropdown {
-  display: block;
-}
-
-/* Hauptbereich */
-
-.page-content {
-  padding: 2rem 0;
-}
-
-.page-content h1 {
-  margin-top: 0;
-}
-
-.page-content h2 {
+h1, h2, h3, h4 {
+  color: #ffffff;
   margin-top: 1.5rem;
 }
 
-/* Footer */
+/* Footer (Quarto default footer) */
 
+.footer,
 .site-footer {
   border-top: 1px solid #333;
   background-color: #1e1e1e;
@@ -120,20 +87,26 @@ a:hover {
   color: #aaaaaa;
 }
 
-/* Responsiv */
+/* Tabellen, Codeblöcke etc. */
 
-@media (max-width: 700px) {
-  .site-header .wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .site-nav .menu {
-    flex-wrap: wrap;
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
-/* --- Workshop-Layout mit linker Navigation --- */
+
+table th,
+table td {
+  border: 1px solid #333;
+  padding: 0.5rem;
+}
+
+pre,
+code {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+/* Workshop-Layout mit linker Navigation */
 
 .workshop-layout {
   display: flex;
@@ -141,13 +114,14 @@ a:hover {
 }
 
 /* Linke Spalte: Navigation */
+
 .workshop-nav {
   flex: 0 0 220px;
   font-size: 0.95rem;
   border-right: 1px solid #333;
   padding-right: 1rem;
   position: sticky;
-  top: 1rem; /* bleibt beim Scrollen sichtbar */
+  top: 1rem;
   align-self: flex-start;
 }
 
@@ -179,12 +153,14 @@ a:hover {
 }
 
 /* Rechte Spalte: Inhalt */
+
 .workshop-content {
   flex: 1;
   min-width: 0;
 }
 
-/* Auf schmalen Screens Navigation oben */
+/* Responsiv: auf schmalen Screens Navigation oben */
+
 @media (max-width: 700px) {
   .workshop-layout {
     flex-direction: column;
@@ -198,4 +174,3 @@ a:hover {
     position: static;
   }
 }
-
