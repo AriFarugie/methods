@@ -54,11 +54,3 @@ Download (kostenlos):
 > Diese Seite ist eine Art „Material-Sammelstelle“.  
 > Später konkrete Links zu Dateien oder externen Seiten einfügen.
 
----
-
-## 🎛️ Interaktive Shiny-App: Korrelation & Punktwolke
-
-<iframe 
-  src="/methods/shinylive-app/"
-  style="width:100%; height:600px; border:1px solid #ccc; border-radius:8px;"
-></iframe>
