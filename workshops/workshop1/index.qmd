@@ -1,22 +1,18 @@
 ---
 title: "Workshop 1 – Einführung in R & RStudio"
-permalink: /workshops/workshop1/
 ---
 
-<div class="workshop-layout">
 
-<nav class="workshop-nav">
-  <h2>Inhalte</h2>
-  <ul>
-    <li><a href="#kurzbeschreibung">Kurzbeschreibung</a></li>
-    <li><a href="#lernziele">Lernziele</a></li>
-    <li><a href="#ablauf-agenda">Ablauf / Agenda</a></li>
-    <li><a href="#materialien">Materialien</a></li>
-    <li><a href="{{ '/workshops/workshop1/inhalteWS1.html' | relative_url }}">➡️ Zum Workshop (Inhalte)</a></li>
-  </ul>
-</nav>
+::: {.workshop-layout}
 
- <div class="workshop-content" markdown="1">
+::: {.workshop-nav}
+
+- [Kurzbeschreibung](#kurzbeschreibung)
+- [Lernziele](#lernziele)
+- [Ablauf / Agenda](#ablauf-agenda)
+- [Materialien](#materialien)
+<li><a href="workshop.qmd">➡️ Zum Workshop (Inhalte)</a></li>
+
 
 ## Kurzbeschreibung {#kurzbeschreibung}
 
@@ -93,6 +89,5 @@ Nach dem Workshop können Teilnehmende …
 - Checkliste „Datenaufbereitung in der Abschlussarbeit“  
 - Literaturhinweise
 
-</div> <!-- .workshop-content -->
-
-</div> <!-- .workshop-layout -->
+:::
+:::
