@@ -3,35 +3,49 @@ title: "Workshop 1 – Einführung in R & RStudio: Inhalte"
 lang: de
 format:
   html:
-    toc: true
-    toc-depth: 2
-    toc-location: left
+    toc: false          # eigene Navi, kein automatisches TOC links
     code-copy: true
     code-fold: false
-    theme: darkly
 ---
 
+::: {.workshop-layout}
+
+::: {.workshop-nav}
+## Inhalte
+
+- [1. Einführung in R & RStudio](#einleitung)
+- [2. Grundprinzipien von R](#grundprinzipien)
+- [3. Datentypen & Datenstrukturen](#datentypen)
+- [4. Daten importieren](#import)
+- [5. Datenaufbereitung mit dplyr](#aufbereitung)
+- [6. Fehlende Werte (NA)](#fehlende-werte)
+- [7. Datensätze verbinden (Joins)](#joins)
+- [8. Reproduzierbare Workflows](#workflow)
+- [9. Mini-Projekt](#miniprojekt)
+:::
+
+::: {.workshop-content}
 
 # Workshop-Inhalte – Einführung in R & RStudio
 
-Dieser Teil enthält die inhaltlichen Materialien zum Workshop „Einführung in R & RStudio“.\
+Dieser Teil enthält die inhaltlichen Materialien zum Workshop „Einführung in R & RStudio“.  
 Er ist so aufgebaut, dass du ihn als Begleitunterlage im Workshop oder zur Nachbereitung nutzen kannst.
 
 ------------------------------------------------------------------------
 
 ## 1. Einführung in R & RStudio {#einleitung}
 
-R ist eine freie Programmiersprache für statistische Analysen, Visualisierung und Datenverarbeitung.\
+R ist eine freie Programmiersprache für statistische Analysen, Visualisierung und Datenverarbeitung.  
 RStudio ist eine integrierte Entwicklungsumgebung (IDE), die die Arbeit mit R übersichtlicher und komfortabler macht.
 
 ### Die vier Bereiche von RStudio
 
 Typischerweise besteht RStudio aus vier Bereichen („Panes“):
 
-1.  **Source / Editor** – hier schreibst du Skripte (`.R`, `.qmd` usw.).\
-2.  **Console** – hier werden Befehle direkt ausgeführt.\
-3.  **Environment / History** – hier siehst du deine Objekte und Befehls-Historie.\
-4.  **Files / Plots / Packages / Help / Viewer** – Dateien, Grafiken, installierte Pakete, Hilfe usw.
+1. **Source / Editor** – hier schreibst du Skripte (`.R`, `.qmd` usw.).  
+2. **Console** – hier werden Befehle direkt ausgeführt.  
+3. **Environment / History** – hier siehst du deine Objekte und Befehls-Historie.  
+4. **Files / Plots / Packages / Help / Viewer** – Dateien, Grafiken, installierte Pakete, Hilfe usw.
 
 ### R als Taschenrechner
 
@@ -44,14 +58,15 @@ sqrt(49)
 
 ```
 
-text
+PLATZHALTER
+
 
 ::: callout-note
 #### Übung 1 – R als Taschenrechner
 
--   Berechne: `5^2 + 3`.\
--   Was ergibt `sqrt(144)`?\
--   Führe die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus.
+- Berechne: `5^2 + 3`.  
+- Was ergibt `sqrt(144)`?  
+- Führe die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus.
 :::
 
 ------------------------------------------------------------------------
@@ -70,11 +85,12 @@ y <- c(1, 2, 3, 4, 5)
 
 ```
 
+
 ::: callout-note
 **Hinweis**
 
--   `<-` ist der Zuweisungspfeil („wird zugewiesen“).\
--   `y` ist ein Vektor aus mehreren Zahlen.
+- `<-` ist der Zuweisungspfeil („wird zugewiesen“).  
+- `y` ist ein Vektor aus mehreren Zahlen.
 :::
 
 ### Funktionen verwenden
@@ -92,21 +108,22 @@ round(3.14159, digits = 2)
 
 ```
 
+
 ::: callout-note
 #### Übung 2 – Objekte & Funktionen
 
--   Erstelle ein Objekt `z` mit mindestens fünf Zahlen.\
--   Berechne Mittelwert, Summe und Länge von `z`.\
--   Erzeuge ein Objekt `pi_gerundet`, das `pi` auf 3 Nachkommastellen rundet.
+- Erstelle ein Objekt `z` mit mindestens fünf Zahlen.  
+- Berechne Mittelwert, Summe und Länge von `z`.  
+- Erzeuge ein Objekt `pi_gerundet`, das `pi` auf 3 Nachkommastellen rundet.
 :::
 
 ::: callout-warning
 #### Häufige Fehler
 
--   Funktion falsch geschrieben: `Mean(y)` statt `mean(y)`\
--   Klammern vergessen: `mean y` statt `mean(y)`\
--   `<-` vergessen oder `=` inkonsistent verwendet\
--   Im falschen Fenster tippen (Konsole statt Skript oder umgekehrt)
+- Funktion falsch geschrieben: `Mean(y)` statt `mean(y)`  
+- Klammern vergessen: `mean y` statt `mean(y)`  
+- `<-` vergessen oder `=` inkonsistent verwendet  
+- Im falschen Fenster tippen (Konsole statt Skript oder umgekehrt)
 :::
 
 ------------------------------------------------------------------------
@@ -116,17 +133,17 @@ round(3.14159, digits = 2)
 ### Wichtige Datentypen
 
 ::: callout-note
--   `numeric` / `double` (Kommazahlen)\
--   `integer` (Ganze Zahlen, z.B. `1L`)\
--   `character` (Text)\
--   `logical` (`TRUE`/`FALSE`)\
--   `factor` (kategorische Daten)
+- `numeric` / `double` (Kommazahlen)  
+- `integer` (Ganze Zahlen, z.B. `1L`)  
+- `character` (Text)  
+- `logical` (`TRUE`/`FALSE`)  
+- `factor` (kategorische Daten)
 :::
 
 ### Wichtige Datenstrukturen
 
--   **Vektor**: geordnete Liste von Werten\
--   **Data Frame / tibble**: Tabelle mit Zeilen (***Fälle***) und Spalten (***Variablen***)
+- **Vektor**: geordnete Liste von Werten  
+- **Data Frame / tibble**: Tabelle mit Zeilen (**Fälle**) und Spalten (**Variablen**)
 
 ### Beispiel
 
@@ -140,7 +157,7 @@ df <- tibble( name = c("Anna", "Ben", "Clara"), alter = c(23, 25, 22), studieren
 df
 ```
 
-text undefined
+Platzhalter
 
 ```{r}
 #| echo: true
@@ -154,15 +171,16 @@ dplyr::glimpse(df)
 
 ```
 
-text
+Platzhalter
+
 
 ::: callout-note
 #### Übung 3 – Eigene Tabelle
 
--   Erstelle einen eigenen `tibble` mit
-    -   mindestens 3 Variablen (z. B. `fach`, `alter`, `geschlecht`)\
-    -   mindestens 5 Fällen.\
--   Untersuche danach mit `str()` und `summary()` die Struktur.
+- Erstelle einen eigenen `tibble` mit  
+  - mindestens 3 Variablen (z. B. `fach`, `alter`, `geschlecht`)  
+  - mindestens 5 Fällen.  
+- Untersuche danach mit `str()` und `summary()` die Struktur.
 :::
 
 ------------------------------------------------------------------------
@@ -170,6 +188,7 @@ text
 ## 4. Daten importieren {#import}
 
 Wir verwenden Funktionen aus dem **tidyverse**, um Daten zu importieren und zu bearbeiten.
+
 
 ```{r}
 #| echo: true
@@ -183,7 +202,7 @@ library(tidyverse)
 
 ```
 
-text
+Platzhalter
 
 ```{r}
 #| echo: true
@@ -208,22 +227,23 @@ text
 
 ```
 
+
 ::: callout-warning
 ### Typische Probleme & Lösungen
 
-| Problem | Mögliche Ursache | Mögliche Lösung |
-|----|----|----|
-| `cannot open file` | falscher Pfad | Projektordner prüfen, Datei-Pfad anpassen |
-| Umlaute „kaputt“ | Encoding | `locale = locale(encoding = "UTF-8")` testen |
-| alles `character` | Typ falsch erkannt | nachträglich mit `mutate()` umwandeln |
+| Problem             | Mögliche Ursache | Mögliche Lösung                                  |
+|--------------------|------------------|--------------------------------------------------|
+| `cannot open file` | falscher Pfad    | Projektordner prüfen, Datei-Pfad anpassen       |
+| Umlaute „kaputt“   | Encoding         | `locale = locale(encoding = "UTF-8")` testen    |
+| alles `character`  | Typ falsch erkannt | nachträglich mit `mutate()` umwandeln        |
 :::
 
 ::: callout-note
 #### Übung 4 – Datensatz importieren
 
--   Importiere den bereitgestellten Übungsdatensatz.\
--   Prüfe: `nrow()`, `ncol()`, `head()`, `summary()`.\
--   Notiere dir, welche Variablen welcher Art sind (z. B. Alter, Geschlecht, Skalenwerte).
+- Importiere den bereitgestellten Übungsdatensatz.  
+- Prüfe: `nrow()`, `ncol()`, `head()`, `summary()`.  
+- Notiere dir, welche Variablen welcher Art sind.
 :::
 
 ------------------------------------------------------------------------
@@ -238,16 +258,17 @@ Wir verwenden das Paket **dplyr**, um Daten lesbar zu transformieren.
 library(dplyr)
 ```
 
-text
+Platzhalter
+
 
 ::: callout-important
 Wichtige Funktionen:
 
--   `select()` – Variablen auswählen\
--   `filter()` – Fälle auswählen\
--   `mutate()` – neue Variablen erstellen\
--   `arrange()` – sortieren\
--   `rename()` – Variablen umbenennen
+- `select()` – Variablen auswählen  
+- `filter()` – Fälle auswählen  
+- `mutate()` – neue Variablen erstellen  
+- `arrange()` – sortieren  
+- `rename()` – Variablen umbenennen
 :::
 
 ### Beispiel-Workflow
@@ -262,14 +283,15 @@ daten_clean <- daten_csv |>
   arrange(desc(score_z))
 ```
 
-text
+Platzhalter
+
 
 ::: callout-note
 #### Übung 5 – Erste Transformationen
 
--   Wähle 3–5 Variablen aus deinem Datensatz aus.\
--   Filtere alle Personen heraus, die jünger als 18 sind.\
--   Erstelle eine neue Variable, z. B. eine kategorisierte Altersgruppe („18–29“, „30–44“, …).
+- Wähle 3–5 Variablen aus deinem Datensatz aus.  
+- Filtere alle Personen heraus, die jünger als 18 sind.  
+- Erstelle eine neue Variable, z. B. eine kategorisierte Altersgruppe.
 :::
 
 ------------------------------------------------------------------------
@@ -285,7 +307,7 @@ Fehlende Werte werden in R als `NA` kodiert.
 sum(is.na(daten_csv$score))
 ```
 
-text
+Platzhalter
 
 ### Alle Zeilen mit NA in einer Variablen anzeigen
 
@@ -294,7 +316,7 @@ text
 daten_csv |> filter(is.na(score))
 ```
 
-text
+Platzhalter
 
 ### Fehlercodes in NA umwandeln
 
@@ -305,14 +327,15 @@ daten_clean2 <- daten_csv |>
   mutate( score = ifelse(score == 99, NA, score) )
 ```
 
-text
+Platzhalter
+
 
 ::: callout-note
 #### Übung 6 – Missing Values
 
--   Finde heraus, in welchen Variablen NAs vorkommen.\
--   Identifiziere einen möglichen Fehlercode (z. B. 99, 999) und wandle ihn in `NA` um.\
--   Diskutiere Vor- und Nachteile verschiedener Strategien (z. B. Löschen vs. Imputieren).
+- Finde heraus, in welchen Variablen NAs vorkommen.  
+- Identifiziere einen möglichen Fehlercode (z. B. 99, 999) und wandle ihn in `NA` um.  
+- Diskutiere Strategien (Löschen vs. Imputieren).
 :::
 
 ------------------------------------------------------------------------
@@ -333,18 +356,23 @@ daten_joined <- left_join(stammdaten, skalen, by = "id") daten_joined
 
 ```
 
-text ::: {.callout-tip} \## Weitere Join-Varianten:
+Platzhalter
 
--   `inner_join()`\
--   `right_join()`\
--   `full_join()` :::
+
+::: callout-tip
+## Weitere Join-Varianten
+
+- `inner_join()`  
+- `right_join()`  
+- `full_join()`
+:::
 
 ::: callout-note
 #### Übung 7 – Tabellen verbinden
 
--   Erzeuge zwei kleine Tabellen mit einer gemeinsamen ID-Spalte.\
--   Führe sie mit `left_join()` zusammen.\
--   Überlege: Was passiert, wenn ein ID-Wert nur in einer Tabelle vorkommt?
+- Erzeuge zwei kleine Tabellen mit einer gemeinsamen ID-Spalte.  
+- Führe sie mit `left_join()` zusammen.  
+- Überlege: Was passiert, wenn ein ID-Wert nur in einer Tabelle vorkommt?
 :::
 
 ------------------------------------------------------------------------
@@ -356,20 +384,20 @@ Ziel ist ein gut dokumentierter, nachvollziehbarer Analyseschritt.
 ### Projektstruktur
 
 ::: callout-tip
-## Eine mögliche Struktur:
+## Eine mögliche Struktur
 
--   `projektname/`
-    -   `data/`\
-    -   `scripts/`\
-    -   `output/`\
-    -   `projektname.Rproj`
+- `projektname/`  
+  - `data/`  
+  - `scripts/`  
+  - `output/`  
+  - `projektname.Rproj`
 
 ### Skripte sinnvoll gliedern
 
--   `01_import.R`\
--   `02_cleaning.R`\
--   `03_analysis.R`\
--   `04_plots.R`
+- `01_import.R`  
+- `02_cleaning.R`  
+- `03_analysis.R`  
+- `04_plots.R`
 :::
 
 ### Kommentare nutzen
@@ -378,13 +406,14 @@ Schritt 1: Daten importieren daten \<- read_csv("data/workshop1-dataset.csv")
 
 Schritt 2: Bereinigung daten_clean \<- daten \|\> filter(alter \>= 18)
 
-text
+Platzhalter
+
 
 ::: callout-note
 #### Übung 8 – Dein eigenes Skript
 
--   Erstelle ein neues Skript, in dem du Import, erste Bereinigung und Export zusammenfasst.\
--   Strukturiere das Skript in logisch benannte Abschnitte (z. B. „Import“, „Cleaning“, „Export“).
+- Erstelle ein neues Skript, in dem du Import, erste Bereinigung und Export zusammenfasst.  
+- Strukturiere das Skript in logisch benannte Abschnitte.
 :::
 
 ------------------------------------------------------------------------
@@ -400,13 +429,13 @@ Ein bereinigter Datensatz, der für eine einfache Analyse oder Visualisierung be
 ::: callout-tip
 ## Möglicher Ablauf
 
--   Daten importieren\
--   Variablen auswählen (`select`)\
--   Fälle filtern (`filter`)\
--   Fehlende Werte behandeln (`is.na`, `ifelse`, `drop_na`)\
--   Neue Variablen erstellen (`mutate`)\
--   Datensätze verbinden (falls notwendig, `left_join`)\
--   Datensatz exportieren (`write_csv`)
+- Daten importieren  
+- Variablen auswählen (`select`)  
+- Fälle filtern (`filter`)  
+- Fehlende Werte behandeln (`is.na`, `ifelse`, `drop_na`)  
+- Neue Variablen erstellen (`mutate`)  
+- Datensätze verbinden (falls notwendig, `left_join`)  
+- Datensatz exportieren (`write_csv`)
 :::
 
 ```{r}
@@ -416,16 +445,20 @@ Ein bereinigter Datensatz, der für eine einfache Analyse oder Visualisierung be
 write_csv(daten_clean, "output/workshop1_clean_data.csv")
 ```
 
-text
+Platzhalter
+
 
 ::: callout-note
 #### Übung 9 – Abschluss
 
--   Dokumentiere deinen gesamten Workflow in einem Skript.\
--   Exportiere deinen finalen Datensatz in den Ordner `output/`.\
--   Notiere dir in eigenen Worten, welche Entscheidungen du bei der Bereinigung getroffen hast.
+- Dokumentiere deinen gesamten Workflow in einem Skript.  
+- Exportiere deinen finalen Datensatz in den Ordner `output/`.  
+- Notiere dir in eigenen Worten, welche Entscheidungen du bei der Bereinigung getroffen hast.
 :::
 
 ------------------------------------------------------------------------
 
 *Ende des Workshop-1-Inhaltmoduls.*
+
+:::
+:::
