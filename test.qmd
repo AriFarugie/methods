@@ -1,0 +1,22 @@
+---
+title: "Testlayout"
+page-layout: workshop
+toc: false
+
+workshop_nav_title: "Test-Navi"
+workshop_nav: |
+  <ul>
+    <li><a href="#a">Abschnitt A</a></li>
+    <li><a href="#b">Abschnitt B</a></li>
+  </ul>
+---
+
+## Abschnitt A {#a}
+
+Etwas Testtext für Abschnitt A.
+
+---
+
+## Abschnitt B {#b}
+
+Etwas Testtext für Abschnitt B.
