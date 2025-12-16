@@ -2,13 +2,16 @@
    WORKSHOP LAYOUT (Layout-Datei: _layouts/workshop.html)
    ============================================================ */
 
+/* Titelbereich */
+
 .workshop-title {
-  margin: 0;
-  padding: 2.5rem 0 1.5rem 0;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
 }
 
 .workshop-title h1 {
-  margin: 0;
+  margin: 0 0 0.5rem 0;
   font-size: clamp(1.8rem, 3vw, 3rem);
   font-weight: 700;
 }
@@ -24,14 +27,16 @@
 
 .workshop-layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: 260px minmax(0, 1fr); /* Navi + Inhalt */
   gap: 3rem;
   width: 100%;
-  max-width: 100%;
-  padding: 0 3rem 3rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
 }
 
 /* Navi links */
+
 .workshop-nav {
   position: sticky;
   top: 6rem;
@@ -63,18 +68,30 @@
 }
 
 .workshop-nav a {
-  color: #e0e0e0;
+  color: #4fc3f7;
   text-decoration: none;
 }
 
 .workshop-nav a:hover {
+  color: #81d4fa;
   text-decoration: underline;
 }
 
 /* Content rechts */
+
 .workshop-content {
-  max-width: 1100px;
+  max-width: 100%;
   min-width: 0;
+}
+
+.workshop-content h2 {
+  margin-top: 3rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.3rem;
+}
+
+.workshop-content h3 {
+  margin-top: 2rem;
 }
 
 /* ============================================================
@@ -85,7 +102,7 @@
   .workshop-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 0 1.5rem 2rem 1.5rem;
+    padding: 1.5rem 1.5rem 2rem;
   }
 
   .workshop-nav {
