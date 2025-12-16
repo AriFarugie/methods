@@ -2,6 +2,7 @@
 title: "Workshop 1 – Einführung in R & RStudio"
 layout: workshop
 toc: false
+
 workshop_nav_title: "Inhalte"
 workshop_nav: |
   <ul>
