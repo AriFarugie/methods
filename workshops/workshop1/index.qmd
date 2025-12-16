@@ -1,7 +1,10 @@
 ---
 title: "Workshop 1 – Einführung in R & RStudio"
-layout: workshop
-toc: false
+
+format:
+  html:
+    template: ../../_layouts/workshop.html
+    toc: false
 
 workshop_nav_title: "Inhalte"
 workshop_nav: |
@@ -13,6 +16,7 @@ workshop_nav: |
     <li><a href="workshop.qmd">➡️ Zum Workshop (Inhalte)</a></li>
   </ul>
 ---
+
 
 ## Kurzbeschreibung {#kurzbeschreibung}
 
