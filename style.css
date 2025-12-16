@@ -1,5 +1,5 @@
 /* ============================================================
-   GLOBAL STYLES – Dark Mode, Minimal Mistakes Inspiriert
+   GLOBAL DARK THEME LAYOUT
    ============================================================ */
 
 * {
@@ -23,94 +23,147 @@ a:hover {
   text-decoration: underline;
 }
 
+/* --- GLOBAL CONTENT BREITE (wichtig für mehr Platz!) --- */
+.page-content {
+  max-width: 1600px !important; /* vorher ~900px → jetzt viel breiter */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+}
+
 /* ============================================================
-   QUARTO NAVBAR (ersetzt Jekyll .site-header)
+   HEADER + NAVIGATION
    ============================================================ */
 
-.navbar {
-  background-color: #1e1e1e !important;
+.site-header {
+  background-color: #1e1e1e;
   border-bottom: 1px solid #333;
 }
 
-.navbar-brand,
-.navbar-nav .nav-link,
-.navbar-title {
-  color: #e0e0e0 !important;
+.site-title a {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
-.navbar-brand:hover,
-.navbar-nav .nav-link:hover {
-  color: #ffffff !important;
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
 }
 
-/* Dropdowns */
-.nav-item .dropdown-menu {
+.site-nav .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.site-nav .menu > li > a {
+  color: #e0e0e0;
+  padding: 0.25rem 0;
+}
+
+/* Dropdown */
+
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
   background-color: #1e1e1e;
   border: 1px solid #333;
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+  min-width: 180px;
+  z-index: 1000;
 }
 
-.dropdown-item {
-  color: #e0e0e0 !important;
+.has-dropdown .dropdown li a {
+  display: block;
+  padding: 0.4rem 0.75rem;
+  color: #e0e0e0;
 }
 
-.dropdown-item:hover {
-  background-color: #2a2a2a !important;
-  color: #ffffff !important;
+.has-dropdown .dropdown li a:hover {
+  background-color: #2a2a2a;
 }
 
-/* ============================================================
-   PAGE LAYOUT
-   ============================================================ */
-
-main.content {
-  padding: 2rem 1rem;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-h1, h2, h3, h4, h5 {
-  color: #ffffff;
-}
-
-/* Code-Blöcke */
-pre, code {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-  border-radius: 4px;
+.has-dropdown:hover .dropdown {
+  display: block;
 }
 
 /* ============================================================
-   WORKSHOP LAYOUT — Optimiert für mehr Content-Breite
+   WORKSHOP LAYOUT — LINKSNAVIGATION + BREITERE CONTENT AREA
    ============================================================ */
 
 .workshop-layout {
   display: grid;
-  grid-template-columns: 200px 1fr; /* links schmaler, rechts breiter */
-  gap: 3rem; /* mehr Abstand zwischen Navi & Inhalt */
-  max-width: 1200px; /* erlaubt mehr Breite */
-  margin: 0 auto; /* zentriert */
-  padding-left: 1rem;
+  grid-template-columns: 220px 1fr; /* Navi + Content */
+  gap: 4rem; /* mehr Abstand */
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: 0; /* schiebt Navi weiter nach links */
 }
 
-/* Linke Navigation etwas schmaler */
+/* Linke Navigation */
 .workshop-nav {
-  padding-right: 1rem;
+  flex: 0 0 220px;
+  font-size: 0.95rem;
   border-right: 1px solid #333;
+  padding-right: 1rem;
   position: sticky;
-  top: 5rem;
-  height: fit-content;
+  top: 6rem;  /* bleibt beim Scrollen sichtbar */
+  align-self: flex-start;
+  height: max-content;
 }
 
-/* Content größer wirken lassen */
+.workshop-nav h2 {
+  margin-top: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #aaaaaa;
+}
+
+.workshop-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.workshop-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.workshop-nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+.workshop-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Rechte Content-Spalte */
 .workshop-content {
-  max-width: 900px;
+  max-width: 1000px; /* viel breiter als vorher */
+  min-width: 0;
 }
 
-/* Mobile */
+/* MOBILE DARSTELLUNG */
 @media (max-width: 800px) {
   .workshop-layout {
     grid-template-columns: 1fr;
-    padding-left: 0;
+    gap: 2rem;
   }
 
   .workshop-nav {
@@ -121,37 +174,14 @@ pre, code {
   }
 }
 
-
 /* ============================================================
-   MOBILE ADJUSTMENTS
+   FOOTER
    ============================================================ */
 
-@media (max-width: 700px) {
-
-  .workshop-layout {
-    flex-direction: column;
-  }
-
-  .workshop-nav {
-    border-right: none;
-    border-bottom: 1px solid #333;
-    padding-bottom: 1rem;
-    position: static;
-  }
-
-  main.content {
-    padding: 1rem;
-  }
-}
-
-/* ============================================================
-   SHINY IFRAME EINBETTUNG (Dark Mode wrapper)
-   ============================================================ */
-
-.shiny-frame {
-  border: 1px solid #333;
-  background: #1e1e1e;
-  border-radius: 8px;
-  padding: 0;
-  overflow: hidden;
+.site-footer {
+  border-top: 1px solid #333;
+  background-color: #1e1e1e;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #aaaaaa;
 }
