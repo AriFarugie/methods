@@ -1,7 +1,5 @@
 ---
 title: "Testlayout"
-page-layout: workshop
-toc: false
 
 workshop_nav_title: "Test-Navi"
 workshop_nav: |
