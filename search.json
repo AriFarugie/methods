@@ -28,18 +28,74 @@
     "text": "📁 Nach Workshop sortiert\n\nWorkshop 1: kurze Beschreibung + Link zu den jeweiligen Materialien\n\nWorkshop 2: …\n\nWorkshop 3: …\n\nWorkshop 4: …\n\n\nHinweis für mich:\nDiese Seite ist eine Art „Material-Sammelstelle“.\nSpäter konkrete Links zu Dateien oder externen Seiten einfügen."
   },
   {
-    "objectID": "ueber-mich.html",
-    "href": "ueber-mich.html",
-    "title": "Über mich",
+    "objectID": "workshops/overview.html",
+    "href": "workshops/overview.html",
+    "title": "Überblick",
     "section": "",
-    "text": "Hier kommt eine kurze Vorstellung hin.\n\nBeruflicher Hintergrund (z.B. Forschung, Lehre, Schwerpunkte).\nFachliche Interessen (z.B. Statistik, R, Umweltpsychologie etc.).\nLink zu Profilen (z.B. ORCID, Google Scholar, Uni-Seite), falls gewünscht.\n\n\nHinweis für mich:\n1–3 Abschnitte in vollständigen Sätzen.\nGern auch ein Foto, z.B. mit Markdown:\n![Alt-Text](/pfad/zum/bild.jpg)"
+    "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite."
   },
   {
-    "objectID": "workshops/workshop1.html",
-    "href": "workshops/workshop1.html",
-    "title": "Workshop 1 – Einführung in R",
+    "objectID": "workshops/workshop1/index.html",
+    "href": "workshops/workshop1/index.html",
+    "title": "Workshop 1 – Einführung in R & RStudio",
     "section": "",
-    "text": "Workshop 1 – Einführung in R\nDies ist die Übersichtsseite für Workshop 1.\n👉 Zu den Inhalten"
+    "text": "Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nEs werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.\nZiel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.\nBenötigte Vorkenntnisse: keine."
+  },
+  {
+    "objectID": "workshops/workshop1/index.html#kurzbeschreibung",
+    "href": "workshops/workshop1/index.html#kurzbeschreibung",
+    "title": "Workshop 1 – Einführung in R & RStudio",
+    "section": "",
+    "text": "Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nEs werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.\nZiel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.\nBenötigte Vorkenntnisse: keine."
+  },
+  {
+    "objectID": "workshops/workshop1/index.html#lernziele",
+    "href": "workshops/workshop1/index.html#lernziele",
+    "title": "Workshop 1 – Einführung in R & RStudio",
+    "section": "Lernziele",
+    "text": "Lernziele\nNach dem Workshop können Teilnehmende …\n\ndie RStudio-Oberfläche sicher bedienen\n\ngrundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)\n\nDaten aus CSV, Excel und SPSS importieren\n\nVariablen auswählen, filtern und umkodieren\n\nfehlende Werte identifizieren und behandeln\n\nDatensätze zusammenführen (Joins)\n\nSkripte und Projekte reproduzierbar strukturieren\n\neinen kleinen Datenbereinigungs-Workflow eigenständig umsetzen"
+  },
+  {
+    "objectID": "workshops/workshop1/index.html#ablauf-agenda",
+    "href": "workshops/workshop1/index.html#ablauf-agenda",
+    "title": "Workshop 1 – Einführung in R & RStudio",
+    "section": "Ablauf / Agenda",
+    "text": "Ablauf / Agenda\n\nTag 1\n\nAnkommen & Setup\n\nEinführung in R & RStudio\n\nObjekte & Datentypen\n\nDaten importieren\n\nDatenaufbereitung\n\n\n\nTag 2\n\nRecap\n\nFehlende Werte\n\nUmkodieren\n\nJoins\n\nReproduzierbare Workflows\n\nMini-Projekt"
+  },
+  {
+    "objectID": "workshops/workshop1/index.html#materialien",
+    "href": "workshops/workshop1/index.html#materialien",
+    "title": "Workshop 1 – Einführung in R & RStudio",
+    "section": "Materialien",
+    "text": "Materialien\n➡️ Übungsdatensatz herunterladen\nWeitere Materialien folgen."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Willkommen auf meiner Workshop-Seite!\nHier findest du Materialien, Unterlagen, Übungen und Infos zu meinen Methoden-Workshops."
+  },
+  {
+    "objectID": "index.html#aktuelle-workshops",
+    "href": "index.html#aktuelle-workshops",
+    "title": "Welcome",
+    "section": "🔍 Aktuelle Workshops",
+    "text": "🔍 Aktuelle Workshops\n\nWorkshop 1 – Einführung in R & RStudio\nWorkshop 2 – Datenvisualisierung mit ggplot2\nWorkshop 3 – Einführung in qualitative Methoden"
+  },
+  {
+    "objectID": "index.html#materialien",
+    "href": "index.html#materialien",
+    "title": "Welcome",
+    "section": "📚 Materialien",
+    "text": "📚 Materialien\nDie Materialien werden schrittweise ergänzt.\nFalls du an einem bestimmten Workshop teilnimmst, bekommst du die Zugangsinformationen direkt von mir."
+  },
+  {
+    "objectID": "index.html#kontakt",
+    "href": "index.html#kontakt",
+    "title": "Welcome",
+    "section": "📬 Kontakt",
+    "text": "📬 Kontakt\nBei Fragen erreichst du mich jederzeit unter:\narieja.farugie@… (einfügen)"
   },
   {
     "objectID": "workshops/workshop1/workshop.html",
@@ -119,80 +175,17 @@
     "text": "Im Mini-Projekt kombinierst du die gelernten Schritte zu einem kleinen Workflow.\n\n\nEin bereinigter Datensatz, der für eine einfache Analyse oder Visualisierung bereit ist.\n\n\n\n\n\n\nTippMöglicher Ablauf\n\n\n\n\nDaten importieren\n\nVariablen auswählen (select)\n\nFälle filtern (filter)\n\nFehlende Werte behandeln (is.na, ifelse, drop_na)\n\nNeue Variablen erstellen (mutate)\n\nDatensätze verbinden (falls notwendig, left_join)\n\nDatensatz exportieren (write_csv)\n\n\n\n\n### Beispiel: Export\n\nwrite_csv(daten_clean, \"output/workshop1_clean_data.csv\")\n\nPlatzhalter\n\n\n\n\n\n\nHinweisÜbung 9 – Abschluss\n\n\n\n\nDokumentiere deinen gesamten Workflow in einem Skript.\n\nExportiere deinen finalen Datensatz in den Ordner output/.\n\nNotiere dir in eigenen Worten, welche Entscheidungen du bei der Bereinigung getroffen hast.\n\n\n\n\nEnde des Workshop-1-Inhaltmoduls."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
+    "objectID": "workshops/workshop1.html",
+    "href": "workshops/workshop1.html",
+    "title": "Workshop 1 – Einführung in R",
     "section": "",
-    "text": "Willkommen auf meiner Workshop-Seite!\nHier findest du Materialien, Unterlagen, Übungen und Infos zu meinen Methoden-Workshops."
+    "text": "Workshop 1 – Einführung in R\nDies ist die Übersichtsseite für Workshop 1.\n👉 Zu den Inhalten"
   },
   {
-    "objectID": "index.html#aktuelle-workshops",
-    "href": "index.html#aktuelle-workshops",
-    "title": "Welcome",
-    "section": "🔍 Aktuelle Workshops",
-    "text": "🔍 Aktuelle Workshops\n\nWorkshop 1 – Einführung in R & RStudio\nWorkshop 2 – Datenvisualisierung mit ggplot2\nWorkshop 3 – Einführung in qualitative Methoden"
-  },
-  {
-    "objectID": "index.html#materialien",
-    "href": "index.html#materialien",
-    "title": "Welcome",
-    "section": "📚 Materialien",
-    "text": "📚 Materialien\nDie Materialien werden schrittweise ergänzt.\nFalls du an einem bestimmten Workshop teilnimmst, bekommst du die Zugangsinformationen direkt von mir."
-  },
-  {
-    "objectID": "index.html#kontakt",
-    "href": "index.html#kontakt",
-    "title": "Welcome",
-    "section": "📬 Kontakt",
-    "text": "📬 Kontakt\nBei Fragen erreichst du mich jederzeit unter:\narieja.farugie@… (einfügen)"
-  },
-  {
-    "objectID": "workshops/workshop1/index.html",
-    "href": "workshops/workshop1/index.html",
-    "title": "Workshop 1 – Einführung in R & RStudio",
+    "objectID": "ueber-mich.html",
+    "href": "ueber-mich.html",
+    "title": "Über mich",
     "section": "",
-    "text": "Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nEs werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.\nZiel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.\nBenötigte Vorkenntnisse: keine."
-  },
-  {
-    "objectID": "workshops/workshop1/index.html#kurzbeschreibung",
-    "href": "workshops/workshop1/index.html#kurzbeschreibung",
-    "title": "Workshop 1 – Einführung in R & RStudio",
-    "section": "",
-    "text": "Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nEs werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.\nZiel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.\nBenötigte Vorkenntnisse: keine."
-  },
-  {
-    "objectID": "workshops/workshop1/index.html#lernziele",
-    "href": "workshops/workshop1/index.html#lernziele",
-    "title": "Workshop 1 – Einführung in R & RStudio",
-    "section": "Lernziele",
-    "text": "Lernziele\nNach dem Workshop können Teilnehmende …\n\ndie RStudio-Oberfläche sicher bedienen\n\ngrundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)\n\nDaten aus CSV, Excel und SPSS importieren\n\nVariablen auswählen, filtern und umkodieren\n\nfehlende Werte identifizieren und behandeln\n\nDatensätze zusammenführen (Joins)\n\nSkripte und Projekte reproduzierbar strukturieren\n\neinen kleinen Datenbereinigungs-Workflow eigenständig umsetzen"
-  },
-  {
-    "objectID": "workshops/workshop1/index.html#ablauf-agenda",
-    "href": "workshops/workshop1/index.html#ablauf-agenda",
-    "title": "Workshop 1 – Einführung in R & RStudio",
-    "section": "Ablauf / Agenda",
-    "text": "Ablauf / Agenda\n\nTag 1\n\nAnkommen & Setup\n\nEinführung in R & RStudio\n\nObjekte & Datentypen\n\nDaten importieren\n\nDatenaufbereitung\n\n\n\nTag 2\n\nRecap\n\nFehlende Werte\n\nUmkodieren\n\nJoins\n\nReproduzierbare Workflows\n\nMini-Projekt"
-  },
-  {
-    "objectID": "workshops/workshop1/index.html#materialien",
-    "href": "workshops/workshop1/index.html#materialien",
-    "title": "Workshop 1 – Einführung in R & RStudio",
-    "section": "Materialien",
-    "text": "Materialien\n➡️ Übungsdatensatz herunterladen\nWeitere Materialien folgen."
-  },
-  {
-    "objectID": "workshops/overview.html",
-    "href": "workshops/overview.html",
-    "title": "Überblick",
-    "section": "",
-    "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite."
-  },
-  {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "{{ title }}",
-    "section": "",
-    "text": "{# Titelblock #}\n  {% if title %}\n  \n    \n    {% if subtitle %}\n    {{ subtitle }}\n    {% endif %}\n  \n  {% endif %}\n\n  \n\n    \n      {% if meta.workshop_nav_title %}\n        {{ meta.workshop_nav_title }}\n      {% endif %}\n\n      {% if meta.workshop_nav %}\n        {{ meta.workshop_nav | safe }}\n      {% endif %}\n    \n\n    \n      {{ super() }}"
+    "text": "Hier kommt eine kurze Vorstellung hin.\n\nBeruflicher Hintergrund (z.B. Forschung, Lehre, Schwerpunkte).\nFachliche Interessen (z.B. Statistik, R, Umweltpsychologie etc.).\nLink zu Profilen (z.B. ORCID, Google Scholar, Uni-Seite), falls gewünscht.\n\n\nHinweis für mich:\n1–3 Abschnitte in vollständigen Sätzen.\nGern auch ein Foto, z.B. mit Markdown:\n![Alt-Text](/pfad/zum/bild.jpg)"
   }
 ]
