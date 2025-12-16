@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-d2b31e7bef5b805bf609d8dff64e30fb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-355c415dd6b9922ddaf04a2341011fe1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../style.css">
 </head>
 
-<body class="floating nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -174,30 +174,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
-   
-  <ul class="collapse">
-  <li><a href="#workshop-inhalte-einführung-in-r-rstudio" id="toc-workshop-inhalte-einführung-in-r-rstudio" class="nav-link active" data-scroll-target="#workshop-inhalte-einführung-in-r-rstudio">Workshop-Inhalte – Einführung in R &amp; RStudio</a>
-  <ul class="collapse">
-  <li><a href="#einleitung" id="toc-einleitung" class="nav-link" data-scroll-target="#einleitung">1. Einführung in R &amp; RStudio</a></li>
-  <li><a href="#grundprinzipien" id="toc-grundprinzipien" class="nav-link" data-scroll-target="#grundprinzipien">2. Grundprinzipien von R</a></li>
-  <li><a href="#datentypen" id="toc-datentypen" class="nav-link" data-scroll-target="#datentypen">3. Datentypen &amp; Datenstrukturen</a></li>
-  <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">4. Daten importieren</a></li>
-  <li><a href="#aufbereitung" id="toc-aufbereitung" class="nav-link" data-scroll-target="#aufbereitung">5. Datenaufbereitung mit dplyr</a></li>
-  <li><a href="#fehlende-werte" id="toc-fehlende-werte" class="nav-link" data-scroll-target="#fehlende-werte">6. Fehlende Werte (NA)</a></li>
-  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">7. Datensätze verbinden (Joins)</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">8. Reproduzierbare Workflows</a></li>
-  <li><a href="#miniprojekt" id="toc-miniprojekt" class="nav-link" data-scroll-target="#miniprojekt">9. Mini-Projekt: Eigener Datenaufbereitungs-Workflow</a></li>
-  </ul></li>
-  </ul>
-</nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -220,7 +198,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="workshop-inhalte-einführung-in-r-rstudio" class="level1">
+<div class="workshop-layout">
+<section id="inhalte" class="level2 workshop-nav">
+<h2 class="anchored" data-anchor-id="inhalte">Inhalte</h2>
+<ul>
+<li><a href="#einleitung">1. Einführung in R &amp; RStudio</a></li>
+<li><a href="#grundprinzipien">2. Grundprinzipien von R</a></li>
+<li><a href="#datentypen">3. Datentypen &amp; Datenstrukturen</a></li>
+<li><a href="#import">4. Daten importieren</a></li>
+<li><a href="#aufbereitung">5. Datenaufbereitung mit dplyr</a></li>
+<li><a href="#fehlende-werte">6. Fehlende Werte (NA)</a></li>
+<li><a href="#joins">7. Datensätze verbinden (Joins)</a></li>
+<li><a href="#workflow">8. Reproduzierbare Workflows</a></li>
+<li><a href="#miniprojekt">9. Mini-Projekt</a></li>
+</ul>
+</section>
+<section id="workshop-inhalte-einführung-in-r-rstudio" class="level1 workshop-content">
 <h1>Workshop-Inhalte – Einführung in R &amp; RStudio</h1>
 <p>Dieser Teil enthält die inhaltlichen Materialien zum Workshop „Einführung in R &amp; RStudio“.<br>
 Er ist so aufgebaut, dass du ihn als Begleitunterlage im Workshop oder zur Nachbereitung nutzen kannst.</p>
@@ -258,7 +251,7 @@ RStudio ist eine integrierte Entwicklungsumgebung (IDE), die die Arbeit mit R ü
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
-<p>text</p>
+<p>PLATZHALTER</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -405,7 +398,7 @@ Hinweis
 <ul>
 <li><strong>Vektor</strong>: geordnete Liste von Werten<br>
 </li>
-<li><strong>Data Frame / tibble</strong>: Tabelle mit Zeilen (<strong><em>Fälle</em></strong>) und Spalten (<strong><em>Variablen</em></strong>)</li>
+<li><strong>Data Frame / tibble</strong>: Tabelle mit Zeilen (<strong>Fälle</strong>) und Spalten (<strong>Variablen</strong>)</li>
 </ul>
 </section>
 <section id="beispiel" class="level3">
@@ -425,7 +418,7 @@ Hinweis
 3 Clara    22 FALSE        9.5</code></pre>
 </div>
 </div>
-<p>text undefined</p>
+<p>Platzhalter</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df) </span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -455,7 +448,7 @@ $ studierend &lt;lgl&gt; TRUE, TRUE, FALSE
 $ speed      &lt;dbl&gt; 12.6, 10.1, 9.5</code></pre>
 </div>
 </div>
-<p>text</p>
+<p>Platzhalter</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -503,7 +496,7 @@ $ speed      &lt;dbl&gt; 12.6, 10.1, 9.5</code></pre>
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
 </div>
-<p>text</p>
+<p>Platzhalter</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">### CSV-Dateien einlesen</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -535,9 +528,9 @@ $ speed      &lt;dbl&gt; 12.6, 10.1, 9.5</code></pre>
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 56%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -581,7 +574,7 @@ $ speed      &lt;dbl&gt; 12.6, 10.1, 9.5</code></pre>
 </li>
 <li>Prüfe: <code>nrow()</code>, <code>ncol()</code>, <code>head()</code>, <code>summary()</code>.<br>
 </li>
-<li>Notiere dir, welche Variablen welcher Art sind (z. B. Alter, Geschlecht, Skalenwerte).</li>
+<li>Notiere dir, welche Variablen welcher Art sind.</li>
 </ul>
 </div>
 </div>
@@ -593,7 +586,7 @@ $ speed      &lt;dbl&gt; 12.6, 10.1, 9.5</code></pre>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>text</p>
+<p>Platzhalter</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -627,7 +620,7 @@ Wichtig
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">score_z =</span> <span class="fu">as.numeric</span>(<span class="fu">scale</span>(score))) <span class="sc">|&gt;</span> </span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(score_z))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>text</p>
+<p>Platzhalter</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -643,7 +636,7 @@ Wichtig
 </li>
 <li>Filtere alle Personen heraus, die jünger als 18 sind.<br>
 </li>
-<li>Erstelle eine neue Variable, z. B. eine kategorisierte Altersgruppe („18–29“, „30–44“, …).</li>
+<li>Erstelle eine neue Variable, z. B. eine kategorisierte Altersgruppe.</li>
 </ul>
 </div>
 </div>
@@ -658,14 +651,14 @@ Wichtig
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(daten_csv<span class="sc">$</span>score))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>text</p>
+<p>Platzhalter</p>
 </section>
 <section id="alle-zeilen-mit-na-in-einer-variablen-anzeigen" class="level3">
 <h3 class="anchored" data-anchor-id="alle-zeilen-mit-na-in-einer-variablen-anzeigen">Alle Zeilen mit NA in einer Variablen anzeigen</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>daten_csv <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="fu">is.na</span>(score))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>text</p>
+<p>Platzhalter</p>
 </section>
 <section id="fehlercodes-in-na-umwandeln" class="level3">
 <h3 class="anchored" data-anchor-id="fehlercodes-in-na-umwandeln">Fehlercodes in NA umwandeln</h3>
@@ -673,7 +666,7 @@ Wichtig
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>daten_clean2 <span class="ot">&lt;-</span> daten_csv <span class="sc">|&gt;</span> </span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>( <span class="at">score =</span> <span class="fu">ifelse</span>(score <span class="sc">==</span> <span class="dv">99</span>, <span class="cn">NA</span>, score) )</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>text</p>
+<p>Platzhalter</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -689,7 +682,7 @@ Wichtig
 </li>
 <li>Identifiziere einen möglichen Fehlercode (z. B. 99, 999) und wandle ihn in <code>NA</code> um.<br>
 </li>
-<li>Diskutiere Vor- und Nachteile verschiedener Strategien (z. B. Löschen vs.&nbsp;Imputieren).</li>
+<li>Diskutiere Strategien (Löschen vs.&nbsp;Imputieren).</li>
 </ul>
 </div>
 </div>
@@ -708,14 +701,26 @@ Wichtig
 <span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>daten_joined <span class="ot">&lt;-</span> <span class="fu">left_join</span>(stammdaten, skalen, <span class="at">by =</span> <span class="st">"id"</span>) daten_joined</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>text ::: {.callout-tip} ## Weitere Join-Varianten:</p>
+<p>Platzhalter</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Weitere Join-Varianten
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><code>inner_join()</code><br>
 </li>
 <li><code>right_join()</code><br>
 </li>
-<li><code>full_join()</code> :::</li>
+<li><code>full_join()</code></li>
 </ul>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -748,7 +753,7 @@ Wichtig
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Eine mögliche Struktur:
+<span class="screen-reader-only">Tipp</span>Eine mögliche Struktur
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -783,7 +788,7 @@ Wichtig
 <h3 class="anchored" data-anchor-id="kommentare-nutzen">Kommentare nutzen</h3>
 <p>Schritt 1: Daten importieren daten &lt;- read_csv(“data/workshop1-dataset.csv”)</p>
 <p>Schritt 2: Bereinigung daten_clean &lt;- daten |&gt; filter(alter &gt;= 18)</p>
-<p>text</p>
+<p>Platzhalter</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -797,7 +802,7 @@ Wichtig
 <ul>
 <li>Erstelle ein neues Skript, in dem du Import, erste Bereinigung und Export zusammenfasst.<br>
 </li>
-<li>Strukturiere das Skript in logisch benannte Abschnitte (z. B. „Import“, „Cleaning“, „Export“).</li>
+<li>Strukturiere das Skript in logisch benannte Abschnitte.</li>
 </ul>
 </div>
 </div>
@@ -842,7 +847,7 @@ Wichtig
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(daten_clean, <span class="st">"output/workshop1_clean_data.csv"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>text</p>
+<p>Platzhalter</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -864,11 +869,12 @@ Wichtig
 </div>
 <hr>
 <p><em>Ende des Workshop-1-Inhaltmoduls.</em></p>
+</section>
+</section>
+</section>
+</div>
 
 
-</section>
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
