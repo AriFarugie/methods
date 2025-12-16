@@ -8,7 +8,8 @@ $if(title)$
 $endif$
 
 <div class="workshop-layout">
-  <aside class="workshop-nav">
+
+  <nav class="workshop-nav">
     $if(workshop_nav_title)$
     <h2>$workshop_nav_title$</h2>
     $endif$
@@ -16,9 +17,10 @@ $endif$
     $if(workshop_nav)$
     $workshop_nav$
     $endif$
-  </aside>
+  </nav>
 
-  <main class="workshop-content">
+  <div class="workshop-content">
     $body$
-  </main>
+  </div>
+
 </div>
