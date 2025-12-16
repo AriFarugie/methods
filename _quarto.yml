@@ -1,7 +1,5 @@
 project:
   type: website
-  resources:
-    - shinylive-app/**
 
 website:
   title: "Methods"
@@ -19,12 +17,6 @@ website:
             href: workshops/overview.qmd
           - text: "Workshop 1 – Einführung in R"
             href: workshops/workshop1/index.qmd
-          - text: "Workshop 2 – Datenvisualisierung"
-            href: workshops/workshop2/index.qmd
-          - text: "Workshop 3 – Qualitative Methoden"
-            href: workshops/workshop3/index.qmd
-          - text: "Workshop 4 – Statistik & Modelle"
-            href: workshops/workshop4/index.qmd
 
 format:
   html:
@@ -33,4 +25,7 @@ format:
       - style.css
       - _templates/assets/css/workshop.css
     toc: true
-    toc-depth: 2
+
+page-layouts:
+  workshop:
+    template: _templates/workshop.html
