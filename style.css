@@ -23,26 +23,11 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ============================================================
-   STANDARDSEITEN – ZENTRIERT
-   ============================================================ */
-
+/* --- Standardseiten etwas einrücken, Workshops regeln wir separat --- */
 .page-content {
-  max-width: 1600px !important;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 1.5rem;
-}
-
-/* ============================================================
-   WORKSHOP-SEITEN – VOLLE BREITE (WICHTIG!)
-   ============================================================ */
-
-/* Hebt die Zentrierung NUR für Workshop-Seiten auf */
-.page-content:has(.workshop-layout) {
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
 /* ============================================================
@@ -97,30 +82,26 @@ a:hover {
 }
 
 /* ============================================================
-   WORKSHOP LAYOUT – SIDENAVI AM LINKEN BILDSCHIRMRAND
+   WORKSHOP LAYOUT — VOLLBREIT, NAVI AM VIEWPORT-RAND
    ============================================================ */
 
+/* Container über gesamte Breite, unabhängig von .page-content */
 .workshop-layout {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 260px minmax(0, 1fr);
   gap: 3rem;
-
-  width: 100vw;
-  max-width: 100%;
+  width: 100vw;             /* volle Viewport-Breite */
   margin: 0;
-
-  padding: 0 3rem 3rem 2rem;
+  padding: 0 3rem 3rem 3rem; /* 3rem Abstand links/rechts zum Rand */
 }
 
-/* Linke Navigation */
+/* Linke Workshop-Navigation */
 .workshop-nav {
   font-size: 0.95rem;
   border-right: 1px solid #333;
   padding-right: 1.5rem;
-
   position: sticky;
   top: 6rem;
-
   align-self: flex-start;
   height: max-content;
 }
@@ -152,29 +133,27 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Rechter Content */
+/* Rechte Workshop-Content-Spalte */
 .workshop-content {
   max-width: 1100px;
   min-width: 0;
 }
 
-/* ============================================================
-   MOBILE DARSTELLUNG – WORKSHOP
-   ============================================================ */
-
+/* MOBILE DARSTELLUNG Workshop */
 @media (max-width: 900px) {
   .workshop-layout {
+    width: 100%;
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 0 1.5rem 2rem 1.5rem;
   }
 
   .workshop-nav {
-    position: static;
     border-right: none;
     border-bottom: 1px solid #333;
     padding-right: 0;
     padding-bottom: 1rem;
+    position: static;
   }
 }
 
