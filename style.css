@@ -23,81 +23,67 @@ a:hover {
   text-decoration: underline;
 }
 
-/* --- GLOBAL CONTENT BREITE (wichtig für mehr Platz!) --- */
+/* --- GLOBAL CONTENT BREITE --- */
 .page-content {
-  max-width: 1600px !important; /* vorher ~900px → jetzt viel breiter */
+  max-width: 1600px !important;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5rem;
 }
 
 /* ============================================================
-   HEADER + NAVIGATION
+   HEADER + NAVIGATION (QUARTO NAVBAR)
    ============================================================ */
 
-.site-header {
-  background-color: #1e1e1e;
-  border-bottom: 1px solid #333;
+/* Hintergrund der Navbar überall dunkel erzwingen */
+.navbar,
+.navbar.navbar-expand-lg,
+.navbar.navbar-dark,
+.navbar.navbar-default {
+  background-color: #1e1e1e !important;
+  border-bottom: 1px solid #333 !important;
+  background-image: none !important;
 }
 
-.site-title a {
-  color: #ffffff;
+/* Inhalt der Navbar */
+.navbar .navbar-brand,
+.navbar .navbar-brand:hover {
+  color: #ffffff !important;
   font-weight: 600;
   font-size: 1.1rem;
 }
 
-.site-header .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
+.navbar-nav .nav-link,
+.navbar-nav .nav-link:visited {
+  color: #e0e0e0 !important;
 }
 
-.site-nav .menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 1rem;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #ffffff !important;
 }
 
-.site-nav .menu > li > a {
-  color: #e0e0e0;
-  padding: 0.25rem 0;
+/* Aktiver Menüpunkt */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: #ffffff !important;
+  font-weight: 600;
 }
 
-/* Dropdown */
-
-.has-dropdown {
-  position: relative;
-}
-
-.has-dropdown .dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
+/* Dropdown-Menü dunkel */
+.dropdown-menu {
   background-color: #1e1e1e;
   border: 1px solid #333;
-  list-style: none;
-  margin: 0;
-  padding: 0.25rem 0;
-  min-width: 180px;
-  z-index: 1000;
 }
 
-.has-dropdown .dropdown li a {
-  display: block;
-  padding: 0.4rem 0.75rem;
+.dropdown-item {
   color: #e0e0e0;
 }
 
-.has-dropdown .dropdown li a:hover {
+.dropdown-item:hover,
+.dropdown-item:focus {
   background-color: #2a2a2a;
-}
-
-.has-dropdown:hover .dropdown {
-  display: block;
+  color: #ffffff;
 }
 
 /* ============================================================
@@ -107,11 +93,11 @@ a:hover {
 .workshop-layout {
   display: grid;
   grid-template-columns: 220px 1fr; /* Navi + Content */
-  gap: 4rem; /* mehr Abstand */
+  gap: 4rem;
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  padding-left: 0; /* schiebt Navi weiter nach links */
+  padding-left: 0;
 }
 
 /* Linke Navigation */
@@ -155,7 +141,7 @@ a:hover {
 
 /* Rechte Content-Spalte */
 .workshop-content {
-  max-width: 1000px; /* viel breiter als vorher */
+  max-width: 1000px;
   min-width: 0;
 }
 
@@ -178,7 +164,8 @@ a:hover {
    FOOTER
    ============================================================ */
 
-.site-footer {
+.site-footer,
+.footer {
   border-top: 1px solid #333;
   background-color: #1e1e1e;
   padding: 1rem 0;
