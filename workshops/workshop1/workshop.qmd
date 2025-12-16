@@ -1,9 +1,10 @@
 ---
 title: "Workshop 1 – Einführung in R & RStudio: Inhalte"
 lang: de
+page-layout: full
 format:
   html:
-    toc: false          # eigene Navi, kein automatisches TOC links
+    toc: false
     code-copy: true
     code-fold: false
 ---
