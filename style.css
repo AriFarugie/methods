@@ -60,7 +60,18 @@ a:hover {
 }
 
 /* ============================================================
-   WORKSHOP LAYOUT (page-layout: full vorausgesetzt)
+   🔥 QUARTO-CONTAINER – NUR AUF WORKSHOP-SEITEN ENTPADDEN
+   ============================================================ */
+
+/* Entfernt den LETZTEN linken Abstand */
+body:has(.workshop-layout) .quarto-container,
+body:has(.workshop-layout) .content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ============================================================
+   WORKSHOP LAYOUT
    ============================================================ */
 
 .workshop-layout {
@@ -71,12 +82,12 @@ a:hover {
   width: 100%;
   max-width: 100%;
 
-  /* ❗ KEIN linker Abstand mehr */
+  /* wirklich kein linker Abstand mehr */
   padding: 0 3rem 3rem 0;
 }
 
 /* ============================================================
-   WORKSHOP NAVIGATION (LINKS, AM RAND)
+   WORKSHOP NAVIGATION – JETZT WIRKLICH AM RAND
    ============================================================ */
 
 .workshop-nav {
@@ -116,7 +127,7 @@ a:hover {
 }
 
 /* ============================================================
-   WORKSHOP CONTENT (RECHTS)
+   WORKSHOP CONTENT
    ============================================================ */
 
 .workshop-content {
