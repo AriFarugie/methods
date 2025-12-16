@@ -1,10 +1,7 @@
 ---
 title: "Workshop 1 – Einführung in R & RStudio"
-
-format:
-  html:
-    template: ../../_layouts/workshop.html
-    toc: false
+layout: workshop
+toc: false
 
 workshop_nav_title: ""
 workshop_nav: |
@@ -16,6 +13,7 @@ workshop_nav: |
     <li><a href="workshop.qmd">➡️ Zum Workshop (Inhalte)</a></li>
   </ul>
 ---
+
 ## Kurzbeschreibung {#kurzbeschreibung}
 
 Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.  
