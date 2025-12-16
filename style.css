@@ -87,6 +87,76 @@ a:hover {
 }
 
 /* ============================================================
+   GLOBALE SEITENNAVIGATION LINKS
+   (für Quarto-"Auf dieser Seite"-Sidebar)
+   ============================================================ */
+
+/* Container der Quarto-Seitennavigation */
+.sidebar.sidebar-navigation {
+  position: sticky;
+  top: 6rem;
+  align-self: flex-start;
+  border-right: 1px solid #333;
+  background-color: #111111;
+  padding: 1.5rem 1.25rem;
+  min-width: 260px;
+}
+
+/* Layout: Sidebar links + Inhalt rechts */
+body.quarto-sidebar-collapse-fixed .page-content {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 3rem;
+  max-width: 1600px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Überschrift "Auf dieser Seite" */
+.sidebar.sidebar-navigation h2,
+.sidebar.sidebar-navigation .sidebar-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #aaaaaa;
+  margin-top: 0;
+}
+
+/* Links in der Seiten-Navi */
+.sidebar.sidebar-navigation .sidebar-item,
+.sidebar.sidebar-navigation a {
+  color: #e0e0e0 !important;
+}
+
+.sidebar.sidebar-navigation a:hover {
+  text-decoration: underline;
+}
+
+/* Aktiver Eintrag grün hervorgehoben */
+.sidebar.sidebar-navigation .sidebar-item .active,
+.sidebar.sidebar-navigation .sidebar-link.active {
+  color: #00d084 !important;
+  border-left: 2px solid #00d084;
+  padding-left: 0.4rem;
+}
+
+/* Mobile: Sidebar oben als Block */
+@media (max-width: 900px) {
+  body.quarto-sidebar-collapse-fixed .page-content {
+    display: block;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .sidebar.sidebar-navigation {
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid #333;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ============================================================
    WORKSHOP LAYOUT — LINKSNAVIGATION + BREITERE CONTENT AREA
    ============================================================ */
 
@@ -100,7 +170,7 @@ a:hover {
   padding-left: 0;
 }
 
-/* Linke Navigation */
+/* Linke Workshop-Navigation */
 .workshop-nav {
   flex: 0 0 220px;
   font-size: 0.95rem;
@@ -139,13 +209,13 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Rechte Content-Spalte */
+/* Rechte Workshop-Content-Spalte */
 .workshop-content {
   max-width: 1000px;
   min-width: 0;
 }
 
-/* MOBILE DARSTELLUNG */
+/* MOBILE DARSTELLUNG Workshop */
 @media (max-width: 800px) {
   .workshop-layout {
     grid-template-columns: 1fr;
@@ -153,22 +223,4 @@ a:hover {
   }
 
   .workshop-nav {
-    border-right: none;
-    border-bottom: 1px solid #333;
-    padding-bottom: 1rem;
-    position: static;
-  }
-}
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
-.site-footer,
-.footer {
-  border-top: 1px solid #333;
-  background-color: #1e1e1e;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  color: #aaaaaa;
-}
+    border
