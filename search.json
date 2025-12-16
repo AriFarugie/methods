@@ -191,22 +191,8 @@
   {
     "objectID": "test.html",
     "href": "test.html",
-    "title": "Testlayout",
+    "title": "{{ title }}",
     "section": "",
-    "text": "Etwas Testtext für Abschnitt A."
-  },
-  {
-    "objectID": "test.html#a",
-    "href": "test.html#a",
-    "title": "Testlayout",
-    "section": "",
-    "text": "Etwas Testtext für Abschnitt A."
-  },
-  {
-    "objectID": "test.html#b",
-    "href": "test.html#b",
-    "title": "Testlayout",
-    "section": "Abschnitt B",
-    "text": "Abschnitt B\nEtwas Testtext für Abschnitt B."
+    "text": "{# Titelblock #}\n  {% if title %}\n  \n    \n    {% if subtitle %}\n    {{ subtitle }}\n    {% endif %}\n  \n  {% endif %}\n\n  \n\n    \n      {% if meta.workshop_nav_title %}\n        {{ meta.workshop_nav_title }}\n      {% endif %}\n\n      {% if meta.workshop_nav %}\n        {{ meta.workshop_nav | safe }}\n      {% endif %}\n    \n\n    \n      {{ super() }}"
   }
 ]
