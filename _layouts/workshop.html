@@ -1,22 +1,17 @@
 $if(title)$
 <header class="workshop-title">
   <h1>$title$</h1>
-  $if(subtitle)$
-  <p class="workshop-subtitle">$subtitle$</p>
-  $endif$
 </header>
 $endif$
-
-<link rel="stylesheet" href="/assets/css/workshop.css">
 
 <div class="workshop-layout">
   <nav class="workshop-nav">
     $if(workshop_nav_title)$
-    <h2>$workshop_nav_title$</h2>
+      <h2>$workshop_nav_title$</h2>
     $endif$
 
     $if(workshop_nav)$
-    $workshop_nav$
+      $workshop_nav$
     $endif$
   </nav>
 
