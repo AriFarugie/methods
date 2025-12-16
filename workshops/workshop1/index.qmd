@@ -1,21 +1,22 @@
 ---
 title: "Workshop 1 – Einführung in R & RStudio"
 page-layout: full
+
+format:
+  html:
+    template: _layouts/workshop.html
+    toc: false
+
+workshop_nav_title: ""
+workshop_nav: |
+  <ul>
+    <li><a href="#kurzbeschreibung">Kurzbeschreibung</a></li>
+    <li><a href="#lernziele">Lernziele</a></li>
+    <li><a href="#ablauf-agenda">Ablauf / Agenda</a></li>
+    <li><a href="#materialien">Materialien</a></li>
+    <li><a href="workshop.qmd">➡️ Zum Workshop (Inhalte)</a></li>
+  </ul>
 ---
-
-
-::: {.workshop-layout}
-
-::: {.workshop-nav}
-
-- [Kurzbeschreibung](#kurzbeschreibung)
-- [Lernziele](#lernziele)
-- [Ablauf / Agenda](#ablauf-agenda)
-- [Materialien](#materialien)
-- [➡️ Zum Workshop (Inhalte)](workshop.qmd)
-:::
-
-::: {.workshop-content}
 
 ## Kurzbeschreibung {#kurzbeschreibung}
 
@@ -72,7 +73,6 @@ Nach dem Workshop können Teilnehmende …
 ### Übungsdatensatz (CSV)
 
 ➡️ **[Übungsdatensatz herunterladen](../../assets/data/workshop1-dataset.csv)**  
-*(Der Link funktioniert, sobald die Datei hochgeladen wurde.)*
 
 > Hinweis: Datei bitte im Repo unter  
 > `assets/data/workshop1-dataset.csv`  
@@ -91,6 +91,3 @@ Nach dem Workshop können Teilnehmende …
 - Beispielcode für Abschlussarbeiten  
 - Checkliste „Datenaufbereitung in der Abschlussarbeit“  
 - Literaturhinweise
-
-:::
-:::
