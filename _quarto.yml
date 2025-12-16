@@ -31,6 +31,6 @@ format:
     theme: darkly
     css:
       - style.css
-      - assets/css/workshop.css
+      - _layouts/assets/css/workshop.css
     toc: true
     toc-depth: 2
