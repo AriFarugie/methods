@@ -26,10 +26,11 @@ website:
           - text: "Workshop 4 – Statistik & Modelle"
             href: workshops/workshop4/index.qmd
 
-
 format:
   html:
-    theme: cosmo
-    css: style.css
+    theme: darkly
+    css:
+      - style.css
+      - assets/css/workshop.css
     toc: true
     toc-depth: 2
