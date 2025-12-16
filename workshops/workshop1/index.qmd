@@ -1,5 +1,6 @@
 ---
 title: "Workshop 1 – Einführung in R & RStudio"
+page-layout: full
 ---
 
 
