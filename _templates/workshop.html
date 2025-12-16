@@ -1,26 +1,30 @@
-$if(title)$
-<header class="workshop-title">
-  <h1>$title$</h1>
-  $if(subtitle)$
-  <p class="workshop-subtitle">$subtitle$</p>
-  $endif$
-</header>
-$endif$
+{% extends "html" %}
 
-<div class="workshop-layout">
+{% block content %}
+<main class="content" id="quarto-document-content">
 
-  <nav class="workshop-nav">
-    $if(workshop_nav_title)$
-    <h2>$workshop_nav_title$</h2>
-    $endif$
+  {# Titelblock #}
+  {% if title %}
+  <header class="workshop-title">
+    <h1>{{ title }}</h1>
+    {% if subtitle %}
+    <p class="workshop-subtitle">{{ subtitle }}</p>
+    {% endif %}
+  </header>
+  {% endif %}
 
-    $if(workshop_nav)$
-    $workshop_nav$
-    $endif$
-  </nav>
+  <div class="workshop-layout">
 
-  <div class="workshop-content">
-    $body$
-  </div>
+    <nav class="workshop-nav">
+      {% if meta.workshop_nav_title %}
+        <h2>{{ meta.workshop_nav_title }}</h2>
+      {% endif %}
 
-</div>
+      {% if meta.workshop_nav %}
+        {{ meta.workshop_nav | safe }}
+      {% endif %}
+    </nav>
+
+    <div class="workshop-content">
+      {{ super() }}
+    </div>
