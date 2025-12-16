@@ -14,6 +14,7 @@ workshop_nav: |
   </ul>
 ---
 
+
 ## Kurzbeschreibung {#kurzbeschreibung}
 
 Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.  
