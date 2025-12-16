@@ -1,15 +1,18 @@
 ---
-title: "Testlayout"
-layout: workshop
-toc: false
+title: "Workshop XYZ"
+format:
+  html:
+    template: ../../_templates/workshop.html
+    toc: false
 
-workshop_nav_title: "Test-Navi"
+workshop_nav_title: "Inhalte"
 workshop_nav: |
   <ul>
     <li><a href="#a">Abschnitt A</a></li>
     <li><a href="#b">Abschnitt B</a></li>
   </ul>
 ---
+
 
 
 ## Abschnitt A {#a}
