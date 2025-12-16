@@ -34,3 +34,6 @@ format:
       - assets/css/workshop.css
     toc: true
     toc-depth: 2
+
+page-layouts:
+  workshop: _templates/workshop.html
