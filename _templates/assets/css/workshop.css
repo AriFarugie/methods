@@ -1,0 +1,115 @@
+/* ============================================================
+   WORKSHOP LAYOUT (Layout-Datei: _layouts/workshop.html)
+   ============================================================ */
+
+/* Titelbereich */
+
+.workshop-title {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.workshop-title h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 700;
+}
+
+.workshop-subtitle {
+  margin: 0.75rem 0 0 0;
+  color: #aaaaaa;
+}
+
+/* ============================================================
+   GRID
+   ============================================================ */
+
+.workshop-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr); /* Navi + Inhalt */
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* Navi links */
+
+.workshop-nav {
+  position: sticky;
+  top: 6rem;
+
+  border-right: 1px solid #333;
+  padding-right: 1.5rem;
+
+  font-size: 0.95rem;
+  align-self: flex-start;
+  height: max-content;
+}
+
+.workshop-nav h2 {
+  margin-top: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #aaaaaa;
+}
+
+.workshop-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.workshop-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.workshop-nav a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+
+.workshop-nav a:hover {
+  color: #81d4fa;
+  text-decoration: underline;
+}
+
+/* Content rechts */
+
+.workshop-content {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.workshop-content h2 {
+  margin-top: 3rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.3rem;
+}
+
+.workshop-content h3 {
+  margin-top: 2rem;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .workshop-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem 1.5rem 2rem;
+  }
+
+  .workshop-nav {
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid #333;
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+}
