@@ -1,6 +1,11 @@
 ---
 title: "Testlayout"
 
+format:
+  html:
+    template: _templates/workshop.html
+    toc: false
+
 workshop_nav_title: "Test-Navi"
 workshop_nav: |
   <ul>
