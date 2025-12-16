@@ -23,10 +23,14 @@ a:hover {
   text-decoration: underline;
 }
 
-/* --- Standardseiten etwas einrücken, Workshops regeln wir separat --- */
+/* ============================================================
+   STANDARDSEITEN – ZENTRIERT
+   ============================================================ */
+
 .page-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1600px !important;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1.5rem;
 }
 
@@ -82,26 +86,33 @@ a:hover {
 }
 
 /* ============================================================
-   WORKSHOP LAYOUT — VOLLBREIT, NAVI AM VIEWPORT-RAND
+   WORKSHOP LAYOUT – FULL WIDTH, NAVI LINKS AM BILDSCHIRMRAND
    ============================================================ */
 
-/* Container über gesamte Breite, unabhängig von .page-content */
 .workshop-layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: 260px 1fr;
   gap: 3rem;
-  width: 100vw;             /* volle Viewport-Breite */
-  margin: 0;
-  padding: 0 3rem 3rem 3rem; /* 3rem Abstand links/rechts zum Rand */
+
+  width: 100vw;
+  max-width: 100vw;
+
+  /* 🔥 Quarto-Container zuverlässig aushebeln */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  padding: 0 3rem 3rem 2rem;
 }
 
-/* Linke Workshop-Navigation */
+/* Linke Seitennavigation */
 .workshop-nav {
   font-size: 0.95rem;
   border-right: 1px solid #333;
   padding-right: 1.5rem;
+
   position: sticky;
   top: 6rem;
+
   align-self: flex-start;
   height: max-content;
 }
@@ -126,34 +137,40 @@ a:hover {
 
 .workshop-nav a {
   color: #e0e0e0;
-  text-decoration: none;
 }
 
 .workshop-nav a:hover {
   text-decoration: underline;
 }
 
-/* Rechte Workshop-Content-Spalte */
+/* Rechter Content */
 .workshop-content {
   max-width: 1100px;
   min-width: 0;
 }
 
-/* MOBILE DARSTELLUNG Workshop */
+/* ============================================================
+   MOBILE DARSTELLUNG – WORKSHOP
+   ============================================================ */
+
 @media (max-width: 900px) {
   .workshop-layout {
-    width: 100%;
     grid-template-columns: 1fr;
     gap: 2rem;
+
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+
     padding: 0 1.5rem 2rem 1.5rem;
   }
 
   .workshop-nav {
+    position: static;
     border-right: none;
     border-bottom: 1px solid #333;
     padding-right: 0;
     padding-bottom: 1rem;
-    position: static;
   }
 }
 
