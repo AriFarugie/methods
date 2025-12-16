@@ -24,4 +24,25 @@ jobs:
 
       - name: Install R packages used by Quarto
         uses: r-lib/actions/setup-r-dependencies@v2
-        with
+        with:
+          packages: |
+            any::knitr
+            any::rmarkdown
+            any::tidyverse
+            any::sjPlot
+            any::sjmisc
+            any::psych
+            any::rstatix
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render site
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Publish to GitHub Pages
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
