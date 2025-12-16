@@ -32,7 +32,3 @@ format:
       - _templates/assets/css/workshop.css
     toc: true
     toc-depth: 2
-
-page-layouts:
-  workshop:
-    template: _templates/workshop.html
