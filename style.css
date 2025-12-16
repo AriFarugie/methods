@@ -24,37 +24,18 @@ a:hover {
 }
 
 /* ============================================================
-   STANDARDSEITEN – ZENTRIERT
+   NAVBAR + DROPDOWN (DARK MODE, STABIL)
    ============================================================ */
 
-.page-content {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1.5rem;
-}
-
-/* ============================================================
-   WORKSHOP-SEITEN – ZENTRIERUNG AUFHEBEN (DER FIX!)
-   ============================================================ */
-
-/* Sobald eine Workshop-Seite vorliegt, Container freigeben */
-body:has(.workshop-layout) .page-content {
-  max-width: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* ============================================================
-   NAVBAR + DROPDOWN (DARK)
-   ============================================================ */
-
-.navbar {
+.navbar,
+.navbar.navbar-expand-lg,
+.navbar.navbar-dark,
+.navbar.navbar-default {
   background-color: #1e1e1e !important;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #333 !important;
 }
 
-.navbar-brand {
+.navbar .navbar-brand {
   color: #ffffff !important;
   font-weight: 600;
 }
@@ -63,10 +44,12 @@ body:has(.workshop-layout) .page-content {
   color: #e0e0e0 !important;
 }
 
-.navbar-nav .nav-link:hover {
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
   color: #ffffff !important;
 }
 
+/* Dropdown */
 .dropdown-menu {
   background-color: #1e1e1e !important;
   border: 1px solid #333 !important;
@@ -76,13 +59,14 @@ body:has(.workshop-layout) .page-content {
   color: #e0e0e0 !important;
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover,
+.dropdown-item:focus {
   background-color: #2a2a2a !important;
   color: #ffffff !important;
 }
 
 /* ============================================================
-   WORKSHOP LAYOUT – SAUBER, OHNE AUSBRUCH
+   WORKSHOP LAYOUT (setzt page-layout: full voraus)
    ============================================================ */
 
 .workshop-layout {
@@ -97,18 +81,20 @@ body:has(.workshop-layout) .page-content {
 }
 
 /* ============================================================
-   WORKSHOP NAVI (LINKS)
+   WORKSHOP NAVIGATION (LINKS)
    ============================================================ */
 
 .workshop-nav {
-  font-size: 0.95rem;
-  border-right: 1px solid #333;
-  padding-right: 1.5rem;
-
   position: sticky;
   top: 6rem;
 
   align-self: flex-start;
+  height: max-content;
+
+  border-right: 1px solid #333;
+  padding-right: 1.5rem;
+
+  font-size: 0.95rem;
 }
 
 .workshop-nav h2 {
@@ -147,18 +133,6 @@ body:has(.workshop-layout) .page-content {
 }
 
 /* ============================================================
-   QUARTO TITLE BLOCK – NICHT ZENTRIEREN
-   ============================================================ */
-
-.workshop-layout .quarto-title-block,
-.workshop-layout .quarto-title,
-.workshop-layout .quarto-title-banner {
-  max-width: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* ============================================================
    MOBILE
    ============================================================ */
 
@@ -173,6 +147,7 @@ body:has(.workshop-layout) .page-content {
     position: static;
     border-right: none;
     border-bottom: 1px solid #333;
+    padding-right: 0;
     padding-bottom: 1rem;
   }
 }
@@ -181,7 +156,8 @@ body:has(.workshop-layout) .page-content {
    FOOTER
    ============================================================ */
 
-.site-footer {
+.site-footer,
+.footer {
   border-top: 1px solid #333;
   background-color: #1e1e1e;
   padding: 1rem 0;
