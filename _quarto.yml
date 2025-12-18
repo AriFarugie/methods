@@ -16,12 +16,10 @@ website:
         menu:
           - text: "Workshops Überblick"
             href: workshops/overview.qmd
-          - text: "Workshop 1 – Einführung in R"
-            href: workshops/workshop1/index.qmd
 
-  # 🔑 WICHTIG: Sidebar global erlauben
+  # 🔴 DAS ist der Schalter für hybride Navigation
   sidebar:
-    collapse-level: 1
+    collapse-level: 2
 
 format:
   html:
