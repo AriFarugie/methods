@@ -1,14 +1,13 @@
 ---
 title: "Workshop XYZ"
-sidebar: workshops
-toc: false
+# kein sidebar-Eintrag mehr
+toc: true
+toc-location: left
 ---
 
 ## Abschnitt A {#a}
 
 Etwas Testtext für Abschnitt A.
-
----
 
 ## Abschnitt B {#b}
 
