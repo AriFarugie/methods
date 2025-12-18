@@ -1,17 +1,9 @@
 ---
 title: "Workshop XYZ"
-
-sidebar:
-  title: "Inhalte"
-  style: "floating"
-  contents:
-    - text: "Abschnitt A"
-      href: "#a"
-    - text: "Abschnitt B"
-      href: "#b"
-
+sidebar: workshops
 toc: false
 ---
+
 ## Abschnitt A {#a}
 
 Etwas Testtext für Abschnitt A.
