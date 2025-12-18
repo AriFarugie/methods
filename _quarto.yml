@@ -19,13 +19,12 @@ website:
           - text: "Workshop 1 – Einführung in R"
             href: workshops/workshop1/index.qmd
           - text: "Testseite"
-            href: test.qmd
+            href: testing.qmd
 
 format:
   html:
     theme: darkly
     css:
       - style.css
-    toc: true
-    toc-location: left
+    toc: false
     toc-depth: 2
