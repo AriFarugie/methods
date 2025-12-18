@@ -1,9 +1,5 @@
 ---
 title: "Workshop XYZ"
-format:
-  html:
-    template: _templates/workshop.html
-    toc: false
 
 workshop_nav_title: "Inhalte"
 workshop_nav: |
