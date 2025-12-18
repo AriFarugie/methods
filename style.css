@@ -14,8 +14,6 @@ body {
   line-height: 1.6;
 }
 
-/* Links */
-
 a {
   color: #4fc3f7;
   text-decoration: none;
@@ -27,30 +25,21 @@ a:hover {
 
 /* Überschriften */
 
-h1, h2, h3 {
-  font-weight: 600;
-}
-
 h1 {
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-size: clamp(2.2rem, 3vw, 3rem);
 }
 
 h2 {
   font-size: clamp(1.4rem, 2.2vw, 2rem);
 }
 
-/* Navbar */
+/* Navbar Dark */
 
 .navbar {
   background-color: #111 !important;
   border-bottom: 1px solid #333;
 }
 
-.navbar .nav-link,
-.navbar .navbar-brand {
+.navbar .nav-link {
   color: #eaeaea !important;
-}
-
-.navbar .nav-link:hover {
-  color: #ffffff !important;
 }
