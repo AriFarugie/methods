@@ -1,50 +1,111 @@
-/* Workshop / Sidebar Styling (Quarto Sidebar) */
+/* =========================================================
+   WORKSHOP SIDEBAR LAYOUT (Quarto Sidebar)
+   ========================================================= */
 
-:root {
-  --workshop-max: 1200px;
+/* Sidebar Container */
+.sidebar {
+  background-color: #141414;
+  border-right: 1px solid #2a2a2a;
 }
 
-/* Inhalt insgesamt etwas breiter */
-#quarto-content {
-  max-width: var(--workshop-max);
+/* Sidebar Titel */
+.sidebar-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #aaaaaa;
+  margin-bottom: 1rem;
 }
 
-/* Sidebar dunkler + klare Trennung */
-.sidebar,
-#quarto-sidebar {
-  background: #141414;
-  border-right: 1px solid #333;
+/* Sidebar Navigation */
+.sidebar nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
-/* Sidebar-Titel */
-.sidebar-title,
-#quarto-sidebar .sidebar-title {
-  color: #eaeaea;
-  font-weight: 700;
+.sidebar nav li {
+  margin-bottom: 0.4rem;
 }
 
-/* Links in der Sidebar */
-.sidebar a,
-#quarto-sidebar a {
+.sidebar nav a {
   color: #4fc3f7;
   text-decoration: none;
+  font-size: 0.95rem;
 }
 
-.sidebar a:hover,
-#quarto-sidebar a:hover {
+.sidebar nav a:hover {
   color: #81d4fa;
   text-decoration: underline;
 }
 
-/* Aktiver Link */
-.sidebar .active > a,
-#quarto-sidebar .active > a {
+/* Aktiver Abschnitt */
+.sidebar nav a.active {
+  font-weight: 600;
   color: #ffffff;
 }
 
-/* Optional: Überschriften im Content etwas “workshopiger” */
-#quarto-document-content h2 {
+/* =========================================================
+   CONTENT AREA
+   ========================================================= */
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Workshop Überschrift */
+.content > h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Abschnittsüberschriften */
+.content h2 {
   margin-top: 3rem;
-  border-bottom: 1px solid #444;
   padding-bottom: 0.3rem;
+  border-bottom: 1px solid #333;
+}
+
+.content h3 {
+  margin-top: 2rem;
+}
+
+/* Text */
+.content p {
+  max-width: 75ch;
+}
+
+/* =========================================================
+   LAYOUT FIXES
+   ========================================================= */
+
+/* Kein rechter Leerraum */
+#quarto-margin-sidebar {
+  display: none !important;
+}
+
+/* Sidebar + Content sauber nebeneinander */
+.page-layout-full .page-columns {
+  grid-template-columns: minmax(220px, 260px) 1fr !important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .page-layout-full .page-columns {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .content {
+    padding-top: 1.5rem;
+  }
 }
