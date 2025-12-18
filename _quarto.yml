@@ -21,23 +21,11 @@ website:
           - text: "Testseite"
             href: test.qmd
 
-  # Sidebar-Konfiguration für Workshop-Seiten
-  sidebar:
-    - id: workshops
-      title: "Workshops"
-      style: floating
-      contents:
-        - text: "Workshops Überblick"
-          href: workshops/overview.qmd
-        - text: "Workshop 1 – Einführung in R"
-          href: workshops/workshop1/index.qmd
-        - text: "Testseite (Workshop XYZ)"
-          href: test.qmd
-
 format:
   html:
     theme: darkly
     css:
       - style.css
     toc: true
+    toc-location: left
     toc-depth: 2
