@@ -1,13 +1,25 @@
 ---
 title: "Workshop XYZ"
-# kein sidebar-Eintrag mehr
-toc: true
-toc-location: left
+format:
+  html:
+    page-layout: full
+    toc: false
+
+sidebar:
+  title: "Inhalte"
+  style: "docked"
+  contents:
+    - text: "Abschnitt A"
+      href: "#a"
+    - text: "Abschnitt B"
+      href: "#b"
 ---
 
 ## Abschnitt A {#a}
 
 Etwas Testtext für Abschnitt A.
+
+---
 
 ## Abschnitt B {#b}
 
