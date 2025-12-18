@@ -151,62 +151,89 @@
     "href": "workshops/workshop1/index.html",
     "title": "Workshop 1 – Einführung in R & RStudio",
     "section": "",
-    "text": "Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nEs werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.\nZiel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.\nBenötigte Vorkenntnisse: keine."
+    "text": "Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nEs werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.\nZiel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.\nBenötigte Vorkenntnisse: keine.",
+    "crumbs": [
+      "Workshop 1 – Einführung in R"
+    ]
   },
   {
     "objectID": "workshops/workshop1/index.html#kurzbeschreibung",
     "href": "workshops/workshop1/index.html#kurzbeschreibung",
     "title": "Workshop 1 – Einführung in R & RStudio",
     "section": "",
-    "text": "Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nEs werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.\nZiel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.\nBenötigte Vorkenntnisse: keine."
+    "text": "Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nEs werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.\nZiel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.\nBenötigte Vorkenntnisse: keine.",
+    "crumbs": [
+      "Workshop 1 – Einführung in R"
+    ]
   },
   {
     "objectID": "workshops/workshop1/index.html#lernziele",
     "href": "workshops/workshop1/index.html#lernziele",
     "title": "Workshop 1 – Einführung in R & RStudio",
     "section": "Lernziele",
-    "text": "Lernziele\nNach dem Workshop können Teilnehmende …\n\ndie RStudio-Oberfläche sicher bedienen\n\ngrundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)\n\nDaten aus CSV, Excel und SPSS importieren\n\nVariablen auswählen, filtern und umkodieren\n\nfehlende Werte identifizieren und behandeln\n\nDatensätze zusammenführen (Joins)\n\nSkripte und Projekte reproduzierbar strukturieren\n\neinen kleinen Datenbereinigungs-Workflow eigenständig umsetzen"
+    "text": "Lernziele\nNach dem Workshop können Teilnehmende …\n\ndie RStudio-Oberfläche sicher bedienen\n\ngrundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)\n\nDaten aus CSV, Excel und SPSS importieren\n\nVariablen auswählen, filtern und umkodieren\n\nfehlende Werte identifizieren und behandeln\n\nDatensätze zusammenführen (Joins)\n\nSkripte und Projekte reproduzierbar strukturieren\n\neinen kleinen Datenbereinigungs-Workflow eigenständig umsetzen",
+    "crumbs": [
+      "Workshop 1 – Einführung in R"
+    ]
   },
   {
     "objectID": "workshops/workshop1/index.html#ablauf-agenda",
     "href": "workshops/workshop1/index.html#ablauf-agenda",
     "title": "Workshop 1 – Einführung in R & RStudio",
     "section": "Ablauf / Agenda",
-    "text": "Ablauf / Agenda\n\nTag 1\n\nAnkommen & Setup\n\nEinführung in R & RStudio\n\nObjekte & Datentypen\n\nDaten importieren\n\nDatenaufbereitung\n\n\n\nTag 2\n\nRecap\n\nFehlende Werte\n\nUmkodieren\n\nJoins\n\nReproduzierbare Workflows\n\nMini-Projekt"
+    "text": "Ablauf / Agenda\n\nTag 1\n\nAnkommen & Setup\n\nEinführung in R & RStudio\n\nObjekte & Datentypen\n\nDaten importieren\n\nDatenaufbereitung\n\n\n\nTag 2\n\nRecap\n\nFehlende Werte\n\nUmkodieren\n\nJoins\n\nReproduzierbare Workflows\n\nMini-Projekt",
+    "crumbs": [
+      "Workshop 1 – Einführung in R"
+    ]
   },
   {
     "objectID": "workshops/workshop1/index.html#materialien",
     "href": "workshops/workshop1/index.html#materialien",
     "title": "Workshop 1 – Einführung in R & RStudio",
     "section": "Materialien",
-    "text": "Materialien\n➡️ Übungsdatensatz herunterladen\nWeitere Materialien folgen."
+    "text": "Materialien\n➡️ Übungsdatensatz herunterladen\nWeitere Materialien folgen.",
+    "crumbs": [
+      "Workshop 1 – Einführung in R"
+    ]
   },
   {
     "objectID": "workshops/overview.html",
     "href": "workshops/overview.html",
     "title": "Überblick",
     "section": "",
-    "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite."
+    "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite.",
+    "crumbs": [
+      "Workshops Überblick"
+    ]
   },
   {
     "objectID": "test.html",
     "href": "test.html",
     "title": "Workshop XYZ",
     "section": "",
-    "text": "Etwas Testtext für Abschnitt A."
+    "text": "Etwas Testtext für Abschnitt A.",
+    "crumbs": [
+      "Testseite (Workshop XYZ)"
+    ]
   },
   {
     "objectID": "test.html#a",
     "href": "test.html#a",
     "title": "Workshop XYZ",
     "section": "",
-    "text": "Etwas Testtext für Abschnitt A."
+    "text": "Etwas Testtext für Abschnitt A.",
+    "crumbs": [
+      "Testseite (Workshop XYZ)"
+    ]
   },
   {
     "objectID": "test.html#b",
     "href": "test.html#b",
     "title": "Workshop XYZ",
     "section": "Abschnitt B",
-    "text": "Abschnitt B\nEtwas Testtext für Abschnitt B."
+    "text": "Abschnitt B\nEtwas Testtext für Abschnitt B.",
+    "crumbs": [
+      "Testseite (Workshop XYZ)"
+    ]
   }
 ]
