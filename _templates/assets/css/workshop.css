@@ -1,8 +1,6 @@
 /* ============================================================
-   WORKSHOP LAYOUT (Layout-Datei: _layouts/workshop.html)
+   WORKSHOP LAYOUT (Template: _templates/workshop.html)
    ============================================================ */
-
-/* Titelbereich */
 
 .workshop-title {
   max-width: 1200px;
@@ -21,13 +19,10 @@
   color: #aaaaaa;
 }
 
-/* ============================================================
-   GRID
-   ============================================================ */
-
+/* GRID */
 .workshop-layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr); /* Navi + Inhalt */
+  grid-template-columns: 260px minmax(0, 1fr);
   gap: 3rem;
   width: 100%;
   max-width: 1200px;
@@ -35,8 +30,7 @@
   padding: 2rem 1.5rem 3rem;
 }
 
-/* Navi links */
-
+/* NAV */
 .workshop-nav {
   position: sticky;
   top: 6rem;
@@ -77,8 +71,7 @@
   text-decoration: underline;
 }
 
-/* Content rechts */
-
+/* CONTENT */
 .workshop-content {
   max-width: 100%;
   min-width: 0;
@@ -94,10 +87,7 @@
   margin-top: 2rem;
 }
 
-/* ============================================================
-   MOBILE
-   ============================================================ */
-
+/* MOBILE */
 @media (max-width: 900px) {
   .workshop-layout {
     grid-template-columns: 1fr;
