@@ -1,13 +1,10 @@
-/* ======================================
-   QUARTO SIDEBAR – WORKSHOP STYLE
-====================================== */
-
-/* Sidebar */
+/* =========================
+   WORKSHOP SIDEBAR
+========================= */
 
 .sidebar {
-  background-color: #141414;
+  background-color: #181818;
   border-right: 1px solid #2a2a2a;
-  padding-top: 1.5rem;
 }
 
 .sidebar-title {
@@ -18,52 +15,26 @@
   margin-bottom: 1rem;
 }
 
-/* Sidebar links */
-
-.sidebar nav ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.sidebar nav li {
-  margin-bottom: 0.4rem;
-}
-
 .sidebar nav a {
   color: #4fc3f7;
   font-size: 0.95rem;
 }
 
 .sidebar nav a.active {
-  font-weight: 600;
   color: #ffffff;
+  font-weight: 600;
 }
 
-/* Content */
+/* =========================
+   CONTENT
+========================= */
 
 .content {
   max-width: 900px;
-  margin: 0 auto;
-  padding-bottom: 3rem;
 }
 
 .content h2 {
   margin-top: 3rem;
   border-bottom: 1px solid #333;
   padding-bottom: 0.3rem;
-}
-
-/* Kein rechter Leerraum */
-
-#quarto-margin-sidebar {
-  display: none !important;
-}
-
-/* Mobile */
-
-@media (max-width: 900px) {
-  .sidebar {
-    border-right: none;
-    border-bottom: 1px solid #333;
-  }
 }
