@@ -35,6 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: clamp(2.0rem, 3vw, 2.8rem);
+  margin: 0 0 1.5rem 0;
 }
 
 h2 {
@@ -88,6 +89,17 @@ pre, code {
 }
 
 /* =========================
+   HAUPTCONTAINER
+========================= */
+
+.main-container,
+.page-columns {
+  max-width: 100% !important;
+  width: 100%;
+  padding: 0 !important;
+}
+
+/* =========================
    WORKSHOP-LAYOUT
    (Zwei-Spalten: Nav links, Content rechts)
 ========================= */
@@ -96,9 +108,16 @@ pre, code {
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 2rem;
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 2rem 1.5rem;
+  width: 100%;
+  padding: 2rem 2rem;
+  margin: 0;
+}
+
+/* Titel über beide Spalten */
+
+.workshop-layout > h1 {
+  grid-column: 1 / -1;
+  margin: 0 0 1rem 0;
 }
 
 /* Workshop-Navigation (linke Spalte) */
@@ -154,7 +173,7 @@ pre, code {
 }
 
 .workshop-content h2 {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #333;
@@ -162,6 +181,12 @@ pre, code {
 
 .workshop-content h2:first-of-type {
   margin-top: 0;
+}
+
+.workshop-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
 }
 
 .workshop-content hr {
@@ -175,6 +200,7 @@ pre, code {
 .workshop-content blockquote {
   border-left: 4px solid #4fc3f7;
   margin-left: 0;
+  margin-bottom: 1.5rem;
   padding-left: 1rem;
   color: #aaa;
   font-style: italic;
@@ -186,6 +212,7 @@ pre, code {
 .workshop-content ol {
   margin-left: 1.5rem;
   line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
 .workshop-content li {
@@ -225,7 +252,7 @@ pre, code {
 
 @media (max-width: 600px) {
   .workshop-layout {
-    padding: 1rem 0.5rem;
+    padding: 1rem;
   }
 
   .workshop-nav {
