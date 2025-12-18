@@ -1,16 +1,17 @@
 ---
 title: "Workshop XYZ"
 
-workshop_nav_title: "Inhalte"
-workshop_nav: |
-  <ul>
-    <li><a href="#a">Abschnitt A</a></li>
-    <li><a href="#b">Abschnitt B</a></li>
-  </ul>
+sidebar:
+  title: "Inhalte"
+  style: "floating"
+  contents:
+    - text: "Abschnitt A"
+      href: "#a"
+    - text: "Abschnitt B"
+      href: "#b"
+
+toc: false
 ---
-
-
-
 ## Abschnitt A {#a}
 
 Etwas Testtext für Abschnitt A.
