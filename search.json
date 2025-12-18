@@ -205,21 +205,21 @@
   {
     "objectID": "test.html",
     "href": "test.html",
-    "title": "Workshop XYZ",
+    "title": "Workshop Test",
     "section": "",
     "text": "Etwas Testtext für Abschnitt A."
   },
   {
     "objectID": "test.html#a",
     "href": "test.html#a",
-    "title": "Workshop XYZ",
+    "title": "Workshop Test",
     "section": "",
     "text": "Etwas Testtext für Abschnitt A."
   },
   {
     "objectID": "test.html#b",
     "href": "test.html#b",
-    "title": "Workshop XYZ",
+    "title": "Workshop Test",
     "section": "Abschnitt B",
     "text": "Abschnitt B\nEtwas Testtext für Abschnitt B."
   }
