@@ -16,39 +16,38 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cd884f2855776405ca61470c593c983e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark"></head><body class="fullcontent quarto-light">{% extends "html" %}
-
-{% block content %}
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">{{ title }}</h1></header>
-
-  {# Titelblock #}
-  {% if title %}
-  <header class="workshop-title">
-    
-    {% if subtitle %}
-    <p class="workshop-subtitle">{{ subtitle }}</p>
-    {% endif %}
+<link href="site_libs/bootstrap/bootstrap-cd884f2855776405ca61470c593c983e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark"></head><body class="fullcontent quarto-light"><header class="workshop-title">
+  
   </header>
-  {% endif %}
 
-  <div class="workshop-layout">
+<div class="workshop-layout">
 
-    <nav class="workshop-nav">
-      {% if meta.workshop_nav_title %}
-        <h2 class="anchored">{{ meta.workshop_nav_title }}</h2>
-      {% endif %}
+  <nav class="workshop-nav">
+        <h2>Inhalte</h2>
+    
+        <ul>
+        <li>
+        <a href="#a">Abschnitt A</a>
+        </li>
+        <li>
+        <a href="#b">Abschnitt B</a>
+        </li>
+        </ul>
+      </nav>
 
-      {% if meta.workshop_nav %}
-        {{ meta.workshop_nav | safe }}
-      {% endif %}
-    </nav>
+  <main class="workshop-content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Workshop XYZ</h1></header>
+    <section id="a" class="level2">
+    <h2 class="anchored" data-anchor-id="a">Abschnitt A</h2>
+    <p>Etwas Testtext für Abschnitt A.</p>
+    <hr>
+    </section>
+    <section id="b" class="level2">
+    <h2 class="anchored" data-anchor-id="b">Abschnitt B</h2>
+    <p>Etwas Testtext für Abschnitt B.</p>
+    
+    
+    </section>
+  </main>
 
-    <div class="workshop-content">
-      {{ super() }}
-    </div>
-
-  </div>
-
-</main>
-{% endblock %}
+</div>
 </body></html>

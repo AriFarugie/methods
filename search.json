@@ -189,10 +189,17 @@
     "text": "Auf dieser Seite gibt es eine Übersicht über alle Workshops.\n\nWorkshop 1: kurzer Teaser (Thema, Zielgruppe, Vorkenntnisse).\nWorkshop 2: …\nWorkshop 3: …\nWorkshop 4: …\n\nDie Detailseiten erreichst du über das Workshops-Dropdown im Menü oder direkt:\n\nWorkshop 1\nWorkshop 2\nWorkshop 3\nWorkshop 4\n\n\nHinweis für mich:\nHier reicht pro Workshop ein Absatz.\nDetaillierte Agenda, Lernziele, Materialien kommen auf die jeweilige Unterseite."
   },
   {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "{{ title }}",
-    "section": "",
-    "text": "{# Titelblock #}\n  {% if title %}\n  \n    \n    {% if subtitle %}\n    {{ subtitle }}\n    {% endif %}\n  \n  {% endif %}\n\n  \n\n    \n      {% if meta.workshop_nav_title %}\n        {{ meta.workshop_nav_title }}\n      {% endif %}\n\n      {% if meta.workshop_nav %}\n        {{ meta.workshop_nav | safe }}\n      {% endif %}\n    \n\n    \n      {{ super() }}"
+    "objectID": "test.html#a",
+    "href": "test.html#a",
+    "title": "Workshop XYZ",
+    "section": "Abschnitt A",
+    "text": "Abschnitt A\n    Etwas Testtext für Abschnitt A."
+  },
+  {
+    "objectID": "test.html#b",
+    "href": "test.html#b",
+    "title": "Workshop XYZ",
+    "section": "Abschnitt B",
+    "text": "Abschnitt B\n    Etwas Testtext für Abschnitt B."
   }
 ]
