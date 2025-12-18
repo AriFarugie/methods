@@ -15,6 +15,16 @@ website:
         menu:
           - text: "Workshops Überblick"
             href: workshops/overview.qmd
+          - text: "Einführung"
+            href: workshops/workshop1/index.qmd
+          - text: "Workshop 2"
+            href: workshops/workshop1/index.qmd
+          - text: "Workshop 3"
+            href: workshops/workshop1/index.qmd
+          - text: "Workshop 4"
+            href: workshops/workshop1/index.qmd
+            
+            
 
 format:
   html:
