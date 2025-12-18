@@ -3,6 +3,7 @@ project:
 
 website:
   title: "Methods"
+
   navbar:
     right:
       - text: "Startseite"
@@ -15,16 +16,12 @@ website:
         menu:
           - text: "Workshops Überblick"
             href: workshops/overview.qmd
-          - text: "Einführung"
+          - text: "Workshop 1 – Einführung in R"
             href: workshops/workshop1/index.qmd
-          - text: "Workshop 2"
-            href: workshops/workshop1/index.qmd
-          - text: "Workshop 3"
-            href: workshops/workshop1/index.qmd
-          - text: "Workshop 4"
-            href: workshops/workshop1/index.qmd
-            
-            
+
+  # 🔑 WICHTIG: Sidebar global erlauben
+  sidebar:
+    collapse-level: 1
 
 format:
   html:
