@@ -1,0 +1,50 @@
+/* Workshop / Sidebar Styling (Quarto Sidebar) */
+
+:root {
+  --workshop-max: 1200px;
+}
+
+/* Inhalt insgesamt etwas breiter */
+#quarto-content {
+  max-width: var(--workshop-max);
+}
+
+/* Sidebar dunkler + klare Trennung */
+.sidebar,
+#quarto-sidebar {
+  background: #141414;
+  border-right: 1px solid #333;
+}
+
+/* Sidebar-Titel */
+.sidebar-title,
+#quarto-sidebar .sidebar-title {
+  color: #eaeaea;
+  font-weight: 700;
+}
+
+/* Links in der Sidebar */
+.sidebar a,
+#quarto-sidebar a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+
+.sidebar a:hover,
+#quarto-sidebar a:hover {
+  color: #81d4fa;
+  text-decoration: underline;
+}
+
+/* Aktiver Link */
+.sidebar .active > a,
+#quarto-sidebar .active > a {
+  color: #ffffff;
+}
+
+/* Optional: Überschriften im Content etwas “workshopiger” */
+#quarto-document-content h2 {
+  margin-top: 3rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.3rem;
+}
