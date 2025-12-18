@@ -86,3 +86,39 @@ pre, code {
   font-size: 0.9rem;
   color: #aaaaaa;
 }
+
+/* =========================
+   LAYOUT-ANPASSUNGEN
+   Sidebar / TOC nach links
+========================= */
+
+/* Hauptcontainer über die volle Breite ziehen */
+.main-container,
+.page-columns {
+  max-width: 100% !important;
+}
+
+/* TOC-/Sidebar-Spalte direkt an linken Fensterrand */
+.sidebar.sidebar-navigation,
+#quarto-sidebar,
+.quarto-sidebar-tools {
+  margin-left: 0 !important;
+}
+
+/* Inhalt etwas einrücken, damit Text nicht am Rand klebt */
+.page-columns .content,
+.page-columns .content > main {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Optional: Breite der TOC-Spalte etwas erhöhen */
+.sidebar.sidebar-navigation {
+  width: 260px;
+}
+
+/* Sicherstellen, dass Content rechts von der Sidebar startet */
+.page-columns {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
