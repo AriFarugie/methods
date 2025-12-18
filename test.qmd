@@ -1,5 +1,5 @@
 ---
-title: "Workshop XYZ"
+title: "Workshop Test"
 
 sidebar:
   title: "Inhalte"
