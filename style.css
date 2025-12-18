@@ -35,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: clamp(2.0rem, 3vw, 2.8rem);
-  margin: 0;
 }
 
 h2 {
@@ -89,19 +88,7 @@ pre, code {
 }
 
 /* =========================
-   HAUPTCONTAINER
-========================= */
-
-.main-container,
-.page-columns {
-  max-width: 100% !important;
-  width: 100%;
-  padding: 0 !important;
-}
-
-/* =========================
    WORKSHOP-LAYOUT
-   (Navigation links, Titel + Content rechts)
 ========================= */
 
 .workshop-layout {
@@ -109,11 +96,12 @@ pre, code {
   grid-template-columns: 260px 1fr;
   gap: 2rem;
   width: 100%;
+  max-width: 1200px;
   padding: 2rem;
-  margin: 0;
+  margin: 0 auto;
 }
 
-/* Workshop-Navigation (linke Spalte, sticky) */
+/* Workshop-Navigation (linke Spalte) */
 
 .workshop-nav {
   position: sticky;
@@ -163,28 +151,6 @@ pre, code {
 
 .workshop-content {
   min-width: 0;
-}
-
-/* Titel in Content-Bereich */
-
-.workshop-layout > h1 {
-  grid-column: 2;
-  grid-row: 1;
-  margin: 0 0 1.5rem 0;
-}
-
-/* Nav muss 2 Zeilen span */
-
-.workshop-layout > .workshop-nav {
-  grid-column: 1;
-  grid-row: 1 / 3;
-}
-
-/* Content startet unter Titel */
-
-.workshop-layout > .workshop-content {
-  grid-column: 2;
-  grid-row: 2;
 }
 
 .workshop-content h2 {
@@ -252,21 +218,6 @@ pre, code {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1.5rem 1rem;
-  }
-
-  .workshop-layout > .workshop-nav {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .workshop-layout > h1 {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .workshop-layout > .workshop-content {
-    grid-column: 1;
-    grid-row: auto;
   }
 
   .workshop-nav {
