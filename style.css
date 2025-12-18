@@ -88,37 +88,155 @@ pre, code {
 }
 
 /* =========================
-   LAYOUT-ANPASSUNGEN
-   Sidebar / TOC nach links
+   WORKSHOP-LAYOUT
+   (Zwei-Spalten: Nav links, Content rechts)
 ========================= */
 
-/* Hauptcontainer über die volle Breite ziehen */
-.main-container,
-.page-columns {
-  max-width: 100% !important;
-}
-
-/* TOC-/Sidebar-Spalte direkt an linken Fensterrand */
-.sidebar.sidebar-navigation,
-#quarto-sidebar,
-.quarto-sidebar-tools {
-  margin-left: 0 !important;
-}
-
-/* Inhalt etwas einrücken, damit Text nicht am Rand klebt */
-.page-columns .content,
-.page-columns .content > main {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-/* Optional: Breite der TOC-Spalte etwas erhöhen */
-.sidebar.sidebar-navigation {
-  width: 260px;
-}
-
-/* Sicherstellen, dass Content rechts von der Sidebar startet */
-.page-columns {
+.workshop-layout {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem 1.5rem;
+}
+
+/* Workshop-Navigation (linke Spalte) */
+
+.workshop-nav {
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #252525;
+  padding: 1.5rem 1rem;
+}
+
+.workshop-nav h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #4fc3f7;
+  border-bottom: 2px solid #4fc3f7;
+  padding-bottom: 0.5rem;
+}
+
+.workshop-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.workshop-nav li {
+  margin-bottom: 0.75rem;
+}
+
+.workshop-nav a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #4fc3f7;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.workshop-nav a:hover {
+  background-color: #333;
+  text-decoration: none;
+  color: #ffffff;
+  padding-left: 1rem;
+}
+
+/* Workshop-Content (rechte Spalte) */
+
+.workshop-content {
+  min-width: 0;
+}
+
+.workshop-content h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.workshop-content h2:first-of-type {
+  margin-top: 0;
+}
+
+.workshop-content hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 2rem 0;
+}
+
+/* Blockquote für Hinweise */
+
+.workshop-content blockquote {
+  border-left: 4px solid #4fc3f7;
+  margin-left: 0;
+  padding-left: 1rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Listen in Content */
+
+.workshop-content ul,
+.workshop-content ol {
+  margin-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.workshop-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links in Content */
+
+.workshop-content a {
+  color: #4fc3f7;
+  font-weight: 500;
+}
+
+.workshop-content a:hover {
+  color: #ffffff;
+}
+
+/* Responsive: Auf kleineren Bildschirmen stapeln */
+
+@media (max-width: 900px) {
+  .workshop-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .workshop-nav {
+    position: relative;
+    top: auto;
+    border-bottom: 2px solid #4fc3f7;
+    border-radius: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Noch kleinere Bildschirme */
+
+@media (max-width: 600px) {
+  .workshop-layout {
+    padding: 1rem 0.5rem;
+  }
+
+  .workshop-nav {
+    padding: 1rem 0.75rem;
+  }
+
+  .workshop-nav h2 {
+    font-size: 1rem;
+  }
+
+  .workshop-content h2 {
+    font-size: 1.3rem;
+  }
 }
