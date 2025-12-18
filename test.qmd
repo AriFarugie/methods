@@ -1,6 +1,5 @@
 ---
 title: "Workshop XYZ"
-page-layout: full
 
 sidebar:
   title: "Inhalte"
@@ -11,6 +10,7 @@ sidebar:
     - text: "Abschnitt B"
       href: "#b"
 ---
+
 ## Abschnitt A {#a}
 
 Etwas Testtext für Abschnitt A.
