@@ -213,6 +213,7 @@
     "section": "",
     "text": "Etwas Testtext für Abschnitt A.",
     "crumbs": [
+      "Startseite",
       "Testseite (Workshop XYZ)"
     ]
   },
@@ -223,6 +224,7 @@
     "section": "",
     "text": "Etwas Testtext für Abschnitt A.",
     "crumbs": [
+      "Startseite",
       "Testseite (Workshop XYZ)"
     ]
   },
@@ -233,6 +235,7 @@
     "section": "Abschnitt B",
     "text": "Abschnitt B\nEtwas Testtext für Abschnitt B.",
     "crumbs": [
+      "Startseite",
       "Testseite (Workshop XYZ)"
     ]
   }
