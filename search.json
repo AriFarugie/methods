@@ -32,35 +32,14 @@
     "href": "testing.html",
     "title": "Workshop 1 – Einführung in R & RStudio",
     "section": "",
-    "text": "Kurzbeschreibung\n\n\nLernziele\n\n\nAblauf / Agenda\n\n\nMaterialien\n\n\n➡️ Zum Workshop (Inhalte)\n\n\n\n\n\n\nDer zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nEs werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.\nZiel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.\nBenötigte Vorkenntnisse: keine.\n\n\n\n\nNach dem Workshop können Teilnehmende …\n\ndie RStudio-Oberfläche sicher bedienen\n\ngrundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)\n\nDaten aus CSV, Excel und SPSS importieren\n\nVariablen auswählen, filtern und umkodieren\n\nfehlende Werte identifizieren und behandeln\n\nDatensätze zusammenführen (Joins)\n\nSkripte und Projekte reproduzierbar strukturieren\n\neinen kleinen Datenbereinigungs-Workflow eigenständig umsetzen\n\n(Platzhalter: ggf. später ergänzen, z. B. einfache Visualisierungen mit ggplot2.)\n\n\n\n\n\n\n\nAnkommen & Setup (R, RStudio, Projektordner)\n\nEinführung in R & RStudio\n\nObjekte, Funktionen & grundlegende Datentypen\n\nDaten importieren (CSV, Excel, SPSS)\n\nErste Schritte der Datenaufbereitung (select, filter, mutate)\n\n(Optional: genaue Zeitangaben pro Block können später ergänzt werden.)\n\n\n\n\nRecap & Fragen\n\nFehlende Werte & Datenbereinigung\n\nVariablen transformieren & umkodieren\n\nDatensätze verbinden (left_join etc.)\n\nReproduzierbare Workflows (Skripte, Projektstruktur)\n\nMini-Projekt: kleiner vollständiger Reinigungs-Workflow\n\n\n\n\n\n\n\n\n➡️ Übungsdatensatz herunterladen\n(Der Link funktioniert, sobald die Datei hochgeladen wurde.)\n\nHinweis: Datei bitte im Repo unter\nassets/data/workshop1-dataset.csv\nablegen.\n\n\n\n\n\nFolien (PDF): folgt\n\nR-Skripte zum Workshop: folgen\n\nProjektvorlage (.Rproj): folgt\n\nMusterlösung zum Mini-Projekt: folgt\n\n\n\n\n\nLink zu weiterführenden Shiny-Apps\n\nBeispielcode für Abschlussarbeiten\n\nCheckliste „Datenaufbereitung in der Abschlussarbeit“\n\nLiteraturhinweise"
+    "text": "Kurzbeschreibung\n\n\nLernziele\n\n\nAblauf / Agenda\n\n\nMaterialien\n\n\n➡️ Zum Workshop (Inhalte)\n\n\n\n\n\nDer zweitägige Workshop …\n[Rest des Contents]"
   },
   {
     "objectID": "testing.html#kurzbeschreibung",
     "href": "testing.html#kurzbeschreibung",
     "title": "Workshop 1 – Einführung in R & RStudio",
     "section": "",
-    "text": "Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nEs werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.\nZiel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.\nBenötigte Vorkenntnisse: keine."
-  },
-  {
-    "objectID": "testing.html#lernziele",
-    "href": "testing.html#lernziele",
-    "title": "Workshop 1 – Einführung in R & RStudio",
-    "section": "",
-    "text": "Nach dem Workshop können Teilnehmende …\n\ndie RStudio-Oberfläche sicher bedienen\n\ngrundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)\n\nDaten aus CSV, Excel und SPSS importieren\n\nVariablen auswählen, filtern und umkodieren\n\nfehlende Werte identifizieren und behandeln\n\nDatensätze zusammenführen (Joins)\n\nSkripte und Projekte reproduzierbar strukturieren\n\neinen kleinen Datenbereinigungs-Workflow eigenständig umsetzen\n\n(Platzhalter: ggf. später ergänzen, z. B. einfache Visualisierungen mit ggplot2.)"
-  },
-  {
-    "objectID": "testing.html#ablauf-agenda",
-    "href": "testing.html#ablauf-agenda",
-    "title": "Workshop 1 – Einführung in R & RStudio",
-    "section": "",
-    "text": "Ankommen & Setup (R, RStudio, Projektordner)\n\nEinführung in R & RStudio\n\nObjekte, Funktionen & grundlegende Datentypen\n\nDaten importieren (CSV, Excel, SPSS)\n\nErste Schritte der Datenaufbereitung (select, filter, mutate)\n\n(Optional: genaue Zeitangaben pro Block können später ergänzt werden.)\n\n\n\n\nRecap & Fragen\n\nFehlende Werte & Datenbereinigung\n\nVariablen transformieren & umkodieren\n\nDatensätze verbinden (left_join etc.)\n\nReproduzierbare Workflows (Skripte, Projektstruktur)\n\nMini-Projekt: kleiner vollständiger Reinigungs-Workflow"
-  },
-  {
-    "objectID": "testing.html#materialien",
-    "href": "testing.html#materialien",
-    "title": "Workshop 1 – Einführung in R & RStudio",
-    "section": "",
-    "text": "➡️ Übungsdatensatz herunterladen\n(Der Link funktioniert, sobald die Datei hochgeladen wurde.)\n\nHinweis: Datei bitte im Repo unter\nassets/data/workshop1-dataset.csv\nablegen.\n\n\n\n\n\nFolien (PDF): folgt\n\nR-Skripte zum Workshop: folgen\n\nProjektvorlage (.Rproj): folgt\n\nMusterlösung zum Mini-Projekt: folgt\n\n\n\n\n\nLink zu weiterführenden Shiny-Apps\n\nBeispielcode für Abschlussarbeiten\n\nCheckliste „Datenaufbereitung in der Abschlussarbeit“\n\nLiteraturhinweise"
+    "text": "Der zweitägige Workshop …\n[Rest des Contents]"
   },
   {
     "objectID": "workshops/overview.html",
