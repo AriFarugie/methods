@@ -21,31 +21,45 @@
     "text": "Abschnitt B\nDas ist Abschnitt B."
   },
   {
+    "objectID": "test.html#c",
+    "href": "test.html#c",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt C",
+    "text": "Abschnitt C\nDas ist Abschnitt C."
+  },
+  {
+    "objectID": "test.html#D",
+    "href": "test.html#D",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt D",
+    "text": "Abschnitt D\nDas ist Abschnitt D."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome",
+    "title": "Home",
     "section": "",
-    "text": "Willkommen auf meiner Workshop-Seite!\nHier findest du Materialien, Unterlagen, Übungen und Infos zu meinen Methoden-Workshops."
+    "text": "Home\nWenn du oben eine Navbar mit Home und Test siehst, funktioniert die Quarto-Website korrekt."
   },
   {
-    "objectID": "index.html#aktuelle-workshops",
-    "href": "index.html#aktuelle-workshops",
-    "title": "Welcome",
-    "section": "🔍 Aktuelle Workshops",
-    "text": "🔍 Aktuelle Workshops\n\nWorkshop 1 – Einführung in R & RStudio\nWorkshop 2 – Datenvisualisierung mit ggplot2\nWorkshop 3 – Einführung in qualitative Methoden"
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Über mich",
+    "section": "",
+    "text": "Hallo! Ich bin ein Workshop-Leiter für Methoden in der Forschung.\nDiese Website enthält Materialien und Informationen zu meinen Workshops.\n\n\nIch habe Erfahrung in quantitativen und qualitativen Methoden, insbesondere mit R und Datenanalyse.\n\n\n\n\nEinführung in R\nDatenvisualisierung\nQualitative Methoden\n\nBei Interesse, kontaktiere mich!"
   },
   {
-    "objectID": "index.html#materialien",
-    "href": "index.html#materialien",
-    "title": "Welcome",
-    "section": "📚 Materialien",
-    "text": "📚 Materialien\nDie Materialien werden schrittweise ergänzt.\nFalls du an einem bestimmten Workshop teilnimmst, bekommst du die Zugangsinformationen direkt von mir."
+    "objectID": "about.html#hintergrund",
+    "href": "about.html#hintergrund",
+    "title": "Über mich",
+    "section": "",
+    "text": "Ich habe Erfahrung in quantitativen und qualitativen Methoden, insbesondere mit R und Datenanalyse."
   },
   {
-    "objectID": "index.html#kontakt",
-    "href": "index.html#kontakt",
-    "title": "Welcome",
-    "section": "📬 Kontakt",
-    "text": "📬 Kontakt\nBei Fragen erreichst du mich jederzeit unter:\narieja.farugie@… (einfügen)"
+    "objectID": "about.html#workshops",
+    "href": "about.html#workshops",
+    "title": "Über mich",
+    "section": "",
+    "text": "Einführung in R\nDatenvisualisierung\nQualitative Methoden\n\nBei Interesse, kontaktiere mich!"
   }
 ]
