@@ -43,7 +43,7 @@ PLATZHALTER
 #### Übung 1 – R als Taschenrechner
 
 - Berechne: `5^2 + 3`.  
-- Was ergibt `sqrt(144)`?  
+- Was ergibt `sqrt(144)*75`?  
 - Führe die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus.
 :::
 

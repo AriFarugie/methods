@@ -84,7 +84,7 @@
     "href": "workshops/ws1/day1.html#r-gui---erste-ansicht",
     "title": "Einführung in R & RStudio – Tag 1",
     "section": "R GUI - erste Ansicht",
-    "text": "R GUI - erste Ansicht\nSchauen wir uns zunächst die R Oberfläche (ohne RStudio) an.\n\n\n\n\n\n\n\nWas sehen wir hier?\n\nLinkes Bild\n\nDie “normale” R Oberfläche\n\nSie besteht zunächst nur aus einer R Console\n\n\nRechtes Bild\n\nDie R Console\n\nHier werden Befehle direkt eingegeben\nErgebnisse erscheinen sofort darunter\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nHinweis\nAlles, was du in die Konsole eingibst, wird sofort von R ausgeführt.\nDas Ergebnis siehst du direkt unter der eingegebenen Zeile.\nBeispiel - gib 13ein - gib a ein - gib 13+15\n\n\n\n\n\n\nCaution\n\n\n\nABER\nWir brauchen R GUI nicht, sondern nutzen RStudio!",
+    "text": "R GUI - erste Ansicht\nSchauen wir uns zunächst die R Oberfläche (ohne RStudio) an.\n\n\n\n\n\n\n\nWas sehen wir hier?\n\nLinkes Bild\n\nDie “normale” R Oberfläche\n\nSie besteht zunächst nur aus einer R Console\n\n\nRechtes Bild\n\nDie R Console\n\nHier werden Befehle direkt eingegeben\nErgebnisse erscheinen sofort darunter\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nHinweis\nAlles, was du in die Konsole eingibst, wird sofort von R ausgeführt.\nDas Ergebnis siehst du direkt unter der eingegebenen Zeile.\nBeispiel\n\ngib 13ein\ngib a ein\ngib 13+15\n\n\n\n\n\n\n\nCaution\n\n\n\nABER\nWir brauchen R GUI nicht, sondern nutzen RStudio!",
     "crumbs": [
       "zum Workshop-Inhalt"
     ]
@@ -94,7 +94,27 @@
     "href": "workshops/ws1/day1.html#rstudio---unser-cockpit",
     "title": "Einführung in R & RStudio – Tag 1",
     "section": "RStudio - Unser Cockpit 🎛️",
-    "text": "RStudio - Unser Cockpit 🎛️\nSchauen wir uns nun die Oberfläche von RStudio an. Startet einfach RStudio (nicht R GUI!). Ihr müsst nun das folgende Bild sehen:\n\nWir schauen uns nun die Menü-Leiste von RStudio an:\n\nOrange – die Menü-Leiste\nIn der Menü-Leiste findest du alle wichtigen Funktionen von RStudio übersichtlich nach Themen sortiert. Hier kannst du zum Beispiel Dateien öffnen und speichern, Einstellungen ändern, Code ausführen oder Hilfe aufrufen. Das Aussehen deines RStudios kannst du auch hier anpassen!\nGrün – die Schnellzugriff-Leiste\nDie Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole. Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Code ausführen, ohne durch Menüs zu klicken.",
+    "text": "RStudio - Unser Cockpit 🎛️\nSchauen wir uns nun die Oberfläche von RStudio an. Startet einfach RStudio (nicht R GUI!). Ihr müsst nun das folgende Bild sehen:\n\nWir schauen uns nun die Menü-Leiste von RStudio an:\n\nOrange – die Menü-Leiste\nIn der Menü-Leiste findest du alle wichtigen Funktionen von RStudio übersichtlich nach Themen sortiert. Hier kannst du zum Beispiel Dateien öffnen und speichern, Einstellungen ändern, Codes ausführen oder Hilfe aufrufen. Das Aussehen deines RStudios kannst du auch hier anpassen!\nGrün – die Schnellzugriff-Leiste\nDie Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole. Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Codes ausführen, ohne durch Menüs zu klicken.",
+    "crumbs": [
+      "zum Workshop-Inhalt"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day1.html#die-vier-bereiche-von-rstudio",
+    "href": "workshops/ws1/day1.html#die-vier-bereiche-von-rstudio",
+    "title": "Einführung in R & RStudio – Tag 1",
+    "section": "Die vier Bereiche von RStudio",
+    "text": "Die vier Bereiche von RStudio\nRStudio ist in vier Arbeitsbereiche (Panes/Paneele) aufgeteilt. Jeder Bereich hat eine eigene Aufgabe. Aber jetzt gerade siehst du nur drei Bereiche. Ich zeige dir jetzt erstmal, wie du die vier Bereiche bekommst!\n\n\n\n\n\n\nNote\n\n\n\nHierfür gehst du zunächst in die Schnellzugriffs-Leiste und klickst auf das Symbol ganz links, das weiße Blatt mit dem Plus.\n\nAnschließend öffnet sich ein Drop-Down und du kannst jetzt schon sehen, was du alles mit RStudio machen kannst.\n\nWir wollen aber ein neues **R Script erstellen**, daher klicken wir auch da drauf!\n\n\n\n\n\n\nTip\n\n\n\nÜbrigens diese Workshopseite wurde komplett mit RStudio und Quarto Markdowns erstellt.\n\n\n\n\nJetzt sollte dein RStudio so aussehen:\n\n\n🔵 Skript-Editor (oben links)\n\nHier schreibst du deinen Code in Skripten.\n\nCodes werden nicht sofort ausgeführt\ndu kannst ihn speichern, verändern und wiederverwenden\nideal für sauberes, nachvollziehbares Arbeiten\n\n\n\n\n\n\n\nNote\n\n\n\n👉 Merke:\nAlles Wichtige gehört ins Skript, nicht nur in die Konsole.\n\n\n\n\n⚫ Konsole (unten links)\n\nDie Konsole kennen wir im Grunde schon. Wie du vielleicht schon erkannt hast, ist es die selbe Konsole wie bei R GUI.\n\nhier führt R Befehle aus\nErgebnisse erscheinen direkt darunter\ngut zum Ausprobieren und Testen\n\n👉 Code aus dem Skript kann mit Run oder Strg + Enter ausgeführt werden.\n\n\n🟣 Environment & History (oben rechts)\n\nIm Environment siehst du:\n\nalle Objekte, die du erstellt hast\n\nB. Variablen, Daten, Ergebnisse\n\n\nIn der History findest du:\n\nfrühere Befehle, die du eingegeben hast\n\n👉 So behältst du den Überblick, was gerade „im Speicher“ liegt.\n\n\n🟢 Files, Plots, Packages, Help (unten rechts)\n\nDieser Bereich zeigt dir:\n\nFiles: deine Dateien und Ordner\nPlots: Grafiken, die du erzeugst\nPackages: installierte Erweiterungen\nHelp: Hilfeseiten zu Funktionen\n\n👉 Hier findest du fast alles, was R zusätzlich ausgibt und wo es gespeichert ist.\n\n\n\n\n\n\nImportant\n\n\n\nIm nächsten Abschnitt legen wir unser erstes Projekt an!",
+    "crumbs": [
+      "zum Workshop-Inhalt"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day1.html#rstudio-als-taschenrechner",
+    "href": "workshops/ws1/day1.html#rstudio-als-taschenrechner",
+    "title": "Einführung in R & RStudio – Tag 1",
+    "section": "RStudio als Taschenrechner",
+    "text": "RStudio als Taschenrechner\nZum Einstieg kannst du RStudio wie einen Taschenrechner benutzen.\nDu gibst einen Befehl ein – R rechnet – und gibt das Ergebnis zurück. So lernst du schnell:\n\nwie Befehle aufgebaut sind\nwie R mit Zahlen umgeht\ndass R immer auf Eingaben reagiert\n\n\n2 + 2\n\n[1] 4\n\n10 / 3\n\n[1] 3.333333\n\nsqrt(49)\n\n[1] 7\n\n\n\n\n\n\n\n\nWarningWarum ins Skript schreiben?\n\n\n\n\n\nBefehle, die du nur in der Konsole eingibst, sind schnell wieder weg –\ndu musst später mühsam hochscrollen, um sie zu finden.\nSchreibst du deine Rechnungen in ein R Script, bleiben sie erhalten:\n\ndu kannst sie jederzeit wieder ausführen\ndu behältst den Überblick\ndeine Arbeit ist nachvollziehbar und reproduzierbar\n\n\n\n\n\n\n\n\n\n\nTipÜbung 1 – R als Taschenrechner\n\n\n\n\nBerechne: 5^2 + 3.\n\nWas ergibt sqrt(144)*75?\n\nFühre die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus.",
     "crumbs": [
       "zum Workshop-Inhalt"
     ]
