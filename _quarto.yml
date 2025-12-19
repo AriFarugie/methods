@@ -17,9 +17,9 @@ website:
       style: docked
       contents:
         - text: "Abschnitt A"
-          href: "#a"
+          href: "test.qmd#a"
         - text: "Abschnitt B"
-          href: "#b"
+          href: "test.qmd#b"
 
 format:
   html:
