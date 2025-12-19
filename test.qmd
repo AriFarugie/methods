@@ -1,0 +1,21 @@
+---
+title: "Test – Sidebar Proof"
+
+sidebar:
+  title: "Inhalte"
+  style: "docked"
+  contents:
+    - text: "Abschnitt A"
+      href: "#a"
+    - text: "Abschnitt B"
+      href: "#b"
+---
+## Abschnitt A {#a}
+
+Das ist Abschnitt A.
+
+---
+
+## Abschnitt B {#b}
+
+Das ist Abschnitt B.
