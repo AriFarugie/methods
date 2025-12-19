@@ -4,27 +4,7 @@ project:
 website:
   title: "Methods"
 
-  navbar:
-    right:
-      - text: "Startseite"
-        href: index.qmd
-      - text: "Über mich"
-        href: ueber-mich.qmd
-      - text: "Materialien"
-        href: materialien.qmd
-      - text: "Workshops"
-        menu:
-          - text: "Workshops Überblick"
-            href: workshops/overview.qmd
-
-  # 🔴 DAS ist der Schalter für hybride Navigation
-  sidebar:
-    collapse-level: 2
-
 format:
   html:
     theme: darkly
-    css:
-      - style.css
-      - assets/css/workshop.css
     toc: false
