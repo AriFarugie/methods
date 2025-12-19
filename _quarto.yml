@@ -4,23 +4,34 @@ project:
 website:
   title: "Methods"
   navbar:
-    left:
+    right:
       - text: "Home"
         href: index.qmd
       - text: "Test"
         href: test.qmd
       - text: "Über mich"
         href: about.qmd
+      - text: "Materialien"
+        href: materials.qmd
+      - text: "Workshops"
+        menu: 
+          - text: "Einführung in RStudio"
+            href: workshops/ws1/index.qmd
+          - text: "Datenvisualisierung mit ggplot2"
+            href: workshops/ws2/index.qmd
+          - text: "Reproduzierbare Berichte mit Quarto"
+            href: workshops/ws3/index.qmd
+          - text: "Datenanalyse mit dplyr"
+            href: workshops/ws4/index.qmd  
   sidebar:
-    - id: test
-      title: "Inhalte"
-      style: docked
-      contents:
-        - text: "Abschnitt A"
-          href: "test.qmd#a"
-        - text: "Abschnitt B"
-          href: "test.qmd#b"
+    id: workshop1
+    title: ""
+    style: docked
+    contents:
+      - text: "zum Workshop-Inhalt"
+        href: workshops/ws1/day1.qmd
 
 format:
   html:
     theme: default
+    css: styles.css

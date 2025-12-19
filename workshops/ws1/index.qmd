@@ -1,0 +1,65 @@
+---
+title: "Einführung in R & RStudio"
+
+format:
+  html:
+    toc: true
+    toc-title: "Inhalte dieser Seite"
+    toc-location: left
+
+
+sidebar: workshop1
+---
+
+
+# Kurzbeschreibung
+
+Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.  
+Es werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.  
+Ziel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.
+
+**Benötigte Vorkenntnisse:** keine.
+
+---
+
+# Lernziele
+
+Nach dem Workshop können Teilnehmende …
+
+- die RStudio-Oberfläche sicher bedienen  
+- grundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)  
+- Daten aus CSV, Excel und SPSS importieren  
+- Variablen auswählen, filtern und umkodieren  
+- fehlende Werte identifizieren und behandeln  
+- Datensätze zusammenführen (Joins)  
+- Skripte und Projekte reproduzierbar strukturieren  
+- einen kleinen Datenbereinigungs-Workflow eigenständig umsetzen  
+
+---
+
+# Ablauf
+
+## Tag 1
+
+1. Ankommen & Setup  
+2. Einführung in R & RStudio  
+3. Objekte & Datentypen  
+4. Daten importieren  
+5. Datenaufbereitung
+
+## Tag 2
+
+1. Recap  
+2. Fehlende Werte  
+3. Umkodieren  
+4. Joins  
+5. Reproduzierbare Workflows  
+6. Mini-Projekt
+
+---
+
+# Materialien
+
+➡️ **[Übungsdatensatz herunterladen](../../assets/data/workshop1-dataset.csv)**  
+
+Weitere Materialien folgen.

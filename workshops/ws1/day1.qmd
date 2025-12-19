@@ -1,0 +1,123 @@
+---
+title: "Einführung in R & RStudio – Tag 1"
+subtitle: "Grundlagen, Objekte & erste Daten"
+format:
+  html:
+    toc: true
+    toc-title: "Tag 1 – Inhalte"
+    toc-location: left
+sidebar: false
+---
+# Ankommen & Setup
+
+Willkommen zum Workshop „Einführung in R & RStudio“ 👋
+An Tag 1 legen wir die Grundlagen, die wir am zweiten Tag weiter vertiefen.
+
+**Ziele für heute**
+- RStudio Oberfläche kennenlernen
+- verstehen, wie R „denkt“
+- erste eigene Objekte und Daten erzeugen
+
+------------------------------------------------------------------------
+
+# Was ist R und Rstudio?
+
+**R** ist eine freie Programmiersprache, mit der man *Daten analysieren, auswerten und grafisch* darstellen kann.
+
+<u>**Du kannst mit R zum Beispiel:**</u>
+
+- Tabellen mit vielen Zahlen auswerten
+- Mittelwerte, Häufigkeiten oder Korrelationen berechnen
+- Diagramme und Grafiken erstellen
+- Daten aufbereiten, filtern und umformen
+
+**R** wird häufig in den Sozialwissenschaften, der Psychologie, der Medizin und vielen anderen Forschungsbereichen genutzt, unabhänging ob ***quantitativ oder qualitativ*** gearbeitet wird.
+Der große Vorteil von **R** ist, dass alle Analyseschritte transparent, nachvollziehbar und reproduzierbar sind – man kann also genau sehen, wie ein Ergebnis entstanden ist.
+
+
+
+**RStudio** ist ***keine eigene Programmier­sprache***, sondern ein Programm, das dir die Arbeit mit R erleichtert.
+Man kann sich **RStudio** wie einen Schreibtisch für *R* vorstellen.
+
+<u>**RStudio hilft dir dabei:**</u>
+
+- Code übersichtlich zu schreiben
+- Befehle auszuführen und Ergebnisse zu sehen
+- deine Daten, Objekte und Grafiken im Blick zu behalten
+- Dateien und Projekte organisiert zu verwalten
+
+Ohne ***RStudio*** müsstest du **R** über ein sehr einfaches Fenster bedienen.
+Mit RStudio bekommst du eine strukturierte Oberfläche, die besonders für Einsteiger:innen viel angenehmer ist.
+
+---
+
+## R GUI - erste Ansicht
+
+Schauen wir uns zunächst die **R Oberfläche** ***(ohne RStudio)*** an. 
+
+::: columns
+::: column
+![](assets/images/r-gui-console.png){height=250 style="border: 2px solid red;"}
+:::
+
+::: column
+![](assets/images/r-gui-zoom.png){height=250 style="border: 2px solid red;"}
+:::
+:::
+
+**Was sehen wir hier?**
+
+- ***Linkes Bild***
+  - Die "normale" **R Oberfläche**
+    - Sie besteht zunächst nur aus einer ***R Console***
+- ***Rechtes Bild***
+  - Die **R Console**
+    - Hier werden Befehle direkt eingegeben
+    - Ergebnisse erscheinen sofort darunter
+
+::: callout-note
+**Hinweis**
+
+Alles, was du in die Konsole eingibst, wird sofort von R ausgeführt.  
+Das Ergebnis siehst du direkt unter der eingegebenen Zeile.
+
+***Beispiel***
+- gib `13`ein
+- gib `a` ein
+- gib `13+15`
+
+::: callout-caution
+**ABER**
+
+Wir brauchen ***R GUI*** nicht, sondern nutzen **RStudio!**
+:::
+:::
+
+## RStudio - Unser Cockpit 🎛️
+
+Schauen wir uns nun die Oberfläche von **RStudio** an. Startet einfach **RStudio** ***(nicht R GUI!)***. Ihr müsst nun das folgende Bild sehen:
+
+![](assets/images/rstudio-1.png){width=100% style="border: 2px solid darkblue;"}
+
+**Wir schauen uns nun die Menü-Leiste von RStudio an:**
+
+![](assets/images/rstudio-menu.png){width=100% style="border: 2px solid darkblue;"}
+
+<span style="color: orange; font-weight: bold;">Orange</span> – die Menü-Leiste
+
+In der Menü-Leiste findest du alle wichtigen Funktionen von RStudio übersichtlich nach Themen sortiert. Hier kannst du zum Beispiel Dateien öffnen und speichern, Einstellungen ändern, Code ausführen oder Hilfe aufrufen. *Das Aussehen deines RStudios kannst du auch hier anpassen!*
+
+<span style="color: green; font-weight: bold;">Grün</span> – die Schnellzugriff-Leiste
+
+Die Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole.
+Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Code ausführen, ohne durch Menüs zu klicken.
+
+
+
+
+
+
+
+
+
+

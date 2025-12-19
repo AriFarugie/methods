@@ -1,11 +1,14 @@
 ---
-title: "Test – Sidebar Proof"
+title: "Test – Sidebar Proof"  
 
-sidebar: test
+page-layout: article
 
 format:
   html:
-    toc: false
+    toc: true
+    toc-title: "Inhalte dieser Seite"
+    toc-location: left
+
 ---
 
 ## Abschnitt A {#a}

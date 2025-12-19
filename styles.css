@@ -1,0 +1,110 @@
+/* =========================================================
+   GRUNDLAYOUT
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #222222;
+}
+
+
+/* =========================================================
+   SIDEBAR + TOC REIHENFOLGE
+   ========================================================= */
+
+/* Sidebar als Flex-Container */
+.quarto-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+/* TOC GANZ NACH OBEN */
+#TOC {
+  order: -1;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* eigentliche Sidebar-Navigation */
+.quarto-sidebar nav {
+  order: 0;
+}
+
+
+/* =========================================================
+   TOC – OPTISCHE ANPASSUNG
+   ========================================================= */
+
+/* TOC-Überschrift */
+#TOC > h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+  color: #555;
+}
+
+/* TOC-Liste */
+#TOC ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+/* TOC-Items */
+#TOC li {
+  list-style: none;
+  margin: 0.25rem 0;
+}
+
+/* TOC-Links */
+#TOC a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Hover */
+#TOC a:hover {
+  text-decoration: underline;
+}
+
+/* Aktiver Abschnitt */
+#TOC a.active {
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SIDEBAR-LINKS (damit es zusammenpasst)
+   ========================================================= */
+
+.quarto-sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.quarto-sidebar a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   CONTENT-BEREICH
+   ========================================================= */
+
+main.content {
+  max-width: 900px;
+  padding: 2rem;
+}
