@@ -2,14 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://AriFarugie.github.io/methods/test.html</loc>
-    <lastmod>2025-12-19T10:28:09.457Z</lastmod>
+    <lastmod>2025-12-19T15:58:44.566Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AriFarugie.github.io/methods/workshops/ws1/day1.html</loc>
+    <lastmod>2025-12-19T15:58:44.569Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AriFarugie.github.io/methods/workshops/ws1/workshop.html</loc>
+    <lastmod>2025-12-19T15:58:44.570Z</lastmod>
   </url>
   <url>
     <loc>https://AriFarugie.github.io/methods/index.html</loc>
-    <lastmod>2025-12-19T10:28:09.457Z</lastmod>
+    <lastmod>2025-12-19T15:58:44.565Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AriFarugie.github.io/methods/workshops/ws1/index.html</loc>
+    <lastmod>2025-12-19T15:58:44.569Z</lastmod>
   </url>
   <url>
     <loc>https://AriFarugie.github.io/methods/about.html</loc>
-    <lastmod>2025-12-19T10:28:09.457Z</lastmod>
+    <lastmod>2025-12-19T15:58:44.565Z</lastmod>
   </url>
 </urlset>
