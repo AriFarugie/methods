@@ -3,8 +3,24 @@ project:
 
 website:
   title: "Methods"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Test"
+        href: test.qmd
+      - text: "Über mich"
+        href: about.qmd
+  sidebar:
+    - id: test
+      title: "Inhalte"
+      style: docked
+      contents:
+        - text: "Abschnitt A"
+          href: "#a"
+        - text: "Abschnitt B"
+          href: "#b"
 
 format:
   html:
-    theme: darkly
-    toc: false
+    theme: default

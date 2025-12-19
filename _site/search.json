@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "test.html",
+    "href": "test.html",
+    "title": "Test – Sidebar Proof",
+    "section": "",
+    "text": "Das ist Abschnitt A."
+  },
+  {
+    "objectID": "test.html#a",
+    "href": "test.html#a",
+    "title": "Test – Sidebar Proof",
+    "section": "",
+    "text": "Das ist Abschnitt A."
+  },
+  {
+    "objectID": "test.html#b",
+    "href": "test.html#b",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt B",
+    "text": "Abschnitt B\nDas ist Abschnitt B."
+  },
+  {
+    "objectID": "test.html#c",
+    "href": "test.html#c",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt C",
+    "text": "Abschnitt C\nDas ist Abschnitt C."
+  },
+  {
+    "objectID": "test.html#D",
+    "href": "test.html#D",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt D",
+    "text": "Abschnitt D\nDas ist Abschnitt D."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Über mich",
+    "section": "",
+    "text": "Hallo! Ich bin ein Workshop-Leiter für Methoden in der Forschung.\nDiese Website enthält Materialien und Informationen zu meinen Workshops.\n\n\nIch habe Erfahrung in quantitativen und qualitativen Methoden, insbesondere mit R und Datenanalyse.\n\n\n\n\nEinführung in R\nDatenvisualisierung\nQualitative Methoden\n\nBei Interesse, kontaktiere mich!"
+  },
+  {
+    "objectID": "about.html#hintergrund",
+    "href": "about.html#hintergrund",
+    "title": "Über mich",
+    "section": "",
+    "text": "Ich habe Erfahrung in quantitativen und qualitativen Methoden, insbesondere mit R und Datenanalyse."
+  },
+  {
+    "objectID": "about.html#workshops",
+    "href": "about.html#workshops",
+    "title": "Über mich",
+    "section": "",
+    "text": "Einführung in R\nDatenvisualisierung\nQualitative Methoden\n\nBei Interesse, kontaktiere mich!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Home\nWenn du oben eine Navbar mit Home und Test siehst, funktioniert die Quarto-Website korrekt."
+  }
+]

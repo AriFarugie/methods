@@ -1,16 +1,11 @@
 ---
 title: "Test – Sidebar Proof"
 
-page-layout: full   # ← DAS IST DER SCHLÜSSEL
+sidebar: test
 
-sidebar:
-  title: "Inhalte"
-  style: "docked"
-  contents:
-    - text: "Abschnitt A"
-      href: "#a"
-    - text: "Abschnitt B"
-      href: "#b"
+format:
+  html:
+    toc: false
 ---
 
 ## Abschnitt A {#a}
@@ -22,3 +17,13 @@ Das ist Abschnitt A.
 ## Abschnitt B {#b}
 
 Das ist Abschnitt B.
+
+## Abschnitt C {#c}
+
+Das ist Abschnitt C.
+
+---
+
+## Abschnitt D {#D}
+
+Das ist Abschnitt D.

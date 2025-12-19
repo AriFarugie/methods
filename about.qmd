@@ -1,0 +1,21 @@
+---
+title: "Über mich"
+---
+
+# Über mich
+
+Hallo! Ich bin ein Workshop-Leiter für Methoden in der Forschung.
+
+Diese Website enthält Materialien und Informationen zu meinen Workshops.
+
+## Hintergrund
+
+Ich habe Erfahrung in quantitativen und qualitativen Methoden, insbesondere mit R und Datenanalyse.
+
+## Workshops
+
+- Einführung in R
+- Datenvisualisierung
+- Qualitative Methoden
+
+Bei Interesse, kontaktiere mich!
