@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "test.html",
+    "href": "test.html",
+    "title": "Test – Sidebar Proof",
+    "section": "",
+    "text": "Das ist Abschnitt A."
+  },
+  {
+    "objectID": "test.html#a",
+    "href": "test.html#a",
+    "title": "Test – Sidebar Proof",
+    "section": "",
+    "text": "Das ist Abschnitt A."
+  },
+  {
+    "objectID": "test.html#b",
+    "href": "test.html#b",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt B",
+    "text": "Abschnitt B\nDas ist Abschnitt B."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
