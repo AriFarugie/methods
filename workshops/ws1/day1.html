@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -143,12 +178,18 @@ ul.task-list li input[type="checkbox"] {
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tag 1 – Inhalte</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#ankommen-setup" id="toc-ankommen-setup" class="nav-link active" data-scroll-target="#ankommen-setup">Ankommen &amp; Setup</a></li>
   <li><a href="#was-ist-r-und-rstudio" id="toc-was-ist-r-und-rstudio" class="nav-link" data-scroll-target="#was-ist-r-und-rstudio">Was ist R und Rstudio?</a>
   <ul class="collapse">
   <li><a href="#r-gui---erste-ansicht" id="toc-r-gui---erste-ansicht" class="nav-link" data-scroll-target="#r-gui---erste-ansicht">R GUI - erste Ansicht</a></li>
   <li><a href="#rstudio---unser-cockpit" id="toc-rstudio---unser-cockpit" class="nav-link" data-scroll-target="#rstudio---unser-cockpit">RStudio - Unser Cockpit 🎛️</a></li>
+  <li><a href="#die-vier-bereiche-von-rstudio" id="toc-die-vier-bereiche-von-rstudio" class="nav-link" data-scroll-target="#die-vier-bereiche-von-rstudio">Die vier Bereiche von RStudio</a></li>
+  </ul></li>
+  <li><a href="#projekt-anlegen" id="toc-projekt-anlegen" class="nav-link" data-scroll-target="#projekt-anlegen">Projekt anlegen</a></li>
+  <li><a href="#r-script" id="toc-r-script" class="nav-link" data-scroll-target="#r-script">R Script</a>
+  <ul class="collapse">
+  <li><a href="#rstudio-als-taschenrechner" id="toc-rstudio-als-taschenrechner" class="nav-link" data-scroll-target="#rstudio-als-taschenrechner">RStudio als Taschenrechner</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -200,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>RStudio</strong> ist <strong><em>keine eigene Programmier­sprache</em></strong>, sondern ein Programm, das dir die Arbeit mit R erleichtert. Man kann sich <strong>RStudio</strong> wie einen Schreibtisch für <em>R</em> vorstellen.</p>
 <p><u><strong>RStudio hilft dir dabei:</strong></u></p>
 <ul>
-<li>Code übersichtlich zu schreiben</li>
+<li>Codes übersichtlich zu schreiben</li>
 <li>Befehle auszuführen und Ergebnisse zu sehen</li>
 <li>deine Daten, Objekte und Grafiken im Blick zu behalten</li>
 <li>Dateien und Projekte organisiert zu verwalten</li>
@@ -248,7 +289,12 @@ Note
 <p><strong>Hinweis</strong></p>
 <p>Alles, was du in die Konsole eingibst, wird sofort von R ausgeführt.<br>
 Das Ergebnis siehst du direkt unter der eingegebenen Zeile.</p>
-<p><strong><em>Beispiel</em></strong> - gib <code>13</code>ein - gib <code>a</code> ein - gib <code>13+15</code></p>
+<p><strong><em>Beispiel</em></strong></p>
+<ul>
+<li>gib <code>13</code>ein</li>
+<li>gib <code>a</code> ein</li>
+<li>gib <code>13+15</code></li>
+</ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -273,9 +319,275 @@ Caution
 <p><strong>Wir schauen uns nun die Menü-Leiste von RStudio an:</strong></p>
 <p><img src="assets/images/rstudio-menu.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
 <p><span style="color: orange; font-weight: bold;">Orange</span> – die Menü-Leiste</p>
-<p>In der Menü-Leiste findest du alle wichtigen Funktionen von RStudio übersichtlich nach Themen sortiert. Hier kannst du zum Beispiel Dateien öffnen und speichern, Einstellungen ändern, Code ausführen oder Hilfe aufrufen. <em>Das Aussehen deines RStudios kannst du auch hier anpassen!</em></p>
+<p>In der Menü-Leiste findest du alle wichtigen Funktionen von RStudio übersichtlich nach Themen sortiert. Hier kannst du zum Beispiel Dateien öffnen und speichern, Einstellungen ändern, Codes ausführen oder Hilfe aufrufen. <em>Das Aussehen deines RStudios kannst du auch hier anpassen!</em></p>
 <p><span style="color: green; font-weight: bold;">Grün</span> – die Schnellzugriff-Leiste</p>
-<p>Die Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole. Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Code ausführen, ohne durch Menüs zu klicken.</p>
+<p>Die Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole. Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Codes ausführen, ohne durch Menüs zu klicken.</p>
+</section>
+<section id="die-vier-bereiche-von-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="die-vier-bereiche-von-rstudio">Die vier Bereiche von RStudio</h2>
+<p>RStudio ist in <strong>vier Arbeitsbereiche</strong> (Panes/Paneele) aufgeteilt. Jeder Bereich hat eine eigene Aufgabe. Aber jetzt gerade siehst du nur drei Bereiche. Ich zeige dir jetzt erstmal, wie du die vier Bereiche bekommst!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hierfür gehst du zunächst in die <strong>Schnellzugriffs-Leiste</strong> und klickst auf das Symbol ganz links, das <strong>weiße Blatt</strong> mit dem <span style="color: green; font-weight: bold;"><strong>Plus</strong></span>.</p>
+<p><img src="assets/images/rstudio-open-script1.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<p>Anschließend öffnet sich ein <strong>Drop-Down</strong> und du kannst jetzt schon sehen, was du alles mit <strong><em>RStudio</em></strong> machen kannst.</p>
+<p><img src="assets/images/rstudio-open-script2.png" style="border: 2px solid darkblue;" height="600"></p>
+<p>Wir wollen aber ein neues <code>**R Script erstellen**</code>, daher klicken wir auch da drauf!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Übrigens diese Workshopseite wurde komplett mit RStudio und Quarto Markdowns erstellt.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Jetzt sollte dein RStudio so aussehen:</p>
+<p><img src="assets/images/rstudio-panes.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<section id="skript-editor-oben-links" class="level3">
+<h3 class="anchored" data-anchor-id="skript-editor-oben-links">🔵 Skript-Editor (oben links)</h3>
+<p><img src="assets/images/rstudio-script-pane.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<p>Hier schreibst du deinen <strong>Code</strong> in Skripten.</p>
+<ul>
+<li>Codes werden <strong>nicht sofort</strong> ausgeführt</li>
+<li>du kannst ihn speichern, verändern und wiederverwenden</li>
+<li>ideal für sauberes, nachvollziehbares Arbeiten</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>👉 <strong>Merke:</strong><br>
+Alles Wichtige gehört ins <strong>Skript</strong>, nicht nur in die Konsole.</p>
+</div>
+</div>
+</section>
+<section id="konsole-unten-links" class="level3">
+<h3 class="anchored" data-anchor-id="konsole-unten-links">⚫ Konsole (unten links)</h3>
+<p><img src="assets/images/rstudio-console-pane.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<p>Die <strong><em>Konsole</em></strong> kennen wir im Grunde schon. Wie du vielleicht schon erkannt hast, ist es die selbe Konsole wie bei <strong>R GUI</strong>.</p>
+<ul>
+<li>hier führt R Befehle aus</li>
+<li>Ergebnisse erscheinen direkt darunter</li>
+<li>gut zum Ausprobieren und Testen</li>
+</ul>
+<p>👉 Code aus dem Skript kann mit <strong>Run</strong> oder <strong>Strg + Enter</strong> ausgeführt werden.</p>
+</section>
+<section id="environment-history-oben-rechts" class="level3">
+<h3 class="anchored" data-anchor-id="environment-history-oben-rechts">🟣 Environment &amp; History (oben rechts)</h3>
+<p><img src="assets/images/rstudio-envi-pane.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<p><u>Im <strong>Environment</strong> siehst du:</u></p>
+<ul>
+<li>alle Objekte, die du erstellt hast</li>
+<li><ol start="26" type="a">
+<li>B. Variablen, Daten, Ergebnisse</li>
+</ol></li>
+</ul>
+<p><u>In der <strong>History</strong> findest du:</u></p>
+<ul>
+<li>frühere Befehle, die du eingegeben hast</li>
+</ul>
+<p>👉 So behältst du den Überblick, was gerade „im Speicher“ liegt.</p>
+</section>
+<section id="files-plots-packages-help-unten-rechts" class="level3">
+<h3 class="anchored" data-anchor-id="files-plots-packages-help-unten-rechts">🟢 Files, Plots, Packages, Help (unten rechts)</h3>
+<p><img src="assets/images/rstudio-plot-pane.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<p>Dieser Bereich zeigt dir:</p>
+<ul>
+<li><strong>Files</strong>: deine Dateien und Ordner</li>
+<li><strong>Plots</strong>: Grafiken, die du erzeugst</li>
+<li><strong>Packages</strong>: installierte Erweiterungen</li>
+<li><strong>Help</strong>: Hilfeseiten zu Funktionen</li>
+</ul>
+<p>👉 Hier findest du fast alles, was R zusätzlich ausgibt und wo es gespeichert ist.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Im nächsten Abschnitt legen wir unser erstes <strong>Projekt</strong> an!</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="projekt-anlegen" class="level1">
+<h1>Projekt anlegen</h1>
+<p>Ein Projekt hilft dir, <strong>strukturiert und reproduzierbar</strong> zu arbeiten.</p>
+<ul>
+<li>alle Dateien (Skripte, Daten, Grafiken) liegen an einem festen Ort<br>
+</li>
+<li>R weiß immer, <strong>wo es die Dateien findet</strong> (keine kaputten Pfade)</li>
+<li>du kannst deine Arbeit jederzeit schließen und <strong>genau dort weitermachen</strong></li>
+<li>besonders wichtig für größere Analysen und gemeinsames Arbeiten</li>
+</ul>
+<p>👉 <strong>Merke:</strong><br>
+Ein neues Projekt = ein neuer, sauberer Arbeitskontext.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Typischer Anfängerfehler</strong></p>
+<p>Viele arbeiten <strong>ohne Projekt</strong> und laden Dateien „irgendwoher“.</p>
+<p>Das führt oft zu:</p>
+<ul>
+<li>Fehlermeldungen wie <em>„file not found“</em></li>
+<li>nicht reproduzierbaren Analysen</li>
+<li>Verwirrung, wenn man die Sitzung neu startet</li>
+</ul>
+<p>👉 <strong>Gewöhne dir an:</strong><br>
+Für <strong>jedes Projekt</strong> ein eigenes RStudio-Projekt anzulegen.</p>
+</div>
+</div>
+<section id="projekt-anlegen-schritt-für-schritt" class="level3">
+<h3 class="anchored" data-anchor-id="projekt-anlegen-schritt-für-schritt">Projekt anlegen – Schritt für Schritt</h3>
+<ol type="1">
+<li>Klicke oben auf <strong>File → New Project…</strong> in der Menü-Leiste</li>
+<li>Wähle <strong>New Directory</strong></li>
+<li>Wähle <strong>New Project</strong></li>
+<li>Vergib einen <strong>sinnvollen Namen</strong> (z. B. <code>r_workshop_tag1</code>)</li>
+<li>Wähle einen Speicherort auf deinem Rechner</li>
+<li>Klicke auf <strong>Create Project</strong></li>
+</ol>
+<div class="columns">
+<div class="column">
+<p><img src="assets/images/rstudio-file-proj.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"> <strong>Schritt 1:</strong><br>
+<em>File → New Project…</em></p>
+</div><div class="column">
+<p><img src="assets/images/rstudio-newdir-proj.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"> <strong>Schritt 2:</strong><br>
+<em>New Directory</em></p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<p><img src="assets/images/rstudio-newproj-proj.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"> <strong>Schritt 3:</strong><br>
+<em>New Project</em></p>
+</div><div class="column">
+<p><img src="assets/images/rstudio-creaproj-proj.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"> <strong>Schritt 4 bis 6:</strong><br>
+<em>Name vergeben, Speicherort wählen &amp; Create Project</em></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>👉 <strong>Tipp:</strong><br>
+Der Projektname sollte <strong>keine Leerzeichen</strong> enthalten<br>
+(z. B. <code>r_workshop_tag1</code> statt <code>R Workshop Tag 1</code>)</p>
+</div>
+</div>
+<p><strong>RStudio startet nun neu – du arbeitest jetzt</strong> <strong><em>innerhalb deines Projekts.</em></strong></p>
+<hr>
+</section>
+</section>
+<section id="r-script" class="level1">
+<h1>R Script</h1>
+<p>Nachdem wir nun ein Projekt angelegt haben, beginnen wir mit dem eigentlichen Arbeiten in einem <strong>R Script</strong>.</p>
+<p>Ein Script ist eine Textdatei, in der du deine Befehle sammelst und speicherst. So kannst du: - deine Arbeit nachvollziehen - Code später wiederverwenden - Analysen Schritt für Schritt dokumentieren</p>
+<p>RStudio bietet viele Möglichkeiten, mit R zu arbeiten. Wir starten bewusst <strong>sehr einfach</strong>, um ein Gefühl dafür zu bekommen, wie R reagiert.</p>
+<section id="rstudio-als-taschenrechner" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-als-taschenrechner">RStudio als Taschenrechner</h2>
+<p>Zum Einstieg kannst du RStudio wie einen <strong>Taschenrechner</strong> benutzen.</p>
+<p>Du gibst einen Befehl ein – R rechnet – und gibt das Ergebnis zurück. So lernst du schnell:</p>
+<ul>
+<li>wie Befehle aufgebaut sind</li>
+<li>wie R mit Zahlen umgeht</li>
+<li>dass R immer auf <strong>Eingaben reagiert</strong></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">/</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.333333</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">49</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Warum ins Skript schreiben?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Befehle, die du <strong>nur in der Konsole</strong> eingibst, sind schnell wieder weg –<br>
+du musst später mühsam hochscrollen, um sie zu finden.</p>
+<p>Schreibst du deine Rechnungen <strong>in ein R Script</strong>, bleiben sie erhalten:</p>
+<ul>
+<li>du kannst sie jederzeit wieder ausführen</li>
+<li>du behältst den Überblick</li>
+<li>deine Arbeit ist nachvollziehbar und reproduzierbar</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Übung 1 – R als Taschenrechner
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Berechne: <code>5^2 + 3</code>.<br>
+</li>
+<li>Was ergibt <code>sqrt(144)*75</code>?<br>
+</li>
+<li>Führe die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus.</li>
+</ul>
+</div>
+</div>
 
 
 </section>
