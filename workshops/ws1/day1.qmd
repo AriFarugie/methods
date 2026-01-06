@@ -291,6 +291,13 @@ So kannst du:
 RStudio bietet viele Möglichkeiten, mit R zu arbeiten.
 Wir starten bewusst **sehr einfach**, um ein Gefühl dafür zu bekommen, wie R reagiert.
 
+::: callout-tip
+### **Erinnerung**
+Mit **Strg + Enter** wird der Befehl **in der Zeile ausgeführt, in der dein Cursor steht** –  
+du musst den Code **nicht markieren** und **nicht auf „Run“ klicken**.
+:::
+
+
 ## RStudio als Taschenrechner
 
 Zum Einstieg kannst du RStudio wie einen **Taschenrechner** benutzen.
@@ -323,16 +330,197 @@ Schreibst du deine Rechnungen **in ein R Script**, bleiben sie erhalten:
 - deine Arbeit ist nachvollziehbar und reproduzierbar
 :::
 
-::: callout-tip
-### Übung 1 – R als Taschenrechner
+::: {.callout-tip collapse="true"}
+# **Übung 1** – R als Taschenrechner
 
-- Berechne: `5^2 + 3`.  
-- Was ergibt `sqrt(144)*75`?  
-- Führe die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus.
+
+1. Berechne zuerst den Ausdruck  
+   `((8 + 4)^2 - 10) / 2`.
+2. Berechne anschließend  
+   `sqrt(196) + 3^3`.
+3. Führe **alle Rechnungen**
+   - einmal direkt in der **Konsole**
+   - und einmal aus einem **Skript**
+
+Beobachte, was gleich ist und was sich unterscheidet.
+:::
+
+::: {.callout-note collapse="true"}
+# **Lösung Übung 1**
+
+```{r}
+#| echo: true
+
+#Aufgabe 1
+((8 + 4)^2 - 10) / 2
+
+#Aufgabe 2
+sqrt(196) + 3^3
+
+```
+::: 
+
+## Grundprinzipien von R
+
+R arbeitet objektorientiert: Alles, was du erzeugst, kann ein Objekt sein und bekommt einen Namen.
+
+```{r}
+#| echo: true
+
+x <- 5
+y <- c(23, 12, 11, 9, 13)
+
+```
+
+::: callout-note
+# **Hinweis**
+
+- `<-` ist der **Zuweisungspfeil**: Er weist den Wert rechts dem Namen links zu.  
+- `c()` steht für **combine**: Damit fasst R mehrere Werte zu einem **Vektor** zusammen.  
+- `y` ist der **Name des Objekts**. Das Objekt selbst ist ein **Vektor**, der mehrere Zahlen enthält.
+:::
+
+### Funktionen verwenden
+
+Funktionen sind **vordefinierte Befehle**, mit denen R etwas für uns erledigt.  
+Sie nehmen einen oder mehrere **Eingabewerte** entgegen, führen damit eine bestimmte Operation aus und geben ein **Ergebnis** zurück.
+
+Man kann sich Funktionen wie **Werkzeuge** vorstellen:  
+Je nach Aufgabe benutzen wir ein anderes Werkzeug.
+
+In R werden Funktionen immer mit **runden Klammern `()`** aufgerufen.
+
+Im Folgenden verwenden wir einige **grundlegende Funktionen**, die R bereits mitbringt:
+
+```{r}
+#| echo: true
+
+sum(y)
+
+mean(y)
+
+sd(y)
+
+median(y)
+
+mad(y)
+
+min(y)
+
+max(y)
+
+range(y)
+
+length(y)
+
+```
+
+::: {.callout-note collapse="true"}
+### **Was machen diese Funktionen?**
+
+- `sum()` – berechnet die **Summe** aller Werte  
+- `mean()` – berechnet den **Mittelwert**  
+- `sd()` – berechnet die **Standardabweichung**  
+- `median()` – gibt den **Median** zurück  
+- `mad()` – berechnet die **mittlere absolute Abweichung**  
+- `range()` – gibt **kleinsten und größten Wert** aus  
+- `min()` – kleinster Wert  
+- `max()` – größter Wert  
+- `length()` – Anzahl der Werte
+:::
+
+Funktionen können nicht nur einzeln verwendet werden, sondern auch **miteinander kombiniert** werden.  
+Das Ergebnis einer Funktion kann dabei **direkt als Eingabe** für eine andere Funktion dienen.
+
+Zum Beispiel können wir den Mittelwert berechnen und anschließend daraus die Wurzel ziehen,  
+oder wir kombinieren mehrere Funktionen, um neue Kennwerte zu berechnen.
+
+```{r}
+#| echo: true
+
+sqrt(mean(y))
+
+max(y) - min(y)
+
+```
+
+In der nächsten Übung nutzen wir diese Grundfunktionen,  
+um eigene Kennwerte zu berechnen und die Ergebnisse **als Objekte zu speichern**.
+
+::: {.callout-tip collapse="true"}
+# **Übung 2** – Funktionen
+
+Nutze den Vektor `y` und berechne folgende Kennwerte:
+
+1. Den **Standardfehler des Mittelwerts**  
+2. Die **Schiefe**  
+3. Die **Kurtosis**
+
+Speichere **alle Ergebnisse als eigene Objekte**  
+(z. B. `se_y`, `skew_y`, `kurt_y`).
+
+:::
+
+\[
+SE = \frac{s}{\sqrt{n}}
+\]
+
+
+::: {.callout-tip collapse="true"}
+### **Tipp: Formeln für die Berechnung**
+
+Du darfst dir für die Berechnung **Hilfsobjekte** anlegen.
+
+**Standardfehler des Mittelwerts**
+
+\[
+SE = \frac{sd(x)}{\sqrt{n}}
+\]
+
+mit  
+- \( sd(x) \) = Standardabweichung  
+- \( n \) = Anzahl der Werte  
+
+---
+
+**Schiefe (Skewness)**
+
+\[
+\text{Schiefe} = \frac{1}{n} \sum \left( \frac{x - \bar{x}}{sd(x)} \right)^3
+\]
+
+---
+
+**Kurtosis**
+
+\[
+\text{Kurtosis} = \frac{1}{n} \sum \left( \frac{x - \bar{x}}{sd(x)} \right)^4
+\]
+
+Hinweis:  
+Alle Bestandteile der Formeln lassen sich mit **Base-R-Funktionen** umsetzen.
 :::
 
 
 
+
+
+
+
+::: {.callout-note collapse="true"}
+### **Lösung Übung 1**
+
+```{r}
+#| echo: true
+
+#Aufgabe 1
+((8 + 4)^2 - 10) / 2
+
+#Aufgabe 2
+sqrt(196) + 3^3
+
+```
+::: 
 
 
 
