@@ -438,3 +438,19 @@ Platzhalter
 
 *Ende des Workshop-1-Inhaltmoduls.*
 
+
+
+
+
+
+
+
+
+
+
+
+
+quarto preview
+git add .
+git commit -m "Änderungen"
+git push

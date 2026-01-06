@@ -453,74 +453,118 @@ um eigene Kennwerte zu berechnen und die Ergebnisse **als Objekte zu speichern**
 Nutze den Vektor `y` und berechne folgende Kennwerte:
 
 1. Den **Standardfehler des Mittelwerts**  
-2. Die **Schiefe**  
-3. Die **Kurtosis**
+2. Die **Varianz**  
+3. Die **z-standardisierten Werte** (z-Werte)  
+4. Das **95%-Konfidenzintervall** (KI) für den Mittelwert
 
-Speichere **alle Ergebnisse als eigene Objekte**  
-(z. B. `se_y`, `skew_y`, `kurt_y`).
+Speichere alle Ergebnisse als eigene Objekte, z. B.:
+`se_y`, `var_y`, `z_y`, `ci_y`.
 
 :::
 
-\[
-SE = \frac{s}{\sqrt{n}}
-\]
-
-
 ::: {.callout-tip collapse="true"}
-### **Tipp: Formeln für die Berechnung**
+# **Tipp: Formeln für die Berechnung**
 
 Du darfst dir für die Berechnung **Hilfsobjekte** anlegen.
 
+---
+
 **Standardfehler des Mittelwerts**
 
-\[
+$$
 SE = \frac{sd(x)}{\sqrt{n}}
-\]
+$$
 
-mit  
-- \( sd(x) \) = Standardabweichung  
-- \( n \) = Anzahl der Werte  
-
----
-
-**Schiefe (Skewness)**
-
-\[
-\text{Schiefe} = \frac{1}{n} \sum \left( \frac{x - \bar{x}}{sd(x)} \right)^3
-\]
+- $sd$ = Standardabweichung 
+- $n$ = Anzahl der Werte  
 
 ---
 
-**Kurtosis**
+**Varianz (Stichprobe)**
 
-\[
-\text{Kurtosis} = \frac{1}{n} \sum \left( \frac{x - \bar{x}}{sd(x)} \right)^4
-\]
+$$
+\text{Var} = \frac{1}{n - 1} \sum (x - \bar{x})^2
+$$
 
-Hinweis:  
-Alle Bestandteile der Formeln lassen sich mit **Base-R-Funktionen** umsetzen.
+- $\bar{x}$ = Mittelwert der Daten  
+- $\sum$ = Summe über alle Beobachtungen  
+
+---
+
+**z-Standardisierung**
+
+$$
+z = \frac{x - \bar{x}}{sd(x)}
+$$
+
+---
+
+**95\%-Konfidenzintervall des Mittelwerts**
+
+$$
+\bar{x} \pm t_{0.975,\,n-1} \cdot SE
+$$
+
+- $t_{0.975,\,n-1}$ = kritischer t-Wert für ein **95 %-Konfidenzintervall**. In R `qt(0.975, df = n - 1)`
+- $\pm$ = untere und obere Grenze des Intervalls
+
 :::
 
-
-
-
-
-
-
 ::: {.callout-note collapse="true"}
-### **Lösung Übung 1**
+### **Lösung – Übung 2**
 
 ```{r}
 #| echo: true
 
-#Aufgabe 1
-((8 + 4)^2 - 10) / 2
+# Hilfsobjekte
+n <- length(y)   # Anzahl der Werte
+m <- mean(y)     # Mittelwert
+s <- sd(y)       # Standardabweichung
 
-#Aufgabe 2
-sqrt(196) + 3^3
+# 1) Standardfehler des Mittelwerts
+
+se_y <- s / sqrt(n)
+
+se_y
+
+# 2) Varianz (Stichprobe)
+
+var_y <- sum((y - m)^2) / (n - 1)
+
+var_y
+
+
+# 3) z-standardisierte Werte
+
+z_y <- (y - m) / s
+
+z_y
+
+
+# 4) 95%-Konfidenzintervall des Mittelwerts
+
+t_crit <- qt(0.975, df = n - 1)
+
+ci_y <- c(
+lower = m - t_crit * se_y,
+upper = m + t_crit * se_y
+)
+
+ci_y
 
 ```
-::: 
+:::
+
+
+
+::: callout-warning
+# **Häufige Fehler**
+
+- Funktion falsch geschrieben: `Mean(y)` statt `mean(y)`  
+- Klammern vergessen: `mean y` statt `mean(y)`  
+- `<-` vergessen oder `=` inkonsistent verwendet  
+- Im falschen Fenster tippen (Konsole statt Skript oder umgekehrt)
+:::
 
 
 
