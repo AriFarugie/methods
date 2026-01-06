@@ -219,7 +219,11 @@ window.Quarto = {
   <li><a href="#r-script" id="toc-r-script" class="nav-link" data-scroll-target="#r-script">R Script</a>
   <ul class="collapse">
   <li><a href="#rstudio-als-taschenrechner" id="toc-rstudio-als-taschenrechner" class="nav-link" data-scroll-target="#rstudio-als-taschenrechner">RStudio als Taschenrechner</a></li>
-  <li><a href="#grundprinzipien-von-r" id="toc-grundprinzipien-von-r" class="nav-link" data-scroll-target="#grundprinzipien-von-r">Grundprinzipien von R</a></li>
+  </ul></li>
+  <li><a href="#grundprinzipien-von-r" id="toc-grundprinzipien-von-r" class="nav-link" data-scroll-target="#grundprinzipien-von-r">Grundprinzipien von R</a>
+  <ul class="collapse">
+  <li><a href="#funktionen-verwenden" id="toc-funktionen-verwenden" class="nav-link" data-scroll-target="#funktionen-verwenden">Funktionen verwenden</a></li>
+  <li><a href="#datentypen-datenstrukturen" id="toc-datentypen-datenstrukturen" class="nav-link" data-scroll-target="#datentypen-datenstrukturen">Datentypen &amp; Datenstrukturen</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -668,8 +672,9 @@ du musst später mühsam hochscrollen, um sie zu finden.</p>
 </div>
 </div>
 </section>
-<section id="grundprinzipien-von-r" class="level2">
-<h2 class="anchored" data-anchor-id="grundprinzipien-von-r">Grundprinzipien von R</h2>
+</section>
+<section id="grundprinzipien-von-r" class="level1">
+<h1>Grundprinzipien von R</h1>
 <p>R arbeitet objektorientiert: Alles, was du erzeugst, kann ein Objekt sein und bekommt einen Namen.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
@@ -694,8 +699,8 @@ du musst später mühsam hochscrollen, um sie zu finden.</p>
 </ul>
 </div>
 </div>
-<section id="funktionen-verwenden" class="level3">
-<h3 class="anchored" data-anchor-id="funktionen-verwenden">Funktionen verwenden</h3>
+<section id="funktionen-verwenden" class="level2">
+<h2 class="anchored" data-anchor-id="funktionen-verwenden">Funktionen verwenden</h2>
 <p>Funktionen sind <strong>vordefinierte Befehle</strong>, mit denen R etwas für uns erledigt.<br>
 Sie nehmen einen oder mehrere <strong>Eingabewerte</strong> entgegen, führen damit eine bestimmte Operation aus und geben ein <strong>Ergebnis</strong> zurück.</p>
 <p>Man kann sich Funktionen wie <strong>Werkzeuge</strong> vorstellen:<br>
@@ -771,6 +776,7 @@ Je nach Aufgabe benutzen wir ein anderes Werkzeug.</p>
 </li>
 <li><code>length()</code> – Anzahl der Werte</li>
 </ul>
+<p>Es gibt eine Vielzahl <strong>Base R Funktionen</strong>, ihr könnt sie gerne erkundigen!</p>
 </div>
 </div>
 </div>
@@ -944,6 +950,100 @@ z = \frac{x - \bar{x}}{sd(x)}
 </li>
 <li>Im falschen Fenster tippen (Konsole statt Skript oder umgekehrt)</li>
 </ul>
+</div>
+</div>
+</section>
+<section id="datentypen-datenstrukturen" class="level2">
+<h2 class="anchored" data-anchor-id="datentypen-datenstrukturen">Datentypen &amp; Datenstrukturen</h2>
+<p>In R ist es wichtig zu wissen, <strong>was für eine Art von Daten</strong> wir vor uns haben<br>
+und <strong>wie diese Daten organisiert sind</strong>.</p>
+<p>Deshalb unterscheiden wir zwischen <strong>Datentypen</strong> und <strong>Datenstrukturen</strong>.</p>
+<p>Beides bestimmt, wie wir mit Daten rechnen, sie verändern und analysieren können.</p>
+<section id="wichtige-datentypen" class="level3">
+<h3 class="anchored" data-anchor-id="wichtige-datentypen">Wichtige Datentypen</h3>
+<p>Datentypen legen fest, <strong>welche Art von Werten</strong> in einem Objekt gespeichert ist.<br>
+R behandelt Zahlen, Text und logische Werte unterschiedlich – je nach Datentyp.</p>
+<p>Der Datentyp ist wichtig, weil er bestimmt, - welche Berechnungen möglich sind - wie R die Werte interpretiert - welche Funktionen sinnvoll angewendet werden können</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><strong>Datentypenüberblick</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><code>numeric</code> / <code>double</code><br>
+Zahlen mit Dezimalstellen, z. B. <code>3.14</code> oder <code>-7.5</code>.<br>
+Wird für die meisten Berechnungen verwendet.</p></li>
+<li><p><code>integer</code><br>
+Ganze Zahlen ohne Dezimalstellen, z. B. <code>1L</code> oder <code>42L</code>.<br>
+Kommt seltener vor, ist aber wichtig bei Zählvariablen.</p></li>
+<li><p><code>character</code><br>
+Textwerte, z. B. <code>"Anna"</code> oder <code>"Deutschland"</code>.<br>
+Mit Text kann man <strong>nicht rechnen</strong>.</p></li>
+<li><p><code>logical</code><br>
+Logische Werte: <code>TRUE</code> oder <code>FALSE</code>.<br>
+Wird häufig bei Bedingungen oder Filtern genutzt.</p></li>
+<li><p><code>factor</code><br>
+Kategorische Daten mit festen Ausprägungen, z. B. Geschlecht oder Schulabschluss.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="wichtige-datenstrukturen" class="level3">
+<h3 class="anchored" data-anchor-id="wichtige-datenstrukturen">Wichtige Datenstrukturen</h3>
+<p>Datenstrukturen beschreiben, <strong>wie mehrere Werte in R zusammengefasst und organisiert</strong> sind.<br>
+Sie legen fest, ob Daten einzeln, als einfache Liste oder als Tabelle gespeichert werden.</p>
+<p>Welche Datenstruktur wir verwenden, ist wichtig,<br>
+weil sie bestimmt, wie wir auf Daten zugreifen, sie verändern und analysieren können.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><strong>Datenstrukturenüberblick</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>Vektor</strong><br>
+Eine geordnete Sammlung von Werten <strong>gleichen Datentyps</strong>.<br>
+Grundlage für fast alle anderen Datenstrukturen in R.</p></li>
+<li><p><strong>Matrix</strong><br>
+Eine rechteckige Tabelle aus Werten <strong>gleichen Datentyps</strong> (meist Zahlen).<br>
+Wird vor allem für mathematische und statistische Berechnungen verwendet.</p></li>
+<li><p><strong>Data Frame / tibble</strong><br>
+Eine Tabelle mit Zeilen (<strong>Fälle</strong>) und Spalten (<strong>Variablen</strong>).<br>
+Standardformat für Datensätze in der empirischen Forschung.</p></li>
+</ul>
+</div>
+</div>
+<p>Datenstrukturen in R bauen in gewisser Weise aufeinander auf.</p>
+<p>Am Anfang steht der <strong>Vektor</strong>:<br>
+Ein Vektor ist eine einfache, geordnete Reihe von Werten gleichen Datentyps.</p>
+<p>Aus Vektoren lassen sich <strong>Matrizen</strong> bilden:<br>
+Eine Matrix ist eine Sammlung mehrerer gleich langer Vektoren,<br>
+die rechteckig angeordnet sind.</p>
+<p>Ein <strong>Data Frame</strong> geht einen Schritt weiter:<br>
+Auch hier bestehen die Spalten aus Vektoren,<br>
+die Spalten dürfen aber <strong>unterschiedliche Datentypen</strong> haben.</p>
+<p>So lassen sich reale Datensätze mit Zahlen, Text und Kategorien in einer Tabelle abbilden.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span><strong>Achtung Wichtig</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Datenstrukturen bauen <strong>konzeptionell</strong> aufeinander auf,<br>
+sie werden in der Praxis <strong>nicht automatisch ineinander umgewandelt</strong></p>
 </div>
 </div>
 

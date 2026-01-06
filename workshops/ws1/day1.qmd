@@ -360,7 +360,7 @@ sqrt(196) + 3^3
 ```
 ::: 
 
-## Grundprinzipien von R
+# Grundprinzipien von R
 
 R arbeitet objektorientiert: Alles, was du erzeugst, kann ein Objekt sein und bekommt einen Namen.
 
@@ -380,7 +380,7 @@ y <- c(23, 12, 11, 9, 13)
 - `y` ist der **Name des Objekts**. Das Objekt selbst ist ein **Vektor**, der mehrere Zahlen enthält.
 :::
 
-### Funktionen verwenden
+## Funktionen verwenden
 
 Funktionen sind **vordefinierte Befehle**, mit denen R etwas für uns erledigt.  
 Sie nehmen einen oder mehrere **Eingabewerte** entgegen, führen damit eine bestimmte Operation aus und geben ein **Ergebnis** zurück.
@@ -416,7 +416,7 @@ length(y)
 ```
 
 ::: {.callout-note collapse="true"}
-### **Was machen diese Funktionen?**
+# **Was machen diese Funktionen?**
 
 - `sum()` – berechnet die **Summe** aller Werte  
 - `mean()` – berechnet den **Mittelwert**  
@@ -427,6 +427,8 @@ length(y)
 - `min()` – kleinster Wert  
 - `max()` – größter Wert  
 - `length()` – Anzahl der Werte
+
+Es gibt eine Vielzahl **Base R Funktionen**, ihr könnt sie gerne erkundigen!
 :::
 
 Funktionen können nicht nur einzeln verwendet werden, sondern auch **miteinander kombiniert** werden.  
@@ -511,7 +513,7 @@ $$
 :::
 
 ::: {.callout-note collapse="true"}
-### **Lösung – Übung 2**
+# **Lösung – Übung 2**
 
 ```{r}
 #| echo: true
@@ -565,6 +567,99 @@ ci_y
 - `<-` vergessen oder `=` inkonsistent verwendet  
 - Im falschen Fenster tippen (Konsole statt Skript oder umgekehrt)
 :::
+
+## Datentypen & Datenstrukturen
+
+In R ist es wichtig zu wissen, **was für eine Art von Daten** wir vor uns haben  
+und **wie diese Daten organisiert sind**.
+
+Deshalb unterscheiden wir zwischen **Datentypen** und **Datenstrukturen**.
+
+Beides bestimmt, wie wir mit Daten rechnen, sie verändern und analysieren können.
+
+### Wichtige Datentypen
+
+Datentypen legen fest, **welche Art von Werten** in einem Objekt gespeichert ist.  
+R behandelt Zahlen, Text und logische Werte unterschiedlich – je nach Datentyp.
+
+Der Datentyp ist wichtig, weil er bestimmt,
+- welche Berechnungen möglich sind
+- wie R die Werte interpretiert
+- welche Funktionen sinnvoll angewendet werden können
+
+
+::: callout-note
+# **Datentypenüberblick**
+
+- `numeric` / `double`  
+  Zahlen mit Dezimalstellen, z. B. `3.14` oder `-7.5`.  
+  Wird für die meisten Berechnungen verwendet.
+
+- `integer`  
+  Ganze Zahlen ohne Dezimalstellen, z. B. `1L` oder `42L`.  
+  Kommt seltener vor, ist aber wichtig bei Zählvariablen.
+
+- `character`  
+  Textwerte, z. B. `"Anna"` oder `"Deutschland"`.  
+  Mit Text kann man **nicht rechnen**.
+
+- `logical`  
+  Logische Werte: `TRUE` oder `FALSE`.  
+  Wird häufig bei Bedingungen oder Filtern genutzt.
+
+- `factor`  
+  Kategorische Daten mit festen Ausprägungen, z. B. Geschlecht oder Schulabschluss.
+:::
+
+
+### Wichtige Datenstrukturen
+
+Datenstrukturen beschreiben, **wie mehrere Werte in R zusammengefasst und organisiert** sind.  
+Sie legen fest, ob Daten einzeln, als einfache Liste oder als Tabelle gespeichert werden.
+
+Welche Datenstruktur wir verwenden, ist wichtig,  
+weil sie bestimmt, wie wir auf Daten zugreifen, sie verändern und analysieren können.
+
+::: callout-note
+# **Datenstrukturenüberblick**
+
+- **Vektor**  
+  Eine geordnete Sammlung von Werten **gleichen Datentyps**.  
+  Grundlage für fast alle anderen Datenstrukturen in R.
+
+- **Matrix**  
+  Eine rechteckige Tabelle aus Werten **gleichen Datentyps** (meist Zahlen).  
+  Wird vor allem für mathematische und statistische Berechnungen verwendet.
+
+- **Data Frame / tibble**  
+  Eine Tabelle mit Zeilen (**Fälle**) und Spalten (**Variablen**).  
+  Standardformat für Datensätze in der empirischen Forschung.
+:::
+
+Datenstrukturen in R bauen in gewisser Weise aufeinander auf.
+
+Am Anfang steht der **Vektor**:  
+Ein Vektor ist eine einfache, geordnete Reihe von Werten gleichen Datentyps.
+
+Aus Vektoren lassen sich **Matrizen** bilden:  
+Eine Matrix ist eine Sammlung mehrerer gleich langer Vektoren,  
+die rechteckig angeordnet sind.
+
+Ein **Data Frame** geht einen Schritt weiter:  
+Auch hier bestehen die Spalten aus Vektoren,  
+die Spalten dürfen aber **unterschiedliche Datentypen** haben.
+
+So lassen sich reale Datensätze mit Zahlen, Text und Kategorien in einer Tabelle abbilden.
+
+::: callout-warning
+# **Achtung Wichtig**
+
+Die Datenstrukturen bauen **konzeptionell** aufeinander auf,  
+sie werden in der Praxis **nicht automatisch ineinander umgewandelt**
+:::
+
+### Welcher Datentyp oder welche Datenstruktur hat mein Objekt?
+
 
 
 
