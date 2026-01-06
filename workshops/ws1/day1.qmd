@@ -657,7 +657,7 @@ So lassen sich reale Datensätze mit Zahlen, Text und Kategorien in einer Tabell
 Die Datenstrukturen bauen **konzeptionell** aufeinander auf,  
 sie werden in der Praxis **nicht automatisch ineinander umgewandelt**
 :::
-
+---
 ### Welcher Datentyp oder welche Datenstruktur hat mein Objekt?
 
 
