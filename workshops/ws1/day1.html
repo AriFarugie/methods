@@ -224,6 +224,9 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#funktionen-verwenden" id="toc-funktionen-verwenden" class="nav-link" data-scroll-target="#funktionen-verwenden">Funktionen verwenden</a></li>
   <li><a href="#datentypen-datenstrukturen" id="toc-datentypen-datenstrukturen" class="nav-link" data-scroll-target="#datentypen-datenstrukturen">Datentypen &amp; Datenstrukturen</a></li>
+  <li><a href="#einen-ersten-datensatz-in-r-erstellen" id="toc-einen-ersten-datensatz-in-r-erstellen" class="nav-link" data-scroll-target="#einen-ersten-datensatz-in-r-erstellen">Einen ersten Datensatz in R erstellen</a></li>
+  <li><a href="#exkurs-pakete" id="toc-exkurs-pakete" class="nav-link" data-scroll-target="#exkurs-pakete"><strong>Exkurs: Pakete</strong></a></li>
+  <li><a href="#datenimport" id="toc-datenimport" class="nav-link" data-scroll-target="#datenimport">Datenimport</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1026,11 +1029,9 @@ Standardformat für Datensätze in der empirischen Forschung.</p></li>
 <p>Am Anfang steht der <strong>Vektor</strong>:<br>
 Ein Vektor ist eine einfache, geordnete Reihe von Werten gleichen Datentyps.</p>
 <p>Aus Vektoren lassen sich <strong>Matrizen</strong> bilden:<br>
-Eine Matrix ist eine Sammlung mehrerer gleich langer Vektoren,<br>
-die rechteckig angeordnet sind.</p>
+Eine Matrix ist eine Sammlung mehrerer gleich langer Vektoren, die rechteckig angeordnet sind.</p>
 <p>Ein <strong>Data Frame</strong> geht einen Schritt weiter:<br>
-Auch hier bestehen die Spalten aus Vektoren,<br>
-die Spalten dürfen aber <strong>unterschiedliche Datentypen</strong> haben.</p>
+Auch hier bestehen die Spalten aus Vektoren, die Spalten dürfen aber <strong>unterschiedliche Datentypen</strong> haben.</p>
 <p>So lassen sich reale Datensätze mit Zahlen, Text und Kategorien in einer Tabelle abbilden.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1050,9 +1051,612 @@ sie werden in der Praxis <strong>nicht automatisch ineinander umgewandelt</stron
 </section>
 <section id="welcher-datentyp-oder-welche-datenstruktur-hat-mein-objekt" class="level3">
 <h3 class="anchored" data-anchor-id="welcher-datentyp-oder-welche-datenstruktur-hat-mein-objekt">Welcher Datentyp oder welche Datenstruktur hat mein Objekt?</h3>
-
-
+<p>In R können wir jederzeit überprüfen, <strong>was für eine Art von Objekt</strong> wir im Environment haben. Das ist besonders hilfreich, wenn wir mit vielen Objekten arbeiten oder unsicher sind, wie R ein Objekt interpretiert.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Grundlegende Befehle im Überblick</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>class(x)</code> - gibt uns eine <strong>allgemeine Einordnung</strong> des Objekts.
+<ul>
+<li><code>typeof(x)</code> - detaillierter wie class, zeigt <strong>wie R das Objekt intern speichert</strong></li>
+</ul></li>
+<li><code>str(x)</code> - gibt einen <strong>Überblick über Aufbau und Inhalt</strong> eines Objekts.</li>
+</ul>
+<p>Für <strong>Funktionen</strong>: - <code>?mean()</code> - Öffnet die <strong>Hilfeseite</strong> zur Funktion <code>mean()</code> (Beschreibung, Argumente, Beispiele).</p>
+</div>
+</div>
+<p>Im Folgenden betrachten wir unsere zuvor erstellten Objekte <code>x</code> und <code>y</code> genauer und nutzen sie, <strong>um die entsprechenden Befehle anzuwenden.</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> num 5</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> num [1:5] 23 12 11 9 13</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Übung 3</strong> – Datentyp und Datenstruktur
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Im bisherigen Verlauf haben wir mehrere <strong>Objekte und Hilfsobjekte</strong> erstellt.</p>
+<ol type="1">
+<li><p>Überprüfe für jedes dieser Objekte</p>
+<ul>
+<li>den <strong>Datentyp</strong> und<br>
+</li>
+<li>die <strong>Datenstruktur</strong>.</li>
+</ul></li>
+<li><p>Nutze dafür die Befehle<br>
+<code>class()</code>, <code>typeof()</code> und <code>str()</code>.</p></li>
+<li><p>Überlege dir:</p>
+<ul>
+<li>Welche Objekte sind <strong>einzelne Werte</strong>?<br>
+</li>
+<li>Welche Objekte sind <strong>Vektoren</strong>?</li>
+</ul></li>
+</ol>
+<p>Ziel ist es, ein besseres Gefühl dafür zu bekommen,<br>
+wie R unterschiedliche Ergebnisse speichert.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><strong>Lösung – Übung 3</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittelwert</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> num 13.6</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Anzahl der Werte</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> int 5</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardabweichung</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> num 5.46</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardfehler</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(se_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(se_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(se_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> num 2.44</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Varianz</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(var_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(var_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(var_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> num 29.8</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># z-standardisierte Werte</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(z_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(z_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(z_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> num [1:5] 1.722 -0.293 -0.476 -0.843 -0.11</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Konfidenzintervall</span></span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ci_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(ci_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ci_y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Named num [1:2] 6.82 20.38
+ - attr(*, "names")= chr [1:2] "lower" "upper"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Faustregel: Ein Objekt in R verstehen</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><code>class()</code><br>
+→ Welche <strong>Art von Objekt</strong> ist es?</li>
+<li><code>typeof()</code><br>
+→ Wie wird das Objekt <strong>intern gespeichert</strong>?</li>
+<li><code>str()</code><br>
+→ Wie ist das Objekt <strong>aufgebaut</strong> und welche Inhalte hat es?</li>
+</ol>
+</div>
+</div>
 </section>
+</section>
+<section id="einen-ersten-datensatz-in-r-erstellen" class="level2">
+<h2 class="anchored" data-anchor-id="einen-ersten-datensatz-in-r-erstellen">Einen ersten Datensatz in R erstellen</h2>
+<p>Bisher haben wir mit einzelnen Objekten und Vektoren gearbeitet. In der Praxis bestehen Datensätze jedoch aus <strong>mehreren Variablen</strong>, die gemeinsam eine Gruppe von Fällen beschreiben.</p>
+<p>Im nächsten Schritt erstellen wir deshalb mehrere Vektoren (z. B. Alter, Geschlecht oder Körpergröße) und führen sie zu einem <strong>kleinen Datensatz</strong> zusammen.</p>
+<p>Dabei lernst du, - wie mehrere Vektoren sinnvoll angelegt werden und<br>
+- wie aus einzelnen Variablen eine tabellarische Struktur entsteht.</p>
+<p>Wir legen nun unsere neuen Vektoren (= <strong>Variablen</strong>)** an:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alter</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">29</span>, <span class="dv">35</span>, <span class="dv">41</span>, <span class="dv">27</span>, <span class="dv">33</span>)</span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Geschlecht</span></span>
+<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>)</span>
+<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Haarfarbe</span></span>
+<span id="cb96-8"><a href="#cb96-8" aria-hidden="true" tabindex="-1"></a>hair_color <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"brown"</span>, <span class="st">"blonde"</span>, <span class="st">"black"</span>, <span class="st">"brown"</span>, <span class="st">"red"</span>, <span class="st">"black"</span>)</span>
+<span id="cb96-9"><a href="#cb96-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-10"><a href="#cb96-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Körpergröße in cm</span></span>
+<span id="cb96-11"><a href="#cb96-11" aria-hidden="true" tabindex="-1"></a>height_cm <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">165</span>, <span class="dv">180</span>, <span class="dv">172</span>, <span class="dv">178</span>, <span class="dv">160</span>, <span class="dv">185</span>)</span>
+<span id="cb96-12"><a href="#cb96-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-13"><a href="#cb96-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Gewicht in kg</span></span>
+<span id="cb96-14"><a href="#cb96-14" aria-hidden="true" tabindex="-1"></a>weight_kg <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">82</span>, <span class="dv">70</span>, <span class="dv">88</span>, <span class="dv">55</span>, <span class="dv">90</span>)</span>
+<span id="cb96-15"><a href="#cb96-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-16"><a href="#cb96-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Beruf</span></span>
+<span id="cb96-17"><a href="#cb96-17" aria-hidden="true" tabindex="-1"></a>occupation <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb96-18"><a href="#cb96-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"student"</span>,</span>
+<span id="cb96-19"><a href="#cb96-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"engineer"</span>,</span>
+<span id="cb96-20"><a href="#cb96-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"teacher"</span>,</span>
+<span id="cb96-21"><a href="#cb96-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"manager"</span>,</span>
+<span id="cb96-22"><a href="#cb96-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"student"</span>,</span>
+<span id="cb96-23"><a href="#cb96-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"researcher"</span></span>
+<span id="cb96-24"><a href="#cb96-24" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Jeder dieser Vektoren stellt eine <strong>Variable</strong> dar.<br>
+Die einzelnen Werte gehören jeweils <strong>zur gleichen Person</strong><br>
+(d.&nbsp;h. zur gleichen Zeile im späteren Datensatz).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Alle Vektoren müssen <strong>die gleiche Länge</strong> haben.</p>
+<p>Übeprüfe das!</p>
+</div>
+</div>
+<p>Im nächsten Schritt fassen wir die einzelnen Variablen zu einem <strong>gemeinsamen Datensatz</strong> zusammen.<br>
+Dabei verwenden wir zunächst <strong>Base R</strong>, also Funktionen, die ohne zusätzliche Pakete verfügbar sind.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> age,</span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> gender,</span>
+<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">hair_color =</span> hair_color,</span>
+<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">height_cm =</span> height_cm,</span>
+<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight_kg =</span> weight_kg,</span>
+<span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">occupation =</span> occupation</span>
+<span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb97-9"><a href="#cb97-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-10"><a href="#cb97-10" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  age gender hair_color height_cm weight_kg occupation
+1  23 female      brown       165        60    student
+2  29   male     blonde       180        82   engineer
+3  35 female      black       172        70    teacher
+4  41   male      brown       178        88    manager
+5  27 female        red       160        55    student
+6  33   male      black       185        90 researcher</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Aufbau der Funktion <code>data.frame()</code>:</p>
+<p><code>data.frame(name1 = name2)</code></p>
+<ul>
+<li><code>name1</code> = Spaltenname im Datensatz</li>
+<li><code>name2</code> = Objektname aus dem Environment</li>
+</ul>
+</div>
+</div>
+<p>Die einzelnen Vektoren sind nun zu einem <strong>Datensatz</strong> zusammengeführt worden:</p>
+<ul>
+<li>jede <strong>Spalte</strong> ist eine Variable<br>
+</li>
+<li>jede <strong>Zeile</strong> ist ein Fall (eine Person)</li>
+</ul>
+<p><code>data.frame()</code> ist die klassische Tabellenstruktur in Base R<br>
+und bildet die Grundlage für viele weitere Analyseschritte.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><strong>Erinnerung</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Auch ein einzelner Wert ist in R ein <strong>Vektor der Länge 1</strong>. Mit der <code>c()</code> Funktion können wir einzelne Werte zu einem Vektor zusammenfassen</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Übung 4</strong> – Erstelle einen Datensatz
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Bisher haben wir einen Datensatz erstellt mit sechs Variablen. Erstelle nun zwei weitere <strong>Variablen</strong> und füge diesen zu einem Datensatz hinzu. Nenne die eine Variable <code>numbers</code>und die andere <code>chars</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Lösung - Übung 4</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">5</span>,<span class="dv">17</span>,<span class="dv">6</span>,<span class="dv">75</span>,<span class="dv">22</span>)</span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>chars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Anna"</span>, <span class="st">"Alex"</span>, <span class="st">"Beate"</span>, <span class="st">"Bobby"</span>, <span class="st">"Christina"</span>, <span class="st">"Chester"</span>)</span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> age,</span>
+<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> gender,</span>
+<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">hair_color =</span> hair_color,</span>
+<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">height_cm =</span> height_cm,</span>
+<span id="cb99-10"><a href="#cb99-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight_kg =</span> weight_kg,</span>
+<span id="cb99-11"><a href="#cb99-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">occupation =</span> occupation,</span>
+<span id="cb99-12"><a href="#cb99-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">nmbrs =</span> numbers,</span>
+<span id="cb99-13"><a href="#cb99-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">chars =</span> chars</span>
+<span id="cb99-14"><a href="#cb99-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span><strong>Typische Fehler beim Erstellen eines Data Frames</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>Komma vergessen oder zu viel gesetzt</strong><br>
+→ führt oft zu unerwarteten Fehlermeldungen.</p></li>
+<li><p><strong>Falscher Objektname</strong><br>
+→ R unterscheidet zwischen Groß- und Kleinschreibung<br>
+(<code>Age</code> ≠ <code>age</code>).</p></li>
+<li><p><strong>Unterschiedliche Längen der Vektoren</strong><br>
+→ Alle Variablen müssen <strong>gleich viele Werte</strong> haben.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="exkurs-pakete" class="level2">
+<h2 class="anchored" data-anchor-id="exkurs-pakete"><strong>Exkurs: Pakete</strong></h2>
+<p>Pakete sind <strong>Erweiterungen von R</strong>.<br>
+Sie enthalten zusätzliche Funktionen, Datensätze und Dokumentationen,<br>
+die bestimmte Aufgaben erleichtern oder überhaupt erst möglich machen.</p>
+<p>R bringt bereits viele grundlegende Funktionen mit (Base R).<br>
+Für komplexere oder spezialisierte Aufgaben greifen wir jedoch häufig auf <strong>Pakete</strong> zurück.</p>
+<section id="pakete-installieren" class="level3">
+<h3 class="anchored" data-anchor-id="pakete-installieren">Pakete Installieren</h3>
+<p>Bevor wir ein Paket nutzen können, müssen wir es <strong>einmal installieren</strong>.<br>
+Die Installation erfolgt über das Internet und wird lokal auf dem Rechner gespeichert.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"psych"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span><strong>Wichtig</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>install.packages()</code> muss <strong>nur einmal</strong> ausgeführt werden.<br>
+Danach ist das Paket in der Regel dauerhaft auf deinem Rechner verfügbar.</p>
+</div>
+</div>
+</section>
+<section id="paket-laden" class="level3">
+<h3 class="anchored" data-anchor-id="paket-laden">Paket laden</h3>
+<p>Nach der Installation müssen Pakete <strong>in jeder neuen R-Sitzung geladen</strong> werden, damit ihre Funktionen zur Verfügung stehen.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Merksatz</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>install.packages()</code> → einmal installieren<br>
+</li>
+<li><code>library()</code> → in jeder Sitzung laden</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="das-tidyverse" class="level3">
+<h3 class="anchored" data-anchor-id="das-tidyverse">Das tidyverse</h3>
+<p>Das <strong>tidyverse</strong> ist eine Sammlung mehrerer Pakete,<br>
+die besonders für <strong>Datenaufbereitung, Analyse und Visualisierung</strong> entwickelt wurden.</p>
+<p>Es bietet:</p>
+<ul>
+<li>gut lesbaren Code<br>
+</li>
+<li>einheitliche Funktionsnamen<br>
+</li>
+<li>komfortable Werkzeuge für Data Frames</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Typische tidyverse-Pakete sind zum Beispiel:</p>
+<ul>
+<li><code>dplyr</code> (Datenaufbereitung)</li>
+<li><code>ggplot2</code> (Visualisierung)</li>
+<li><code>readr</code> (Datenimport)</li>
+</ul>
+</div>
+</div>
+<p>Wir werden das tidyverse später als <strong>Alternative zu Base R</strong> nutzen.</p>
+</section>
+<section id="das-psych-paket" class="level3">
+<h3 class="anchored" data-anchor-id="das-psych-paket">Das psych-Paket</h3>
+<p>Das Paket <strong>psych</strong> wird häufig in den Sozial- und Verhaltenswissenschaften verwendet.</p>
+<p>Es enthält unter anderem:</p>
+<ul>
+<li>deskriptive Statistiken</li>
+<li>Skalenanalysen</li>
+<li>psychometrische Kennwerte</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>psych</code> ergänzt Base R um viele Funktionen, die in der empirischen Forschung regelmäßig benötigt werden.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="datenimport" class="level2">
+<h2 class="anchored" data-anchor-id="datenimport">Datenimport</h2>
+<p>Bisher haben wir Datensätze selbst erstellt, um zu verstehen,<br>
+wie Daten in R <strong>strukturiert</strong> sind (Vektoren, Data Frames, Variablen).</p>
+<p>In der Praxis müssen wir Datensätze jedoch <strong>nicht von Hand anlegen</strong>.<br>
+Häufig stammen Daten aus externen Quellen, zum Beispiel aus:</p>
+<ul>
+<li>Online-Befragungstools (z. B. SoSci Survey)</li>
+<li>Excel-Tabellen</li>
+<li>Statistiksoftware wie SPSS</li>
+<li>Forschungsprojekten oder Repositorien</li>
+</ul>
+<p>Diese Daten werden meist über eine <strong>Export-Funktion</strong> als Datei bereitgestellt (z. B. CSV oder Excel) und anschließend in R <strong>importiert</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><strong>Typische Datenformate</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>CSV</strong> (<code>.csv</code>) – sehr verbreitet, einfach, textbasiert<br>
+</li>
+<li><strong>Excel</strong> (<code>.xlsx</code>) – häufig in der Praxis<br>
+</li>
+<li><strong>SPSS</strong> (<code>.sav</code>) – vor allem in den Sozialwissenschaften</li>
+</ul>
+</div>
+</div>
+<p>Beim Importieren von Daten können verschiedene <strong>Hürden</strong> auftreten.<br>
+Diese sind normal und gehören zur Arbeit mit realen Datensätzen dazu.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span><strong>Typische Probleme beim Datenimport</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Datei wird nicht gefunden (falscher <strong>Pfad</strong>)<br>
+</li>
+<li>Falsches <strong>Trennzeichen</strong> (Komma vs.&nbsp;Semikolon)<br>
+</li>
+<li>Umlaute oder Sonderzeichen werden falsch angezeigt (<strong>Encoding</strong>)<br>
+</li>
+<li>Variablen werden als Text statt als Zahl erkannt<br>
+</li>
+<li>Fehlende Werte sind unterschiedlich kodiert (z. B. leer, <code>-99</code>, <code>999</code>)</li>
+</ul>
+</div>
+</div>
+<p>Um den Datenimport möglichst übersichtlich und zuverlässig zu gestalten,<br>
+verwenden wir ab jetzt Funktionen aus dem <strong>tidyverse</strong>.</p>
+<p>Diese bieten: - klare und gut lesbare Befehle<br>
+- sinnvolle Standardannahmen<br>
+- eine einfache erste Prüfung der importierten Daten</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Einordnung</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wir haben bewusst zuerst mit <strong>Base R</strong> gearbeitet,<br>
+um die grundlegenden Strukturen zu verstehen.</p>
+<p>Jetzt nutzen wir das tidyverse als <strong>komfortablere Alternative</strong><br>
+für reale Daten und typische Workflows.</p>
+</div>
+</div>
+<p>Im nächsten Schritt importieren wir einen Datensatz aus einer SAV-Datei<br>
+und prüfen anschließend, ob der Import korrekt funktioniert hat.</p>
+<p>Für die folgenden Schritte arbeiten wir mit einem <strong>vorgegebenen Datensatz</strong>.</p>
+<p>Bitte lade den Datensatz herunter und speichere ihn <strong>in deinem Projektordner</strong>, zum Beispiel im Unterordner <code>data/</code>.</p>
+<p>➡️ <strong><a href="../../assets/data/datensatz_workshop.csv">Workshop-Datensatz herunterladen (CSV)</a></strong><br>
+➡️ <strong><a href="../../assets/data/spss_datensatz_workshop.sav">Workshop-Datensatz herunterladen (SPSS)</a></strong></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span><strong>Wichtig</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Achte darauf, die Datei <strong>nicht irgendwo auf dem Rechner</strong>,<br>
+sondern <strong>im Projektordner</strong> zu speichern.<br>
+Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
+</div>
+</div>
+
+
 </section>
 </section>
 
