@@ -1044,8 +1044,8 @@ Für die folgenden Schritte arbeiten wir mit einem **vorgegebenen Datensatz**.
 
 Bitte lade den Datensatz herunter und speichere ihn **in deinem Projektordner**, zum Beispiel im Unterordner `data/`.
 
-➡️ **[Workshop-Datensatz herunterladen (CSV)](../../assets/data/datensatz_workshop.csv)**  
-➡️ **[Workshop-Datensatz herunterladen (SPSS)](../../assets/data/spss_datensatz_workshop.sav)**
+➡️ **[Workshop-Datensatz herunterladen (CSV)](../workshops/ws1/assets/data/datensatz_workshop.csv)**  
+➡️ **[Workshop-Datensatz herunterladen (SPSS)](../workshops/ws1/assets/data/spss_datensatz_workshop.sav)**
 
 ::: callout-warning
 # **Wichtig**
@@ -1053,6 +1053,31 @@ Bitte lade den Datensatz herunter und speichere ihn **in deinem Projektordner**,
 Achte darauf, die Datei **nicht irgendwo auf dem Rechner**,  
 sondern **im Projektordner** zu speichern.  
 Nur so funktionieren die folgenden Import-Befehle ohne Probleme.
+:::
+
+Jetzt importieren wir die Daten.
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Falls nicht schon geschehen, lade folgende Pakete:
+
+library(tidyverse)
+library(haven)
+
+# Importiere nun die Datensätz
+
+df_csv <- read_csv("data/datensatz_workshop.csv")
+
+df_spss <- read_sav("data/spss_datensatz_workshop.sav")
+```
+
+::: callout-note
+# Hinweis
+
+Was fällt dir auf, wenn du die **Datensätze** mit einander vergleichst?
+
 :::
 
 
