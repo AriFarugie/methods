@@ -461,7 +461,6 @@ Nutze den Vektor `y` und berechne folgende Kennwerte:
 
 Speichere alle Ergebnisse als eigene Objekte, z. B.:
 `se_y`, `var_y`, `z_y`, `ci_y`.
-
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -642,12 +641,10 @@ Am Anfang steht der **Vektor**:
 Ein Vektor ist eine einfache, geordnete Reihe von Werten gleichen Datentyps.
 
 Aus Vektoren lassen sich **Matrizen** bilden:  
-Eine Matrix ist eine Sammlung mehrerer gleich langer Vektoren,  
-die rechteckig angeordnet sind.
+Eine Matrix ist eine Sammlung mehrerer gleich langer Vektoren, die rechteckig angeordnet sind.
 
 Ein **Data Frame** geht einen Schritt weiter:  
-Auch hier bestehen die Spalten aus Vektoren,  
-die Spalten dürfen aber **unterschiedliche Datentypen** haben.
+Auch hier bestehen die Spalten aus Vektoren, die Spalten dürfen aber **unterschiedliche Datentypen** haben.
 
 So lassen sich reale Datensätze mit Zahlen, Text und Kategorien in einer Tabelle abbilden.
 
@@ -659,6 +656,412 @@ sie werden in der Praxis **nicht automatisch ineinander umgewandelt**
 :::
 ---
 ### Welcher Datentyp oder welche Datenstruktur hat mein Objekt?
+
+In R können wir jederzeit überprüfen, **was für eine Art von Objekt** wir im Environment haben. Das ist besonders hilfreich, wenn wir mit vielen Objekten arbeiten oder unsicher sind, wie R ein Objekt interpretiert.
+
+::: callout-tip
+# **Grundlegende Befehle im Überblick**
+
+- `class(x)` - gibt uns eine **allgemeine Einordnung** des Objekts.
+  - `typeof(x)` - detaillierter wie class, zeigt **wie R das Objekt intern speichert**
+- `str(x)` - gibt einen **Überblick über Aufbau und Inhalt** eines Objekts.
+
+Für **Funktionen**:
+- `?mean()` - Öffnet die **Hilfeseite** zur Funktion `mean()` (Beschreibung, Argumente, Beispiele).
+:::
+
+Im Folgenden betrachten wir unsere zuvor erstellten Objekte `x` und `y` genauer und nutzen sie, **um die entsprechenden Befehle anzuwenden.**
+
+```{r}
+#| echo: true
+
+class(x)
+class(y)
+
+typeof(x)
+typeof(y)
+
+str(x)
+str(y)
+```
+
+::: {.callout-tip collapse="true"}
+# **Übung 3** – Datentyp und Datenstruktur
+
+Im bisherigen Verlauf haben wir mehrere **Objekte und Hilfsobjekte** erstellt.
+
+1. Überprüfe für jedes dieser Objekte  
+   - den **Datentyp** und  
+   - die **Datenstruktur**.
+
+2. Nutze dafür die Befehle  
+   `class()`, `typeof()` und `str()`.
+
+3. Überlege dir:
+   - Welche Objekte sind **einzelne Werte**?  
+   - Welche Objekte sind **Vektoren**?
+
+Ziel ist es, ein besseres Gefühl dafür zu bekommen,  
+wie R unterschiedliche Ergebnisse speichert.
+:::
+
+::: {.callout-note collapse="true"}
+### **Lösung – Übung 3**
+
+```{r}
+#| echo: true
+
+# Mittelwert
+class(m)
+typeof(m)
+str(m)
+
+# Anzahl der Werte
+class(n)
+typeof(n)
+str(n)
+
+# Standardabweichung
+class(s)
+typeof(s)
+str(s)
+
+# Standardfehler
+class(se_y)
+typeof(se_y)
+str(se_y)
+
+# Varianz
+class(var_y)
+typeof(var_y)
+str(var_y)
+
+# z-standardisierte Werte
+class(z_y)
+typeof(z_y)
+str(z_y)
+
+# Konfidenzintervall
+class(ci_y)
+typeof(ci_y)
+str(ci_y)
+```
+:::
+
+
+::: callout-tip
+# **Faustregel: Ein Objekt in R verstehen**
+1. `class()`  
+   → Welche **Art von Objekt** ist es?
+2. `typeof()`  
+   → Wie wird das Objekt **intern gespeichert**?
+3. `str()`  
+   → Wie ist das Objekt **aufgebaut** und welche Inhalte hat es?
+:::
+
+## Einen ersten Datensatz in R erstellen
+
+Bisher haben wir mit einzelnen Objekten und Vektoren gearbeitet. In der Praxis bestehen Datensätze jedoch aus **mehreren Variablen**, die gemeinsam eine Gruppe von Fällen beschreiben.
+
+Im nächsten Schritt erstellen wir deshalb mehrere Vektoren (z. B. Alter, Geschlecht oder Körpergröße) und führen sie zu einem **kleinen Datensatz** zusammen.
+
+Dabei lernst du,
+- wie mehrere Vektoren sinnvoll angelegt werden und  
+- wie aus einzelnen Variablen eine tabellarische Struktur entsteht.
+
+Wir legen nun unsere neuen Vektoren (= **Variablen**)** an:
+
+```{r}
+#| echo: true
+
+# Alter
+age <- c(23, 29, 35, 41, 27, 33)
+
+# Geschlecht
+gender <- c("female", "male", "female", "male", "female", "male")
+
+# Haarfarbe
+hair_color <- c("brown", "blonde", "black", "brown", "red", "black")
+
+# Körpergröße in cm
+height_cm <- c(165, 180, 172, 178, 160, 185)
+
+# Gewicht in kg
+weight_kg <- c(60, 82, 70, 88, 55, 90)
+
+# Beruf
+occupation <- c(
+  "student",
+  "engineer",
+  "teacher",
+  "manager",
+  "student",
+  "researcher"
+)
+```
+Jeder dieser Vektoren stellt eine **Variable** dar.  
+Die einzelnen Werte gehören jeweils **zur gleichen Person**  
+(d. h. zur gleichen Zeile im späteren Datensatz).
+
+::: callout-important
+# Wichtig 
+Alle Vektoren müssen **die gleiche Länge** haben.
+
+Übeprüfe das!
+:::
+
+Im nächsten Schritt fassen wir die einzelnen Variablen zu einem **gemeinsamen Datensatz** zusammen.  
+Dabei verwenden wir zunächst **Base R**, also Funktionen, die ohne zusätzliche Pakete verfügbar sind.
+
+```{r}
+#| echo: true
+
+data <- data.frame(
+  age = age,
+  gender = gender,
+  hair_color = hair_color,
+  height_cm = height_cm,
+  weight_kg = weight_kg,
+  occupation = occupation
+)
+
+data
+```
+
+::: callout-caution
+# Achtung
+
+Aufbau der Funktion `data.frame()`:
+
+`data.frame(name1 = name2)`
+
+- `name1` = Spaltenname im Datensatz
+- `name2` = Objektname aus dem Environment
+:::
+
+
+Die einzelnen Vektoren sind nun zu einem **Datensatz** zusammengeführt worden:
+
+- jede **Spalte** ist eine Variable  
+- jede **Zeile** ist ein Fall (eine Person)
+
+`data.frame()` ist die klassische Tabellenstruktur in Base R  
+und bildet die Grundlage für viele weitere Analyseschritte.
+
+::: callout-note
+# **Erinnerung**
+
+Auch ein einzelner Wert ist in R ein **Vektor der Länge 1**. Mit der `c()` Funktion können wir einzelne Werte zu einem Vektor zusammenfassen
+:::
+
+::: {.callout-tip collapse="true"}
+# **Übung 4** – Erstelle einen Datensatz
+
+Bisher haben wir einen Datensatz erstellt mit sechs Variablen. Erstelle nun zwei weitere **Variablen** und füge diesen zu einem Datensatz hinzu. Nenne die eine Variable `numbers`und die andere `chars`.
+:::
+
+::: {.callout-tip collapse="true"}
+
+# **Lösung - Übung 4**
+
+```{r}
+#| echo: true
+
+numbers <- c(12,5,17,6,75,22)
+
+chars <- c("Anna", "Alex", "Beate", "Bobby", "Christina", "Chester")
+
+data <- data.frame(
+  age = age,
+  gender = gender,
+  hair_color = hair_color,
+  height_cm = height_cm,
+  weight_kg = weight_kg,
+  occupation = occupation,
+  nmbrs = numbers,
+  chars = chars
+)
+```
+:::
+
+::: callout-warning
+# **Typische Fehler beim Erstellen eines Data Frames**
+
+- **Komma vergessen oder zu viel gesetzt**  
+  → führt oft zu unerwarteten Fehlermeldungen.
+
+- **Falscher Objektname**  
+  → R unterscheidet zwischen Groß- und Kleinschreibung  
+  (`Age` ≠ `age`).
+
+- **Unterschiedliche Längen der Vektoren**  
+  → Alle Variablen müssen **gleich viele Werte** haben.
+:::
+
+## **Exkurs: Pakete**
+
+Pakete sind **Erweiterungen von R**.  
+Sie enthalten zusätzliche Funktionen, Datensätze und Dokumentationen,  
+die bestimmte Aufgaben erleichtern oder überhaupt erst möglich machen.
+
+R bringt bereits viele grundlegende Funktionen mit (Base R).  
+Für komplexere oder spezialisierte Aufgaben greifen wir jedoch häufig auf **Pakete** zurück.
+
+### Pakete Installieren
+
+Bevor wir ein Paket nutzen können, müssen wir es **einmal installieren**.  
+Die Installation erfolgt über das Internet und wird lokal auf dem Rechner gespeichert.
+
+
+```{r}
+#| echo: true
+#| eval: false
+
+install.packages("tidyverse")
+install.packages("psych")
+```
+::: callout-warning
+# **Wichtig**
+
+`install.packages()` muss **nur einmal** ausgeführt werden.  
+Danach ist das Paket in der Regel dauerhaft auf deinem Rechner verfügbar.
+:::
+
+### Paket laden
+
+Nach der Installation müssen Pakete **in jeder neuen R-Sitzung geladen** werden,
+damit ihre Funktionen zur Verfügung stehen.
+
+
+```{r}
+#| echo: true
+#| eval: false
+
+library(tidyverse)
+library(psych)
+```
+::: callout-tip
+# **Merksatz**
+
+- `install.packages()` → einmal installieren  
+- `library()` → in jeder Sitzung laden
+:::
+
+### Das tidyverse
+
+Das **tidyverse** ist eine Sammlung mehrerer Pakete,  
+die besonders für **Datenaufbereitung, Analyse und Visualisierung** entwickelt wurden.
+
+Es bietet:
+
+- gut lesbaren Code  
+- einheitliche Funktionsnamen  
+- komfortable Werkzeuge für Data Frames
+
+::: callout-tip
+Typische tidyverse-Pakete sind zum Beispiel:
+
+- `dplyr` (Datenaufbereitung)
+- `ggplot2` (Visualisierung)
+- `readr` (Datenimport)
+:::
+
+Wir werden das tidyverse später als **Alternative zu Base R** nutzen.
+
+### Das psych-Paket
+
+Das Paket **psych** wird häufig in den Sozial- und Verhaltenswissenschaften verwendet.
+
+Es enthält unter anderem:
+
+- deskriptive Statistiken
+- Skalenanalysen
+- psychometrische Kennwerte
+
+::: callout-note
+`psych` ergänzt Base R um viele Funktionen,
+die in der empirischen Forschung regelmäßig benötigt werden.
+:::
+
+## Datenimport
+
+Bisher haben wir Datensätze selbst erstellt, um zu verstehen,  
+wie Daten in R **strukturiert** sind (Vektoren, Data Frames, Variablen).
+
+In der Praxis müssen wir Datensätze jedoch **nicht von Hand anlegen**.  
+Häufig stammen Daten aus externen Quellen, zum Beispiel aus:
+
+- Online-Befragungstools (z. B. SoSci Survey)
+- Excel-Tabellen
+- Statistiksoftware wie SPSS
+- Forschungsprojekten oder Repositorien
+
+Diese Daten werden meist über eine **Export-Funktion** als Datei bereitgestellt (z. B. CSV oder Excel) und anschließend in R **importiert**.
+
+::: callout-note
+# **Typische Datenformate**
+
+- **CSV** (`.csv`) – sehr verbreitet, einfach, textbasiert  
+- **Excel** (`.xlsx`) – häufig in der Praxis  
+- **SPSS** (`.sav`) – vor allem in den Sozialwissenschaften
+:::
+
+Beim Importieren von Daten können verschiedene **Hürden** auftreten.  
+Diese sind normal und gehören zur Arbeit mit realen Datensätzen dazu.
+
+::: callout-warning
+# **Typische Probleme beim Datenimport**
+
+- Datei wird nicht gefunden (falscher **Pfad**)  
+- Falsches **Trennzeichen** (Komma vs. Semikolon)  
+- Umlaute oder Sonderzeichen werden falsch angezeigt (**Encoding**)  
+- Variablen werden als Text statt als Zahl erkannt  
+- Fehlende Werte sind unterschiedlich kodiert (z. B. leer, `-99`, `999`)
+:::
+
+Um den Datenimport möglichst übersichtlich und zuverlässig zu gestalten,  
+verwenden wir ab jetzt Funktionen aus dem **tidyverse**.
+
+Diese bieten:
+- klare und gut lesbare Befehle  
+- sinnvolle Standardannahmen  
+- eine einfache erste Prüfung der importierten Daten
+
+::: callout-tip
+# **Einordnung**
+
+Wir haben bewusst zuerst mit **Base R** gearbeitet,  
+um die grundlegenden Strukturen zu verstehen.
+
+Jetzt nutzen wir das tidyverse als **komfortablere Alternative**  
+für reale Daten und typische Workflows.
+:::
+
+Im nächsten Schritt importieren wir einen Datensatz aus einer SAV-Datei  
+und prüfen anschließend, ob der Import korrekt funktioniert hat.
+
+Für die folgenden Schritte arbeiten wir mit einem **vorgegebenen Datensatz**.
+
+Bitte lade den Datensatz herunter und speichere ihn **in deinem Projektordner**, zum Beispiel im Unterordner `data/`.
+
+➡️ **[Workshop-Datensatz herunterladen (CSV)](../../assets/data/datensatz_workshop.csv)**  
+➡️ **[Workshop-Datensatz herunterladen (SPSS)](../../assets/data/spss_datensatz_workshop.sav)**
+
+::: callout-warning
+# **Wichtig**
+
+Achte darauf, die Datei **nicht irgendwo auf dem Rechner**,  
+sondern **im Projektordner** zu speichern.  
+Nur so funktionieren die folgenden Import-Befehle ohne Probleme.
+:::
+
+
+
+
+
+
+
+
 
 
 
