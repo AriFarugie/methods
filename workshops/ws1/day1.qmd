@@ -1044,15 +1044,19 @@ Für die folgenden Schritte arbeiten wir mit einem **vorgegebenen Datensatz**.
 
 Bitte lade den Datensatz herunter und speichere ihn **in deinem Projektordner**, zum Beispiel im Unterordner `data/`.
 
-➡️ **[Workshop-Datensatz herunterladen (CSV)](../workshops/ws1/assets/data/datensatz_workshop.csv)**  
-➡️ **[Workshop-Datensatz herunterladen (SPSS)](../workshops/ws1/assets/data/spss_datensatz_workshop.sav)**
+➡️ **[Workshop-Datensatz herunterladen (CSV)](../ws1/assets/data/datensatz_workshop.csv)**  
+➡️ **[Workshop-Datensatz herunterladen (SPSS)](../ws1/assets/data/spss_datensatz_workshop.sav)**
+
+Hier kannst du das Codebuch zum Datensatz runterladen, für eine bessere Übersicht, über die Variablen im Datensatz.
+
+➡️ **[Codebuch Workshop Datensatz (PDF)](../ws1/assets/data/codebook_workshop_datensatz.pdf)**
 
 ::: callout-warning
 # **Wichtig**
 
-Achte darauf, die Datei **nicht irgendwo auf dem Rechner**,  
-sondern **im Projektordner** zu speichern.  
+Achte darauf, die Datei **nicht irgendwo auf dem Rechner**, sondern **im Projektordner** zu speichern.  
 Nur so funktionieren die folgenden Import-Befehle ohne Probleme.
+
 :::
 
 Jetzt importieren wir die Daten.
@@ -1076,7 +1080,7 @@ df_spss <- read_sav("data/spss_datensatz_workshop.sav")
 ::: callout-note
 # Hinweis
 
-Was fällt dir auf, wenn du die **Datensätze** mit einander vergleichst?
+Was fällt dir auf, wenn du die **Datensätze** vergleichst?
 
 :::
 
@@ -1085,21 +1089,12 @@ Was fällt dir auf, wenn du die **Datensätze** mit einander vergleichst?
 
 
 
+::: callout-tip
+# **Falls der Import nicht funktioniert**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Prüfe den **Dateinamen**
+- Prüfe den **Pfad**
+- Prüfe, ob die Datei wirklich im Projektordner liegt
+:::
 
 
