@@ -1638,8 +1638,8 @@ für reale Daten und typische Workflows.</p>
 und prüfen anschließend, ob der Import korrekt funktioniert hat.</p>
 <p>Für die folgenden Schritte arbeiten wir mit einem <strong>vorgegebenen Datensatz</strong>.</p>
 <p>Bitte lade den Datensatz herunter und speichere ihn <strong>in deinem Projektordner</strong>, zum Beispiel im Unterordner <code>data/</code>.</p>
-<p>➡️ <strong><a href="../../assets/data/datensatz_workshop.csv">Workshop-Datensatz herunterladen (CSV)</a></strong><br>
-➡️ <strong><a href="../../assets/data/spss_datensatz_workshop.sav">Workshop-Datensatz herunterladen (SPSS)</a></strong></p>
+<p>➡️ <strong><a href="../workshops/ws1/assets/data/datensatz_workshop.csv">Workshop-Datensatz herunterladen (CSV)</a></strong><br>
+➡️ <strong><a href="../workshops/ws1/assets/data/spss_datensatz_workshop.sav">Workshop-Datensatz herunterladen (SPSS)</a></strong></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1653,6 +1653,32 @@ und prüfen anschließend, ob der Import korrekt funktioniert hat.</p>
 <p>Achte darauf, die Datei <strong>nicht irgendwo auf dem Rechner</strong>,<br>
 sondern <strong>im Projektordner</strong> zu speichern.<br>
 Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
+</div>
+</div>
+<p>Jetzt importieren wir die Daten.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Falls nicht schon geschehen, lade folgende Pakete:</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-6"><a href="#cb102-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Importiere nun die Datensätz</span></span>
+<span id="cb102-7"><a href="#cb102-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-8"><a href="#cb102-8" aria-hidden="true" tabindex="-1"></a>df_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/datensatz_workshop.csv"</span>)</span>
+<span id="cb102-9"><a href="#cb102-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-10"><a href="#cb102-10" aria-hidden="true" tabindex="-1"></a>df_spss <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"data/spss_datensatz_workshop.sav"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Was fällt dir auf, wenn du die <strong>Datensätze</strong> mit einander vergleichst?</p>
 </div>
 </div>
 
