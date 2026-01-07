@@ -1047,7 +1047,7 @@ Bitte lade den Datensatz herunter und speichere ihn **in deinem Projektordner**,
 ➡️ **[Workshop-Datensatz herunterladen (CSV)](../ws1/assets/data/datensatz_workshop.csv)**  
 ➡️ **[Workshop-Datensatz herunterladen (SPSS)](../ws1/assets/data/spss_datensatz_workshop.sav)**
 
-Hier kannst du das Codebuch zum Datensatz runterladen, für eine bessere Übersicht, über die Variablen im Datensatz.
+Hier kannst du das **Codebuch** zum Datensatz runterladen, für eine **bessere Übersicht**, über die Variablen im Datensatz.
 
 ➡️ **[Codebuch Workshop Datensatz (PDF)](../ws1/assets/data/codebook_workshop_datensatz.pdf)**
 
@@ -1063,7 +1063,7 @@ Jetzt importieren wir die Daten.
 
 ```{r}
 #| echo: true
-#| eval: false
+#| warning: false
 
 # Falls nicht schon geschehen, lade folgende Pakete:
 
@@ -1072,9 +1072,9 @@ library(haven)
 
 # Importiere nun die Datensätz
 
-df_csv <- read_csv("data/datensatz_workshop.csv")
+df_csv <- read_csv("assets/data/datensatz_workshop.csv")
 
-df_spss <- read_sav("data/spss_datensatz_workshop.sav")
+df_spss <- read_sav("assets/data/spss_datensatz_workshop.sav")
 ```
 
 ::: callout-note
@@ -1084,17 +1084,110 @@ Was fällt dir auf, wenn du die **Datensätze** vergleichst?
 
 :::
 
+::: callout-warning
+# **Typische Probleme & Lösungen**
 
-
-
-
-
-::: callout-tip
-# **Falls der Import nicht funktioniert**
-
-- Prüfe den **Dateinamen**
-- Prüfe den **Pfad**
-- Prüfe, ob die Datei wirklich im Projektordner liegt
+| Problem             | Mögliche Ursache | Mögliche Lösung                                  |
+|--------------------|------------------|--------------------------------------------------|
+| `cannot open file` | falscher Pfad    | Projektordner prüfen, Datei-Pfad anpassen       |
+| Umlaute „kaputt“   | Encoding         | `locale = locale(encoding = "UTF-8")` testen    |
+| alles `character`  | Typ falsch erkannt | nachträglich mit `mutate()` umwandeln        |
 :::
+
+## Datenaufbereitung
+
+Nachdem wir den Datensatz erfolgreich importiert haben, beginnt ein zentraler Schritt der Datenanalyse: die **Datenaufbereitung**.
+
+Daten liegen in der Praxis selten sofort in der Form vor, in der sie analysiert oder ausgewertet werden können. Häufig müssen Variablen ausgewählt, Fälle gefiltert, Werte umkodiert oder neue Variablen erstellt werden.
+
+Für diese Arbeitsschritte verwenden wir das Paket **dplyr**.
+
+### Überblick Datensatz
+
+Bevor wir Daten aufbereiten oder verändern, sollten wir uns immer zuerst einen **Überblick über den Datensatz** verschaffen.
+
+So können wir prüfen,
+- ob die Daten korrekt importiert wurden,
+- welche Variablen enthalten sind,
+- welche Datentypen vorliegen,
+- und ob es offensichtliche Auffälligkeiten gibt.
+
+#### Schneller Überblick
+
+
+```{r}
+#| results: hide
+summary(df_csv)
+
+summary(df_spss)
+```
+
+::: {.callout-tip collapse="true"}
+# **Output**
+
+```{r}
+#| code-fold: true
+summary(df_csv)
+
+summary(df_spss)
+```
+:::
+
+`summary()` gibt uns eine erste **Zusammenfassung der Variablen**  
+(z. B. Min/Max-Werte, Mittelwerte, Häufigkeiten). Aber es wirkt sehr unübersichtlich, daher verwenden wir **`glimpse()`**.
+
+```{r}
+#| results: hide
+glimpse(df_csv)
+
+glimpse(df_spss)
+```
+
+::: {.callout-tip collapse="true"}
+# **Output**
+```{r}
+#| code-fold: true
+glimpse(df_csv)
+
+glimpse(df_spss)
+```
+:::
+
+### Exkurs: Datensatzstruktur
+
+Bevor wir mit der Datenaufbereitung weitermachen, schauen wir uns an, **wie ein Datensatz in R grundsätzlich aufgebaut ist** und wie wir auf einzelne Variablen zugreifen können.
+
+Ein Datensatz (Data Frame) ist in R eine **Sammlung von Variablen**,  
+die jeweils als Spalten organisiert sind.
+
+#### Zugriff auf Variablen mit **`$`**
+
+In Base R greifen wir auf einzelne Variablen eines Datensatzes  
+mit dem **Dollar-Zeichen `$`** zu.
+
+
+
+
+### Einführung dplyr
+
+`dplyr` ist Teil des **tidyverse** und bietet Funktionen,  
+mit denen sich Datensätze **lesbar, konsistent und effizient** bearbeiten lassen.
+
+Der Fokus liegt dabei auf:
+- klarer, gut nachvollziehbarer Syntax  
+- schrittweisem Arbeiten  
+- einer einheitlichen „Grammatik“ für Datenmanipulation
+
+::: callout-important
+# Wichtigsten Funktionen:
+
+- `select()` – Variablen auswählen  
+- `filter()` – Fälle auswählen  
+- `mutate()` – neue Variablen erstellen  
+- `arrange()` – sortieren  
+- `rename()` – Variablen umbenennen
+:::
+
+
 
 
