@@ -227,6 +227,7 @@ window.Quarto = {
   <li><a href="#einen-ersten-datensatz-in-r-erstellen" id="toc-einen-ersten-datensatz-in-r-erstellen" class="nav-link" data-scroll-target="#einen-ersten-datensatz-in-r-erstellen">Einen ersten Datensatz in R erstellen</a></li>
   <li><a href="#exkurs-pakete" id="toc-exkurs-pakete" class="nav-link" data-scroll-target="#exkurs-pakete"><strong>Exkurs: Pakete</strong></a></li>
   <li><a href="#datenimport" id="toc-datenimport" class="nav-link" data-scroll-target="#datenimport">Datenimport</a></li>
+  <li><a href="#datenaufbereitung" id="toc-datenaufbereitung" class="nav-link" data-scroll-target="#datenaufbereitung">Datenaufbereitung</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1640,7 +1641,7 @@ und prüfen anschließend, ob der Import korrekt funktioniert hat.</p>
 <p>Bitte lade den Datensatz herunter und speichere ihn <strong>in deinem Projektordner</strong>, zum Beispiel im Unterordner <code>data/</code>.</p>
 <p>➡️ <strong><a href="../ws1/assets/data/datensatz_workshop.csv">Workshop-Datensatz herunterladen (CSV)</a></strong><br>
 ➡️ <strong><a href="../ws1/assets/data/spss_datensatz_workshop.sav">Workshop-Datensatz herunterladen (SPSS)</a></strong></p>
-<p>Hier kannst du das Codebuch zum Datensatz runterladen, für eine bessere Übersicht, über die Variablen im Datensatz.</p>
+<p>Hier kannst du das <strong>Codebuch</strong> zum Datensatz runterladen, für eine <strong>bessere Übersicht</strong>, über die Variablen im Datensatz.</p>
 <p>➡️ <strong><a href="../ws1/assets/data/codebook_workshop_datensatz.pdf">Codebuch Workshop Datensatz (PDF)</a></strong></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1665,9 +1666,9 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 <span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb102-6"><a href="#cb102-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Importiere nun die Datensätz</span></span>
 <span id="cb102-7"><a href="#cb102-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb102-8"><a href="#cb102-8" aria-hidden="true" tabindex="-1"></a>df_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/datensatz_workshop.csv"</span>)</span>
+<span id="cb102-8"><a href="#cb102-8" aria-hidden="true" tabindex="-1"></a>df_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"assets/data/datensatz_workshop.csv"</span>)</span>
 <span id="cb102-9"><a href="#cb102-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb102-10"><a href="#cb102-10" aria-hidden="true" tabindex="-1"></a>df_spss <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"data/spss_datensatz_workshop.sav"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb102-10"><a href="#cb102-10" aria-hidden="true" tabindex="-1"></a>df_spss <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"assets/data/spss_datensatz_workshop.sav"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1682,25 +1683,551 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 <p>Was fällt dir auf, wenn du die <strong>Datensätze</strong> vergleichst?</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Falls der Import nicht funktioniert</strong>
+<span class="screen-reader-only">Warning</span><strong>Typische Probleme &amp; Lösungen</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problem</th>
+<th>Mögliche Ursache</th>
+<th>Mögliche Lösung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>cannot open file</code></td>
+<td>falscher Pfad</td>
+<td>Projektordner prüfen, Datei-Pfad anpassen</td>
+</tr>
+<tr class="even">
+<td>Umlaute „kaputt“</td>
+<td>Encoding</td>
+<td><code>locale = locale(encoding = "UTF-8")</code> testen</td>
+</tr>
+<tr class="odd">
+<td>alles <code>character</code></td>
+<td>Typ falsch erkannt</td>
+<td>nachträglich mit <code>mutate()</code> umwandeln</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="datenaufbereitung" class="level2">
+<h2 class="anchored" data-anchor-id="datenaufbereitung">Datenaufbereitung</h2>
+<p>Nachdem wir den Datensatz erfolgreich importiert haben, beginnt ein zentraler Schritt der Datenanalyse: die <strong>Datenaufbereitung</strong>.</p>
+<p>Daten liegen in der Praxis selten sofort in der Form vor, in der sie analysiert oder ausgewertet werden können. Häufig müssen Variablen ausgewählt, Fälle gefiltert, Werte umkodiert oder neue Variablen erstellt werden.</p>
+<p>Für diese Arbeitsschritte verwenden wir das Paket <strong>dplyr</strong>.</p>
+<section id="überblick-datensatz" class="level3">
+<h3 class="anchored" data-anchor-id="überblick-datensatz">Überblick Datensatz</h3>
+<p>Bevor wir Daten aufbereiten oder verändern, sollten wir uns immer zuerst einen <strong>Überblick über den Datensatz</strong> verschaffen.</p>
+<p>So können wir prüfen, - ob die Daten korrekt importiert wurden, - welche Variablen enthalten sind, - welche Datentypen vorliegen, - und ob es offensichtliche Auffälligkeiten gibt.</p>
+<section id="schneller-überblick" class="level4">
+<h4 class="anchored" data-anchor-id="schneller-überblick">Schneller Überblick</h4>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_csv)</span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Output</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_csv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>    eastwest         german           sex             age       
+ Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :18.00  
+ 1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:39.00  
+ Median :1.000   Median :1.000   Median :2.000   Median :55.00  
+ Mean   :1.334   Mean   :1.114   Mean   :1.509   Mean   :53.27  
+ 3rd Qu.:2.000   3rd Qu.:1.000   3rd Qu.:2.000   3rd Qu.:67.00  
+ Max.   :2.000   Max.   :3.000   Max.   :3.000   Max.   :96.00  
+                 NA's   :30      NA's   :20      NA's   :41     
+      agec            dg10            dg03            educ         isced97     
+ Min.   :1.000   Min.   : 1.00   Min.   :1.000   Min.   :1.00   Min.   :1.000  
+ 1st Qu.:2.000   1st Qu.: 6.00   1st Qu.:1.000   1st Qu.:3.00   1st Qu.:3.000  
+ Median :3.000   Median : 8.00   Median :4.000   Median :3.00   Median :4.000  
+ Mean   :3.077   Mean   :14.44   Mean   :2.947   Mean   :3.65   Mean   :3.996  
+ 3rd Qu.:4.000   3rd Qu.:15.00   3rd Qu.:4.000   3rd Qu.:5.00   3rd Qu.:5.000  
+ Max.   :6.000   Max.   :95.00   Max.   :4.000   Max.   :7.00   Max.   :6.000  
+ NA's   :41      NA's   :30      NA's   :420     NA's   :170    NA's   :69     
+     iscd11           work          isco08        siops08          isei08     
+ Min.   :1.000   Min.   :1.00   Min.   : 110   Min.   :13.00   Min.   :11.74  
+ 1st Qu.:3.000   1st Qu.:1.00   1st Qu.:2423   1st Qu.:42.09   1st Qu.:36.92  
+ Median :4.000   Median :2.00   Median :3322   Median :48.37   Median :54.55  
+ Mean   :4.574   Mean   :2.38   Mean   :3928   Mean   :47.93   Mean   :53.03  
+ 3rd Qu.:7.000   3rd Qu.:4.00   3rd Qu.:5153   3rd Qu.:54.64   3rd Qu.:70.34  
+ Max.   :8.000   Max.   :4.00   Max.   :9629   Max.   :78.16   Max.   :88.96  
+ NA's   :69      NA's   :56     NA's   :2642   NA's   :2642    NA's   :2642   
+      dw15            dw16           dw19c            dw03          mstat      
+ Min.   : 4.00   Min.   :1.000   Min.   :1.000   Min.   :1.00   Min.   :1.000  
+ 1st Qu.:35.00   1st Qu.:1.000   1st Qu.:3.000   1st Qu.:2.00   1st Qu.:1.000  
+ Median :40.00   Median :1.000   Median :4.000   Median :2.00   Median :1.000  
+ Mean   :38.53   Mean   :1.212   Mean   :3.778   Mean   :2.29   Mean   :2.449  
+ 3rd Qu.:42.00   3rd Qu.:1.000   3rd Qu.:5.000   3rd Qu.:2.00   3rd Qu.:5.000  
+ Max.   :87.50   Max.   :3.000   Max.   :6.000   Max.   :6.00   Max.   :9.000  
+ NA's   :2414    NA's   :2705    NA's   :4811    NA's   :3091   NA's   :136    
+      dp01           di01a           di02a            incc      
+ Min.   :1.000   Min.   :   20   Min.   : 1.00   Min.   : 1.00  
+ 1st Qu.:1.000   1st Qu.: 1450   1st Qu.: 9.00   1st Qu.:10.00  
+ Median :2.000   Median : 2200   Median :13.00   Median :14.00  
+ Mean   :1.557   Mean   : 2461   Mean   :13.04   Mean   :13.57  
+ 3rd Qu.:2.000   3rd Qu.: 3000   3rd Qu.:16.00   3rd Qu.:17.00  
+ Max.   :2.000   Max.   :15000   Max.   :26.00   Max.   :26.00  
+ NA's   :3139    NA's   :4141    NA's   :1994    NA's   :793    
+     di01b           di02b            di05            di06      
+ Min.   :  446   Min.   : 1.00   Min.   :  390   Min.   : 1.00  
+ 1st Qu.: 3000   1st Qu.:16.00   1st Qu.: 2400   1st Qu.:14.00  
+ Median : 4000   Median :19.00   Median : 3500   Median :18.00  
+ Mean   : 4602   Mean   :18.77   Mean   : 4050   Mean   :17.43  
+ 3rd Qu.: 5500   3rd Qu.:22.00   3rd Qu.: 5000   3rd Qu.:21.00  
+ Max.   :50000   Max.   :26.00   Max.   :50000   Max.   :26.00  
+ NA's   :4511    NA's   :2856    NA's   :4257    NA's   :2141   
+     hhincc           dh01            dh11            aq01      
+ Min.   : 1.00   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ 1st Qu.:15.00   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:4.000  
+ Median :19.00   Median :1.000   Median :1.000   Median :6.000  
+ Mean   :17.85   Mean   :1.218   Mean   :1.713   Mean   :5.469  
+ 3rd Qu.:21.00   3rd Qu.:1.000   3rd Qu.:2.000   3rd Qu.:7.000  
+ Max.   :26.00   Max.   :2.000   Max.   :9.000   Max.   :8.000  
+ NA's   :1056    NA's   :153     NA's   :1300    NA's   :199    
+      gs01            gd01           gd02            dg13            dg08     
+ Min.   :1.000   Min.   :1935   Min.   : 0.00   Min.   :1.000   Min.   :1.00  
+ 1st Qu.:2.000   1st Qu.:1994   1st Qu.:10.00   1st Qu.:1.000   1st Qu.:1.00  
+ Median :3.000   Median :2011   Median :25.00   Median :2.000   Median :2.00  
+ Mean   :2.748   Mean   :3746   Mean   :29.47   Mean   :2.529   Mean   :1.64  
+ 3rd Qu.:4.000   3rd Qu.:2021   3rd Qu.:46.00   3rd Qu.:4.000   3rd Qu.:2.00  
+ Max.   :5.000   Max.   :9000   Max.   :93.00   Max.   :6.000   Max.   :2.00  
+ NA's   :142     NA's   :1953   NA's   :1958    NA's   :2845    NA's   :3095  
+      dg09            dg11            ls01             id02      
+ Min.   :1.000   Min.   :1.000   Min.   : 0.000   Min.   :1.000  
+ 1st Qu.:1.000   1st Qu.:1.000   1st Qu.: 6.000   1st Qu.:2.000  
+ Median :2.000   Median :2.000   Median : 8.000   Median :3.000  
+ Mean   :1.638   Mean   :1.611   Mean   : 7.256   Mean   :2.883  
+ 3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.: 8.000   3rd Qu.:3.000  
+ Max.   :2.000   Max.   :2.000   Max.   :10.000   Max.   :5.000  
+ NA's   :4229    NA's   :1938    NA's   :196      NA's   :201    
+      id01            im01           im17            im18            im19      
+ Min.   :1.000   Min.   :1.00   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ 1st Qu.:2.000   1st Qu.:1.00   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000  
+ Median :3.000   Median :2.00   Median :2.000   Median :2.000   Median :3.000  
+ Mean   :2.599   Mean   :1.54   Mean   :2.347   Mean   :2.487   Mean   :2.683  
+ 3rd Qu.:3.000   3rd Qu.:2.00   3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:3.000  
+ Max.   :4.000   Max.   :2.00   Max.   :4.000   Max.   :4.000   Max.   :4.000  
+ NA's   :213     NA's   :1864   NA's   :102     NA's   :106     NA's   :166    
+      im20            im21            iw04            pd11           pi07      
+ Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.00   Min.   :1.000  
+ 1st Qu.:2.000   1st Qu.:2.000   1st Qu.:1.000   1st Qu.:1.00   1st Qu.:1.000  
+ Median :3.000   Median :3.000   Median :1.000   Median :2.00   Median :1.000  
+ Mean   :2.708   Mean   :2.944   Mean   :1.572   Mean   :1.63   Mean   :1.493  
+ 3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:2.000   3rd Qu.:2.00   3rd Qu.:2.000  
+ Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.00   Max.   :2.000  
+ NA's   :152     NA's   :112     NA's   :74      NA's   :81     NA's   :1923   
+      pi01            pi02           lp03            lp04           lp05      
+ Min.   :1.000   Min.   :1.00   Min.   :1.000   Min.   :1.00   Min.   :1.000  
+ 1st Qu.:1.000   1st Qu.:2.00   1st Qu.:1.000   1st Qu.:1.00   1st Qu.:1.000  
+ Median :1.000   Median :2.00   Median :1.000   Median :2.00   Median :1.000  
+ Mean   :1.155   Mean   :2.21   Mean   :1.297   Mean   :1.68   Mean   :1.269  
+ 3rd Qu.:1.000   3rd Qu.:3.00   3rd Qu.:2.000   3rd Qu.:2.00   3rd Qu.:2.000  
+ Max.   :2.000   Max.   :3.00   Max.   :2.000   Max.   :2.00   Max.   :2.000  
+ NA's   :54      NA's   :894    NA's   :210     NA's   :178    NA's   :160    
+      lp06            hs01            hs04            hs05      
+ Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ 1st Qu.:1.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
+ Median :1.000   Median :2.000   Median :3.000   Median :3.000  
+ Mean   :1.376   Mean   :2.437   Mean   :3.036   Mean   :3.356  
+ 3rd Qu.:2.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:4.000  
+ Max.   :2.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
+ NA's   :164     NA's   :63      NA's   :1793    NA's   :1792   
+      hs06            hs07            hs09            land       
+ Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   : 10.00  
+ 1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000   1st Qu.: 50.00  
+ Median :2.000   Median :3.000   Median :4.000   Median : 80.00  
+ Mean   :2.614   Mean   :2.921   Mean   :4.044   Mean   : 86.99  
+ 3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:5.000   3rd Qu.:120.00  
+ Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :160.00  
+ NA's   :1797    NA's   :1805    NA's   :1791                    
+      bik            gkpol      
+ Min.   : 1.00   Min.   :1.000  
+ 1st Qu.: 5.00   1st Qu.:3.000  
+ Median : 8.00   Median :4.000  
+ Mean   : 7.07   Mean   :4.313  
+ 3rd Qu.:10.00   3rd Qu.:6.000  
+ Max.   :10.00   Max.   :7.000  
+ NA's   :174     NA's   :68     </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>    eastwest         german           sex             age       
+ Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :18.00  
+ 1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:39.00  
+ Median :1.000   Median :1.000   Median :2.000   Median :55.00  
+ Mean   :1.334   Mean   :1.114   Mean   :1.509   Mean   :53.27  
+ 3rd Qu.:2.000   3rd Qu.:1.000   3rd Qu.:2.000   3rd Qu.:67.00  
+ Max.   :2.000   Max.   :3.000   Max.   :3.000   Max.   :96.00  
+                 NA's   :30      NA's   :20      NA's   :41     
+      agec            dg10            dg03            educ         isced97     
+ Min.   :1.000   Min.   : 1.00   Min.   :1.000   Min.   :1.00   Min.   :1.000  
+ 1st Qu.:2.000   1st Qu.: 6.00   1st Qu.:1.000   1st Qu.:3.00   1st Qu.:3.000  
+ Median :3.000   Median : 8.00   Median :4.000   Median :3.00   Median :4.000  
+ Mean   :3.077   Mean   :14.44   Mean   :2.947   Mean   :3.65   Mean   :3.996  
+ 3rd Qu.:4.000   3rd Qu.:15.00   3rd Qu.:4.000   3rd Qu.:5.00   3rd Qu.:5.000  
+ Max.   :6.000   Max.   :95.00   Max.   :4.000   Max.   :7.00   Max.   :6.000  
+ NA's   :41      NA's   :30      NA's   :420     NA's   :170    NA's   :69     
+     iscd11           work          isco08        siops08          isei08     
+ Min.   :1.000   Min.   :1.00   Min.   : 110   Min.   :13.00   Min.   :11.74  
+ 1st Qu.:3.000   1st Qu.:1.00   1st Qu.:2423   1st Qu.:42.09   1st Qu.:36.92  
+ Median :4.000   Median :2.00   Median :3322   Median :48.37   Median :54.55  
+ Mean   :4.574   Mean   :2.38   Mean   :3928   Mean   :47.93   Mean   :53.03  
+ 3rd Qu.:7.000   3rd Qu.:4.00   3rd Qu.:5153   3rd Qu.:54.64   3rd Qu.:70.34  
+ Max.   :8.000   Max.   :4.00   Max.   :9629   Max.   :78.16   Max.   :88.96  
+ NA's   :69      NA's   :56     NA's   :2642   NA's   :2642    NA's   :2642   
+      dw15            dw16           dw19c            dw03          mstat      
+ Min.   : 4.00   Min.   :1.000   Min.   :1.000   Min.   :1.00   Min.   :1.000  
+ 1st Qu.:35.00   1st Qu.:1.000   1st Qu.:3.000   1st Qu.:2.00   1st Qu.:1.000  
+ Median :40.00   Median :1.000   Median :4.000   Median :2.00   Median :1.000  
+ Mean   :38.53   Mean   :1.212   Mean   :3.778   Mean   :2.29   Mean   :2.449  
+ 3rd Qu.:42.00   3rd Qu.:1.000   3rd Qu.:5.000   3rd Qu.:2.00   3rd Qu.:5.000  
+ Max.   :87.50   Max.   :3.000   Max.   :6.000   Max.   :6.00   Max.   :9.000  
+ NA's   :2414    NA's   :2705    NA's   :4811    NA's   :3091   NA's   :136    
+      dp01           di01a           di02a            incc      
+ Min.   :1.000   Min.   :   20   Min.   : 1.00   Min.   : 1.00  
+ 1st Qu.:1.000   1st Qu.: 1450   1st Qu.: 9.00   1st Qu.:10.00  
+ Median :2.000   Median : 2200   Median :13.00   Median :14.00  
+ Mean   :1.557   Mean   : 2461   Mean   :13.04   Mean   :13.57  
+ 3rd Qu.:2.000   3rd Qu.: 3000   3rd Qu.:16.00   3rd Qu.:17.00  
+ Max.   :2.000   Max.   :15000   Max.   :26.00   Max.   :26.00  
+ NA's   :3139    NA's   :4141    NA's   :1994    NA's   :793    
+     di01b           di02b            di05            di06      
+ Min.   :  446   Min.   : 1.00   Min.   :  390   Min.   : 1.00  
+ 1st Qu.: 3000   1st Qu.:16.00   1st Qu.: 2400   1st Qu.:14.00  
+ Median : 4000   Median :19.00   Median : 3500   Median :18.00  
+ Mean   : 4602   Mean   :18.77   Mean   : 4050   Mean   :17.43  
+ 3rd Qu.: 5500   3rd Qu.:22.00   3rd Qu.: 5000   3rd Qu.:21.00  
+ Max.   :50000   Max.   :26.00   Max.   :50000   Max.   :26.00  
+ NA's   :4511    NA's   :2856    NA's   :4257    NA's   :2141   
+     hhincc           dh01            dh11            aq01      
+ Min.   : 1.00   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ 1st Qu.:15.00   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:4.000  
+ Median :19.00   Median :1.000   Median :1.000   Median :6.000  
+ Mean   :17.85   Mean   :1.218   Mean   :1.713   Mean   :5.469  
+ 3rd Qu.:21.00   3rd Qu.:1.000   3rd Qu.:2.000   3rd Qu.:7.000  
+ Max.   :26.00   Max.   :2.000   Max.   :9.000   Max.   :8.000  
+ NA's   :1056    NA's   :153     NA's   :1300    NA's   :199    
+      gs01            gd01           gd02            dg13            dg08     
+ Min.   :1.000   Min.   :1935   Min.   : 0.00   Min.   :1.000   Min.   :1.00  
+ 1st Qu.:2.000   1st Qu.:1994   1st Qu.:10.00   1st Qu.:1.000   1st Qu.:1.00  
+ Median :3.000   Median :2011   Median :25.00   Median :2.000   Median :2.00  
+ Mean   :2.748   Mean   :3746   Mean   :29.47   Mean   :2.529   Mean   :1.64  
+ 3rd Qu.:4.000   3rd Qu.:2021   3rd Qu.:46.00   3rd Qu.:4.000   3rd Qu.:2.00  
+ Max.   :5.000   Max.   :9000   Max.   :93.00   Max.   :6.000   Max.   :2.00  
+ NA's   :142     NA's   :1953   NA's   :1958    NA's   :2845    NA's   :3095  
+      dg09            dg11            ls01             id02      
+ Min.   :1.000   Min.   :1.000   Min.   : 0.000   Min.   :1.000  
+ 1st Qu.:1.000   1st Qu.:1.000   1st Qu.: 6.000   1st Qu.:2.000  
+ Median :2.000   Median :2.000   Median : 8.000   Median :3.000  
+ Mean   :1.638   Mean   :1.611   Mean   : 7.256   Mean   :2.883  
+ 3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.: 8.000   3rd Qu.:3.000  
+ Max.   :2.000   Max.   :2.000   Max.   :10.000   Max.   :5.000  
+ NA's   :4229    NA's   :1938    NA's   :196      NA's   :201    
+      id01            im01           im17            im18            im19      
+ Min.   :1.000   Min.   :1.00   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ 1st Qu.:2.000   1st Qu.:1.00   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000  
+ Median :3.000   Median :2.00   Median :2.000   Median :2.000   Median :3.000  
+ Mean   :2.599   Mean   :1.54   Mean   :2.347   Mean   :2.487   Mean   :2.683  
+ 3rd Qu.:3.000   3rd Qu.:2.00   3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:3.000  
+ Max.   :4.000   Max.   :2.00   Max.   :4.000   Max.   :4.000   Max.   :4.000  
+ NA's   :213     NA's   :1864   NA's   :102     NA's   :106     NA's   :166    
+      im20            im21            iw04            pd11           pi07      
+ Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.00   Min.   :1.000  
+ 1st Qu.:2.000   1st Qu.:2.000   1st Qu.:1.000   1st Qu.:1.00   1st Qu.:1.000  
+ Median :3.000   Median :3.000   Median :1.000   Median :2.00   Median :1.000  
+ Mean   :2.708   Mean   :2.944   Mean   :1.572   Mean   :1.63   Mean   :1.493  
+ 3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:2.000   3rd Qu.:2.00   3rd Qu.:2.000  
+ Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.00   Max.   :2.000  
+ NA's   :152     NA's   :112     NA's   :74      NA's   :81     NA's   :1923   
+      pi01            pi02           lp03            lp04           lp05      
+ Min.   :1.000   Min.   :1.00   Min.   :1.000   Min.   :1.00   Min.   :1.000  
+ 1st Qu.:1.000   1st Qu.:2.00   1st Qu.:1.000   1st Qu.:1.00   1st Qu.:1.000  
+ Median :1.000   Median :2.00   Median :1.000   Median :2.00   Median :1.000  
+ Mean   :1.155   Mean   :2.21   Mean   :1.297   Mean   :1.68   Mean   :1.269  
+ 3rd Qu.:1.000   3rd Qu.:3.00   3rd Qu.:2.000   3rd Qu.:2.00   3rd Qu.:2.000  
+ Max.   :2.000   Max.   :3.00   Max.   :2.000   Max.   :2.00   Max.   :2.000  
+ NA's   :54      NA's   :894    NA's   :210     NA's   :178    NA's   :160    
+      lp06            hs01            hs04            hs05      
+ Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ 1st Qu.:1.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
+ Median :1.000   Median :2.000   Median :3.000   Median :3.000  
+ Mean   :1.376   Mean   :2.437   Mean   :3.036   Mean   :3.356  
+ 3rd Qu.:2.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:4.000  
+ Max.   :2.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
+ NA's   :164     NA's   :63      NA's   :1793    NA's   :1792   
+      hs06            hs07            hs09            land       
+ Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   : 10.00  
+ 1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000   1st Qu.: 50.00  
+ Median :2.000   Median :3.000   Median :4.000   Median : 80.00  
+ Mean   :2.614   Mean   :2.921   Mean   :4.044   Mean   : 86.99  
+ 3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:5.000   3rd Qu.:120.00  
+ Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :160.00  
+ NA's   :1797    NA's   :1805    NA's   :1791                    
+      bik            gkpol      
+ Min.   : 1.00   Min.   :1.000  
+ 1st Qu.: 5.00   1st Qu.:3.000  
+ Median : 8.00   Median :4.000  
+ Mean   : 7.07   Mean   :4.313  
+ 3rd Qu.:10.00   3rd Qu.:6.000  
+ Max.   :10.00   Max.   :7.000  
+ NA's   :174     NA's   :68     </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>summary()</code> gibt uns eine erste <strong>Zusammenfassung der Variablen</strong><br>
+(z. B. Min/Max-Werte, Mittelwerte, Häufigkeiten). Aber es wirkt sehr unübersichtlich, daher verwenden wir <strong><code>glimpse()</code></strong>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_csv)</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Output</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_csv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 5,342
+Columns: 65
+$ eastwest &lt;dbl&gt; 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1…
+$ german   &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 3, 1, 1, 1, 1, 1, 1…
+$ sex      &lt;dbl&gt; 2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2…
+$ age      &lt;dbl&gt; 54, 53, 89, 79, 62, 23, 31, 57, 68, 51, 57, 85, 55, 26, 38, 5…
+$ agec     &lt;dbl&gt; 3, 3, 5, 5, 4, 1, 2, 3, 4, 3, 3, 5, 3, 1, 2, 3, 3, 3, 3, 1, 5…
+$ dg10     &lt;dbl&gt; 1, 8, 7, 17, 8, 2, 8, 12, 17, 7, 95, 17, 15, 95, 95, 8, 9, 7,…
+$ dg03     &lt;dbl&gt; 4, 4, 4, 1, 4, 4, 4, 2, 1, 4, NA, 1, 1, NA, NA, 4, 4, 4, 4, 4…
+$ educ     &lt;dbl&gt; 5, 5, 4, 4, 2, 7, 5, 4, 3, 3, NA, 5, 3, 2, NA, 3, 2, 5, 2, 5,…
+$ isced97  &lt;dbl&gt; 5, 5, 4, 5, 3, NA, 6, 5, 5, 3, 5, 5, 5, 5, 5, 5, 3, 5, 3, 5, …
+$ iscd11   &lt;dbl&gt; 5, 6, 4, 5, 3, NA, 8, 5, 7, 3, 5, 7, 5, 5, 6, 5, 3, 7, 3, 7, …
+$ work     &lt;dbl&gt; 1, 1, 4, 4, 4, 4, 2, 1, 4, 2, 4, 4, 2, 1, 1, 2, 1, 2, 1, 1, 4…
+$ isco08   &lt;dbl&gt; 5244, 2421, NA, NA, NA, NA, 2310, 4110, NA, 3221, NA, NA, 341…
+$ siops08  &lt;dbl&gt; 26.00, 55.80, NA, NA, NA, NA, 78.16, 42.09, NA, 44.00, NA, NA…
+$ isei08   &lt;dbl&gt; 38.88, 70.09, NA, NA, NA, NA, 85.41, 43.33, NA, 56.00, NA, NA…
+$ dw15     &lt;dbl&gt; 35.0, 62.0, NA, NA, NA, NA, 32.0, 39.5, NA, 30.0, NA, NA, 33.…
+$ dw16     &lt;dbl&gt; 1, NA, NA, NA, NA, NA, 2, 1, NA, 1, NA, NA, 1, NA, 1, 1, 3, 1…
+$ dw19c    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ dw03     &lt;dbl&gt; NA, NA, 2, 2, 4, 1, NA, NA, 2, NA, 3, 2, NA, NA, NA, NA, NA, …
+$ mstat    &lt;dbl&gt; 5, 5, 3, 1, 1, 5, 5, 1, 1, 5, 3, 1, 1, 5, 4, 1, 4, 1, 5, 5, 3…
+$ dp01     &lt;dbl&gt; 1, 2, 2, NA, NA, 1, 1, NA, NA, 1, 2, NA, NA, 2, 2, NA, 1, NA,…
+$ di01a    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 1900, NA, 1300, NA, 356, NA, NA, NA, …
+$ di02a    &lt;dbl&gt; 10, 19, NA, 12, NA, NA, NA, 15, NA, 13, NA, 16, 13, 14, 16, 1…
+$ incc     &lt;dbl&gt; 10, 19, NA, 12, NA, NA, 14, 15, 11, 13, 3, 16, 13, 14, 16, 13…
+$ di01b    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 5000, NA, 1900, NA, NA, NA, NA, NA, N…
+$ di02b    &lt;dbl&gt; NA, NA, NA, 15, 19, 12, NA, 20, NA, NA, 3, 19, 19, NA, NA, 15…
+$ di05     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 5000, NA, 1900, NA, NA, NA, NA, NA, N…
+$ di06     &lt;dbl&gt; 10, 19, NA, 15, 19, 12, NA, 20, NA, NA, 3, 19, 19, 14, 16, 15…
+$ hhincc   &lt;dbl&gt; 10, 19, NA, 15, 19, 12, 23, 20, 14, NA, 3, 19, 19, 14, 16, 15…
+$ dh01     &lt;dbl&gt; 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 2, 2…
+$ dh11     &lt;dbl&gt; NA, NA, NA, 1, 2, 1, 2, 1, 1, 4, 3, 1, 1, NA, NA, 2, 1, 3, NA…
+$ aq01     &lt;dbl&gt; 4, 7, 8, 7, 7, 4, 4, 7, 5, 7, 6, NA, 7, 4, 3, 7, 7, 7, 4, 4, …
+$ gs01     &lt;dbl&gt; 4, 3, 3, 3, 4, 1, 1, 4, 3, 4, 4, 3, 4, 4, 1, 1, 4, 1, 3, 1, 2…
+$ gd01     &lt;dbl&gt; NA, 9000, 2011, NA, NA, NA, 2012, NA, 1975, NA, NA, 1962, NA,…
+$ gd02     &lt;dbl&gt; NA, 53, 10, NA, NA, NA, 9, NA, 46, NA, NA, 59, NA, NA, NA, 58…
+$ dg13     &lt;dbl&gt; NA, NA, 5, NA, NA, NA, 6, NA, 1, NA, NA, 5, NA, NA, NA, NA, 1…
+$ dg08     &lt;dbl&gt; NA, 1, 2, NA, NA, NA, 1, NA, NA, NA, NA, NA, NA, NA, NA, 2, 1…
+$ dg09     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, 2, NA, NA, 1, NA, NA, NA, NA,…
+$ dg11     &lt;dbl&gt; NA, 1, 2, NA, NA, NA, 1, NA, 2, NA, NA, 1, NA, NA, NA, 1, 2, …
+$ ls01     &lt;dbl&gt; 8, 10, 9, 9, 8, 8, 7, 5, 5, 9, 6, 7, 7, 8, 6, 5, 7, 7, 7, 6, …
+$ id02     &lt;dbl&gt; 2, 4, 4, 3, 3, 4, 3, 3, 3, 3, 1, 3, 2, 3, 2, 3, 2, 4, 2, 4, 4…
+$ id01     &lt;dbl&gt; 3, 3, 3, 1, 2, 3, 3, 1, 2, 3, 2, 4, 1, 4, 2, 2, 3, 3, 3, 3, 3…
+$ im01     &lt;dbl&gt; 2, NA, NA, 2, 2, 1, 2, 2, 2, 2, 1, NA, 2, 1, 2, 2, NA, 2, 1, …
+$ im17     &lt;dbl&gt; 2, 4, 3, 2, 2, 3, 2, 3, 2, 2, 2, NA, 2, 4, 1, 4, 2, 3, 2, 3, …
+$ im18     &lt;dbl&gt; 1, 4, 4, 3, 2, 4, 2, 2, 2, 3, 2, NA, 3, 3, 1, 4, 3, 3, 1, 3, …
+$ im19     &lt;dbl&gt; 4, 1, 2, 2, 3, 3, 3, 3, 4, 3, 2, NA, 3, 2, 4, 1, 2, 3, 2, 2, …
+$ im20     &lt;dbl&gt; 3, 3, 1, 3, 3, 2, 3, 3, 3, 3, 2, NA, 3, 2, 4, 3, 2, 2, 2, 3, …
+$ im21     &lt;dbl&gt; 4, 3, 1, 3, 3, 2, 3, 4, 4, 4, 3, NA, 3, 2, 4, 2, 3, 3, 3, 3, …
+$ iw04     &lt;dbl&gt; 1, 4, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 3, 1, 2, 1, 2, 1, 1, 2…
+$ pd11     &lt;dbl&gt; 2, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 2, 2, 1, 2, 2, 2, 1, 2, 1, 1…
+$ pi07     &lt;dbl&gt; 2, NA, NA, 2, 1, 1, 2, 1, 2, 1, NA, NA, 1, 1, 2, 1, NA, NA, 2…
+$ pi01     &lt;dbl&gt; 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1…
+$ pi02     &lt;dbl&gt; 3, 2, NA, 3, 3, NA, 2, 2, 2, 2, NA, 2, 2, 2, 3, 1, 3, 2, 3, N…
+$ lp03     &lt;dbl&gt; 1, 2, 2, 1, 1, 1, 2, 1, 1, 1, NA, 2, 2, 2, 1, 2, 1, 2, 1, 2, …
+$ lp04     &lt;dbl&gt; 2, 2, 1, NA, NA, 2, 2, 2, 1, 2, 1, 2, 2, 2, 1, 2, 1, 1, 2, 2,…
+$ lp05     &lt;dbl&gt; 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, NA, 2, 1, 2, 1, 1, 1, 2, 1, 2, …
+$ lp06     &lt;dbl&gt; 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1…
+$ hs01     &lt;dbl&gt; 4, 3, 2, 3, 3, 2, 1, 2, 4, 3, 2, 4, 3, 2, 3, 4, 4, 2, 2, 1, 3…
+$ hs04     &lt;dbl&gt; 3, NA, NA, 4, 3, 2, 1, 3, 4, 2, 4, NA, 2, 2, 3, 2, NA, 2, 2, …
+$ hs05     &lt;dbl&gt; 2, NA, NA, 4, 3, 3, 2, 2, 3, 2, 5, NA, 4, 3, 3, 3, NA, 3, 3, …
+$ hs06     &lt;dbl&gt; 3, NA, NA, 5, 2, 3, 3, 4, 3, 4, 2, NA, 3, 3, 4, 3, NA, 2, 3, …
+$ hs07     &lt;dbl&gt; 3, NA, NA, 3, 3, 3, 4, 4, 4, 4, 2, NA, 2, 3, 3, 4, NA, 3, 4, …
+$ hs09     &lt;dbl&gt; 5, NA, NA, 5, 4, 3, 3, 4, 4, 5, 2, NA, 4, 2, 3, 4, NA, 4, 2, …
+$ land     &lt;dbl&gt; 80, 50, 10, 160, 50, 90, 50, 70, 160, 60, 90, 120, 140, 60, 9…
+$ bik      &lt;dbl&gt; 3, 3, 4, 2, 7, 8, 10, 4, 3, 4, 9, 10, NA, 3, 10, 8, 1, 10, 4,…
+$ gkpol    &lt;dbl&gt; 3, 3, 3, 2, 3, 6, 7, 1, 3, 3, 2, 4, NA, 3, 7, 6, 1, 7, 3, 7, …</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 5,342
+Columns: 65
+$ eastwest &lt;dbl+lbl&gt; 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, …
+$ german   &lt;dbl+lbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 3, 1, 1, 1, 1, …
+$ sex      &lt;dbl+lbl&gt; 2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, …
+$ age      &lt;dbl+lbl&gt; 54, 53, 89, 79, 62, 23, 31, 57, 68, 51, 57, 85, 55, 26, 3…
+$ agec     &lt;dbl+lbl&gt; 3, 3, 5, 5, 4, 1, 2, 3, 4, 3, 3, 5, 3, 1, 2, 3, 3, 3, 3, …
+$ dg10     &lt;dbl+lbl&gt;  1,  8,  7, 17,  8,  2,  8, 12, 17,  7, 95, 17, 15, 95, 9…
+$ dg03     &lt;dbl+lbl&gt;  4,  4,  4,  1,  4,  4,  4,  2,  1,  4, NA,  1,  1, NA, N…
+$ educ     &lt;dbl+lbl&gt;  5,  5,  4,  4,  2,  7,  5,  4,  3,  3, NA,  5,  3,  2, N…
+$ isced97  &lt;dbl+lbl&gt;  5,  5,  4,  5,  3, NA,  6,  5,  5,  3,  5,  5,  5,  5,  …
+$ iscd11   &lt;dbl+lbl&gt;  5,  6,  4,  5,  3, NA,  8,  5,  7,  3,  5,  7,  5,  5,  …
+$ work     &lt;dbl+lbl&gt; 1, 1, 4, 4, 4, 4, 2, 1, 4, 2, 4, 4, 2, 1, 1, 2, 1, 2, 1, …
+$ isco08   &lt;dbl+lbl&gt; 5244, 2421,   NA,   NA,   NA,   NA, 2310, 4110,   NA, 322…
+$ siops08  &lt;dbl+lbl&gt; 26.00, 55.80,    NA,    NA,    NA,    NA, 78.16, 42.09,  …
+$ isei08   &lt;dbl+lbl&gt; 38.88, 70.09,    NA,    NA,    NA,    NA, 85.41, 43.33,  …
+$ dw15     &lt;dbl+lbl&gt; 35.0, 62.0,   NA,   NA,   NA,   NA, 32.0, 39.5,   NA, 30.…
+$ dw16     &lt;dbl+lbl&gt;  1, NA, NA, NA, NA, NA,  2,  1, NA,  1, NA, NA,  1, NA,  …
+$ dw19c    &lt;dbl+lbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ dw03     &lt;dbl+lbl&gt; NA, NA,  2,  2,  4,  1, NA, NA,  2, NA,  3,  2, NA, NA, N…
+$ mstat    &lt;dbl+lbl&gt; 5, 5, 3, 1, 1, 5, 5, 1, 1, 5, 3, 1, 1, 5, 4, 1, 4, 1, 5, …
+$ dp01     &lt;dbl+lbl&gt;  1,  2,  2, NA, NA,  1,  1, NA, NA,  1,  2, NA, NA,  2,  …
+$ di01a    &lt;dbl+lbl&gt;   NA,   NA,   NA,   NA,   NA,   NA, 1900,   NA, 1300,   N…
+$ di02a    &lt;dbl+lbl&gt; 10, 19, NA, 12, NA, NA, NA, 15, NA, 13, NA, 16, 13, 14, 1…
+$ incc     &lt;dbl+lbl&gt; 10, 19, NA, 12, NA, NA, 14, 15, 11, 13,  3, 16, 13, 14, 1…
+$ di01b    &lt;dbl+lbl&gt;   NA,   NA,   NA,   NA,   NA,   NA, 5000,   NA, 1900,   N…
+$ di02b    &lt;dbl+lbl&gt; NA, NA, NA, 15, 19, 12, NA, 20, NA, NA,  3, 19, 19, NA, N…
+$ di05     &lt;dbl+lbl&gt;   NA,   NA,   NA,   NA,   NA,   NA, 5000,   NA, 1900,   N…
+$ di06     &lt;dbl+lbl&gt; 10, 19, NA, 15, 19, 12, NA, 20, NA, NA,  3, 19, 19, 14, 1…
+$ hhincc   &lt;dbl+lbl&gt; 10, 19, NA, 15, 19, 12, 23, 20, 14, NA,  3, 19, 19, 14, 1…
+$ dh01     &lt;dbl+lbl&gt; 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, …
+$ dh11     &lt;dbl+lbl&gt; NA, NA, NA,  1,  2,  1,  2,  1,  1,  4,  3,  1,  1, NA, N…
+$ aq01     &lt;dbl+lbl&gt;  4,  7,  8,  7,  7,  4,  4,  7,  5,  7,  6, NA,  7,  4,  …
+$ gs01     &lt;dbl+lbl&gt; 4, 3, 3, 3, 4, 1, 1, 4, 3, 4, 4, 3, 4, 4, 1, 1, 4, 1, 3, …
+$ gd01     &lt;dbl+lbl&gt;   NA, 9000, 2011,   NA,   NA,   NA, 2012,   NA, 1975,   N…
+$ gd02     &lt;dbl+lbl&gt; NA, 53, 10, NA, NA, NA,  9, NA, 46, NA, NA, 59, NA, NA, N…
+$ dg13     &lt;dbl+lbl&gt; NA, NA,  5, NA, NA, NA,  6, NA,  1, NA, NA,  5, NA, NA, N…
+$ dg08     &lt;dbl+lbl&gt; NA,  1,  2, NA, NA, NA,  1, NA, NA, NA, NA, NA, NA, NA, N…
+$ dg09     &lt;dbl+lbl&gt; NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA,  1, NA, NA, N…
+$ dg11     &lt;dbl+lbl&gt; NA,  1,  2, NA, NA, NA,  1, NA,  2, NA, NA,  1, NA, NA, N…
+$ ls01     &lt;dbl+lbl&gt;  8, 10,  9,  9,  8,  8,  7,  5,  5,  9,  6,  7,  7,  8,  …
+$ id02     &lt;dbl+lbl&gt; 2, 4, 4, 3, 3, 4, 3, 3, 3, 3, 1, 3, 2, 3, 2, 3, 2, 4, 2, …
+$ id01     &lt;dbl+lbl&gt; 3, 3, 3, 1, 2, 3, 3, 1, 2, 3, 2, 4, 1, 4, 2, 2, 3, 3, 3, …
+$ im01     &lt;dbl+lbl&gt;  2, NA, NA,  2,  2,  1,  2,  2,  2,  2,  1, NA,  2,  1,  …
+$ im17     &lt;dbl+lbl&gt;  2,  4,  3,  2,  2,  3,  2,  3,  2,  2,  2, NA,  2,  4,  …
+$ im18     &lt;dbl+lbl&gt;  1,  4,  4,  3,  2,  4,  2,  2,  2,  3,  2, NA,  3,  3,  …
+$ im19     &lt;dbl+lbl&gt;  4,  1,  2,  2,  3,  3,  3,  3,  4,  3,  2, NA,  3,  2,  …
+$ im20     &lt;dbl+lbl&gt;  3,  3,  1,  3,  3,  2,  3,  3,  3,  3,  2, NA,  3,  2,  …
+$ im21     &lt;dbl+lbl&gt;  4,  3,  1,  3,  3,  2,  3,  4,  4,  4,  3, NA,  3,  2,  …
+$ iw04     &lt;dbl+lbl&gt; 1, 4, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 3, 1, 2, 1, 2, 1, …
+$ pd11     &lt;dbl+lbl&gt; 2, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 2, 2, 1, 2, 2, 2, 1, 2, …
+$ pi07     &lt;dbl+lbl&gt;  2, NA, NA,  2,  1,  1,  2,  1,  2,  1, NA, NA,  1,  1,  …
+$ pi01     &lt;dbl+lbl&gt; 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, …
+$ pi02     &lt;dbl+lbl&gt;  3,  2, NA,  3,  3, NA,  2,  2,  2,  2, NA,  2,  2,  2,  …
+$ lp03     &lt;dbl+lbl&gt;  1,  2,  2,  1,  1,  1,  2,  1,  1,  1, NA,  2,  2,  2,  …
+$ lp04     &lt;dbl+lbl&gt;  2,  2,  1, NA, NA,  2,  2,  2,  1,  2,  1,  2,  2,  2,  …
+$ lp05     &lt;dbl+lbl&gt;  1,  2,  1,  1,  1,  2,  1,  1,  1,  1, NA,  2,  1,  2,  …
+$ lp06     &lt;dbl+lbl&gt; 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, …
+$ hs01     &lt;dbl+lbl&gt; 4, 3, 2, 3, 3, 2, 1, 2, 4, 3, 2, 4, 3, 2, 3, 4, 4, 2, 2, …
+$ hs04     &lt;dbl+lbl&gt;  3, NA, NA,  4,  3,  2,  1,  3,  4,  2,  4, NA,  2,  2,  …
+$ hs05     &lt;dbl+lbl&gt;  2, NA, NA,  4,  3,  3,  2,  2,  3,  2,  5, NA,  4,  3,  …
+$ hs06     &lt;dbl+lbl&gt;  3, NA, NA,  5,  2,  3,  3,  4,  3,  4,  2, NA,  3,  3,  …
+$ hs07     &lt;dbl+lbl&gt;  3, NA, NA,  3,  3,  3,  4,  4,  4,  4,  2, NA,  2,  3,  …
+$ hs09     &lt;dbl+lbl&gt;  5, NA, NA,  5,  4,  3,  3,  4,  4,  5,  2, NA,  4,  2,  …
+$ land     &lt;dbl+lbl&gt;  80,  50,  10, 160,  50,  90,  50,  70, 160,  60,  90, 12…
+$ bik      &lt;dbl+lbl&gt;  3,  3,  4,  2,  7,  8, 10,  4,  3,  4,  9, 10, NA,  3, 1…
+$ gkpol    &lt;dbl+lbl&gt;  3,  3,  3,  2,  3,  6,  7,  1,  3,  3,  2,  4, NA,  3,  …</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exkurs-datensatzstruktur" class="level3">
+<h3 class="anchored" data-anchor-id="exkurs-datensatzstruktur">Exkurs: Datensatzstruktur</h3>
+<p>Bevor wir mit der Datenaufbereitung weitermachen, schauen wir uns an, <strong>wie ein Datensatz in R grundsätzlich aufgebaut ist</strong> und wie wir auf einzelne Variablen zugreifen können.</p>
+<p>Ein Datensatz (Data Frame) ist in R eine <strong>Sammlung von Variablen</strong>,<br>
+die jeweils als Spalten organisiert sind.</p>
+<section id="zugriff-auf-variablen-mit" class="level4">
+<h4 class="anchored" data-anchor-id="zugriff-auf-variablen-mit">Zugriff auf Variablen mit <strong><code>$</code></strong></h4>
+<p>In Base R greifen wir auf einzelne Variablen eines Datensatzes<br>
+mit dem <strong>Dollar-Zeichen <code>$</code></strong> zu.</p>
+</section>
+</section>
+<section id="einführung-dplyr" class="level3">
+<h3 class="anchored" data-anchor-id="einführung-dplyr">Einführung dplyr</h3>
+<p><code>dplyr</code> ist Teil des <strong>tidyverse</strong> und bietet Funktionen,<br>
+mit denen sich Datensätze <strong>lesbar, konsistent und effizient</strong> bearbeiten lassen.</p>
+<p>Der Fokus liegt dabei auf: - klarer, gut nachvollziehbarer Syntax<br>
+- schrittweisem Arbeiten<br>
+- einer einheitlichen „Grammatik“ für Datenmanipulation</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Wichtigsten Funktionen:
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Prüfe den <strong>Dateinamen</strong></li>
-<li>Prüfe den <strong>Pfad</strong></li>
-<li>Prüfe, ob die Datei wirklich im Projektordner liegt</li>
+<li><code>select()</code> – Variablen auswählen<br>
+</li>
+<li><code>filter()</code> – Fälle auswählen<br>
+</li>
+<li><code>mutate()</code> – neue Variablen erstellen<br>
+</li>
+<li><code>arrange()</code> – sortieren<br>
+</li>
+<li><code>rename()</code> – Variablen umbenennen</li>
 </ul>
 </div>
 </div>
 
 
+</section>
 </section>
 </section>
 
