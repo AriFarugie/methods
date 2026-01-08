@@ -38,6 +38,54 @@ Für fast jedes Problem gibt es **eine Lösung, eine Erklärung oder ein Paket**
 
 ___
 
+# Umkodieren
+
+In der Datenanalyse arbeiten wir häufig mit Variablen,  
+deren Werte **nicht direkt so vorliegen**, wie wir sie für eine Auswertung benötigen.
+
+**Umkodieren** bedeutet, bestehende Variablen so zu verändern oder neu zu definieren,  
+dass sie **inhaltlich sinnvoll** und **analytisch nutzbar** werden.
+
+Beim Umkodieren können zum Beispiel:
+
+- Kategorien zusammengefasst werden  
+  (z. B. mehrere Bildungsabschlüsse → „niedrig / mittel / hoch“)
+- Werte umgedreht werden  
+  (z. B. hohe Werte = geringe Zustimmung)
+- neue Variablen aus bestehenden gebildet werden  
+  (z. B. Summen- oder Skalenwerte) **→** das kennen wir schon!
+
+::: callout-tip
+# **Warum ist Umkodieren wichtig?**
+
+Rohdaten sind selten sofort „analysefertig“.  
+Durch Umkodieren stellen wir sicher,  
+dass unsere Variablen **inhaltlich korrekt** interpretiert  
+und **vergleichbar** ausgewertet werden können. Umkodierung ist daher ein wichtiger **Bestandteil der Datenaufbereitung** und **wichtig** für die späteren Analysen!
+:::
+
+Im Folgenden sehen wir typische Beispiele für Umkodierungen  
+und setzen sie direkt mit R um.
+
+## Umkodieren invertierter Items
+
+In Fragebögen kommen häufig invertierte Items vor. Das bedeutet: Hohe Werte drücken geringe Zustimmung aus – oder umgekehrt.
+
+Damit alle Items in dieselbe Richtung zeigen, müssen invertierte Items umkodiert werden.
+
+### Beispiel 
+
+Die Items `hs04` bis `hs05` Fragen die mentale Gesundheit in den letzten vier Wochen ab:
+
+|**Variable**|**Inhalt**|**Skalierung**|
+|___|___|___|
+|hs04|"Hetze, unter Zeitdruck"| 1 = "Immer"
+bis
+5 = "Nie"|
+
+
+
+
 # Fehlende Werte (NA)
 
 Warum fehlende Werte wichtig sind, wie man sie erkennt und sinnvoll behandelt.

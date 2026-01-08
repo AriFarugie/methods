@@ -320,7 +320,29 @@
     "href": "workshops/ws1/day2.html",
     "title": "Einführung in R & RStudio – Tag 2",
     "section": "",
-    "text": "Recap - Tag 1\n\n\nRecap\nWillkommen zurück 👋\nWir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.\n\n\n\n\n\n\nTipRecap-Fragen\n\n\n\n\nWas ist ein Data Frame?\nWas macht select() vs. filter()?\nWofür nutzen wir Pipes (|&gt;)?\n\n\n\n\n\n\nFehlende Werte (NA)\nWarum fehlende Werte wichtig sind, wie man sie erkennt und sinnvoll behandelt.\n\n\n\nUmkodieren\nWie wir Variablen neu kodieren (z. B. Kategorien zusammenfassen, Werte umdrehen, Skalen bilden).\n\n\n\nJoins\nWie wir Datensätze über eine gemeinsame ID zusammenführen (z. B. left_join()).\n\n\n\nReproduzierbare Workflows\nOrdnerstruktur, Skripte, klare Dateinamen, Outputs – damit Analysen nachvollziehbar bleiben.\n\n\n\nMini-Projekt\nWir kombinieren alles: Import → Check → Missing → Recodes → Join → Export.",
+    "text": "Willkommen zurück 👋\nWir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.\n\nRecap - Tag 1\nWir haben im ersten Teil des Workshops gelernt, wie RStudio aufgebaut ist und funktioniert. Wir kennen nun die wichtigsten Grundlagen und können diese heute weiter vertiefen und festigen.\n\n\n\n\n\n\nTipRecap-Fragen\n\n\n\n\nWas ist ein Data Frame?\nWas macht select() vs. filter()?\nWofür nutzen wir Pipes (|&gt;)?\n\n\n\n\n\n\n\n\n\nNoteMerksatz\n\n\n\nR ist eine Programmiersprache – und wie jede Sprache lernt man sie\ndurch regelmäßige Nutzung.\nFehler zu machen ist völlig normal (auch wenn es manchmal frustrierend ist).\nFür fast jedes Problem gibt es eine Lösung, eine Erklärung oder ein Paket 😊\n\n\n\n\n\nFehlende Werte (NA)\nWarum fehlende Werte wichtig sind, wie man sie erkennt und sinnvoll behandelt.\n\n\n\nUmkodieren\nWie wir Variablen neu kodieren (z. B. Kategorien zusammenfassen, Werte umdrehen, Skalen bilden).\n\n\n\nJoins\nWie wir Datensätze über eine gemeinsame ID zusammenführen (z. B. left_join()).\n\n\n\nReproduzierbare Workflows\nOrdnerstruktur, Skripte, klare Dateinamen, Outputs – damit Analysen nachvollziehbar bleiben.\n\n\n\nMini-Projekt\nWir kombinieren alles: Import → Check → Missing → Recodes → Join → Export.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#umkodieren-von-variablen",
+    "href": "workshops/ws1/day2.html#umkodieren-von-variablen",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Umkodieren von Variablen",
+    "text": "Umkodieren von Variablen\nIn der Datenanalyse arbeiten wir häufig mit Variablen,\nderen Werte nicht direkt so vorliegen, wie wir sie für eine Auswertung benötigen.\nUmkodieren bedeutet, bestehende Variablen so zu verändern oder neu zu definieren,\ndass sie inhaltlich sinnvoll und analytisch nutzbar werden.\nBeim Umkodieren können zum Beispiel:\n\nKategorien zusammengefasst werden\n(z. B. mehrere Bildungsabschlüsse → „niedrig / mittel / hoch“)\nWerte umgedreht werden\n(z. B. hohe Werte = geringe Zustimmung)\nneue Variablen aus bestehenden gebildet werden\n(z. B. Summen- oder Skalenwerte) → das kennen wir schon!\n\n\n\n\n\n\n\nTipWarum ist Umkodieren wichtig?\n\n\n\nRohdaten sind selten sofort „analysefertig“.\nDurch Umkodieren stellen wir sicher,\ndass unsere Variablen inhaltlich korrekt interpretiert\nund vergleichbar ausgewertet werden können. Umkodierung ist daher ein wichtiger Bestandteil der Datenaufbereitung und wichtig für die späteren Analysen!\n\n\nIm Folgenden sehen wir typische Beispiele für Umkodierungen\nund setzen sie direkt mit R um.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#umkodieren-invertierter-items",
+    "href": "workshops/ws1/day2.html#umkodieren-invertierter-items",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Umkodieren invertierter Items",
+    "text": "Umkodieren invertierter Items\nIn Fragebögen kommen häufig invertierte Items vor. Das bedeutet: Hohe Werte drücken geringe Zustimmung aus – oder umgekehrt.\nDamit alle Items in dieselbe Richtung zeigen, müssen invertierte Items umkodiert werden.\n\nBeispiel\nDie Items hs04 bis hs05 Fragen die mentale Gesundheit in den letzten vier Wochen ab:\n|Variable|Inhalt|Skalierung| |||___| |hs04|“Hetze, unter Zeitdruck”| 1 = “Immer” bis 5 = “Nie”|",
     "crumbs": [
       "Home",
       "Zum Workshop - Tag 2"
