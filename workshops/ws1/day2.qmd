@@ -1,6 +1,6 @@
 ---
 title: "Einführung in R & RStudio – Tag 2"
-subtitle: "Test"
+subtitle: "Fehlende Werte, Umkodieren & Workflows"
 format:
   html:
     toc: true
@@ -12,6 +12,56 @@ format:
 sidebar: workshop1
 ---
 
+Willkommen zurück 👋  
+Wir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.
+
 # Recap - Tag 1
 
-Test
+Wir haben im ersten Teil des Workshops gelernt, wie RStudio aufgebaut ist und funktioniert. Wir kennen nun die wichtigsten Grundlagen und können diese heute weiter **vertiefen und festigen**.
+
+::: callout-tip
+# **Recap-Fragen**
+- Was ist ein Data Frame?
+- Was macht `select()` vs. `filter()`?
+- Wofür nutzen wir Pipes (`|>`)?
+:::
+
+::: callout-note
+# **Merksatz**
+
+R ist eine **Programmiersprache** – und wie jede Sprache lernt man sie  
+durch **regelmäßige Nutzung**.
+
+Fehler zu machen ist völlig normal (auch wenn es manchmal frustrierend ist).  
+Für fast jedes Problem gibt es **eine Lösung, eine Erklärung oder ein Paket** 😊
+:::
+
+___
+
+# Fehlende Werte (NA)
+
+Warum fehlende Werte wichtig sind, wie man sie erkennt und sinnvoll behandelt.
+
+___
+
+# Umkodieren
+
+Wie wir Variablen neu kodieren (z. B. Kategorien zusammenfassen, Werte umdrehen, Skalen bilden).
+
+___
+
+# Joins
+
+Wie wir Datensätze über eine gemeinsame ID zusammenführen (z. B. `left_join()`).
+
+___
+
+# Reproduzierbare Workflows
+
+Ordnerstruktur, Skripte, klare Dateinamen, Outputs – damit Analysen nachvollziehbar bleiben.
+
+___
+
+# Mini-Projekt
+
+Wir kombinieren alles: Import → Check → Missing → Recodes → Join → Export.
