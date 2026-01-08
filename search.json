@@ -279,7 +279,7 @@
     "href": "workshops/ws1/day2.html",
     "title": "Einführung in R & RStudio – Tag 2",
     "section": "",
-    "text": "Recap - Tag 1\nTest",
+    "text": "Willkommen zurück 👋\nWir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.\n\nRecap - Tag 1\nWir haben im ersten Teil des Workshops gelernt, wie RStudio aufgebaut ist und funktioniert. Wir kennen nun die wichtigsten Grundlagen und können diese heute weiter vertiefen und festigen.\n\n\n\n\n\n\nTipRecap-Fragen\n\n\n\n\nWas ist ein Data Frame?\nWas macht select() vs. filter()?\nWofür nutzen wir Pipes (|&gt;)?\n\n\n\n\n\n\n\n\n\nNoteMerksatz\n\n\n\nR ist eine Programmiersprache – und wie jede Sprache lernt man sie\ndurch regelmäßige Nutzung.\nFehler zu machen ist völlig normal (auch wenn es manchmal frustrierend ist).\nFür fast jedes Problem gibt es eine Lösung, eine Erklärung oder ein Paket 😊\n\n\n\n\n\nFehlende Werte (NA)\nWarum fehlende Werte wichtig sind, wie man sie erkennt und sinnvoll behandelt.\n\n\n\nUmkodieren\nWie wir Variablen neu kodieren (z. B. Kategorien zusammenfassen, Werte umdrehen, Skalen bilden).\n\n\n\nJoins\nWie wir Datensätze über eine gemeinsame ID zusammenführen (z. B. left_join()).\n\n\n\nReproduzierbare Workflows\nOrdnerstruktur, Skripte, klare Dateinamen, Outputs – damit Analysen nachvollziehbar bleiben.\n\n\n\nMini-Projekt\nWir kombinieren alles: Import → Check → Missing → Recodes → Join → Export.",
     "crumbs": [
       "Home",
       "Zum Workshop - Tag 2"
