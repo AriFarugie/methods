@@ -28,8 +28,11 @@ website:
     title: ""
     style: docked
     contents:
-      - text: "zum Workshop-Inhalt"
+      - text: "Zum Workshop - Tag 1"
         href: workshops/ws1/day1.qmd
+      - text: "Zum Workshop - Tag 2"
+        href: workshops/ws1/day2.qmd
+  
 
 format:
   html:

@@ -1,0 +1,17 @@
+---
+title: "Einführung in R & RStudio – Tag 2"
+subtitle: "Test"
+format:
+  html:
+    toc: true
+    toc-title: "Tag 2 – Inhalte"
+    toc-location: left
+    toc-depth: 2
+
+    
+sidebar: workshop1
+---
+
+# Recap - Tag 1
+
+Test

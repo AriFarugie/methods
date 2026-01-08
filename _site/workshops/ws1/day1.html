@@ -137,7 +137,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="docked nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -199,11 +199,37 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../workshops/ws1/day1.html">Zum Workshop - Tag 1</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../workshops/ws1/day1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Zum Workshop - Tag 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../workshops/ws1/day1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zum Workshop - Tag 2</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tag 1 – Inhalte</h2>
    
@@ -229,6 +255,7 @@ window.Quarto = {
   <li><a href="#datenimport" id="toc-datenimport" class="nav-link" data-scroll-target="#datenimport">Datenimport</a></li>
   <li><a href="#datenaufbereitung" id="toc-datenaufbereitung" class="nav-link" data-scroll-target="#datenaufbereitung">Datenaufbereitung</a></li>
   </ul></li>
+  <li><a href="#abschluss-tag-1" id="toc-abschluss-tag-1" class="nav-link" data-scroll-target="#abschluss-tag-1">Abschluss Tag 1</a></li>
   </ul>
 </nav>
 </nav>
@@ -2182,6 +2209,7 @@ $ gkpol    &lt;dbl+lbl&gt;  3,  3,  3,  2,  3,  6,  7,  1,  3,  3,  2,  4, NA,  
 </div>
 </div>
 </div>
+<hr>
 </section>
 </section>
 <section id="exkurs-datensatzstruktur" class="level3">
@@ -2189,10 +2217,123 @@ $ gkpol    &lt;dbl+lbl&gt;  3,  3,  3,  2,  3,  6,  7,  1,  3,  3,  2,  4, NA,  
 <p>Bevor wir mit der Datenaufbereitung weitermachen, schauen wir uns an, <strong>wie ein Datensatz in R grundsätzlich aufgebaut ist</strong> und wie wir auf einzelne Variablen zugreifen können.</p>
 <p>Ein Datensatz (Data Frame) ist in R eine <strong>Sammlung von Variablen</strong>,<br>
 die jeweils als Spalten organisiert sind.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Objekte entfernen</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Wir können auch einzelne oder mehre Objekte wieder aus unserem Environment entfernen, dafür nutzen wir die Funktion <code>rm()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(x)</span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Mehrere Variablen aufeinmal</span></span>
+<span id="cb113-4"><a href="#cb113-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-5"><a href="#cb113-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(x,y,m,s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in rm(x, y, m, s): object 'x' not found</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <section id="zugriff-auf-variablen-mit" class="level4">
 <h4 class="anchored" data-anchor-id="zugriff-auf-variablen-mit">Zugriff auf Variablen mit <strong><code>$</code></strong></h4>
 <p>In Base R greifen wir auf einzelne Variablen eines Datensatzes<br>
 mit dem <strong>Dollar-Zeichen <code>$</code></strong> zu.</p>
+<p>Dafür schauen wir uns unser Environment mit unseren Datensätzen an.</p>
+<hr>
+<p><img src="assets/images/datastr_environ1.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<p>Wir sehen zunächst, dass <strong>RStudio</strong> direkt zwischen <span style="color: darkred; font-weight: bold;">Values (einzelne Werte)</span> und <span style="color: green; font-weight: bold;">Data (Datensätzen, Tabellen und anderen Objekten)</span> unterscheden kann.</p>
+<hr>
+<p><img src="assets/images/datastr_environ2.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<p>Wir schauen uns jetzt mal unseren Datensatzobjekt genauer an. <span style="color: green; font-weight: bold;">Klicke</span> einfach auf den Datensatz <code>df_csv</code> und neben deinem Script sollte sich nun der Datensatz öffnen.</p>
+<hr>
+<p><img src="assets/images/datastr_environ3.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<p>Mit <strong><code>view(df_csv)</code></strong> würden wir auf das selbe Ergebnis kommen. Jetzt kannst du dir deinen Datensatz im Detail anschauen.</p>
+<hr>
+<p><img src="assets/images/datastr_environ4.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<p>Zurück zum Environment! Mit einem <span style="color: green; font-weight: bold;">Klick</span> auf den blauen Pfeil neben dem Objektnamen, öffnest du ein Dropdown mit mehr Informationen zu diesem Objekt <strong>→</strong> Struktur und Inhalte des Objekts!</p>
+<hr>
+<p><img src="assets/images/datastr_environ5.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<p>Was wir nun erkennen ist ein logischer Aufbau des Objekts. Wir sehen <span style="color: green; font-weight: bold;">den Objektnamen als übergeordnete Struktur</span> und die Inhalte des Objekts, in diesem Fall, die Variablen als untergeordnete Struktur. Getrennt werden diese zwei <strong>“Ebenen”</strong> durch das <strong><code>$</code></strong>.</p>
+<hr>
+<p>Wie können wir nun explizit auf unsere Variable zugreifen? Wenn wir nun die Logik des Aufbaus anschauen, kommen wir zum Schluss:</p>
+<ol type="1">
+<li>Erst den Objektnamen eintippen <strong>→</strong> <strong><code>df_csv</code></strong></li>
+<li>Dann die untere Ebene “aufmachen” <strong>→</strong> <strong><code>$</code></strong></li>
+<li>Dann <strong>Variablennamen</strong> eintippen, die ich ansteuern möchte <strong>→</strong> <strong><code>age</code></strong></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>df_csv<span class="sc">$</span>age</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>In eurem Output, sollten nun alle Altersangaben der Teilnehmden Personen dieser Studie als Vektor angezeigt werden.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Übung 5</strong> – Anwendung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Deine Aufgabe ist es nun, das Durchschnittsalter (Mean) und die Standardabweichung des Durschnittsalters (SD) zu berechnen.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Lösung - Übung 5</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Alternative 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Alternative 2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_csv<span class="sc">$</span>age, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 53.27089</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(df_csv<span class="sc">$</span>age, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17.64202</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(df_csv<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   vars    n  mean    sd median trimmed   mad min max range skew kurtosis   se
+X1    1 5301 53.27 17.64     55   53.44 19.27  18  96    78 -0.1    -0.86 0.24</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
 </section>
 </section>
 <section id="einführung-dplyr" class="level3">
@@ -2225,10 +2366,358 @@ mit denen sich Datensätze <strong>lesbar, konsistent und effizient</strong> bea
 </ul>
 </div>
 </div>
-
-
+<p>Bevor wir mehrere Schritte kombinieren,<br>
+schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(df_csv, age, sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5,342 × 2
+     age   sex
+   &lt;dbl&gt; &lt;dbl&gt;
+ 1    54     2
+ 2    53     1
+ 3    89     2
+ 4    79     1
+ 5    62     2
+ 6    23     1
+ 7    31     2
+ 8    57     2
+ 9    68     1
+10    51     2
+# ℹ 5,332 more rows</code></pre>
+</div>
+</div>
+<p>Der <code>select()</code> wählt Variablen aus und macht aus den einen neuen Datensatz (<code>tibble</code> fungiert genauso wie ein <code>Data Frame</code>).</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><strong>Achtung</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ohne die <strong>korrekte Zuweisung</strong>, wird <strong>kein neues Objekt</strong> erstellt!</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> <span class="fu">select</span>(df_csv, age, sex)</span>
+<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a>df_2var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5,342 × 2
+     age   sex
+   &lt;dbl&gt; &lt;dbl&gt;
+ 1    54     2
+ 2    53     1
+ 3    89     2
+ 4    79     1
+ 5    62     2
+ 6    23     1
+ 7    31     2
+ 8    57     2
+ 9    68     1
+10    51     2
+# ℹ 5,332 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>Die Logik ist relativ klar! 1. Nenne das Objekt (Datensatz) 2. Reihe die Variablen aneinander, die ausgewählt werden sollen</p>
+<p>Die Datenaufbereitung besteht meistens aus <strong>mehreren Schritten:</strong> - Variablen auswählen - Fälle filtern - neue Variablen erstellen (Summenwerte) - Variablen umbenennen</p>
+<p>Wir wählen nun wieder unsere Variablen aus und filtern diese aber nun. Wir wollen nun alle Personen über 30 Jahre behalten.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Alternative 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Alternative 2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> <span class="fu">select</span>(df_csv, age, sex)</span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a>df_2var </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5,342 × 2
+     age   sex
+   &lt;dbl&gt; &lt;dbl&gt;
+ 1    54     2
+ 2    53     1
+ 3    89     2
+ 4    79     1
+ 5    62     2
+ 6    23     1
+ 7    31     2
+ 8    57     2
+ 9    68     1
+10    51     2
+# ℹ 5,332 more rows</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> <span class="fu">filter</span>(<span class="fu">select</span>(df_csv, age, sex), age <span class="sc">&gt;=</span> <span class="dv">30</span>)</span>
+<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a>df_2var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4,683 × 2
+     age   sex
+   &lt;dbl&gt; &lt;dbl&gt;
+ 1    54     2
+ 2    53     1
+ 3    89     2
+ 4    79     1
+ 5    62     2
+ 6    31     2
+ 7    57     2
+ 8    68     1
+ 9    51     2
+10    57     1
+# ℹ 4,673 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Die Logik des Befehls <strong>“Alternative 2”</strong> ist wie folgt aufgebaut: - <code>filter()</code> den neuen Datensatz, welcher durch <code>select()</code> erstellt wurde <strong>oder</strong> - Wähle erst die Variablen aus und filter anschließend (<strong>Alternative 1</strong>)</p>
+<p><strong>Alternative 2</strong> wirkt auf den ersten Blick effizienter, jedoch liest es sich auch sehr kompliziert. Gerade wenn man mehrere Schritte durchführen möchte.</p>
+<p>Auch dafür gibt es in <strong>Rstudio</strong> eine effiziente Lösung <strong>→</strong> <strong>Pipes</strong></p>
+</section>
+<section id="pipes" class="level3">
+<h3 class="anchored" data-anchor-id="pipes">Pipes</h3>
+<p>Pipes in R sind ein Operator (z.B. <code>%&gt;%</code> oder <code>|&gt;</code>), mit dem das Ergebnis <strong>eines Schritts direkt</strong> an den <strong>nächsten Befehl „weitergereicht“</strong> wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich <strong>Datenbearbeitungsschritte</strong> wie in einer Kette von links nach rechts lesen, was den <strong>Code meist kürzer und besser lesbar</strong> macht, besonders im Tidyverse-Kontext.</p>
+<p>Man kann sich Pipes vorstellen wie die Röhren (Pipes) aus Super Mario:</p>
+<p><img src="assets/images/generated-image_pipes3.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
+<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(age, sex) <span class="sc">|&gt;</span></span>
+<span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(age <span class="sc">&gt;=</span> <span class="dv">30</span>)</span>
+<span id="cb130-6"><a href="#cb130-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-7"><a href="#cb130-7" aria-hidden="true" tabindex="-1"></a>df_2var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4,683 × 2
+     age   sex
+   &lt;dbl&gt; &lt;dbl&gt;
+ 1    54     2
+ 2    53     1
+ 3    89     2
+ 4    79     1
+ 5    62     2
+ 6    31     2
+ 7    57     2
+ 8    68     1
+ 9    51     2
+10    57     1
+# ℹ 4,673 more rows</code></pre>
+</div>
+</div>
+<p>Wie wir sehen, haben wir eine klare Struktur und wir müssen den Befehlen innerhalb unserer eigenen <strong>Pipes</strong> nicht dauernd “erklären”, welchen Datensatz wir heranziehen!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Übung 6</strong> – Datenaufbereitung!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Erstelle zunächst eine neue Variable <code>soz.u</code>, diese Besteht aus den Variablen <code>im17</code> bis <code>im21</code> –&gt; bilde dafür einen Summenwert</li>
+<li>Erstelle einen neuen Datensatz <code>df_analyse</code> mit folgenden Variablen <code>Alter, Geschlecht, Bildung, Berufstätigkeit und Sozialeungleichheit</code></li>
+<li>Filtere nur die Personen, die <code>weiblich</code>angegeben haben in einen neuen Datensatz <code>df_analyse_w</code></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><strong>TIPP</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Nutze das <strong>Codebook!</strong></li>
+<li><strong>Erinnere</strong> dich an die wichtigsten Funktionen von <code>dplyr</code></li>
+<li>Verwende <strong>Pipes</strong>, wenn du diese brauchst</li>
+</ul>
+<p>Das wichtigste: <strong>LEARNING BY DOING!</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Lösung - Übung 6</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Alternative 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Alternative 2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 1</span></span>
+<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a>df_csv <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
+<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">soz.u =</span> im17<span class="sc">+</span>im18<span class="sc">+</span>im19<span class="sc">+</span>im20<span class="sc">+</span>im21)</span>
+<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-6"><a href="#cb132-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_csv<span class="sc">$</span>soz.u, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 14 15 11 13 13 14 13 15 15 15</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 2</span></span>
+<span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a>df_analyse <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
+<span id="cb134-4"><a href="#cb134-4" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(age, sex, educ, work, soz.u)</span>
+<span id="cb134-5"><a href="#cb134-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-6"><a href="#cb134-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+     age   sex  educ  work soz.u
+   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1    54     2     5     1    14
+ 2    53     1     5     1    15
+ 3    89     2     4     4    11
+ 4    79     1     4     4    13
+ 5    62     2     2     4    13
+ 6    23     1     7     4    14
+ 7    31     2     5     2    13
+ 8    57     2     4     1    15
+ 9    68     1     3     4    15
+10    51     2     3     2    15</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 3</span></span>
+<span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb136-3"><a href="#cb136-3" aria-hidden="true" tabindex="-1"></a>df_analyse_w <span class="ot">&lt;-</span> df_analyse <span class="sc">|&gt;</span></span>
+<span id="cb136-4"><a href="#cb136-4" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(sex <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb136-5"><a href="#cb136-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb136-6"><a href="#cb136-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse_w, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+     age   sex  educ  work soz.u
+   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1    54     2     5     1    14
+ 2    89     2     4     4    11
+ 3    62     2     2     4    13
+ 4    31     2     5     2    13
+ 5    57     2     4     1    15
+ 6    51     2     3     2    15
+ 7    55     2     3     2    14
+ 8    58     2     3     2    14
+ 9    83     2     3     4    13
+10    48     2    NA     2    17</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>df_analyse <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
+<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">soz.u =</span> im17 <span class="sc">+</span> im18 <span class="sc">+</span> im19 <span class="sc">+</span> im20 <span class="sc">+</span> im21) <span class="sc">|&gt;</span></span>
+<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age, sex, educ, work, soz.u)</span>
+<span id="cb138-4"><a href="#cb138-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-5"><a href="#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+     age   sex  educ  work soz.u
+   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1    54     2     5     1    14
+ 2    53     1     5     1    15
+ 3    89     2     4     4    11
+ 4    79     1     4     4    13
+ 5    62     2     2     4    13
+ 6    23     1     7     4    14
+ 7    31     2     5     2    13
+ 8    57     2     4     1    15
+ 9    68     1     3     4    15
+10    51     2     3     2    15</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a>df_analyse_w <span class="ot">&lt;-</span> df_analyse <span class="sc">|&gt;</span></span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse_w, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+     age   sex  educ  work soz.u
+   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1    54     2     5     1    14
+ 2    89     2     4     4    11
+ 3    62     2     2     4    13
+ 4    31     2     5     2    13
+ 5    57     2     4     1    15
+ 6    51     2     3     2    15
+ 7    55     2     3     2    14
+ 8    58     2     3     2    14
+ 9    83     2     3     4    13
+10    48     2    NA     2    17</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
+</section>
+<section id="abschluss-tag-1" class="level1">
+<h1>Abschluss Tag 1</h1>
+<p>Heute hast du die Grundlagen gelegt, um sicher mit RStudio zu arbeiten:</p>
+<ul>
+<li>RStudio-Oberfläche und Projekte kennengelernt<br>
+</li>
+<li>erste Objekte und Vektoren erstellt<br>
+</li>
+<li>Datentypen und Datenstrukturen verstanden<br>
+</li>
+<li>einen Datensatz importiert und plausibilisiert<br>
+</li>
+<li>erste Schritte der Datenaufbereitung mit <strong>dplyr</strong> und <strong>Pipes</strong> gemacht</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Ausblick auf Tag 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Morgen bauen wir auf diesen Grundlagen auf und gehen einen Schritt weiter in Richtung „echter Analyse-Workflow“:</p>
+<ul>
+<li><strong>Recap</strong> (kurzer Rückblick &amp; Fragen)<br>
+</li>
+<li><strong>Fehlende Werte</strong> (NA erkennen, zählen, behandeln)<br>
+</li>
+<li><strong>Umkodieren</strong> (neue Kategorien, Skalen, Re-Codes)<br>
+</li>
+<li><strong>Joins</strong> (Datensätze zusammenführen)<br>
+</li>
+<li><strong>Reproduzierbare Workflows</strong> (Ordnerstruktur, Skripte, Output)<br>
+</li>
+<li><strong>Mini-Projekt</strong> (alles zusammen anwenden)<br>
+</li>
+</ul>
+</div>
+</div>
+<p>👉 <strong>Speichere dein Projekt</strong>, damit du morgen direkt weiterarbeiten kannst.</p>
+<hr>
+<p><a href="day2.qmd" class="btn btn-primary">➡️ Weiter zu Tag 2</a></p>
+
+
 </section>
 
 </main> <!-- /main -->

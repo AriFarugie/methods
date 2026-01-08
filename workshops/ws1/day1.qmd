@@ -7,7 +7,9 @@ format:
     toc-title: "Tag 1 – Inhalte"
     toc-location: left
     toc-depth: 2
-sidebar: false
+
+    
+sidebar: workshop1
 ---
 # Ankommen & Setup
 
@@ -1153,6 +1155,8 @@ glimpse(df_spss)
 ```
 :::
 
+___
+
 ### Exkurs: Datensatzstruktur
 
 Bevor wir mit der Datenaufbereitung weitermachen, schauen wir uns an, **wie ein Datensatz in R grundsätzlich aufgebaut ist** und wie wir auf einzelne Variablen zugreifen können.
@@ -1160,13 +1164,114 @@ Bevor wir mit der Datenaufbereitung weitermachen, schauen wir uns an, **wie ein 
 Ein Datensatz (Data Frame) ist in R eine **Sammlung von Variablen**,  
 die jeweils als Spalten organisiert sind.
 
+::: {.callout-tip collapse="true"}
+# **Objekte entfernen**
+
+Wir können auch einzelne oder mehre Objekte wieder aus unserem Environment entfernen, dafür nutzen wir die Funktion `rm()`.
+
+```{r}
+#| echo: true
+
+rm(x)
+
+# Mehrere Variablen aufeinmal
+
+rm(x,y,m,s)
+
+```
+:::
+
 #### Zugriff auf Variablen mit **`$`**
 
 In Base R greifen wir auf einzelne Variablen eines Datensatzes  
 mit dem **Dollar-Zeichen `$`** zu.
 
+Dafür schauen wir uns unser Environment mit unseren Datensätzen an.
 
+___
 
+![](assets/images/datastr_environ1.png){width=100% style="border: 2px solid darkblue;"}
+
+Wir sehen zunächst, dass **RStudio** direkt zwischen <span style="color: darkred; font-weight: bold;">Values (einzelne Werte)</span> und <span style="color: green; font-weight: bold;">Data (Datensätzen, Tabellen und anderen Objekten)</span> unterscheden kann.
+
+___
+
+![](assets/images/datastr_environ2.png){width=100% style="border: 2px solid darkblue;"}
+
+Wir schauen uns jetzt mal unseren Datensatzobjekt genauer an. <span style="color: green; font-weight: bold;">Klicke</span> einfach auf den Datensatz `df_csv` und neben deinem Script sollte sich nun der Datensatz öffnen.
+
+___
+
+![](assets/images/datastr_environ3.png){width=100% style="border: 2px solid darkblue;"}
+
+Mit **`view(df_csv)`** würden wir auf das selbe Ergebnis kommen. Jetzt kannst du dir deinen Datensatz im Detail anschauen. 
+
+___
+
+![](assets/images/datastr_environ4.png){width=100% style="border: 2px solid darkblue;"}
+
+Zurück zum Environment! Mit einem <span style="color: green; font-weight: bold;">Klick</span> auf den blauen Pfeil neben dem Objektnamen, öffnest du ein Dropdown mit mehr Informationen zu diesem Objekt **→** Struktur und Inhalte des Objekts!
+
+___
+
+![](assets/images/datastr_environ5.png){width=100% style="border: 2px solid darkblue;"}
+
+Was wir nun erkennen ist ein logischer Aufbau des Objekts. Wir sehen <span style="color: green; font-weight: bold;">den Objektnamen als übergeordnete Struktur</span> und die Inhalte des Objekts, in diesem Fall, die Variablen als untergeordnete Struktur. Getrennt werden diese zwei **"Ebenen"** durch das **`$`**.
+
+___
+
+Wie können wir nun explizit auf unsere Variable zugreifen? Wenn wir nun die Logik des Aufbaus anschauen, kommen wir zum Schluss:
+
+1. Erst den Objektnamen eintippen **→** **`df_csv`**
+2. Dann die untere Ebene "aufmachen" **→** **`$`**
+3. Dann **Variablennamen** eintippen, die ich ansteuern möchte **→** **`age`**
+
+```{r}
+#| echo: true
+#| eval: false
+
+df_csv$age
+
+```
+In eurem Output, sollten nun alle Altersangaben der Teilnehmden Personen dieser Studie als Vektor angezeigt werden.
+
+::: {.callout-tip collapse="true"}
+# **Übung 5** – Anwendung
+
+Deine Aufgabe ist es nun, das Durchschnittsalter (Mean) und die Standardabweichung des Durschnittsalters (SD) zu berechnen.
+
+:::
+
+::: {.callout-tip collapse="true"}
+# **Lösung - Übung 5**
+
+::: {.panel-tabset}
+
+# Alternative 1
+
+```{r}
+#| echo: true
+
+mean(df_csv$age, na.rm=TRUE)
+sd(df_csv$age, na.rm=TRUE)
+```
+
+# Alternative 2
+
+```{r}
+#| echo: true
+#| warning: false
+
+library(psych)
+
+describe(df_csv$age)
+
+```
+:::
+
+:::
+
+___
 
 ### Einführung dplyr
 
@@ -1188,6 +1293,191 @@ Der Fokus liegt dabei auf:
 - `rename()` – Variablen umbenennen
 :::
 
+Bevor wir mehrere Schritte kombinieren,  
+schauen wir uns ein **einzelnes, einfaches Beispiel** an.
+
+```{r}
+#| echo: true
+
+select(df_csv, age, sex)
+```
+Der `select()` wählt Variablen aus und macht aus den einen neuen Datensatz (`tibble` fungiert genauso wie ein `Data Frame`).
+
+::: callout-caution
+# **Achtung**
+
+Ohne die **korrekte Zuweisung**, wird **kein neues Objekt** erstellt!
+
+```{r}
+#| echo: true
+
+df_2var <- select(df_csv, age, sex)
+
+df_2var
+
+```
+:::
+
+Die Logik ist relativ klar! 
+1. Nenne das Objekt (Datensatz)
+2. Reihe die Variablen aneinander, die ausgewählt werden sollen
+
+Die Datenaufbereitung besteht meistens aus **mehreren Schritten:** 
+- Variablen auswählen
+- Fälle filtern
+- neue Variablen erstellen (Summenwerte)
+- Variablen umbenennen
+
+Wir wählen nun wieder unsere Variablen aus und filtern diese aber nun. Wir wollen nun alle Personen über 30 Jahre behalten.
+
+:::{.panel-tabset}
+
+# Alternative 1
+```{r}
+#| echo: true
+
+df_2var <- select(df_csv, age, sex)
+
+df_2var 
+```
+
+# Alternative 2
+```{r}
+
+#| echo: true
+
+df_2var <- filter(select(df_csv, age, sex), age >= 30)
+
+df_2var
+```
+:::
+
+Die Logik des Befehls **"Alternative 2"** ist wie folgt aufgebaut:
+- `filter()` den neuen Datensatz, welcher durch `select()` erstellt wurde
+**oder**
+- Wähle erst die Variablen aus und filter anschließend (**Alternative 1**)
+
+**Alternative 2** wirkt auf den ersten Blick effizienter, jedoch liest es sich auch sehr kompliziert. Gerade wenn man mehrere Schritte durchführen möchte.
+
+Auch dafür gibt es in **Rstudio** eine effiziente Lösung **→** **Pipes**
+
+### Pipes
+
+Pipes in R sind ein Operator (z.B. `%>%` oder `|>`), mit dem das Ergebnis **eines Schritts direkt** an den **nächsten Befehl „weitergereicht“** wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich **Datenbearbeitungsschritte** wie in einer Kette von links nach rechts lesen, was den **Code meist kürzer und besser lesbar** macht, besonders im Tidyverse-Kontext.
+
+Man kann sich Pipes vorstellen wie die Röhren (Pipes) aus Super Mario:
+
+![](assets/images/generated-image_pipes3.png){width=100% style="border: 2px solid darkblue;"}
+
+```{r}
+
+#| echo: true
+
+df_2var <- df_csv |>
+select(age, sex) |>
+filter(age >= 30)
+
+df_2var
+
+```
+Wie wir sehen, haben wir eine klare Struktur und wir müssen den Befehlen innerhalb unserer eigenen **Pipes** nicht dauernd "erklären", welchen Datensatz wir heranziehen!
+
+::: {.callout-tip collapse="true"}
+# **Übung 6** – Datenaufbereitung!
+
+1. Erstelle zunächst eine neue Variable `soz.u`, diese Besteht aus den Variablen `im17` bis `im21` --> bilde dafür einen Summenwert
+2. Erstelle einen neuen Datensatz `df_analyse` mit folgenden Variablen `Alter, Geschlecht, Bildung, Berufstätigkeit und Sozialeungleichheit`
+3. Filtere nur die Personen, die `weiblich`angegeben haben in einen neuen Datensatz `df_analyse_w`
+
+::: callout-note
+# **TIPP**
+- Nutze das **Codebook!**
+- **Erinnere** dich an die wichtigsten Funktionen von `dplyr`
+- Verwende **Pipes**, wenn du diese brauchst
+
+Das wichtigste: **LEARNING BY DOING!**
+:::
+
+:::
+
+::: {.callout-tip collapse="true"}
+# **Lösung - Übung 6**
+
+:::{.panel-tabset}
+# Alternative 1
 
 
+```{r}
+#| echo: true
 
+# Aufgabe 1
+
+df_csv <- df_csv |>
+mutate(soz.u = im17+im18+im19+im20+im21)
+
+head(df_csv$soz.u, 10)
+
+# Aufgabe 2
+
+df_analyse <- df_csv |>
+select(age, sex, educ, work, soz.u)
+
+head(df_analyse, 10)
+
+# Aufgabe 3
+
+df_analyse_w <- df_analyse |>
+filter(sex == 2)
+
+head(df_analyse_w, 10)
+```
+
+# Alternative 2
+
+```{r}
+#| echo: true
+
+df_analyse <- df_csv |>
+  mutate(soz.u = im17 + im18 + im19 + im20 + im21) |>
+  select(age, sex, educ, work, soz.u)
+
+head(df_analyse, 10)
+
+df_analyse_w <- df_analyse |>
+    filter(sex == 2)
+
+head(df_analyse_w, 10)
+
+```
+
+:::
+::: 
+
+# Abschluss Tag 1
+
+Heute hast du die Grundlagen gelegt, um sicher mit RStudio zu arbeiten:
+
+- RStudio-Oberfläche und Projekte kennengelernt  
+- erste Objekte und Vektoren erstellt  
+- Datentypen und Datenstrukturen verstanden  
+- einen Datensatz importiert und plausibilisiert  
+- erste Schritte der Datenaufbereitung mit **dplyr** und **Pipes** gemacht  
+
+::: callout-tip
+## Ausblick auf Tag 2
+
+Morgen bauen wir auf diesen Grundlagen auf und gehen einen Schritt weiter in Richtung „echter Analyse-Workflow“:
+
+- **Recap** (kurzer Rückblick & Fragen)  
+- **Fehlende Werte** (NA erkennen, zählen, behandeln)  
+- **Umkodieren** (neue Kategorien, Skalen, Re-Codes)  
+- **Joins** (Datensätze zusammenführen)  
+- **Reproduzierbare Workflows** (Ordnerstruktur, Skripte, Output)  
+- **Mini-Projekt** (alles zusammen anwenden)  
+:::
+
+👉 **Speichere dein Projekt**, damit du morgen direkt weiterarbeiten kannst.
+
+___
+
+[➡️ Weiter zu Tag 2](day2.qmd){.btn .btn-primary}
