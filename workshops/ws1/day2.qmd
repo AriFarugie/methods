@@ -75,13 +75,138 @@ Damit alle Items in dieselbe Richtung zeigen, müssen invertierte Items umkodier
 
 ### Beispiel 
 
-Die Items `hs04` bis `hs05` Fragen die mentale Gesundheit in den letzten vier Wochen ab:
+Die Items `hs04` bis `hs07 und hs09` Fragen die mentale Gesundheit in den letzten vier Wochen ab:
 
 |**Variable**|**Inhalt**|**Skalierung**|
-|___|___|___|
-|hs04|"Hetze, unter Zeitdruck"| 1 = "Immer"
-bis
-5 = "Nie"|
+|----|----|----|
+|hs04|"Hetze, unter Zeitdruck"| 1 = "Immer" bis 5 = "Nie"|
+|hs05|"Niedergeschlage"| 1 = "Immer" bis 5 = "Nie"|
+|hs06|"Ruhig, Ausgeglichen"| 1 = "Immer" bis 5 = "Nie"|
+|hs07|"Jede menge Energie"| 1 = "Immer" bis 5 = "Nie"|
+|hs09|"Einsam"|1 = "Immer" bis 5 = "Nie"|
+
+Wir wir sehen, sind einige Items invertiert formuliert. Würden wir daraus, eine Skala bilden bspw. **Disstress**, könnten wir mit dem `mutate()`Befehl, keine adäquate Skala bilden.
+
+Wir müssen also entscheiden, was nun **hohe Werte und was niedrige Werte** darstellen sollen. Damit es intuitiver ist, wollen wir nun die **Variablen `hs04`, `hs05` und `hs09`umkodieren**, damit später es hoher Wert auf der Skala **"viel Disstress"** darstellen kann.
+
+Doch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakte wieder ein, bzw. haben diese schon im Environment!
+
+```{r}
+#| echo: true
+#| warning: false
+
+library(tidyverse)
+
+df_csv <- read_csv("assets/data/datensatz_workshop.csv")
+
+head(df_csv, 10)
+```
+
+Zum besseren Verständnis verkleinern wir erstmal unseren Datensatz: Erstelle den Datensatz `df_diss` mit nur den Items die wir benötigen.
+
+:::{.callout-tip collapse="true"}
+# Lösung
+
+```{r}
+
+df_diss <- df_csv |>
+select(hs04,hs05,hs06,hs07,hs09)
+
+head(df_diss, 10)
+
+```
+
+:::
+
+Nun können wir in diesem neuen Datensatz, getrennt von den Rohdaten, üben!
+
+:::{.panel-tabset}
+
+# Alternative 1
+
+```{r}
+#| echo: true
+
+# jede Variable einzeln und manuell
+
+df_diss$hs04_inv <- 6 - df_diss$hs04
+
+head(df_diss$hs04,10)
+
+head(df_diss$hs04_inv,10)
+```
+:::{.callout-tip collapse="true"}
+# **Hinweis**
+Bei der Intertierung, wird...
+- der Wert`1` zu  `5`
+- der Wert `2` zu `4`
+- der Wert `3`bleibt `3`
+- der Wert `4` zu `2`
+- der Wert `5` zu `1`
+
+Die oben vorgstellte **Alternative 1** basiert auf der Annahme **"maximaler Skalenwert" + 1 - "Skalenwert der Person"**.
+:::
+
+# Alternative 2
+
+```{r}
+#| echo: true
+
+ df_diss<-df_diss|>
+    mutate(hs04_inv = recode(hs04,
+                             "1"=5,
+                             "2"=4,
+                             "3"=3,
+                             "4"=2,
+                             "5"=1),
+           hs05_inv = recode(hs05,
+                             "1"=5,
+                             "2"=4,
+                             "3"=3,
+                             "4"=2,
+                             "5"=1),
+           hs09_inv = recode(hs09,
+                            "1"=5,
+                            "2"=4,
+                            "3"=3,
+                            "4"=2,
+                            "5"=1),
+           )
+
+head(df_diss, 10)           
+```
+
+# Alternative 3
+
+```{r}
+#| echo: true
+#| warning: false
+#| eval: false
+
+install.packages("sjmisc")
+
+```
+```{r}
+#| echo: true
+#| warning: false
+
+library(sjmisc)
+
+df_diss <- df_diss|>
+mutate(hs04_inv = rec(hs04, rec = "rev"),
+hs05_inv = rec(hs05, rec = "rev"),
+hs09_inv = rec(hs09, rec = "rev"))
+
+head(df_diss, 10)
+
+```
+:::{.callout-tip collapse="true"}
+# **Hinweis**
+Wir haben hier einen Befehl aus einem anderen Paket genutzt. Wie du sehen kannst, sind Pakete auch miteinander kombinierbar!
+
+Hier handelt es sich um den `rec()` Befehl aus dem Paket **sjmisc**.
+:::
+:::
 
 
 

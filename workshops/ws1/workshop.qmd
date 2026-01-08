@@ -49,11 +49,11 @@ PLATZHALTER
 
 ------------------------------------------------------------------------
 
-## 2. Grundprinzipien von R {#grundprinzipien}
+# 2. Grundprinzipien von R {#grundprinzipien}
 
 R arbeitet objektorientiert: Alles, was du erzeugst, ist ein Objekt und bekommt einen Namen.
 
-### Objekte anlegen
+## Objekte anlegen
 
 ```{r}
 #| echo: true
@@ -88,7 +88,7 @@ round(3.14159, digits = 2)
 
 
 ::: callout-note
-#### Übung 2 – Objekte & Funktionen
+# Übung 2 – Objekte & Funktionen
 
 - Erstelle ein Objekt `z` mit mindestens fünf Zahlen.  
 - Berechne Mittelwert, Summe und Länge von `z`.  
@@ -96,7 +96,7 @@ round(3.14159, digits = 2)
 :::
 
 ::: callout-warning
-#### Häufige Fehler
+# Häufige Fehler
 
 - Funktion falsch geschrieben: `Mean(y)` statt `mean(y)`  
 - Klammern vergessen: `mean y` statt `mean(y)`  
