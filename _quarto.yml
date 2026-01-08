@@ -7,8 +7,6 @@ website:
     right:
       - text: "Home"
         href: index.qmd
-      - text: "Test"
-        href: test.qmd
       - text: "Über mich"
         href: about.qmd
       - text: "Materialien"

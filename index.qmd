@@ -1,5 +1,5 @@
 ---
-title: "Welcome"
+title: "Willkommen"
 ---
 
 Willkommen auf meiner Workshop-Seite!\
@@ -11,7 +11,6 @@ Hier findest du Materialien, Unterlagen, Übungen und Infos zu meinen Methoden-W
 
 -   **Workshop 1 – Einführung in R & RStudio**
 -   **Workshop 2 – Datenvisualisierung mit ggplot2**
--   **Workshop 3 – Einführung in qualitative Methoden**
 
 ------------------------------------------------------------------------
 
@@ -24,5 +23,4 @@ Falls du an einem bestimmten Workshop teilnimmst, bekommst du die Zugangsinforma
 
 ## 📬 Kontakt
 
-Bei Fragen erreichst du mich jederzeit unter:\
-**arieja.farugie\@…** (einfügen)
+Bei Fragen erreichst du mich jederzeit unter: farugie[at]psych.uni-frankfurt.de

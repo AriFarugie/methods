@@ -1,9 +1,5 @@
 ---
-title: "Über mich"
+title: "Materialien"
 ---
-
-Hallo! 
-Ich bin Arieja Farugie, diese Seite befindet sich im Aufbau.
-
 
 ![](assets/images/generated-image_undercon.png){width=100% style="border: 2px solid darkblue;"}
