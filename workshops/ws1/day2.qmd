@@ -29,8 +29,7 @@ Wir haben im ersten Teil des Workshops gelernt, wie RStudio aufgebaut ist und fu
 ::: callout-note
 # **Merksatz**
 
-R ist eine **Programmiersprache** – und wie jede Sprache lernt man sie  
-durch **regelmäßige Nutzung**.
+R ist eine **Programmiersprache** – und wie jede Sprache lernt man sie durch **regelmäßige Nutzung**.
 
 Fehler zu machen ist völlig normal (auch wenn es manchmal frustrierend ist).  
 Für fast jedes Problem gibt es **eine Lösung, eine Erklärung oder ein Paket** 😊
@@ -40,8 +39,7 @@ ___
 
 # Umkodieren
 
-In der Datenanalyse arbeiten wir häufig mit Variablen,  
-deren Werte **nicht direkt so vorliegen**, wie wir sie für eine Auswertung benötigen.
+In der Datenanalyse arbeiten wir häufig mit Variablen, deren Werte **nicht direkt so vorliegen**, wie wir sie für eine Auswertung benötigen.
 
 **Umkodieren** bedeutet, Werte oder Kategorien gezielt zu verändern oder neu zusammenzufassen, damit Variablen
 - **inhaltlich korrekt** interpretiert werden können und
@@ -59,14 +57,10 @@ Beim Umkodieren können zum Beispiel:
 ::: callout-tip
 # **Warum ist Umkodieren wichtig?**
 
-Rohdaten sind selten sofort „analysefertig“.  
-Durch Umkodieren stellen wir sicher,  
-dass unsere Variablen **inhaltlich korrekt** interpretiert  
-und **vergleichbar** ausgewertet werden können. Umkodierung ist daher ein wichtiger **Bestandteil der Datenaufbereitung** und **wichtig** für die späteren Analysen!
+Rohdaten sind selten sofort „analysefertig“. Durch Umkodieren stellen wir sicher, dass unsere Variablen **inhaltlich korrekt** interpretiert und **vergleichbar** ausgewertet werden können. Umkodierung ist daher ein wichtiger **Bestandteil der Datenaufbereitung** und **wichtig** für die späteren Analysen!
 :::
 
-Im Folgenden sehen wir typische Beispiele für Umkodierungen  
-und setzen sie direkt mit R um.
+Im Folgenden sehen wir typische Beispiele für Umkodierungen und setzen sie direkt mit R um.
 
 ## Umkodieren invertierter Items
 
@@ -97,8 +91,12 @@ Doch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakte wie
 #| warning: false
 
 library(tidyverse)
+library(haven)
+library(labelled)
 
 df_csv <- read_csv("assets/data/datensatz_workshop.csv")
+
+df_spss <- read_sav("assets/data/spss_datensatz_workshop.sav")
 
 head(df_csv, 10)
 ```
@@ -214,11 +212,9 @@ Hier handelt es sich um den `rec()` Befehl aus dem Paket **sjmisc**.
 
 ## Umkodieren von Gruppen und Faktoren
 
-Bisher haben wir Variablen umkodiert, die **numerisch skaliert** sind  
-(z. B. Zustimmungsskalen von 1 bis 5).
+Bisher haben wir Variablen umkodiert, die **numerisch skaliert** sind (z. B. Zustimmungsskalen von 1 bis 5).
 
-In der Praxis arbeiten wir jedoch sehr häufig auch mit **kategorialen Variablen**,  
-zum Beispiel:
+In der Praxis arbeiten wir jedoch sehr häufig auch mit **kategorialen Variablen**, zum Beispiel:
 - Geschlecht  
 - Bildungsabschluss  
 - Wohnort  
@@ -226,12 +222,9 @@ zum Beispiel:
 
 Diese Variablen sind meist als **Faktoren** kodiert oder sollen als solche behandelt werden.
 
-Beim Umkodieren von Faktorvariablen geht es weniger um Rechnen,  
-sondern darum, **Kategorien sinnvoll zusammenzufassen oder neu zu benennen**.
+Beim Umkodieren von Faktorvariablen geht es weniger um Rechnen, sondern darum, **Kategorien sinnvoll zusammenzufassen oder neu zu benennen**.
 
-In diesem Abschnitt schauen wir uns daher an,
-wie wir **Faktorvariablen gezielt umkodieren**,  
-zum Beispiel indem wir:
+In diesem Abschnitt schauen wir uns daher an, wie wir **Faktorvariablen gezielt umkodieren**, zum Beispiel indem wir:
 - mehrere Kategorien zu einer Gruppe zusammenfassen oder  
 - neue, besser interpretierbare Gruppen bilden.
 
@@ -508,20 +501,94 @@ df_rec |>
 
 ```
 :::
+:::
 
+___
+
+# Joins – Datensätze zusammenführen
+
+In der Praxis liegen Informationen häufig **nicht in einem einzigen Datensatz** vor. Stattdessen gibt es mehrere Tabellen, die sich auf **dieselben Fälle** beziehen, z. B.:
+
+- ein Datensatz mit **Befragungsdaten**
+- ein weiterer mit **Regionalinformationen**
+- oder zusätzliche **Kontextvariablen**
+
+Um diese Informationen gemeinsam auswerten zu können, müssen wir die Datensätze **zusammenführen**.  
+Genau dafür nutzen wir sogenannte **Joins**.
+
+::: callout-tip
+# Grundidee von Joins
+
+Ein **Join** verbindet zwei Datensätze über eine **gemeinsame Variable**  
+(z. B. eine Personen-ID oder Fallnummer).
+
+👉 Voraussetzung:  
+Beide Datensätze enthalten **mindestens eine gemeinsame Schlüsselvariable**.
+:::
+
+In `dplyr` gibt es verschiedene Join-Typen, die sich darin unterscheiden, **welche Fälle im Ergebnis erhalten bleiben**.
+
+:::{.callout-note collapse="true"}
+# Die Join-Typen
+- `left_join()`
+- `inner_join()`  
+- `right_join()`  
+- `full_join()`
+:::
+
+Wir schauen uns nun den am **häufigsten** verwendeten Join-Befehl an: `left_join()`. Dafür schauen wir uns nun den Befehl im Detail an.
+
+:::{.callout-note}
+# left_join()
+
+left_join(x, y, by = "id")
+
+- x → **linker Datensatz**
+- y → **rechter Datensatz**
+- by → **Schlüsselvariable (hier "id")**
+:::
+
+Doch bevor wir nun Datensätze zusammenführen, brauchen wir erstmal einen zweiten Datensatz.
+
+➡️ **[Datensatz für Kinderarmut und Altersarmut nach Bundesländern](../ws1/assets/data/armutdaten.csv)**
+
+Wir laden nun den neuen Datensatz in unser Environment.
+
+```{r}
+#| echo: true
+#| warning: false
+
+df_armut <- read_csv("assets/data/armutdaten.csv")
+
+head(df_armut,10)
+
+```
+
+Nun schauen wir, ob wir eine Schlüsselvariable erkennen können. Die Variable `kzf` was die Kennziffer des **Bundeslandes** darstellt, könnte in Frage kommen. Welche ähnliche Variable haben wir in unserem **ersten Datensatz**?
+
+:::{.callout-tip collapse="true"}
+# **Lösung**
+
+Die Variable `land`!
+
+```{r}
+#| echo: true
+#| warning: false
+
+df_spss |>
+  select(land) |>
+  head(10)
+
+
+```
 :::
 
 
+___
 
 # Fehlende Werte (NA)
 
 Warum fehlende Werte wichtig sind, wie man sie erkennt und sinnvoll behandelt.
-
-___
-
-# Umkodieren
-
-Wie wir Variablen neu kodieren (z. B. Kategorien zusammenfassen, Werte umdrehen, Skalen bilden).
 
 ___
 
