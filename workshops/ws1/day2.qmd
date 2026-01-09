@@ -382,8 +382,135 @@ head(df_rec, 10)
 # Beschreibung
 Hier haben wir erst "gelabled" und dann Levels hinzugefügt.
 :::
+:::
+
+## Übung
+
+Schaut euch die Variablen im neuen Datensatz `df_rec` an. Eure Aufgabe ist es nun neue Variablen zu erstellen, die sinnvoll sind und die wir dann weiter nutzen werden.
+
+1. Erstellt eine neue Variable von `educ` (nennt diese `abschluss`) die vierstufig ist (niedriger, mittlere, hoher und anderer)
+2. Erstellt einen Skalenwert für Disstress und Soziale Unterstützung. Achtet darauf, dass der Summenwert sinnvol interpretierbar ist.
+
+:::{.callout-tip collapse="true"}
+# Tipp
+
+- Schaut euch das Codebuch genauer an, um die Variablen besser zu verstehen.
+- Guckt euch nochmal die Skalierung der Skalenitems an!
+:::
+
+::: {.callout-tip collapse="true"}
+# **Lösung**
+
+:::{.panel-tabset}
+
+# Abschluss
+
+```{r}
+
+df_rec <- df_rec |>
+  mutate(
+    abschluss = recode(
+      educ,
+      "1" = 1,
+      "2" = 1,
+      "3" = 2,
+      "4" = 3,
+      "5" = 3,
+      "6" = 4,
+      "7" = 1
+    ) |> factor(labels = c("Niedriger", "Mittlerer", "Hoher", "Anderer"))
+  )
+
+df_rec |>
+  select(educ, abschluss) |>
+  head(10)
+
+
+```
+
+# Disstress
+
+```{r}
+#| echo: true
+#| waring: false
+
+library(sjmisc)
+
+df_rec<-df_rec|>
+  mutate(
+    hs04_r = rec(hs04, rec = "rev"),
+    hs05_r = rec(hs05, rec = "rev"),
+    hs09_r = rec(hs09, rec = "rev"),
+    disstress = hs04_r + hs05_r + hs06 + hs07+ hs09_r
+  )
+
+df_rec |>
+  select(hs04, hs04_r, hs05, hs05_r, hs06, hs07, hs09, hs09_r, disstress)|>
+  head(10)
+
+```
+
+# Soziale Ungleichheit
+
+```{r}
+#| echo: true
+#| warning: false
+
+df_rec<-df_rec|>
+  mutate(
+    im17_r = 5 - im17,
+    im18_r = 5 - im18,
+    im19_r = 5 - im19,
+    im20_r = 5 - im20,
+    im21_r = 5 - im21,
+    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))
+  )
+
+df_rec |>
+  select(im17:im21, im17_r:im21_r, soz.u) |>
+  head(10)
+
+```
+
+# Alles in einem Schritt
+
+```{r}
+#| echo: true
+#| warning: false
+
+df_rec<-df_rec|>
+  mutate(
+    abschluss = recode(
+      educ,
+      "1" = 1,
+      "2" = 1,
+      "3" = 2,
+      "4" = 3,
+      "5" = 3,
+      "6" = 4,
+      "7" = 1
+    ) |> factor(labels = c("Niedriger", "Mittlerer", "Hoher", "Anderer")),
+    hs04_r = rec(hs04, rec = "rev"),
+    hs05_r = rec(hs05, rec = "rev"),
+    hs09_r = rec(hs09, rec = "rev"),
+    distress = hs04_r + hs05_r + hs06 + hs07+ hs09_r,
+    im17_r = 5 - im17,
+    im18_r = 5 - im18,
+    im19_r = 5 - im19,
+    im20_r = 5 - im20,
+    im21_r = 5 - im21,
+    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))
+  )
+
+df_rec |>
+  select(abschluss, disstress, soz.u) |>
+  head(10)
+
+```
+:::
 
 :::
+
 
 
 # Fehlende Werte (NA)
