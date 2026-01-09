@@ -43,8 +43,9 @@ ___
 In der Datenanalyse arbeiten wir häufig mit Variablen,  
 deren Werte **nicht direkt so vorliegen**, wie wir sie für eine Auswertung benötigen.
 
-**Umkodieren** bedeutet, bestehende Variablen so zu verändern oder neu zu definieren,  
-dass sie **inhaltlich sinnvoll** und **analytisch nutzbar** werden.
+**Umkodieren** bedeutet, Werte oder Kategorien gezielt zu verändern oder neu zusammenzufassen, damit Variablen
+- **inhaltlich korrekt** interpretiert werden können und
+- **für Analysen** (z. B. Gruppenvergleiche, Skalenbildung) besser nutzbar sind.
 
 Beim Umkodieren können zum Beispiel:
 
@@ -193,9 +194,10 @@ install.packages("sjmisc")
 library(sjmisc)
 
 df_diss <- df_diss|>
-mutate(hs04_inv = rec(hs04, rec = "rev"),
-hs05_inv = rec(hs05, rec = "rev"),
-hs09_inv = rec(hs09, rec = "rev"))
+            mutate(hs04_inv = rec(hs04, rec = "rev"),
+                  hs05_inv = rec(hs05, rec = "rev"),
+                  hs09_inv = rec(hs09, rec = "rev")
+                  )
 
 head(df_diss, 10)
 
@@ -209,6 +211,179 @@ Hier handelt es sich um den `rec()` Befehl aus dem Paket **sjmisc**.
 :::
 
 
+
+## Umkodieren von Gruppen und Faktoren
+
+Bisher haben wir Variablen umkodiert, die **numerisch skaliert** sind  
+(z. B. Zustimmungsskalen von 1 bis 5).
+
+In der Praxis arbeiten wir jedoch sehr häufig auch mit **kategorialen Variablen**,  
+zum Beispiel:
+- Geschlecht  
+- Bildungsabschluss  
+- Wohnort  
+- Erwerbsstatus  
+
+Diese Variablen sind meist als **Faktoren** kodiert oder sollen als solche behandelt werden.
+
+Beim Umkodieren von Faktorvariablen geht es weniger um Rechnen,  
+sondern darum, **Kategorien sinnvoll zusammenzufassen oder neu zu benennen**.
+
+In diesem Abschnitt schauen wir uns daher an,
+wie wir **Faktorvariablen gezielt umkodieren**,  
+zum Beispiel indem wir:
+- mehrere Kategorien zu einer Gruppe zusammenfassen oder  
+- neue, besser interpretierbare Gruppen bilden.
+
+___
+
+Wir erstellen nun erneut einen Datensatz und nennen es `df_rec`. Diesmal fügen wir zu unseren Disstress Variablen weitere hinzu. Folgende Variablen sollen hinzugenommen werden:
+- `gs01` - Selbsbeschreibung des Wohnorts
+- `educ` - Allgemeiner Schulabschluss
+- `mstat` - Familienstand
+- `im17` bis `im21` - Einstellung zur sozialen Ungleichheit
+
+:::{.callout-important collapse="true"}
+# **Beschreibungen der Variablen**
+
+:::{.panel-tabset}
+# Wohnort
+|**Variable**|**Inhalt**|**Skalierung**|
+|----|----|----|
+|gs01|"Selbsbeschreibung des Wohnorts"| 1 = Großstadt<br> 2 = Vorort Großstadt<br> 3 = Mittel-/Kleinstadt<br> 4 = ländl. Dorf<br> 5 = Allein stehendes Haus auf dem Land |
+
+# Schulabschluss
+|**Variable**|**Inhalt**|**Skalierung**|
+|----|----|----|
+|educ|"Allgemeiner Schulabschluss"| 1 = Ohne Abschluss<br> 2 = Volks-/Hauptschule<br> 3 = Mittelere Reife<br> 4 = Fachhochschulreife<br> 5 = Hochschulreife<br> 6 = Anderer Abschluss<br> 7 = Noch Schüler*in |
+
+# Familienstand
+|**Variable**|**Inhalt**|**Skalierung**|
+|----|----|----|
+|mstat|"Familienstand"| 1 = Verheiratet (zsm.lebend)<br> 2 = Verheiratet (getrennt)<br> 3 = Verwitwet<br> 4 = Geschieden<br> 5 = Ledig<br> 6 = Lebensp. (zsm.lebend)<br> 7 = Lebensp. (getrennt)<br> 8 = Lebensp. verstorben<br> Lebensp. aufgehoben |
+
+# Soziale Ungleichheit
+|**Variable**|**Inhalt**|**Skalierung**|
+|----|----|----|
+|im17|"Was man im Leben bekommt, hängt gar nicht so sehr von den eigenen Anstrengungen ab, sondern von der Wirtschaftslage, der Lage auf dem Arbeitsmarkt, den Tarifabschlüssen und den Sozialleistungen des Staates."| 1 = "Stimme voll zu" bis 4 = "Stimme überhaupt nicht zu"|
+|im18|"Das Einkommen sollte sich nicht allein nach der Leistung des Einzelnen richten. Vielmehr sollte jeder das haben, was er mit seiner Familie für ein anständiges Leben braucht."| 1 = "Stimme voll zu" bis 4 = "Stimme überhaupt nicht zu"|
+|im19|"Nur wenn die Unterschiede im Einkommen und im sozialen Ansehen groß genug sind, gibt es auch einen Anreiz für persönliche Leistungen."|1 = "Stimme voll zu" bis 4 = "Stimme überhaupt nicht zu"|
+|im20|"Die Rangunterschiede zwischen den Menschen sind akzeptabel, weil sie im Wesentlichen ausdrücken, was man aus den Chancen, die man hatte, gemacht hat."| 1 = "Stimme voll zu" bis 4 = "Stimme überhaupt nicht zu"|
+|im21|"Ich finde die sozialen Unterschiede in unserem Land im Großen und Ganzen gerecht."|1 = "Stimme voll zu" bis 4 = "Stimme überhaupt nicht zu"|
+
+:::
+:::
+
+:::{.callout-tip collapse="true"}
+# Lösung
+```{r}
+#| echo: true
+#| warning: false
+
+library(tidyverse)
+
+df_rec<-df_csv|>
+  select(gs01,educ,mstat,
+         hs04,hs05,hs06,hs07,hs09,
+         im17,im18,im19,im20,im21)
+
+head(df_rec, 10)
+```
+:::
+
+Nun schauen wir uns die Umkodierung von Faktoren am Beispiel des Schulabschlusses an:
+
+:::{.panel-tabset}
+# Alternative 1
+```{r}
+
+df_rec <- df_rec |>
+  mutate(
+    wohnort = recode(
+      gs01,
+      "1"= 1,
+      "2" = 1,
+      "3" = 1,
+      "4" = 2,
+      "5" = 2
+    ))
+
+head(df_rec, 10)
+
+```
+:::{.callout-note collapse="true"}
+# Beschreibung
+Wir haben nun hier aus fünf Gruppen zwei Gruppen gemacht. Wir unterscheiden nun zwischen **1 = Urban** und **2 = Rural**.
+:::
+
+# Alternative 2
+```{r}
+
+df_rec <- df_rec |>
+  mutate(
+    wohnort2 = factor(
+      wohnort,
+      levels = c(1, 2),
+      labels = c("Urban", "Rural")
+    )
+  )
+
+head(df_rec,10)
+
+```
+::: {.callout-note collapse="true"}
+# Beschreibung
+Wir haben hier die zuvor erstellten Gruppen (`1` und `2`) nun als **Faktor mit Labeln** gemacht.
+:::
+
+# Alternative 3
+```{r}
+
+df_rec <- df_rec |>
+  mutate(
+    wohnort3 = recode(
+      gs01,
+      "1" = 1,
+      "2" = 1,
+      "3" = 1,
+      "4" = 2,
+      "5" = 2
+    ) |> factor(labels = c("Urban", "Rural"))
+  )
+
+head(df_rec, 10)
+
+```
+:::{.callout-note collapse="true"}
+# Beschreibung
+Hier haben wir es in einem Schritt getan.
+:::
+
+# Alternative 4
+
+```{r}
+
+df_rec <- df_rec |>
+  mutate(
+    wohnort4 = recode(
+      gs01,
+      "1" = "Urban",
+      "2" = "Urban",
+      "3" = "Urban",
+      "4" = "Rural",
+      "5" = "Rural"
+    ) |> factor(levels = c("Urban", "Rural"))
+  )
+
+head(df_rec, 10)
+
+```
+:::{.callout-note collapse="true"}
+# Beschreibung
+Hier haben wir erst "gelabled" und dann Levels hinzugefügt.
+:::
+
+:::
 
 
 # Fehlende Werte (NA)
