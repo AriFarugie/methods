@@ -566,10 +566,9 @@ head(df_armut,10)
 
 Nun schauen wir, ob wir eine Schlüsselvariable erkennen können. Die Variable `kzf` was die Kennziffer des **Bundeslandes** darstellt, könnte in Frage kommen. Welche ähnliche Variable haben wir in unserem **ersten Datensatz**?
 
-:::{.callout-tip collapse="true"}
-# **Lösung**
-
-Die Variable `land`!
+:::{.callout-note collapse="true"}
+# **Hinweis**
+Die Variable `land` sieht doch vielversprechend aus, oder?
 
 ```{r}
 #| echo: true
@@ -579,8 +578,75 @@ df_spss |>
   select(land) |>
   head(10)
 
+```
+:::
+
+Wir gucken uns die Kodierung im **Codebuch** an. Wir müssen vorher die Variable umstrukturieren. Erstelle in unserem **Datensatz** eine neue Variable mit dem namen `kzf`.
+
+:::{.callout-tip collapse="true"}
+# **Lösung**
+
+```{r}
+#| echo: true
+#| warning: false
+
+df_spss <- df_spss |>
+  mutate(kzf = rec(land,rec="
+                   10 = 1;
+                   20 = 2;
+                   30 = 3;
+                   40 = 4;
+                   50 = 5;
+                   60 = 6;
+                   70 = 7;
+                   80 = 8;
+                   90 = 9;
+                   100 = 10;
+                   111 = 11;
+                   112 = 11;
+                   120 = 12;
+                   130 = 13;
+                   140 = 14;
+                   150 = 15;
+                   160 = 16"))
+
+df_spss |>
+  select(kzf) |>
+  head(10)
 
 ```
+:::
+
+Wir haben nun die **Schlüsselvariable** erstellt und finden sie in beiden **Datensätzen**.
+
+Bevor wir **die Datensätze zusammenführe**, checken wir nochmal, ob in beiden Datensätzen die **Schlüsselvariable** vorhanden ist.
+
+```{r}
+#| echo: true
+#| warning: false
+
+intersect(names(df_spss), names(df_armut))
+
+```
+
+Nun führen wir die **beiden Datensätze** zusammen.
+
+```{r}
+#| echo: true
+#| warning: false
+
+df_spss_armut <- left_join(df_spss, df_armut, by = "kzf")
+
+df_spss_armut |>
+  select(66:70) |>
+  head(10)
+
+```
+
+:::{.callout-note}
+# **Hinweis**
+
+Bei `select(66:70)` wähle ich die Spalten **66 bis 70** in meinem neuen **Datensatz** aus.
 :::
 
 

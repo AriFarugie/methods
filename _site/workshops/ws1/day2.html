@@ -1228,19 +1228,19 @@ Beide Datensätze enthalten <strong>mindestens eine gemeinsame Schlüsselvariabl
 </div>
 </div>
 <p>Nun schauen wir, ob wir eine Schlüsselvariable erkennen können. Die Variable <code>kzf</code> was die Kennziffer des <strong>Bundeslandes</strong> darstellt, könnte in Frage kommen. Welche ähnliche Variable haben wir in unserem <strong>ersten Datensatz</strong>?</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Lösung</strong>
+<span class="screen-reader-only">Note</span><strong>Hinweis</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Die Variable <code>land</code>!</p>
+<p>Die Variable <code>land</code> sieht doch vielversprechend aus, oder?</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df_spss <span class="sc">|&gt;</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(land) <span class="sc">|&gt;</span></span>
@@ -1262,6 +1262,110 @@ Beide Datensätze enthalten <strong>mindestens eine gemeinsame Schlüsselvariabl
 </div>
 </div>
 </div>
+</div>
+</div>
+<p>Wir gucken uns die Kodierung im <strong>Codebuch</strong> an. Wir müssen vorher die Variable umstrukturieren. Erstelle in unserem <strong>Datensatz</strong> eine neue Variable mit dem namen <code>kzf</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Lösung</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df_spss <span class="ot">&lt;-</span> df_spss <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kzf =</span> <span class="fu">rec</span>(land,<span class="at">rec=</span><span class="st">"</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="st">                   10 = 1;</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="st">                   20 = 2;</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="st">                   30 = 3;</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="st">                   40 = 4;</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="st">                   50 = 5;</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="st">                   60 = 6;</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="st">                   70 = 7;</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="st">                   80 = 8;</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="st">                   90 = 9;</span></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a><span class="st">                   100 = 10;</span></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="st">                   111 = 11;</span></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="st">                   112 = 11;</span></span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="st">                   120 = 12;</span></span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a><span class="st">                   130 = 13;</span></span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a><span class="st">                   140 = 14;</span></span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a><span class="st">                   150 = 15;</span></span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a><span class="st">                   160 = 16"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>One or more of the old values are recoded into identical new values.
+Please check if you correctly specified the recode-pattern,
+else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df_spss <span class="sc">|&gt;</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(kzf) <span class="sc">|&gt;</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 1
+     kzf
+   &lt;dbl&gt;
+ 1     8
+ 2     5
+ 3     1
+ 4    16
+ 5     5
+ 6     9
+ 7     5
+ 8     7
+ 9    16
+10     6</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Wir haben nun die <strong>Schlüsselvariable</strong> erstellt und finden sie in beiden <strong>Datensätzen</strong>.</p>
+<p>Bevor wir <strong>die Datensätze zusammenführe</strong>, checken wir nochmal, ob in beiden Datensätzen die <strong>Schlüsselvariable</strong> vorhanden ist.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">intersect</span>(<span class="fu">names</span>(df_spss), <span class="fu">names</span>(df_armut))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "kzf"</code></pre>
+</div>
+</div>
+<p>Nun führen wir die <strong>beiden Datensätze</strong> zusammen.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df_spss_armut <span class="ot">&lt;-</span> <span class="fu">left_join</span>(df_spss, df_armut, <span class="at">by =</span> <span class="st">"kzf"</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>df_spss_armut <span class="sc">|&gt;</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">66</span><span class="sc">:</span><span class="dv">70</span>) <span class="sc">|&gt;</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+     kzf bland               Aggregat     kinder_armut alters_armut
+   &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt;               &lt;dbl&gt;        &lt;dbl&gt;
+ 1     8 Baden-Württemberg   Bundesländer         7.45         2.25
+ 2     5 Nordrhein-Westfalen Bundesländer        16.9          3.87
+ 3     1 Schleswig-Holstein  Bundesländer        13.1          2.9 
+ 4    16 Thüringen           Bundesländer         9.8          0.9 
+ 5     5 Nordrhein-Westfalen Bundesländer        16.9          3.87
+ 6     9 Bayern              Bundesländer         5.71         2.42
+ 7     5 Nordrhein-Westfalen Bundesländer        16.9          3.87
+ 8     7 Rheinland-Pfalz     Bundesländer        10.1          2.54
+ 9    16 Thüringen           Bundesländer         9.8          0.9 
+10     6 Hessen              Bundesländer        12.8          3.76</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><strong>Hinweis</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bei <code>select(66:70)</code> wähle ich die Spalten <strong>66 bis 70</strong> in meinem neuen <strong>Datensatz</strong> aus.</p>
 </div>
 </div>
 <hr>
