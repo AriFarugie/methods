@@ -340,7 +340,7 @@ Platzhalter
 ::: callout-tip
 ## Weitere Join-Varianten
 
-- `inner_join()`  
+- `inner_join()` - behält alles links
 - `right_join()`  
 - `full_join()`
 :::

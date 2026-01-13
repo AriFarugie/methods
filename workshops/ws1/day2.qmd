@@ -866,7 +866,7 @@ Sehr **unübersichtlich**, da R hier für **jede Zeile und jeder Variable** eine
 #| echo: true
 #| warning: false
 
-#install.packages("naniar", repos="https://cloud.r-project.org")
+install.packages("naniar", repos="https://cloud.r-project.org")
 
 library(naniar)
 
@@ -973,6 +973,9 @@ gg_miss_var(df_analyse2)
 Hier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable im **gesamten Datensatz** sind.
 :::
 :::
+
+
+
 ___
 
 # Reproduzierbare Workflows
