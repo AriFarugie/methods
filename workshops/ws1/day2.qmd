@@ -530,10 +530,10 @@ In `dplyr` gibt es verschiedene Join-Typen, die sich darin unterscheiden, **welc
 
 :::{.callout-note collapse="true"}
 # Die Join-Typen
-- `left_join()`
-- `inner_join()`  
-- `right_join()`  
-- `full_join()`
+- `left_join()` - behält alles links
+- `inner_join()` - behält Überschneidungen
+- `right_join()` - behält alles rechts
+- `full_join()` - alles aus beiden Datensätzen
 :::
 
 Wir schauen uns nun den am **häufigsten** verwendeten Join-Befehl an: `left_join()`. Dafür schauen wir uns nun den Befehl im Detail an.
@@ -648,6 +648,88 @@ df_spss_armut |>
 
 Bei `select(66:70)` wähle ich die Spalten **66 bis 70** in meinem neuen **Datensatz** aus.
 :::
+___
+
+## Übung
+
+Erstellt erneut euren Datensatz aus der letzten Aufgabe und speichert ihn diesmal unter dem Namen **`df_rec2`**. Achtet darauf, dass ihr **eine eindeutige Schlüsselvariable** mitübernehmt.
+
+Führt anschließend **dieselben Umkodierungen** durch wie zuvor bei `df_rec`.
+
+Zum Schluss **fügt ihr den Hauptdatensatz und `df_rec2` zu einem neuen Datensatz** mit dem Namen **`df_analyse`** zusammen.
+
+:::{.callout-tip}
+# **Tipp**
+**Codebuch** 😉
+:::
+
+:::{.callout-tip collapse="true"}
+# **Lösung**
+
+```{r}
+#| echo: true
+#| warning: false
+
+# Erstellen von df_rec2
+
+df_rec2<-df_csv|>
+  select(respid,gs01,educ,mstat,
+         hs04,hs05,hs06,hs07,hs09,
+         im17,im18,im19,im20,im21)
+
+head(df_rec2, 10)
+
+# Umkodieren und Summenwerte erstellen
+
+df_rec2 <-df_rec2|>
+  mutate(
+    wohnort = recode(gs01,
+      "1" = 1,
+      "2" = 1,
+      "3" = 1,
+      "4" = 2,
+      "5" = 2
+    ) |> factor(labels = c("Urban", "Rural")),
+    abschluss = recode(
+      educ,
+      "1" = 1,
+      "2" = 1,
+      "3" = 2,
+      "4" = 3,
+      "5" = 3,
+      "6" = 4,
+      "7" = 1
+    ) |> factor(labels = c("Niedriger", "Mittlerer", "Hoher", "Anderer")),
+    hs04_r = rec(hs04, rec = "rev"),
+    hs05_r = rec(hs05, rec = "rev"),
+    hs09_r = rec(hs09, rec = "rev"),
+    distress = hs04_r + hs05_r + hs06 + hs07+ hs09_r,
+    im17_r = 5 - im17,
+    im18_r = 5 - im18,
+    im19_r = 5 - im19,
+    im20_r = 5 - im20,
+    im21_r = 5 - im21,
+    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))
+  )
+
+df_rec2 |>
+  select(15:26) |>
+  head(10)
+
+# Neuer Datensatz df_analyse
+
+df_analyse <- left_join(df_csv, df_rec2, by="respid")
+
+df_analyse |>
+  select(81:91) |>
+  head(10)
+```
+
+
+
+:::
+
+
 
 
 ___
