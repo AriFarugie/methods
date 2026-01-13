@@ -212,8 +212,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#übung-1" id="toc-übung-1" class="nav-link" data-scroll-target="#übung-1">Übung</a></li>
   </ul></li>
-  <li><a href="#fehlende-werte-na" id="toc-fehlende-werte-na" class="nav-link" data-scroll-target="#fehlende-werte-na">Fehlende Werte (NA)</a></li>
-  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">Joins</a></li>
+  <li><a href="#fehlende-werte-na" id="toc-fehlende-werte-na" class="nav-link" data-scroll-target="#fehlende-werte-na">Fehlende Werte (NA)</a>
+  <ul class="collapse">
+  <li><a href="#was-ist-na" id="toc-was-ist-na" class="nav-link" data-scroll-target="#was-ist-na">Was ist <code>NA</code>?</a></li>
+  <li><a href="#fehlende-werte-identifizieren" id="toc-fehlende-werte-identifizieren" class="nav-link" data-scroll-target="#fehlende-werte-identifizieren">Fehlende Werte identifizieren</a></li>
+  </ul></li>
   <li><a href="#reproduzierbare-workflows" id="toc-reproduzierbare-workflows" class="nav-link" data-scroll-target="#reproduzierbare-workflows">Reproduzierbare Workflows</a></li>
   <li><a href="#mini-projekt" id="toc-mini-projekt" class="nav-link" data-scroll-target="#mini-projekt">Mini-Projekt</a></li>
   </ul>
@@ -359,7 +362,7 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 <p>Wir müssen also entscheiden, was nun <strong>hohe Werte und was niedrige Werte</strong> darstellen sollen. Damit es intuitiver ist, wollen wir nun die <strong>Variablen <code>hs04</code>, <code>hs05</code> und <code>hs09</code>umkodieren</strong>, damit später es hoher Wert auf der Skala <strong>“viel Disstress”</strong> darstellen kann.</p>
 <p>Doch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakte wieder ein, bzw. haben diese schon im Environment!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"labelled"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("labelled", repos = "https://cloud.r-project.org")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
@@ -1180,10 +1183,14 @@ Beide Datensätze enthalten <strong>mindestens eine gemeinsame Schlüsselvariabl
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>left_join()</code> - behält alles links</li>
-<li><code>inner_join()</code> - behält Überschneidungen</li>
-<li><code>right_join()</code> - behält alles rechts</li>
-<li><code>full_join()</code> - alles aus beiden Datensätzen</li>
+<li><strong>left_join()</strong> → linker Datensatz bestimmt<br>
+</li>
+<li><strong>right_join()</strong> → rechter Datensatz bestimmt<br>
+</li>
+<li><strong>inner_join()</strong> → nur Überschneidung<br>
+</li>
+<li><strong>full_join()</strong> → alles von beiden<br>
+</li>
 </ul>
 </div>
 </div>
@@ -1371,7 +1378,6 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 <p>Bei <code>select(66:70)</code> wähle ich die Spalten <strong>66 bis 70</strong> in meinem neuen <strong>Datensatz</strong> aus.</p>
 </div>
 </div>
-<hr>
 <section id="übung-1" class="level2">
 <h2 class="anchored" data-anchor-id="übung-1">Übung</h2>
 <p>Erstellt erneut euren Datensatz aus der letzten Aufgabe und speichert ihn diesmal unter dem Namen <strong><code>df_rec2</code></strong>. Achtet darauf, dass ihr <strong>eine eindeutige Schlüsselvariable</strong> mitübernehmt.</p>
@@ -1506,7 +1512,304 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 </div>
 </div>
 </div>
-<p>IT IS NOT UP2DATE DAMNIT</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span><strong>Merkhilfe der Join-Befehle</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="left_join-1" class="level3">
+<h3 class="anchored" data-anchor-id="left_join-1"><code>left_join()</code></h3>
+<p>Der <strong>linke Datensatz</strong> ist die Basis.</p>
+<ul>
+<li><strong>alle Fälle</strong> aus dem linken Datensatz bleiben erhalten<br>
+</li>
+<li>passende Informationen aus dem rechten Datensatz werden ergänzt<br>
+</li>
+<li>nicht gefundene Werte werden als <code>NA</code> ergänzt</li>
+</ul>
+<p>👉 <strong>Der am häufigsten verwendete Join</strong> in der Praxis.</p>
+</section>
+<section id="right_join" class="level3">
+<h3 class="anchored" data-anchor-id="right_join"><code>right_join()</code></h3>
+<p>Der <strong>rechte Datensatz</strong> ist die Basis.</p>
+<ul>
+<li><strong>alle Fälle</strong> aus dem rechten Datensatz bleiben erhalten<br>
+</li>
+<li>passende Informationen aus dem linken Datensatz werden ergänzt<br>
+</li>
+<li>nicht gefundene Werte werden als <code>NA</code> ergänzt</li>
+</ul>
+<p>👉 Funktional das Gegenstück zu <code>left_join()</code>.</p>
+</section>
+<section id="inner_join" class="level3">
+<h3 class="anchored" data-anchor-id="inner_join"><code>inner_join()</code></h3>
+<p>Es bleiben <strong>nur die gemeinsamen Fälle</strong> erhalten.</p>
+<ul>
+<li>Fälle kommen <strong>nur dann</strong> ins Ergebnis, wenn sie <strong>in beiden Datensätzen</strong> vorkommen<br>
+</li>
+<li>alle anderen Fälle werden verworfen</li>
+</ul>
+<p>👉 Strenger Join – gut für saubere Überschneidungen.</p>
+</section>
+<section id="full_join" class="level3">
+<h3 class="anchored" data-anchor-id="full_join"><code>full_join()</code></h3>
+<p>Alle Fälle aus <strong>beiden Datensätzen</strong> bleiben erhalten.</p>
+<ul>
+<li>alle Fälle aus links <strong>und</strong> rechts<br>
+</li>
+<li>wo es keine Entsprechung gibt → <code>NA</code></li>
+</ul>
+<p>👉 Maximale Information, aber oft viele fehlende Werte.</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="fehlende-werte-na" class="level1">
+<h1>Fehlende Werte (NA)</h1>
+<p>Nachdem wir Datensätze <strong>umkodiert</strong> und <strong>zusammengeführt</strong> haben, kommen wir zu einem Thema, das in der Praxis <strong>immer</strong> eine Rolle spielt:</p>
+<p>👉 <strong>fehlende Werte (<code>NA</code>)</strong></p>
+<p>Fehlende Werte entstehen zum Beispiel, wenn: - Fragen <em>nicht</em> beantwortet wurden<br>
+- bestimmte Fragen nur für <em>Teilgruppen</em> gestellt wurden<br>
+- Datensätze zusammengeführt werden<br>
+- Filter oder Umkodierungen durchgeführt wurden</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Wichtig</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fehlende Werte sind <strong>kein Fehler</strong>, sondern ein <strong>normaler Bestandteil realer Daten</strong>.</p>
+<p>Wichtig ist, zu verstehen, - <strong>wo</strong> sie auftreten, - <strong>wie viele</strong> es sind und - <strong>wie R mit ihnen umgeht</strong>.</p>
+</div>
+</div>
+<section id="was-ist-na" class="level2">
+<h2 class="anchored" data-anchor-id="was-ist-na">Was ist <code>NA</code>?</h2>
+<p>In R steht <code>NA</code> für <strong>Not Available</strong> – also <em>fehlender Wert</em>.</p>
+<ul>
+<li><code>NA</code> ist <strong>keine</strong> 0<br>
+</li>
+<li><code>NA</code> ist <strong>kein</strong> leerer Text<br>
+</li>
+<li><code>NA</code> bedeutet: <strong><em>Es liegt kein Wert vor</em></strong></li>
+</ul>
+<p>R behandelt <code>NA</code> <strong>sehr strikt</strong> – und das ist auch gut so.</p>
+</section>
+<section id="fehlende-werte-identifizieren" class="level2">
+<h2 class="anchored" data-anchor-id="fehlende-werte-identifizieren">Fehlende Werte identifizieren</h2>
+<p>Bevor wir mit Berechnungen arbeiten, sollten wir immer prüfen, <strong>ob und wo fehlende Werte</strong> vorkommen. Dafür erstellen wir aus unserem <strong>Analysedatensatz <code>df_analyse</code></strong> einen kleineren handlicheren Datensatz mit den Variablen die wir für unsere Analysen wirklich benötigen und nennen es <code>df_analyse2</code>.</p>
+<p>respid,gs01,educ,mstat</p>
+<p>Nehme folgende Variablen mit rein: - <code>respid</code> - <code>wohnort</code> - <code>isced97</code> - <code>work</code> - <code>dw15</code> - <code>mstat</code> - <code>hhincc</code> - <code>disstress</code> - <code>soz.u</code></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Lösung</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>df_analyse2 <span class="ot">&lt;-</span> df_analyse <span class="sc">|&gt;</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(respid,age,sex,wohnort,isced97,work,dw15,</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>         mstat.x,hhincc,distress,soz.u)</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>df_analyse2 <span class="sc">|&gt;</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 11
+   respid   age   sex wohnort isced97  work  dw15 mstat.x hhincc distress soz.u
+    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+ 1      1    54     2 Rural         5     1  35         5     10       14    11
+ 2      2    53     1 Urban         5     1  62         5     19       NA    10
+ 3      3    89     2 Urban         4     4  NA         3     NA       NA    14
+ 4      4    79     1 Urban         5     4  NA         1     15       13    12
+ 5      5    62     2 Rural         3     4  NA         1     19       13    12
+ 6      6    23     1 Urban        NA     4  NA         5     12       16    11
+ 7      7    31     2 Urban         6     2  32         5     23       19    12
+ 8      8    57     2 Rural         5     1  39.5       1     20       17    10
+ 9      9    68     1 Urban         5     4  NA         1     14       14    10
+10     10    51     2 Rural         3     2  30         5     NA       17    10</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span><strong>Hinweis</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Schaut im <strong>Codebuch</strong> nach, was die Variablen bedeuten.</li>
+<li>Achtet darauf, dass ihr die richtigen <strong>Variablennamen</strong> nehmt!</li>
+</ul>
+</div>
+</div>
+</div>
+<p>Wir schauen nun unseren Datensatz an:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href=""><strong>Package <code>naniar</code></strong></a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(df_analyse2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><strong>Achtung</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sehr <strong>unübersichtlich</strong>, da R hier für <strong>jede Zeile und jeder Variable</strong> einen logischen Vektor mit <code>TRUE</code>oder <code>FALSE</code> erstellt.</p>
+</div>
+</div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"naniar"</span>, <span class="at">repos=</span><span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="fu">any_na</span>(df_analyse2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><strong>Hinweis</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mit diesem Befehl, bekommen wir eine schnelle Rückmeldung, <strong>ob</strong> unser Datensatz fehlende Werte hat.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="einzelne-variable-prüfen" class="level3">
+<h3 class="anchored" data-anchor-id="einzelne-variable-prüfen">Einzelne Variable prüfen</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href="">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href=""><strong>Package <code>naniar</code></strong></a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(df_analyse2<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><strong>Achtung</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sehr <strong>unübersichtlich</strong>, da R hier für **jede Zeile einen logischen Vektor mit <code>TRUE</code>oder <code>FALSE</code> erstellt.</p>
+</div>
+</div>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any_na</span>(df_analyse2<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><strong>Hinweis</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mit diesem Befehl, bekommen wir eine schnelle Rückmeldung, <strong>ob</strong> in er spezifischen Variable fehlende Werte hat.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Um herauszufinden, <strong>wie viele fehlende Werte</strong> die Variable hat, gehen wir wie folgt vor:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true" href="">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false" href=""><strong>Package <code>naniar</code></strong></a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(df_analyse2<span class="sc">$</span>age))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 41</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">n_miss</span>(df_analyse2<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 41</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="überblick-mehrer-variablen" class="level3">
+<h3 class="anchored" data-anchor-id="überblick-mehrer-variablen">Überblick mehrer Variablen</h3>
+<p>Wir können auch <strong>mehrere spezifische</strong> Variablen anschauen:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true" href="">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false" href="">Überblick (grafisch)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>df_analyse2 <span class="sc">|&gt;</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(distress, soz.u),</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>      <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.))</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  distress soz.u
+     &lt;int&gt; &lt;int&gt;
+1     1829   339</code></pre>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1517,21 +1820,40 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>test</p>
+<p>Hier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable existieren.</p>
 </div>
 </div>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_var</span>(df_analyse2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="day2_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable im <strong>gesamten Datensatz</strong> sind.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <hr>
 </section>
 </section>
-<section id="fehlende-werte-na" class="level1">
-<h1>Fehlende Werte (NA)</h1>
-<p>Warum fehlende Werte wichtig sind, wie man sie erkennt und sinnvoll behandelt.</p>
-<hr>
-</section>
-<section id="joins" class="level1">
-<h1>Joins</h1>
-<p>Wie wir Datensätze über eine gemeinsame ID zusammenführen (z. B. <code>left_join()</code>).</p>
-<hr>
 </section>
 <section id="reproduzierbare-workflows" class="level1">
 <h1>Reproduzierbare Workflows</h1>
