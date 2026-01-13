@@ -1784,14 +1784,14 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_csv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>    eastwest         german           sex             age       
- Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :18.00  
- 1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:39.00  
- Median :1.000   Median :1.000   Median :2.000   Median :55.00  
- Mean   :1.334   Mean   :1.114   Mean   :1.509   Mean   :53.27  
- 3rd Qu.:2.000   3rd Qu.:1.000   3rd Qu.:2.000   3rd Qu.:67.00  
- Max.   :2.000   Max.   :3.000   Max.   :3.000   Max.   :96.00  
-                 NA's   :30      NA's   :20      NA's   :41     
+<pre><code>     respid        eastwest         german           sex             age       
+ Min.   :   1   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :18.00  
+ 1st Qu.:1336   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:39.00  
+ Median :2672   Median :1.000   Median :1.000   Median :2.000   Median :55.00  
+ Mean   :2672   Mean   :1.334   Mean   :1.114   Mean   :1.509   Mean   :53.27  
+ 3rd Qu.:4007   3rd Qu.:2.000   3rd Qu.:1.000   3rd Qu.:2.000   3rd Qu.:67.00  
+ Max.   :5342   Max.   :2.000   Max.   :3.000   Max.   :3.000   Max.   :96.00  
+                                NA's   :30      NA's   :20      NA's   :41     
       agec            dg10            dg03            educ         isced97     
  Min.   :1.000   Min.   : 1.00   Min.   :1.000   Min.   :1.00   Min.   :1.000  
  1st Qu.:2.000   1st Qu.: 6.00   1st Qu.:1.000   1st Qu.:3.00   1st Qu.:3.000  
@@ -1910,14 +1910,14 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>    eastwest         german           sex             age       
- Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :18.00  
- 1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:39.00  
- Median :1.000   Median :1.000   Median :2.000   Median :55.00  
- Mean   :1.334   Mean   :1.114   Mean   :1.509   Mean   :53.27  
- 3rd Qu.:2.000   3rd Qu.:1.000   3rd Qu.:2.000   3rd Qu.:67.00  
- Max.   :2.000   Max.   :3.000   Max.   :3.000   Max.   :96.00  
-                 NA's   :30      NA's   :20      NA's   :41     
+<pre><code>     respid        eastwest         german           sex             age       
+ Min.   :   1   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :18.00  
+ 1st Qu.:1336   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:39.00  
+ Median :2672   Median :1.000   Median :1.000   Median :2.000   Median :55.00  
+ Mean   :2672   Mean   :1.334   Mean   :1.114   Mean   :1.509   Mean   :53.27  
+ 3rd Qu.:4007   3rd Qu.:2.000   3rd Qu.:1.000   3rd Qu.:2.000   3rd Qu.:67.00  
+ Max.   :5342   Max.   :2.000   Max.   :3.000   Max.   :3.000   Max.   :96.00  
+                                NA's   :30      NA's   :20      NA's   :41     
       agec            dg10            dg03            educ         isced97     
  Min.   :1.000   Min.   : 1.00   Min.   :1.000   Min.   :1.00   Min.   :1.000  
  1st Qu.:2.000   1st Qu.: 6.00   1st Qu.:1.000   1st Qu.:3.00   1st Qu.:3.000  
@@ -2061,7 +2061,8 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 5,342
-Columns: 65
+Columns: 66
+$ respid   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18…
 $ eastwest &lt;dbl&gt; 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1…
 $ german   &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 3, 1, 1, 1, 1, 1, 1…
 $ sex      &lt;dbl&gt; 2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2…
@@ -2134,7 +2135,8 @@ $ gkpol    &lt;dbl&gt; 3, 3, 3, 2, 3, 6, 7, 1, 3, 3, 2, 4, NA, 3, 7, 6, 1, 7, 3,
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 5,342
-Columns: 65
+Columns: 66
+$ respid   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18…
 $ eastwest &lt;dbl+lbl&gt; 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, …
 $ german   &lt;dbl+lbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 3, 1, 1, 1, 1, …
 $ sex      &lt;dbl+lbl&gt; 2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, …
