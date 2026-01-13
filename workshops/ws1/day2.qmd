@@ -90,6 +90,8 @@ Doch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakte wie
 #| echo: true
 #| warning: false
 
+install.packages("labelled")
+
 library(tidyverse)
 library(haven)
 library(labelled)
@@ -725,10 +727,12 @@ df_analyse |>
   head(10)
 ```
 
-
-
 :::
+IT IS NOT UP2DATE DAMNIT 
 
+::: callout-note
+test
+:::
 
 
 
