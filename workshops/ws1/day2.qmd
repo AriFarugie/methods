@@ -881,7 +881,7 @@ Sehr **unübersichtlich**, da R hier für **jede Zeile und jeder Variable** eine
 #| echo: true
 #| warning: false
 
-#install.packages("naniar", repos="https://cloud.r-project.org")
+install.packages("naniar", repos="https://cloud.r-project.org")
 
 library(naniar)
 
