@@ -217,6 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#was-ist-na" id="toc-was-ist-na" class="nav-link" data-scroll-target="#was-ist-na">Was ist <code>NA</code>?</a></li>
   <li><a href="#fehlende-werte-identifizieren" id="toc-fehlende-werte-identifizieren" class="nav-link" data-scroll-target="#fehlende-werte-identifizieren">Fehlende Werte identifizieren</a></li>
   <li><a href="#was-passiert-bei-berechnungen-mit-na" id="toc-was-passiert-bei-berechnungen-mit-na" class="nav-link" data-scroll-target="#was-passiert-bei-berechnungen-mit-na">Was passiert bei Berechnungen mit <code>NA</code>?</a></li>
+  <li><a href="#wie-mit-fehlenden-werten-umgehen" id="toc-wie-mit-fehlenden-werten-umgehen" class="nav-link" data-scroll-target="#wie-mit-fehlenden-werten-umgehen">Wie mit fehlenden Werten Umgehen?</a></li>
   </ul></li>
   <li><a href="#reproduzierbare-workflows" id="toc-reproduzierbare-workflows" class="nav-link" data-scroll-target="#reproduzierbare-workflows">Reproduzierbare Workflows</a></li>
   <li><a href="#mini-projekt" id="toc-mini-projekt" class="nav-link" data-scroll-target="#mini-projekt">Mini-Projekt</a></li>
@@ -1721,11 +1722,16 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("naniar", repos="https://cloud.r-project.org")</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="fu">any_na</span>(df_analyse2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"naniar"</span>, <span class="at">repos=</span><span class="st">"https://cloud.r-project.org"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'naniar' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\farugie\AppData\Local\Temp\Rtmpi2Vb3Y\downloaded_packages</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">any_na</span>(df_analyse2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -1753,7 +1759,7 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(df_analyse2<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(df_analyse2<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1771,7 +1777,7 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any_na</span>(df_analyse2<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any_na</span>(df_analyse2<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -1798,7 +1804,7 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(df_analyse2<span class="sc">$</span>age))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(df_analyse2<span class="sc">$</span>age))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 41</code></pre>
 </div>
@@ -1806,7 +1812,7 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 </div>
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">n_miss</span>(df_analyse2<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">n_miss</span>(df_analyse2<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 41</code></pre>
 </div>
@@ -1823,13 +1829,13 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 <div class="tab-content">
 <div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>df_analyse2 <span class="sc">|&gt;</span></span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(</span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(distress, soz.u),</span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>      <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.))</span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>df_analyse2 <span class="sc">|&gt;</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(distress, soz.u),</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>      <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.))</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   distress soz.u
@@ -1853,7 +1859,7 @@ Note
 </div>
 <div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_var</span>(df_analyse2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_var</span>(df_analyse2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1885,11 +1891,11 @@ Note
 <p>Ein häufiger Stolperstein ist der Umgang mit fehlenden Werten (<code>NA</code>) bei Berechnungen.</p>
 <p>👉 Schon ein einziges <code>NA</code> reicht aus, damit das gesamte Ergebnis <code>NA</code> wird.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(<span class="fu">cbind</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="cn">NA</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(<span class="fu">cbind</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="cn">NA</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">5</span><span class="sc">+</span><span class="dv">8</span><span class="sc">+</span><span class="dv">10</span><span class="sc">+</span><span class="cn">NA</span><span class="sc">+</span><span class="dv">20</span><span class="sc">+</span><span class="dv">12</span><span class="sc">+</span><span class="dv">13</span><span class="sc">+</span><span class="cn">NA</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">5</span><span class="sc">+</span><span class="dv">8</span><span class="sc">+</span><span class="dv">10</span><span class="sc">+</span><span class="cn">NA</span><span class="sc">+</span><span class="dv">20</span><span class="sc">+</span><span class="dv">12</span><span class="sc">+</span><span class="dv">13</span><span class="sc">+</span><span class="cn">NA</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
@@ -1901,7 +1907,7 @@ Note
 <p>Das gilt für viele Funktionen, zum Beispiel: - <code>sum()</code> - <code>mean()</code> - <code>rowSums()</code> - <code>rowMeans()</code></p>
 <p>👉 Wichtig: Wenn fehlende Werte ignoriert werden sollen, muss man das <strong>explizit angeben</strong>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(<span class="fu">cbind</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="cn">NA</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="cn">NA</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(<span class="fu">cbind</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="cn">NA</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="cn">NA</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 69</code></pre>
 </div>
@@ -1922,18 +1928,18 @@ Note
 </div>
 <p><code>na.rm = TRUE</code> entfernt <code>NA</code>-Werte aus der Berechnung, damit Summen trotzdem berechnet werden können.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(<span class="fu">cbind</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="cn">NA</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="cn">NA</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(<span class="fu">cbind</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="cn">NA</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="cn">NA</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 69</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">5</span><span class="sc">+</span><span class="dv">8</span><span class="sc">+</span><span class="dv">10</span><span class="sc">+</span><span class="dv">20</span><span class="sc">+</span><span class="dv">12</span><span class="sc">+</span><span class="dv">13</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">5</span><span class="sc">+</span><span class="dv">8</span><span class="sc">+</span><span class="dv">10</span><span class="sc">+</span><span class="dv">20</span><span class="sc">+</span><span class="dv">12</span><span class="sc">+</span><span class="dv">13</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 69</code></pre>
 </div>
 </div>
 <p>Wir wissen, dass wir auf einigen Skalen, die wir gebildet haben, viele Missings haben.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_var</span>(df_analyse2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_miss_var</span>(df_analyse2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1944,16 +1950,16 @@ Note
 </div>
 <p>Wir schauen uns das mal genauer an:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>df_analyse2 <span class="sc">|&gt;</span></span>
-<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">soz_u_na =</span> <span class="fu">rowSums</span>(<span class="fu">cbind</span>(im17_r, im18_r, im19_r, im20_r, im21_r)),</span>
-<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">soz_u_rm =</span> <span class="fu">rowSums</span>(</span>
-<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cbind</span>(im17_r, im18_r, im19_r, im20_r, im21_r),</span>
-<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
-<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(soz_u_na, soz_u_rm) <span class="sc">|&gt;</span></span>
-<span id="cb77-10"><a href="#cb77-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_miss_var</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>df_analyse2 <span class="sc">|&gt;</span></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">soz_u_na =</span> <span class="fu">rowSums</span>(<span class="fu">cbind</span>(im17_r, im18_r, im19_r, im20_r, im21_r)),</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">soz_u_rm =</span> <span class="fu">rowSums</span>(</span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cbind</span>(im17_r, im18_r, im19_r, im20_r, im21_r),</span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(soz_u_na, soz_u_rm) <span class="sc">|&gt;</span></span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_miss_var</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1976,8 +1982,19 @@ Note
 <p>Wenn sehr viele Items fehlen, kann ein <strong>Skalenwert inhaltlich verzerrt</strong> sein!</p>
 </div>
 </div>
-<hr>
 </section>
+<section id="wann-ist-na.rm-true-sinnvoll" class="level3">
+<h3 class="anchored" data-anchor-id="wann-ist-na.rm-true-sinnvoll">Wann ist na.rm = TRUE sinnvoll?</h3>
+<ul>
+<li>wenn nur wenige Werte fehlen</li>
+<li>wenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist</li>
+<li>für erste Auswertungen und Exploration</li>
+</ul>
+</section>
+</section>
+<section id="wie-mit-fehlenden-werten-umgehen" class="level2">
+<h2 class="anchored" data-anchor-id="wie-mit-fehlenden-werten-umgehen">Wie mit fehlenden Werten Umgehen?</h2>
+<hr>
 </section>
 </section>
 <section id="reproduzierbare-workflows" class="level1">

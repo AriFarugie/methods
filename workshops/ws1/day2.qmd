@@ -1086,6 +1086,15 @@ df_analyse2 |>
 Wenn sehr viele Items fehlen, kann ein **Skalenwert inhaltlich verzerrt** sein!
 :::
 
+### Wann ist na.rm = TRUE sinnvoll?
+
+- wenn nur wenige Werte fehlen
+- wenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist
+- für erste Auswertungen und Exploration
+
+## Wie mit fehlenden Werten Umgehen?
+
+
 
 ___
 
