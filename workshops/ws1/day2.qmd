@@ -725,6 +725,20 @@ df_analyse |>
   select(81:91) |>
   head(10)
 ```
+:::{.callout-tip collapse="true"}
+# **Tip**
+Für eine saubere Lösung ohne Duplikate:
+```{r}
+#| echo: true
+#| warning: false
+
+dupl_vars <- setdiff(names(df_rec2), names(df_csv))
+
+df_analyse <- df_csv |>
+  left_join(df_rec2 |> select(respid, all_of(dupl_vars)), by = "respid")
+```
+:::
+
 :::
 :::{.callout-important collapse="true"}
 # **Merkhilfe der Join-Befehle**
@@ -818,8 +832,8 @@ Nehme folgende Variablen mit rein:
 - `dw15`
 - `mstat`
 - `hhincc`
-- `disstress`
-- `soz.u`
+- `disstress` und dazugehörigen Variablen
+- `soz.u` und dazugehörigen Variablen
 
 :::{.callout-tip collapse="true"}
 # **Lösung**
@@ -829,7 +843,8 @@ Nehme folgende Variablen mit rein:
 
 df_analyse2 <- df_analyse |>
   select(respid,age,sex,wohnort,isced97,work,dw15,
-         mstat.x,hhincc,distress,soz.u)
+         mstat,hhincc,hs04_r,hs06,hs07,hs05_r,hs09_r,distress,
+         im17_r,im18_r,im19_r,im20_r,im21_r,soz.u)
 
 df_analyse2 |>
   head(10)
@@ -866,7 +881,7 @@ Sehr **unübersichtlich**, da R hier für **jede Zeile und jeder Variable** eine
 #| echo: true
 #| warning: false
 
-install.packages("naniar", repos="https://cloud.r-project.org")
+#install.packages("naniar", repos="https://cloud.r-project.org")
 
 library(naniar)
 
@@ -974,6 +989,102 @@ Hier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable im **gesam
 :::
 :::
 
+## Was passiert bei Berechnungen mit `NA`?
+
+Ein häufiger Stolperstein ist der Umgang mit fehlenden Werten (`NA`) bei Berechnungen.
+
+👉 Schon ein einziges `NA` reicht aus, damit das gesamte Ergebnis `NA` wird.
+
+```{r}
+#| echo: true
+#| warning: false
+
+
+rowSums(cbind(1,5,8,10,NA,20,12,13,NA))
+
+
+1+5+8+10+NA+20+12+13+NA
+
+```
+
+### Warum ist das so?
+R kann nicht erraten, wie mit fehlenden Werten umgegangen werden soll:
+- Soll das NA ignoriert werden?
+- Soll das Ergebnis trotzdem berechnet werden?
+- Oder ist das Ergebnis nicht sinnvoll interpretierbar?
+
+Ohne eine klare Anweisung entscheidet sich R für die **sichere Variante**
+und gibt `NA` zurück.
+
+Das gilt für viele Funktionen, zum Beispiel:
+- `sum()`
+- `mean()`
+- `rowSums()`
+- `rowMeans()`
+
+👉 Wichtig: Wenn fehlende Werte ignoriert werden sollen, muss man das **explizit angeben**.
+
+```{r}
+#| echo: true
+#| warning: false
+
+rowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)
+
+```
+:::{.callout-important}
+# **Was bedeutet `na.rm`?**
+
+`na.rm = TRUE` bedeutet:  
+**fehlende Werte (`NA`) werden bei der Berechnung ignoriert**.
+:::
+
+`na.rm = TRUE` entfernt `NA`-Werte aus der Berechnung, damit Summen trotzdem berechnet werden können.
+
+```{r}
+#| echo: true
+#| warning: false
+
+rowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)
+
+1+5+8+10+20+12+13
+
+```
+
+Wir wissen, dass wir auf einigen Skalen, die wir gebildet haben, viele Missings haben.
+
+```{r}
+#| echo: true
+#| warning: false
+
+gg_miss_var(df_analyse2)
+
+```
+
+Wir schauen uns das mal genauer an:
+```{r}
+#| echo: true
+#| warning: false
+
+df_analyse2 |>
+  mutate(
+    soz_u_na = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r)),
+    soz_u_rm = rowSums(
+      cbind(im17_r, im18_r, im19_r, im20_r, im21_r),
+      na.rm = TRUE
+    )
+  ) |>
+  select(soz_u_na, soz_u_rm) |>
+  gg_miss_var()
+
+```
+
+:::{.callout-warning}
+# **Achtung**
+
+`na.rm = TRUE` bedeutet nicht automatisch „besser“.
+
+Wenn sehr viele Items fehlen, kann ein **Skalenwert inhaltlich verzerrt** sein!
+:::
 
 
 ___
