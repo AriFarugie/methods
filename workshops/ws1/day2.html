@@ -217,6 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#was-ist-na" id="toc-was-ist-na" class="nav-link" data-scroll-target="#was-ist-na">Was ist <code>NA</code>?</a></li>
   <li><a href="#fehlende-werte-identifizieren" id="toc-fehlende-werte-identifizieren" class="nav-link" data-scroll-target="#fehlende-werte-identifizieren">Fehlende Werte identifizieren</a></li>
   <li><a href="#was-passiert-bei-berechnungen-mit-na" id="toc-was-passiert-bei-berechnungen-mit-na" class="nav-link" data-scroll-target="#was-passiert-bei-berechnungen-mit-na">Was passiert bei Berechnungen mit <code>NA</code>?</a></li>
+  <li><a href="#wie-mit-fehlenden-werten-umgehen" id="toc-wie-mit-fehlenden-werten-umgehen" class="nav-link" data-scroll-target="#wie-mit-fehlenden-werten-umgehen">Wie mit fehlenden Werten Umgehen?</a></li>
   </ul></li>
   <li><a href="#reproduzierbare-workflows" id="toc-reproduzierbare-workflows" class="nav-link" data-scroll-target="#reproduzierbare-workflows">Reproduzierbare Workflows</a></li>
   <li><a href="#mini-projekt" id="toc-mini-projekt" class="nav-link" data-scroll-target="#mini-projekt">Mini-Projekt</a></li>
@@ -1976,8 +1977,19 @@ Note
 <p>Wenn sehr viele Items fehlen, kann ein <strong>Skalenwert inhaltlich verzerrt</strong> sein!</p>
 </div>
 </div>
-<hr>
 </section>
+<section id="wann-ist-na.rm-true-sinnvoll" class="level3">
+<h3 class="anchored" data-anchor-id="wann-ist-na.rm-true-sinnvoll">Wann ist na.rm = TRUE sinnvoll?</h3>
+<ul>
+<li>wenn nur wenige Werte fehlen</li>
+<li>wenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist</li>
+<li>für erste Auswertungen und Exploration</li>
+</ul>
+</section>
+</section>
+<section id="wie-mit-fehlenden-werten-umgehen" class="level2">
+<h2 class="anchored" data-anchor-id="wie-mit-fehlenden-werten-umgehen">Wie mit fehlenden Werten Umgehen?</h2>
+<hr>
 </section>
 </section>
 <section id="reproduzierbare-workflows" class="level1">
