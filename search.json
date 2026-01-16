@@ -88,7 +88,7 @@
     "href": "workshops/ws1/day2.html#was-passiert-bei-berechnungen-mit-na",
     "title": "Einführung in R & RStudio – Tag 2",
     "section": "Was passiert bei Berechnungen mit NA?",
-    "text": "Was passiert bei Berechnungen mit NA?\nEin häufiger Stolperstein ist der Umgang mit fehlenden Werten (NA) bei Berechnungen.\n👉 Schon ein einziges NA reicht aus, damit das gesamte Ergebnis NA wird.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA))\n\n[1] NA\n\n1+5+8+10+NA+20+12+13+NA\n\n[1] NA\n\n\n\nWarum ist das so?\nR kann nicht erraten, wie mit fehlenden Werten umgegangen werden soll: - Soll das NA ignoriert werden? - Soll das Ergebnis trotzdem berechnet werden? - Oder ist das Ergebnis nicht sinnvoll interpretierbar?\nOhne eine klare Anweisung entscheidet sich R für die sichere Variante und gibt NA zurück.\nDas gilt für viele Funktionen, zum Beispiel: - sum() - mean() - rowSums() - rowMeans()\n👉 Wichtig: Wenn fehlende Werte ignoriert werden sollen, muss man das explizit angeben.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)\n\n[1] 69\n\n\n\n\n\n\n\n\nImportantWas bedeutet na.rm?\n\n\n\nna.rm = TRUE bedeutet:\nfehlende Werte (NA) werden bei der Berechnung ignoriert.\n\n\nna.rm = TRUE entfernt NA-Werte aus der Berechnung, damit Summen trotzdem berechnet werden können.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)\n\n[1] 69\n\n1+5+8+10+20+12+13\n\n[1] 69\n\n\nWir wissen, dass wir auf einigen Skalen, die wir gebildet haben, viele Missings haben.\n\ngg_miss_var(df_analyse2)\n\n\n\n\n\n\n\n\nWir schauen uns das mal genauer an:\n\ndf_analyse2 |&gt;\n  mutate(\n    soz_u_na = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r)),\n    soz_u_rm = rowSums(\n      cbind(im17_r, im18_r, im19_r, im20_r, im21_r),\n      na.rm = TRUE\n    )\n  ) |&gt;\n  select(soz_u_na, soz_u_rm) |&gt;\n  gg_miss_var()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarningAchtung\n\n\n\nna.rm = TRUE bedeutet nicht automatisch „besser“.\nWenn sehr viele Items fehlen, kann ein Skalenwert inhaltlich verzerrt sein!\n\n\n\n\nWann ist na.rm = TRUE sinnvoll?\n\nwenn nur wenige Werte fehlen\nwenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist\nfür erste Auswertungen und Exploration",
+    "text": "Was passiert bei Berechnungen mit NA?\nEin häufiger Stolperstein ist der Umgang mit fehlenden Werten (NA) bei Berechnungen.\n👉 Schon ein einziges NA reicht aus, damit das gesamte Ergebnis NA wird.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA))\n\n[1] NA\n\n1+5+8+10+NA+20+12+13+NA\n\n[1] NA\n\n\n\nWarum ist das so?\nR kann nicht erraten, wie mit fehlenden Werten umgegangen werden soll: - Soll das NA ignoriert werden? - Soll das Ergebnis trotzdem berechnet werden? - Oder ist das Ergebnis nicht sinnvoll interpretierbar?\nOhne eine klare Anweisung entscheidet sich R für die sichere Variante und gibt NA zurück.\nDas gilt für viele Funktionen, zum Beispiel: - sum() - mean() - rowSums() - rowMeans()\n👉 Wichtig: Wenn fehlende Werte ignoriert werden sollen, muss man das explizit angeben.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)\n\n[1] 69\n\n\n\n\n\n\n\n\nImportantWas bedeutet na.rm?\n\n\n\nna.rm = TRUE bedeutet:\nfehlende Werte (NA) werden bei der Berechnung ignoriert.\n\n\nna.rm = TRUE entfernt NA-Werte aus der Berechnung, damit Summen trotzdem berechnet werden können.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)\n\n[1] 69\n\n1+5+8+10+20+12+13\n\n[1] 69\n\n\nWir wissen, dass wir auf einigen Skalen, die wir gebildet haben, viele Missings haben.\n\ngg_miss_var(df_analyse2)\n\n\n\n\n\n\n\n\nWir schauen uns das mal genauer an:\n\ndf_analyse2 &lt;- df_analyse2 |&gt;\n  mutate(\n    soz.u_na = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r)),\n    soz.u_rmt = rowSums(\n      cbind(im17_r, im18_r, im19_r, im20_r, im21_r),\n      na.rm = TRUE)\n  )\n\ndf_analyse2 |&gt;\n  select(soz.u_na, soz.u_rmt) |&gt;\n  gg_miss_var()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarningAchtung\n\n\n\nna.rm = TRUE bedeutet nicht automatisch „besser“.\nWenn sehr viele Items fehlen, kann ein Skalenwert inhaltlich verzerrt sein!\n\n\n\n\nWann ist na.rm = TRUE sinnvoll?\n\nwenn nur wenige Werte fehlen\nwenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist\nfür erste Auswertungen und Exploration",
     "crumbs": [
       "Home",
       "Zum Workshop - Tag 2"
@@ -98,8 +98,52 @@
     "objectID": "workshops/ws1/day2.html#wie-mit-fehlenden-werten-umgehen",
     "href": "workshops/ws1/day2.html#wie-mit-fehlenden-werten-umgehen",
     "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Wie mit fehlenden Werten Umgehen?",
-    "text": "Wie mit fehlenden Werten Umgehen?",
+    "section": "Wie mit fehlenden Werten umgehen?",
+    "text": "Wie mit fehlenden Werten umgehen?\nIn der empirischen Forschung gibt es verschiedene Strategien, um mit fehlenden Werten umzugehen.\nWelche sinnvoll ist, hängt unter anderem ab von: - der Anzahl der fehlenden Werte\n- dem Datentyp (Item, Skala, Hintergrundvariable)\n- der Fragestellung der Analyse\nMögliche Ansätze sind zum Beispiel: - fehlende Werte ignorieren (na.rm = TRUE) - Fälle mit fehlenden Werten ausschließen - fehlende Werte schätzen oder imputieren (z. B. Mittelwert, multiple Imputation)\n👉 Wichtig:\nDiese Entscheidungen haben inhaltliche Konsequenzen und sollten immer bewusst getroffen werden.\n\nFokus im Workshop\nIn diesem Workshop konzentrieren wir uns bewusst auf einen einfachen und transparenten Umgang mit fehlenden Werten:\n👉 Fälle mit fehlenden Werten werden ausgeschlossen, wenn sie für die jeweilige Analyse nicht sinnvoll nutzbar sind.\nWarum? - leicht nachvollziehbar\n- gut geeignet für den Einstieg - häufig ausreichend bei großen Stichproben\nKomplexere Verfahren wie Imputation sind wichtig, gehen aber über den Rahmen dieses Workshops hinaus. Es lohnt sich aber hier methodisch einzuarbeiten!\n👉 Multiple Imputation",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#fehlende-werte-entfernen",
+    "href": "workshops/ws1/day2.html#fehlende-werte-entfernen",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Fehlende Werte entfernen",
+    "text": "Fehlende Werte entfernen\nWie oben angesprochen, entfernen wir bei ausreichender Datengrundlage die Personen, die einen fehlende Werte auf die uns wichtigen Variablen haben.\n\nGanze Zeilen entfernen (drop_na())\nMit drop_na() entfernen wir alle Zeilen,\nin denen mindestens ein NA in den angegebenen Variablen vorkommt.\n\ndf_clean &lt;- df_analyse2 |&gt;\n  drop_na(soz.u_na)\n\ndf_clean |&gt;\n  dim()\n\n[1] 5003   23\n\n  df_analyse2 |&gt;\n  dim()\n\n[1] 5342   23\n\n\n👉 Ergebnis: Nur Fälle ohne fehlende Werte in soz.u bleiben erhalten.\n\n\n\n\n\n\nTipTipp\n\n\n\n\n\nUm zu schauen, wie viele Personen damit ausgeschlossen wurden, kann man folgendes machen:\n\nnrow(df_analyse2) - nrow(df_clean)\n\n[1] 339",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#übung-2",
+    "href": "workshops/ws1/day2.html#übung-2",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Übung",
+    "text": "Übung\nErstelle einen Datensatz df_clean, welcher frei von NA's ist für die Variablen distress und soz.u.\n\nWie viele Beobachtungen werden final ausgeschlossen?\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf_analyse2 &lt;- df_analyse2 |&gt;\n  mutate(\n    distress_na = rowSums(cbind(hs04_r,hs06,hs07,hs05_r,hs09_r)),\n    distress_rmt = rowSums(\n      cbind(hs04_r,hs06,hs07,hs05_r,hs09_r),\n      na.rm = TRUE)\n  )\n\ndf_clean &lt;- df_analyse2 |&gt;\n  drop_na(distress_na, soz.u_na)\n\nnrow(df_analyse2) - nrow(df_clean) \n\n[1] 2091\n\n\n\n\n\n\n\n\n\n\n\nTipTipps\n\n\n\n\nGute PraxisMerksatz\n\n\nNach dem Entfernen von NA immer prüfen:\n\nWie viele Fälle sind übrig?\nIst die Fallzahl noch ausreichend?\nBetrifft das Entfernen bestimmte Gruppen stärker als andere?\n\n\n\nEs gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist,\n\nbewusst zu entscheiden,\ntransparent zu dokumentieren,\nund die Konsequenzen zu kennen.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#workflow",
+    "href": "workshops/ws1/day2.html#workflow",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Workflow",
+    "text": "Workflow\nZiel ist ein gut dokumentierter und jederzeit nachvollziehbarer Analyse-Workflow:\nJemand anderes (oder du in 3 Monaten) soll verstehen, was du gemacht hast, warum du es gemacht hast und wie du zu deinen Ergebnissen kommst.\n\nProjektstrukturSkripte sinnvoll gliedernKommentare nutzen\n\n\nEine mögliche Struktur:\n\nprojektname/\n\ndata/ (Rohdaten & ggf. bereinigte Daten)\n\nscripts/ (alle R-Skripte)\n\noutput/ (Tabellen, Abbildungen, Reports)\n\nprojektname.Rproj\n\n\n\n\nStatt ein langes Skript:\n\n01_import.R (Daten laden, erste Checks)\n\n02_cleaning.R (Umkodieren, Skalen, Missing neue Variablen)\n\n03_analysis.R (Modelle, Tests, Kennwerte)\n\n04_plots.R (Visualisierungen, Export)\n\nSo kannst du jeden Schritt einzeln ausführen, testen und bei Fehlern gezielt zurückspringen.\n\n\nKommentiere kurz, was passiert und warum:\n\nWas wird hier gemacht?\n\nWelche Annahme steckt dahinter?\n\nWelche Variablen/Skalen sind wichtig?\n\nBeispiel:\n\n# Invertiere hs04/hs05/hs09, damit hohe Werte = mehr Distress bedeuten\n# Skala: 1–5, deshalb: 6 - Wert",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#exkurs-datensatz-speichern",
+    "href": "workshops/ws1/day2.html#exkurs-datensatz-speichern",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Exkurs: Datensatz Speichern",
+    "text": "Exkurs: Datensatz Speichern\nNach der Datenaufbereitung oder Analyse ist es sinnvoll, Zwischenergebnisse zu speichern (z. B. bereinigte Datensätze oder finale Analyse-Daten).\nSo kannst du später direkt weiterarbeiten, ohne alle Schritte erneut ausführen zu müssen.\n\nCSVSPSS\n\n\n\nplattformunabhängig\ngut für Weitergabe und Dokumentation\n\n\nwrite_csv(df_clean, file = \"assets/data/output/Datensatz_clean.csv\")\n\n\n\n\npraktisch für Zusammenarbeit mit SPSS-Nutzer:innen\nVariablenlabels bleiben erhalten\n\n\nwrite_sav(df_clean, path = \"assets/data/output/spss_Datensatz_clean.sav\")",
     "crumbs": [
       "Home",
       "Zum Workshop - Tag 2"
