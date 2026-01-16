@@ -21,7 +21,7 @@ An Tag 1 legen wir die Grundlagen, die wir am zweiten Tag weiter vertiefen.
 - verstehen, wie R „denkt“
 - erste eigene Objekte und Daten erzeugen
 
-------------------------------------------------------------------------
+___
 
 # Was ist R und Rstudio?
 
@@ -52,7 +52,7 @@ Man kann sich **RStudio** wie einen Schreibtisch für *R* vorstellen.
 Ohne ***RStudio*** müsstest du **R** über ein sehr einfaches Fenster bedienen.
 Mit RStudio bekommst du eine strukturierte Oberfläche, die besonders für Einsteiger:innen viel angenehmer ist.
 
----
+___
 
 ## R GUI - erste Ansicht
 
@@ -203,7 +203,7 @@ Dieser Bereich zeigt dir:
 Im nächsten Abschnitt legen wir unser erstes **Projekt** an!
 :::
 
----
+___
 
 # Projekt anlegen
 
@@ -278,7 +278,7 @@ Der Projektname sollte **keine Leerzeichen** enthalten
 
 **RStudio startet nun neu – du arbeitest jetzt** ***innerhalb deines Projekts.***
 
----
+___
 
 # R Script
 
@@ -332,8 +332,7 @@ Schreibst du deine Rechnungen **in ein R Script**, bleiben sie erhalten:
 - deine Arbeit ist nachvollziehbar und reproduzierbar
 :::
 
-::: {.callout-tip collapse="true"}
-# **Übung 1** – R als Taschenrechner
+## Übung
 
 
 1. Berechne zuerst den Ausdruck  
@@ -345,10 +344,9 @@ Schreibst du deine Rechnungen **in ein R Script**, bleiben sie erhalten:
    - und einmal aus einem **Skript**
 
 Beobachte, was gleich ist und was sich unterscheidet.
-:::
 
 ::: {.callout-note collapse="true"}
-# **Lösung Übung 1**
+# **Lösung**
 
 ```{r}
 #| echo: true
@@ -451,8 +449,7 @@ max(y) - min(y)
 In der nächsten Übung nutzen wir diese Grundfunktionen,  
 um eigene Kennwerte zu berechnen und die Ergebnisse **als Objekte zu speichern**.
 
-::: {.callout-tip collapse="true"}
-# **Übung 2** – Funktionen
+## Übung
 
 Nutze den Vektor `y` und berechne folgende Kennwerte:
 
@@ -461,16 +458,14 @@ Nutze den Vektor `y` und berechne folgende Kennwerte:
 3. Die **z-standardisierten Werte** (z-Werte)  
 4. Das **95%-Konfidenzintervall** (KI) für den Mittelwert
 
-Speichere alle Ergebnisse als eigene Objekte, z. B.:
-`se_y`, `var_y`, `z_y`, `ci_y`.
-:::
+Speichere alle Ergebnisse als eigene Objekte, z. B.: `se_y`, `var_y`, `z_y`, `ci_y`.
+
 
 ::: {.callout-tip collapse="true"}
 # **Tipp: Formeln für die Berechnung**
 
 Du darfst dir für die Berechnung **Hilfsobjekte** anlegen.
-
----
+___
 
 **Standardfehler des Mittelwerts**
 
@@ -481,7 +476,7 @@ $$
 - $sd$ = Standardabweichung 
 - $n$ = Anzahl der Werte  
 
----
+___
 
 **Varianz (Stichprobe)**
 
@@ -492,7 +487,7 @@ $$
 - $\bar{x}$ = Mittelwert der Daten  
 - $\sum$ = Summe über alle Beobachtungen  
 
----
+___
 
 **z-Standardisierung**
 
@@ -500,7 +495,7 @@ $$
 z = \frac{x - \bar{x}}{sd(x)}
 $$
 
----
+___
 
 **95\%-Konfidenzintervall des Mittelwerts**
 
@@ -514,7 +509,7 @@ $$
 :::
 
 ::: {.callout-note collapse="true"}
-# **Lösung – Übung 2**
+# **Lösung**
 
 ```{r}
 #| echo: true
@@ -557,7 +552,6 @@ ci_y
 
 ```
 :::
-
 
 
 ::: callout-warning
@@ -656,7 +650,7 @@ So lassen sich reale Datensätze mit Zahlen, Text und Kategorien in einer Tabell
 Die Datenstrukturen bauen **konzeptionell** aufeinander auf,  
 sie werden in der Praxis **nicht automatisch ineinander umgewandelt**
 :::
----
+___
 ### Welcher Datentyp oder welche Datenstruktur hat mein Objekt?
 
 In R können wir jederzeit überprüfen, **was für eine Art von Objekt** wir im Environment haben. Das ist besonders hilfreich, wenn wir mit vielen Objekten arbeiten oder unsicher sind, wie R ein Objekt interpretiert.
@@ -687,8 +681,8 @@ str(x)
 str(y)
 ```
 
-::: {.callout-tip collapse="true"}
-# **Übung 3** – Datentyp und Datenstruktur
+
+## Übung
 
 Im bisherigen Verlauf haben wir mehrere **Objekte und Hilfsobjekte** erstellt.
 
@@ -705,10 +699,10 @@ Im bisherigen Verlauf haben wir mehrere **Objekte und Hilfsobjekte** erstellt.
 
 Ziel ist es, ein besseres Gefühl dafür zu bekommen,  
 wie R unterschiedliche Ergebnisse speichert.
-:::
+
 
 ::: {.callout-note collapse="true"}
-### **Lösung – Übung 3**
+### **Lösung**
 
 ```{r}
 #| echo: true
@@ -856,15 +850,14 @@ und bildet die Grundlage für viele weitere Analyseschritte.
 Auch ein einzelner Wert ist in R ein **Vektor der Länge 1**. Mit der `c()` Funktion können wir einzelne Werte zu einem Vektor zusammenfassen
 :::
 
-::: {.callout-tip collapse="true"}
-# **Übung 4** – Erstelle einen Datensatz
+
+## Übung
 
 Bisher haben wir einen Datensatz erstellt mit sechs Variablen. Erstelle nun zwei weitere **Variablen** und füge diesen zu einem Datensatz hinzu. Nenne die eine Variable `numbers`und die andere `chars`.
-:::
 
 ::: {.callout-tip collapse="true"}
 
-# **Lösung - Übung 4**
+# **Lösung**
 
 ```{r}
 #| echo: true
@@ -1235,15 +1228,13 @@ df_csv$age
 ```
 In eurem Output, sollten nun alle Altersangaben der Teilnehmden Personen dieser Studie als Vektor angezeigt werden.
 
-::: {.callout-tip collapse="true"}
-# **Übung 5** – Anwendung
+
+## Übung
 
 Deine Aufgabe ist es nun, das Durchschnittsalter (Mean) und die Standardabweichung des Durschnittsalters (SD) zu berechnen.
 
-:::
-
 ::: {.callout-tip collapse="true"}
-# **Lösung - Übung 5**
+# **Lösung**
 
 ::: {.panel-tabset}
 
@@ -1300,7 +1291,9 @@ schauen wir uns ein **einzelnes, einfaches Beispiel** an.
 #| echo: true
 
 select(df_csv, age, sex)
+
 ```
+
 Der `select()` wählt Variablen aus und macht aus den einen neuen Datensatz (`tibble` fungiert genauso wie ein `Data Frame`).
 
 ::: callout-caution
@@ -1361,7 +1354,7 @@ Die Logik des Befehls **"Alternative 2"** ist wie folgt aufgebaut:
 
 Auch dafür gibt es in **Rstudio** eine effiziente Lösung **→** **Pipes**
 
-### Pipes
+## Pipes
 
 Pipes in R sind ein Operator (z.B. `%>%` oder `|>`), mit dem das Ergebnis **eines Schritts direkt** an den **nächsten Befehl „weitergereicht“** wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich **Datenbearbeitungsschritte** wie in einer Kette von links nach rechts lesen, was den **Code meist kürzer und besser lesbar** macht, besonders im Tidyverse-Kontext.
 
@@ -1382,8 +1375,7 @@ df_2var
 ```
 Wie wir sehen, haben wir eine klare Struktur und wir müssen den Befehlen innerhalb unserer eigenen **Pipes** nicht dauernd "erklären", welchen Datensatz wir heranziehen!
 
-::: {.callout-tip collapse="true"}
-# **Übung 6** – Datenaufbereitung!
+## Übung
 
 1. Erstelle zunächst eine neue Variable `soz.u`, diese Besteht aus den Variablen `im17` bis `im21` --> bilde dafür einen Summenwert
 2. Erstelle einen neuen Datensatz `df_analyse` mit folgenden Variablen `Alter, Geschlecht, Bildung, Berufstätigkeit und Sozialeungleichheit`
@@ -1398,10 +1390,9 @@ Wie wir sehen, haben wir eine klare Struktur und wir müssen den Befehlen innerh
 Das wichtigste: **LEARNING BY DOING!**
 :::
 
-:::
 
 ::: {.callout-tip collapse="true"}
-# **Lösung - Übung 6**
+# **Lösung**
 
 :::{.panel-tabset}
 # Alternative 1

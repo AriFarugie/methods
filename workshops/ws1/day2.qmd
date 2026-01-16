@@ -1335,12 +1335,10 @@ write_sav(df_clean, path = "assets/data/output/spss_Datensatz_clean.sav")
 
 ___
 
-# Reproduzierbare Workflows
-
-Ordnerstruktur, Skripte, klare Dateinamen, Outputs – damit Analysen nachvollziehbar bleiben.
-
-___
-
 # Mini-Projekt
 
 Wir kombinieren alles: Import → Check → Missing → Recodes → Join → Export.
+
+___
+
+[⬅️ Zurück zu Tag 1](day1.qmd){.btn .btn-primary}
