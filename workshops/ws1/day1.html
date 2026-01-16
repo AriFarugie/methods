@@ -241,15 +241,22 @@ window.Quarto = {
   <li><a href="#r-script" id="toc-r-script" class="nav-link" data-scroll-target="#r-script">R Script</a>
   <ul class="collapse">
   <li><a href="#rstudio-als-taschenrechner" id="toc-rstudio-als-taschenrechner" class="nav-link" data-scroll-target="#rstudio-als-taschenrechner">RStudio als Taschenrechner</a></li>
+  <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
   </ul></li>
   <li><a href="#grundprinzipien-von-r" id="toc-grundprinzipien-von-r" class="nav-link" data-scroll-target="#grundprinzipien-von-r">Grundprinzipien von R</a>
   <ul class="collapse">
   <li><a href="#funktionen-verwenden" id="toc-funktionen-verwenden" class="nav-link" data-scroll-target="#funktionen-verwenden">Funktionen verwenden</a></li>
+  <li><a href="#übung-1" id="toc-übung-1" class="nav-link" data-scroll-target="#übung-1">Übung</a></li>
   <li><a href="#datentypen-datenstrukturen" id="toc-datentypen-datenstrukturen" class="nav-link" data-scroll-target="#datentypen-datenstrukturen">Datentypen &amp; Datenstrukturen</a></li>
+  <li><a href="#übung-2" id="toc-übung-2" class="nav-link" data-scroll-target="#übung-2">Übung</a></li>
   <li><a href="#einen-ersten-datensatz-in-r-erstellen" id="toc-einen-ersten-datensatz-in-r-erstellen" class="nav-link" data-scroll-target="#einen-ersten-datensatz-in-r-erstellen">Einen ersten Datensatz in R erstellen</a></li>
+  <li><a href="#übung-3" id="toc-übung-3" class="nav-link" data-scroll-target="#übung-3">Übung</a></li>
   <li><a href="#exkurs-pakete" id="toc-exkurs-pakete" class="nav-link" data-scroll-target="#exkurs-pakete"><strong>Exkurs: Pakete</strong></a></li>
   <li><a href="#datenimport" id="toc-datenimport" class="nav-link" data-scroll-target="#datenimport">Datenimport</a></li>
   <li><a href="#datenaufbereitung" id="toc-datenaufbereitung" class="nav-link" data-scroll-target="#datenaufbereitung">Datenaufbereitung</a></li>
+  <li><a href="#übung-4" id="toc-übung-4" class="nav-link" data-scroll-target="#übung-4">Übung</a></li>
+  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes">Pipes</a></li>
+  <li><a href="#übung-5" id="toc-übung-5" class="nav-link" data-scroll-target="#übung-5">Übung</a></li>
   </ul></li>
   <li><a href="#abschluss-tag-1" id="toc-abschluss-tag-1" class="nav-link" data-scroll-target="#abschluss-tag-1">Abschluss Tag 1</a></li>
   </ul>
@@ -644,18 +651,9 @@ du musst später mühsam hochscrollen, um sie zu finden.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Übung 1</strong> – R als Taschenrechner
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</section>
+<section id="übung" class="level2">
+<h2 class="anchored" data-anchor-id="übung">Übung</h2>
 <ol type="1">
 <li>Berechne zuerst den Ausdruck<br>
 <code>((8 + 4)^2 - 10) / 2</code>.</li>
@@ -668,20 +666,17 @@ du musst später mühsam hochscrollen, um sie zu finden.</p>
 </ul></li>
 </ol>
 <p>Beobachte, was gleich ist und was sich unterscheidet.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><strong>Lösung Übung 1</strong>
+<span class="screen-reader-only">Note</span><strong>Lösung</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Aufgabe 1</span></span>
@@ -773,7 +768,7 @@ Je nach Aufgabe benutzen wir ein anderes Werkzeug.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -782,7 +777,7 @@ Je nach Aufgabe benutzen wir ein anderes Werkzeug.</p>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><code>sum()</code> – berechnet die <strong>Summe</strong> aller Werte<br>
@@ -823,18 +818,9 @@ oder wir kombinieren mehrere Funktionen, um neue Kennwerte zu berechnen.</p>
 </div>
 <p>In der nächsten Übung nutzen wir diese Grundfunktionen,<br>
 um eigene Kennwerte zu berechnen und die Ergebnisse <strong>als Objekte zu speichern</strong>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Übung 2</strong> – Funktionen
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</section>
+<section id="übung-1" class="level2">
+<h2 class="anchored" data-anchor-id="übung-1">Übung</h2>
 <p>Nutze den Vektor <code>y</code> und berechne folgende Kennwerte:</p>
 <ol type="1">
 <li>Den <strong>Standardfehler des Mittelwerts</strong><br>
@@ -846,11 +832,8 @@ um eigene Kennwerte zu berechnen und die Ergebnisse <strong>als Objekte zu speic
 <li>Das <strong>95%-Konfidenzintervall</strong> (KI) für den Mittelwert</li>
 </ol>
 <p>Speichere alle Ergebnisse als eigene Objekte, z. B.: <code>se_y</code>, <code>var_y</code>, <code>z_y</code>, <code>ci_y</code>.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -859,10 +842,9 @@ um eigene Kennwerte zu berechnen und die Ergebnisse <strong>als Objekte zu speic
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Du darfst dir für die Berechnung <strong>Hilfsobjekte</strong> anlegen.</p>
-<hr>
+<p>Du darfst dir für die Berechnung <strong>Hilfsobjekte</strong> anlegen. ___</p>
 <p><strong>Standardfehler des Mittelwerts</strong></p>
 <p><span class="math display">\[
 SE = \frac{sd(x)}{\sqrt{n}}
@@ -899,16 +881,16 @@ z = \frac{x - \bar{x}}{sd(x)}
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><strong>Lösung – Übung 2</strong>
+<span class="screen-reader-only">Note</span><strong>Lösung</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hilfsobjekte</span></span>
@@ -1123,18 +1105,10 @@ sie werden in der Praxis <strong>nicht automatisch ineinander umgewandelt</stron
 <pre><code> num [1:5] 23 12 11 9 13</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Übung 3</strong> – Datentyp und Datenstruktur
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</section>
+</section>
+<section id="übung-2" class="level2">
+<h2 class="anchored" data-anchor-id="übung-2">Übung</h2>
 <p>Im bisherigen Verlauf haben wir mehrere <strong>Objekte und Hilfsobjekte</strong> erstellt.</p>
 <ol type="1">
 <li><p>Überprüfe für jedes dieser Objekte</p>
@@ -1154,20 +1128,17 @@ sie werden in der Praxis <strong>nicht automatisch ineinander umgewandelt</stron
 </ol>
 <p>Ziel ist es, ein besseres Gefühl dafür zu bekommen,<br>
 wie R unterschiedliche Ergebnisse speichert.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><strong>Lösung – Übung 3</strong>
+<span class="screen-reader-only">Note</span><strong>Lösung</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittelwert</span></span>
@@ -1287,7 +1258,6 @@ wie R unterschiedliche Ergebnisse speichert.</p>
 </div>
 </div>
 </section>
-</section>
 <section id="einen-ersten-datensatz-in-r-erstellen" class="level2">
 <h2 class="anchored" data-anchor-id="einen-ersten-datensatz-in-r-erstellen">Einen ersten Datensatz in R erstellen</h2>
 <p>Bisher haben wir mit einzelnen Objekten und Vektoren gearbeitet. In der Praxis bestehen Datensätze jedoch aus <strong>mehreren Variablen</strong>, die gemeinsam eine Gruppe von Fällen beschreiben.</p>
@@ -1400,33 +1370,21 @@ und bildet die Grundlage für viele weitere Analyseschritte.</p>
 <p>Auch ein einzelner Wert ist in R ein <strong>Vektor der Länge 1</strong>. Mit der <code>c()</code> Funktion können wir einzelne Werte zu einem Vektor zusammenfassen</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Übung 4</strong> – Erstelle einen Datensatz
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</section>
+<section id="übung-3" class="level2">
+<h2 class="anchored" data-anchor-id="übung-3">Übung</h2>
 <p>Bisher haben wir einen Datensatz erstellt mit sechs Variablen. Erstelle nun zwei weitere <strong>Variablen</strong> und füge diesen zu einem Datensatz hinzu. Nenne die eine Variable <code>numbers</code>und die andere <code>chars</code>.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Lösung - Übung 4</strong>
+<span class="screen-reader-only">Tip</span><strong>Lösung</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">5</span>,<span class="dv">17</span>,<span class="dv">6</span>,<span class="dv">75</span>,<span class="dv">22</span>)</span>
@@ -1767,7 +1725,7 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 <span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1776,7 +1734,7 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <details class="code-fold">
@@ -2043,7 +2001,7 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 <span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2052,7 +2010,7 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <details class="code-fold">
@@ -2216,7 +2174,7 @@ $ gkpol    &lt;dbl+lbl&gt;  3,  3,  3,  2,  3,  6,  7,  1,  3,  3,  2,  4, NA,  
 <p>Ein Datensatz (Data Frame) ist in R eine <strong>Sammlung von Variablen</strong>,<br>
 die jeweils als Spalten organisiert sind.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2225,7 +2183,7 @@ die jeweils als Spalten organisiert sind.</p>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Wir können auch einzelne oder mehre Objekte wieder aus unserem Environment entfernen, dafür nutzen wir die Funktion <code>rm()</code>.</p>
 <div class="cell">
@@ -2272,33 +2230,23 @@ mit dem <strong>Dollar-Zeichen <code>$</code></strong> zu.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>df_csv<span class="sc">$</span>age</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In eurem Output, sollten nun alle Altersangaben der Teilnehmden Personen dieser Studie als Vektor angezeigt werden.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Übung 5</strong> – Anwendung
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-45" class="callout-45-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</section>
+</section>
+</section>
+<section id="übung-4" class="level2">
+<h2 class="anchored" data-anchor-id="übung-4">Übung</h2>
 <p>Deine Aufgabe ist es nun, das Durchschnittsalter (Mean) und die Standardabweichung des Durschnittsalters (SD) zu berechnen.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Lösung - Übung 5</strong>
+<span class="screen-reader-only">Tip</span><strong>Lösung</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Alternative 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Alternative 2</a></li></ul>
@@ -2332,8 +2280,6 @@ X1    1 5301 53.27 17.64     55   53.44 19.27  18  96    78 -0.1    -0.86 0.24</
 </div>
 </div>
 <hr>
-</section>
-</section>
 <section id="einführung-dplyr" class="level3">
 <h3 class="anchored" data-anchor-id="einführung-dplyr">Einführung dplyr</h3>
 <p><code>dplyr</code> ist Teil des <strong>tidyverse</strong> und bietet Funktionen,<br>
@@ -2480,8 +2426,9 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 <p><strong>Alternative 2</strong> wirkt auf den ersten Blick effizienter, jedoch liest es sich auch sehr kompliziert. Gerade wenn man mehrere Schritte durchführen möchte.</p>
 <p>Auch dafür gibt es in <strong>Rstudio</strong> eine effiziente Lösung <strong>→</strong> <strong>Pipes</strong></p>
 </section>
-<section id="pipes" class="level3">
-<h3 class="anchored" data-anchor-id="pipes">Pipes</h3>
+</section>
+<section id="pipes" class="level2">
+<h2 class="anchored" data-anchor-id="pipes">Pipes</h2>
 <p>Pipes in R sind ein Operator (z.B. <code>%&gt;%</code> oder <code>|&gt;</code>), mit dem das Ergebnis <strong>eines Schritts direkt</strong> an den <strong>nächsten Befehl „weitergereicht“</strong> wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich <strong>Datenbearbeitungsschritte</strong> wie in einer Kette von links nach rechts lesen, was den <strong>Code meist kürzer und besser lesbar</strong> macht, besonders im Tidyverse-Kontext.</p>
 <p>Man kann sich Pipes vorstellen wie die Röhren (Pipes) aus Super Mario:</p>
 <p><img src="assets/images/generated-image_pipes3.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
@@ -2511,18 +2458,9 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 </div>
 </div>
 <p>Wie wir sehen, haben wir eine klare Struktur und wir müssen den Befehlen innerhalb unserer eigenen <strong>Pipes</strong> nicht dauernd “erklären”, welchen Datensatz wir heranziehen!</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Übung 6</strong> – Datenaufbereitung!
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-50" class="callout-50-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</section>
+<section id="übung-5" class="level2">
+<h2 class="anchored" data-anchor-id="übung-5">Übung</h2>
 <ol type="1">
 <li>Erstelle zunächst eine neue Variable <code>soz.u</code>, diese Besteht aus den Variablen <code>im17</code> bis <code>im21</code> –&gt; bilde dafür einen Summenwert</li>
 <li>Erstelle einen neuen Datensatz <code>df_analyse</code> mit folgenden Variablen <code>Alter, Geschlecht, Bildung, Berufstätigkeit und Sozialeungleichheit</code></li>
@@ -2546,20 +2484,17 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 <p>Das wichtigste: <strong>LEARNING BY DOING!</strong></p>
 </div>
 </div>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong>Lösung - Übung 6</strong>
+<span class="screen-reader-only">Tip</span><strong>Lösung</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Alternative 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Alternative 2</a></li></ul>
@@ -2667,7 +2602,6 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 </div>
 </div>
 </div>
-</section>
 </section>
 </section>
 <section id="abschluss-tag-1" class="level1">
