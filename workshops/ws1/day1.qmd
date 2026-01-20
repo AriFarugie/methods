@@ -49,8 +49,7 @@ Man kann sich **RStudio** wie einen Schreibtisch für *R* vorstellen.
 - deine Daten, Objekte und Grafiken im Blick zu behalten
 - Dateien und Projekte organisiert zu verwalten
 
-Ohne ***RStudio*** müsstest du **R** über ein sehr einfaches Fenster bedienen.
-Mit RStudio bekommst du eine strukturierte Oberfläche, die besonders für Einsteiger:innen viel angenehmer ist.
+Ohne ***RStudio*** müsstest du **R** über ein sehr einfaches Fenster bedienen. Mit RStudio bekommst du eine strukturierte Oberfläche, die besonders für Einsteiger:innen viel angenehmer ist.
 
 ___
 
@@ -81,20 +80,18 @@ Schauen wir uns zunächst die **R Oberfläche** ***(ohne RStudio)*** an.
 ::: callout-note
 **Hinweis**
 
-Alles, was du in die Konsole eingibst, wird sofort von R ausgeführt.  
-Das Ergebnis siehst du direkt unter der eingegebenen Zeile.
+Alles, was du in die Konsole eingibst, wird sofort von R ausgeführt. Das Ergebnis siehst du direkt unter der eingegebenen Zeile.
 
 ***Beispiel***
 
 - gib `13`ein
 - gib `a` ein
 - gib `13+15`
-
+:::
 ::: callout-caution
 **ABER**
 
 Wir brauchen ***R GUI*** nicht, sondern nutzen **RStudio!**
-:::
 :::
 
 ## RStudio - Unser Cockpit 🎛️
@@ -113,13 +110,11 @@ In der Menü-Leiste findest du alle wichtigen Funktionen von RStudio übersichtl
 
 <span style="color: green; font-weight: bold;">Grün</span> – die Schnellzugriff-Leiste
 
-Die Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole.
-Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Codes ausführen, ohne durch Menüs zu klicken.
+Die Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole. Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Codes ausführen, ohne durch Menüs zu klicken.
 
 ## Die vier Bereiche von RStudio
 
-RStudio ist in **vier Arbeitsbereiche** (Panes/Paneele) aufgeteilt.
-Jeder Bereich hat eine eigene Aufgabe. Aber jetzt gerade siehst du nur drei Bereiche. Ich zeige dir jetzt erstmal, wie du die vier Bereiche bekommst!
+RStudio ist in **vier Arbeitsbereiche** (Panes/Paneele) aufgeteilt. Jeder Bereich hat eine eigene Aufgabe. Aber jetzt gerade siehst du nur drei Bereiche. Ich zeige dir jetzt erstmal, wie du die vier Bereiche bekommst!
 
 ::: callout-note
 Hierfür gehst du zunächst in die **Schnellzugriffs-Leiste** und klickst auf das Symbol ganz links, das **weiße Blatt** mit dem <span style="color: green; font-weight: bold;">**Plus**</span>.
@@ -132,7 +127,8 @@ Anschließend öffnet sich ein **Drop-Down** und du kannst jetzt schon sehen, wa
 
 Wir wollen aber ein neues `**R Script erstellen**`, daher klicken wir auch da drauf!
 
-::: callout-tip
+::: callout-note
+# Info
 Übrigens diese Workshopseite wurde komplett mit RStudio und Quarto Markdowns erstellt.
 :::
 :::
