@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5bf33484f8c6110779751dcd0ddece21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-75e3a9182966834e0e08ebad559894cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -94,14 +94,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">Über mich</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../materials.html"> 
-<span class="menu-text">Materialien</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Workshops</span>
@@ -110,18 +102,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../workshops/ws1/index.html">
  <span class="dropdown-text">Einführung in RStudio</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../workshops/ws2/index.qmd">
- <span class="dropdown-text">Datenvisualisierung mit ggplot2</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../workshops/ws3/index.qmd">
- <span class="dropdown-text">Reproduzierbare Berichte mit Quarto</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../workshops/ws4/index.qmd">
- <span class="dropdown-text">Datenanalyse mit dplyr</span></a>
   </li>  
     </ul>
   </li>
@@ -170,10 +150,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele">Lernziele</a></li>
   <li><a href="#ablauf" id="toc-ablauf" class="nav-link" data-scroll-target="#ablauf">Ablauf</a>
   <ul class="collapse">
-  <li><a href="#tag-1" id="toc-tag-1" class="nav-link" data-scroll-target="#tag-1">Tag 1</a></li>
-  <li><a href="#tag-2" id="toc-tag-2" class="nav-link" data-scroll-target="#tag-2">Tag 2</a></li>
+  <li><a href="#tag-1-grundlagen-erster-workflow" id="toc-tag-1-grundlagen-erster-workflow" class="nav-link" data-scroll-target="#tag-1-grundlagen-erster-workflow">Tag 1 – Grundlagen &amp; erster Workflow</a></li>
+  <li><a href="#tag-2-datenaufbereitung-in-der-praxis" id="toc-tag-2-datenaufbereitung-in-der-praxis" class="nav-link" data-scroll-target="#tag-2-datenaufbereitung-in-der-praxis">Tag 2 – Datenaufbereitung in der Praxis</a></li>
   </ul></li>
-  <li><a href="#materialien" id="toc-materialien" class="nav-link" data-scroll-target="#materialien">Materialien</a></li>
   </ul>
 </nav>
 </nav>
@@ -205,74 +184,68 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="kurzbeschreibung" class="level1">
 <h1>Kurzbeschreibung</h1>
-<p>Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.<br>
-Es werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.<br>
-Ziel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.</p>
-<p><strong>Benötigte Vorkenntnisse:</strong> keine.</p>
 <hr>
+<p>Der zweitägige Workshop <strong>„Einführung in R &amp; RStudio“</strong> richtet sich an Studierende der Sozialwissenschaften, die R für <strong>empirische Arbeiten</strong>, Haus- oder Abschlussarbeiten nutzen möchten.</p>
+<p>Im Workshop lernen die Teilnehmenden Schritt für Schritt:</p>
+<ul>
+<li>wie RStudio aufgebaut ist und wie man sicher darin arbeitet,</li>
+<li>wie R „denkt“ (Objekte, Datentypen, Datenstrukturen),</li>
+<li>wie Daten importiert und plausibilisiert werden,</li>
+<li>und wie man einen ersten <strong>Analyse-Workflow</strong> umsetzt (Umkodieren, Skalen bilden, Joins, Umgang mit <code>NA</code>).</li>
+</ul>
+<p>Der Schwerpunkt liegt auf <strong>praxisnahen Beispielen</strong> und einem <strong>reproduzierbaren Workflow</strong>, der später in eigenen Projekten weiterverwendet werden kann.</p>
+<p><strong>Benötigte Vorkenntnisse:</strong> keine.</p>
 </section>
 <section id="lernziele" class="level1">
 <h1>Lernziele</h1>
+<hr>
 <p>Nach dem Workshop können Teilnehmende …</p>
 <ul>
-<li>die RStudio-Oberfläche sicher bedienen<br>
-</li>
-<li>grundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)<br>
-</li>
-<li>Daten aus CSV, Excel und SPSS importieren<br>
-</li>
-<li>Variablen auswählen, filtern und umkodieren<br>
-</li>
-<li>fehlende Werte identifizieren und behandeln<br>
-</li>
-<li>Datensätze zusammenführen (Joins)<br>
-</li>
-<li>Skripte und Projekte reproduzierbar strukturieren<br>
-</li>
-<li>einen kleinen Datenbereinigungs-Workflow eigenständig umsetzen</li>
+<li>die RStudio-Oberfläche sicher bedienen (Script, Console, Environment, Plots/Files/Help)</li>
+<li>grundlegende R-Konzepte anwenden (<strong>Objekte</strong>, <strong>Funktionen</strong>, <strong>Vektoren</strong>, <strong>Data Frames</strong>)</li>
+<li>Daten aus <strong>CSV</strong> und <strong>SPSS</strong> importieren und einen <strong>Plausibilitätscheck</strong> durchführen</li>
+<li>Daten mit aufbereiten</li>
+<li>Variablen <strong>umkodieren</strong></li>
+<li>Skalenwerte berechnen und die Interpretation prüfen</li>
+<li>fehlende Werte erkennen und damit umgehen</li>
+<li>Datensätze über Schlüsselvariablen zusammenführen</li>
+<li>Projekte &amp; Skripte nachvollziehbar strukturieren und Zwischenergebnisse speichern</li>
+<li>einen kleinen, vollständigen Datenbereinigungs- und Analyse-Workflow eigenständig umsetzen</li>
 </ul>
-<hr>
 </section>
 <section id="ablauf" class="level1">
 <h1>Ablauf</h1>
-<section id="tag-1" class="level2">
-<h2 class="anchored" data-anchor-id="tag-1">Tag 1</h2>
+<hr>
+<section id="tag-1-grundlagen-erster-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="tag-1-grundlagen-erster-workflow">Tag 1 – Grundlagen &amp; erster Workflow</h2>
 <ol type="1">
-<li>Ankommen &amp; Setup<br>
+<li><strong>Ankommen &amp; Setup</strong><br>
 </li>
-<li>Einführung in R &amp; RStudio<br>
+<li><strong>Was ist R und RStudio?</strong></li>
+<li><strong>Grundprinzipien von R</strong><br>
 </li>
-<li>Objekte &amp; Datentypen<br>
+<li><strong>Datenimport &amp; Überblick</strong><br>
 </li>
-<li>Daten importieren<br>
-</li>
-<li>Datenaufbereitung</li>
+<li><strong>Datenaufbereitung</strong></li>
 </ol>
 </section>
-<section id="tag-2" class="level2">
-<h2 class="anchored" data-anchor-id="tag-2">Tag 2</h2>
+<section id="tag-2-datenaufbereitung-in-der-praxis" class="level2">
+<h2 class="anchored" data-anchor-id="tag-2-datenaufbereitung-in-der-praxis">Tag 2 – Datenaufbereitung in der Praxis</h2>
 <ol type="1">
-<li>Recap<br>
+<li><strong>Recap &amp; offene Fragen</strong></li>
+<li><strong>Umkodieren</strong></li>
+<li><strong>Datensätze zusammenführen</strong><br>
 </li>
-<li>Fehlende Werte<br>
+<li><strong>Fehlende Werte</strong></li>
+<li><strong>Workflows</strong><br>
 </li>
-<li>Umkodieren<br>
-</li>
-<li>Joins<br>
-</li>
-<li>Reproduzierbare Workflows<br>
-</li>
-<li>Mini-Projekt</li>
+<li><strong>Mini-Projekt</strong></li>
 </ol>
 <hr>
-</section>
-</section>
-<section id="materialien" class="level1">
-<h1>Materialien</h1>
-<p>➡️ <strong><a href="../../assets/data/workshop1-dataset.csv">Übungsdatensatz herunterladen</a></strong></p>
-<p>Weitere Materialien folgen.</p>
+<p><a href="../../workshops/ws1/day1.html" class="btn btn-primary">➡️ Weiter zu Tag 1</a> <strong>-</strong> <a href="../../workshops/ws1/day2.html" class="btn btn-secondary">➡️ Weiter zu Tag 2</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -677,6 +650,19 @@ Ziel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren,
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Arieja Farugie</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Made with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
 
 
 

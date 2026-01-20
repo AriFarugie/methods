@@ -1,65 +1,66 @@
 ---
 title: "Einführung in R & RStudio"
-
 format:
   html:
     toc: true
     toc-title: "Inhalte dieser Seite"
     toc-location: left
 
-
 sidebar: workshop1
 ---
 
-
 # Kurzbeschreibung
+___
 
-Der zweitägige Workshop „Einführung in R – Erste Schritte mit RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.  
-Es werden grundlegende R-Konzepte, die Bedienung von RStudio sowie zentrale Schritte der Datenaufbereitung praxisnah vermittelt.  
-Ziel ist es, Teilnehmende in die Lage zu versetzen, Daten sicher zu importieren, zu bereinigen und reproduzierbar zu dokumentieren.
+Der zweitägige Workshop **„Einführung in R & RStudio“** richtet sich an Studierende der Sozialwissenschaften, die R für **empirische Arbeiten**, Haus- oder Abschlussarbeiten nutzen möchten.  
+
+Im Workshop lernen die Teilnehmenden Schritt für Schritt:
+
+- wie RStudio aufgebaut ist und wie man sicher darin arbeitet,
+- wie R „denkt“ (Objekte, Datentypen, Datenstrukturen),
+- wie Daten importiert und plausibilisiert werden,
+- und wie man einen ersten **Analyse-Workflow** umsetzt (Umkodieren, Skalen bilden, Joins, Umgang mit `NA`).
+
+Der Schwerpunkt liegt auf **praxisnahen Beispielen** und einem **reproduzierbaren Workflow**, der später in eigenen Projekten weiterverwendet werden kann.
 
 **Benötigte Vorkenntnisse:** keine.
 
----
-
 # Lernziele
+___
 
 Nach dem Workshop können Teilnehmende …
 
-- die RStudio-Oberfläche sicher bedienen  
-- grundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)  
-- Daten aus CSV, Excel und SPSS importieren  
-- Variablen auswählen, filtern und umkodieren  
-- fehlende Werte identifizieren und behandeln  
-- Datensätze zusammenführen (Joins)  
-- Skripte und Projekte reproduzierbar strukturieren  
-- einen kleinen Datenbereinigungs-Workflow eigenständig umsetzen  
-
----
+- die RStudio-Oberfläche sicher bedienen (Script, Console, Environment, Plots/Files/Help)
+- grundlegende R-Konzepte anwenden (**Objekte**, **Funktionen**, **Vektoren**, **Data Frames**)
+- Daten aus **CSV** und **SPSS** importieren und einen **Plausibilitätscheck** durchführen
+- Daten mit aufbereiten
+- Variablen **umkodieren**
+- Skalenwerte berechnen und die Interpretation prüfen
+- fehlende Werte erkennen und damit umgehen
+- Datensätze über Schlüsselvariablen zusammenführen
+- Projekte & Skripte nachvollziehbar strukturieren und Zwischenergebnisse speichern
+- einen kleinen, vollständigen Datenbereinigungs- und Analyse-Workflow eigenständig umsetzen
 
 # Ablauf
+___
 
-## Tag 1
+## Tag 1 – Grundlagen & erster Workflow
 
-1. Ankommen & Setup  
-2. Einführung in R & RStudio  
-3. Objekte & Datentypen  
-4. Daten importieren  
-5. Datenaufbereitung
+1. **Ankommen & Setup**  
+2. **Was ist R und RStudio?** 
+3. **Grundprinzipien von R**  
+4. **Datenimport & Überblick**  
+5. **Datenaufbereitung**
 
-## Tag 2
+## Tag 2 – Datenaufbereitung in der Praxis
 
-1. Recap  
-2. Fehlende Werte  
-3. Umkodieren  
-4. Joins  
-5. Reproduzierbare Workflows  
-6. Mini-Projekt
+1. **Recap & offene Fragen**
+2. **Umkodieren** 
+3. **Datensätze zusammenführen**   
+4. **Fehlende Werte**
+5. **Workflows**   
+6. **Mini-Projekt**
 
 ---
+[➡️ Weiter zu Tag 1](day1.qmd){.btn .btn-primary} **-** [➡️ Weiter zu Tag 2](day2.qmd){.btn .btn-secondary}
 
-# Materialien
-
-➡️ **[Übungsdatensatz herunterladen](../../assets/data/workshop1-dataset.csv)**  
-
-Weitere Materialien folgen.

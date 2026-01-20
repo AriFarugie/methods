@@ -334,7 +334,7 @@ Schreibst du deine Rechnungen **in ein R Script**, bleiben sie erhalten:
 
 Beobachte, was gleich ist und was sich unterscheidet.
 
-::: {.callout-note collapse="true"}
+::: {.callout-tip collapse="true"}
 # **Lösung**
 
 ```{r}
@@ -494,7 +494,7 @@ $$
 :::
 :::
 
-::: {.callout-note collapse="true"}
+::: {.callout-tip collapse="true"}
 # **Lösung**
 
 :::{.panel-tabset}
@@ -508,12 +508,14 @@ s <- sd(y)       # Standardabweichung
 ```
 # 1. Standardfehler des Mittelwerts
 ```{r}
+#| echo: true
 se_y <- s / sqrt(n)
 
 se_y
 ```
 # 2. Varianz (Stichprobe)
 ```{r}
+#| echo: true
 var_y <- sum((y - m)^2) / (n - 1)
 
 var_y
@@ -521,6 +523,7 @@ var_y
 ```
 # 3. z-standardisierte Werte
 ```{r}
+#| echo: true
 z_y <- (y - m) / s
 
 z_y
@@ -528,6 +531,7 @@ z_y
 
 # 4. 95%-Konfidenzintervall des Mittelwerts
 ```{r}
+#| echo: true
 t_crit <- qt(0.975, df = n - 1)
 
 ci_y <- c(
@@ -566,6 +570,7 @@ Datentypen legen fest, **welche Art von Werten** in einem Objekt gespeichert ist
 R behandelt Zahlen, Text und logische Werte unterschiedlich – je nach Datentyp.
 
 Der Datentyp ist wichtig, weil er bestimmt,
+
 - welche Berechnungen möglich sind
 - wie R die Werte interpretiert
 - welche Funktionen sinnvoll angewendet werden können
@@ -600,8 +605,7 @@ ___
 Datenstrukturen beschreiben, **wie mehrere Werte in R zusammengefasst und organisiert** sind.  
 Sie legen fest, ob Daten einzeln, als einfache Liste oder als Tabelle gespeichert werden.
 
-Welche Datenstruktur wir verwenden, ist wichtig,  
-weil sie bestimmt, wie wir auf Daten zugreifen, sie verändern und analysieren können.
+Welche Datenstruktur wir verwenden, ist wichtig, weil sie bestimmt, wie wir auf Daten **zugreifen**, sie **verändern** und **analysieren** können.
 
 ::: callout-note
 # **Datenstrukturenüberblick**
@@ -631,7 +635,7 @@ Ein **Data Frame** geht einen Schritt weiter:
 
 - Auch hier bestehen die Spalten aus Vektoren, die Spalten dürfen aber **unterschiedliche Datentypen** haben.
 
-So lassen sich reale Datensätze mit Zahlen, Text und Kategorien in einer Tabelle abbilden.
+So lassen sich reale Datensätze mit **Zahlen, Text und Kategorien** in einer Tabelle abbilden.
 
 ::: callout-warning
 # **Achtung Wichtig**
@@ -690,7 +694,7 @@ Ziel ist es, ein besseres Gefühl dafür zu bekommen,
 wie R unterschiedliche Ergebnisse speichert.
 
 
-::: {.callout-note collapse="true"}
+::: {.callout-tip collapse="true"}
 # **Lösung**
 
 :::{.panel-tabset}
@@ -707,36 +711,42 @@ str(m)
 
 # Anzahl der Werte
 ```{r}
+#| echo: true
 class(n)
 typeof(n)
 str(n)
 ```
 # Standardabweichung
 ```{r}
+#| echo: true
 class(s)
 typeof(s)
 str(s)
 ```
 # Standardfehler
 ```{r}
+#| echo: true
 class(se_y)
 typeof(se_y)
 str(se_y)
 ```
 # Varianz
 ```{r}
+#| echo: true
 class(var_y)
 typeof(var_y)
 str(var_y)
 ```
 # z-standardisierte Werte
 ```{r}
+#| echo: true
 class(z_y)
 typeof(z_y)
 str(z_y)
 ```
 # Konfidenzintervall
 ```{r}
+#| echo: true
 class(ci_y)
 typeof(ci_y)
 str(ci_y)
@@ -764,7 +774,7 @@ Dabei lernst du,
 - wie mehrere Vektoren sinnvoll angelegt werden und  
 - wie aus einzelnen Variablen eine tabellarische Struktur entsteht.
 
-Wir legen nun unsere neuen Vektoren (= **Variablen**)** an:
+Wir legen nun unsere neuen Vektoren (= **Variablen**) an:
 
 ```{r}
 #| echo: true
@@ -852,7 +862,10 @@ Auch ein einzelner Wert ist in R ein **Vektor der Länge 1**. Mit der `c()` Funk
 
 ## Übung
 
-Bisher haben wir einen Datensatz erstellt mit sechs Variablen. Erstelle nun zwei weitere **Variablen** und füge diesen zu einem Datensatz hinzu. Nenne die eine Variable `numbers`und die andere `chars`.
+Bisher haben wir einen Datensatz erstellt mit sechs Variablen. Erstelle nun zwei weitere **Variablen** und füge diesen zu einem Datensatz hinzu. Nenne die eine Variable `numbers` und die andere `chars`.
+
+- `numbers` stellen zufällige Zahlen dar, die ihr euch ausdenkt
+- `chars` sollen einfach Namen sein, die euch einfallen
 
 ::: {.callout-tip collapse="true"}
 
@@ -1017,6 +1030,7 @@ Um den Datenimport möglichst übersichtlich und zuverlässig zu gestalten,
 verwenden wir ab jetzt Funktionen aus dem **tidyverse**.
 
 Diese bieten:
+
 - klare und gut lesbare Befehle  
 - sinnvolle Standardannahmen  
 - eine einfache erste Prüfung der importierten Daten
@@ -1307,11 +1321,13 @@ df_2var
 ```
 :::
 
-Die Logik ist relativ klar! 
+Die Logik ist relativ klar!
+
 1. Nenne das Objekt (Datensatz)
 2. Reihe die Variablen aneinander, die ausgewählt werden sollen
 
-Die Datenaufbereitung besteht meistens aus **mehreren Schritten:** 
+Die Datenaufbereitung besteht meistens aus **mehreren Schritten:**
+
 - Variablen auswählen
 - Fälle filtern
 - neue Variablen erstellen (Summenwerte)
@@ -1342,8 +1358,11 @@ df_2var
 :::
 
 Die Logik des Befehls **"Alternative 2"** ist wie folgt aufgebaut:
+
 - `filter()` den neuen Datensatz, welcher durch `select()` erstellt wurde
+
 **oder**
+
 - Wähle erst die Variablen aus und filter anschließend (**Alternative 1**)
 
 **Alternative 2** wirkt auf den ersten Blick effizienter, jedoch liest es sich auch sehr kompliziert. Gerade wenn man mehrere Schritte durchführen möchte.
@@ -1455,16 +1474,15 @@ Heute hast du die Grundlagen gelegt, um sicher mit RStudio zu arbeiten:
 
 Morgen bauen wir auf diesen Grundlagen auf und gehen einen Schritt weiter in Richtung „echter Analyse-Workflow“:
 
-- **Recap** (kurzer Rückblick & Fragen)  
+- **Recap** (kurzer Rückblick & Fragen)
+- **Umkodieren** (neue Kategorien, Skalen, Re-Codes)
+- **Joins** (Datensätze zusammenführen) 
 - **Fehlende Werte** (NA erkennen, zählen, behandeln)  
-- **Umkodieren** (neue Kategorien, Skalen, Re-Codes)  
-- **Joins** (Datensätze zusammenführen)  
-- **Reproduzierbare Workflows** (Ordnerstruktur, Skripte, Output)  
+- **Workflows** (Ordnerstruktur, Skripte, Output)  
 - **Mini-Projekt** (alles zusammen anwenden)  
 :::
 
 👉 **Speichere dein Projekt**, damit du morgen direkt weiterarbeiten kannst.
 
 ___
-
 [➡️ Weiter zu Tag 2](day2.qmd){.btn .btn-primary}

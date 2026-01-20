@@ -136,7 +136,7 @@ head(df_diss$hs04,10)
 
 head(df_diss$hs04_inv,10)
 ```
-:::{.callout-tip collapse="true"}
+:::{.callout-note collapse="true"}
 # **Hinweis**
 Bei der Intertierung, wird...
 - der Wert`1` zu  `5`
@@ -202,7 +202,7 @@ df_diss <- df_diss|>
 head(df_diss, 10)
 
 ```
-:::{.callout-tip collapse="true"}
+:::{.callout-note collapse="true"}
 # **Hinweis**
 Wir haben hier einen Befehl aus einem anderen Paket genutzt. Wie du sehen kannst, sind Pakete auch miteinander kombinierbar!
 
@@ -1495,7 +1495,5 @@ Guter Code ist nicht der „kürzeste“ – sondern der, den du (und andere) sp
 
 ![](assets/images/rmeme.jpg){width=100% style="border: 2px solid darkblue;"}
 
-
-
-
+___
 [⬅️ Zurück zu Tag 1](day1.qmd){.btn .btn-primary}
