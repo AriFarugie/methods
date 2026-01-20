@@ -268,28 +268,7 @@
     "href": "index.html",
     "title": "Willkommen",
     "section": "",
-    "text": "Willkommen auf meiner Workshop-Seite!\nHier findest du Materialien, Unterlagen, Übungen und Infos zu meinen Methoden-Workshops."
-  },
-  {
-    "objectID": "index.html#aktuelle-workshops",
-    "href": "index.html#aktuelle-workshops",
-    "title": "Willkommen",
-    "section": "🔍 Aktuelle Workshops",
-    "text": "🔍 Aktuelle Workshops\n\nWorkshop 1 – Einführung in R & RStudio\nWorkshop 2 – Datenvisualisierung mit ggplot2"
-  },
-  {
-    "objectID": "index.html#materialien",
-    "href": "index.html#materialien",
-    "title": "Willkommen",
-    "section": "📚 Materialien",
-    "text": "📚 Materialien\nDie Materialien werden schrittweise ergänzt.\nFalls du an einem bestimmten Workshop teilnimmst, bekommst du die Zugangsinformationen direkt von mir."
-  },
-  {
-    "objectID": "index.html#kontakt",
-    "href": "index.html#kontakt",
-    "title": "Willkommen",
-    "section": "📬 Kontakt",
-    "text": "📬 Kontakt\nBei Fragen erreichst du mich jederzeit unter: farugie[at]psych.uni-frankfurt.de"
+    "text": "Willkommen auf meiner Workshop-Seite!\nHier findest du Infos zu meinen Methoden-Workshops.\n\n🔍 Aktuelle Workshops\n\n\nEinführung in R & RStudio\n\n\n\n📚 Materialien\n\nDie Materialien werden schrittweise ergänzt.\nFalls du an einem bestimmten Workshop teilnimmst, bekommst du die Zugangsinformationen direkt von mir.\n\n\n📬 Kontakt\n\nBei Fragen, Wünschen und Anregungen erreichst du mich jederzeit unter: farugie[at]psych.uni-frankfurt.de"
   },
   {
     "objectID": "workshops/ws1/index.html",
