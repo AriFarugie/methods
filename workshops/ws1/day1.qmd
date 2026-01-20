@@ -75,7 +75,7 @@ Schauen wir uns zunächst die **R Oberfläche** ***(ohne RStudio)*** an.
     - Ergebnisse erscheinen sofort darunter
 
 ::: callout-note
-**Hinweis**
+# **Hinweis**
 
 Alles, was du in die Konsole eingibst, wird sofort von R ausgeführt. Das Ergebnis siehst du direkt unter der eingegebenen Zeile.
 
@@ -954,9 +954,9 @@ library(psych)
 - `library()` → in jeder Sitzung laden
 :::
 
-### Das tidyverse
+### Das `tidyverse`
 ___
-Das **tidyverse** ist eine Sammlung mehrerer Pakete,  
+Das **`tidyverse`** ist eine Sammlung mehrerer Pakete,  
 die besonders für **Datenaufbereitung, Analyse und Visualisierung** entwickelt wurden.
 
 Es bietet:
@@ -966,18 +966,18 @@ Es bietet:
 - komfortable Werkzeuge für Data Frames
 
 ::: callout-tip
-Typische tidyverse-Pakete sind zum Beispiel:
+Typische `tidyverse`-Pakete sind zum Beispiel:
 
 - `dplyr` (Datenaufbereitung)
 - `ggplot2` (Visualisierung)
 - `readr` (Datenimport)
 :::
 
-Wir werden das tidyverse später als **Alternative zu Base R** nutzen.
+Wir werden das `tidyverse` später als **Alternative zu Base R** nutzen.
 
-### Das psych-Paket
+### Das `psych`-Paket
 ___
-Das Paket **psych** wird häufig in den Sozial- und Verhaltenswissenschaften verwendet.
+Das Paket **`psych`** wird häufig in den Sozial- und Verhaltenswissenschaften verwendet.
 
 Es enthält unter anderem:
 
@@ -1027,7 +1027,7 @@ Diese sind normal und gehören zur Arbeit mit realen Datensätzen dazu.
 :::
 
 Um den Datenimport möglichst übersichtlich und zuverlässig zu gestalten,  
-verwenden wir ab jetzt Funktionen aus dem **tidyverse**.
+verwenden wir ab jetzt Funktionen aus dem **`tidyverse`**.
 
 Diese bieten:
 
@@ -1041,7 +1041,7 @@ Diese bieten:
 Wir haben bewusst zuerst mit **Base R** gearbeitet,  
 um die grundlegenden Strukturen zu verstehen.
 
-Jetzt nutzen wir das tidyverse als **komfortablere Alternative**  
+Jetzt nutzen wir das `tidyverse` als **komfortablere Alternative**  
 für reale Daten und typische Workflows.
 :::
 
@@ -1086,7 +1086,7 @@ df_spss <- read_sav("assets/data/spss_datensatz_workshop.sav")
 ```
 
 ::: callout-note
-# Hinweis
+# **Hinweis**
 
 Was fällt dir auf, wenn du die **Datensätze** vergleichst?
 
@@ -1276,7 +1276,7 @@ describe(df_csv$age)
 
 ### Einführung dplyr
 ___
-`dplyr` ist Teil des **tidyverse** und bietet Funktionen,  
+`dplyr` ist Teil des **`tidyverse`** und bietet Funktionen,  
 mit denen sich Datensätze **lesbar, konsistent und effizient** bearbeiten lassen.
 
 Der Fokus liegt dabei auf:
@@ -1371,7 +1371,7 @@ Auch dafür gibt es in **Rstudio** eine effiziente Lösung **→** **Pipes**
 
 ## Pipes
 
-Pipes in R sind ein Operator (z.B. `%>%` oder `|>`), mit dem das Ergebnis **eines Schritts direkt** an den **nächsten Befehl „weitergereicht“** wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich **Datenbearbeitungsschritte** wie in einer Kette von links nach rechts lesen, was den **Code meist kürzer und besser lesbar** macht, besonders im Tidyverse-Kontext.
+Pipes in R sind ein Operator (z.B. `%>%` oder `|>`), mit dem das Ergebnis **eines Schritts direkt** an den **nächsten Befehl „weitergereicht“** wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich **Datenbearbeitungsschritte** wie in einer Kette von links nach rechts lesen, was den **Code meist kürzer und besser lesbar** macht, besonders im `tidyverse`-Kontext.
 
 Man kann sich Pipes vorstellen wie die Röhren (Pipes) aus Super Mario:
 

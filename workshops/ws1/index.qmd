@@ -44,15 +44,15 @@ Nach dem Workshop können Teilnehmende …
 # Ablauf
 ___
 
-## Tag 1 – Grundlagen & erster Workflow
+## Tag 1 – Grundlagen
 
 1. **Ankommen & Setup**  
 2. **Was ist R und RStudio?** 
 3. **Grundprinzipien von R**  
 4. **Datenimport & Überblick**  
-5. **Datenaufbereitung**
+5. **Erste Schritte der Datenaufbereitung**
 
-## Tag 2 – Datenaufbereitung in der Praxis
+## Tag 2 - Datenaufbereitung
 
 1. **Recap & offene Fragen**
 2. **Umkodieren** 
@@ -64,3 +64,4 @@ ___
 ---
 [➡️ Weiter zu Tag 1](day1.qmd){.btn .btn-primary} **-** [➡️ Weiter zu Tag 2](day2.qmd){.btn .btn-secondary}
 
+ 
