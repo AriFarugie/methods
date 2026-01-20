@@ -7,20 +7,20 @@ website:
     right:
       - text: "Home"
         href: index.qmd
-      - text: "Über mich"
-        href: about.qmd
-      - text: "Materialien"
-        href: materials.qmd
+      #- text: "Über mich"
+      #  href: about.qmd
+      #- text: "Materialien"
+      #  href: materials.qmd
       - text: "Workshops"
         menu: 
           - text: "Einführung in RStudio"
             href: workshops/ws1/index.qmd
-          - text: "Datenvisualisierung mit ggplot2"
-            href: workshops/ws2/index.qmd
-          - text: "Reproduzierbare Berichte mit Quarto"
-            href: workshops/ws3/index.qmd
-          - text: "Datenanalyse mit dplyr"
-            href: workshops/ws4/index.qmd  
+          #- text: "Datenvisualisierung mit ggplot2"
+          #  href: workshops/ws2/index.qmd
+          #- text: "Reproduzierbare Berichte mit Quarto"
+          #  href: workshops/ws3/index.qmd
+          #- text: "Datenanalyse mit dplyr"
+          #  href: workshops/ws4/index.qmd  
   sidebar:
     id: workshop1
     title: ""
@@ -30,7 +30,9 @@ website:
         href: workshops/ws1/day1.qmd
       - text: "Zum Workshop - Tag 2"
         href: workshops/ws1/day2.qmd
-  
+  page-footer:
+    left: "© 2026 Arieja Farugie"
+    right: "Made with [Quarto](https://quarto.org)"  
 
 format:
   html:
