@@ -1,10 +1,73 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Über mich",
+    "objectID": "workshops/ws1/workshop.html",
+    "href": "workshops/ws1/workshop.html",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
     "section": "",
-    "text": "Hallo! Ich bin Arieja Farugie, diese Seite befindet sich im Aufbau."
+    "text": "Dieser Teil enthält die inhaltlichen Materialien zum Workshop „Einführung in R & RStudio“.\nEr ist so aufgebaut, dass du ihn als Begleitunterlage im Workshop oder zur Nachbereitung nutzen kannst.\n\n\n\nR ist eine freie Programmiersprache für statistische Analysen, Visualisierung und Datenverarbeitung.\nRStudio ist eine integrierte Entwicklungsumgebung (IDE), die die Arbeit mit R übersichtlicher und komfortabler macht.\n\n\nTypischerweise besteht RStudio aus vier Bereichen („Panes“):\n\nSource / Editor – hier schreibst du Skripte (.R, .qmd usw.).\n\nConsole – hier werden Befehle direkt ausgeführt.\n\nEnvironment / History – hier siehst du deine Objekte und Befehls-Historie.\n\nFiles / Plots / Packages / Help / Viewer – Dateien, Grafiken, installierte Pakete, Hilfe usw.\n\n\n\n\n\n2 + 2\n\n[1] 4\n\n10 / 3\n\n[1] 3.333333\n\nsqrt(49)\n\n[1] 7\n\n\nPLATZHALTER\n\n\n\n\n\n\nNoteÜbung 1 – R als Taschenrechner\n\n\n\n\nBerechne: 5^2 + 3.\n\nWas ergibt sqrt(144)*75?\n\nFühre die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#einleitung",
+    "href": "workshops/ws1/workshop.html#einleitung",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "",
+    "text": "R ist eine freie Programmiersprache für statistische Analysen, Visualisierung und Datenverarbeitung.\nRStudio ist eine integrierte Entwicklungsumgebung (IDE), die die Arbeit mit R übersichtlicher und komfortabler macht.\n\n\nTypischerweise besteht RStudio aus vier Bereichen („Panes“):\n\nSource / Editor – hier schreibst du Skripte (.R, .qmd usw.).\n\nConsole – hier werden Befehle direkt ausgeführt.\n\nEnvironment / History – hier siehst du deine Objekte und Befehls-Historie.\n\nFiles / Plots / Packages / Help / Viewer – Dateien, Grafiken, installierte Pakete, Hilfe usw.\n\n\n\n\n\n2 + 2\n\n[1] 4\n\n10 / 3\n\n[1] 3.333333\n\nsqrt(49)\n\n[1] 7\n\n\nPLATZHALTER\n\n\n\n\n\n\nNoteÜbung 1 – R als Taschenrechner\n\n\n\n\nBerechne: 5^2 + 3.\n\nWas ergibt sqrt(144)*75?\n\nFühre die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#objekte-anlegen",
+    "href": "workshops/ws1/workshop.html#objekte-anlegen",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "Objekte anlegen",
+    "text": "Objekte anlegen\n\nx &lt;- 5\ny &lt;- c(1, 2, 3, 4, 5)\n\n\n\n\n\n\n\nNote\n\n\n\nHinweis\n\n&lt;- ist der Zuweisungspfeil („wird zugewiesen“).\n\ny ist ein Vektor aus mehreren Zahlen.\n\n\n\n\nFunktionen verwenden\n\nmean(y)\n\n[1] 3\n\nsum(y)\n\n[1] 15\n\nlength(y)\n\n[1] 5\n\nround(3.14159, digits = 2)\n\n[1] 3.14\n\n\n\n\n\n\n\n\nNoteÜbung 2 – Objekte & Funktionen\n\n\n\n\nErstelle ein Objekt z mit mindestens fünf Zahlen.\n\nBerechne Mittelwert, Summe und Länge von z.\n\nErzeuge ein Objekt pi_gerundet, das pi auf 3 Nachkommastellen rundet.\n\n\n\n\n\n\n\n\n\nWarningHäufige Fehler\n\n\n\n\nFunktion falsch geschrieben: Mean(y) statt mean(y)\n\nKlammern vergessen: mean y statt mean(y)\n\n&lt;- vergessen oder = inkonsistent verwendet\n\nIm falschen Fenster tippen (Konsole statt Skript oder umgekehrt)"
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#datentypen",
+    "href": "workshops/ws1/workshop.html#datentypen",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "3. Datentypen & Datenstrukturen",
+    "text": "3. Datentypen & Datenstrukturen\n\nWichtige Datentypen\n\n\n\n\n\n\nNote\n\n\n\n\nnumeric / double (Kommazahlen)\n\ninteger (Ganze Zahlen, z.B. 1L)\n\ncharacter (Text)\n\nlogical (TRUE/FALSE)\n\nfactor (kategorische Daten)\n\n\n\n\n\nWichtige Datenstrukturen\n\nVektor: geordnete Liste von Werten\n\nData Frame / tibble: Tabelle mit Zeilen (Fälle) und Spalten (Variablen)\n\n\n\nBeispiel\n\nlibrary(tibble)\n\nWarning: package 'tibble' was built under R version 4.4.3\n\ndf &lt;- tibble( name = c(\"Anna\", \"Ben\", \"Clara\"), alter = c(23, 25, 22), studierend = c(TRUE, TRUE, FALSE), speed = c(12.6, 10.1 ,9.5) )\n\ndf\n\n# A tibble: 3 × 4\n  name  alter studierend speed\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt;      &lt;dbl&gt;\n1 Anna     23 TRUE        12.6\n2 Ben      25 TRUE        10.1\n3 Clara    22 FALSE        9.5\n\n\nPlatzhalter\n\nstr(df) \n\ntibble [3 × 4] (S3: tbl_df/tbl/data.frame)\n $ name      : chr [1:3] \"Anna\" \"Ben\" \"Clara\"\n $ alter     : num [1:3] 23 25 22\n $ studierend: logi [1:3] TRUE TRUE FALSE\n $ speed     : num [1:3] 12.6 10.1 9.5\n\nsummary(df) \n\n     name               alter       studierend          speed      \n Length:3           Min.   :22.00   Mode :logical   Min.   : 9.50  \n Class :character   1st Qu.:22.50   FALSE:1         1st Qu.: 9.80  \n Mode  :character   Median :23.00   TRUE :2         Median :10.10  \n                    Mean   :23.33                   Mean   :10.73  \n                    3rd Qu.:24.00                   3rd Qu.:11.35  \n                    Max.   :25.00                   Max.   :12.60  \n\ndplyr::glimpse(df)\n\nRows: 3\nColumns: 4\n$ name       &lt;chr&gt; \"Anna\", \"Ben\", \"Clara\"\n$ alter      &lt;dbl&gt; 23, 25, 22\n$ studierend &lt;lgl&gt; TRUE, TRUE, FALSE\n$ speed      &lt;dbl&gt; 12.6, 10.1, 9.5\n\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 3 – Eigene Tabelle\n\n\n\n\nErstelle einen eigenen tibble mit\n\nmindestens 3 Variablen (z. B. fach, alter, geschlecht)\n\nmindestens 5 Fällen.\n\n\nUntersuche danach mit str() und summary() die Struktur."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#import",
+    "href": "workshops/ws1/workshop.html#import",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "4. Daten importieren",
+    "text": "4. Daten importieren\nWir verwenden Funktionen aus dem tidyverse, um Daten zu importieren und zu bearbeiten.\n\nlibrary(readr)# für CSV \nlibrary(readxl)# für Excel \n\nWarning: package 'readxl' was built under R version 4.4.3\n\nlibrary(haven) # für SPSS-Dateien\n\nWarning: package 'haven' was built under R version 4.4.3\n\n#Einfacher mit \nlibrary(tidyverse)\n\nWarning: package 'tidyverse' was built under R version 4.4.3\n\n\nWarning: package 'ggplot2' was built under R version 4.4.3\n\n\nWarning: package 'purrr' was built under R version 4.4.3\n\n\nWarning: package 'stringr' was built under R version 4.4.3\n\n\nWarning: package 'forcats' was built under R version 4.4.3\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ purrr     1.1.0\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tidyr     1.3.1\n✔ lubridate 1.9.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nPlatzhalter\n\n### CSV-Dateien einlesen\n\ndaten_csv &lt;- read_csv(\"data/workshop1-dataset.csv\")\n\ntext\n\n### Excel-Dateien einlesen\n\ndaten_xlsx &lt;- read_excel(\"data/workshop1-dataset.xlsx\")\n\ntext\n\n### SPSS-Dateien einlesen\n\ndaten_sav &lt;- read_sav(\"data/workshop1-dataset.sav\")\n\ntext\n\n\n\n\n\n\n\nWarningTypische Probleme & Lösungen\n\n\n\n\n\n\n\n\n\n\n\nProblem\nMögliche Ursache\nMögliche Lösung\n\n\n\n\ncannot open file\nfalscher Pfad\nProjektordner prüfen, Datei-Pfad anpassen\n\n\nUmlaute „kaputt“\nEncoding\nlocale = locale(encoding = \"UTF-8\") testen\n\n\nalles character\nTyp falsch erkannt\nnachträglich mit mutate() umwandeln\n\n\n\n\n\n\n\n\n\n\n\nNoteÜbung 4 – Datensatz importieren\n\n\n\n\nImportiere den bereitgestellten Übungsdatensatz.\n\nPrüfe: nrow(), ncol(), head(), summary().\n\nNotiere dir, welche Variablen welcher Art sind."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#aufbereitung",
+    "href": "workshops/ws1/workshop.html#aufbereitung",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "5. Datenaufbereitung mit dplyr",
+    "text": "5. Datenaufbereitung mit dplyr\nWir verwenden das Paket dplyr, um Daten lesbar zu transformieren.\n\nlibrary(dplyr)\n\nPlatzhalter\n\n\n\n\n\n\nImportant\n\n\n\nWichtige Funktionen:\n\nselect() – Variablen auswählen\n\nfilter() – Fälle auswählen\n\nmutate() – neue Variablen erstellen\n\narrange() – sortieren\n\nrename() – Variablen umbenennen\n\n\n\n\nBeispiel-Workflow\n\ndaten_clean &lt;- daten_csv |&gt; \n  select(id, alter, geschlecht, score) |&gt; \n  filter(alter &gt;= 18) |&gt; \n  mutate(score_z = as.numeric(scale(score))) |&gt; \n  arrange(desc(score_z))\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 5 – Erste Transformationen\n\n\n\n\nWähle 3–5 Variablen aus deinem Datensatz aus.\n\nFiltere alle Personen heraus, die jünger als 18 sind.\n\nErstelle eine neue Variable, z. B. eine kategorisierte Altersgruppe."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#fehlende-werte",
+    "href": "workshops/ws1/workshop.html#fehlende-werte",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "6. Fehlende Werte (NA)",
+    "text": "6. Fehlende Werte (NA)\nFehlende Werte werden in R als NA kodiert.\n\nNAs zählen\n\nsum(is.na(daten_csv$score))\n\nPlatzhalter\n\n\nAlle Zeilen mit NA in einer Variablen anzeigen\n\ndaten_csv |&gt; filter(is.na(score))\n\nPlatzhalter\n\n\nFehlercodes in NA umwandeln\n\ndaten_clean2 &lt;- daten_csv |&gt; \n  mutate( score = ifelse(score == 99, NA, score) )\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 6 – Missing Values\n\n\n\n\nFinde heraus, in welchen Variablen NAs vorkommen.\n\nIdentifiziere einen möglichen Fehlercode (z. B. 99, 999) und wandle ihn in NA um.\n\nDiskutiere Strategien (Löschen vs. Imputieren)."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#joins",
+    "href": "workshops/ws1/workshop.html#joins",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "7. Datensätze verbinden (Joins)",
+    "text": "7. Datensätze verbinden (Joins)\nOft liegen Daten in mehreren Tabellen vor (z. B. Stammdaten + Skalen).\n\n### Beispiel: `left_join()`\n\nstammdaten &lt;- tibble( id = c(1, 2, 3), alter = c(23, 25, 22) )\n\nskalen &lt;- tibble( id = c(1, 2, 3), depressions_score = c(10, 15, 8) )\n\ndaten_joined &lt;- left_join(stammdaten, skalen, by = \"id\") daten_joined\n\nPlatzhalter\n\n\n\n\n\n\nTipWeitere Join-Varianten\n\n\n\n\ninner_join() - behält alles links\nright_join()\n\nfull_join()\n\n\n\n\n\n\n\n\n\nNoteÜbung 7 – Tabellen verbinden\n\n\n\n\nErzeuge zwei kleine Tabellen mit einer gemeinsamen ID-Spalte.\n\nFühre sie mit left_join() zusammen.\n\nÜberlege: Was passiert, wenn ein ID-Wert nur in einer Tabelle vorkommt?"
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#workflow",
+    "href": "workshops/ws1/workshop.html#workflow",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "8. Reproduzierbare Workflows",
+    "text": "8. Reproduzierbare Workflows\nZiel ist ein gut dokumentierter, nachvollziehbarer Analyseschritt.\n\nProjektstruktur\n\n\n\n\n\n\nTipEine mögliche Struktur\n\n\n\n\nprojektname/\n\ndata/\n\nscripts/\n\noutput/\n\nprojektname.Rproj\n\n\n\nSkripte sinnvoll gliedern\n\n01_import.R\n\n02_cleaning.R\n\n03_analysis.R\n\n04_plots.R\n\n\n\n\n\n\nKommentare nutzen\nSchritt 1: Daten importieren daten &lt;- read_csv(“data/workshop1-dataset.csv”)\nSchritt 2: Bereinigung daten_clean &lt;- daten |&gt; filter(alter &gt;= 18)\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 8 – Dein eigenes Skript\n\n\n\n\nErstelle ein neues Skript, in dem du Import, erste Bereinigung und Export zusammenfasst.\n\nStrukturiere das Skript in logisch benannte Abschnitte."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#miniprojekt",
+    "href": "workshops/ws1/workshop.html#miniprojekt",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "9. Mini-Projekt: Eigener Datenaufbereitungs-Workflow",
+    "text": "9. Mini-Projekt: Eigener Datenaufbereitungs-Workflow\nIm Mini-Projekt kombinierst du die gelernten Schritte zu einem kleinen Workflow.\n\nZiel\nEin bereinigter Datensatz, der für eine einfache Analyse oder Visualisierung bereit ist.\n\n\n\n\n\n\nTipMöglicher Ablauf\n\n\n\n\nDaten importieren\n\nVariablen auswählen (select)\n\nFälle filtern (filter)\n\nFehlende Werte behandeln (is.na, ifelse, drop_na)\n\nNeue Variablen erstellen (mutate)\n\nDatensätze verbinden (falls notwendig, left_join)\n\nDatensatz exportieren (write_csv)\n\n\n\n\n### Beispiel: Export\n\nwrite_csv(daten_clean, \"output/workshop1_clean_data.csv\")\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 9 – Abschluss\n\n\n\n\nDokumentiere deinen gesamten Workflow in einem Skript.\n\nExportiere deinen finalen Datensatz in den Ordner output/.\n\nNotiere dir in eigenen Worten, welche Entscheidungen du bei der Bereinigung getroffen hast.\n\n\n\n\nEnde des Workshop-1-Inhaltmoduls.\nquarto preview git add . git commit -m “Änderungen” git push"
   },
   {
     "objectID": "workshops/ws1/day2.html",
@@ -77,7 +140,7 @@
     "href": "workshops/ws1/day2.html#fehlende-werte-identifizieren",
     "title": "Einführung in R & RStudio – Tag 2",
     "section": "Fehlende Werte identifizieren",
-    "text": "Fehlende Werte identifizieren\nBevor wir mit Berechnungen arbeiten, sollten wir immer prüfen, ob und wo fehlende Werte vorkommen. Dafür erstellen wir aus unserem Analysedatensatz df_analyse einen kleineren handlicheren Datensatz mit den Variablen die wir für unsere Analysen wirklich benötigen und nennen es df_analyse2.\nNehme folgende Variablen mit rein: - respid - wohnort - isced97 - work - dw15 - mstat - hhincc - disstress und dazugehörigen Variablen - soz.u und dazugehörigen Variablen\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf_analyse2 &lt;- df_analyse |&gt;\n  select(respid,age,sex,wohnort,isced97,work,dw15,\n         mstat,hhincc,hs04_r,hs06,hs07,hs05_r,hs09_r,distress,\n         im17_r,im18_r,im19_r,im20_r,im21_r,soz.u)\n\ndf_analyse2 |&gt;\n  head(10)\n\n# A tibble: 10 × 21\n   respid   age   sex wohnort isced97  work  dw15 mstat hhincc hs04_r  hs06\n    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1      1    54     2 Rural         5     1  35       5     10      3     3\n 2      2    53     1 Urban         5     1  62       5     19     NA    NA\n 3      3    89     2 Urban         4     4  NA       3     NA     NA    NA\n 4      4    79     1 Urban         5     4  NA       1     15      2     5\n 5      5    62     2 Rural         3     4  NA       1     19      3     2\n 6      6    23     1 Urban        NA     4  NA       5     12      4     3\n 7      7    31     2 Urban         6     2  32       5     23      5     3\n 8      8    57     2 Rural         5     1  39.5     1     20      3     4\n 9      9    68     1 Urban         5     4  NA       1     14      2     3\n10     10    51     2 Rural         3     2  30       5     NA      4     4\n# ℹ 10 more variables: hs07 &lt;dbl&gt;, hs05_r &lt;dbl&gt;, hs09_r &lt;dbl&gt;, distress &lt;dbl&gt;,\n#   im17_r &lt;dbl&gt;, im18_r &lt;dbl&gt;, im19_r &lt;dbl&gt;, im20_r &lt;dbl&gt;, im21_r &lt;dbl&gt;,\n#   soz.u &lt;dbl&gt;\n\n\n\n\n\n\n\n\n\n\n\nImportantHinweis\n\n\n\n\n\n\nSchaut im Codebuch nach, was die Variablen bedeuten.\nAchtet darauf, dass ihr die richtigen Variablennamen nehmt!\n\n\n\n\nWir schauen nun unseren Datensatz an:\n\nBase RPackage naniar\n\n\n\nis.na(df_analyse2)\n\n\n\n\n\n\n\nCautionAchtung\n\n\n\nSehr unübersichtlich, da R hier für jede Zeile und jeder Variable einen logischen Vektor mit TRUEoder FALSE erstellt.\n\n\n\n\n\ninstall.packages(\"naniar\", repos=\"https://cloud.r-project.org\")\n\nlibrary(naniar)\n\nany_na(df_analyse2)\n\n[1] TRUE\n\n\n\n\n\n\n\n\nCautionHinweis\n\n\n\nMit diesem Befehl, bekommen wir eine schnelle Rückmeldung, ob unser Datensatz fehlende Werte hat.\n\n\n\n\n\n\nEinzelne Variable prüfen\n\n\nBase RPackage naniar\n\n\n\nis.na(df_analyse2$age)\n\n\n\n\n\n\n\nCautionAchtung\n\n\n\nSehr unübersichtlich, da R hier für **jede Zeile einen logischen Vektor mit TRUEoder FALSE erstellt.\n\n\n\n\n\nany_na(df_analyse2$age)\n\n[1] TRUE\n\n\n\n\n\n\n\n\nCautionHinweis\n\n\n\nMit diesem Befehl, bekommen wir eine schnelle Rückmeldung, ob in er spezifischen Variable fehlende Werte hat.\n\n\n\n\n\nUm herauszufinden, wie viele fehlende Werte die Variable hat, gehen wir wie folgt vor:\n\nBase RPackage naniar\n\n\n\nsum(is.na(df_analyse2$age))\n\n[1] 41\n\n\n\n\n\nn_miss(df_analyse2$age)\n\n[1] 41\n\n\n\n\n\n\n\nÜberblick mehrer Variablen\n\nWir können auch mehrere spezifische Variablen anschauen:\n\nBase RÜberblick (grafisch)\n\n\n\ndf_analyse2 |&gt;\n  summarise(\n    across(\n      c(distress, soz.u),\n      ~ sum(is.na(.))\n    )\n  )\n\n# A tibble: 1 × 2\n  distress soz.u\n     &lt;int&gt; &lt;int&gt;\n1     1829   339\n\n\n\n\n\n\n\n\nNote\n\n\n\nHier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable existieren.\n\n\n\n\n\ngg_miss_var(df_analyse2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nHier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable im gesamten Datensatz sind.",
+    "text": "Fehlende Werte identifizieren\nBevor wir mit Berechnungen arbeiten, sollten wir immer prüfen, ob und wo fehlende Werte vorkommen. Dafür erstellen wir aus unserem Analysedatensatz df_analyse einen kleineren handlicheren Datensatz mit den Variablen die wir für unsere Analysen wirklich benötigen und nennen es df_analyse2.\nNehme folgende Variablen mit rein: - respid - wohnort - isced97 - work - dw15 - mstat - hhincc - disstress und dazugehörigen Variablen - soz.u und dazugehörigen Variablen\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf_analyse2 &lt;- df_analyse |&gt;\n  select(respid,age,sex,wohnort,isced97,work,dw15,\n         mstat,hhincc,hs04_r,hs06,hs07,hs05_r,hs09_r,distress,\n         im17_r,im18_r,im19_r,im20_r,im21_r,soz.u)\n\ndf_analyse2 |&gt;\n  head(10)\n\n# A tibble: 10 × 21\n   respid   age   sex wohnort isced97  work  dw15 mstat hhincc hs04_r  hs06\n    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1      1    54     2 Rural         5     1  35       5     10      3     3\n 2      2    53     1 Urban         5     1  62       5     19     NA    NA\n 3      3    89     2 Urban         4     4  NA       3     NA     NA    NA\n 4      4    79     1 Urban         5     4  NA       1     15      2     5\n 5      5    62     2 Rural         3     4  NA       1     19      3     2\n 6      6    23     1 Urban        NA     4  NA       5     12      4     3\n 7      7    31     2 Urban         6     2  32       5     23      5     3\n 8      8    57     2 Rural         5     1  39.5     1     20      3     4\n 9      9    68     1 Urban         5     4  NA       1     14      2     3\n10     10    51     2 Rural         3     2  30       5     NA      4     4\n# ℹ 10 more variables: hs07 &lt;dbl&gt;, hs05_r &lt;dbl&gt;, hs09_r &lt;dbl&gt;, distress &lt;dbl&gt;,\n#   im17_r &lt;dbl&gt;, im18_r &lt;dbl&gt;, im19_r &lt;dbl&gt;, im20_r &lt;dbl&gt;, im21_r &lt;dbl&gt;,\n#   soz.u &lt;dbl&gt;\n\n\n\n\n\n\n\n\n\n\n\nImportantHinweis\n\n\n\n\n\n\nSchaut im Codebuch nach, was die Variablen bedeuten.\nAchtet darauf, dass ihr die richtigen Variablennamen nehmt!\n\n\n\n\nWir schauen nun unseren Datensatz an:\n\nBase RPackage naniar\n\n\n\nis.na(df_analyse2)\n\n\n\n\n\n\n\nCautionAchtung\n\n\n\nSehr unübersichtlich, da R hier für jede Zeile und jeder Variable einen logischen Vektor mit TRUEoder FALSE erstellt.\n\n\n\n\n\ninstall.packages(\"naniar\", repos=\"https://cloud.r-project.org\")\n\npackage 'naniar' successfully unpacked and MD5 sums checked\n\nThe downloaded binary packages are in\n    C:\\Users\\farugie\\AppData\\Local\\Temp\\Rtmp8W8T8G\\downloaded_packages\n\nlibrary(naniar)\n\nany_na(df_analyse2)\n\n[1] TRUE\n\n\n\n\n\n\n\n\nCautionHinweis\n\n\n\nMit diesem Befehl, bekommen wir eine schnelle Rückmeldung, ob unser Datensatz fehlende Werte hat.\n\n\n\n\n\n\nEinzelne Variable prüfen\n\n\nBase RPackage naniar\n\n\n\nis.na(df_analyse2$age)\n\n\n\n\n\n\n\nCautionAchtung\n\n\n\nSehr unübersichtlich, da R hier für **jede Zeile einen logischen Vektor mit TRUEoder FALSE erstellt.\n\n\n\n\n\nany_na(df_analyse2$age)\n\n[1] TRUE\n\n\n\n\n\n\n\n\nCautionHinweis\n\n\n\nMit diesem Befehl, bekommen wir eine schnelle Rückmeldung, ob in er spezifischen Variable fehlende Werte hat.\n\n\n\n\n\nUm herauszufinden, wie viele fehlende Werte die Variable hat, gehen wir wie folgt vor:\n\nBase RPackage naniar\n\n\n\nsum(is.na(df_analyse2$age))\n\n[1] 41\n\n\n\n\n\nn_miss(df_analyse2$age)\n\n[1] 41\n\n\n\n\n\n\n\nÜberblick mehrer Variablen\n\nWir können auch mehrere spezifische Variablen anschauen:\n\nBase RÜberblick (grafisch)\n\n\n\ndf_analyse2 |&gt;\n  summarise(\n    across(\n      c(distress, soz.u),\n      ~ sum(is.na(.))\n    )\n  )\n\n# A tibble: 1 × 2\n  distress soz.u\n     &lt;int&gt; &lt;int&gt;\n1     1829   339\n\n\n\n\n\n\n\n\nNote\n\n\n\nHier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable existieren.\n\n\n\n\n\ngg_miss_var(df_analyse2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nHier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable im gesamten Datensatz sind.",
     "crumbs": [
       "Home",
       "Zum Workshop - Tag 2"
@@ -194,74 +257,39 @@
     ]
   },
   {
-    "objectID": "workshops/ws1/workshop.html",
-    "href": "workshops/ws1/workshop.html",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "objectID": "test.html",
+    "href": "test.html",
+    "title": "Test – Sidebar Proof",
     "section": "",
-    "text": "Dieser Teil enthält die inhaltlichen Materialien zum Workshop „Einführung in R & RStudio“.\nEr ist so aufgebaut, dass du ihn als Begleitunterlage im Workshop oder zur Nachbereitung nutzen kannst.\n\n\n\nR ist eine freie Programmiersprache für statistische Analysen, Visualisierung und Datenverarbeitung.\nRStudio ist eine integrierte Entwicklungsumgebung (IDE), die die Arbeit mit R übersichtlicher und komfortabler macht.\n\n\nTypischerweise besteht RStudio aus vier Bereichen („Panes“):\n\nSource / Editor – hier schreibst du Skripte (.R, .qmd usw.).\n\nConsole – hier werden Befehle direkt ausgeführt.\n\nEnvironment / History – hier siehst du deine Objekte und Befehls-Historie.\n\nFiles / Plots / Packages / Help / Viewer – Dateien, Grafiken, installierte Pakete, Hilfe usw.\n\n\n\n\n\n2 + 2\n\n[1] 4\n\n10 / 3\n\n[1] 3.333333\n\nsqrt(49)\n\n[1] 7\n\n\nPLATZHALTER\n\n\n\n\n\n\nNoteÜbung 1 – R als Taschenrechner\n\n\n\n\nBerechne: 5^2 + 3.\n\nWas ergibt sqrt(144)*75?\n\nFühre die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus."
+    "text": "Das ist Abschnitt A."
   },
   {
-    "objectID": "workshops/ws1/workshop.html#einleitung",
-    "href": "workshops/ws1/workshop.html#einleitung",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "objectID": "test.html#a",
+    "href": "test.html#a",
+    "title": "Test – Sidebar Proof",
     "section": "",
-    "text": "R ist eine freie Programmiersprache für statistische Analysen, Visualisierung und Datenverarbeitung.\nRStudio ist eine integrierte Entwicklungsumgebung (IDE), die die Arbeit mit R übersichtlicher und komfortabler macht.\n\n\nTypischerweise besteht RStudio aus vier Bereichen („Panes“):\n\nSource / Editor – hier schreibst du Skripte (.R, .qmd usw.).\n\nConsole – hier werden Befehle direkt ausgeführt.\n\nEnvironment / History – hier siehst du deine Objekte und Befehls-Historie.\n\nFiles / Plots / Packages / Help / Viewer – Dateien, Grafiken, installierte Pakete, Hilfe usw.\n\n\n\n\n\n2 + 2\n\n[1] 4\n\n10 / 3\n\n[1] 3.333333\n\nsqrt(49)\n\n[1] 7\n\n\nPLATZHALTER\n\n\n\n\n\n\nNoteÜbung 1 – R als Taschenrechner\n\n\n\n\nBerechne: 5^2 + 3.\n\nWas ergibt sqrt(144)*75?\n\nFühre die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus."
+    "text": "Das ist Abschnitt A."
   },
   {
-    "objectID": "workshops/ws1/workshop.html#objekte-anlegen",
-    "href": "workshops/ws1/workshop.html#objekte-anlegen",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "Objekte anlegen",
-    "text": "Objekte anlegen\n\nx &lt;- 5\ny &lt;- c(1, 2, 3, 4, 5)\n\n\n\n\n\n\n\nNote\n\n\n\nHinweis\n\n&lt;- ist der Zuweisungspfeil („wird zugewiesen“).\n\ny ist ein Vektor aus mehreren Zahlen.\n\n\n\n\nFunktionen verwenden\n\nmean(y)\n\n[1] 3\n\nsum(y)\n\n[1] 15\n\nlength(y)\n\n[1] 5\n\nround(3.14159, digits = 2)\n\n[1] 3.14\n\n\n\n\n\n\n\n\nNoteÜbung 2 – Objekte & Funktionen\n\n\n\n\nErstelle ein Objekt z mit mindestens fünf Zahlen.\n\nBerechne Mittelwert, Summe und Länge von z.\n\nErzeuge ein Objekt pi_gerundet, das pi auf 3 Nachkommastellen rundet.\n\n\n\n\n\n\n\n\n\nWarningHäufige Fehler\n\n\n\n\nFunktion falsch geschrieben: Mean(y) statt mean(y)\n\nKlammern vergessen: mean y statt mean(y)\n\n&lt;- vergessen oder = inkonsistent verwendet\n\nIm falschen Fenster tippen (Konsole statt Skript oder umgekehrt)"
+    "objectID": "test.html#b",
+    "href": "test.html#b",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt B",
+    "text": "Abschnitt B\nDas ist Abschnitt B."
   },
   {
-    "objectID": "workshops/ws1/workshop.html#datentypen",
-    "href": "workshops/ws1/workshop.html#datentypen",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "3. Datentypen & Datenstrukturen",
-    "text": "3. Datentypen & Datenstrukturen\n\nWichtige Datentypen\n\n\n\n\n\n\nNote\n\n\n\n\nnumeric / double (Kommazahlen)\n\ninteger (Ganze Zahlen, z.B. 1L)\n\ncharacter (Text)\n\nlogical (TRUE/FALSE)\n\nfactor (kategorische Daten)\n\n\n\n\n\nWichtige Datenstrukturen\n\nVektor: geordnete Liste von Werten\n\nData Frame / tibble: Tabelle mit Zeilen (Fälle) und Spalten (Variablen)\n\n\n\nBeispiel\n\nlibrary(tibble)\n\ndf &lt;- tibble( name = c(\"Anna\", \"Ben\", \"Clara\"), alter = c(23, 25, 22), studierend = c(TRUE, TRUE, FALSE), speed = c(12.6, 10.1 ,9.5) )\n\ndf\n\n# A tibble: 3 × 4\n  name  alter studierend speed\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt;      &lt;dbl&gt;\n1 Anna     23 TRUE        12.6\n2 Ben      25 TRUE        10.1\n3 Clara    22 FALSE        9.5\n\n\nPlatzhalter\n\nstr(df) \n\ntibble [3 × 4] (S3: tbl_df/tbl/data.frame)\n $ name      : chr [1:3] \"Anna\" \"Ben\" \"Clara\"\n $ alter     : num [1:3] 23 25 22\n $ studierend: logi [1:3] TRUE TRUE FALSE\n $ speed     : num [1:3] 12.6 10.1 9.5\n\nsummary(df) \n\n     name               alter       studierend          speed      \n Length:3           Min.   :22.00   Mode :logical   Min.   : 9.50  \n Class :character   1st Qu.:22.50   FALSE:1         1st Qu.: 9.80  \n Mode  :character   Median :23.00   TRUE :2         Median :10.10  \n                    Mean   :23.33                   Mean   :10.73  \n                    3rd Qu.:24.00                   3rd Qu.:11.35  \n                    Max.   :25.00                   Max.   :12.60  \n\ndplyr::glimpse(df)\n\nRows: 3\nColumns: 4\n$ name       &lt;chr&gt; \"Anna\", \"Ben\", \"Clara\"\n$ alter      &lt;dbl&gt; 23, 25, 22\n$ studierend &lt;lgl&gt; TRUE, TRUE, FALSE\n$ speed      &lt;dbl&gt; 12.6, 10.1, 9.5\n\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 3 – Eigene Tabelle\n\n\n\n\nErstelle einen eigenen tibble mit\n\nmindestens 3 Variablen (z. B. fach, alter, geschlecht)\n\nmindestens 5 Fällen.\n\n\nUntersuche danach mit str() und summary() die Struktur."
+    "objectID": "test.html#c",
+    "href": "test.html#c",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt C",
+    "text": "Abschnitt C\nDas ist Abschnitt C."
   },
   {
-    "objectID": "workshops/ws1/workshop.html#import",
-    "href": "workshops/ws1/workshop.html#import",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "4. Daten importieren",
-    "text": "4. Daten importieren\nWir verwenden Funktionen aus dem tidyverse, um Daten zu importieren und zu bearbeiten.\n\nlibrary(readr)# für CSV \nlibrary(readxl)# für Excel \nlibrary(haven) # für SPSS-Dateien\n\n#Einfacher mit \nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ purrr     1.2.1\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.1     ✔ tidyr     1.3.2\n✔ lubridate 1.9.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nPlatzhalter\n\n### CSV-Dateien einlesen\n\ndaten_csv &lt;- read_csv(\"data/workshop1-dataset.csv\")\n\ntext\n\n### Excel-Dateien einlesen\n\ndaten_xlsx &lt;- read_excel(\"data/workshop1-dataset.xlsx\")\n\ntext\n\n### SPSS-Dateien einlesen\n\ndaten_sav &lt;- read_sav(\"data/workshop1-dataset.sav\")\n\ntext\n\n\n\n\n\n\n\nWarningTypische Probleme & Lösungen\n\n\n\n\n\n\n\n\n\n\n\nProblem\nMögliche Ursache\nMögliche Lösung\n\n\n\n\ncannot open file\nfalscher Pfad\nProjektordner prüfen, Datei-Pfad anpassen\n\n\nUmlaute „kaputt“\nEncoding\nlocale = locale(encoding = \"UTF-8\") testen\n\n\nalles character\nTyp falsch erkannt\nnachträglich mit mutate() umwandeln\n\n\n\n\n\n\n\n\n\n\n\nNoteÜbung 4 – Datensatz importieren\n\n\n\n\nImportiere den bereitgestellten Übungsdatensatz.\n\nPrüfe: nrow(), ncol(), head(), summary().\n\nNotiere dir, welche Variablen welcher Art sind."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#aufbereitung",
-    "href": "workshops/ws1/workshop.html#aufbereitung",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "5. Datenaufbereitung mit dplyr",
-    "text": "5. Datenaufbereitung mit dplyr\nWir verwenden das Paket dplyr, um Daten lesbar zu transformieren.\n\nlibrary(dplyr)\n\nPlatzhalter\n\n\n\n\n\n\nImportant\n\n\n\nWichtige Funktionen:\n\nselect() – Variablen auswählen\n\nfilter() – Fälle auswählen\n\nmutate() – neue Variablen erstellen\n\narrange() – sortieren\n\nrename() – Variablen umbenennen\n\n\n\n\nBeispiel-Workflow\n\ndaten_clean &lt;- daten_csv |&gt; \n  select(id, alter, geschlecht, score) |&gt; \n  filter(alter &gt;= 18) |&gt; \n  mutate(score_z = as.numeric(scale(score))) |&gt; \n  arrange(desc(score_z))\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 5 – Erste Transformationen\n\n\n\n\nWähle 3–5 Variablen aus deinem Datensatz aus.\n\nFiltere alle Personen heraus, die jünger als 18 sind.\n\nErstelle eine neue Variable, z. B. eine kategorisierte Altersgruppe."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#fehlende-werte",
-    "href": "workshops/ws1/workshop.html#fehlende-werte",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "6. Fehlende Werte (NA)",
-    "text": "6. Fehlende Werte (NA)\nFehlende Werte werden in R als NA kodiert.\n\nNAs zählen\n\nsum(is.na(daten_csv$score))\n\nPlatzhalter\n\n\nAlle Zeilen mit NA in einer Variablen anzeigen\n\ndaten_csv |&gt; filter(is.na(score))\n\nPlatzhalter\n\n\nFehlercodes in NA umwandeln\n\ndaten_clean2 &lt;- daten_csv |&gt; \n  mutate( score = ifelse(score == 99, NA, score) )\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 6 – Missing Values\n\n\n\n\nFinde heraus, in welchen Variablen NAs vorkommen.\n\nIdentifiziere einen möglichen Fehlercode (z. B. 99, 999) und wandle ihn in NA um.\n\nDiskutiere Strategien (Löschen vs. Imputieren)."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#joins",
-    "href": "workshops/ws1/workshop.html#joins",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "7. Datensätze verbinden (Joins)",
-    "text": "7. Datensätze verbinden (Joins)\nOft liegen Daten in mehreren Tabellen vor (z. B. Stammdaten + Skalen).\n\n### Beispiel: `left_join()`\n\nstammdaten &lt;- tibble( id = c(1, 2, 3), alter = c(23, 25, 22) )\n\nskalen &lt;- tibble( id = c(1, 2, 3), depressions_score = c(10, 15, 8) )\n\ndaten_joined &lt;- left_join(stammdaten, skalen, by = \"id\") daten_joined\n\nPlatzhalter\n\n\n\n\n\n\nTipWeitere Join-Varianten\n\n\n\n\ninner_join() - behält alles links\nright_join()\n\nfull_join()\n\n\n\n\n\n\n\n\n\nNoteÜbung 7 – Tabellen verbinden\n\n\n\n\nErzeuge zwei kleine Tabellen mit einer gemeinsamen ID-Spalte.\n\nFühre sie mit left_join() zusammen.\n\nÜberlege: Was passiert, wenn ein ID-Wert nur in einer Tabelle vorkommt?"
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#workflow",
-    "href": "workshops/ws1/workshop.html#workflow",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "8. Reproduzierbare Workflows",
-    "text": "8. Reproduzierbare Workflows\nZiel ist ein gut dokumentierter, nachvollziehbarer Analyseschritt.\n\nProjektstruktur\n\n\n\n\n\n\nTipEine mögliche Struktur\n\n\n\n\nprojektname/\n\ndata/\n\nscripts/\n\noutput/\n\nprojektname.Rproj\n\n\n\nSkripte sinnvoll gliedern\n\n01_import.R\n\n02_cleaning.R\n\n03_analysis.R\n\n04_plots.R\n\n\n\n\n\n\nKommentare nutzen\nSchritt 1: Daten importieren daten &lt;- read_csv(“data/workshop1-dataset.csv”)\nSchritt 2: Bereinigung daten_clean &lt;- daten |&gt; filter(alter &gt;= 18)\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 8 – Dein eigenes Skript\n\n\n\n\nErstelle ein neues Skript, in dem du Import, erste Bereinigung und Export zusammenfasst.\n\nStrukturiere das Skript in logisch benannte Abschnitte."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#miniprojekt",
-    "href": "workshops/ws1/workshop.html#miniprojekt",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "9. Mini-Projekt: Eigener Datenaufbereitungs-Workflow",
-    "text": "9. Mini-Projekt: Eigener Datenaufbereitungs-Workflow\nIm Mini-Projekt kombinierst du die gelernten Schritte zu einem kleinen Workflow.\n\nZiel\nEin bereinigter Datensatz, der für eine einfache Analyse oder Visualisierung bereit ist.\n\n\n\n\n\n\nTipMöglicher Ablauf\n\n\n\n\nDaten importieren\n\nVariablen auswählen (select)\n\nFälle filtern (filter)\n\nFehlende Werte behandeln (is.na, ifelse, drop_na)\n\nNeue Variablen erstellen (mutate)\n\nDatensätze verbinden (falls notwendig, left_join)\n\nDatensatz exportieren (write_csv)\n\n\n\n\n### Beispiel: Export\n\nwrite_csv(daten_clean, \"output/workshop1_clean_data.csv\")\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 9 – Abschluss\n\n\n\n\nDokumentiere deinen gesamten Workflow in einem Skript.\n\nExportiere deinen finalen Datensatz in den Ordner output/.\n\nNotiere dir in eigenen Worten, welche Entscheidungen du bei der Bereinigung getroffen hast.\n\n\n\n\nEnde des Workshop-1-Inhaltmoduls.\nquarto preview git add . git commit -m “Änderungen” git push"
+    "objectID": "test.html#D",
+    "href": "test.html#D",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt D",
+    "text": "Abschnitt D\nDas ist Abschnitt D."
   },
   {
     "objectID": "index.html",
@@ -271,25 +299,11 @@
     "text": "Willkommen auf meiner Workshop-Seite!\nHier findest du Infos zu meinen Methoden-Workshops.\n\n🔍 Aktuelle Workshops\n\n\nEinführung in R & RStudio\n\n\n\n📬 Kontakt\n\nBei Fragen, Wünschen und Anregungen erreichst du mich jederzeit unter: farugie[at]psych.uni-frankfurt.de"
   },
   {
-    "objectID": "workshops/ws1/index.html",
-    "href": "workshops/ws1/index.html",
-    "title": "Einführung in R & RStudio",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Über mich",
     "section": "",
-    "text": "Der zweitägige Workshop „Einführung in R & RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nIm Workshop lernen die Teilnehmenden Schritt für Schritt:\n\nwie RStudio aufgebaut ist und wie man sicher darin arbeitet,\nwie R „denkt“ (Objekte, Datentypen, Datenstrukturen),\nwie Daten importiert und plausibilisiert werden,\nund wie man einen ersten Analyse-Workflow umsetzt (Umkodieren, Skalen bilden, Joins, Umgang mit NA).\n\nDer Schwerpunkt liegt auf praxisnahen Beispielen und einem reproduzierbaren Workflow, der später in eigenen Projekten weiterverwendet werden kann.\nBenötigte Vorkenntnisse: keine."
-  },
-  {
-    "objectID": "workshops/ws1/index.html#tag-1-grundlagen",
-    "href": "workshops/ws1/index.html#tag-1-grundlagen",
-    "title": "Einführung in R & RStudio",
-    "section": "Tag 1 – Grundlagen",
-    "text": "Tag 1 – Grundlagen\n\nAnkommen & Setup\n\nWas ist R und RStudio?\nGrundprinzipien von R\n\nDatenimport & Überblick\n\nErste Schritte der Datenaufbereitung"
-  },
-  {
-    "objectID": "workshops/ws1/index.html#tag-2---datenaufbereitung",
-    "href": "workshops/ws1/index.html#tag-2---datenaufbereitung",
-    "title": "Einführung in R & RStudio",
-    "section": "Tag 2 - Datenaufbereitung",
-    "text": "Tag 2 - Datenaufbereitung\n\nRecap & offene Fragen\nUmkodieren\nDatensätze zusammenführen\n\nFehlende Werte\nWorkflows\n\nMini-Projekt\n\n\n➡️ Weiter zu Tag 1 - ➡️ Weiter zu Tag 2"
+    "text": "Hallo! Ich bin Arieja Farugie, diese Seite befindet sich im Aufbau."
   },
   {
     "objectID": "workshops/ws1/day1.html",
@@ -490,38 +504,24 @@
     ]
   },
   {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "Test – Sidebar Proof",
+    "objectID": "workshops/ws1/index.html",
+    "href": "workshops/ws1/index.html",
+    "title": "Einführung in R & RStudio",
     "section": "",
-    "text": "Das ist Abschnitt A."
+    "text": "Der zweitägige Workshop „Einführung in R & RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nIm Workshop lernen die Teilnehmenden Schritt für Schritt:\n\nwie RStudio aufgebaut ist und wie man sicher darin arbeitet,\nwie R „denkt“ (Objekte, Datentypen, Datenstrukturen),\nwie Daten importiert und plausibilisiert werden,\nund wie man einen ersten Analyse-Workflow umsetzt (Umkodieren, Skalen bilden, Joins, Umgang mit NA).\n\nDer Schwerpunkt liegt auf praxisnahen Beispielen und einem reproduzierbaren Workflow, der später in eigenen Projekten weiterverwendet werden kann.\nBenötigte Vorkenntnisse: keine."
   },
   {
-    "objectID": "test.html#a",
-    "href": "test.html#a",
-    "title": "Test – Sidebar Proof",
-    "section": "",
-    "text": "Das ist Abschnitt A."
+    "objectID": "workshops/ws1/index.html#tag-1-grundlagen",
+    "href": "workshops/ws1/index.html#tag-1-grundlagen",
+    "title": "Einführung in R & RStudio",
+    "section": "Tag 1 – Grundlagen",
+    "text": "Tag 1 – Grundlagen\n\nAnkommen & Setup\n\nWas ist R und RStudio?\nGrundprinzipien von R\n\nDatenimport & Überblick\n\nErste Schritte der Datenaufbereitung"
   },
   {
-    "objectID": "test.html#b",
-    "href": "test.html#b",
-    "title": "Test – Sidebar Proof",
-    "section": "Abschnitt B",
-    "text": "Abschnitt B\nDas ist Abschnitt B."
-  },
-  {
-    "objectID": "test.html#c",
-    "href": "test.html#c",
-    "title": "Test – Sidebar Proof",
-    "section": "Abschnitt C",
-    "text": "Abschnitt C\nDas ist Abschnitt C."
-  },
-  {
-    "objectID": "test.html#D",
-    "href": "test.html#D",
-    "title": "Test – Sidebar Proof",
-    "section": "Abschnitt D",
-    "text": "Abschnitt D\nDas ist Abschnitt D."
+    "objectID": "workshops/ws1/index.html#tag-2---datenaufbereitung",
+    "href": "workshops/ws1/index.html#tag-2---datenaufbereitung",
+    "title": "Einführung in R & RStudio",
+    "section": "Tag 2 - Datenaufbereitung",
+    "text": "Tag 2 - Datenaufbereitung\n\nRecap & offene Fragen\nUmkodieren\nDatensätze zusammenführen\n\nFehlende Werte\nWorkflows\n\nMini-Projekt\n\n\n➡️ Weiter zu Tag 1 - ➡️ Weiter zu Tag 2"
   }
 ]
