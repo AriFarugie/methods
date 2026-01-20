@@ -278,18 +278,18 @@
     "text": "Der zweitägige Workshop „Einführung in R & RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nIm Workshop lernen die Teilnehmenden Schritt für Schritt:\n\nwie RStudio aufgebaut ist und wie man sicher darin arbeitet,\nwie R „denkt“ (Objekte, Datentypen, Datenstrukturen),\nwie Daten importiert und plausibilisiert werden,\nund wie man einen ersten Analyse-Workflow umsetzt (Umkodieren, Skalen bilden, Joins, Umgang mit NA).\n\nDer Schwerpunkt liegt auf praxisnahen Beispielen und einem reproduzierbaren Workflow, der später in eigenen Projekten weiterverwendet werden kann.\nBenötigte Vorkenntnisse: keine."
   },
   {
-    "objectID": "workshops/ws1/index.html#tag-1-grundlagen-erster-workflow",
-    "href": "workshops/ws1/index.html#tag-1-grundlagen-erster-workflow",
+    "objectID": "workshops/ws1/index.html#tag-1-grundlagen",
+    "href": "workshops/ws1/index.html#tag-1-grundlagen",
     "title": "Einführung in R & RStudio",
-    "section": "Tag 1 – Grundlagen & erster Workflow",
-    "text": "Tag 1 – Grundlagen & erster Workflow\n\nAnkommen & Setup\n\nWas ist R und RStudio?\nGrundprinzipien von R\n\nDatenimport & Überblick\n\nDatenaufbereitung"
+    "section": "Tag 1 – Grundlagen",
+    "text": "Tag 1 – Grundlagen\n\nAnkommen & Setup\n\nWas ist R und RStudio?\nGrundprinzipien von R\n\nDatenimport & Überblick\n\nErste Schritte der Datenaufbereitung"
   },
   {
-    "objectID": "workshops/ws1/index.html#tag-2-datenaufbereitung-in-der-praxis",
-    "href": "workshops/ws1/index.html#tag-2-datenaufbereitung-in-der-praxis",
+    "objectID": "workshops/ws1/index.html#tag-2---datenaufbereitung",
+    "href": "workshops/ws1/index.html#tag-2---datenaufbereitung",
     "title": "Einführung in R & RStudio",
-    "section": "Tag 2 – Datenaufbereitung in der Praxis",
-    "text": "Tag 2 – Datenaufbereitung in der Praxis\n\nRecap & offene Fragen\nUmkodieren\nDatensätze zusammenführen\n\nFehlende Werte\nWorkflows\n\nMini-Projekt\n\n\n➡️ Weiter zu Tag 1 - ➡️ Weiter zu Tag 2"
+    "section": "Tag 2 - Datenaufbereitung",
+    "text": "Tag 2 - Datenaufbereitung\n\nRecap & offene Fragen\nUmkodieren\nDatensätze zusammenführen\n\nFehlende Werte\nWorkflows\n\nMini-Projekt\n\n\n➡️ Weiter zu Tag 1 - ➡️ Weiter zu Tag 2"
   },
   {
     "objectID": "workshops/ws1/day1.html",
@@ -307,7 +307,7 @@
     "href": "workshops/ws1/day1.html#r-gui---erste-ansicht",
     "title": "Einführung in R & RStudio – Tag 1",
     "section": "R GUI - erste Ansicht",
-    "text": "R GUI - erste Ansicht\nSchauen wir uns zunächst die R Oberfläche (ohne RStudio) an.\n\n\n\n\n\n\n\nWas sehen wir hier?\n\nLinkes Bild\n\nDie “normale” R Oberfläche\n\nSie besteht zunächst nur aus einer R Console\n\n\nRechtes Bild\n\nDie R Console\n\nHier werden Befehle direkt eingegeben\nErgebnisse erscheinen sofort darunter\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nHinweis\nAlles, was du in die Konsole eingibst, wird sofort von R ausgeführt. Das Ergebnis siehst du direkt unter der eingegebenen Zeile.\nBeispiel\n\ngib 13ein\ngib a ein\ngib 13+15\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nABER\nWir brauchen R GUI nicht, sondern nutzen RStudio!",
+    "text": "R GUI - erste Ansicht\nSchauen wir uns zunächst die R Oberfläche (ohne RStudio) an.\n\n\n\n\n\n\n\nWas sehen wir hier?\n\nLinkes Bild\n\nDie “normale” R Oberfläche\n\nSie besteht zunächst nur aus einer R Console\n\n\nRechtes Bild\n\nDie R Console\n\nHier werden Befehle direkt eingegeben\nErgebnisse erscheinen sofort darunter\n\n\n\n\n\n\n\n\n\nNoteHinweis\n\n\n\nAlles, was du in die Konsole eingibst, wird sofort von R ausgeführt. Das Ergebnis siehst du direkt unter der eingegebenen Zeile.\nBeispiel\n\ngib 13ein\ngib a ein\ngib 13+15\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nABER\nWir brauchen R GUI nicht, sondern nutzen RStudio!",
     "crumbs": [
       "Home",
       "Zum Workshop - Tag 1"
@@ -472,7 +472,7 @@
     "href": "workshops/ws1/day1.html#pipes",
     "title": "Einführung in R & RStudio – Tag 1",
     "section": "Pipes",
-    "text": "Pipes\nPipes in R sind ein Operator (z.B. %&gt;% oder |&gt;), mit dem das Ergebnis eines Schritts direkt an den nächsten Befehl „weitergereicht“ wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich Datenbearbeitungsschritte wie in einer Kette von links nach rechts lesen, was den Code meist kürzer und besser lesbar macht, besonders im Tidyverse-Kontext.\nMan kann sich Pipes vorstellen wie die Röhren (Pipes) aus Super Mario:\n\n\n#| echo: true\n\ndf_2var &lt;- df_csv |&gt;\nselect(age, sex) |&gt;\nfilter(age &gt;= 30)\n\ndf_2var\n\n# A tibble: 4,683 × 2\n     age   sex\n   &lt;dbl&gt; &lt;dbl&gt;\n 1    54     2\n 2    53     1\n 3    89     2\n 4    79     1\n 5    62     2\n 6    31     2\n 7    57     2\n 8    68     1\n 9    51     2\n10    57     1\n# ℹ 4,673 more rows\n\n\nWie wir sehen, haben wir eine klare Struktur und wir müssen den Befehlen innerhalb unserer eigenen Pipes nicht dauernd “erklären”, welchen Datensatz wir heranziehen!",
+    "text": "Pipes\nPipes in R sind ein Operator (z.B. %&gt;% oder |&gt;), mit dem das Ergebnis eines Schritts direkt an den nächsten Befehl „weitergereicht“ wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich Datenbearbeitungsschritte wie in einer Kette von links nach rechts lesen, was den Code meist kürzer und besser lesbar macht, besonders im tidyverse-Kontext.\nMan kann sich Pipes vorstellen wie die Röhren (Pipes) aus Super Mario:\n\n\n#| echo: true\n\ndf_2var &lt;- df_csv |&gt;\nselect(age, sex) |&gt;\nfilter(age &gt;= 30)\n\ndf_2var\n\n# A tibble: 4,683 × 2\n     age   sex\n   &lt;dbl&gt; &lt;dbl&gt;\n 1    54     2\n 2    53     1\n 3    89     2\n 4    79     1\n 5    62     2\n 6    31     2\n 7    57     2\n 8    68     1\n 9    51     2\n10    57     1\n# ℹ 4,673 more rows\n\n\nWie wir sehen, haben wir eine klare Struktur und wir müssen den Befehlen innerhalb unserer eigenen Pipes nicht dauernd “erklären”, welchen Datensatz wir heranziehen!",
     "crumbs": [
       "Home",
       "Zum Workshop - Tag 1"
