@@ -16,7 +16,7 @@ Willkommen zurück 👋
 Wir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.
 
 # Recap - Tag 1
-
+___
 Wir haben im ersten Teil des Workshops gelernt, wie RStudio aufgebaut ist und funktioniert. Wir kennen nun die wichtigsten Grundlagen und können diese heute weiter **vertiefen und festigen**.
 
 ::: callout-tip
@@ -35,13 +35,13 @@ Fehler zu machen ist völlig normal (auch wenn es manchmal frustrierend ist).
 Für fast jedes Problem gibt es **eine Lösung, eine Erklärung oder ein Paket** 😊
 :::
 
-___
 
 # Umkodieren
-
+___
 In der Datenanalyse arbeiten wir häufig mit Variablen, deren Werte **nicht direkt so vorliegen**, wie wir sie für eine Auswertung benötigen.
 
 **Umkodieren** bedeutet, Werte oder Kategorien gezielt zu verändern oder neu zusammenzufassen, damit Variablen
+
 - **inhaltlich korrekt** interpretiert werden können und
 - **für Analysen** (z. B. Gruppenvergleiche, Skalenbildung) besser nutzbar sind.
 
@@ -80,11 +80,11 @@ Die Items `hs04` bis `hs07 und hs09` Fragen die mentale Gesundheit in den letzte
 |hs07|"Jede menge Energie"| 1 = "Immer" bis 5 = "Nie"|
 |hs09|"Einsam"|1 = "Immer" bis 5 = "Nie"|
 
-Wir wir sehen, sind einige Items invertiert formuliert. Würden wir daraus, eine Skala bilden bspw. **Disstress**, könnten wir mit dem `mutate()`Befehl, keine adäquate Skala bilden.
+Wie wir sehen, sind einige Items invertiert formuliert. Würden wir daraus, eine Skala bilden bspw. **Disstress**, könnten wir mit dem `mutate()`Befehl, keine adäquate Skala bilden.
 
-Wir müssen also entscheiden, was nun **hohe Werte und was niedrige Werte** darstellen sollen. Damit es intuitiver ist, wollen wir nun die **Variablen `hs04`, `hs05` und `hs09`umkodieren**, damit später es hoher Wert auf der Skala **"viel Disstress"** darstellen kann.
+Wir müssen also entscheiden, was nun **hohe Werte und was niedrige Werte** darstellen sollen. Damit es intuitiver ist, wollen wir nun die **Variablen `hs04`, `hs05` und `hs09`umkodieren**, damit später ein hoher Wert auf der Skala **"viel Disstress"** darstellen kann.
 
-Doch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakte wieder ein, bzw. haben diese schon im Environment!
+Doch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakete wieder ein, bzw. haben diese schon im Environment!
 
 ```{r}
 #| echo: true
@@ -106,7 +106,7 @@ head(df_csv, 10)
 Zum besseren Verständnis verkleinern wir erstmal unseren Datensatz: Erstelle den Datensatz `df_diss` mit nur den Items die wir benötigen.
 
 :::{.callout-tip collapse="true"}
-# Lösung
+# **Lösung**
 
 ```{r}
 
@@ -210,28 +210,24 @@ Hier handelt es sich um den `rec()` Befehl aus dem Paket **sjmisc**.
 :::
 :::
 
-
-
 ## Umkodieren von Gruppen und Faktoren
 
 Bisher haben wir Variablen umkodiert, die **numerisch skaliert** sind (z. B. Zustimmungsskalen von 1 bis 5).
-
 In der Praxis arbeiten wir jedoch sehr häufig auch mit **kategorialen Variablen**, zum Beispiel:
+
 - Geschlecht  
 - Bildungsabschluss  
 - Wohnort  
 - Erwerbsstatus  
 
 Diese Variablen sind meist als **Faktoren** kodiert oder sollen als solche behandelt werden.
-
 Beim Umkodieren von Faktorvariablen geht es weniger um Rechnen, sondern darum, **Kategorien sinnvoll zusammenzufassen oder neu zu benennen**.
 
 In diesem Abschnitt schauen wir uns daher an, wie wir **Faktorvariablen gezielt umkodieren**, zum Beispiel indem wir:
+
 - mehrere Kategorien zu einer Gruppe zusammenfassen oder  
 - neue, besser interpretierbare Gruppen bilden.
-
 ___
-
 Wir erstellen nun erneut einen Datensatz und nennen es `df_rec`. Diesmal fügen wir zu unseren Disstress Variablen weitere hinzu. Folgende Variablen sollen hinzugenommen werden:
 - `gs01` - Selbsbeschreibung des Wohnorts
 - `educ` - Allgemeiner Schulabschluss
@@ -270,7 +266,7 @@ Wir erstellen nun erneut einen Datensatz und nennen es `df_rec`. Diesmal fügen 
 :::
 
 :::{.callout-tip collapse="true"}
-# Lösung
+# **Lösung**
 ```{r}
 #| echo: true
 #| warning: false
@@ -286,7 +282,7 @@ head(df_rec, 10)
 ```
 :::
 
-Nun schauen wir uns die Umkodierung von Faktoren am Beispiel des Schulabschlusses an:
+Nun schauen wir uns die Umkodierung von Faktoren am Beispiel des Wohnortes an:
 
 :::{.panel-tabset}
 # Alternative 1
@@ -303,7 +299,9 @@ df_rec <- df_rec |>
       "5" = 2
     ))
 
-head(df_rec, 10)
+df_rec |>
+  select(gs01, wohnort) |>
+  head(10)
 
 ```
 :::{.callout-note collapse="true"}
@@ -323,7 +321,9 @@ df_rec <- df_rec |>
     )
   )
 
-head(df_rec,10)
+df_rec |>
+  select(gs01, wohnort2) |>
+  head(10)
 
 ```
 ::: {.callout-note collapse="true"}
@@ -346,7 +346,9 @@ df_rec <- df_rec |>
     ) |> factor(labels = c("Urban", "Rural"))
   )
 
-head(df_rec, 10)
+df_rec |>
+  select(gs01, wohnort3) |>
+  head(10)
 
 ```
 :::{.callout-note collapse="true"}
@@ -370,7 +372,9 @@ df_rec <- df_rec |>
     ) |> factor(levels = c("Urban", "Rural"))
   )
 
-head(df_rec, 10)
+df_rec |>
+  select(gs01, wohnort4) |>
+  head(10)
 
 ```
 :::{.callout-note collapse="true"}
@@ -384,10 +388,10 @@ Hier haben wir erst "gelabled" und dann Levels hinzugefügt.
 Schaut euch die Variablen im neuen Datensatz `df_rec` an. Eure Aufgabe ist es nun neue Variablen zu erstellen, die sinnvoll sind und die wir dann weiter nutzen werden.
 
 1. Erstellt eine neue Variable von `educ` (nennt diese `abschluss`) die vierstufig ist (niedriger, mittlere, hoher und anderer)
-2. Erstellt einen Skalenwert für Disstress und Soziale Unterstützung. Achtet darauf, dass der Summenwert sinnvol interpretierbar ist.
+2. Erstellt einen Skalenwert für Distress und Soziale Unterstützung. Achtet darauf, dass der Summenwert sinnvol interpretierbar ist.
 
 :::{.callout-tip collapse="true"}
-# Tipp
+# **Tipp**
 
 - Schaut euch das Codebuch genauer an, um die Variablen besser zu verstehen.
 - Guckt euch nochmal die Skalierung der Skalenitems an!
@@ -423,7 +427,7 @@ df_rec |>
 
 ```
 
-# Disstress
+# Distress
 
 ```{r}
 #| echo: true
@@ -505,10 +509,9 @@ df_rec |>
 :::
 :::
 
-___
 
 # Joins – Datensätze zusammenführen
-
+___
 In der Praxis liegen Informationen häufig **nicht in einem einzigen Datensatz** vor. Stattdessen gibt es mehrere Tabellen, die sich auf **dieselben Fälle** beziehen, z. B.:
 
 - ein Datensatz mit **Befragungsdaten**
@@ -538,7 +541,8 @@ In `dplyr` gibt es verschiedene Join-Typen, die sich darin unterscheiden, **welc
 - **full_join()** → alles von beiden  
 :::
 
-Wir schauen uns nun den am **häufigsten** verwendeten Join-Befehl an: `left_join()`. Dafür schauen wir uns nun den Befehl im Detail an.
+Wir schauen uns nun den am **häufigsten** verwendeten Join-Befehl an: **`left_join()`**.
+Dafür schauen wir uns nun den Befehl im Detail an.
 
 :::{.callout-note}
 # left_join()
@@ -783,16 +787,14 @@ Alle Fälle aus **beiden Datensätzen** bleiben erhalten.
 
 :::
 
-___
-
 # Fehlende Werte (NA)
-
-
+___
 Nachdem wir Datensätze **umkodiert** und **zusammengeführt** haben, kommen wir zu einem Thema, das in der Praxis **immer** eine Rolle spielt:
 
 👉 **fehlende Werte (`NA`)**
 
 Fehlende Werte entstehen zum Beispiel, wenn:
+
 - Fragen *nicht* beantwortet wurden  
 - bestimmte Fragen nur für *Teilgruppen* gestellt wurden  
 - Datensätze zusammengeführt werden  
@@ -803,6 +805,7 @@ Fehlende Werte entstehen zum Beispiel, wenn:
 Fehlende Werte sind **kein Fehler**, sondern ein **normaler Bestandteil realer Daten**.
 
 Wichtig ist, zu verstehen,
+
 - **wo** sie auftreten,
 - **wie viele** es sind und
 - **wie R mit ihnen umgeht**.
@@ -821,8 +824,6 @@ R behandelt `NA` **sehr strikt** – und das ist auch gut so.
 ## Fehlende Werte identifizieren
 
 Bevor wir mit Berechnungen arbeiten, sollten wir immer prüfen, **ob und wo fehlende Werte** vorkommen. Dafür erstellen wir aus unserem **Analysedatensatz `df_analyse`** einen kleineren handlicheren Datensatz mit den Variablen die wir für unsere Analysen wirklich benötigen und nennen es `df_analyse2`.
-
-respid,gs01,educ,mstat
 
 Nehme folgende Variablen mit rein:
 - `respid`
@@ -893,8 +894,9 @@ Mit diesem Befehl, bekommen wir eine schnelle Rückmeldung, **ob** unser Datensa
 :::
 :::
 
-### Einzelne Variable prüfen
 
+### Einzelne Variable prüfen
+___
 :::{.panel-tabset}
 
 # Base R
@@ -952,8 +954,9 @@ n_miss(df_analyse2$age)
 
 :::
 
-### Überblick mehrer Variablen
 
+### Überblick mehrer Variablen
+___
 Wir können auch **mehrere spezifische** Variablen anschauen:
 
 :::{.panel-tabset}
@@ -1006,15 +1009,17 @@ rowSums(cbind(1,5,8,10,NA,20,12,13,NA))
 ```
 
 ### Warum ist das so?
+___
 R kann nicht erraten, wie mit fehlenden Werten umgegangen werden soll:
+
 - Soll das NA ignoriert werden?
 - Soll das Ergebnis trotzdem berechnet werden?
 - Oder ist das Ergebnis nicht sinnvoll interpretierbar?
 
-Ohne eine klare Anweisung entscheidet sich R für die **sichere Variante**
-und gibt `NA` zurück.
+Ohne eine klare Anweisung entscheidet sich R für die **sichere Variante** und gibt `NA` zurück.
 
 Das gilt für viele Funktionen, zum Beispiel:
+
 - `sum()`
 - `mean()`
 - `rowSums()`
@@ -1086,7 +1091,7 @@ Wenn sehr viele Items fehlen, kann ein **Skalenwert inhaltlich verzerrt** sein!
 :::
 
 ### Wann ist na.rm = TRUE sinnvoll?
-
+___
 - wenn nur wenige Werte fehlen
 - wenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist
 - für erste Auswertungen und Exploration
@@ -1095,11 +1100,13 @@ Wenn sehr viele Items fehlen, kann ein **Skalenwert inhaltlich verzerrt** sein!
 
 In der empirischen Forschung gibt es **verschiedene Strategien**, um mit fehlenden Werten umzugehen.  
 Welche sinnvoll ist, hängt unter anderem ab von:
+
 - der Anzahl der fehlenden Werte  
 - dem Datentyp (Item, Skala, Hintergrundvariable)  
 - der Fragestellung der Analyse  
 
 Mögliche Ansätze sind zum Beispiel:
+
 - fehlende Werte **ignorieren** (`na.rm = TRUE`)
 - Fälle mit fehlenden Werten **ausschließen**
 - fehlende Werte **schätzen oder imputieren** (z. B. Mittelwert, multiple Imputation)
@@ -1107,13 +1114,15 @@ Mögliche Ansätze sind zum Beispiel:
 👉 **Wichtig:**  
 Diese Entscheidungen haben **inhaltliche Konsequenzen** und sollten immer bewusst getroffen werden.
 
-### Fokus im Workshop
 
+### Fokus im Workshop
+___
 In diesem Workshop konzentrieren wir uns bewusst auf einen **einfachen und transparenten Umgang** mit fehlenden Werten:
 
 👉 **Fälle mit fehlenden Werten werden ausgeschlossen**, wenn sie für die jeweilige Analyse nicht sinnvoll nutzbar sind.
 
 Warum?
+
 - leicht nachvollziehbar  
 - gut geeignet für den Einstieg 
 - häufig ausreichend bei großen Stichproben  
@@ -1126,10 +1135,10 @@ Komplexere Verfahren wie **Imputation** sind wichtig, gehen aber über den Rahme
 
 Wie oben angesprochen, entfernen wir bei **ausreichender Datengrundlage** die Personen, die einen fehlende Werte auf die uns wichtigen Variablen haben.
 
-### Ganze Zeilen entfernen (`drop_na()`)
 
-Mit `drop_na()` entfernen wir **alle Zeilen**,  
-in denen mindestens ein `NA` in den angegebenen Variablen vorkommt.
+### Ganze Zeilen entfernen (`drop_na()`)
+___
+Mit `drop_na()` entfernen wir **alle Zeilen**, in denen mindestens ein `NA` in den angegebenen Variablen vorkommt.
 
 ```{r}
 #| echo: true
@@ -1211,8 +1220,9 @@ Es gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist,
 :::
 :::
 
-# Recap Workshop
 
+# Recap Workshop
+___
 Bevor wir ins **Mini-Projekt** starten, fassen wir kurz zusammen, was wir an **Tag 1** und **Tag 2** gemacht haben.
 
 :::{.callout-note}
@@ -1255,7 +1265,7 @@ Bevor wir ins **Mini-Projekt** starten, fassen wir kurz zusammen, was wir an **T
 :::
 :::
 
-## **Workflow**
+## Workflow
 
 Ziel ist ein **gut dokumentierter und jederzeit nachvollziehbarer Analyse-Workflow**:  
 Jemand anderes (oder du in 3 Monaten) soll verstehen, **was** du gemacht hast, **warum** du es gemacht hast und **wie** du zu deinen Ergebnissen kommst.
@@ -1333,12 +1343,159 @@ write_sav(df_clean, path = "assets/data/output/spss_Datensatz_clean.sav")
 ```
 :::
 
-___
 
 # Mini-Projekt
-
-Wir kombinieren alles: Import → Check → Missing → Recodes → Join → Export.
-
 ___
+Zum Abschluss setzen wir alles, was wir in Tag 1 und Tag 2 gelernt haben, in einem kleinen, realistischen Workflow zusammen.
+
+**Zielsetzung**
+
+Am Ende dieses Mini-Projekts könnt ihr:
+
+- einen Datensatz **importieren** und schnell **prüfen** (`glimpse()`, `summary()`)
+- Variablen **auswählen, umkodieren und neue Variablen erstellen** (`select()`, `mutate()`, `recode()`)
+- eine Skala eurer Wahl bilden **(inkl. ggf. Invertierung)**
+- **fehlende Werte erkennen** und sinnvoll damit umgehen (`any_na()`, `n_miss()`, `na.rm`, `drop_na()`)
+- einen **zweiten Datensatz** joinen (`left_join()`)
+- einen **„Analyse-Datensatz“ erstellen** und **speichern** (`write_csv()`, optional `write_sav()`)
+- eine **kleine** deskriptive Auswertung machen (z. B. **Mittelwerte / SD / Häufigkeiten**)
+
+## Aufgabenstellung
+
+Ihr erstellt euch einen eigenen Datensatz df_mini, der am Ende „analysefertig“ ist.
+
+**Schritt 1: Datensatz laden und Überblick verschaffen**
+
+- lade **df_csv** (und ggf. df_spss)
+- verschaffe dir einen **Überblick**:
+  - `glimpse()`
+  - `summary()`
+___
+**Schritt 2: Skala auswählen (Codebuch!)**
+
+Wählt eine Skala eurer Wahl aus dem Codebuch:
+
+- Skala aus **mindestens 3 Items**
+- achtet auf die **Skalierung** (z. B. 1–4 oder 1–5)
+- prüft, ob es **invertierte** Items gibt (**und entscheidet, was „hoch“ bedeuten soll**)
+
+**👉 Speichert eure Entscheidung kurz als Kommentar im Skript**
+
+```{r}
+#| echo: true
+#| warning: false
+
+# Bildung der Skala _______ (Items: __, __, __)
+## Hohe Werte sollen _______ bedeuten.
+
+```
+___
+**Schritt 3: Datensatz erstellen (Auswahl der Variablen)**
+
+Erstellt `df_mini` mit:
+
+- `respid` (**Schlüsselvariable!**)
+- mindestens 2 **demographische Variablen** (z. B. `age`, `sex`, `work`, `mstat`, `wohnort`)
+- alle Items eurer ausgewählten Skala
+___
+**Schritt 4: Umkodieren & Skalenwert bilden**
+
+- falls nötig: *invertiert Items*
+- bildet einen **Summen- oder Mittelwert**:
+  - `rowSums(..., na.rm = TRUE)` *oder*
+  - `rowMeans(..., na.rm = TRUE)`
+
+👉 Gebt der Skala einen sinnvollen Namen (z. B. `skala_x_sum` oder `skala_x_mean`)
+___
+**Schritt 5: Missing Values kurz checken**
+
+- **prüft:** Gibt es `NA` im Datensatz?
+- **prüft:** Wie viele `NA` in eurer Skala?
+- entscheidet euch für einen e**infachen Schritt**:
+  - entweder `na.rm = TRUE` in der Skala reicht **oder**
+  - `drop_na()` für die Skala (**für „saubere“ Analyse**)
+___
+**Schritt 6: Join anwenden**
+
+Führt einen `left_join()` mit dem Armutsdatensatz durch (wie zuvor):
+
+- **Schlüsselvariable** anpassen und erstellen (falls nötig)
+- danach **prüfen**, ob neue Variablen angekommen sind
+
+:::{.callout-tip collapse="true"}
+# **Optional andere Kontextvariablen**
+
+Auf der Seite von [INKAR](https://www.inkar.de/) könnt ihr andere Kontextvariablen euch aussuchen und auf Bundeslandebene runterladen.
+
+:::
+___
+**Schritt 7: Datensatz speichern**
+
+**Speichert** euren finalen Datensatz:
+
+- als CSV (`write_csv()`)
+- **optional** als SPSS (`write_sav()`)
+
+## Mini-Analyse: Deskriptive Statistik
+
+Erstellt zum Schluss eine kurze deskriptive Auswertung:
+
+**Hintergrundvariablen (Beispiele)**
+
+- `age`: Mittelwert + SD
+- `sex` oder `work` oder `abschluss`: **Häufigkeiten**
+
+:::{.callout-note collapse="true"}
+# **Tipp: Deskriptive Statistik**
+
+Schaut euch die Funktionen aus dem `psych` und dem `janitor`Packages an!
+
+- `install.packages("janitor", repos = "https://cloud.r-project.org")`
+- `install.packages("psych", repos = "https://cloud.r-project.org")`
+
+**Kategorische Variablen**
+
+- `janitor::tabyl()`
+
+**Numerische Variablen**
+
+- `psych::describe()`
+
+:::
+
+**Eure Skala**
+
+- Mittelwert + SD
+- Min/Max (**optional**)
+- Missing-Anteil (**optional**)
+
+## Checkliste
+
+Am Ende sollten bei euch vorhanden sein:
+
+- ein Datensatz `df_mini` (oder `df_mini_clean`)
+- eine selbst gebildete Skala (`*_sum` oder `*_mean`)
+- ein kurzer Deskriptiv-Output (**Mittelwert/SD + Häufigkeiten**)
+- ein gespeicherter Output (`.csv`, optional `.sav`)
+
+# Abschluss Tag 2
+___
+Danke, dass ihr heute wieder dabei wart 👋  
+Ihr habt jetzt einen vollständigen **Basis-Workflow** kennengelernt – von Daten einlesen bis zu ersten "Auswertungen".
+
+Bevor wir abschließen:  
+👉 Gibt es noch offene **Fragen** oder Stellen, die wir **gemeinsam nochmal anschauen sollen**?
+
+:::{.callout-note}
+# **Merksatz zum Abschluss**
+Guter Code ist nicht der „kürzeste“ – sondern der, den du (und andere) später noch verstehst.
+:::
+
+## **Always Remember**
+
+![](assets/images/rmeme.jpg){width=100% style="border: 2px solid darkblue;"}
+
+
+
 
 [⬅️ Zurück zu Tag 1](day1.qmd){.btn .btn-primary}

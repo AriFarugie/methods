@@ -11,8 +11,9 @@ format:
     
 sidebar: workshop1
 ---
-# Ankommen & Setup
 
+# Ankommen & Setup
+___
 Willkommen zum Workshop „Einführung in R & RStudio“ 👋
 An Tag 1 legen wir die Grundlagen, die wir am zweiten Tag weiter vertiefen.
 
@@ -21,10 +22,8 @@ An Tag 1 legen wir die Grundlagen, die wir am zweiten Tag weiter vertiefen.
 - verstehen, wie R „denkt“
 - erste eigene Objekte und Daten erzeugen
 
-___
-
 # Was ist R und Rstudio?
-
+___
 **R** ist eine freie Programmiersprache, mit der man *Daten analysieren, auswerten und grafisch* darstellen kann.
 
 <u>**Du kannst mit R zum Beispiel:**</u>
@@ -50,8 +49,6 @@ Man kann sich **RStudio** wie einen Schreibtisch für *R* vorstellen.
 - Dateien und Projekte organisiert zu verwalten
 
 Ohne ***RStudio*** müsstest du **R** über ein sehr einfaches Fenster bedienen. Mit RStudio bekommst du eine strukturierte Oberfläche, die besonders für Einsteiger:innen viel angenehmer ist.
-
-___
 
 ## R GUI - erste Ansicht
 
@@ -138,7 +135,7 @@ Jetzt sollte dein RStudio so aussehen:
 ![](assets/images/rstudio-panes.png){width=100% style="border: 2px solid darkblue;"}
 
 ### 🔵 Skript-Editor (oben links)
-
+___
 ![](assets/images/rstudio-script-pane.png){width=100% style="border: 2px solid darkblue;"}
 
 Hier schreibst du deinen **Code** in Skripten.
@@ -154,7 +151,7 @@ Alles Wichtige gehört ins **Skript**, nicht nur in die Konsole.
 
 
 ### ⚫ Konsole (unten links)
-
+___
 ![](assets/images/rstudio-console-pane.png){width=100% style="border: 2px solid darkblue;"}
 
 Die ***Konsole*** kennen wir im Grunde schon. Wie du vielleicht schon erkannt hast, ist es die selbe Konsole wie bei **R GUI**.
@@ -167,7 +164,7 @@ Die ***Konsole*** kennen wir im Grunde schon. Wie du vielleicht schon erkannt ha
 
 
 ### 🟣 Environment & History (oben rechts)
-
+___
 ![](assets/images/rstudio-envi-pane.png){width=100% style="border: 2px solid darkblue;"}
 
 <u>Im **Environment** siehst du:</u>
@@ -183,7 +180,7 @@ Die ***Konsole*** kennen wir im Grunde schon. Wie du vielleicht schon erkannt ha
 
 
 ### 🟢 Files, Plots, Packages, Help (unten rechts)
-
+___
 ![](assets/images/rstudio-plot-pane.png){width=100% style="border: 2px solid darkblue;"}
 
 Dieser Bereich zeigt dir:
@@ -199,10 +196,8 @@ Dieser Bereich zeigt dir:
 Im nächsten Abschnitt legen wir unser erstes **Projekt** an!
 :::
 
-___
-
 # Projekt anlegen
-
+___
 Ein Projekt hilft dir, **strukturiert und reproduzierbar** zu arbeiten.
 
 - alle Dateien (Skripte, Daten, Grafiken) liegen an einem festen Ort  
@@ -229,7 +224,7 @@ Für **jedes Projekt** ein eigenes RStudio-Projekt anzulegen.
 :::
 
 ### Projekt anlegen – Schritt für Schritt
-
+___
 1. Klicke oben auf **File → New Project…** in der Menü-Leiste
 2. Wähle **New Directory**
 3. Wähle **New Project**
@@ -274,10 +269,9 @@ Der Projektname sollte **keine Leerzeichen** enthalten
 
 **RStudio startet nun neu – du arbeitest jetzt** ***innerhalb deines Projekts.***
 
-___
 
 # R Script
-
+___
 Nachdem wir nun ein Projekt angelegt haben, beginnen wir mit dem eigentlichen Arbeiten in einem **R Script**.
 
 Ein Script ist eine Textdatei, in der du deine Befehle sammelst und speicherst.
@@ -316,7 +310,7 @@ sqrt(49)
 ```
 
 ::: {.callout-warning collapse="true"}
-### Warum ins Skript schreiben?
+# **Warum ins Skript schreiben?**
 
 Befehle, die du **nur in der Konsole** eingibst, sind schnell wieder weg –  
 du musst später mühsam hochscrollen, um sie zu finden.
@@ -329,7 +323,6 @@ Schreibst du deine Rechnungen **in ein R Script**, bleiben sie erhalten:
 :::
 
 ## Übung
-
 
 1. Berechne zuerst den Ausdruck  
    `((8 + 4)^2 - 10) / 2`.
@@ -357,7 +350,7 @@ sqrt(196) + 3^3
 ::: 
 
 # Grundprinzipien von R
-
+___
 R arbeitet objektorientiert: Alles, was du erzeugst, kann ein Objekt sein und bekommt einen Namen.
 
 ```{r}
@@ -461,9 +454,10 @@ Speichere alle Ergebnisse als eigene Objekte, z. B.: `se_y`, `var_y`, `z_y`, `ci
 # **Tipp: Formeln für die Berechnung**
 
 Du darfst dir für die Berechnung **Hilfsobjekte** anlegen.
-___
 
-**Standardfehler des Mittelwerts**
+:::{.panel-tabset}
+
+# **Standardfehler des Mittelwerts**
 
 $$
 SE = \frac{sd(x)}{\sqrt{n}}
@@ -472,9 +466,7 @@ $$
 - $sd$ = Standardabweichung 
 - $n$ = Anzahl der Werte  
 
-___
-
-**Varianz (Stichprobe)**
+# **Varianz (Stichprobe)**
 
 $$
 \text{Var} = \frac{1}{n - 1} \sum (x - \bar{x})^2
@@ -483,17 +475,15 @@ $$
 - $\bar{x}$ = Mittelwert der Daten  
 - $\sum$ = Summe über alle Beobachtungen  
 
-___
 
-**z-Standardisierung**
+# **z-Standardisierung**
 
 $$
 z = \frac{x - \bar{x}}{sd(x)}
 $$
 
-___
 
-**95\%-Konfidenzintervall des Mittelwerts**
+# **95\%-Konfidenzintervall des Mittelwerts**
 
 $$
 \bar{x} \pm t_{0.975,\,n-1} \cdot SE
@@ -501,42 +491,43 @@ $$
 
 - $t_{0.975,\,n-1}$ = kritischer t-Wert für ein **95 %-Konfidenzintervall**. In R `qt(0.975, df = n - 1)`
 - $\pm$ = untere und obere Grenze des Intervalls
-
+:::
 :::
 
 ::: {.callout-note collapse="true"}
 # **Lösung**
 
+:::{.panel-tabset}
+# Hilfsobjekte
 ```{r}
 #| echo: true
 
-# Hilfsobjekte
 n <- length(y)   # Anzahl der Werte
 m <- mean(y)     # Mittelwert
 s <- sd(y)       # Standardabweichung
-
-# 1) Standardfehler des Mittelwerts
-
+```
+# 1. Standardfehler des Mittelwerts
+```{r}
 se_y <- s / sqrt(n)
 
 se_y
-
-# 2) Varianz (Stichprobe)
-
+```
+# 2. Varianz (Stichprobe)
+```{r}
 var_y <- sum((y - m)^2) / (n - 1)
 
 var_y
 
-
-# 3) z-standardisierte Werte
-
+```
+# 3. z-standardisierte Werte
+```{r}
 z_y <- (y - m) / s
 
 z_y
+```
 
-
-# 4) 95%-Konfidenzintervall des Mittelwerts
-
+# 4. 95%-Konfidenzintervall des Mittelwerts
+```{r}
 t_crit <- qt(0.975, df = n - 1)
 
 ci_y <- c(
@@ -547,6 +538,7 @@ upper = m + t_crit * se_y
 ci_y
 
 ```
+:::
 :::
 
 
@@ -569,7 +561,7 @@ Deshalb unterscheiden wir zwischen **Datentypen** und **Datenstrukturen**.
 Beides bestimmt, wie wir mit Daten rechnen, sie verändern und analysieren können.
 
 ### Wichtige Datentypen
-
+___
 Datentypen legen fest, **welche Art von Werten** in einem Objekt gespeichert ist.  
 R behandelt Zahlen, Text und logische Werte unterschiedlich – je nach Datentyp.
 
@@ -604,7 +596,7 @@ Der Datentyp ist wichtig, weil er bestimmt,
 
 
 ### Wichtige Datenstrukturen
-
+___
 Datenstrukturen beschreiben, **wie mehrere Werte in R zusammengefasst und organisiert** sind.  
 Sie legen fest, ob Daten einzeln, als einfache Liste oder als Tabelle gespeichert werden.
 
@@ -627,16 +619,17 @@ weil sie bestimmt, wie wir auf Daten zugreifen, sie verändern und analysieren k
   Standardformat für Datensätze in der empirischen Forschung.
 :::
 
-Datenstrukturen in R bauen in gewisser Weise aufeinander auf.
+Datenstrukturen in R bauen in gewisser Weise aufeinander auf. Am Anfang steht der **Vektor**:  
 
-Am Anfang steht der **Vektor**:  
-Ein Vektor ist eine einfache, geordnete Reihe von Werten gleichen Datentyps.
+- Ein Vektor ist eine einfache, geordnete Reihe von Werten gleichen Datentyps.
 
-Aus Vektoren lassen sich **Matrizen** bilden:  
-Eine Matrix ist eine Sammlung mehrerer gleich langer Vektoren, die rechteckig angeordnet sind.
+Aus Vektoren lassen sich **Matrizen** bilden:
 
-Ein **Data Frame** geht einen Schritt weiter:  
-Auch hier bestehen die Spalten aus Vektoren, die Spalten dürfen aber **unterschiedliche Datentypen** haben.
+- Eine Matrix ist eine Sammlung mehrerer gleich langer Vektoren, die rechteckig angeordnet sind.
+
+Ein **Data Frame** geht einen Schritt weiter:
+
+- Auch hier bestehen die Spalten aus Vektoren, die Spalten dürfen aber **unterschiedliche Datentypen** haben.
 
 So lassen sich reale Datensätze mit Zahlen, Text und Kategorien in einer Tabelle abbilden.
 
@@ -646,9 +639,9 @@ So lassen sich reale Datensätze mit Zahlen, Text und Kategorien in einer Tabell
 Die Datenstrukturen bauen **konzeptionell** aufeinander auf,  
 sie werden in der Praxis **nicht automatisch ineinander umgewandelt**
 :::
-___
-### Welcher Datentyp oder welche Datenstruktur hat mein Objekt?
 
+### Welcher Datentyp oder welche Datenstruktur hat mein Objekt?
+___
 In R können wir jederzeit überprüfen, **was für eine Art von Objekt** wir im Environment haben. Das ist besonders hilfreich, wenn wir mit vielen Objekten arbeiten oder unsicher sind, wie R ein Objekt interpretiert.
 
 ::: callout-tip
@@ -698,48 +691,58 @@ wie R unterschiedliche Ergebnisse speichert.
 
 
 ::: {.callout-note collapse="true"}
-### **Lösung**
+# **Lösung**
 
+:::{.panel-tabset}
+
+# Mittelwert
 ```{r}
 #| echo: true
 
-# Mittelwert
 class(m)
 typeof(m)
 str(m)
 
+```
+
 # Anzahl der Werte
+```{r}
 class(n)
 typeof(n)
 str(n)
-
+```
 # Standardabweichung
+```{r}
 class(s)
 typeof(s)
 str(s)
-
+```
 # Standardfehler
+```{r}
 class(se_y)
 typeof(se_y)
 str(se_y)
-
+```
 # Varianz
+```{r}
 class(var_y)
 typeof(var_y)
 str(var_y)
-
+```
 # z-standardisierte Werte
+```{r}
 class(z_y)
 typeof(z_y)
 str(z_y)
-
+```
 # Konfidenzintervall
+```{r}
 class(ci_y)
 typeof(ci_y)
 str(ci_y)
 ```
 :::
-
+:::
 
 ::: callout-tip
 # **Faustregel: Ein Objekt in R verstehen**
@@ -899,7 +902,7 @@ R bringt bereits viele grundlegende Funktionen mit (Base R).
 Für komplexere oder spezialisierte Aufgaben greifen wir jedoch häufig auf **Pakete** zurück.
 
 ### Pakete Installieren
-
+___
 Bevor wir ein Paket nutzen können, müssen wir es **einmal installieren**.  
 Die Installation erfolgt über das Internet und wird lokal auf dem Rechner gespeichert.
 
@@ -919,7 +922,7 @@ Danach ist das Paket in der Regel dauerhaft auf deinem Rechner verfügbar.
 :::
 
 ### Paket laden
-
+___
 Nach der Installation müssen Pakete **in jeder neuen R-Sitzung geladen** werden,
 damit ihre Funktionen zur Verfügung stehen.
 
@@ -939,7 +942,7 @@ library(psych)
 :::
 
 ### Das tidyverse
-
+___
 Das **tidyverse** ist eine Sammlung mehrerer Pakete,  
 die besonders für **Datenaufbereitung, Analyse und Visualisierung** entwickelt wurden.
 
@@ -960,7 +963,7 @@ Typische tidyverse-Pakete sind zum Beispiel:
 Wir werden das tidyverse später als **Alternative zu Base R** nutzen.
 
 ### Das psych-Paket
-
+___
 Das Paket **psych** wird häufig in den Sozial- und Verhaltenswissenschaften verwendet.
 
 Es enthält unter anderem:
@@ -1094,7 +1097,7 @@ Daten liegen in der Praxis selten sofort in der Form vor, in der sie analysiert 
 Für diese Arbeitsschritte verwenden wir das Paket **dplyr**.
 
 ### Überblick Datensatz
-
+___
 Bevor wir Daten aufbereiten oder verändern, sollten wir uns immer zuerst einen **Überblick über den Datensatz** verschaffen.
 
 So können wir prüfen,
@@ -1104,7 +1107,7 @@ So können wir prüfen,
 - und ob es offensichtliche Auffälligkeiten gibt.
 
 #### Schneller Überblick
-
+___
 
 ```{r}
 #| results: hide
@@ -1144,10 +1147,8 @@ glimpse(df_spss)
 ```
 :::
 
-___
-
 ### Exkurs: Datensatzstruktur
-
+___
 Bevor wir mit der Datenaufbereitung weitermachen, schauen wir uns an, **wie ein Datensatz in R grundsätzlich aufgebaut ist** und wie wir auf einzelne Variablen zugreifen können.
 
 Ein Datensatz (Data Frame) ist in R eine **Sammlung von Variablen**,  
@@ -1171,7 +1172,7 @@ rm(x,y,m,s)
 :::
 
 #### Zugriff auf Variablen mit **`$`**
-
+___
 In Base R greifen wir auf einzelne Variablen eines Datensatzes  
 mit dem **Dollar-Zeichen `$`** zu.
 
@@ -1258,10 +1259,9 @@ describe(df_csv$age)
 
 :::
 
-___
 
 ### Einführung dplyr
-
+___
 `dplyr` ist Teil des **tidyverse** und bietet Funktionen,  
 mit denen sich Datensätze **lesbar, konsistent und effizient** bearbeiten lassen.
 
@@ -1441,7 +1441,7 @@ head(df_analyse_w, 10)
 ::: 
 
 # Abschluss Tag 1
-
+___
 Heute hast du die Grundlagen gelegt, um sicher mit RStudio zu arbeiten:
 
 - RStudio-Oberfläche und Projekte kennengelernt  
