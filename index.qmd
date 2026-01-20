@@ -3,24 +3,19 @@ title: "Willkommen"
 ---
 
 Willkommen auf meiner Workshop-Seite!\
-Hier findest du Materialien, Unterlagen, Übungen und Infos zu meinen Methoden-Workshops.
+Hier findest du Infos zu meinen **Methoden-Workshops**.
  
-------------------------------------------------------------------------
+# 🔍 Aktuelle Workshops
+___
 
-## 🔍 Aktuelle Workshops
+- [**Einführung in R & RStudio**](workshops/ws1/index.qmd)
 
--   **Workshop 1 – Einführung in R & RStudio**
--   **Workshop 2 – Datenvisualisierung mit ggplot2**
-
-------------------------------------------------------------------------
-
-## 📚 Materialien
-
+# 📚 Materialien
+___
 Die Materialien werden schrittweise ergänzt.\
 Falls du an einem bestimmten Workshop teilnimmst, bekommst du die Zugangsinformationen direkt von mir.
 
-------------------------------------------------------------------------
 
-## 📬 Kontakt
-
-Bei Fragen erreichst du mich jederzeit unter: farugie[at]psych.uni-frankfurt.de
+# 📬 Kontakt
+___
+Bei Fragen, Wünschen und Anregungen erreichst du mich jederzeit unter: farugie[at]psych.uni-frankfurt.de
