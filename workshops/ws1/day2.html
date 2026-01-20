@@ -203,10 +203,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#recap-workshop" id="toc-recap-workshop" class="nav-link" data-scroll-target="#recap-workshop">Recap Workshop</a>
   <ul class="collapse">
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><strong>Workflow</strong></a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
   <li><a href="#exkurs-datensatz-speichern" id="toc-exkurs-datensatz-speichern" class="nav-link" data-scroll-target="#exkurs-datensatz-speichern"><strong>Exkurs: Datensatz Speichern</strong></a></li>
   </ul></li>
-  <li><a href="#mini-projekt" id="toc-mini-projekt" class="nav-link" data-scroll-target="#mini-projekt">Mini-Projekt</a></li>
+  <li><a href="#mini-projekt" id="toc-mini-projekt" class="nav-link" data-scroll-target="#mini-projekt">Mini-Projekt</a>
+  <ul class="collapse">
+  <li><a href="#aufgabenstellung" id="toc-aufgabenstellung" class="nav-link" data-scroll-target="#aufgabenstellung">Aufgabenstellung</a></li>
+  <li><a href="#mini-analyse-deskriptive-statistik" id="toc-mini-analyse-deskriptive-statistik" class="nav-link" data-scroll-target="#mini-analyse-deskriptive-statistik">Mini-Analyse: Deskriptive Statistik</a></li>
+  <li><a href="#checkliste" id="toc-checkliste" class="nav-link" data-scroll-target="#checkliste">Checkliste</a></li>
+  </ul></li>
+  <li><a href="#abschluss-tag-2" id="toc-abschluss-tag-2" class="nav-link" data-scroll-target="#abschluss-tag-2">Abschluss Tag 2</a>
+  <ul class="collapse">
+  <li><a href="#always-remember" id="toc-always-remember" class="nav-link" data-scroll-target="#always-remember"><strong>Always Remember</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -241,6 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Wir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.</p>
 <section id="recap---tag-1" class="level1">
 <h1>Recap - Tag 1</h1>
+<hr>
 <p>Wir haben im ersten Teil des Workshops gelernt, wie RStudio aufgebaut ist und funktioniert. Wir kennen nun die wichtigsten Grundlagen und können diese heute weiter <strong>vertiefen und festigen</strong>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -274,12 +284,16 @@ Wir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.</p>
 Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein Paket</strong> 😊</p>
 </div>
 </div>
-<hr>
 </section>
 <section id="umkodieren" class="level1">
 <h1>Umkodieren</h1>
+<hr>
 <p>In der Datenanalyse arbeiten wir häufig mit Variablen, deren Werte <strong>nicht direkt so vorliegen</strong>, wie wir sie für eine Auswertung benötigen.</p>
-<p><strong>Umkodieren</strong> bedeutet, Werte oder Kategorien gezielt zu verändern oder neu zusammenzufassen, damit Variablen - <strong>inhaltlich korrekt</strong> interpretiert werden können und - <strong>für Analysen</strong> (z. B. Gruppenvergleiche, Skalenbildung) besser nutzbar sind.</p>
+<p><strong>Umkodieren</strong> bedeutet, Werte oder Kategorien gezielt zu verändern oder neu zusammenzufassen, damit Variablen</p>
+<ul>
+<li><strong>inhaltlich korrekt</strong> interpretiert werden können und</li>
+<li><strong>für Analysen</strong> (z. B. Gruppenvergleiche, Skalenbildung) besser nutzbar sind.</li>
+</ul>
 <p>Beim Umkodieren können zum Beispiel:</p>
 <ul>
 <li>Kategorien zusammengefasst werden<br>
@@ -346,9 +360,9 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 </tr>
 </tbody>
 </table>
-<p>Wir wir sehen, sind einige Items invertiert formuliert. Würden wir daraus, eine Skala bilden bspw. <strong>Disstress</strong>, könnten wir mit dem <code>mutate()</code>Befehl, keine adäquate Skala bilden.</p>
-<p>Wir müssen also entscheiden, was nun <strong>hohe Werte und was niedrige Werte</strong> darstellen sollen. Damit es intuitiver ist, wollen wir nun die <strong>Variablen <code>hs04</code>, <code>hs05</code> und <code>hs09</code>umkodieren</strong>, damit später es hoher Wert auf der Skala <strong>“viel Disstress”</strong> darstellen kann.</p>
-<p>Doch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakte wieder ein, bzw. haben diese schon im Environment!</p>
+<p>Wie wir sehen, sind einige Items invertiert formuliert. Würden wir daraus, eine Skala bilden bspw. <strong>Disstress</strong>, könnten wir mit dem <code>mutate()</code>Befehl, keine adäquate Skala bilden.</p>
+<p>Wir müssen also entscheiden, was nun <strong>hohe Werte und was niedrige Werte</strong> darstellen sollen. Damit es intuitiver ist, wollen wir nun die <strong>Variablen <code>hs04</code>, <code>hs05</code> und <code>hs09</code>umkodieren</strong>, damit später ein hoher Wert auf der Skala <strong>“viel Disstress”</strong> darstellen kann.</p>
+<p>Doch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakete wieder ein, bzw. haben diese schon im Environment!</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("labelled", repos = "https://cloud.r-project.org")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -391,7 +405,7 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Lösung
+<span class="screen-reader-only">Tip</span><strong>Lösung</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -553,17 +567,27 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 </section>
 <section id="umkodieren-von-gruppen-und-faktoren" class="level2">
 <h2 class="anchored" data-anchor-id="umkodieren-von-gruppen-und-faktoren">Umkodieren von Gruppen und Faktoren</h2>
-<p>Bisher haben wir Variablen umkodiert, die <strong>numerisch skaliert</strong> sind (z. B. Zustimmungsskalen von 1 bis 5).</p>
-<p>In der Praxis arbeiten wir jedoch sehr häufig auch mit <strong>kategorialen Variablen</strong>, zum Beispiel: - Geschlecht<br>
-- Bildungsabschluss<br>
-- Wohnort<br>
-- Erwerbsstatus</p>
-<p>Diese Variablen sind meist als <strong>Faktoren</strong> kodiert oder sollen als solche behandelt werden.</p>
-<p>Beim Umkodieren von Faktorvariablen geht es weniger um Rechnen, sondern darum, <strong>Kategorien sinnvoll zusammenzufassen oder neu zu benennen</strong>.</p>
-<p>In diesem Abschnitt schauen wir uns daher an, wie wir <strong>Faktorvariablen gezielt umkodieren</strong>, zum Beispiel indem wir: - mehrere Kategorien zu einer Gruppe zusammenfassen oder<br>
-- neue, besser interpretierbare Gruppen bilden.</p>
-<hr>
-<p>Wir erstellen nun erneut einen Datensatz und nennen es <code>df_rec</code>. Diesmal fügen wir zu unseren Disstress Variablen weitere hinzu. Folgende Variablen sollen hinzugenommen werden: - <code>gs01</code> - Selbsbeschreibung des Wohnorts - <code>educ</code> - Allgemeiner Schulabschluss - <code>mstat</code> - Familienstand - <code>im17</code> bis <code>im21</code> - Einstellung zur sozialen Ungleichheit</p>
+<p>Bisher haben wir Variablen umkodiert, die <strong>numerisch skaliert</strong> sind (z. B. Zustimmungsskalen von 1 bis 5). In der Praxis arbeiten wir jedoch sehr häufig auch mit <strong>kategorialen Variablen</strong>, zum Beispiel:</p>
+<ul>
+<li>Geschlecht<br>
+</li>
+<li>Bildungsabschluss<br>
+</li>
+<li>Wohnort<br>
+</li>
+<li>Erwerbsstatus</li>
+</ul>
+<p>Diese Variablen sind meist als <strong>Faktoren</strong> kodiert oder sollen als solche behandelt werden. Beim Umkodieren von Faktorvariablen geht es weniger um Rechnen, sondern darum, <strong>Kategorien sinnvoll zusammenzufassen oder neu zu benennen</strong>.</p>
+<p>In diesem Abschnitt schauen wir uns daher an, wie wir <strong>Faktorvariablen gezielt umkodieren</strong>, zum Beispiel indem wir:</p>
+<ul>
+<li>mehrere Kategorien zu einer Gruppe zusammenfassen oder<br>
+</li>
+<li>neue, besser interpretierbare Gruppen bilden. ___ Wir erstellen nun erneut einen Datensatz und nennen es <code>df_rec</code>. Diesmal fügen wir zu unseren Disstress Variablen weitere hinzu. Folgende Variablen sollen hinzugenommen werden:</li>
+<li><code>gs01</code> - Selbsbeschreibung des Wohnorts</li>
+<li><code>educ</code> - Allgemeiner Schulabschluss</li>
+<li><code>mstat</code> - Familienstand</li>
+<li><code>im17</code> bis <code>im21</code> - Einstellung zur sozialen Ungleichheit</li>
+</ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -702,7 +726,7 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Lösung
+<span class="screen-reader-only">Tip</span><strong>Lösung</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -736,7 +760,7 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 </div>
 </div>
 </div>
-<p>Nun schauen wir uns die Umkodierung von Faktoren am Beispiel des Schulabschlusses an:</p>
+<p>Nun schauen wir uns die Umkodierung von Faktoren am Beispiel des Wohnortes an:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Alternative 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Alternative 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Alternative 3</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false" href="">Alternative 4</a></li></ul>
 <div class="tab-content">
@@ -753,22 +777,23 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"5"</span> <span class="ot">=</span> <span class="dv">2</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    ))</span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_rec, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>df_rec <span class="sc">|&gt;</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gs01, wohnort) <span class="sc">|&gt;</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 14
-    gs01  educ mstat  hs04  hs05  hs06  hs07  hs09  im17  im18  im19  im20  im21
-   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1     4     5     5     3     2     3     3     5     2     1     4     3     4
- 2     3     5     5    NA    NA    NA    NA    NA     4     4     1     3     3
- 3     3     4     3    NA    NA    NA    NA    NA     3     4     2     1     1
- 4     3     4     1     4     4     5     3     5     2     3     2     3     3
- 5     4     2     1     3     3     2     3     4     2     2     3     3     3
- 6     1     7     5     2     3     3     3     3     3     4     3     2     2
- 7     1     5     5     1     2     3     4     3     2     2     3     3     3
- 8     4     4     1     3     2     4     4     4     3     2     3     3     4
- 9     3     3     1     4     3     3     4     4     2     2     4     3     4
-10     4     3     5     2     2     4     4     5     2     3     3     3     4
-# ℹ 1 more variable: wohnort &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 10 × 2
+    gs01 wohnort
+   &lt;dbl&gt;   &lt;dbl&gt;
+ 1     4       2
+ 2     3       1
+ 3     3       1
+ 4     3       1
+ 5     4       2
+ 6     1       1
+ 7     1       1
+ 8     4       2
+ 9     3       1
+10     4       2</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -799,22 +824,23 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_rec,<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>df_rec <span class="sc">|&gt;</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gs01, wohnort2) <span class="sc">|&gt;</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 15
-    gs01  educ mstat  hs04  hs05  hs06  hs07  hs09  im17  im18  im19  im20  im21
-   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1     4     5     5     3     2     3     3     5     2     1     4     3     4
- 2     3     5     5    NA    NA    NA    NA    NA     4     4     1     3     3
- 3     3     4     3    NA    NA    NA    NA    NA     3     4     2     1     1
- 4     3     4     1     4     4     5     3     5     2     3     2     3     3
- 5     4     2     1     3     3     2     3     4     2     2     3     3     3
- 6     1     7     5     2     3     3     3     3     3     4     3     2     2
- 7     1     5     5     1     2     3     4     3     2     2     3     3     3
- 8     4     4     1     3     2     4     4     4     3     2     3     3     4
- 9     3     3     1     4     3     3     4     4     2     2     4     3     4
-10     4     3     5     2     2     4     4     5     2     3     3     3     4
-# ℹ 2 more variables: wohnort &lt;dbl&gt;, wohnort2 &lt;fct&gt;</code></pre>
+<pre><code># A tibble: 10 × 2
+    gs01 wohnort2
+   &lt;dbl&gt; &lt;fct&gt;   
+ 1     4 Rural   
+ 2     3 Urban   
+ 3     3 Urban   
+ 4     3 Urban   
+ 5     4 Rural   
+ 6     1 Urban   
+ 7     1 Urban   
+ 8     4 Rural   
+ 9     3 Urban   
+10     4 Rural   </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -848,22 +874,23 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> <span class="fu">factor</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Urban"</span>, <span class="st">"Rural"</span>))</span>
 <span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_rec, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>df_rec <span class="sc">|&gt;</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gs01, wohnort3) <span class="sc">|&gt;</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 16
-    gs01  educ mstat  hs04  hs05  hs06  hs07  hs09  im17  im18  im19  im20  im21
-   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1     4     5     5     3     2     3     3     5     2     1     4     3     4
- 2     3     5     5    NA    NA    NA    NA    NA     4     4     1     3     3
- 3     3     4     3    NA    NA    NA    NA    NA     3     4     2     1     1
- 4     3     4     1     4     4     5     3     5     2     3     2     3     3
- 5     4     2     1     3     3     2     3     4     2     2     3     3     3
- 6     1     7     5     2     3     3     3     3     3     4     3     2     2
- 7     1     5     5     1     2     3     4     3     2     2     3     3     3
- 8     4     4     1     3     2     4     4     4     3     2     3     3     4
- 9     3     3     1     4     3     3     4     4     2     2     4     3     4
-10     4     3     5     2     2     4     4     5     2     3     3     3     4
-# ℹ 3 more variables: wohnort &lt;dbl&gt;, wohnort2 &lt;fct&gt;, wohnort3 &lt;fct&gt;</code></pre>
+<pre><code># A tibble: 10 × 2
+    gs01 wohnort3
+   &lt;dbl&gt; &lt;fct&gt;   
+ 1     4 Rural   
+ 2     3 Urban   
+ 3     3 Urban   
+ 4     3 Urban   
+ 5     4 Rural   
+ 6     1 Urban   
+ 7     1 Urban   
+ 8     4 Rural   
+ 9     3 Urban   
+10     4 Rural   </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -897,23 +924,23 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> <span class="fu">factor</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Urban"</span>, <span class="st">"Rural"</span>))</span>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_rec, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>df_rec <span class="sc">|&gt;</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gs01, wohnort4) <span class="sc">|&gt;</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 17
-    gs01  educ mstat  hs04  hs05  hs06  hs07  hs09  im17  im18  im19  im20  im21
-   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1     4     5     5     3     2     3     3     5     2     1     4     3     4
- 2     3     5     5    NA    NA    NA    NA    NA     4     4     1     3     3
- 3     3     4     3    NA    NA    NA    NA    NA     3     4     2     1     1
- 4     3     4     1     4     4     5     3     5     2     3     2     3     3
- 5     4     2     1     3     3     2     3     4     2     2     3     3     3
- 6     1     7     5     2     3     3     3     3     3     4     3     2     2
- 7     1     5     5     1     2     3     4     3     2     2     3     3     3
- 8     4     4     1     3     2     4     4     4     3     2     3     3     4
- 9     3     3     1     4     3     3     4     4     2     2     4     3     4
-10     4     3     5     2     2     4     4     5     2     3     3     3     4
-# ℹ 4 more variables: wohnort &lt;dbl&gt;, wohnort2 &lt;fct&gt;, wohnort3 &lt;fct&gt;,
-#   wohnort4 &lt;fct&gt;</code></pre>
+<pre><code># A tibble: 10 × 2
+    gs01 wohnort4
+   &lt;dbl&gt; &lt;fct&gt;   
+ 1     4 Rural   
+ 2     3 Urban   
+ 3     3 Urban   
+ 4     3 Urban   
+ 5     4 Rural   
+ 6     1 Urban   
+ 7     1 Urban   
+ 8     4 Rural   
+ 9     3 Urban   
+10     4 Rural   </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -941,7 +968,7 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 <p>Schaut euch die Variablen im neuen Datensatz <code>df_rec</code> an. Eure Aufgabe ist es nun neue Variablen zu erstellen, die sinnvoll sind und die wir dann weiter nutzen werden.</p>
 <ol type="1">
 <li>Erstellt eine neue Variable von <code>educ</code> (nennt diese <code>abschluss</code>) die vierstufig ist (niedriger, mittlere, hoher und anderer)</li>
-<li>Erstellt einen Skalenwert für Disstress und Soziale Unterstützung. Achtet darauf, dass der Summenwert sinnvol interpretierbar ist.</li>
+<li>Erstellt einen Skalenwert für Distress und Soziale Unterstützung. Achtet darauf, dass der Summenwert sinnvol interpretierbar ist.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
@@ -949,7 +976,7 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tipp
+<span class="screen-reader-only">Tip</span><strong>Tipp</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -975,7 +1002,7 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Abschluss</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Disstress</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Soziale Ungleichheit</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false" href="">Alles in einem Schritt</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Abschluss</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Distress</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Soziale Ungleichheit</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false" href="">Alles in einem Schritt</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
@@ -1128,11 +1155,11 @@ Für fast jedes Problem gibt es <strong>eine Lösung, eine Erklärung oder ein P
 </div>
 </div>
 </div>
-<hr>
 </section>
 </section>
 <section id="joins-datensätze-zusammenführen" class="level1">
 <h1>Joins – Datensätze zusammenführen</h1>
+<hr>
 <p>In der Praxis liegen Informationen häufig <strong>nicht in einem einzigen Datensatz</strong> vor. Stattdessen gibt es mehrere Tabellen, die sich auf <strong>dieselben Fälle</strong> beziehen, z. B.:</p>
 <ul>
 <li>ein Datensatz mit <strong>Befragungsdaten</strong></li>
@@ -1183,7 +1210,7 @@ Beide Datensätze enthalten <strong>mindestens eine gemeinsame Schlüsselvariabl
 </div>
 </div>
 </div>
-<p>Wir schauen uns nun den am <strong>häufigsten</strong> verwendeten Join-Befehl an: <code>left_join()</code>. Dafür schauen wir uns nun den Befehl im Detail an.</p>
+<p>Wir schauen uns nun den am <strong>häufigsten</strong> verwendeten Join-Befehl an: <strong><code>left_join()</code></strong>. Dafür schauen wir uns nun den Befehl im Detail an.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1581,17 +1608,23 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 </div>
 </div>
 </div>
-<hr>
 </section>
 </section>
 <section id="fehlende-werte-na" class="level1">
 <h1>Fehlende Werte (NA)</h1>
+<hr>
 <p>Nachdem wir Datensätze <strong>umkodiert</strong> und <strong>zusammengeführt</strong> haben, kommen wir zu einem Thema, das in der Praxis <strong>immer</strong> eine Rolle spielt:</p>
 <p>👉 <strong>fehlende Werte (<code>NA</code>)</strong></p>
-<p>Fehlende Werte entstehen zum Beispiel, wenn: - Fragen <em>nicht</em> beantwortet wurden<br>
-- bestimmte Fragen nur für <em>Teilgruppen</em> gestellt wurden<br>
-- Datensätze zusammengeführt werden<br>
-- Filter oder Umkodierungen durchgeführt wurden</p>
+<p>Fehlende Werte entstehen zum Beispiel, wenn:</p>
+<ul>
+<li>Fragen <em>nicht</em> beantwortet wurden<br>
+</li>
+<li>bestimmte Fragen nur für <em>Teilgruppen</em> gestellt wurden<br>
+</li>
+<li>Datensätze zusammengeführt werden<br>
+</li>
+<li>Filter oder Umkodierungen durchgeführt wurden</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1603,7 +1636,12 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 </div>
 <div class="callout-body-container callout-body">
 <p>Fehlende Werte sind <strong>kein Fehler</strong>, sondern ein <strong>normaler Bestandteil realer Daten</strong>.</p>
-<p>Wichtig ist, zu verstehen, - <strong>wo</strong> sie auftreten, - <strong>wie viele</strong> es sind und - <strong>wie R mit ihnen umgeht</strong>.</p>
+<p>Wichtig ist, zu verstehen,</p>
+<ul>
+<li><strong>wo</strong> sie auftreten,</li>
+<li><strong>wie viele</strong> es sind und</li>
+<li><strong>wie R mit ihnen umgeht</strong>.</li>
+</ul>
 </div>
 </div>
 <section id="was-ist-na" class="level2">
@@ -1621,7 +1659,6 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 <section id="fehlende-werte-identifizieren" class="level2">
 <h2 class="anchored" data-anchor-id="fehlende-werte-identifizieren">Fehlende Werte identifizieren</h2>
 <p>Bevor wir mit Berechnungen arbeiten, sollten wir immer prüfen, <strong>ob und wo fehlende Werte</strong> vorkommen. Dafür erstellen wir aus unserem <strong>Analysedatensatz <code>df_analyse</code></strong> einen kleineren handlicheren Datensatz mit den Variablen die wir für unsere Analysen wirklich benötigen und nennen es <code>df_analyse2</code>.</p>
-<p>respid,gs01,educ,mstat</p>
 <p>Nehme folgende Variablen mit rein: - <code>respid</code> - <code>wohnort</code> - <code>isced97</code> - <code>work</code> - <code>dw15</code> - <code>mstat</code> - <code>hhincc</code> - <code>disstress</code> und dazugehörigen Variablen - <code>soz.u</code> und dazugehörigen Variablen</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
@@ -1735,6 +1772,7 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 </div>
 <section id="einzelne-variable-prüfen" class="level3">
 <h3 class="anchored" data-anchor-id="einzelne-variable-prüfen">Einzelne Variable prüfen</h3>
+<hr>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href="">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href=""><strong>Package <code>naniar</code></strong></a></li></ul>
 <div class="tab-content">
@@ -1804,6 +1842,7 @@ else separate multiple values with comma, e.g. rec="a,b,c=1; d,e,f=2".</code></p
 </section>
 <section id="überblick-mehrer-variablen" class="level3">
 <h3 class="anchored" data-anchor-id="überblick-mehrer-variablen">Überblick mehrer Variablen</h3>
+<hr>
 <p>Wir können auch <strong>mehrere spezifische</strong> Variablen anschauen:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true" href="">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false" href="">Überblick (grafisch)</a></li></ul>
@@ -1883,9 +1922,21 @@ Note
 </div>
 <section id="warum-ist-das-so" class="level3">
 <h3 class="anchored" data-anchor-id="warum-ist-das-so">Warum ist das so?</h3>
-<p>R kann nicht erraten, wie mit fehlenden Werten umgegangen werden soll: - Soll das NA ignoriert werden? - Soll das Ergebnis trotzdem berechnet werden? - Oder ist das Ergebnis nicht sinnvoll interpretierbar?</p>
+<hr>
+<p>R kann nicht erraten, wie mit fehlenden Werten umgegangen werden soll:</p>
+<ul>
+<li>Soll das NA ignoriert werden?</li>
+<li>Soll das Ergebnis trotzdem berechnet werden?</li>
+<li>Oder ist das Ergebnis nicht sinnvoll interpretierbar?</li>
+</ul>
 <p>Ohne eine klare Anweisung entscheidet sich R für die <strong>sichere Variante</strong> und gibt <code>NA</code> zurück.</p>
-<p>Das gilt für viele Funktionen, zum Beispiel: - <code>sum()</code> - <code>mean()</code> - <code>rowSums()</code> - <code>rowMeans()</code></p>
+<p>Das gilt für viele Funktionen, zum Beispiel:</p>
+<ul>
+<li><code>sum()</code></li>
+<li><code>mean()</code></li>
+<li><code>rowSums()</code></li>
+<li><code>rowMeans()</code></li>
+</ul>
 <p>👉 Wichtig: Wenn fehlende Werte ignoriert werden sollen, muss man das <strong>explizit angeben</strong>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(<span class="fu">cbind</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="cn">NA</span>,<span class="dv">20</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="cn">NA</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1967,6 +2018,7 @@ Note
 </section>
 <section id="wann-ist-na.rm-true-sinnvoll" class="level3">
 <h3 class="anchored" data-anchor-id="wann-ist-na.rm-true-sinnvoll">Wann ist na.rm = TRUE sinnvoll?</h3>
+<hr>
 <ul>
 <li>wenn nur wenige Werte fehlen</li>
 <li>wenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist</li>
@@ -1977,18 +2029,34 @@ Note
 <section id="wie-mit-fehlenden-werten-umgehen" class="level2">
 <h2 class="anchored" data-anchor-id="wie-mit-fehlenden-werten-umgehen">Wie mit fehlenden Werten umgehen?</h2>
 <p>In der empirischen Forschung gibt es <strong>verschiedene Strategien</strong>, um mit fehlenden Werten umzugehen.<br>
-Welche sinnvoll ist, hängt unter anderem ab von: - der Anzahl der fehlenden Werte<br>
-- dem Datentyp (Item, Skala, Hintergrundvariable)<br>
-- der Fragestellung der Analyse</p>
-<p>Mögliche Ansätze sind zum Beispiel: - fehlende Werte <strong>ignorieren</strong> (<code>na.rm = TRUE</code>) - Fälle mit fehlenden Werten <strong>ausschließen</strong> - fehlende Werte <strong>schätzen oder imputieren</strong> (z. B. Mittelwert, multiple Imputation)</p>
+Welche sinnvoll ist, hängt unter anderem ab von:</p>
+<ul>
+<li>der Anzahl der fehlenden Werte<br>
+</li>
+<li>dem Datentyp (Item, Skala, Hintergrundvariable)<br>
+</li>
+<li>der Fragestellung der Analyse</li>
+</ul>
+<p>Mögliche Ansätze sind zum Beispiel:</p>
+<ul>
+<li>fehlende Werte <strong>ignorieren</strong> (<code>na.rm = TRUE</code>)</li>
+<li>Fälle mit fehlenden Werten <strong>ausschließen</strong></li>
+<li>fehlende Werte <strong>schätzen oder imputieren</strong> (z. B. Mittelwert, multiple Imputation)</li>
+</ul>
 <p>👉 <strong>Wichtig:</strong><br>
 Diese Entscheidungen haben <strong>inhaltliche Konsequenzen</strong> und sollten immer bewusst getroffen werden.</p>
 <section id="fokus-im-workshop" class="level3">
 <h3 class="anchored" data-anchor-id="fokus-im-workshop">Fokus im Workshop</h3>
+<hr>
 <p>In diesem Workshop konzentrieren wir uns bewusst auf einen <strong>einfachen und transparenten Umgang</strong> mit fehlenden Werten:</p>
 <p>👉 <strong>Fälle mit fehlenden Werten werden ausgeschlossen</strong>, wenn sie für die jeweilige Analyse nicht sinnvoll nutzbar sind.</p>
-<p>Warum? - leicht nachvollziehbar<br>
-- gut geeignet für den Einstieg - häufig ausreichend bei großen Stichproben</p>
+<p>Warum?</p>
+<ul>
+<li>leicht nachvollziehbar<br>
+</li>
+<li>gut geeignet für den Einstieg</li>
+<li>häufig ausreichend bei großen Stichproben</li>
+</ul>
 <p>Komplexere Verfahren wie <strong>Imputation</strong> sind wichtig, gehen aber über den Rahmen dieses Workshops hinaus. Es lohnt sich aber hier <strong>methodisch</strong> einzuarbeiten!</p>
 <p>👉 <strong>Multiple Imputation</strong></p>
 </section>
@@ -1998,8 +2066,8 @@ Diese Entscheidungen haben <strong>inhaltliche Konsequenzen</strong> und sollten
 <p>Wie oben angesprochen, entfernen wir bei <strong>ausreichender Datengrundlage</strong> die Personen, die einen fehlende Werte auf die uns wichtigen Variablen haben.</p>
 <section id="ganze-zeilen-entfernen-drop_na" class="level3">
 <h3 class="anchored" data-anchor-id="ganze-zeilen-entfernen-drop_na">Ganze Zeilen entfernen (<code>drop_na()</code>)</h3>
-<p>Mit <code>drop_na()</code> entfernen wir <strong>alle Zeilen</strong>,<br>
-in denen mindestens ein <code>NA</code> in den angegebenen Variablen vorkommt.</p>
+<hr>
+<p>Mit <code>drop_na()</code> entfernen wir <strong>alle Zeilen</strong>, in denen mindestens ein <code>NA</code> in den angegebenen Variablen vorkommt.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>df_clean <span class="ot">&lt;-</span> df_analyse2 <span class="sc">|&gt;</span></span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(soz.u_na)</span>
@@ -2115,6 +2183,7 @@ in denen mindestens ein <code>NA</code> in den angegebenen Variablen vorkommt.</
 </section>
 <section id="recap-workshop" class="level1">
 <h1>Recap Workshop</h1>
+<hr>
 <p>Bevor wir ins <strong>Mini-Projekt</strong> starten, fassen wir kurz zusammen, was wir an <strong>Tag 1</strong> und <strong>Tag 2</strong> gemacht haben.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -2178,7 +2247,7 @@ in denen mindestens ein <code>NA</code> in den angegebenen Variablen vorkommt.</
 </div>
 </div>
 <section id="workflow" class="level2">
-<h2 class="anchored" data-anchor-id="workflow"><strong>Workflow</strong></h2>
+<h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
 <p>Ziel ist ein <strong>gut dokumentierter und jederzeit nachvollziehbarer Analyse-Workflow</strong>:<br>
 Jemand anderes (oder du in 3 Monaten) soll verstehen, <strong>was</strong> du gemacht hast, <strong>warum</strong> du es gemacht hast und <strong>wie</strong> du zu deinen Ergebnissen kommst.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -2257,16 +2326,180 @@ Jemand anderes (oder du in 3 Monaten) soll verstehen, <strong>was</strong> du ge
 </div>
 </div>
 </div>
-<hr>
 </section>
 </section>
 <section id="mini-projekt" class="level1">
 <h1>Mini-Projekt</h1>
-<p>Wir kombinieren alles: Import → Check → Missing → Recodes → Join → Export.</p>
 <hr>
+<p>Zum Abschluss setzen wir alles, was wir in Tag 1 und Tag 2 gelernt haben, in einem kleinen, realistischen Workflow zusammen.</p>
+<p><strong>Zielsetzung</strong></p>
+<p>Am Ende dieses Mini-Projekts könnt ihr:</p>
+<ul>
+<li>einen Datensatz <strong>importieren</strong> und schnell <strong>prüfen</strong> (<code>glimpse()</code>, <code>summary()</code>)</li>
+<li>Variablen <strong>auswählen, umkodieren und neue Variablen erstellen</strong> (<code>select()</code>, <code>mutate()</code>, <code>recode()</code>)</li>
+<li>eine Skala eurer Wahl bilden <strong>(inkl. ggf. Invertierung)</strong></li>
+<li><strong>fehlende Werte erkennen</strong> und sinnvoll damit umgehen (<code>any_na()</code>, <code>n_miss()</code>, <code>na.rm</code>, <code>drop_na()</code>)</li>
+<li>einen <strong>zweiten Datensatz</strong> joinen (<code>left_join()</code>)</li>
+<li>einen <strong>„Analyse-Datensatz“ erstellen</strong> und <strong>speichern</strong> (<code>write_csv()</code>, optional <code>write_sav()</code>)</li>
+<li>eine <strong>kleine</strong> deskriptive Auswertung machen (z. B. <strong>Mittelwerte / SD / Häufigkeiten</strong>)</li>
+</ul>
+<section id="aufgabenstellung" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabenstellung">Aufgabenstellung</h2>
+<p>Ihr erstellt euch einen eigenen Datensatz df_mini, der am Ende „analysefertig“ ist.</p>
+<p><strong>Schritt 1: Datensatz laden und Überblick verschaffen</strong></p>
+<ul>
+<li>lade <strong>df_csv</strong> (und ggf. df_spss)</li>
+<li>verschaffe dir einen <strong>Überblick</strong>:
+<ul>
+<li><code>glimpse()</code></li>
+<li><code>summary()</code> ___ <strong>Schritt 2: Skala auswählen (Codebuch!)</strong></li>
+</ul></li>
+</ul>
+<p>Wählt eine Skala eurer Wahl aus dem Codebuch:</p>
+<ul>
+<li>Skala aus <strong>mindestens 3 Items</strong></li>
+<li>achtet auf die <strong>Skalierung</strong> (z. B. 1–4 oder 1–5)</li>
+<li>prüft, ob es <strong>invertierte</strong> Items gibt (<strong>und entscheidet, was „hoch“ bedeuten soll</strong>)</li>
+</ul>
+<p><strong>👉 Speichert eure Entscheidung kurz als Kommentar im Skript</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bildung der Skala _______ (Items: __, __, __)</span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Hohe Werte sollen _______ bedeuten.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+<p><strong>Schritt 3: Datensatz erstellen (Auswahl der Variablen)</strong></p>
+<p>Erstellt <code>df_mini</code> mit:</p>
+<ul>
+<li><p><code>respid</code> (<strong>Schlüsselvariable!</strong>)</p></li>
+<li><p>mindestens 2 <strong>demographische Variablen</strong> (z. B. <code>age</code>, <code>sex</code>, <code>work</code>, <code>mstat</code>, <code>wohnort</code>)</p></li>
+<li><p>alle Items eurer ausgewählten Skala ___ <strong>Schritt 4: Umkodieren &amp; Skalenwert bilden</strong></p></li>
+<li><p>falls nötig: <em>invertiert Items</em></p></li>
+<li><p>bildet einen <strong>Summen- oder Mittelwert</strong>:</p>
+<ul>
+<li><code>rowSums(..., na.rm = TRUE)</code> <em>oder</em></li>
+<li><code>rowMeans(..., na.rm = TRUE)</code></li>
+</ul></li>
+</ul>
+<p>👉 Gebt der Skala einen sinnvollen Namen (z. B. <code>skala_x_sum</code> oder <code>skala_x_mean</code>) ___ <strong>Schritt 5: Missing Values kurz checken</strong></p>
+<ul>
+<li><strong>prüft:</strong> Gibt es <code>NA</code> im Datensatz?</li>
+<li><strong>prüft:</strong> Wie viele <code>NA</code> in eurer Skala?</li>
+<li>entscheidet euch für einen e<strong>infachen Schritt</strong>:
+<ul>
+<li>entweder <code>na.rm = TRUE</code> in der Skala reicht <strong>oder</strong></li>
+<li><code>drop_na()</code> für die Skala (<strong>für „saubere“ Analyse</strong>) ___ <strong>Schritt 6: Join anwenden</strong></li>
+</ul></li>
+</ul>
+<p>Führt einen <code>left_join()</code> mit dem Armutsdatensatz durch (wie zuvor):</p>
+<ul>
+<li><strong>Schlüsselvariable</strong> anpassen und erstellen (falls nötig)</li>
+<li>danach <strong>prüfen</strong>, ob neue Variablen angekommen sind</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><strong>Optional andere Kontextvariablen</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Auf der Seite von <a href="https://www.inkar.de/">INKAR</a> könnt ihr andere Kontextvariablen euch aussuchen und auf Bundeslandebene runterladen.</p>
+</div>
+</div>
+</div>
+<hr>
+<p><strong>Schritt 7: Datensatz speichern</strong></p>
+<p><strong>Speichert</strong> euren finalen Datensatz:</p>
+<ul>
+<li>als CSV (<code>write_csv()</code>)</li>
+<li><strong>optional</strong> als SPSS (<code>write_sav()</code>)</li>
+</ul>
+</section>
+<section id="mini-analyse-deskriptive-statistik" class="level2">
+<h2 class="anchored" data-anchor-id="mini-analyse-deskriptive-statistik">Mini-Analyse: Deskriptive Statistik</h2>
+<p>Erstellt zum Schluss eine kurze deskriptive Auswertung:</p>
+<p><strong>Hintergrundvariablen (Beispiele)</strong></p>
+<ul>
+<li><code>age</code>: Mittelwert + SD</li>
+<li><code>sex</code> oder <code>work</code> oder <code>abschluss</code>: <strong>Häufigkeiten</strong></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><strong>Tipp: Deskriptive Statistik</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Schaut euch die Funktionen aus dem <code>psych</code> und dem <code>janitor</code>Packages an!</p>
+<ul>
+<li><code>install.packages("janitor", repos = "https://cloud.r-project.org")</code></li>
+<li><code>install.packages("psych", repos = "https://cloud.r-project.org")</code></li>
+</ul>
+<p><strong>Kategorische Variablen</strong></p>
+<ul>
+<li><code>janitor::tabyl()</code></li>
+</ul>
+<p><strong>Numerische Variablen</strong></p>
+<ul>
+<li><code>psych::describe()</code></li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Eure Skala</strong></p>
+<ul>
+<li>Mittelwert + SD</li>
+<li>Min/Max (<strong>optional</strong>)</li>
+<li>Missing-Anteil (<strong>optional</strong>)</li>
+</ul>
+</section>
+<section id="checkliste" class="level2">
+<h2 class="anchored" data-anchor-id="checkliste">Checkliste</h2>
+<p>Am Ende sollten bei euch vorhanden sein:</p>
+<ul>
+<li>ein Datensatz <code>df_mini</code> (oder <code>df_mini_clean</code>)</li>
+<li>eine selbst gebildete Skala (<code>*_sum</code> oder <code>*_mean</code>)</li>
+<li>ein kurzer Deskriptiv-Output (<strong>Mittelwert/SD + Häufigkeiten</strong>)</li>
+<li>ein gespeicherter Output (<code>.csv</code>, optional <code>.sav</code>)</li>
+</ul>
+</section>
+</section>
+<section id="abschluss-tag-2" class="level1">
+<h1>Abschluss Tag 2</h1>
+<hr>
+<p>Danke, dass ihr heute wieder dabei wart 👋<br>
+Ihr habt jetzt einen vollständigen <strong>Basis-Workflow</strong> kennengelernt – von Daten einlesen bis zu ersten “Auswertungen”.</p>
+<p>Bevor wir abschließen:<br>
+👉 Gibt es noch offene <strong>Fragen</strong> oder Stellen, die wir <strong>gemeinsam nochmal anschauen sollen</strong>?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><strong>Merksatz zum Abschluss</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Guter Code ist nicht der „kürzeste“ – sondern der, den du (und andere) später noch verstehst.</p>
+</div>
+</div>
+<section id="always-remember" class="level2">
+<h2 class="anchored" data-anchor-id="always-remember"><strong>Always Remember</strong></h2>
+<p><img src="assets/images/rmeme.jpg" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
 <p><a href="../../workshops/ws1/day1.html" class="btn btn-primary">⬅️ Zurück zu Tag 1</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
