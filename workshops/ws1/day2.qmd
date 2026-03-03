@@ -15,7 +15,7 @@ sidebar: workshop1
 Willkommen zurück 👋  
 Wir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.
 
-# Recap - Tag 1
+# Recap – Tag 1
 ___
 Wir haben im ersten Teil des Workshops gelernt, wie RStudio aufgebaut ist und funktioniert. Wir kennen nun die wichtigsten Grundlagen und können diese heute weiter **vertiefen und festigen**.
 
@@ -48,7 +48,7 @@ In der Datenanalyse arbeiten wir häufig mit Variablen, deren Werte **nicht dire
 Beim Umkodieren können zum Beispiel:
 
 - Kategorien zusammengefasst werden  
-  (z. B. mehrere Bildungsabschlüsse → „niedrig / mittel / hoch“)
+  (z. B. mehrere Bildungsabschlüsse → „niedrig / mittel / hoch")
 - Werte umgedreht werden  
   (z. B. hohe Werte = geringe Zustimmung)
 - neue Variablen aus bestehenden gebildet werden  
@@ -57,7 +57,7 @@ Beim Umkodieren können zum Beispiel:
 ::: callout-tip
 # **Warum ist Umkodieren wichtig?**
 
-Rohdaten sind selten sofort „analysefertig“. Durch Umkodieren stellen wir sicher, dass unsere Variablen **inhaltlich korrekt** interpretiert und **vergleichbar** ausgewertet werden können. Umkodierung ist daher ein wichtiger **Bestandteil der Datenaufbereitung** und **wichtig** für die späteren Analysen!
+Rohdaten sind selten sofort „analysefertig". Durch Umkodieren stellen wir sicher, dass unsere Variablen **inhaltlich korrekt** interpretiert und **vergleichbar** ausgewertet werden können. Umkodierung ist daher ein wichtiger **Bestandteil der Datenaufbereitung** – und entscheidend für die späteren Analysen!
 :::
 
 Im Folgenden sehen wir typische Beispiele für Umkodierungen und setzen sie direkt mit R um.
@@ -68,53 +68,49 @@ In Fragebögen kommen häufig invertierte Items vor. Das bedeutet: Hohe Werte dr
 
 Damit alle Items in dieselbe Richtung zeigen, müssen invertierte Items umkodiert werden.
 
-### Beispiel 
+### Beispiel
 
-Die Items `hs04` bis `hs07 und hs09` Fragen die mentale Gesundheit in den letzten vier Wochen ab:
+Die Items `hs04` bis `hs07` und `hs09` fragen die mentale Gesundheit in den letzten vier Wochen ab:
 
-|**Variable**|**Inhalt**|**Skalierung**|
-|----|----|----|
-|hs04|"Hetze, unter Zeitdruck"| 1 = "Immer" bis 5 = "Nie"|
-|hs05|"Niedergeschlage"| 1 = "Immer" bis 5 = "Nie"|
-|hs06|"Ruhig, Ausgeglichen"| 1 = "Immer" bis 5 = "Nie"|
-|hs07|"Jede menge Energie"| 1 = "Immer" bis 5 = "Nie"|
-|hs09|"Einsam"|1 = "Immer" bis 5 = "Nie"|
+| **Variable** | **Inhalt** | **Skalierung** |
+|---|---|---|
+| hs04 | „Hetze, unter Zeitdruck" | 1 = „Immer" bis 5 = „Nie" |
+| hs05 | „Niedergeschlagen" | 1 = „Immer" bis 5 = „Nie" |
+| hs06 | „Ruhig, ausgeglichen" | 1 = „Immer" bis 5 = „Nie" |
+| hs07 | „Jede Menge Energie" | 1 = „Immer" bis 5 = „Nie" |
+| hs09 | „Einsam" | 1 = „Immer" bis 5 = „Nie" |
 
-Wie wir sehen, sind einige Items invertiert formuliert. Würden wir daraus, eine Skala bilden bspw. **Disstress**, könnten wir mit dem `mutate()`Befehl, keine adäquate Skala bilden.
+Wie wir sehen, sind einige Items invertiert formuliert. Würden wir daraus eine Skala **Distress** bilden, kämen wir mit einem einfachen `mutate()` nicht zu einer sinnvoll interpretierbaren Skala.
 
-Wir müssen also entscheiden, was nun **hohe Werte und was niedrige Werte** darstellen sollen. Damit es intuitiver ist, wollen wir nun die **Variablen `hs04`, `hs05` und `hs09`umkodieren**, damit später ein hoher Wert auf der Skala **"viel Disstress"** darstellen kann.
+Wir müssen also entscheiden, was **hohe** und was **niedrige Werte** darstellen sollen. Damit es intuitiver ist, kodieren wir die **Variablen `hs04`, `hs05` und `hs09` um**, damit später ein hoher Wert auf der Skala **„viel Distress"** bedeutet.
 
-Doch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakete wieder ein, bzw. haben diese schon im Environment!
+Doch bevor wir anfangen, laden wir zunächst Datensatz und Pakete:
 
 ```{r}
 #| echo: true
 #| warning: false
 
-#install.packages("labelled", repos = "https://cloud.r-project.org")
-
 library(tidyverse)
 library(haven)
 library(labelled)
 
-df_csv <- read_csv("assets/data/datensatz_workshop.csv")
-
+df_csv  <- read_csv("assets/data/datensatz_workshop.csv")
 df_spss <- read_sav("assets/data/spss_datensatz_workshop.sav")
 
 head(df_csv, 10)
 ```
 
-Zum besseren Verständnis verkleinern wir erstmal unseren Datensatz: Erstelle den Datensatz `df_diss` mit nur den Items die wir benötigen.
+Zum besseren Verständnis verkleinern wir zunächst unseren Datensatz: Erstelle den Datensatz `df_dist` mit nur den Items, die wir benötigen.
 
 :::{.callout-tip collapse="true"}
 # **Lösung**
 
 ```{r}
 
-df_diss <- df_csv |>
-select(hs04,hs05,hs06,hs07,hs09)
+df_dist <- df_csv |>
+  select(hs04, hs05, hs06, hs07, hs09)
 
-head(df_diss, 10)
-
+head(df_dist, 10)
 ```
 
 :::
@@ -129,23 +125,22 @@ Nun können wir in diesem neuen Datensatz, getrennt von den Rohdaten, üben!
 #| echo: true
 
 # jede Variable einzeln und manuell
+df_dist$hs04_inv <- 6 - df_dist$hs04
 
-df_diss$hs04_inv <- 6 - df_diss$hs04
-
-head(df_diss$hs04,10)
-
-head(df_diss$hs04_inv,10)
+head(df_dist$hs04, 10)
+head(df_dist$hs04_inv, 10)
 ```
+
 :::{.callout-note collapse="true"}
 # **Hinweis**
-Bei der Intertierung, wird...
-- der Wert`1` zu  `5`
+Bei der Invertierung wird:
+- der Wert `1` zu `5`
 - der Wert `2` zu `4`
-- der Wert `3`bleibt `3`
+- der Wert `3` bleibt `3`
 - der Wert `4` zu `2`
 - der Wert `5` zu `1`
 
-Die oben vorgstellte **Alternative 1** basiert auf der Annahme **"maximaler Skalenwert" + 1 - "Skalenwert der Person"**.
+Die oben vorgestellte **Alternative 1** basiert auf der Formel **„maximaler Skalenwert + 1 − Skalenwert der Person"**.
 :::
 
 # Alternative 2
@@ -153,28 +148,14 @@ Die oben vorgstellte **Alternative 1** basiert auf der Annahme **"maximaler Skal
 ```{r}
 #| echo: true
 
- df_diss<-df_diss|>
-    mutate(hs04_inv = recode(hs04,
-                             "1"=5,
-                             "2"=4,
-                             "3"=3,
-                             "4"=2,
-                             "5"=1),
-           hs05_inv = recode(hs05,
-                             "1"=5,
-                             "2"=4,
-                             "3"=3,
-                             "4"=2,
-                             "5"=1),
-           hs09_inv = recode(hs09,
-                            "1"=5,
-                            "2"=4,
-                            "3"=3,
-                            "4"=2,
-                            "5"=1),
-           )
+df_dist <- df_dist |>
+  mutate(
+    hs04_inv = recode(hs04, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+    hs05_inv = recode(hs05, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+    hs09_inv = recode(hs09, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1)
+  )
 
-head(df_diss, 10)           
+head(df_dist, 10)
 ```
 
 # Alternative 3
@@ -182,31 +163,22 @@ head(df_diss, 10)
 ```{r}
 #| echo: true
 #| warning: false
-#| eval: false
-
-install.packages("sjmisc")
-
-```
-```{r}
-#| echo: true
-#| warning: false
 
 library(sjmisc)
 
-df_diss <- df_diss|>
-            mutate(hs04_inv = rec(hs04, rec = "rev"),
-                  hs05_inv = rec(hs05, rec = "rev"),
-                  hs09_inv = rec(hs09, rec = "rev")
-                  )
+df_dist <- df_dist |>
+  mutate(
+    hs04_inv = rec(hs04, rec = "rev"),
+    hs05_inv = rec(hs05, rec = "rev"),
+    hs09_inv = rec(hs09, rec = "rev")
+  )
 
-head(df_diss, 10)
-
+head(df_dist, 10)
 ```
+
 :::{.callout-note collapse="true"}
 # **Hinweis**
-Wir haben hier einen Befehl aus einem anderen Paket genutzt. Wie du sehen kannst, sind Pakete auch miteinander kombinierbar!
-
-Hier handelt es sich um den `rec()` Befehl aus dem Paket **sjmisc**.
+Wir nutzen hier den `rec()`-Befehl aus dem Paket **sjmisc**. Wie du siehst, lassen sich Pakete gut miteinander kombinieren!
 :::
 :::
 
@@ -223,44 +195,47 @@ In der Praxis arbeiten wir jedoch sehr häufig auch mit **kategorialen Variablen
 Diese Variablen sind meist als **Faktoren** kodiert oder sollen als solche behandelt werden.
 Beim Umkodieren von Faktorvariablen geht es weniger um Rechnen, sondern darum, **Kategorien sinnvoll zusammenzufassen oder neu zu benennen**.
 
-In diesem Abschnitt schauen wir uns daher an, wie wir **Faktorvariablen gezielt umkodieren**, zum Beispiel indem wir:
+In diesem Abschnitt schauen wir uns an, wie wir **Faktorvariablen gezielt umkodieren**, zum Beispiel indem wir:
 
 - mehrere Kategorien zu einer Gruppe zusammenfassen oder  
 - neue, besser interpretierbare Gruppen bilden.
+
 ___
-Wir erstellen nun erneut einen Datensatz und nennen es `df_rec`. Diesmal fügen wir zu unseren Disstress Variablen weitere hinzu. Folgende Variablen sollen hinzugenommen werden:
-- `gs01` - Selbsbeschreibung des Wohnorts
-- `educ` - Allgemeiner Schulabschluss
-- `mstat` - Familienstand
-- `im17` bis `im21` - Einstellung zur sozialen Ungleichheit
+
+Wir erstellen nun einen neuen Datensatz `df_rec`. Folgende Variablen sollen enthalten sein:
+
+- `gs01` – Selbstbeschreibung des Wohnorts
+- `educ` – Allgemeiner Schulabschluss
+- `mstat` – Familienstand
+- `im17` bis `im21` – Einstellung zur sozialen Ungleichheit
 
 :::{.callout-important collapse="true"}
 # **Beschreibungen der Variablen**
 
 :::{.panel-tabset}
 # Wohnort
-|**Variable**|**Inhalt**|**Skalierung**|
-|----|----|----|
-|gs01|"Selbsbeschreibung des Wohnorts"| 1 = Großstadt<br> 2 = Vorort Großstadt<br> 3 = Mittel-/Kleinstadt<br> 4 = ländl. Dorf<br> 5 = Allein stehendes Haus auf dem Land |
+| **Variable** | **Inhalt** | **Skalierung** |
+|---|---|---|
+| gs01 | „Selbstbeschreibung des Wohnorts" | 1 = Großstadt<br> 2 = Vorort Großstadt<br> 3 = Mittel-/Kleinstadt<br> 4 = ländl. Dorf<br> 5 = Alleinstehendes Haus auf dem Land |
 
 # Schulabschluss
-|**Variable**|**Inhalt**|**Skalierung**|
-|----|----|----|
-|educ|"Allgemeiner Schulabschluss"| 1 = Ohne Abschluss<br> 2 = Volks-/Hauptschule<br> 3 = Mittelere Reife<br> 4 = Fachhochschulreife<br> 5 = Hochschulreife<br> 6 = Anderer Abschluss<br> 7 = Noch Schüler*in |
+| **Variable** | **Inhalt** | **Skalierung** |
+|---|---|---|
+| educ | „Allgemeiner Schulabschluss" | 1 = Ohne Abschluss<br> 2 = Volks-/Hauptschule<br> 3 = Mittlere Reife<br> 4 = Fachhochschulreife<br> 5 = Hochschulreife<br> 6 = Anderer Abschluss<br> 7 = Noch Schüler\*in |
 
 # Familienstand
-|**Variable**|**Inhalt**|**Skalierung**|
-|----|----|----|
-|mstat|"Familienstand"| 1 = Verheiratet (zsm.lebend)<br> 2 = Verheiratet (getrennt)<br> 3 = Verwitwet<br> 4 = Geschieden<br> 5 = Ledig<br> 6 = Lebensp. (zsm.lebend)<br> 7 = Lebensp. (getrennt)<br> 8 = Lebensp. verstorben<br> Lebensp. aufgehoben |
+| **Variable** | **Inhalt** | **Skalierung** |
+|---|---|---|
+| mstat | „Familienstand" | 1 = Verheiratet (zsm.lebend)<br> 2 = Verheiratet (getrennt)<br> 3 = Verwitwet<br> 4 = Geschieden<br> 5 = Ledig<br> 6 = Lebensp. (zsm.lebend)<br> 7 = Lebensp. (getrennt)<br> 8 = Lebensp. verstorben<br> 9 = Lebensp. aufgehoben |
 
 # Soziale Ungleichheit
-|**Variable**|**Inhalt**|**Skalierung**|
-|----|----|----|
-|im17|"Was man im Leben bekommt, hängt gar nicht so sehr von den eigenen Anstrengungen ab, sondern von der Wirtschaftslage, der Lage auf dem Arbeitsmarkt, den Tarifabschlüssen und den Sozialleistungen des Staates."| 1 = "Stimme voll zu" bis 4 = "Stimme überhaupt nicht zu"|
-|im18|"Das Einkommen sollte sich nicht allein nach der Leistung des Einzelnen richten. Vielmehr sollte jeder das haben, was er mit seiner Familie für ein anständiges Leben braucht."| 1 = "Stimme voll zu" bis 4 = "Stimme überhaupt nicht zu"|
-|im19|"Nur wenn die Unterschiede im Einkommen und im sozialen Ansehen groß genug sind, gibt es auch einen Anreiz für persönliche Leistungen."|1 = "Stimme voll zu" bis 4 = "Stimme überhaupt nicht zu"|
-|im20|"Die Rangunterschiede zwischen den Menschen sind akzeptabel, weil sie im Wesentlichen ausdrücken, was man aus den Chancen, die man hatte, gemacht hat."| 1 = "Stimme voll zu" bis 4 = "Stimme überhaupt nicht zu"|
-|im21|"Ich finde die sozialen Unterschiede in unserem Land im Großen und Ganzen gerecht."|1 = "Stimme voll zu" bis 4 = "Stimme überhaupt nicht zu"|
+| **Variable** | **Inhalt** | **Skalierung** |
+|---|---|---|
+| im17 | „Was man im Leben bekommt, hängt gar nicht so sehr von den eigenen Anstrengungen ab, sondern von der Wirtschaftslage, der Lage auf dem Arbeitsmarkt, den Tarifabschlüssen und den Sozialleistungen des Staates." | 1 = „Stimme voll zu" bis 4 = „Stimme überhaupt nicht zu" |
+| im18 | „Das Einkommen sollte sich nicht allein nach der Leistung des Einzelnen richten. Vielmehr sollte jeder das haben, was er mit seiner Familie für ein anständiges Leben braucht." | 1 = „Stimme voll zu" bis 4 = „Stimme überhaupt nicht zu" |
+| im19 | „Nur wenn die Unterschiede im Einkommen und im sozialen Ansehen groß genug sind, gibt es auch einen Anreiz für persönliche Leistungen." | 1 = „Stimme voll zu" bis 4 = „Stimme überhaupt nicht zu" |
+| im20 | „Die Rangunterschiede zwischen den Menschen sind akzeptabel, weil sie im Wesentlichen ausdrücken, was man aus den Chancen, die man hatte, gemacht hat." | 1 = „Stimme voll zu" bis 4 = „Stimme überhaupt nicht zu" |
+| im21 | „Ich finde die sozialen Unterschiede in unserem Land im Großen und Ganzen gerecht." | 1 = „Stimme voll zu" bis 4 = „Stimme überhaupt nicht zu" |
 
 :::
 :::
@@ -271,18 +246,16 @@ Wir erstellen nun erneut einen Datensatz und nennen es `df_rec`. Diesmal fügen 
 #| echo: true
 #| warning: false
 
-library(tidyverse)
-
-df_rec<-df_csv|>
-  select(gs01,educ,mstat,
-         hs04,hs05,hs06,hs07,hs09,
-         im17,im18,im19,im20,im21)
+df_rec <- df_csv |>
+  select(gs01, educ, mstat,
+         hs04, hs05, hs06, hs07, hs09,
+         im17, im18, im19, im20, im21)
 
 head(df_rec, 10)
 ```
 :::
 
-Nun schauen wir uns die Umkodierung von Faktoren am Beispiel des Wohnortes an:
+Nun schauen wir uns die Umkodierung von Faktoren am Beispiel des Wohnorts an:
 
 :::{.panel-tabset}
 # Alternative 1
@@ -290,23 +263,20 @@ Nun schauen wir uns die Umkodierung von Faktoren am Beispiel des Wohnortes an:
 
 df_rec <- df_rec |>
   mutate(
-    wohnort = recode(
-      gs01,
-      "1"= 1,
-      "2" = 1,
-      "3" = 1,
-      "4" = 2,
-      "5" = 2
-    ))
+    wohnort = recode(gs01,
+      "1" = 1, "2" = 1, "3" = 1,
+      "4" = 2, "5" = 2
+    )
+  )
 
 df_rec |>
   select(gs01, wohnort) |>
   head(10)
-
 ```
+
 :::{.callout-note collapse="true"}
 # Beschreibung
-Wir haben nun hier aus fünf Gruppen zwei Gruppen gemacht. Wir unterscheiden nun zwischen **1 = Urban** und **2 = Rural**.
+Wir haben aus fünf Gruppen zwei Gruppen gemacht. Wir unterscheiden nun zwischen **1 = Urban** und **2 = Rural**.
 :::
 
 # Alternative 2
@@ -324,11 +294,11 @@ df_rec <- df_rec |>
 df_rec |>
   select(gs01, wohnort2) |>
   head(10)
-
 ```
+
 ::: {.callout-note collapse="true"}
 # Beschreibung
-Wir haben hier die zuvor erstellten Gruppen (`1` und `2`) nun als **Faktor mit Labeln** gemacht.
+Wir haben die zuvor erstellten Gruppen (`1` und `2`) als **Faktor mit Labels** definiert.
 :::
 
 # Alternative 3
@@ -336,24 +306,20 @@ Wir haben hier die zuvor erstellten Gruppen (`1` und `2`) nun als **Faktor mit L
 
 df_rec <- df_rec |>
   mutate(
-    wohnort3 = recode(
-      gs01,
-      "1" = 1,
-      "2" = 1,
-      "3" = 1,
-      "4" = 2,
-      "5" = 2
+    wohnort3 = recode(gs01,
+      "1" = 1, "2" = 1, "3" = 1,
+      "4" = 2, "5" = 2
     ) |> factor(labels = c("Urban", "Rural"))
   )
 
 df_rec |>
   select(gs01, wohnort3) |>
   head(10)
-
 ```
+
 :::{.callout-note collapse="true"}
 # Beschreibung
-Hier haben wir es in einem Schritt getan.
+Hier haben wir Umkodieren und Faktor-Definition in einem Schritt kombiniert.
 :::
 
 # Alternative 4
@@ -362,39 +328,35 @@ Hier haben wir es in einem Schritt getan.
 
 df_rec <- df_rec |>
   mutate(
-    wohnort4 = recode(
-      gs01,
-      "1" = "Urban",
-      "2" = "Urban",
-      "3" = "Urban",
-      "4" = "Rural",
-      "5" = "Rural"
+    wohnort4 = recode(gs01,
+      "1" = "Urban", "2" = "Urban", "3" = "Urban",
+      "4" = "Rural", "5" = "Rural"
     ) |> factor(levels = c("Urban", "Rural"))
   )
 
 df_rec |>
   select(gs01, wohnort4) |>
   head(10)
-
 ```
+
 :::{.callout-note collapse="true"}
 # Beschreibung
-Hier haben wir erst "gelabled" und dann Levels hinzugefügt.
+Hier wurden zuerst Labels vergeben und anschließend Levels definiert.
 :::
 :::
 
 ## Übung
 
-Schaut euch die Variablen im neuen Datensatz `df_rec` an. Eure Aufgabe ist es nun neue Variablen zu erstellen, die sinnvoll sind und die wir dann weiter nutzen werden.
+Schaut euch die Variablen im Datensatz `df_rec` an. Eure Aufgabe ist es, neue Variablen zu erstellen, die sinnvoll sind und die wir weiter nutzen werden.
 
-1. Erstellt eine neue Variable von `educ` (nennt diese `abschluss`) die vierstufig ist (niedriger, mittlere, hoher und anderer)
-2. Erstellt einen Skalenwert für Distress und Soziale Unterstützung. Achtet darauf, dass der Summenwert sinnvol interpretierbar ist.
+1. Erstellt eine neue Variable aus `educ` (nennt diese `abschluss`), die **vierstufig** ist: niedrig, mittel, hoch und anderer Abschluss.
+2. Erstellt je einen **Skalenwert für Distress und Soziale Ungleichheit**. Achtet darauf, dass der Summenwert sinnvoll interpretierbar ist.
 
 :::{.callout-tip collapse="true"}
 # **Tipp**
 
-- Schaut euch das Codebuch genauer an, um die Variablen besser zu verstehen.
-- Guckt euch nochmal die Skalierung der Skalenitems an!
+- Schaut euch das Codebuch genauer an, um die Variablen zu verstehen.
+- Achtet auf die Skalierung der Items – sind alle in dieselbe Richtung kodiert?
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -408,45 +370,36 @@ Schaut euch die Variablen im neuen Datensatz `df_rec` an. Eure Aufgabe ist es nu
 
 df_rec <- df_rec |>
   mutate(
-    abschluss = recode(
-      educ,
-      "1" = 1,
-      "2" = 1,
-      "3" = 2,
-      "4" = 3,
-      "5" = 3,
-      "6" = 4,
-      "7" = 1
-    ) |> factor(labels = c("Niedriger", "Mittlerer", "Hoher", "Anderer"))
+    abschluss = recode(educ,
+      "1" = 1, "2" = 1, "3" = 2,
+      "4" = 3, "5" = 3, "6" = 4, "7" = 1
+    ) |> factor(labels = c("Niedrig", "Mittel", "Hoch", "Anderer"))
   )
 
 df_rec |>
   select(educ, abschluss) |>
   head(10)
-
-
 ```
 
 # Distress
 
 ```{r}
 #| echo: true
-#| waring: false
+#| warning: false
 
 library(sjmisc)
 
-df_rec<-df_rec|>
+df_rec <- df_rec |>
   mutate(
-    hs04_r = rec(hs04, rec = "rev"),
-    hs05_r = rec(hs05, rec = "rev"),
-    hs09_r = rec(hs09, rec = "rev"),
-    disstress = hs04_r + hs05_r + hs06 + hs07+ hs09_r
+    hs04_r   = rec(hs04, rec = "rev"),
+    hs05_r   = rec(hs05, rec = "rev"),
+    hs09_r   = rec(hs09, rec = "rev"),
+    distress = hs04_r + hs05_r + hs06 + hs07 + hs09_r
   )
 
 df_rec |>
-  select(hs04, hs04_r, hs05, hs05_r, hs06, hs07, hs09, hs09_r, disstress)|>
+  select(hs04, hs04_r, hs05, hs05_r, hs06, hs07, hs09, hs09_r, distress) |>
   head(10)
-
 ```
 
 # Soziale Ungleichheit
@@ -455,20 +408,19 @@ df_rec |>
 #| echo: true
 #| warning: false
 
-df_rec<-df_rec|>
+df_rec <- df_rec |>
   mutate(
     im17_r = 5 - im17,
     im18_r = 5 - im18,
     im19_r = 5 - im19,
     im20_r = 5 - im20,
     im21_r = 5 - im21,
-    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))
+    soz.u  = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r))
   )
 
 df_rec |>
   select(im17:im21, im17_r:im21_r, soz.u) |>
   head(10)
-
 ```
 
 # Alles in einem Schritt
@@ -477,34 +429,27 @@ df_rec |>
 #| echo: true
 #| warning: false
 
-df_rec<-df_rec|>
+df_rec <- df_rec |>
   mutate(
-    abschluss = recode(
-      educ,
-      "1" = 1,
-      "2" = 1,
-      "3" = 2,
-      "4" = 3,
-      "5" = 3,
-      "6" = 4,
-      "7" = 1
-    ) |> factor(labels = c("Niedriger", "Mittlerer", "Hoher", "Anderer")),
-    hs04_r = rec(hs04, rec = "rev"),
-    hs05_r = rec(hs05, rec = "rev"),
-    hs09_r = rec(hs09, rec = "rev"),
-    distress = hs04_r + hs05_r + hs06 + hs07+ hs09_r,
-    im17_r = 5 - im17,
-    im18_r = 5 - im18,
-    im19_r = 5 - im19,
-    im20_r = 5 - im20,
-    im21_r = 5 - im21,
-    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))
+    abschluss = recode(educ,
+      "1" = 1, "2" = 1, "3" = 2,
+      "4" = 3, "5" = 3, "6" = 4, "7" = 1
+    ) |> factor(labels = c("Niedrig", "Mittel", "Hoch", "Anderer")),
+    hs04_r   = rec(hs04, rec = "rev"),
+    hs05_r   = rec(hs05, rec = "rev"),
+    hs09_r   = rec(hs09, rec = "rev"),
+    distress = hs04_r + hs05_r + hs06 + hs07 + hs09_r,
+    im17_r   = 5 - im17,
+    im18_r   = 5 - im18,
+    im19_r   = 5 - im19,
+    im20_r   = 5 - im20,
+    im21_r   = 5 - im21,
+    soz.u    = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r))
   )
 
 df_rec |>
-  select(abschluss, disstress, soz.u) |>
+  select(abschluss, distress, soz.u) |>
   head(10)
-
 ```
 :::
 :::
@@ -541,40 +486,35 @@ In `dplyr` gibt es verschiedene Join-Typen, die sich darin unterscheiden, **welc
 - **full_join()** → alles von beiden  
 :::
 
-Wir schauen uns nun den am **häufigsten** verwendeten Join-Befehl an: **`left_join()`**.
-Dafür schauen wir uns nun den Befehl im Detail an.
+Wir schauen uns den am **häufigsten** verwendeten Join an: **`left_join()`**.
 
 :::{.callout-note}
 # left_join()
 
-left_join(x, y, by = "id")
+`left_join(x, y, by = "id")`
 
-- x → **linker Datensatz**
-- y → **rechter Datensatz**
-- by → **Schlüsselvariable (hier "id")**
+- `x` → **linker Datensatz**
+- `y` → **rechter Datensatz**
+- `by` → **Schlüsselvariable**
 :::
 
-Doch bevor wir nun Datensätze zusammenführen, brauchen wir erstmal einen zweiten Datensatz.
+Doch bevor wir Datensätze zusammenführen, brauchen wir einen zweiten Datensatz.
 
 ➡️ **[Datensatz für Kinderarmut und Altersarmut nach Bundesländern](../ws1/assets/data/armutdaten.csv)**
-
-Wir laden nun den neuen Datensatz in unser Environment.
 
 ```{r}
 #| echo: true
 #| warning: false
 
 df_armut <- read_csv("assets/data/armutdaten.csv")
-
-head(df_armut,10)
-
+head(df_armut, 10)
 ```
 
-Nun schauen wir, ob wir eine Schlüsselvariable erkennen können. Die Variable `kzf` was die Kennziffer des **Bundeslandes** darstellt, könnte in Frage kommen. Welche ähnliche Variable haben wir in unserem **ersten Datensatz**?
+Nun schauen wir, ob wir eine Schlüsselvariable erkennen können. Die Variable `kzf` (Kennziffer des Bundeslandes) kommt in Frage. Welche ähnliche Variable haben wir in unserem **ersten Datensatz**?
 
 :::{.callout-note collapse="true"}
 # **Hinweis**
-Die Variable `land` sieht doch vielversprechend aus, oder?
+Die Variable `land` sieht vielversprechend aus!
 
 ```{r}
 #| echo: true
@@ -583,11 +523,10 @@ Die Variable `land` sieht doch vielversprechend aus, oder?
 df_spss |>
   select(land) |>
   head(10)
-
 ```
 :::
 
-Wir gucken uns die Kodierung im **Codebuch** an. Wir müssen vorher die Variable umstrukturieren. Erstelle in unserem **Datensatz** eine neue Variable mit dem namen `kzf`.
+Wir schauen uns die Kodierung im **Codebuch** an und erstellen eine neue Variable `kzf` im SPSS-Datensatz.
 
 :::{.callout-tip collapse="true"}
 # **Lösung**
@@ -597,7 +536,7 @@ Wir gucken uns die Kodierung im **Codebuch** an. Wir müssen vorher die Variable
 #| warning: false
 
 df_spss <- df_spss |>
-  mutate(kzf = rec(land,rec="
+  mutate(kzf = rec(land, rec = "
                    10 = 1;
                    20 = 2;
                    30 = 3;
@@ -619,23 +558,19 @@ df_spss <- df_spss |>
 df_spss |>
   select(kzf) |>
   head(10)
-
 ```
 :::
 
-Wir haben nun die **Schlüsselvariable** erstellt und finden sie in beiden **Datensätzen**.
-
-Bevor wir **die Datensätze zusammenführe**, checken wir nochmal, ob in beiden Datensätzen die **Schlüsselvariable** vorhanden ist.
+Bevor wir die Datensätze zusammenführen, prüfen wir, ob die Schlüsselvariable in beiden vorhanden ist:
 
 ```{r}
 #| echo: true
 #| warning: false
 
 intersect(names(df_spss), names(df_armut))
-
 ```
 
-Nun führen wir die **beiden Datensätze** zusammen.
+Nun führen wir die **beiden Datensätze** zusammen:
 
 ```{r}
 #| echo: true
@@ -646,22 +581,21 @@ df_spss_armut <- left_join(df_spss, df_armut, by = "kzf")
 df_spss_armut |>
   select(66:70) |>
   head(10)
-
 ```
 
 :::{.callout-note}
 # **Hinweis**
 
-Bei `select(66:70)` wähle ich die Spalten **66 bis 70** in meinem neuen **Datensatz** aus.
+`select(66:70)` wählt die Spalten **66 bis 70** im neuen Datensatz aus – praktisch um zu prüfen, ob die neuen Variablen angekommen sind.
 :::
 
 ## Übung
 
-Erstellt erneut euren Datensatz aus der letzten Aufgabe und speichert ihn diesmal unter dem Namen **`df_rec2`**. Achtet darauf, dass ihr **eine eindeutige Schlüsselvariable** mitübernehmt.
+Erstellt erneut euren Datensatz aus der letzten Aufgabe und speichert ihn diesmal unter dem Namen **`df_rec2`**. Achtet darauf, dass ihr eine **eindeutige Schlüsselvariable** mitübernehmt.
 
 Führt anschließend **dieselben Umkodierungen** durch wie zuvor bei `df_rec`.
 
-Zum Schluss **fügt ihr den Hauptdatensatz und `df_rec2` zu einem neuen Datensatz** mit dem Namen **`df_analyse`** zusammen.
+Zum Schluss **fügt ihr den Hauptdatensatz und `df_rec2` zu einem neuen Datensatz `df_analyse`** zusammen.
 
 :::{.callout-tip}
 # **Tipp**
@@ -676,45 +610,34 @@ Zum Schluss **fügt ihr den Hauptdatensatz und `df_rec2` zu einem neuen Datensat
 #| warning: false
 
 # Erstellen von df_rec2
-
-df_rec2<-df_csv|>
-  select(respid,gs01,educ,mstat,
-         hs04,hs05,hs06,hs07,hs09,
-         im17,im18,im19,im20,im21)
+df_rec2 <- df_csv |>
+  select(respid, gs01, educ, mstat,
+         hs04, hs05, hs06, hs07, hs09,
+         im17, im18, im19, im20, im21)
 
 head(df_rec2, 10)
 
 # Umkodieren und Summenwerte erstellen
-
-df_rec2 <-df_rec2|>
+df_rec2 <- df_rec2 |>
   mutate(
     wohnort = recode(gs01,
-      "1" = 1,
-      "2" = 1,
-      "3" = 1,
-      "4" = 2,
-      "5" = 2
+      "1" = 1, "2" = 1, "3" = 1,
+      "4" = 2, "5" = 2
     ) |> factor(labels = c("Urban", "Rural")),
-    abschluss = recode(
-      educ,
-      "1" = 1,
-      "2" = 1,
-      "3" = 2,
-      "4" = 3,
-      "5" = 3,
-      "6" = 4,
-      "7" = 1
-    ) |> factor(labels = c("Niedriger", "Mittlerer", "Hoher", "Anderer")),
-    hs04_r = rec(hs04, rec = "rev"),
-    hs05_r = rec(hs05, rec = "rev"),
-    hs09_r = rec(hs09, rec = "rev"),
-    distress = hs04_r + hs05_r + hs06 + hs07+ hs09_r,
-    im17_r = 5 - im17,
-    im18_r = 5 - im18,
-    im19_r = 5 - im19,
-    im20_r = 5 - im20,
-    im21_r = 5 - im21,
-    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))
+    abschluss = recode(educ,
+      "1" = 1, "2" = 1, "3" = 2,
+      "4" = 3, "5" = 3, "6" = 4, "7" = 1
+    ) |> factor(labels = c("Niedrig", "Mittel", "Hoch", "Anderer")),
+    hs04_r   = rec(hs04, rec = "rev"),
+    hs05_r   = rec(hs05, rec = "rev"),
+    hs09_r   = rec(hs09, rec = "rev"),
+    distress = hs04_r + hs05_r + hs06 + hs07 + hs09_r,
+    im17_r   = 5 - im17,
+    im18_r   = 5 - im18,
+    im19_r   = 5 - im19,
+    im20_r   = 5 - im20,
+    im21_r   = 5 - im21,
+    soz.u    = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r))
   )
 
 df_rec2 |>
@@ -722,16 +645,15 @@ df_rec2 |>
   head(10)
 
 # Neuer Datensatz df_analyse
-
-df_analyse <- left_join(df_csv, df_rec2, by="respid")
+df_analyse <- left_join(df_csv, df_rec2, by = "respid")
 
 df_analyse |>
   select(81:91) |>
   head(10)
 ```
+
 :::{.callout-tip collapse="true"}
-# **Tip**
-Für eine saubere Lösung ohne Duplikate:
+# **Tipp: saubere Lösung ohne Duplikate**
 ```{r}
 #| echo: true
 #| warning: false
@@ -744,6 +666,7 @@ df_analyse <- df_csv |>
 :::
 
 :::
+
 :::{.callout-important collapse="true"}
 # **Merkhilfe der Join-Befehle**
 
@@ -765,8 +688,6 @@ Der **rechte Datensatz** ist die Basis.
 - passende Informationen aus dem linken Datensatz werden ergänzt  
 - nicht gefundene Werte werden als `NA` ergänzt  
 
-👉 Funktional das Gegenstück zu `left_join()`.
-
 ### `inner_join()`
 
 Es bleiben **nur die gemeinsamen Fälle** erhalten.
@@ -784,7 +705,6 @@ Alle Fälle aus **beiden Datensätzen** bleiben erhalten.
 - wo es keine Entsprechung gibt → `NA`  
 
 👉 Maximale Information, aber oft viele fehlende Werte.
-
 :::
 
 # Fehlende Werte (NA)
@@ -804,7 +724,7 @@ Fehlende Werte entstehen zum Beispiel, wenn:
 # **Wichtig**
 Fehlende Werte sind **kein Fehler**, sondern ein **normaler Bestandteil realer Daten**.
 
-Wichtig ist, zu verstehen,
+Wichtig ist zu verstehen,
 
 - **wo** sie auftreten,
 - **wie viele** es sind und
@@ -823,18 +743,14 @@ R behandelt `NA` **sehr strikt** – und das ist auch gut so.
 
 ## Fehlende Werte identifizieren
 
-Bevor wir mit Berechnungen arbeiten, sollten wir immer prüfen, **ob und wo fehlende Werte** vorkommen. Dafür erstellen wir aus unserem **Analysedatensatz `df_analyse`** einen kleineren handlicheren Datensatz mit den Variablen die wir für unsere Analysen wirklich benötigen und nennen es `df_analyse2`.
+Bevor wir Berechnungen durchführen, sollten wir immer prüfen, **ob und wo fehlende Werte** vorkommen. Dafür erstellen wir aus unserem Analysedatensatz `df_analyse` einen kleineren Datensatz `df_analyse2` mit den Variablen, die wir wirklich benötigen.
 
 Nehme folgende Variablen mit rein:
-- `respid`
-- `wohnort`
-- `isced97`
-- `work`
-- `dw15`
-- `mstat`
-- `hhincc`
-- `disstress` und dazugehörigen Variablen
-- `soz.u` und dazugehörigen Variablen
+
+- `respid`, `age`, `sex`
+- `wohnort`, `isced97`, `work`, `dw15`, `mstat`, `hhincc`
+- `distress` und die dazugehörigen Items
+- `soz.u` und die dazugehörigen Items
 
 :::{.callout-tip collapse="true"}
 # **Lösung**
@@ -843,9 +759,9 @@ Nehme folgende Variablen mit rein:
 #| warning: false
 
 df_analyse2 <- df_analyse |>
-  select(respid,age,sex,wohnort,isced97,work,dw15,
-         mstat,hhincc,hs04_r,hs06,hs07,hs05_r,hs09_r,distress,
-         im17_r,im18_r,im19_r,im20_r,im21_r,soz.u)
+  select(respid, age, sex, wohnort, isced97, work, dw15,
+         mstat, hhincc, hs04_r, hs06, hs07, hs05_r, hs09_r, distress,
+         im17_r, im18_r, im19_r, im20_r, im21_r, soz.u)
 
 df_analyse2 |>
   head(10)
@@ -855,7 +771,7 @@ df_analyse2 |>
 :::{.callout-important collapse="true"}
 # **Hinweis**
 - Schaut im **Codebuch** nach, was die Variablen bedeuten.
-- Achtet darauf, dass ihr die richtigen **Variablennamen** nehmt!
+- Achtet auf die richtigen **Variablennamen**!
 :::
 
 Wir schauen nun unseren Datensatz an:
@@ -869,12 +785,12 @@ Wir schauen nun unseren Datensatz an:
 #| results: false
 
 is.na(df_analyse2)
-
 ```
+
 :::{.callout-caution}
 # **Achtung**
 
-Sehr **unübersichtlich**, da R hier für **jede Zeile und jeder Variable** einen logischen Vektor mit `TRUE`oder `FALSE` erstellt.
+Sehr **unübersichtlich**, da R für **jede Zeile und jede Variable** einen logischen Vektor mit `TRUE` oder `FALSE` ausgibt.
 :::
 
 # **Package `naniar`**
@@ -882,15 +798,14 @@ Sehr **unübersichtlich**, da R hier für **jede Zeile und jeder Variable** eine
 #| echo: true
 #| warning: false
 
-install.packages("naniar", repos="https://cloud.r-project.org")
-
 library(naniar)
 
 any_na(df_analyse2)
 ```
+
 :::{.callout-caution}
 # **Hinweis**
-Mit diesem Befehl, bekommen wir eine schnelle Rückmeldung, **ob** unser Datensatz fehlende Werte hat.
+Mit `any_na()` bekommen wir eine schnelle Rückmeldung, **ob** unser Datensatz fehlende Werte enthält.
 :::
 :::
 
@@ -906,12 +821,12 @@ ___
 #| results: false
 
 is.na(df_analyse2$age)
-
 ```
+
 :::{.callout-caution}
 # **Achtung**
 
-Sehr **unübersichtlich**, da R hier für **jede Zeile einen logischen Vektor mit `TRUE`oder `FALSE` erstellt.
+Sehr **unübersichtlich**, da R für jede Zeile einen logischen Vektor mit `TRUE` oder `FALSE` ausgibt.
 :::
 
 # **Package `naniar`**
@@ -919,17 +834,16 @@ Sehr **unübersichtlich**, da R hier für **jede Zeile einen logischen Vektor mi
 #| echo: true
 #| warning: false
 
-
 any_na(df_analyse2$age)
-
 ```
+
 :::{.callout-caution}
 # **Hinweis**
-Mit diesem Befehl, bekommen wir eine schnelle Rückmeldung, **ob** in er spezifischen Variable fehlende Werte hat.
+Mit `any_na()` bekommen wir eine schnelle Rückmeldung, **ob** eine bestimmte Variable fehlende Werte enthält.
 :::
 :::
 
-Um herauszufinden, **wie viele fehlende Werte** die Variable hat, gehen wir wie folgt vor:
+Um herauszufinden, **wie viele** fehlende Werte eine Variable hat:
 
 :::{.panel-tabset}
 
@@ -939,7 +853,6 @@ Um herauszufinden, **wie viele fehlende Werte** die Variable hat, gehen wir wie 
 #| warning: false
 
 sum(is.na(df_analyse2$age))
-
 ```
 
 # **Package `naniar`**
@@ -947,17 +860,14 @@ sum(is.na(df_analyse2$age))
 #| echo: true
 #| warning: false
 
-
 n_miss(df_analyse2$age)
-
 ```
 
 :::
 
 
-### Überblick mehrer Variablen
+### Überblick mehrerer Variablen
 ___
-Wir können auch **mehrere spezifische** Variablen anschauen:
 
 :::{.panel-tabset}
 # Base R
@@ -971,6 +881,7 @@ df_analyse2 |>
     )
   )
 ```
+
 ::: callout-note
 Hier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable existieren.
 :::
@@ -982,17 +893,16 @@ Hier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable existieren
 #| warning: false
 
 gg_miss_var(df_analyse2)
-
-
 ```
+
 ::: callout-note
-Hier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable im **gesamten Datensatz** sind.
+Hier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable im **gesamten Datensatz** vorliegen.
 :::
 :::
 
 ## Was passiert bei Berechnungen mit `NA`?
 
-Ein häufiger Stolperstein ist der Umgang mit fehlenden Werten (`NA`) bei Berechnungen.
+Ein häufiger Stolperstein ist der Umgang mit fehlenden Werten bei Berechnungen.
 
 👉 Schon ein einziges `NA` reicht aus, damit das gesamte Ergebnis `NA` wird.
 
@@ -1000,21 +910,18 @@ Ein häufiger Stolperstein ist der Umgang mit fehlenden Werten (`NA`) bei Berech
 #| echo: true
 #| warning: false
 
+rowSums(cbind(1, 5, 8, 10, NA, 20, 12, 13, NA))
 
-rowSums(cbind(1,5,8,10,NA,20,12,13,NA))
-
-
-1+5+8+10+NA+20+12+13+NA
-
+1 + 5 + 8 + 10 + NA + 20 + 12 + 13 + NA
 ```
 
 ### Warum ist das so?
 ___
 R kann nicht erraten, wie mit fehlenden Werten umgegangen werden soll:
 
-- Soll das NA ignoriert werden?
+- Soll das `NA` ignoriert werden?
 - Soll das Ergebnis trotzdem berechnet werden?
-- Oder ist das Ergebnis nicht sinnvoll interpretierbar?
+- Oder ist das Ergebnis ohne die fehlenden Werte nicht sinnvoll interpretierbar?
 
 Ohne eine klare Anweisung entscheidet sich R für die **sichere Variante** und gibt `NA` zurück.
 
@@ -1025,72 +932,65 @@ Das gilt für viele Funktionen, zum Beispiel:
 - `rowSums()`
 - `rowMeans()`
 
-👉 Wichtig: Wenn fehlende Werte ignoriert werden sollen, muss man das **explizit angeben**.
+👉 Wenn fehlende Werte ignoriert werden sollen, muss man das **explizit angeben**:
 
 ```{r}
 #| echo: true
 #| warning: false
 
-rowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)
-
+rowSums(cbind(1, 5, 8, 10, NA, 20, 12, 13, NA), na.rm = TRUE)
 ```
+
 :::{.callout-important}
 # **Was bedeutet `na.rm`?**
 
 `na.rm = TRUE` bedeutet:  
-**fehlende Werte (`NA`) werden bei der Berechnung ignoriert**.
+**Fehlende Werte (`NA`) werden bei der Berechnung ignoriert.**
 :::
-
-`na.rm = TRUE` entfernt `NA`-Werte aus der Berechnung, damit Summen trotzdem berechnet werden können.
 
 ```{r}
 #| echo: true
 #| warning: false
 
-rowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)
+rowSums(cbind(1, 5, 8, 10, NA, 20, 12, 13, NA), na.rm = TRUE)
 
-1+5+8+10+20+12+13
-
+1 + 5 + 8 + 10 + 20 + 12 + 13
 ```
 
-Wir wissen, dass wir auf einigen Skalen, die wir gebildet haben, viele Missings haben.
+Wir wissen, dass einige unserer Skalen viele Missings haben. Schauen wir uns das genauer an:
 
 ```{r}
 #| echo: true
 #| warning: false
 
 gg_miss_var(df_analyse2)
-
 ```
 
-Wir schauen uns das mal genauer an:
 ```{r}
 #| echo: true
 #| warning: false
 
 df_analyse2 <- df_analyse2 |>
   mutate(
-    soz.u_na = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r)),
-    soz.u_rmt = rowSums(
-      cbind(im17_r, im18_r, im19_r, im20_r, im21_r),
-      na.rm = TRUE)
+    soz.u_na  = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r)),
+    soz.u_rmt = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r),
+                        na.rm = TRUE)
   )
 
 df_analyse2 |>
   select(soz.u_na, soz.u_rmt) |>
   gg_miss_var()
-
 ```
 
 :::{.callout-warning}
 # **Achtung**
 
-`na.rm = TRUE` bedeutet nicht automatisch „besser“.
+`na.rm = TRUE` bedeutet nicht automatisch „besser".
 
 Wenn sehr viele Items fehlen, kann ein **Skalenwert inhaltlich verzerrt** sein!
 :::
 
-### Wann ist na.rm = TRUE sinnvoll?
+### Wann ist `na.rm = TRUE` sinnvoll?
 ___
 - wenn nur wenige Werte fehlen
 - wenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist
@@ -1105,7 +1005,7 @@ Welche sinnvoll ist, hängt unter anderem ab von:
 - dem Datentyp (Item, Skala, Hintergrundvariable)  
 - der Fragestellung der Analyse  
 
-Mögliche Ansätze sind zum Beispiel:
+Mögliche Ansätze sind:
 
 - fehlende Werte **ignorieren** (`na.rm = TRUE`)
 - Fälle mit fehlenden Werten **ausschließen**
@@ -1124,17 +1024,12 @@ In diesem Workshop konzentrieren wir uns bewusst auf einen **einfachen und trans
 Warum?
 
 - leicht nachvollziehbar  
-- gut geeignet für den Einstieg 
+- gut geeignet für den Einstieg  
 - häufig ausreichend bei großen Stichproben  
 
-Komplexere Verfahren wie **Imputation** sind wichtig, gehen aber über den Rahmen dieses Workshops hinaus. Es lohnt sich aber hier **methodisch** einzuarbeiten!
-
-👉 **Multiple Imputation**
+Komplexere Verfahren wie **multiple Imputation** sind wichtig, gehen aber über den Rahmen dieses Workshops hinaus.
 
 ## Fehlende Werte entfernen
-
-Wie oben angesprochen, entfernen wir bei **ausreichender Datengrundlage** die Personen, die einen fehlende Werte auf die uns wichtigen Variablen haben.
-
 
 ### Ganze Zeilen entfernen (`drop_na()`)
 ___
@@ -1147,33 +1042,29 @@ Mit `drop_na()` entfernen wir **alle Zeilen**, in denen mindestens ein `NA` in d
 df_clean <- df_analyse2 |>
   drop_na(soz.u_na)
 
-df_clean |>
-  dim()
-
-  df_analyse2 |>
-  dim()
+df_clean |> dim()
+df_analyse2 |> dim()
 ```
 
 👉 Ergebnis: Nur Fälle ohne fehlende Werte in `soz.u` bleiben erhalten.
 
 :::{.callout-tip collapse="true"}
 # Tipp
-Um zu schauen, wie viele Personen damit ausgeschlossen wurden, kann man folgendes machen:
+Um zu sehen, wie viele Personen ausgeschlossen wurden:
 
 ```{r}
 #| echo: true
 #| warning: false
 
 nrow(df_analyse2) - nrow(df_clean)
-
 ```
 :::
 
 ## Übung
 
-Erstelle einen Datensatz `df_clean`, welcher frei von `NA's` ist für die Variablen `distress` und `soz.u`. 
+Erstelle einen Datensatz `df_clean`, der frei von `NA`s für die Variablen `distress` und `soz.u` ist.
 
-- Wie viele Beobachtungen werden final ausgeschlossen?
+- Wie viele Beobachtungen werden insgesamt ausgeschlossen?
 
 :::{.callout-tip collapse="true"}
 # **Lösung**
@@ -1184,17 +1075,15 @@ Erstelle einen Datensatz `df_clean`, welcher frei von `NA's` ist für die Variab
 
 df_analyse2 <- df_analyse2 |>
   mutate(
-    distress_na = rowSums(cbind(hs04_r,hs06,hs07,hs05_r,hs09_r)),
-    distress_rmt = rowSums(
-      cbind(hs04_r,hs06,hs07,hs05_r,hs09_r),
-      na.rm = TRUE)
+    distress_na  = rowSums(cbind(hs04_r, hs06, hs07, hs05_r, hs09_r)),
+    distress_rmt = rowSums(cbind(hs04_r, hs06, hs07, hs05_r, hs09_r),
+                           na.rm = TRUE)
   )
 
 df_clean <- df_analyse2 |>
   drop_na(distress_na, soz.u_na)
 
-nrow(df_analyse2) - nrow(df_clean) 
-
+nrow(df_analyse2) - nrow(df_clean)
 ```
 :::
 
@@ -1206,33 +1095,33 @@ nrow(df_analyse2) - nrow(df_clean)
 
 Nach dem Entfernen von `NA` immer prüfen:
 
-- Wie viele Fälle sind übrig?
+- Wie viele Fälle sind noch übrig?
 - Ist die Fallzahl noch ausreichend?
 - Betrifft das Entfernen bestimmte Gruppen stärker als andere?
 
 # **Merksatz**
 
-Es gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist,
+Es gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist:
 
-- bewusst zu entscheiden,
-- transparent zu dokumentieren,
-- und die Konsequenzen zu kennen.
+- bewusst entscheiden
+- transparent dokumentieren
+- Konsequenzen kennen
 :::
 :::
 
 
 # Recap Workshop
 ___
-Bevor wir ins **Mini-Projekt** starten, fassen wir kurz zusammen, was wir an **Tag 1** und **Tag 2** gemacht haben.
+Bevor wir ins **Mini-Projekt** starten, fassen wir kurz zusammen, was wir an **Tag 1** und **Tag 2** erarbeitet haben.
 
 :::{.callout-note}
-# **RECAPS**
+# **Recaps**
 
 :::{.panel-tabset}
 # **Recap – Tag 1 (Grundlagen)**
 
 - **R vs. RStudio**: Was ist die Sprache, was ist die Oberfläche?
-- **RStudio verstehen**: Script, Console, Environment, Files/Plots/Help
+- **RStudio verstehen**: Skript-Editor, Konsole, Environment, Files/Plots/Help
 - **Projekte anlegen**: Warum Projekte wichtig sind (Pfade, Ordnung, Reproduzierbarkeit)
 - **R-Skripte nutzen**: Code speichern, wiederverwenden, nachvollziehbar arbeiten
 - **Objekte & Zuweisung**: `<-`, Vektoren mit `c()`, Werte speichern
@@ -1243,7 +1132,7 @@ Bevor wir ins **Mini-Projekt** starten, fassen wir kurz zusammen, was wir an **T
 - **Datenimport**: CSV und SPSS (`read_csv()`, `read_sav()`)
 - **Plausibilitätscheck**: `summary()` und `glimpse()`
 - **Datenaufbereitung mit dplyr**: `select()`, `filter()`, `mutate()` + neue Objekte
-- **Pipes** (`|>`): Schritte lesbar als Workflow „hintereinander“ schreiben
+- **Pipes** (`|>`): Schritte lesbar als Workflow hintereinander schreiben
 
 # **Recap – Tag 2 (Datenaufbereitung)**
 
@@ -1253,22 +1142,22 @@ Bevor wir ins **Mini-Projekt** starten, fassen wir kurz zusammen, was wir an **T
   - Labels / Faktoren erstellen (Interpretation verbessern)
 - **Skalenbildung**:
   - Summenwerte erstellen (z. B. `rowSums()` für mehrere Items)
-  - Hinweis: Richtung & Interpretation vorher festlegen
+  - Richtung & Interpretation vorher festlegen
 - **Joins (Datensätze zusammenführen)**:
   - Schlüsselvariablen identifizieren/erstellen
   - `left_join()` als Standardfall, plus Überblick: right/inner/full
 - **Fehlende Werte (NA)**:
   - NA erkennen und zählen (`any_na()`, `n_miss()`, `gg_miss_var()`)
-  - verstehen, was NA bei Berechnungen macht
+  - verstehen, was NA bei Berechnungen bewirkt
   - `na.rm = TRUE` als explizite Anweisung zum Ignorieren
-  - `drop_na()` als einfacher Workflow-Schritt für „saubere“ Analysedaten
+  - `drop_na()` als einfacher Workflow-Schritt für saubere Analysedaten
 :::
 :::
 
 ## Workflow
 
 Ziel ist ein **gut dokumentierter und jederzeit nachvollziehbarer Analyse-Workflow**:  
-Jemand anderes (oder du in 3 Monaten) soll verstehen, **was** du gemacht hast, **warum** du es gemacht hast und **wie** du zu deinen Ergebnissen kommst.
+Jemand anderes (oder du selbst in drei Monaten) soll verstehen, **was** du gemacht hast, **warum** und **wie** du zu deinen Ergebnissen kommst.
 
 :::{.panel-tabset}
 
@@ -1277,19 +1166,19 @@ Jemand anderes (oder du in 3 Monaten) soll verstehen, **was** du gemacht hast, *
 Eine mögliche Struktur:
 
 - `projektname/`  
-  - `data/`  *(Rohdaten & ggf. bereinigte Daten)*  
-  - `scripts/`  *(alle R-Skripte)*  
-  - `output/`  *(Tabellen, Abbildungen, Reports)*  
+  - `data/` *(Rohdaten & bereinigte Daten)*  
+  - `scripts/` *(alle R-Skripte)*  
+  - `output/` *(Tabellen, Abbildungen, Reports)*  
   - `projektname.Rproj`
 
 # Skripte sinnvoll gliedern
 
-Statt ein langes Skript:
+Statt eines langen Skripts:
 
-- `01_import.R`  *(Daten laden, erste Checks)*  
-- `02_cleaning.R`  *(Umkodieren, Skalen, Missing neue Variablen)*  
-- `03_analysis.R`  *(Modelle, Tests, Kennwerte)*  
-- `04_plots.R`  *(Visualisierungen, Export)*  
+- `01_import.R` *(Daten laden, erste Checks)*  
+- `02_cleaning.R` *(Umkodieren, Skalen, Missings, neue Variablen)*  
+- `03_analysis.R` *(Modelle, Tests, Kennwerte)*  
+- `04_plots.R` *(Visualisierungen, Export)*  
 
 So kannst du jeden Schritt einzeln ausführen, testen und bei Fehlern gezielt zurückspringen.
 
@@ -1304,16 +1193,16 @@ Kommentiere kurz, **was** passiert und **warum**:
 Beispiel:
 
 ```{r}
+#| echo: true
+
 # Invertiere hs04/hs05/hs09, damit hohe Werte = mehr Distress bedeuten
 # Skala: 1–5, deshalb: 6 - Wert
 ```
 :::
 
-## **Exkurs: Datensatz Speichern**
+## Exkurs: Datensatz speichern
 
 Nach der Datenaufbereitung oder Analyse ist es sinnvoll, **Zwischenergebnisse zu speichern** (z. B. bereinigte Datensätze oder finale Analyse-Daten).
-
-So kannst du später direkt weiterarbeiten, ohne alle Schritte erneut ausführen zu müssen.
 
 :::{.panel-tabset}
 # CSV
@@ -1326,7 +1215,6 @@ So kannst du später direkt weiterarbeiten, ohne alle Schritte erneut ausführen
 #| warning: false
 
 write_csv(df_clean, file = "assets/data/output/Datensatz_clean.csv")
-
 ```
 
 # SPSS
@@ -1339,7 +1227,6 @@ write_csv(df_clean, file = "assets/data/output/Datensatz_clean.csv")
 #| warning: false
 
 write_sav(df_clean, path = "assets/data/output/spss_Datensatz_clean.sav")
-
 ```
 :::
 
@@ -1357,117 +1244,116 @@ Am Ende dieses Mini-Projekts könnt ihr:
 - eine Skala eurer Wahl bilden **(inkl. ggf. Invertierung)**
 - **fehlende Werte erkennen** und sinnvoll damit umgehen (`any_na()`, `n_miss()`, `na.rm`, `drop_na()`)
 - einen **zweiten Datensatz** joinen (`left_join()`)
-- einen **„Analyse-Datensatz“ erstellen** und **speichern** (`write_csv()`, optional `write_sav()`)
-- eine **kleine** deskriptive Auswertung machen (z. B. **Mittelwerte / SD / Häufigkeiten**)
+- einen **„Analyse-Datensatz" erstellen** und **speichern** (`write_csv()`, optional `write_sav()`)
+- eine **kleine deskriptive Auswertung** machen (Mittelwerte / SD / Häufigkeiten)
 
 ## Aufgabenstellung
 
-Ihr erstellt euch einen eigenen Datensatz df_mini, der am Ende „analysefertig“ ist.
+Ihr erstellt einen eigenen Datensatz `df_mini`, der am Ende „analysefertig" ist.
 
 **Schritt 1: Datensatz laden und Überblick verschaffen**
 
-- lade **df_csv** (und ggf. df_spss)
-- verschaffe dir einen **Überblick**:
-  - `glimpse()`
-  - `summary()`
+- lade `df_csv` (und ggf. `df_spss`)
+- verschaffe dir einen Überblick mit `glimpse()` und `summary()`
+
 ___
+
 **Schritt 2: Skala auswählen (Codebuch!)**
 
-Wählt eine Skala eurer Wahl aus dem Codebuch:
+Wählt eine Skala eurer Wahl:
 
-- Skala aus **mindestens 3 Items**
+- mindestens **3 Items**
 - achtet auf die **Skalierung** (z. B. 1–4 oder 1–5)
-- prüft, ob es **invertierte** Items gibt (**und entscheidet, was „hoch“ bedeuten soll**)
+- prüft, ob es **invertierte** Items gibt
 
-**👉 Speichert eure Entscheidung kurz als Kommentar im Skript**
+**👉 Haltet eure Entscheidung als Kommentar im Skript fest:**
 
 ```{r}
 #| echo: true
-#| warning: false
 
 # Bildung der Skala _______ (Items: __, __, __)
-## Hohe Werte sollen _______ bedeuten.
-
+# Hohe Werte sollen _______ bedeuten.
 ```
+
 ___
-**Schritt 3: Datensatz erstellen (Auswahl der Variablen)**
+
+**Schritt 3: Datensatz erstellen**
 
 Erstellt `df_mini` mit:
 
-- `respid` (**Schlüsselvariable!**)
-- mindestens 2 **demographische Variablen** (z. B. `age`, `sex`, `work`, `mstat`, `wohnort`)
-- alle Items eurer ausgewählten Skala
+- `respid` **(Schlüsselvariable!)**
+- mindestens 2 **demographische Variablen**
+- alle Items eurer Skala
+
 ___
+
 **Schritt 4: Umkodieren & Skalenwert bilden**
 
-- falls nötig: *invertiert Items*
-- bildet einen **Summen- oder Mittelwert**:
-  - `rowSums(..., na.rm = TRUE)` *oder*
-  - `rowMeans(..., na.rm = TRUE)`
+- falls nötig: Items invertieren
+- bildet einen **Summen- oder Mittelwert** (`rowSums()` oder `rowMeans()`)
+- gebt der Skala einen sinnvollen Namen
 
-👉 Gebt der Skala einen sinnvollen Namen (z. B. `skala_x_sum` oder `skala_x_mean`)
 ___
-**Schritt 5: Missing Values kurz checken**
 
-- **prüft:** Gibt es `NA` im Datensatz?
-- **prüft:** Wie viele `NA` in eurer Skala?
-- entscheidet euch für einen e**infachen Schritt**:
-  - entweder `na.rm = TRUE` in der Skala reicht **oder**
-  - `drop_na()` für die Skala (**für „saubere“ Analyse**)
+**Schritt 5: Fehlende Werte prüfen**
+
+- Gibt es `NA` im Datensatz?
+- Wie viele `NA` in eurer Skala?
+- Entscheidet euch: `na.rm = TRUE` oder `drop_na()`?
+
 ___
+
 **Schritt 6: Join anwenden**
 
-Führt einen `left_join()` mit dem Armutsdatensatz durch (wie zuvor):
+Führt einen `left_join()` mit dem Armutsdatensatz durch:
 
-- **Schlüsselvariable** anpassen und erstellen (falls nötig)
-- danach **prüfen**, ob neue Variablen angekommen sind
+- Schlüsselvariable anpassen (falls nötig)
+- prüfen, ob neue Variablen angekommen sind
 
 :::{.callout-tip collapse="true"}
-# **Optional andere Kontextvariablen**
+# **Optional: andere Kontextvariablen**
 
-Auf der Seite von [INKAR](https://www.inkar.de/) könnt ihr andere Kontextvariablen euch aussuchen und auf Bundeslandebene runterladen.
-
+Auf der Seite von [INKAR](https://www.inkar.de/) könnt ihr weitere Kontextvariablen auf Bundeslandebene herunterladen.
 :::
+
 ___
+
 **Schritt 7: Datensatz speichern**
 
-**Speichert** euren finalen Datensatz:
-
 - als CSV (`write_csv()`)
-- **optional** als SPSS (`write_sav()`)
+- optional als SPSS (`write_sav()`)
 
 ## Mini-Analyse: Deskriptive Statistik
 
 Erstellt zum Schluss eine kurze deskriptive Auswertung:
 
-**Hintergrundvariablen (Beispiele)**
+**Hintergrundvariablen**
 
 - `age`: Mittelwert + SD
-- `sex` oder `work` oder `abschluss`: **Häufigkeiten**
+- `sex`, `work` oder `abschluss`: Häufigkeiten
 
 :::{.callout-note collapse="true"}
 # **Tipp: Deskriptive Statistik**
 
-Schaut euch die Funktionen aus dem `psych` und dem `janitor`Packages an!
+Schaut euch die Funktionen aus `psych` und `janitor` an!
 
-- `install.packages("janitor", repos = "https://cloud.r-project.org")`
-- `install.packages("psych", repos = "https://cloud.r-project.org")`
+```{r}
+#| echo: true
+#| eval: false
 
-**Kategorische Variablen**
+install.packages("janitor")
+install.packages("psych")
+```
 
-- `janitor::tabyl()`
-
-**Numerische Variablen**
-
-- `psych::describe()`
-
+- **Kategorische Variablen**: `janitor::tabyl()`  
+- **Numerische Variablen**: `psych::describe()`
 :::
 
 **Eure Skala**
 
 - Mittelwert + SD
-- Min/Max (**optional**)
-- Missing-Anteil (**optional**)
+- Min/Max *(optional)*
+- Missing-Anteil *(optional)*
 
 ## Checkliste
 
@@ -1475,23 +1361,23 @@ Am Ende sollten bei euch vorhanden sein:
 
 - ein Datensatz `df_mini` (oder `df_mini_clean`)
 - eine selbst gebildete Skala (`*_sum` oder `*_mean`)
-- ein kurzer Deskriptiv-Output (**Mittelwert/SD + Häufigkeiten**)
+- ein kurzer Deskriptiv-Output (Mittelwert/SD + Häufigkeiten)
 - ein gespeicherter Output (`.csv`, optional `.sav`)
 
 # Abschluss Tag 2
 ___
 Danke, dass ihr heute wieder dabei wart 👋  
-Ihr habt jetzt einen vollständigen **Basis-Workflow** kennengelernt – von Daten einlesen bis zu ersten "Auswertungen".
+Ihr habt jetzt einen vollständigen **Basis-Workflow** kennengelernt – von Daten einlesen bis zu ersten Auswertungen.
 
 Bevor wir abschließen:  
-👉 Gibt es noch offene **Fragen** oder Stellen, die wir **gemeinsam nochmal anschauen sollen**?
+👉 Gibt es noch offene **Fragen** oder Stellen, die wir **gemeinsam nochmal anschauen** sollen?
 
 :::{.callout-note}
 # **Merksatz zum Abschluss**
-Guter Code ist nicht der „kürzeste“ – sondern der, den du (und andere) später noch verstehst.
+Guter Code ist nicht der „kürzeste" – sondern der, den du (und andere) später noch verstehst.
 :::
 
-## **Always Remember**
+## Always Remember
 
 ![](assets/images/rmeme.jpg){width=100% style="border: 2px solid darkblue;"}
 

@@ -14,15 +14,16 @@ sidebar: workshop1
 
 # Ankommen & Setup
 ___
-Willkommen zum Workshop „Einführung in R & RStudio“ 👋
+Willkommen zum Workshop „Einführung in R & RStudio" 👋  
 An Tag 1 legen wir die Grundlagen, die wir am zweiten Tag weiter vertiefen.
 
 **Ziele für heute**
-- RStudio Oberfläche kennenlernen
-- verstehen, wie R „denkt“
+
+- RStudio-Oberfläche kennenlernen
+- verstehen, wie R „denkt"
 - erste eigene Objekte und Daten erzeugen
 
-# Was ist R und Rstudio?
+# Was ist R und RStudio?
 ___
 **R** ist eine freie Programmiersprache, mit der man *Daten analysieren, auswerten und grafisch* darstellen kann.
 
@@ -33,26 +34,24 @@ ___
 - Diagramme und Grafiken erstellen
 - Daten aufbereiten, filtern und umformen
 
-**R** wird häufig in den Sozialwissenschaften, der Psychologie, der Medizin und vielen anderen Forschungsbereichen genutzt, unabhänging ob ***quantitativ oder qualitativ*** gearbeitet wird.
+**R** wird häufig in den Sozialwissenschaften, der Psychologie, der Medizin und vielen anderen Forschungsbereichen genutzt, unabhängig ob ***quantitativ oder qualitativ*** gearbeitet wird.  
 Der große Vorteil von **R** ist, dass alle Analyseschritte transparent, nachvollziehbar und reproduzierbar sind – man kann also genau sehen, wie ein Ergebnis entstanden ist.
 
-
-
-**RStudio** ist ***keine eigene Programmier­sprache***, sondern ein Programm, das dir die Arbeit mit R erleichtert.
+**RStudio** ist ***keine eigene Programmiersprache***, sondern ein Programm, das die Arbeit mit R erleichtert.  
 Man kann sich **RStudio** wie einen Schreibtisch für *R* vorstellen.
 
 <u>**RStudio hilft dir dabei:**</u>
 
-- Codes übersichtlich zu schreiben
+- Code übersichtlich zu schreiben
 - Befehle auszuführen und Ergebnisse zu sehen
-- deine Daten, Objekte und Grafiken im Blick zu behalten
+- Daten, Objekte und Grafiken im Blick zu behalten
 - Dateien und Projekte organisiert zu verwalten
 
 Ohne ***RStudio*** müsstest du **R** über ein sehr einfaches Fenster bedienen. Mit RStudio bekommst du eine strukturierte Oberfläche, die besonders für Einsteiger:innen viel angenehmer ist.
 
-## R GUI - erste Ansicht
+## R GUI – erste Ansicht
 
-Schauen wir uns zunächst die **R Oberfläche** ***(ohne RStudio)*** an. 
+Schauen wir uns zunächst die **R-Oberfläche** ***(ohne RStudio)*** an.
 
 ::: columns
 ::: column
@@ -67,7 +66,7 @@ Schauen wir uns zunächst die **R Oberfläche** ***(ohne RStudio)*** an.
 **Was sehen wir hier?**
 
 - ***Linkes Bild***
-  - Die "normale" **R Oberfläche**
+  - Die „normale" **R-Oberfläche**
     - Sie besteht zunächst nur aus einer ***R Console***
 - ***Rechtes Bild***
   - Die **R Console**
@@ -81,19 +80,20 @@ Alles, was du in die Konsole eingibst, wird sofort von R ausgeführt. Das Ergebn
 
 ***Beispiel***
 
-- gib `13`ein
+- gib `13` ein
 - gib `a` ein
-- gib `13+15`
+- gib `13 + 15` ein
 :::
+
 ::: callout-caution
 **ABER**
 
 Wir brauchen ***R GUI*** nicht, sondern nutzen **RStudio!**
 :::
 
-## RStudio - Unser Cockpit 🎛️
+## RStudio – Unser Cockpit 🎛️
 
-Schauen wir uns nun die Oberfläche von **RStudio** an. Startet einfach **RStudio** ***(nicht R GUI!)***. Ihr müsst nun das folgende Bild sehen:
+Schauen wir uns nun die Oberfläche von **RStudio** an. Startet einfach **RStudio** ***(nicht R GUI!)***. Ihr solltet nun das folgende Bild sehen:
 
 ![](assets/images/rstudio-1.png){width=100% style="border: 2px solid darkblue;"}
 
@@ -103,30 +103,30 @@ Schauen wir uns nun die Oberfläche von **RStudio** an. Startet einfach **RStudi
 
 <span style="color: orange; font-weight: bold;">Orange</span> – die Menü-Leiste
 
-In der Menü-Leiste findest du alle wichtigen Funktionen von RStudio übersichtlich nach Themen sortiert. Hier kannst du zum Beispiel Dateien öffnen und speichern, Einstellungen ändern, Codes ausführen oder Hilfe aufrufen. *Das Aussehen deines RStudios kannst du auch hier anpassen!*
+In der Menü-Leiste findest du alle wichtigen Funktionen von RStudio übersichtlich nach Themen sortiert. Hier kannst du zum Beispiel Dateien öffnen und speichern, Einstellungen ändern, Code ausführen oder Hilfe aufrufen. *Das Aussehen deines RStudios kannst du auch hier anpassen!*
 
 <span style="color: green; font-weight: bold;">Grün</span> – die Schnellzugriff-Leiste
 
-Die Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole. Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Codes ausführen, ohne durch Menüs zu klicken.
+Die Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole. Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Code ausführen, ohne durch Menüs zu klicken.
 
 ## Die vier Bereiche von RStudio
 
-RStudio ist in **vier Arbeitsbereiche** (Panes/Paneele) aufgeteilt. Jeder Bereich hat eine eigene Aufgabe. Aber jetzt gerade siehst du nur drei Bereiche. Ich zeige dir jetzt erstmal, wie du die vier Bereiche bekommst!
+RStudio ist in **vier Arbeitsbereiche** (Panes/Paneele) aufgeteilt. Jeder Bereich hat eine eigene Aufgabe. Im ersten Moment siehst du jedoch nur drei Bereiche – ich zeige dir, wie du den vierten bekommst.
 
 ::: callout-note
-Hierfür gehst du zunächst in die **Schnellzugriffs-Leiste** und klickst auf das Symbol ganz links, das **weiße Blatt** mit dem <span style="color: green; font-weight: bold;">**Plus**</span>.
+Hierfür gehst du in die **Schnellzugriffs-Leiste** und klickst auf das Symbol ganz links, das **weiße Blatt** mit dem <span style="color: green; font-weight: bold;">**Plus**</span>.
 
 ![](assets/images/rstudio-open-script1.png){width=100% style="border: 2px solid darkblue;"}
 
-Anschließend öffnet sich ein **Drop-Down** und du kannst jetzt schon sehen, was du alles mit ***RStudio*** machen kannst.
+Anschließend öffnet sich ein **Dropdown-Menü** – hier siehst du bereits, was du alles mit ***RStudio*** machen kannst.
 
 ![](assets/images/rstudio-open-script2.png){height=600 style="border: 2px solid darkblue;"}
 
-Wir wollen aber ein neues `**R Script erstellen**`, daher klicken wir auch da drauf!
+Wir wollen ein neues **R Script erstellen**, daher klicken wir auf diesen Eintrag.
 
 ::: callout-note
 # Info
-Übrigens diese Workshopseite wurde komplett mit RStudio und Quarto Markdowns erstellt.
+Diese Workshopseite wurde übrigens komplett mit RStudio und Quarto Markdown erstellt.
 :::
 :::
 
@@ -140,7 +140,7 @@ ___
 
 Hier schreibst du deinen **Code** in Skripten.
 
-- Codes werden **nicht sofort** ausgeführt
+- Code wird **nicht sofort** ausgeführt
 - du kannst ihn speichern, verändern und wiederverwenden
 - ideal für sauberes, nachvollziehbares Arbeiten
 
@@ -154,7 +154,7 @@ Alles Wichtige gehört ins **Skript**, nicht nur in die Konsole.
 ___
 ![](assets/images/rstudio-console-pane.png){width=100% style="border: 2px solid darkblue;"}
 
-Die ***Konsole*** kennen wir im Grunde schon. Wie du vielleicht schon erkannt hast, ist es die selbe Konsole wie bei **R GUI**.
+Die ***Konsole*** kennen wir im Grunde schon – es ist dieselbe Konsole wie bei **R GUI**.
 
 - hier führt R Befehle aus
 - Ergebnisse erscheinen direkt darunter
@@ -176,7 +176,7 @@ ___
 
 - frühere Befehle, die du eingegeben hast
 
-👉 So behältst du den Überblick, was gerade „im Speicher“ liegt.
+👉 So behältst du den Überblick, was gerade „im Speicher" liegt.
 
 
 ### 🟢 Files, Plots, Packages, Help (unten rechts)
@@ -190,7 +190,7 @@ Dieser Bereich zeigt dir:
 - **Packages**: installierte Erweiterungen
 - **Help**: Hilfeseiten zu Funktionen
 
-👉 Hier findest du fast alles, was R zusätzlich ausgibt und wo es gespeichert ist.
+👉 Hier findest du fast alles, was R zusätzlich ausgibt – und wo es gespeichert ist.
 
 ::: callout-important
 Im nächsten Abschnitt legen wir unser erstes **Projekt** an!
@@ -211,11 +211,11 @@ Ein neues Projekt = ein neuer, sauberer Arbeitskontext.
 ::: callout-warning
 **Typischer Anfängerfehler**
 
-Viele arbeiten **ohne Projekt** und laden Dateien „irgendwoher“.
+Viele arbeiten **ohne Projekt** und laden Dateien „irgendwoher".
 
 Das führt oft zu:
 
-- Fehlermeldungen wie *„file not found“*
+- Fehlermeldungen wie *„file not found"*
 - nicht reproduzierbaren Analysen
 - Verwirrung, wenn man die Sitzung neu startet
 
@@ -272,21 +272,22 @@ Der Projektname sollte **keine Leerzeichen** enthalten
 
 # R Script
 ___
-Nachdem wir nun ein Projekt angelegt haben, beginnen wir mit dem eigentlichen Arbeiten in einem **R Script**.
+Nachdem wir ein Projekt angelegt haben, beginnen wir mit dem eigentlichen Arbeiten in einem **R Script**.
 
-Ein Script ist eine Textdatei, in der du deine Befehle sammelst und speicherst.
+Ein Script ist eine Textdatei, in der du deine Befehle sammelst und speicherst.  
 So kannst du:
+
 - deine Arbeit nachvollziehen
 - Code später wiederverwenden
 - Analysen Schritt für Schritt dokumentieren
 
-RStudio bietet viele Möglichkeiten, mit R zu arbeiten.
+RStudio bietet viele Möglichkeiten, mit R zu arbeiten.  
 Wir starten bewusst **sehr einfach**, um ein Gefühl dafür zu bekommen, wie R reagiert.
 
 ::: callout-tip
 ### **Erinnerung**
 Mit **Strg + Enter** wird der Befehl **in der Zeile ausgeführt, in der dein Cursor steht** –  
-du musst den Code **nicht markieren** und **nicht auf „Run“ klicken**.
+du musst den Code **nicht markieren** und **nicht auf „Run" klicken**.
 :::
 
 
@@ -294,7 +295,7 @@ du musst den Code **nicht markieren** und **nicht auf „Run“ klicken**.
 
 Zum Einstieg kannst du RStudio wie einen **Taschenrechner** benutzen.
 
-Du gibst einen Befehl ein – R rechnet – und gibt das Ergebnis zurück.
+Du gibst einen Befehl ein – R rechnet – und gibt das Ergebnis zurück.  
 So lernst du schnell:
 
 - wie Befehle aufgebaut sind
@@ -324,10 +325,8 @@ Schreibst du deine Rechnungen **in ein R Script**, bleiben sie erhalten:
 
 ## Übung
 
-1. Berechne zuerst den Ausdruck  
-   `((8 + 4)^2 - 10) / 2`.
-2. Berechne anschließend  
-   `sqrt(196) + 3^3`.
+1. Berechne den Ausdruck `((8 + 4)^2 - 10) / 2`.
+2. Berechne anschließend `sqrt(196) + 3^3`.
 3. Führe **alle Rechnungen**
    - einmal direkt in der **Konsole**
    - und einmal aus einem **Skript**
@@ -340,12 +339,11 @@ Beobachte, was gleich ist und was sich unterscheidet.
 ```{r}
 #| echo: true
 
-#Aufgabe 1
+# Aufgabe 1
 ((8 + 4)^2 - 10) / 2
 
-#Aufgabe 2
+# Aufgabe 2
 sqrt(196) + 3^3
-
 ```
 ::: 
 
@@ -358,7 +356,6 @@ R arbeitet objektorientiert: Alles, was du erzeugst, kann ein Objekt sein und be
 
 x <- 5
 y <- c(23, 12, 11, 9, 13)
-
 ```
 
 ::: callout-note
@@ -385,23 +382,14 @@ Im Folgenden verwenden wir einige **grundlegende Funktionen**, die R bereits mit
 #| echo: true
 
 sum(y)
-
 mean(y)
-
 sd(y)
-
 median(y)
-
 mad(y)
-
 min(y)
-
 max(y)
-
 range(y)
-
 length(y)
-
 ```
 
 ::: {.callout-note collapse="true"}
@@ -417,22 +405,17 @@ length(y)
 - `max()` – größter Wert  
 - `length()` – Anzahl der Werte
 
-Es gibt eine Vielzahl **Base R Funktionen**, ihr könnt sie gerne erkundigen!
+Es gibt eine Vielzahl **Base R-Funktionen** – erkunde sie gerne!
 :::
 
-Funktionen können nicht nur einzeln verwendet werden, sondern auch **miteinander kombiniert** werden.  
-Das Ergebnis einer Funktion kann dabei **direkt als Eingabe** für eine andere Funktion dienen.
-
-Zum Beispiel können wir den Mittelwert berechnen und anschließend daraus die Wurzel ziehen,  
-oder wir kombinieren mehrere Funktionen, um neue Kennwerte zu berechnen.
+Funktionen können nicht nur einzeln, sondern auch **miteinander kombiniert** werden.  
+Das Ergebnis einer Funktion kann dabei **direkt als Eingabe** für eine andere dienen.
 
 ```{r}
 #| echo: true
 
 sqrt(mean(y))
-
 max(y) - min(y)
-
 ```
 
 In der nächsten Übung nutzen wir diese Grundfunktionen,  
@@ -475,21 +458,19 @@ $$
 - $\bar{x}$ = Mittelwert der Daten  
 - $\sum$ = Summe über alle Beobachtungen  
 
-
 # **z-Standardisierung**
 
 $$
 z = \frac{x - \bar{x}}{sd(x)}
 $$
 
-
-# **95\%-Konfidenzintervall des Mittelwerts**
+# **95%-Konfidenzintervall des Mittelwerts**
 
 $$
 \bar{x} \pm t_{0.975,\,n-1} \cdot SE
 $$
 
-- $t_{0.975,\,n-1}$ = kritischer t-Wert für ein **95 %-Konfidenzintervall**. In R `qt(0.975, df = n - 1)`
+- $t_{0.975,\,n-1}$ = kritischer t-Wert für ein **95 %-Konfidenzintervall**. In R: `qt(0.975, df = n - 1)`
 - $\pm$ = untere und obere Grenze des Intervalls
 :::
 :::
@@ -506,41 +487,35 @@ n <- length(y)   # Anzahl der Werte
 m <- mean(y)     # Mittelwert
 s <- sd(y)       # Standardabweichung
 ```
-# 1. Standardfehler des Mittelwerts
+# 1. Standardfehler
 ```{r}
 #| echo: true
 se_y <- s / sqrt(n)
-
 se_y
 ```
-# 2. Varianz (Stichprobe)
+# 2. Varianz
 ```{r}
 #| echo: true
 var_y <- sum((y - m)^2) / (n - 1)
-
 var_y
-
 ```
-# 3. z-standardisierte Werte
+# 3. z-Werte
 ```{r}
 #| echo: true
 z_y <- (y - m) / s
-
 z_y
 ```
-
-# 4. 95%-Konfidenzintervall des Mittelwerts
+# 4. Konfidenzintervall
 ```{r}
 #| echo: true
 t_crit <- qt(0.975, df = n - 1)
 
 ci_y <- c(
-lower = m - t_crit * se_y,
-upper = m + t_crit * se_y
+  lower = m - t_crit * se_y,
+  upper = m + t_crit * se_y
 )
 
 ci_y
-
 ```
 :::
 :::
@@ -575,9 +550,8 @@ Der Datentyp ist wichtig, weil er bestimmt,
 - wie R die Werte interpretiert
 - welche Funktionen sinnvoll angewendet werden können
 
-
 ::: callout-note
-# **Datentypenüberblick**
+# **Datentypen im Überblick**
 
 - `numeric` / `double`  
   Zahlen mit Dezimalstellen, z. B. `3.14` oder `-7.5`.  
@@ -603,12 +577,10 @@ Der Datentyp ist wichtig, weil er bestimmt,
 ### Wichtige Datenstrukturen
 ___
 Datenstrukturen beschreiben, **wie mehrere Werte in R zusammengefasst und organisiert** sind.  
-Sie legen fest, ob Daten einzeln, als einfache Liste oder als Tabelle gespeichert werden.
-
-Welche Datenstruktur wir verwenden, ist wichtig, weil sie bestimmt, wie wir auf Daten **zugreifen**, sie **verändern** und **analysieren** können.
+Sie legen fest, ob Daten einzeln, als einfache Reihe oder als Tabelle gespeichert werden.
 
 ::: callout-note
-# **Datenstrukturenüberblick**
+# **Datenstrukturen im Überblick**
 
 - **Vektor**  
   Eine geordnete Sammlung von Werten **gleichen Datentyps**.  
@@ -623,7 +595,7 @@ Welche Datenstruktur wir verwenden, ist wichtig, weil sie bestimmt, wie wir auf 
   Standardformat für Datensätze in der empirischen Forschung.
 :::
 
-Datenstrukturen in R bauen in gewisser Weise aufeinander auf. Am Anfang steht der **Vektor**:  
+Datenstrukturen in R bauen konzeptionell aufeinander auf. Am Anfang steht der **Vektor**:  
 
 - Ein Vektor ist eine einfache, geordnete Reihe von Werten gleichen Datentyps.
 
@@ -633,33 +605,33 @@ Aus Vektoren lassen sich **Matrizen** bilden:
 
 Ein **Data Frame** geht einen Schritt weiter:
 
-- Auch hier bestehen die Spalten aus Vektoren, die Spalten dürfen aber **unterschiedliche Datentypen** haben.
+- Auch hier bestehen die Spalten aus Vektoren – die Spalten dürfen aber **unterschiedliche Datentypen** haben.
 
 So lassen sich reale Datensätze mit **Zahlen, Text und Kategorien** in einer Tabelle abbilden.
 
 ::: callout-warning
-# **Achtung Wichtig**
+# **Wichtig**
 
 Die Datenstrukturen bauen **konzeptionell** aufeinander auf,  
-sie werden in der Praxis **nicht automatisch ineinander umgewandelt**
+werden in der Praxis aber **nicht automatisch ineinander umgewandelt**.
 :::
 
-### Welcher Datentyp oder welche Datenstruktur hat mein Objekt?
+### Welchen Datentyp oder welche Datenstruktur hat mein Objekt?
 ___
 In R können wir jederzeit überprüfen, **was für eine Art von Objekt** wir im Environment haben. Das ist besonders hilfreich, wenn wir mit vielen Objekten arbeiten oder unsicher sind, wie R ein Objekt interpretiert.
 
 ::: callout-tip
 # **Grundlegende Befehle im Überblick**
 
-- `class(x)` - gibt uns eine **allgemeine Einordnung** des Objekts.
-  - `typeof(x)` - detaillierter wie class, zeigt **wie R das Objekt intern speichert**
-- `str(x)` - gibt einen **Überblick über Aufbau und Inhalt** eines Objekts.
+- `class(x)` – gibt eine **allgemeine Einordnung** des Objekts zurück
+  - `typeof(x)` – detaillierter als `class()`, zeigt **wie R das Objekt intern speichert**
+- `str(x)` – gibt einen **Überblick über Aufbau und Inhalt** eines Objekts
 
 Für **Funktionen**:
-- `?mean()` - Öffnet die **Hilfeseite** zur Funktion `mean()` (Beschreibung, Argumente, Beispiele).
+- `?mean` – öffnet die **Hilfeseite** zur Funktion `mean()` (Beschreibung, Argumente, Beispiele)
 :::
 
-Im Folgenden betrachten wir unsere zuvor erstellten Objekte `x` und `y` genauer und nutzen sie, **um die entsprechenden Befehle anzuwenden.**
+Im Folgenden betrachten wir unsere zuvor erstellten Objekte `x` und `y` genauer:
 
 ```{r}
 #| echo: true
@@ -679,20 +651,11 @@ str(y)
 
 Im bisherigen Verlauf haben wir mehrere **Objekte und Hilfsobjekte** erstellt.
 
-1. Überprüfe für jedes dieser Objekte  
-   - den **Datentyp** und  
-   - die **Datenstruktur**.
-
-2. Nutze dafür die Befehle  
-   `class()`, `typeof()` und `str()`.
-
-3. Überlege dir:
+1. Überprüfe für jedes dieser Objekte den **Datentyp** und die **Datenstruktur**.
+2. Nutze dafür die Befehle `class()`, `typeof()` und `str()`.
+3. Überlege:
    - Welche Objekte sind **einzelne Werte**?  
    - Welche Objekte sind **Vektoren**?
-
-Ziel ist es, ein besseres Gefühl dafür zu bekommen,  
-wie R unterschiedliche Ergebnisse speichert.
-
 
 ::: {.callout-tip collapse="true"}
 # **Lösung**
@@ -702,11 +665,9 @@ wie R unterschiedliche Ergebnisse speichert.
 # Mittelwert
 ```{r}
 #| echo: true
-
 class(m)
 typeof(m)
 str(m)
-
 ```
 
 # Anzahl der Werte
@@ -737,7 +698,7 @@ class(var_y)
 typeof(var_y)
 str(var_y)
 ```
-# z-standardisierte Werte
+# z-Werte
 ```{r}
 #| echo: true
 class(z_y)
@@ -756,19 +717,16 @@ str(ci_y)
 
 ::: callout-tip
 # **Faustregel: Ein Objekt in R verstehen**
-1. `class()`  
-   → Welche **Art von Objekt** ist es?
-2. `typeof()`  
-   → Wie wird das Objekt **intern gespeichert**?
-3. `str()`  
-   → Wie ist das Objekt **aufgebaut** und welche Inhalte hat es?
+1. `class()` → Welche **Art von Objekt** ist es?
+2. `typeof()` → Wie wird das Objekt **intern gespeichert**?
+3. `str()` → Wie ist das Objekt **aufgebaut** und welche Inhalte hat es?
 :::
 
 ## Einen ersten Datensatz in R erstellen
 
 Bisher haben wir mit einzelnen Objekten und Vektoren gearbeitet. In der Praxis bestehen Datensätze jedoch aus **mehreren Variablen**, die gemeinsam eine Gruppe von Fällen beschreiben.
 
-Im nächsten Schritt erstellen wir deshalb mehrere Vektoren (z. B. Alter, Geschlecht oder Körpergröße) und führen sie zu einem **kleinen Datensatz** zusammen.
+Im nächsten Schritt erstellen wir mehrere Vektoren (z. B. Alter, Geschlecht oder Körpergröße) und führen sie zu einem **kleinen Datensatz** zusammen.
 
 Dabei lernst du,
 - wie mehrere Vektoren sinnvoll angelegt werden und  
@@ -804,15 +762,15 @@ occupation <- c(
   "researcher"
 )
 ```
+
 Jeder dieser Vektoren stellt eine **Variable** dar.  
-Die einzelnen Werte gehören jeweils **zur gleichen Person**  
-(d. h. zur gleichen Zeile im späteren Datensatz).
+Die einzelnen Werte gehören jeweils **zur gleichen Person** – also zur gleichen Zeile im späteren Datensatz.
 
 ::: callout-important
 # Wichtig 
 Alle Vektoren müssen **die gleiche Länge** haben.
 
-Übeprüfe das!
+Überprüfe das!
 :::
 
 Im nächsten Schritt fassen wir die einzelnen Variablen zu einem **gemeinsamen Datensatz** zusammen.  
@@ -822,11 +780,11 @@ Dabei verwenden wir zunächst **Base R**, also Funktionen, die ohne zusätzliche
 #| echo: true
 
 data <- data.frame(
-  age = age,
-  gender = gender,
+  age        = age,
+  gender     = gender,
   hair_color = hair_color,
-  height_cm = height_cm,
-  weight_kg = weight_kg,
+  height_cm  = height_cm,
+  weight_kg  = weight_kg,
   occupation = occupation
 )
 
@@ -844,7 +802,6 @@ Aufbau der Funktion `data.frame()`:
 - `name2` = Objektname aus dem Environment
 :::
 
-
 Die einzelnen Vektoren sind nun zu einem **Datensatz** zusammengeführt worden:
 
 - jede **Spalte** ist eine Variable  
@@ -856,16 +813,16 @@ und bildet die Grundlage für viele weitere Analyseschritte.
 ::: callout-note
 # **Erinnerung**
 
-Auch ein einzelner Wert ist in R ein **Vektor der Länge 1**. Mit der `c()` Funktion können wir einzelne Werte zu einem Vektor zusammenfassen
+Auch ein einzelner Wert ist in R ein **Vektor der Länge 1**. Mit der `c()`-Funktion können wir einzelne Werte zu einem Vektor zusammenfassen.
 :::
 
 
 ## Übung
 
-Bisher haben wir einen Datensatz erstellt mit sechs Variablen. Erstelle nun zwei weitere **Variablen** und füge diesen zu einem Datensatz hinzu. Nenne die eine Variable `numbers` und die andere `chars`.
+Bisher haben wir einen Datensatz mit sechs Variablen erstellt. Erstelle nun zwei weitere **Variablen** und füge sie zum Datensatz hinzu. Nenne die eine Variable `numbers` und die andere `chars`.
 
-- `numbers` stellen zufällige Zahlen dar, die ihr euch ausdenkt
-- `chars` sollen einfach Namen sein, die euch einfallen
+- `numbers` sollen zufällige Zahlen sein, die du dir ausdenkst
+- `chars` sollen einfach Namen sein, die dir einfallen
 
 ::: {.callout-tip collapse="true"}
 
@@ -874,19 +831,19 @@ Bisher haben wir einen Datensatz erstellt mit sechs Variablen. Erstelle nun zwei
 ```{r}
 #| echo: true
 
-numbers <- c(12,5,17,6,75,22)
+numbers <- c(12, 5, 17, 6, 75, 22)
 
 chars <- c("Anna", "Alex", "Beate", "Bobby", "Christina", "Chester")
 
 data <- data.frame(
-  age = age,
-  gender = gender,
+  age        = age,
+  gender     = gender,
   hair_color = hair_color,
-  height_cm = height_cm,
-  weight_kg = weight_kg,
+  height_cm  = height_cm,
+  weight_kg  = weight_kg,
   occupation = occupation,
-  nmbrs = numbers,
-  chars = chars
+  nmbrs      = numbers,
+  chars      = chars
 )
 ```
 :::
@@ -895,17 +852,16 @@ data <- data.frame(
 # **Typische Fehler beim Erstellen eines Data Frames**
 
 - **Komma vergessen oder zu viel gesetzt**  
-  → führt oft zu unerwarteten Fehlermeldungen.
+  → führt oft zu unerwarteten Fehlermeldungen
 
 - **Falscher Objektname**  
-  → R unterscheidet zwischen Groß- und Kleinschreibung  
-  (`Age` ≠ `age`).
+  → R unterscheidet zwischen Groß- und Kleinschreibung (`Age` ≠ `age`)
 
 - **Unterschiedliche Längen der Vektoren**  
-  → Alle Variablen müssen **gleich viele Werte** haben.
+  → alle Variablen müssen **gleich viele Werte** haben
 :::
 
-## **Exkurs: Pakete**
+## Exkurs: Pakete
 
 Pakete sind **Erweiterungen von R**.  
 Sie enthalten zusätzliche Funktionen, Datensätze und Dokumentationen,  
@@ -914,11 +870,10 @@ die bestimmte Aufgaben erleichtern oder überhaupt erst möglich machen.
 R bringt bereits viele grundlegende Funktionen mit (Base R).  
 Für komplexere oder spezialisierte Aufgaben greifen wir jedoch häufig auf **Pakete** zurück.
 
-### Pakete Installieren
+### Pakete installieren
 ___
 Bevor wir ein Paket nutzen können, müssen wir es **einmal installieren**.  
 Die Installation erfolgt über das Internet und wird lokal auf dem Rechner gespeichert.
-
 
 ```{r}
 #| echo: true
@@ -927,18 +882,18 @@ Die Installation erfolgt über das Internet und wird lokal auf dem Rechner gespe
 install.packages("tidyverse")
 install.packages("psych")
 ```
+
 ::: callout-warning
 # **Wichtig**
 
 `install.packages()` muss **nur einmal** ausgeführt werden.  
-Danach ist das Paket in der Regel dauerhaft auf deinem Rechner verfügbar.
+Danach ist das Paket dauerhaft auf deinem Rechner verfügbar.
 :::
 
 ### Paket laden
 ___
 Nach der Installation müssen Pakete **in jeder neuen R-Sitzung geladen** werden,
 damit ihre Funktionen zur Verfügung stehen.
-
 
 ```{r}
 #| echo: true
@@ -947,6 +902,7 @@ damit ihre Funktionen zur Verfügung stehen.
 library(tidyverse)
 library(psych)
 ```
+
 ::: callout-tip
 # **Merksatz**
 
@@ -1013,7 +969,7 @@ Diese Daten werden meist über eine **Export-Funktion** als Datei bereitgestellt
 - **SPSS** (`.sav`) – vor allem in den Sozialwissenschaften
 :::
 
-Beim Importieren von Daten können verschiedene **Hürden** auftreten.  
+Beim Importieren können verschiedene **Hürden** auftreten.  
 Diese sind normal und gehören zur Arbeit mit realen Datensätzen dazu.
 
 ::: callout-warning
@@ -1027,13 +983,7 @@ Diese sind normal und gehören zur Arbeit mit realen Datensätzen dazu.
 :::
 
 Um den Datenimport möglichst übersichtlich und zuverlässig zu gestalten,  
-verwenden wir ab jetzt Funktionen aus dem **`tidyverse`**.
-
-Diese bieten:
-
-- klare und gut lesbare Befehle  
-- sinnvolle Standardannahmen  
-- eine einfache erste Prüfung der importierten Daten
+verwenden wir Funktionen aus dem **`tidyverse`**.
 
 ::: callout-tip
 # **Einordnung**
@@ -1045,9 +995,6 @@ Jetzt nutzen wir das `tidyverse` als **komfortablere Alternative**
 für reale Daten und typische Workflows.
 :::
 
-Im nächsten Schritt importieren wir einen Datensatz aus einer SAV-Datei  
-und prüfen anschließend, ob der Import korrekt funktioniert hat.
-
 Für die folgenden Schritte arbeiten wir mit einem **vorgegebenen Datensatz**.
 
 Bitte lade den Datensatz herunter und speichere ihn **in deinem Projektordner**, zum Beispiel im Unterordner `data/`.
@@ -1055,70 +1002,63 @@ Bitte lade den Datensatz herunter und speichere ihn **in deinem Projektordner**,
 ➡️ **[Workshop-Datensatz herunterladen (CSV)](../ws1/assets/data/datensatz_workshop.csv)**  
 ➡️ **[Workshop-Datensatz herunterladen (SPSS)](../ws1/assets/data/spss_datensatz_workshop.sav)**
 
-Hier kannst du das **Codebuch** zum Datensatz runterladen, für eine **bessere Übersicht**, über die Variablen im Datensatz.
+Hier kannst du das **Codebuch** zum Datensatz herunterladen, für einen besseren Überblick über die Variablen im Datensatz.
 
-➡️ **[Codebuch Workshop Datensatz (PDF)](../ws1/assets/data/codebook_workshop_datensatz.pdf)**
+➡️ **[Codebuch Workshop-Datensatz (PDF)](../ws1/assets/data/codebook_workshop_datensatz.pdf)**
 
 ::: callout-warning
 # **Wichtig**
 
 Achte darauf, die Datei **nicht irgendwo auf dem Rechner**, sondern **im Projektordner** zu speichern.  
 Nur so funktionieren die folgenden Import-Befehle ohne Probleme.
-
 :::
 
-Jetzt importieren wir die Daten.
+Jetzt importieren wir die Daten:
 
 ```{r}
 #| echo: true
 #| warning: false
 
-# Falls nicht schon geschehen, lade folgende Pakete:
-
 library(tidyverse)
 library(haven)
 
-# Importiere nun die Datensätz
-
-df_csv <- read_csv("assets/data/datensatz_workshop.csv")
-
+df_csv  <- read_csv("assets/data/datensatz_workshop.csv")
 df_spss <- read_sav("assets/data/spss_datensatz_workshop.sav")
 ```
 
 ::: callout-note
 # **Hinweis**
 
-Was fällt dir auf, wenn du die **Datensätze** vergleichst?
-
+Was fällt dir auf, wenn du die **beiden Datensätze** vergleichst?
 :::
 
 ::: callout-warning
 # **Typische Probleme & Lösungen**
 
-| Problem             | Mögliche Ursache | Mögliche Lösung                                  |
-|--------------------|------------------|--------------------------------------------------|
-| `cannot open file` | falscher Pfad    | Projektordner prüfen, Datei-Pfad anpassen       |
-| Umlaute „kaputt“   | Encoding         | `locale = locale(encoding = "UTF-8")` testen    |
-| alles `character`  | Typ falsch erkannt | nachträglich mit `mutate()` umwandeln        |
+| Problem             | Mögliche Ursache   | Mögliche Lösung                               |
+|--------------------|--------------------|-----------------------------------------------|
+| `cannot open file` | falscher Pfad      | Projektordner prüfen, Dateipfad anpassen      |
+| Umlaute „kaputt"   | Encoding           | `locale = locale(encoding = "UTF-8")` testen |
+| alles `character`  | Typ falsch erkannt | nachträglich mit `mutate()` umwandeln         |
 :::
 
 ## Datenaufbereitung
 
 Nachdem wir den Datensatz erfolgreich importiert haben, beginnt ein zentraler Schritt der Datenanalyse: die **Datenaufbereitung**.
 
-Daten liegen in der Praxis selten sofort in der Form vor, in der sie analysiert oder ausgewertet werden können. Häufig müssen Variablen ausgewählt, Fälle gefiltert, Werte umkodiert oder neue Variablen erstellt werden.
+Daten liegen in der Praxis selten sofort in der Form vor, in der sie analysiert werden können. Häufig müssen Variablen ausgewählt, Fälle gefiltert, Werte umkodiert oder neue Variablen erstellt werden.
 
 Für diese Arbeitsschritte verwenden wir das Paket **dplyr**.
 
 ### Überblick Datensatz
 ___
-Bevor wir Daten aufbereiten oder verändern, sollten wir uns immer zuerst einen **Überblick über den Datensatz** verschaffen.
+Bevor wir Daten aufbereiten oder verändern, sollten wir uns immer zuerst einen **Überblick** verschaffen.
 
-So können wir prüfen,
-- ob die Daten korrekt importiert wurden,
-- welche Variablen enthalten sind,
-- welche Datentypen vorliegen,
-- und ob es offensichtliche Auffälligkeiten gibt.
+So können wir prüfen:
+- ob die Daten korrekt importiert wurden
+- welche Variablen enthalten sind
+- welche Datentypen vorliegen
+- ob es offensichtliche Auffälligkeiten gibt
 
 #### Schneller Überblick
 ___
@@ -1126,7 +1066,6 @@ ___
 ```{r}
 #| results: hide
 summary(df_csv)
-
 summary(df_spss)
 ```
 
@@ -1136,18 +1075,15 @@ summary(df_spss)
 ```{r}
 #| code-fold: true
 summary(df_csv)
-
 summary(df_spss)
 ```
 :::
 
-`summary()` gibt uns eine erste **Zusammenfassung der Variablen**  
-(z. B. Min/Max-Werte, Mittelwerte, Häufigkeiten). Aber es wirkt sehr unübersichtlich, daher verwenden wir **`glimpse()`**.
+`summary()` gibt uns eine erste **Zusammenfassung der Variablen** (z. B. Min/Max-Werte, Mittelwerte, Häufigkeiten). Es wirkt jedoch schnell unübersichtlich – daher verwenden wir **`glimpse()`**.
 
 ```{r}
 #| results: hide
 glimpse(df_csv)
-
 glimpse(df_spss)
 ```
 
@@ -1156,7 +1092,6 @@ glimpse(df_spss)
 ```{r}
 #| code-fold: true
 glimpse(df_csv)
-
 glimpse(df_spss)
 ```
 :::
@@ -1165,84 +1100,81 @@ glimpse(df_spss)
 ___
 Bevor wir mit der Datenaufbereitung weitermachen, schauen wir uns an, **wie ein Datensatz in R grundsätzlich aufgebaut ist** und wie wir auf einzelne Variablen zugreifen können.
 
-Ein Datensatz (Data Frame) ist in R eine **Sammlung von Variablen**,  
-die jeweils als Spalten organisiert sind.
+Ein Datensatz (Data Frame) ist in R eine **Sammlung von Variablen**, die jeweils als Spalten organisiert sind.
 
 ::: {.callout-tip collapse="true"}
 # **Objekte entfernen**
 
-Wir können auch einzelne oder mehre Objekte wieder aus unserem Environment entfernen, dafür nutzen wir die Funktion `rm()`.
+Einzelne oder mehrere Objekte lassen sich mit `rm()` aus dem Environment entfernen.
 
 ```{r}
 #| echo: true
+#| eval: false
 
 rm(x)
 
-# Mehrere Variablen aufeinmal
-
-rm(x,y,m,s)
-
+# Mehrere Objekte auf einmal
+rm(x, y, m, s)
 ```
 :::
 
 #### Zugriff auf Variablen mit **`$`**
 ___
-In Base R greifen wir auf einzelne Variablen eines Datensatzes  
-mit dem **Dollar-Zeichen `$`** zu.
+In Base R greifen wir auf einzelne Variablen eines Datensatzes mit dem **Dollar-Zeichen `$`** zu.
 
-Dafür schauen wir uns unser Environment mit unseren Datensätzen an.
+Dafür schauen wir uns unser Environment mit den Datensätzen an.
 
 ___
 
 ![](assets/images/datastr_environ1.png){width=100% style="border: 2px solid darkblue;"}
 
-Wir sehen zunächst, dass **RStudio** direkt zwischen <span style="color: darkred; font-weight: bold;">Values (einzelne Werte)</span> und <span style="color: green; font-weight: bold;">Data (Datensätzen, Tabellen und anderen Objekten)</span> unterscheden kann.
+Wir sehen, dass **RStudio** direkt zwischen <span style="color: darkred; font-weight: bold;">Values (einzelne Werte)</span> und <span style="color: green; font-weight: bold;">Data (Datensätze, Tabellen und andere Objekte)</span> unterscheiden kann.
 
 ___
 
 ![](assets/images/datastr_environ2.png){width=100% style="border: 2px solid darkblue;"}
 
-Wir schauen uns jetzt mal unseren Datensatzobjekt genauer an. <span style="color: green; font-weight: bold;">Klicke</span> einfach auf den Datensatz `df_csv` und neben deinem Script sollte sich nun der Datensatz öffnen.
+Schauen wir uns unser Datensatz-Objekt genauer an. <span style="color: green; font-weight: bold;">Klicke</span> einfach auf `df_csv` – neben deinem Skript sollte sich nun der Datensatz öffnen.
 
 ___
 
 ![](assets/images/datastr_environ3.png){width=100% style="border: 2px solid darkblue;"}
 
-Mit **`view(df_csv)`** würden wir auf das selbe Ergebnis kommen. Jetzt kannst du dir deinen Datensatz im Detail anschauen. 
+Mit **`View(df_csv)`** kämen wir zum selben Ergebnis. Jetzt kannst du den Datensatz im Detail anschauen.
 
 ___
 
 ![](assets/images/datastr_environ4.png){width=100% style="border: 2px solid darkblue;"}
 
-Zurück zum Environment! Mit einem <span style="color: green; font-weight: bold;">Klick</span> auf den blauen Pfeil neben dem Objektnamen, öffnest du ein Dropdown mit mehr Informationen zu diesem Objekt **→** Struktur und Inhalte des Objekts!
+Zurück zum Environment! Mit einem <span style="color: green; font-weight: bold;">Klick</span> auf den blauen Pfeil neben dem Objektnamen öffnest du ein Dropdown mit mehr Informationen – Struktur und Inhalte des Objekts.
 
 ___
 
 ![](assets/images/datastr_environ5.png){width=100% style="border: 2px solid darkblue;"}
 
-Was wir nun erkennen ist ein logischer Aufbau des Objekts. Wir sehen <span style="color: green; font-weight: bold;">den Objektnamen als übergeordnete Struktur</span> und die Inhalte des Objekts, in diesem Fall, die Variablen als untergeordnete Struktur. Getrennt werden diese zwei **"Ebenen"** durch das **`$`**.
+Wir sehen einen logischen Aufbau: <span style="color: green; font-weight: bold;">der Objektname als übergeordnete Struktur</span> und die Variablen als untergeordnete Ebene. Getrennt werden diese zwei Ebenen durch das **`$`**.
 
 ___
 
-Wie können wir nun explizit auf unsere Variable zugreifen? Wenn wir nun die Logik des Aufbaus anschauen, kommen wir zum Schluss:
+Der Zugriff auf eine Variable folgt dieser Logik:
 
-1. Erst den Objektnamen eintippen **→** **`df_csv`**
-2. Dann die untere Ebene "aufmachen" **→** **`$`**
-3. Dann **Variablennamen** eintippen, die ich ansteuern möchte **→** **`age`**
+1. Erst den Objektnamen eintippen → **`df_csv`**
+2. Dann die untere Ebene „aufmachen" → **`$`**
+3. Dann den **Variablennamen** eintippen → **`age`**
 
 ```{r}
 #| echo: true
 #| eval: false
 
 df_csv$age
-
 ```
-In eurem Output, sollten nun alle Altersangaben der Teilnehmden Personen dieser Studie als Vektor angezeigt werden.
+
+Im Output sollten nun alle Altersangaben der teilnehmenden Personen als Vektor erscheinen.
 
 
 ## Übung
 
-Deine Aufgabe ist es nun, das Durchschnittsalter (Mean) und die Standardabweichung des Durschnittsalters (SD) zu berechnen.
+Berechne das **Durchschnittsalter** (Mean) und die **Standardabweichung** (SD) des Alters.
 
 ::: {.callout-tip collapse="true"}
 # **Lösung**
@@ -1254,8 +1186,8 @@ Deine Aufgabe ist es nun, das Durchschnittsalter (Mean) und die Standardabweichu
 ```{r}
 #| echo: true
 
-mean(df_csv$age, na.rm=TRUE)
-sd(df_csv$age, na.rm=TRUE)
+mean(df_csv$age, na.rm = TRUE)
+sd(df_csv$age, na.rm = TRUE)
 ```
 
 # Alternative 2
@@ -1265,9 +1197,7 @@ sd(df_csv$age, na.rm=TRUE)
 #| warning: false
 
 library(psych)
-
 describe(df_csv$age)
-
 ```
 :::
 
@@ -1279,13 +1209,13 @@ ___
 `dplyr` ist Teil des **`tidyverse`** und bietet Funktionen,  
 mit denen sich Datensätze **lesbar, konsistent und effizient** bearbeiten lassen.
 
-Der Fokus liegt dabei auf:
+Der Fokus liegt auf:
 - klarer, gut nachvollziehbarer Syntax  
 - schrittweisem Arbeiten  
-- einer einheitlichen „Grammatik“ für Datenmanipulation
+- einer einheitlichen „Grammatik" für Datenmanipulation
 
 ::: callout-important
-# Wichtigsten Funktionen:
+# Wichtigste Funktionen
 
 - `select()` – Variablen auswählen  
 - `filter()` – Fälle auswählen  
@@ -1294,46 +1224,37 @@ Der Fokus liegt dabei auf:
 - `rename()` – Variablen umbenennen
 :::
 
-Bevor wir mehrere Schritte kombinieren,  
-schauen wir uns ein **einzelnes, einfaches Beispiel** an.
+Bevor wir mehrere Schritte kombinieren, schauen wir uns ein **einzelnes, einfaches Beispiel** an:
 
 ```{r}
 #| echo: true
 
 select(df_csv, age, sex)
-
 ```
 
-Der `select()` wählt Variablen aus und macht aus den einen neuen Datensatz (`tibble` fungiert genauso wie ein `Data Frame`).
+`select()` wählt Variablen aus und gibt einen neuen Datensatz zurück (`tibble` fungiert dabei genauso wie ein Data Frame).
 
 ::: callout-caution
 # **Achtung**
 
-Ohne die **korrekte Zuweisung**, wird **kein neues Objekt** erstellt!
+Ohne eine **Zuweisung** wird **kein neues Objekt** erstellt!
 
 ```{r}
 #| echo: true
 
 df_2var <- select(df_csv, age, sex)
-
 df_2var
-
 ```
 :::
-
-Die Logik ist relativ klar!
-
-1. Nenne das Objekt (Datensatz)
-2. Reihe die Variablen aneinander, die ausgewählt werden sollen
 
 Die Datenaufbereitung besteht meistens aus **mehreren Schritten:**
 
 - Variablen auswählen
 - Fälle filtern
-- neue Variablen erstellen (Summenwerte)
+- neue Variablen erstellen
 - Variablen umbenennen
 
-Wir wählen nun wieder unsere Variablen aus und filtern diese aber nun. Wir wollen nun alle Personen über 30 Jahre behalten.
+Wir wählen nun unsere Variablen aus und filtern gleichzeitig: Wir wollen alle Personen **ab 30 Jahren** behalten.
 
 :::{.panel-tabset}
 
@@ -1342,67 +1263,55 @@ Wir wählen nun wieder unsere Variablen aus und filtern diese aber nun. Wir woll
 #| echo: true
 
 df_2var <- select(df_csv, age, sex)
-
-df_2var 
+df_2var
 ```
 
 # Alternative 2
 ```{r}
-
 #| echo: true
 
 df_2var <- filter(select(df_csv, age, sex), age >= 30)
-
 df_2var
 ```
 :::
 
-Die Logik des Befehls **"Alternative 2"** ist wie folgt aufgebaut:
+**Alternative 2** wirkt auf den ersten Blick effizienter, ist aber schwieriger zu lesen – besonders wenn viele Schritte folgen.
 
-- `filter()` den neuen Datensatz, welcher durch `select()` erstellt wurde
-
-**oder**
-
-- Wähle erst die Variablen aus und filter anschließend (**Alternative 1**)
-
-**Alternative 2** wirkt auf den ersten Blick effizienter, jedoch liest es sich auch sehr kompliziert. Gerade wenn man mehrere Schritte durchführen möchte.
-
-Auch dafür gibt es in **Rstudio** eine effiziente Lösung **→** **Pipes**
+Auch dafür gibt es in R eine elegante Lösung: **Pipes**.
 
 ## Pipes
 
-Pipes in R sind ein Operator (z.B. `%>%` oder `|>`), mit dem das Ergebnis **eines Schritts direkt** an den **nächsten Befehl „weitergereicht“** wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich **Datenbearbeitungsschritte** wie in einer Kette von links nach rechts lesen, was den **Code meist kürzer und besser lesbar** macht, besonders im `tidyverse`-Kontext.
+Pipes in R sind ein Operator (`%>%` oder `|>`), mit dem das Ergebnis **eines Schritts direkt** an den **nächsten Befehl weitergereicht** wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich **Datenverarbeitungsschritte** wie in einer Kette lesen – der Code wird kürzer und übersichtlicher.
 
-Man kann sich Pipes vorstellen wie die Röhren (Pipes) aus Super Mario:
+Man kann sich Pipes vorstellen wie die Röhren aus Super Mario:
 
 ![](assets/images/generated-image_pipes3.png){width=100% style="border: 2px solid darkblue;"}
 
 ```{r}
-
 #| echo: true
 
 df_2var <- df_csv |>
-select(age, sex) |>
-filter(age >= 30)
+  select(age, sex) |>
+  filter(age >= 30)
 
 df_2var
-
 ```
-Wie wir sehen, haben wir eine klare Struktur und wir müssen den Befehlen innerhalb unserer eigenen **Pipes** nicht dauernd "erklären", welchen Datensatz wir heranziehen!
+
+Die Struktur ist klar und wir müssen den Befehlen innerhalb der **Pipe** nicht ständig erklären, welchen Datensatz wir heranziehen.
 
 ## Übung
 
-1. Erstelle zunächst eine neue Variable `soz.u`, diese Besteht aus den Variablen `im17` bis `im21` --> bilde dafür einen Summenwert
-2. Erstelle einen neuen Datensatz `df_analyse` mit folgenden Variablen `Alter, Geschlecht, Bildung, Berufstätigkeit und Sozialeungleichheit`
-3. Filtere nur die Personen, die `weiblich`angegeben haben in einen neuen Datensatz `df_analyse_w`
+1. Erstelle zunächst eine neue Variable `soz.u` aus den Variablen `im17` bis `im21` → bilde dafür einen **Summenwert**
+2. Erstelle einen neuen Datensatz `df_analyse` mit den Variablen **Alter, Geschlecht, Bildung, Berufstätigkeit und Soziale Ungleichheit**
+3. Filtere nur die Personen, die **weiblich** angegeben haben, in einen neuen Datensatz `df_analyse_w`
 
 ::: callout-note
-# **TIPP**
-- Nutze das **Codebook!**
-- **Erinnere** dich an die wichtigsten Funktionen von `dplyr`
-- Verwende **Pipes**, wenn du diese brauchst
+# **Tipp**
+- Nutze das **Codebuch!**
+- Erinnere dich an die wichtigsten Funktionen von `dplyr`
+- Verwende **Pipes**, wenn du sie brauchst
 
-Das wichtigste: **LEARNING BY DOING!**
+Das Wichtigste: **Learning by doing!**
 :::
 
 
@@ -1412,28 +1321,24 @@ Das wichtigste: **LEARNING BY DOING!**
 :::{.panel-tabset}
 # Alternative 1
 
-
 ```{r}
 #| echo: true
 
 # Aufgabe 1
-
 df_csv <- df_csv |>
-mutate(soz.u = im17+im18+im19+im20+im21)
+  mutate(soz.u = im17 + im18 + im19 + im20 + im21)
 
 head(df_csv$soz.u, 10)
 
 # Aufgabe 2
-
 df_analyse <- df_csv |>
-select(age, sex, educ, work, soz.u)
+  select(age, sex, educ, work, soz.u)
 
 head(df_analyse, 10)
 
 # Aufgabe 3
-
 df_analyse_w <- df_analyse |>
-filter(sex == 2)
+  filter(sex == 2)
 
 head(df_analyse_w, 10)
 ```
@@ -1450,10 +1355,9 @@ df_analyse <- df_csv |>
 head(df_analyse, 10)
 
 df_analyse_w <- df_analyse |>
-    filter(sex == 2)
+  filter(sex == 2)
 
 head(df_analyse_w, 10)
-
 ```
 
 :::
@@ -1472,7 +1376,7 @@ Heute hast du die Grundlagen gelegt, um sicher mit RStudio zu arbeiten:
 ::: callout-tip
 ## Ausblick auf Tag 2
 
-Morgen bauen wir auf diesen Grundlagen auf und gehen einen Schritt weiter in Richtung „echter Analyse-Workflow“:
+Morgen bauen wir auf diesen Grundlagen auf und gehen einen Schritt weiter in Richtung „echter Analyse-Workflow":
 
 - **Recap** (kurzer Rückblick & Fragen)
 - **Umkodieren** (neue Kategorien, Skalen, Re-Codes)
