@@ -202,11 +202,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#wie-sieht-das-im-code-aus" id="toc-wie-sieht-das-im-code-aus" class="nav-link" data-scroll-target="#wie-sieht-das-im-code-aus">Wie sieht das im Code aus?</a></li>
   </ul></li>
-  <li><a href="#schicht-1-data" id="toc-schicht-1-data" class="nav-link" data-scroll-target="#schicht-1-data">🗂️ Schicht 1: Data</a>
+  <li><a href="#layer-1-data" id="toc-layer-1-data" class="nav-link" data-scroll-target="#layer-1-data">🗂️ Layer 1: Data</a>
   <ul class="collapse">
   <li><a href="#daten-vorbereiten-vor-dem-plotten" id="toc-daten-vorbereiten-vor-dem-plotten" class="nav-link" data-scroll-target="#daten-vorbereiten-vor-dem-plotten">Daten vorbereiten vor dem Plotten</a></li>
   </ul></li>
-  <li><a href="#schicht-2-aesthetics" id="toc-schicht-2-aesthetics" class="nav-link" data-scroll-target="#schicht-2-aesthetics">🎨 Schicht 2: Aesthetics</a>
+  <li><a href="#layer-2-aesthetics" id="toc-layer-2-aesthetics" class="nav-link" data-scroll-target="#layer-2-aesthetics">🎨 Layer 2: Aesthetics</a>
   <ul class="collapse">
   <li><a href="#die-wichtigsten-aesthetics" id="toc-die-wichtigsten-aesthetics" class="nav-link" data-scroll-target="#die-wichtigsten-aesthetics">Die wichtigsten Aesthetics</a></li>
   <li><a href="#global-vs.-lokal" id="toc-global-vs.-lokal" class="nav-link" data-scroll-target="#global-vs.-lokal">Global vs.&nbsp;lokal</a></li>
@@ -218,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#alpha-transparenz" id="toc-alpha-transparenz" class="nav-link" data-scroll-target="#alpha-transparenz">alpha – Transparenz</a></li>
   <li><a href="#size-shape" id="toc-size-shape" class="nav-link" data-scroll-target="#size-shape">size &amp; shape</a></li>
   </ul></li>
-  <li><a href="#schicht-3-geometries" id="toc-schicht-3-geometries" class="nav-link" data-scroll-target="#schicht-3-geometries">📐 Schicht 3: Geometries</a>
+  <li><a href="#layer-3-geometries" id="toc-layer-3-geometries" class="nav-link" data-scroll-target="#layer-3-geometries">📐 Layer 3: Geometries</a>
   <ul class="collapse">
   <li><a href="#geom_point-streudiagramm" id="toc-geom_point-streudiagramm" class="nav-link" data-scroll-target="#geom_point-streudiagramm">geom_point() – Streudiagramm</a></li>
   <li><a href="#geom_histogram-histogramm" id="toc-geom_histogram-histogramm" class="nav-link" data-scroll-target="#geom_histogram-histogramm">geom_histogram() – Histogramm</a></li>
@@ -246,7 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Datenvisualisierung mit ggplot2 – Tag 1</h1>
-<p class="subtitle lead">Warum visualisieren? Daten, Aesthetics &amp; Geometrien</p>
+<p class="subtitle lead">Daten, Aesthetics &amp; Geometrien</p>
 </div>
 
 
@@ -690,8 +690,8 @@ von explorativen Rohdaten-Plots bis zu publizierten Abbildungen.</p>
 <h1>Die Grammatik der Grafiken</h1>
 <hr>
 <p>Das Herzstück von <code>ggplot2</code> ist die <strong>Grammar of Graphics</strong> –<br>
-ein Schichtenmodell, das beschreibt, aus welchen Bausteinen eine Grafik besteht.</p>
-<p>Jede Grafik setzt sich aus <strong>sieben Schichten</strong> zusammen,<br>
+ein Schichtenmodell (Layers), das beschreibt, aus welchen Bausteinen eine Grafik besteht.</p>
+<p>Jede Grafik kann sich aus aus <strong>sieben Layers</strong> zusammensetzen,<br>
 die von unten nach oben aufgebaut werden:</p>
 <table class="caption-top table">
 <colgroup>
@@ -700,7 +700,7 @@ die von unten nach oben aufgebaut werden:</p>
 </colgroup>
 <thead>
 <tr class="header">
-<th>Schicht</th>
+<th>Layer</th>
 <th>Funktion</th>
 </tr>
 </thead>
@@ -750,8 +750,7 @@ die von unten nach oben aufgebaut werden:</p>
 <li><strong>Tag 1</strong> → 🗂️ Data → 🎨 Aesthetics → 📐 Geometries</li>
 <li><strong>Tag 2</strong> → 🔲 Facets → 📊 Statistics → 📏 Coordinates → 🖌️ Theme</li>
 </ul>
-<p>Am Ende kannst du jede Schicht bewusst einsetzen und weißt genau,<br>
-welche Stellschraube welchen Teil der Grafik beeinflusst.</p>
+<p>Am Ende kannst du jede Schicht bewusst einsetzen und weißt genau, welche Stellschraube welchen Teil der Grafik beeinflusst.</p>
 </div>
 </div>
 <section id="wie-sieht-das-im-code-aus" class="level2">
@@ -788,16 +787,14 @@ Das <code>+</code> muss immer am <strong>Ende der Zeile</strong> stehen, nie am 
 </div>
 </div>
 </div>
-<p>In der Praxis braucht man <strong>nicht immer alle Schichten</strong>.<br>
-Pflicht sind nur die ersten drei: <strong>Data, Aesthetics, Geometries</strong>.<br>
-Alle anderen sind optional und werden je nach Bedarf ergänzt.</p>
+<p>In der Praxis braucht man <strong>nicht immer alle Schichten</strong>. Pflicht sind nur die ersten drei: <strong>Data, Aesthetics, Geometries</strong>. Alle anderen sind optional und werden je nach Bedarf ergänzt.</p>
 <hr>
 </section>
 </section>
-<section id="schicht-1-data" class="level1">
-<h1>🗂️ Schicht 1: Data</h1>
+<section id="layer-1-data" class="level1">
+<h1>🗂️ Layer 1: Data</h1>
 <hr>
-<p>Die unterste Schicht ist die <strong>Datenschicht</strong> – sie legt fest, welcher Datensatz visualisiert wird.</p>
+<p>Der unterste Layer ist die <strong>Datenschicht</strong> – sie legt fest welcher Datensatz visualisiert wird.</p>
 <p>In <code>ggplot2</code> wird der Datensatz als erstes Argument an <code>ggplot()</code> übergeben:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -809,8 +806,7 @@ Alle anderen sind optional und werden je nach Bedarf ergänzt.</p>
 </div>
 </div>
 </div>
-<p>Das Ergebnis ist eine <strong>leere Leinwand</strong> – denn wir haben noch nicht gesagt,<br>
-welche Variablen wir darstellen wollen und in welcher Form.</p>
+<p>Das Ergebnis ist eine <strong>leere Leinwand</strong> – denn wir haben noch nicht gesagt, welche Variablen wir darstellen wollen und in welcher Form.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -828,8 +824,7 @@ Das kommt in den nächsten Schichten.</p>
 </div>
 <section id="daten-vorbereiten-vor-dem-plotten" class="level2">
 <h2 class="anchored" data-anchor-id="daten-vorbereiten-vor-dem-plotten">Daten vorbereiten vor dem Plotten</h2>
-<p>Häufig bereiten wir Daten <strong>direkt vor dem Plot</strong> mit einer Pipe auf –<br>
-z. B. um fehlende Werte zu entfernen oder Gruppen zu filtern:</p>
+<p>Häufig bereiten wir Daten <strong>direkt vor dem Plot</strong> mit einer Pipe auf – z. B. um fehlende Werte zu entfernen oder Gruppen zu filtern:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> distress))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -859,8 +854,8 @@ Das ist besonders praktisch bei schnellen explorativen Grafiken.</p>
 <hr>
 </section>
 </section>
-<section id="schicht-2-aesthetics" class="level1">
-<h1>🎨 Schicht 2: Aesthetics</h1>
+<section id="layer-2-aesthetics" class="level1">
+<h1>🎨 Layer 2: Aesthetics</h1>
 <hr>
 <p>Die zweite Schicht legt fest, <strong>welche Variablen auf welche visuellen Eigenschaften gemappt</strong> werden.<br>
 Das geschieht über die Funktion <code>aes()</code> – kurz für <em>aesthetics</em>.</p>
@@ -1056,7 +1051,7 @@ Das liegt daran, dass wir noch kein <strong>Geom</strong> angegeben haben.</p>
 <section id="aesthetics-vertieft" class="level1">
 <h1>🎨 <em>Aesthetics vertieft</em></h1>
 <hr>
-<p>Wir kennen <code>aes()</code> bereits als <strong>Schicht 2</strong> – die Brücke zwischen Daten und Grafik.<br>
+<p>Wir kennen <code>aes()</code> bereits als <strong>Layer 2</strong> – die Brücke zwischen Daten und Grafik.<br>
 Jetzt schauen wir uns die weiteren Aesthetics genauer an, denn <code>color</code>, <code>fill</code>, <code>alpha</code>, <code>size</code> und <code>shape</code><br>
 sind entscheidend dafür, wie lesbar und aussagekräftig eine Grafik wird.</p>
 <section id="color-fill" class="level2">
@@ -1190,12 +1185,11 @@ Die gebräuchlichsten: <code>16</code> = Kreis (Standard), <code>17</code> = Dre
 <hr>
 </section>
 </section>
-<section id="schicht-3-geometries" class="level1">
-<h1>📐 Schicht 3: Geometries</h1>
+<section id="layer-3-geometries" class="level1">
+<h1>📐 Layer 3: Geometries</h1>
 <hr>
-<p>Die dritte Schicht ist die <strong>sichtbare Schicht</strong> – sie bestimmt, welche geometrische Form<br>
-die Daten annehmen. Erst hier entsteht die eigentliche Grafik.</p>
-<p>Geome werden mit <code>geom_*()</code> hinzugefügt und mit <code>+</code> an die vorherigen Schichten gehängt.</p>
+<p>Der dritte Layer ist die <strong>sichtbare Schicht</strong> – sie bestimmt, welche geometrische Form die Daten annehmen. Erst hier entsteht die eigentliche Grafik.</p>
+<p>Geome werden mit <code>geom_*()</code> hinzugefügt und mit <code>+</code> an die vorherigen Layer gehängt.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1827,8 +1821,8 @@ In <code>ggplot2</code> werden alle Textelemente über <code>labs()</code> geste
 <ul>
 <li>🗂️ <strong>Data</strong> → <code>ggplot(data = df)</code> – die Datenbasis</li>
 <li>🎨 <strong>Aesthetics</strong> → <code>aes(x, y, color, fill, alpha, size, shape)</code> – der Übersetzer zwischen Daten und Grafik</li>
-<li>📐 <strong>Geometries</strong> → <code>geom_point()</code>, <code>geom_histogram()</code>, <code>geom_bar()</code>, <code>geom_boxplot()</code> – die sichtbare Form</li>
 <li>🎨 <strong>Aesthetics vertieft</strong> → <code>color</code> vs.&nbsp;<code>fill</code>, <code>alpha</code>, <code>size</code>, <code>shape</code> – Grafiken gezielt gestalten</li>
+<li>📐 <strong>Geometries</strong> → <code>geom_point()</code>, <code>geom_histogram()</code>, <code>geom_bar()</code>, <code>geom_boxplot()</code> – die sichtbare Form</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1840,7 +1834,7 @@ In <code>ggplot2</code> werden alle Textelemente über <code>labs()</code> geste
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Morgen arbeiten wir uns die restlichen drei Schichten hoch:</p>
+<p>Morgen arbeiten wir uns die restlichen drei Layer hoch:</p>
 <ul>
 <li>🔲 <strong>Facets</strong> → <code>facet_wrap()</code>, <code>facet_grid()</code> – Grafiken nach Gruppen aufteilen</li>
 <li>📊 <strong>Statistics</strong> → <code>stat_summary()</code> – statistische Kennwerte direkt in der Grafik</li>
