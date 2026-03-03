@@ -91,15 +91,27 @@ body {
 /* =========================================================
    SIDEBAR
    ========================================================= */
-.quarto-sidebar,
 #quarto-sidebar {
   background: var(--white) !important;
   border-right: 1px solid var(--border) !important;
   font-family: 'Mulish', sans-serif;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#quarto-sidebar #TOC {
+  order: 1 !important;
+  padding-bottom: 1.25rem !important;
+  margin-bottom: .25rem !important;
+}
+
+#quarto-sidebar nav.sidebar-navigation {
+  order: 2 !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid var(--border) !important;
 }
 
 .sidebar-navigation .sidebar-item a,
-.sidebar .nav-link,
 #quarto-sidebar .nav-link {
   font-size: .85rem !important;
   font-weight: 600 !important;
@@ -111,7 +123,6 @@ body {
 }
 
 .sidebar-navigation .sidebar-item a:hover,
-.sidebar .nav-link:hover,
 #quarto-sidebar .nav-link:hover {
   background: var(--accent-light) !important;
   color: var(--accent) !important;
