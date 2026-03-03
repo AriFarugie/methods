@@ -215,10 +215,10 @@ window.Quarto = {
    
   <ul class="collapse">
   <li><a href="#ankommen-setup" id="toc-ankommen-setup" class="nav-link active" data-scroll-target="#ankommen-setup">Ankommen &amp; Setup</a></li>
-  <li><a href="#was-ist-r-und-rstudio" id="toc-was-ist-r-und-rstudio" class="nav-link" data-scroll-target="#was-ist-r-und-rstudio">Was ist R und Rstudio?</a>
+  <li><a href="#was-ist-r-und-rstudio" id="toc-was-ist-r-und-rstudio" class="nav-link" data-scroll-target="#was-ist-r-und-rstudio">Was ist R und RStudio?</a>
   <ul class="collapse">
-  <li><a href="#r-gui---erste-ansicht" id="toc-r-gui---erste-ansicht" class="nav-link" data-scroll-target="#r-gui---erste-ansicht">R GUI - erste Ansicht</a></li>
-  <li><a href="#rstudio---unser-cockpit" id="toc-rstudio---unser-cockpit" class="nav-link" data-scroll-target="#rstudio---unser-cockpit">RStudio - Unser Cockpit 🎛️</a></li>
+  <li><a href="#r-gui-erste-ansicht" id="toc-r-gui-erste-ansicht" class="nav-link" data-scroll-target="#r-gui-erste-ansicht">R GUI – erste Ansicht</a></li>
+  <li><a href="#rstudio-unser-cockpit" id="toc-rstudio-unser-cockpit" class="nav-link" data-scroll-target="#rstudio-unser-cockpit">RStudio – Unser Cockpit 🎛️</a></li>
   <li><a href="#die-vier-bereiche-von-rstudio" id="toc-die-vier-bereiche-von-rstudio" class="nav-link" data-scroll-target="#die-vier-bereiche-von-rstudio">Die vier Bereiche von RStudio</a></li>
   </ul></li>
   <li><a href="#projekt-anlegen" id="toc-projekt-anlegen" class="nav-link" data-scroll-target="#projekt-anlegen">Projekt anlegen</a></li>
@@ -235,7 +235,7 @@ window.Quarto = {
   <li><a href="#übung-2" id="toc-übung-2" class="nav-link" data-scroll-target="#übung-2">Übung</a></li>
   <li><a href="#einen-ersten-datensatz-in-r-erstellen" id="toc-einen-ersten-datensatz-in-r-erstellen" class="nav-link" data-scroll-target="#einen-ersten-datensatz-in-r-erstellen">Einen ersten Datensatz in R erstellen</a></li>
   <li><a href="#übung-3" id="toc-übung-3" class="nav-link" data-scroll-target="#übung-3">Übung</a></li>
-  <li><a href="#exkurs-pakete" id="toc-exkurs-pakete" class="nav-link" data-scroll-target="#exkurs-pakete"><strong>Exkurs: Pakete</strong></a></li>
+  <li><a href="#exkurs-pakete" id="toc-exkurs-pakete" class="nav-link" data-scroll-target="#exkurs-pakete">Exkurs: Pakete</a></li>
   <li><a href="#datenimport" id="toc-datenimport" class="nav-link" data-scroll-target="#datenimport">Datenimport</a></li>
   <li><a href="#datenaufbereitung" id="toc-datenaufbereitung" class="nav-link" data-scroll-target="#datenaufbereitung">Datenaufbereitung</a></li>
   <li><a href="#übung-4" id="toc-übung-4" class="nav-link" data-scroll-target="#übung-4">Übung</a></li>
@@ -276,11 +276,17 @@ window.Quarto = {
 <section id="ankommen-setup" class="level1">
 <h1>Ankommen &amp; Setup</h1>
 <hr>
-<p>Willkommen zum Workshop „Einführung in R &amp; RStudio“ 👋 An Tag 1 legen wir die Grundlagen, die wir am zweiten Tag weiter vertiefen.</p>
-<p><strong>Ziele für heute</strong> - RStudio Oberfläche kennenlernen - verstehen, wie R „denkt“ - erste eigene Objekte und Daten erzeugen</p>
+<p>Willkommen zum Workshop „Einführung in R &amp; RStudio” 👋<br>
+An Tag 1 legen wir die Grundlagen, die wir am zweiten Tag weiter vertiefen.</p>
+<p><strong>Ziele für heute</strong></p>
+<ul>
+<li>RStudio-Oberfläche kennenlernen</li>
+<li>verstehen, wie R „denkt”</li>
+<li>erste eigene Objekte und Daten erzeugen</li>
+</ul>
 </section>
 <section id="was-ist-r-und-rstudio" class="level1">
-<h1>Was ist R und Rstudio?</h1>
+<h1>Was ist R und RStudio?</h1>
 <hr>
 <p><strong>R</strong> ist eine freie Programmiersprache, mit der man <em>Daten analysieren, auswerten und grafisch</em> darstellen kann.</p>
 <p><u><strong>Du kannst mit R zum Beispiel:</strong></u></p>
@@ -290,19 +296,21 @@ window.Quarto = {
 <li>Diagramme und Grafiken erstellen</li>
 <li>Daten aufbereiten, filtern und umformen</li>
 </ul>
-<p><strong>R</strong> wird häufig in den Sozialwissenschaften, der Psychologie, der Medizin und vielen anderen Forschungsbereichen genutzt, unabhänging ob <strong><em>quantitativ oder qualitativ</em></strong> gearbeitet wird. Der große Vorteil von <strong>R</strong> ist, dass alle Analyseschritte transparent, nachvollziehbar und reproduzierbar sind – man kann also genau sehen, wie ein Ergebnis entstanden ist.</p>
-<p><strong>RStudio</strong> ist <strong><em>keine eigene Programmier­sprache</em></strong>, sondern ein Programm, das dir die Arbeit mit R erleichtert. Man kann sich <strong>RStudio</strong> wie einen Schreibtisch für <em>R</em> vorstellen.</p>
+<p><strong>R</strong> wird häufig in den Sozialwissenschaften, der Psychologie, der Medizin und vielen anderen Forschungsbereichen genutzt, unabhängig ob <strong><em>quantitativ oder qualitativ</em></strong> gearbeitet wird.<br>
+Der große Vorteil von <strong>R</strong> ist, dass alle Analyseschritte transparent, nachvollziehbar und reproduzierbar sind – man kann also genau sehen, wie ein Ergebnis entstanden ist.</p>
+<p><strong>RStudio</strong> ist <strong><em>keine eigene Programmiersprache</em></strong>, sondern ein Programm, das die Arbeit mit R erleichtert.<br>
+Man kann sich <strong>RStudio</strong> wie einen Schreibtisch für <em>R</em> vorstellen.</p>
 <p><u><strong>RStudio hilft dir dabei:</strong></u></p>
 <ul>
-<li>Codes übersichtlich zu schreiben</li>
+<li>Code übersichtlich zu schreiben</li>
 <li>Befehle auszuführen und Ergebnisse zu sehen</li>
-<li>deine Daten, Objekte und Grafiken im Blick zu behalten</li>
+<li>Daten, Objekte und Grafiken im Blick zu behalten</li>
 <li>Dateien und Projekte organisiert zu verwalten</li>
 </ul>
 <p>Ohne <strong><em>RStudio</em></strong> müsstest du <strong>R</strong> über ein sehr einfaches Fenster bedienen. Mit RStudio bekommst du eine strukturierte Oberfläche, die besonders für Einsteiger:innen viel angenehmer ist.</p>
-<section id="r-gui---erste-ansicht" class="level2">
-<h2 class="anchored" data-anchor-id="r-gui---erste-ansicht">R GUI - erste Ansicht</h2>
-<p>Schauen wir uns zunächst die <strong>R Oberfläche</strong> <strong><em>(ohne RStudio)</em></strong> an.</p>
+<section id="r-gui-erste-ansicht" class="level2">
+<h2 class="anchored" data-anchor-id="r-gui-erste-ansicht">R GUI – erste Ansicht</h2>
+<p>Schauen wir uns zunächst die <strong>R-Oberfläche</strong> <strong><em>(ohne RStudio)</em></strong> an.</p>
 <div class="columns">
 <div class="column">
 <p><img src="assets/images/r-gui-console.png" style="border: 2px solid red;" height="250"></p>
@@ -314,7 +322,7 @@ window.Quarto = {
 <ul>
 <li><strong><em>Linkes Bild</em></strong>
 <ul>
-<li>Die “normale” <strong>R Oberfläche</strong>
+<li>Die „normale” <strong>R-Oberfläche</strong>
 <ul>
 <li>Sie besteht zunächst nur aus einer <strong><em>R Console</em></strong></li>
 </ul></li>
@@ -341,9 +349,9 @@ window.Quarto = {
 <p>Alles, was du in die Konsole eingibst, wird sofort von R ausgeführt. Das Ergebnis siehst du direkt unter der eingegebenen Zeile.</p>
 <p><strong><em>Beispiel</em></strong></p>
 <ul>
-<li>gib <code>13</code>ein</li>
+<li>gib <code>13</code> ein</li>
 <li>gib <code>a</code> ein</li>
-<li>gib <code>13+15</code></li>
+<li>gib <code>13 + 15</code> ein</li>
 </ul>
 </div>
 </div>
@@ -362,20 +370,20 @@ Caution
 </div>
 </div>
 </section>
-<section id="rstudio---unser-cockpit" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio---unser-cockpit">RStudio - Unser Cockpit 🎛️</h2>
-<p>Schauen wir uns nun die Oberfläche von <strong>RStudio</strong> an. Startet einfach <strong>RStudio</strong> <strong><em>(nicht R GUI!)</em></strong>. Ihr müsst nun das folgende Bild sehen:</p>
+<section id="rstudio-unser-cockpit" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-unser-cockpit">RStudio – Unser Cockpit 🎛️</h2>
+<p>Schauen wir uns nun die Oberfläche von <strong>RStudio</strong> an. Startet einfach <strong>RStudio</strong> <strong><em>(nicht R GUI!)</em></strong>. Ihr solltet nun das folgende Bild sehen:</p>
 <p><img src="assets/images/rstudio-1.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
 <p><strong>Wir schauen uns nun die Menü-Leiste von RStudio an:</strong></p>
 <p><img src="assets/images/rstudio-menu.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
 <p><span style="color: orange; font-weight: bold;">Orange</span> – die Menü-Leiste</p>
-<p>In der Menü-Leiste findest du alle wichtigen Funktionen von RStudio übersichtlich nach Themen sortiert. Hier kannst du zum Beispiel Dateien öffnen und speichern, Einstellungen ändern, Codes ausführen oder Hilfe aufrufen. <em>Das Aussehen deines RStudios kannst du auch hier anpassen!</em></p>
+<p>In der Menü-Leiste findest du alle wichtigen Funktionen von RStudio übersichtlich nach Themen sortiert. Hier kannst du zum Beispiel Dateien öffnen und speichern, Einstellungen ändern, Code ausführen oder Hilfe aufrufen. <em>Das Aussehen deines RStudios kannst du auch hier anpassen!</em></p>
 <p><span style="color: green; font-weight: bold;">Grün</span> – die Schnellzugriff-Leiste</p>
-<p>Die Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole. Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Codes ausführen, ohne durch Menüs zu klicken.</p>
+<p>Die Schnellzugriff-Leiste enthält häufig genutzte Funktionen als Symbole. Damit kannst du z. B. schnell neue Dateien erstellen, Skripte speichern oder Code ausführen, ohne durch Menüs zu klicken.</p>
 </section>
 <section id="die-vier-bereiche-von-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="die-vier-bereiche-von-rstudio">Die vier Bereiche von RStudio</h2>
-<p>RStudio ist in <strong>vier Arbeitsbereiche</strong> (Panes/Paneele) aufgeteilt. Jeder Bereich hat eine eigene Aufgabe. Aber jetzt gerade siehst du nur drei Bereiche. Ich zeige dir jetzt erstmal, wie du die vier Bereiche bekommst!</p>
+<p>RStudio ist in <strong>vier Arbeitsbereiche</strong> (Panes/Paneele) aufgeteilt. Jeder Bereich hat eine eigene Aufgabe. Im ersten Moment siehst du jedoch nur drei Bereiche – ich zeige dir, wie du den vierten bekommst.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -386,11 +394,11 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Hierfür gehst du zunächst in die <strong>Schnellzugriffs-Leiste</strong> und klickst auf das Symbol ganz links, das <strong>weiße Blatt</strong> mit dem <span style="color: green; font-weight: bold;"><strong>Plus</strong></span>.</p>
+<p>Hierfür gehst du in die <strong>Schnellzugriffs-Leiste</strong> und klickst auf das Symbol ganz links, das <strong>weiße Blatt</strong> mit dem <span style="color: green; font-weight: bold;"><strong>Plus</strong></span>.</p>
 <p><img src="assets/images/rstudio-open-script1.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
-<p>Anschließend öffnet sich ein <strong>Drop-Down</strong> und du kannst jetzt schon sehen, was du alles mit <strong><em>RStudio</em></strong> machen kannst.</p>
+<p>Anschließend öffnet sich ein <strong>Dropdown-Menü</strong> – hier siehst du bereits, was du alles mit <strong><em>RStudio</em></strong> machen kannst.</p>
 <p><img src="assets/images/rstudio-open-script2.png" style="border: 2px solid darkblue;" height="600"></p>
-<p>Wir wollen aber ein neues <code>**R Script erstellen**</code>, daher klicken wir auch da drauf!</p>
+<p>Wir wollen ein neues <strong>R Script erstellen</strong>, daher klicken wir auf diesen Eintrag.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -401,7 +409,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Übrigens diese Workshopseite wurde komplett mit RStudio und Quarto Markdowns erstellt.</p>
+<p>Diese Workshopseite wurde übrigens komplett mit RStudio und Quarto Markdown erstellt.</p>
 </div>
 </div>
 </div>
@@ -414,7 +422,7 @@ Note
 <p><img src="assets/images/rstudio-script-pane.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
 <p>Hier schreibst du deinen <strong>Code</strong> in Skripten.</p>
 <ul>
-<li>Codes werden <strong>nicht sofort</strong> ausgeführt</li>
+<li>Code wird <strong>nicht sofort</strong> ausgeführt</li>
 <li>du kannst ihn speichern, verändern und wiederverwenden</li>
 <li>ideal für sauberes, nachvollziehbares Arbeiten</li>
 </ul>
@@ -437,7 +445,7 @@ Alles Wichtige gehört ins <strong>Skript</strong>, nicht nur in die Konsole.</p
 <h3 class="anchored" data-anchor-id="konsole-unten-links">⚫ Konsole (unten links)</h3>
 <hr>
 <p><img src="assets/images/rstudio-console-pane.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
-<p>Die <strong><em>Konsole</em></strong> kennen wir im Grunde schon. Wie du vielleicht schon erkannt hast, ist es die selbe Konsole wie bei <strong>R GUI</strong>.</p>
+<p>Die <strong><em>Konsole</em></strong> kennen wir im Grunde schon – es ist dieselbe Konsole wie bei <strong>R GUI</strong>.</p>
 <ul>
 <li>hier führt R Befehle aus</li>
 <li>Ergebnisse erscheinen direkt darunter</li>
@@ -460,7 +468,7 @@ Alles Wichtige gehört ins <strong>Skript</strong>, nicht nur in die Konsole.</p
 <ul>
 <li>frühere Befehle, die du eingegeben hast</li>
 </ul>
-<p>👉 So behältst du den Überblick, was gerade „im Speicher“ liegt.</p>
+<p>👉 So behältst du den Überblick, was gerade „im Speicher” liegt.</p>
 </section>
 <section id="files-plots-packages-help-unten-rechts" class="level3">
 <h3 class="anchored" data-anchor-id="files-plots-packages-help-unten-rechts">🟢 Files, Plots, Packages, Help (unten rechts)</h3>
@@ -473,7 +481,7 @@ Alles Wichtige gehört ins <strong>Skript</strong>, nicht nur in die Konsole.</p
 <li><strong>Packages</strong>: installierte Erweiterungen</li>
 <li><strong>Help</strong>: Hilfeseiten zu Funktionen</li>
 </ul>
-<p>👉 Hier findest du fast alles, was R zusätzlich ausgibt und wo es gespeichert ist.</p>
+<p>👉 Hier findest du fast alles, was R zusätzlich ausgibt – und wo es gespeichert ist.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -514,10 +522,10 @@ Warning
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Typischer Anfängerfehler</strong></p>
-<p>Viele arbeiten <strong>ohne Projekt</strong> und laden Dateien „irgendwoher“.</p>
+<p>Viele arbeiten <strong>ohne Projekt</strong> und laden Dateien „irgendwoher”.</p>
 <p>Das führt oft zu:</p>
 <ul>
-<li>Fehlermeldungen wie <em>„file not found“</em></li>
+<li>Fehlermeldungen wie <em>„file not found”</em></li>
 <li>nicht reproduzierbaren Analysen</li>
 <li>Verwirrung, wenn man die Sitzung neu startet</li>
 </ul>
@@ -575,9 +583,16 @@ Der Projektname sollte <strong>keine Leerzeichen</strong> enthalten<br>
 <section id="r-script" class="level1">
 <h1>R Script</h1>
 <hr>
-<p>Nachdem wir nun ein Projekt angelegt haben, beginnen wir mit dem eigentlichen Arbeiten in einem <strong>R Script</strong>.</p>
-<p>Ein Script ist eine Textdatei, in der du deine Befehle sammelst und speicherst. So kannst du: - deine Arbeit nachvollziehen - Code später wiederverwenden - Analysen Schritt für Schritt dokumentieren</p>
-<p>RStudio bietet viele Möglichkeiten, mit R zu arbeiten. Wir starten bewusst <strong>sehr einfach</strong>, um ein Gefühl dafür zu bekommen, wie R reagiert.</p>
+<p>Nachdem wir ein Projekt angelegt haben, beginnen wir mit dem eigentlichen Arbeiten in einem <strong>R Script</strong>.</p>
+<p>Ein Script ist eine Textdatei, in der du deine Befehle sammelst und speicherst.<br>
+So kannst du:</p>
+<ul>
+<li>deine Arbeit nachvollziehen</li>
+<li>Code später wiederverwenden</li>
+<li>Analysen Schritt für Schritt dokumentieren</li>
+</ul>
+<p>RStudio bietet viele Möglichkeiten, mit R zu arbeiten.<br>
+Wir starten bewusst <strong>sehr einfach</strong>, um ein Gefühl dafür zu bekommen, wie R reagiert.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -589,13 +604,14 @@ Der Projektname sollte <strong>keine Leerzeichen</strong> enthalten<br>
 </div>
 <div class="callout-body-container callout-body">
 <p>Mit <strong>Strg + Enter</strong> wird der Befehl <strong>in der Zeile ausgeführt, in der dein Cursor steht</strong> –<br>
-du musst den Code <strong>nicht markieren</strong> und <strong>nicht auf „Run“ klicken</strong>.</p>
+du musst den Code <strong>nicht markieren</strong> und <strong>nicht auf „Run” klicken</strong>.</p>
 </div>
 </div>
 <section id="rstudio-als-taschenrechner" class="level2">
 <h2 class="anchored" data-anchor-id="rstudio-als-taschenrechner">RStudio als Taschenrechner</h2>
 <p>Zum Einstieg kannst du RStudio wie einen <strong>Taschenrechner</strong> benutzen.</p>
-<p>Du gibst einen Befehl ein – R rechnet – und gibt das Ergebnis zurück. So lernst du schnell:</p>
+<p>Du gibst einen Befehl ein – R rechnet – und gibt das Ergebnis zurück.<br>
+So lernst du schnell:</p>
 <ul>
 <li>wie Befehle aufgebaut sind</li>
 <li>wie R mit Zahlen umgeht</li>
@@ -642,10 +658,8 @@ du musst später mühsam hochscrollen, um sie zu finden.</p>
 <section id="übung" class="level2">
 <h2 class="anchored" data-anchor-id="übung">Übung</h2>
 <ol type="1">
-<li>Berechne zuerst den Ausdruck<br>
-<code>((8 + 4)^2 - 10) / 2</code>.</li>
-<li>Berechne anschließend<br>
-<code>sqrt(196) + 3^3</code>.</li>
+<li>Berechne den Ausdruck <code>((8 + 4)^2 - 10) / 2</code>.</li>
+<li>Berechne anschließend <code>sqrt(196) + 3^3</code>.</li>
 <li>Führe <strong>alle Rechnungen</strong>
 <ul>
 <li>einmal direkt in der <strong>Konsole</strong></li>
@@ -666,12 +680,12 @@ du musst später mühsam hochscrollen, um sie zu finden.</p>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Aufgabe 1</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 1</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>((<span class="dv">8</span> <span class="sc">+</span> <span class="dv">4</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">10</span>) <span class="sc">/</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 67</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Aufgabe 2</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 2</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">196</span>) <span class="sc">+</span> <span class="dv">3</span><span class="sc">^</span><span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 41</code></pre>
@@ -786,14 +800,12 @@ Je nach Aufgabe benutzen wir ein anderes Werkzeug.</p>
 </li>
 <li><code>length()</code> – Anzahl der Werte</li>
 </ul>
-<p>Es gibt eine Vielzahl <strong>Base R Funktionen</strong>, ihr könnt sie gerne erkundigen!</p>
+<p>Es gibt eine Vielzahl <strong>Base R-Funktionen</strong> – erkunde sie gerne!</p>
 </div>
 </div>
 </div>
-<p>Funktionen können nicht nur einzeln verwendet werden, sondern auch <strong>miteinander kombiniert</strong> werden.<br>
-Das Ergebnis einer Funktion kann dabei <strong>direkt als Eingabe</strong> für eine andere Funktion dienen.</p>
-<p>Zum Beispiel können wir den Mittelwert berechnen und anschließend daraus die Wurzel ziehen,<br>
-oder wir kombinieren mehrere Funktionen, um neue Kennwerte zu berechnen.</p>
+<p>Funktionen können nicht nur einzeln, sondern auch <strong>miteinander kombiniert</strong> werden.<br>
+Das Ergebnis einer Funktion kann dabei <strong>direkt als Eingabe</strong> für eine andere dienen.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>(y))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -865,7 +877,7 @@ z = \frac{x - \bar{x}}{sd(x)}
 \bar{x} \pm t_{0.975,\,n-1} \cdot SE
 \]</span></p>
 <ul>
-<li><span class="math inline">\(t_{0.975,\,n-1}\)</span> = kritischer t-Wert für ein <strong>95 %-Konfidenzintervall</strong>. In R <code>qt(0.975, df = n - 1)</code></li>
+<li><span class="math inline">\(t_{0.975,\,n-1}\)</span> = kritischer t-Wert für ein <strong>95 %-Konfidenzintervall</strong>. In R: <code>qt(0.975, df = n - 1)</code></li>
 <li><span class="math inline">\(\pm\)</span> = untere und obere Grenze des Intervalls</li>
 </ul>
 </div>
@@ -887,7 +899,7 @@ z = \frac{x - \bar{x}}{sd(x)}
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Hilfsobjekte</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">1. Standardfehler des Mittelwerts</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">2. Varianz (Stichprobe)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">3. z-standardisierte Werte</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false" href="">4. 95%-Konfidenzintervall des Mittelwerts</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Hilfsobjekte</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">1. Standardfehler</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">2. Varianz</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">3. z-Werte</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false" href="">4. Konfidenzintervall</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
@@ -899,8 +911,7 @@ z = \frac{x - \bar{x}}{sd(x)}
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>se_y <span class="ot">&lt;-</span> s <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>se_y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>se_y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.441311</code></pre>
 </div>
@@ -909,8 +920,7 @@ z = \frac{x - \bar{x}}{sd(x)}
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>var_y <span class="ot">&lt;-</span> <span class="fu">sum</span>((y <span class="sc">-</span> m)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>var_y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>var_y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 29.8</code></pre>
 </div>
@@ -919,8 +929,7 @@ z = \frac{x - \bar{x}}{sd(x)}
 <div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>z_y <span class="ot">&lt;-</span> (y <span class="sc">-</span> m) <span class="sc">/</span> s</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>z_y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>z_y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  1.7219468 -0.2930973 -0.4762831 -0.8426548 -0.1099115</code></pre>
 </div>
@@ -931,8 +940,8 @@ z = \frac{x - \bar{x}}{sd(x)}
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>t_crit <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> n <span class="sc">-</span> <span class="dv">1</span>)</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>ci_y <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="at">lower =</span> m <span class="sc">-</span> t_crit <span class="sc">*</span> se_y,</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="at">upper =</span> m <span class="sc">+</span> t_crit <span class="sc">*</span> se_y</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower =</span> m <span class="sc">-</span> t_crit <span class="sc">*</span> se_y,</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper =</span> m <span class="sc">+</span> t_crit <span class="sc">*</span> se_y</span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>ci_y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -992,7 +1001,7 @@ R behandelt Zahlen, Text und logische Werte unterschiedlich – je nach Datentyp
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><strong>Datentypenüberblick</strong>
+<span class="screen-reader-only">Note</span><strong>Datentypen im Überblick</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1019,15 +1028,14 @@ Kategorische Daten mit festen Ausprägungen, z. B. Geschlecht oder Schulabschlus
 <h3 class="anchored" data-anchor-id="wichtige-datenstrukturen">Wichtige Datenstrukturen</h3>
 <hr>
 <p>Datenstrukturen beschreiben, <strong>wie mehrere Werte in R zusammengefasst und organisiert</strong> sind.<br>
-Sie legen fest, ob Daten einzeln, als einfache Liste oder als Tabelle gespeichert werden.</p>
-<p>Welche Datenstruktur wir verwenden, ist wichtig, weil sie bestimmt, wie wir auf Daten <strong>zugreifen</strong>, sie <strong>verändern</strong> und <strong>analysieren</strong> können.</p>
+Sie legen fest, ob Daten einzeln, als einfache Reihe oder als Tabelle gespeichert werden.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><strong>Datenstrukturenüberblick</strong>
+<span class="screen-reader-only">Note</span><strong>Datenstrukturen im Überblick</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1044,7 +1052,7 @@ Standardformat für Datensätze in der empirischen Forschung.</p></li>
 </ul>
 </div>
 </div>
-<p>Datenstrukturen in R bauen in gewisser Weise aufeinander auf. Am Anfang steht der <strong>Vektor</strong>:</p>
+<p>Datenstrukturen in R bauen konzeptionell aufeinander auf. Am Anfang steht der <strong>Vektor</strong>:</p>
 <ul>
 <li>Ein Vektor ist eine einfache, geordnete Reihe von Werten gleichen Datentyps.</li>
 </ul>
@@ -1054,7 +1062,7 @@ Standardformat für Datensätze in der empirischen Forschung.</p></li>
 </ul>
 <p>Ein <strong>Data Frame</strong> geht einen Schritt weiter:</p>
 <ul>
-<li>Auch hier bestehen die Spalten aus Vektoren, die Spalten dürfen aber <strong>unterschiedliche Datentypen</strong> haben.</li>
+<li>Auch hier bestehen die Spalten aus Vektoren – die Spalten dürfen aber <strong>unterschiedliche Datentypen</strong> haben.</li>
 </ul>
 <p>So lassen sich reale Datensätze mit <strong>Zahlen, Text und Kategorien</strong> in einer Tabelle abbilden.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -1063,17 +1071,17 @@ Standardformat für Datensätze in der empirischen Forschung.</p></li>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span><strong>Achtung Wichtig</strong>
+<span class="screen-reader-only">Warning</span><strong>Wichtig</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Die Datenstrukturen bauen <strong>konzeptionell</strong> aufeinander auf,<br>
-sie werden in der Praxis <strong>nicht automatisch ineinander umgewandelt</strong></p>
+werden in der Praxis aber <strong>nicht automatisch ineinander umgewandelt</strong>.</p>
 </div>
 </div>
 </section>
-<section id="welcher-datentyp-oder-welche-datenstruktur-hat-mein-objekt" class="level3">
-<h3 class="anchored" data-anchor-id="welcher-datentyp-oder-welche-datenstruktur-hat-mein-objekt">Welcher Datentyp oder welche Datenstruktur hat mein Objekt?</h3>
+<section id="welchen-datentyp-oder-welche-datenstruktur-hat-mein-objekt" class="level3">
+<h3 class="anchored" data-anchor-id="welchen-datentyp-oder-welche-datenstruktur-hat-mein-objekt">Welchen Datentyp oder welche Datenstruktur hat mein Objekt?</h3>
 <hr>
 <p>In R können wir jederzeit überprüfen, <strong>was für eine Art von Objekt</strong> wir im Environment haben. Das ist besonders hilfreich, wenn wir mit vielen Objekten arbeiten oder unsicher sind, wie R ein Objekt interpretiert.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1087,16 +1095,16 @@ sie werden in der Praxis <strong>nicht automatisch ineinander umgewandelt</stron
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>class(x)</code> - gibt uns eine <strong>allgemeine Einordnung</strong> des Objekts.
+<li><code>class(x)</code> – gibt eine <strong>allgemeine Einordnung</strong> des Objekts zurück
 <ul>
-<li><code>typeof(x)</code> - detaillierter wie class, zeigt <strong>wie R das Objekt intern speichert</strong></li>
+<li><code>typeof(x)</code> – detaillierter als <code>class()</code>, zeigt <strong>wie R das Objekt intern speichert</strong></li>
 </ul></li>
-<li><code>str(x)</code> - gibt einen <strong>Überblick über Aufbau und Inhalt</strong> eines Objekts.</li>
+<li><code>str(x)</code> – gibt einen <strong>Überblick über Aufbau und Inhalt</strong> eines Objekts</li>
 </ul>
-<p>Für <strong>Funktionen</strong>: - <code>?mean()</code> - Öffnet die <strong>Hilfeseite</strong> zur Funktion <code>mean()</code> (Beschreibung, Argumente, Beispiele).</p>
+<p>Für <strong>Funktionen</strong>: - <code>?mean</code> – öffnet die <strong>Hilfeseite</strong> zur Funktion <code>mean()</code> (Beschreibung, Argumente, Beispiele)</p>
 </div>
 </div>
-<p>Im Folgenden betrachten wir unsere zuvor erstellten Objekte <code>x</code> und <code>y</code> genauer und nutzen sie, <strong>um die entsprechenden Befehle anzuwenden.</strong></p>
+<p>Im Folgenden betrachten wir unsere zuvor erstellten Objekte <code>x</code> und <code>y</code> genauer:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1129,23 +1137,15 @@ sie werden in der Praxis <strong>nicht automatisch ineinander umgewandelt</stron
 <h2 class="anchored" data-anchor-id="übung-2">Übung</h2>
 <p>Im bisherigen Verlauf haben wir mehrere <strong>Objekte und Hilfsobjekte</strong> erstellt.</p>
 <ol type="1">
-<li><p>Überprüfe für jedes dieser Objekte</p>
-<ul>
-<li>den <strong>Datentyp</strong> und<br>
-</li>
-<li>die <strong>Datenstruktur</strong>.</li>
-</ul></li>
-<li><p>Nutze dafür die Befehle<br>
-<code>class()</code>, <code>typeof()</code> und <code>str()</code>.</p></li>
-<li><p>Überlege dir:</p>
+<li>Überprüfe für jedes dieser Objekte den <strong>Datentyp</strong> und die <strong>Datenstruktur</strong>.</li>
+<li>Nutze dafür die Befehle <code>class()</code>, <code>typeof()</code> und <code>str()</code>.</li>
+<li>Überlege:
 <ul>
 <li>Welche Objekte sind <strong>einzelne Werte</strong>?<br>
 </li>
 <li>Welche Objekte sind <strong>Vektoren</strong>?</li>
 </ul></li>
 </ol>
-<p>Ziel ist es, ein besseres Gefühl dafür zu bekommen,<br>
-wie R unterschiedliche Ergebnisse speichert.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1159,7 +1159,7 @@ wie R unterschiedliche Ergebnisse speichert.</p>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Mittelwert</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Anzahl der Werte</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Standardabweichung</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false" href="">Standardfehler</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false" href="">Varianz</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-6" role="tab" aria-controls="tabset-3-6" aria-selected="false" href="">z-standardisierte Werte</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-7" role="tab" aria-controls="tabset-3-7" aria-selected="false" href="">Konfidenzintervall</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Mittelwert</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Anzahl der Werte</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Standardabweichung</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false" href="">Standardfehler</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false" href="">Varianz</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-6" role="tab" aria-controls="tabset-3-6" aria-selected="false" href="">z-Werte</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-7" role="tab" aria-controls="tabset-3-7" aria-selected="false" href="">Konfidenzintervall</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell">
@@ -1290,12 +1290,9 @@ wie R unterschiedliche Ergebnisse speichert.</p>
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><code>class()</code><br>
-→ Welche <strong>Art von Objekt</strong> ist es?</li>
-<li><code>typeof()</code><br>
-→ Wie wird das Objekt <strong>intern gespeichert</strong>?</li>
-<li><code>str()</code><br>
-→ Wie ist das Objekt <strong>aufgebaut</strong> und welche Inhalte hat es?</li>
+<li><code>class()</code> → Welche <strong>Art von Objekt</strong> ist es?</li>
+<li><code>typeof()</code> → Wie wird das Objekt <strong>intern gespeichert</strong>?</li>
+<li><code>str()</code> → Wie ist das Objekt <strong>aufgebaut</strong> und welche Inhalte hat es?</li>
 </ol>
 </div>
 </div>
@@ -1303,7 +1300,7 @@ wie R unterschiedliche Ergebnisse speichert.</p>
 <section id="einen-ersten-datensatz-in-r-erstellen" class="level2">
 <h2 class="anchored" data-anchor-id="einen-ersten-datensatz-in-r-erstellen">Einen ersten Datensatz in R erstellen</h2>
 <p>Bisher haben wir mit einzelnen Objekten und Vektoren gearbeitet. In der Praxis bestehen Datensätze jedoch aus <strong>mehreren Variablen</strong>, die gemeinsam eine Gruppe von Fällen beschreiben.</p>
-<p>Im nächsten Schritt erstellen wir deshalb mehrere Vektoren (z. B. Alter, Geschlecht oder Körpergröße) und führen sie zu einem <strong>kleinen Datensatz</strong> zusammen.</p>
+<p>Im nächsten Schritt erstellen wir mehrere Vektoren (z. B. Alter, Geschlecht oder Körpergröße) und führen sie zu einem <strong>kleinen Datensatz</strong> zusammen.</p>
 <p>Dabei lernst du, - wie mehrere Vektoren sinnvoll angelegt werden und<br>
 - wie aus einzelnen Variablen eine tabellarische Struktur entsteht.</p>
 <p>Wir legen nun unsere neuen Vektoren (= <strong>Variablen</strong>) an:</p>
@@ -1334,8 +1331,7 @@ wie R unterschiedliche Ergebnisse speichert.</p>
 <span id="cb97-24"><a href="#cb97-24" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Jeder dieser Vektoren stellt eine <strong>Variable</strong> dar.<br>
-Die einzelnen Werte gehören jeweils <strong>zur gleichen Person</strong><br>
-(d.&nbsp;h. zur gleichen Zeile im späteren Datensatz).</p>
+Die einzelnen Werte gehören jeweils <strong>zur gleichen Person</strong> – also zur gleichen Zeile im späteren Datensatz.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1347,18 +1343,18 @@ Die einzelnen Werte gehören jeweils <strong>zur gleichen Person</strong><br>
 </div>
 <div class="callout-body-container callout-body">
 <p>Alle Vektoren müssen <strong>die gleiche Länge</strong> haben.</p>
-<p>Übeprüfe das!</p>
+<p>Überprüfe das!</p>
 </div>
 </div>
 <p>Im nächsten Schritt fassen wir die einzelnen Variablen zu einem <strong>gemeinsamen Datensatz</strong> zusammen.<br>
 Dabei verwenden wir zunächst <strong>Base R</strong>, also Funktionen, die ohne zusätzliche Pakete verfügbar sind.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> age,</span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> gender,</span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">age        =</span> age,</span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender     =</span> gender,</span>
 <span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">hair_color =</span> hair_color,</span>
-<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">height_cm =</span> height_cm,</span>
-<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight_kg =</span> weight_kg,</span>
+<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">height_cm  =</span> height_cm,</span>
+<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight_kg  =</span> weight_kg,</span>
 <span id="cb98-7"><a href="#cb98-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">occupation =</span> occupation</span>
 <span id="cb98-8"><a href="#cb98-8" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb98-9"><a href="#cb98-9" aria-hidden="true" tabindex="-1"></a></span>
@@ -1409,16 +1405,16 @@ und bildet die Grundlage für viele weitere Analyseschritte.</p>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Auch ein einzelner Wert ist in R ein <strong>Vektor der Länge 1</strong>. Mit der <code>c()</code> Funktion können wir einzelne Werte zu einem Vektor zusammenfassen</p>
+<p>Auch ein einzelner Wert ist in R ein <strong>Vektor der Länge 1</strong>. Mit der <code>c()</code>-Funktion können wir einzelne Werte zu einem Vektor zusammenfassen.</p>
 </div>
 </div>
 </section>
 <section id="übung-3" class="level2">
 <h2 class="anchored" data-anchor-id="übung-3">Übung</h2>
-<p>Bisher haben wir einen Datensatz erstellt mit sechs Variablen. Erstelle nun zwei weitere <strong>Variablen</strong> und füge diesen zu einem Datensatz hinzu. Nenne die eine Variable <code>numbers</code> und die andere <code>chars</code>.</p>
+<p>Bisher haben wir einen Datensatz mit sechs Variablen erstellt. Erstelle nun zwei weitere <strong>Variablen</strong> und füge sie zum Datensatz hinzu. Nenne die eine Variable <code>numbers</code> und die andere <code>chars</code>.</p>
 <ul>
-<li><code>numbers</code> stellen zufällige Zahlen dar, die ihr euch ausdenkt</li>
-<li><code>chars</code> sollen einfach Namen sein, die euch einfallen</li>
+<li><code>numbers</code> sollen zufällige Zahlen sein, die du dir ausdenkst</li>
+<li><code>chars</code> sollen einfach Namen sein, die dir einfallen</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
@@ -1433,19 +1429,19 @@ und bildet die Grundlage für viele weitere Analyseschritte.</p>
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">5</span>,<span class="dv">17</span>,<span class="dv">6</span>,<span class="dv">75</span>,<span class="dv">22</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">5</span>, <span class="dv">17</span>, <span class="dv">6</span>, <span class="dv">75</span>, <span class="dv">22</span>)</span>
 <span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a>chars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Anna"</span>, <span class="st">"Alex"</span>, <span class="st">"Beate"</span>, <span class="st">"Bobby"</span>, <span class="st">"Christina"</span>, <span class="st">"Chester"</span>)</span>
 <span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> age,</span>
-<span id="cb100-7"><a href="#cb100-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> gender,</span>
+<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">age        =</span> age,</span>
+<span id="cb100-7"><a href="#cb100-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender     =</span> gender,</span>
 <span id="cb100-8"><a href="#cb100-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">hair_color =</span> hair_color,</span>
-<span id="cb100-9"><a href="#cb100-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">height_cm =</span> height_cm,</span>
-<span id="cb100-10"><a href="#cb100-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight_kg =</span> weight_kg,</span>
+<span id="cb100-9"><a href="#cb100-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">height_cm  =</span> height_cm,</span>
+<span id="cb100-10"><a href="#cb100-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight_kg  =</span> weight_kg,</span>
 <span id="cb100-11"><a href="#cb100-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">occupation =</span> occupation,</span>
-<span id="cb100-12"><a href="#cb100-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">nmbrs =</span> numbers,</span>
-<span id="cb100-13"><a href="#cb100-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">chars =</span> chars</span>
+<span id="cb100-12"><a href="#cb100-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">nmbrs      =</span> numbers,</span>
+<span id="cb100-13"><a href="#cb100-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">chars      =</span> chars</span>
 <span id="cb100-14"><a href="#cb100-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -1463,25 +1459,24 @@ und bildet die Grundlage für viele weitere Analyseschritte.</p>
 <div class="callout-body-container callout-body">
 <ul>
 <li><p><strong>Komma vergessen oder zu viel gesetzt</strong><br>
-→ führt oft zu unerwarteten Fehlermeldungen.</p></li>
+→ führt oft zu unerwarteten Fehlermeldungen</p></li>
 <li><p><strong>Falscher Objektname</strong><br>
-→ R unterscheidet zwischen Groß- und Kleinschreibung<br>
-(<code>Age</code> ≠ <code>age</code>).</p></li>
+→ R unterscheidet zwischen Groß- und Kleinschreibung (<code>Age</code> ≠ <code>age</code>)</p></li>
 <li><p><strong>Unterschiedliche Längen der Vektoren</strong><br>
-→ Alle Variablen müssen <strong>gleich viele Werte</strong> haben.</p></li>
+→ alle Variablen müssen <strong>gleich viele Werte</strong> haben</p></li>
 </ul>
 </div>
 </div>
 </section>
 <section id="exkurs-pakete" class="level2">
-<h2 class="anchored" data-anchor-id="exkurs-pakete"><strong>Exkurs: Pakete</strong></h2>
+<h2 class="anchored" data-anchor-id="exkurs-pakete">Exkurs: Pakete</h2>
 <p>Pakete sind <strong>Erweiterungen von R</strong>.<br>
 Sie enthalten zusätzliche Funktionen, Datensätze und Dokumentationen,<br>
 die bestimmte Aufgaben erleichtern oder überhaupt erst möglich machen.</p>
 <p>R bringt bereits viele grundlegende Funktionen mit (Base R).<br>
 Für komplexere oder spezialisierte Aufgaben greifen wir jedoch häufig auf <strong>Pakete</strong> zurück.</p>
 <section id="pakete-installieren" class="level3">
-<h3 class="anchored" data-anchor-id="pakete-installieren">Pakete Installieren</h3>
+<h3 class="anchored" data-anchor-id="pakete-installieren">Pakete installieren</h3>
 <hr>
 <p>Bevor wir ein Paket nutzen können, müssen wir es <strong>einmal installieren</strong>.<br>
 Die Installation erfolgt über das Internet und wird lokal auf dem Rechner gespeichert.</p>
@@ -1500,7 +1495,7 @@ Die Installation erfolgt über das Internet und wird lokal auf dem Rechner gespe
 </div>
 <div class="callout-body-container callout-body">
 <p><code>install.packages()</code> muss <strong>nur einmal</strong> ausgeführt werden.<br>
-Danach ist das Paket in der Regel dauerhaft auf deinem Rechner verfügbar.</p>
+Danach ist das Paket dauerhaft auf deinem Rechner verfügbar.</p>
 </div>
 </div>
 </section>
@@ -1620,7 +1615,7 @@ Häufig stammen Daten aus externen Quellen, zum Beispiel aus:</p>
 </ul>
 </div>
 </div>
-<p>Beim Importieren von Daten können verschiedene <strong>Hürden</strong> auftreten.<br>
+<p>Beim Importieren können verschiedene <strong>Hürden</strong> auftreten.<br>
 Diese sind normal und gehören zur Arbeit mit realen Datensätzen dazu.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1646,15 +1641,7 @@ Diese sind normal und gehören zur Arbeit mit realen Datensätzen dazu.</p>
 </div>
 </div>
 <p>Um den Datenimport möglichst übersichtlich und zuverlässig zu gestalten,<br>
-verwenden wir ab jetzt Funktionen aus dem <strong><code>tidyverse</code></strong>.</p>
-<p>Diese bieten:</p>
-<ul>
-<li>klare und gut lesbare Befehle<br>
-</li>
-<li>sinnvolle Standardannahmen<br>
-</li>
-<li>eine einfache erste Prüfung der importierten Daten</li>
-</ul>
+verwenden wir Funktionen aus dem <strong><code>tidyverse</code></strong>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1671,14 +1658,12 @@ um die grundlegenden Strukturen zu verstehen.</p>
 für reale Daten und typische Workflows.</p>
 </div>
 </div>
-<p>Im nächsten Schritt importieren wir einen Datensatz aus einer SAV-Datei<br>
-und prüfen anschließend, ob der Import korrekt funktioniert hat.</p>
 <p>Für die folgenden Schritte arbeiten wir mit einem <strong>vorgegebenen Datensatz</strong>.</p>
 <p>Bitte lade den Datensatz herunter und speichere ihn <strong>in deinem Projektordner</strong>, zum Beispiel im Unterordner <code>data/</code>.</p>
 <p>➡️ <strong><a href="../ws1/assets/data/datensatz_workshop.csv">Workshop-Datensatz herunterladen (CSV)</a></strong><br>
 ➡️ <strong><a href="../ws1/assets/data/spss_datensatz_workshop.sav">Workshop-Datensatz herunterladen (SPSS)</a></strong></p>
-<p>Hier kannst du das <strong>Codebuch</strong> zum Datensatz runterladen, für eine <strong>bessere Übersicht</strong>, über die Variablen im Datensatz.</p>
-<p>➡️ <strong><a href="../ws1/assets/data/codebook_workshop_datensatz.pdf">Codebuch Workshop Datensatz (PDF)</a></strong></p>
+<p>Hier kannst du das <strong>Codebuch</strong> zum Datensatz herunterladen, für einen besseren Überblick über die Variablen im Datensatz.</p>
+<p>➡️ <strong><a href="../ws1/assets/data/codebook_workshop_datensatz.pdf">Codebuch Workshop-Datensatz (PDF)</a></strong></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1693,18 +1678,13 @@ und prüfen anschließend, ob der Import korrekt funktioniert hat.</p>
 Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 </div>
 </div>
-<p>Jetzt importieren wir die Daten.</p>
+<p>Jetzt importieren wir die Daten:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Falls nicht schon geschehen, lade folgende Pakete:</span></span>
-<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb103-5"><a href="#cb103-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-6"><a href="#cb103-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Importiere nun die Datensätz</span></span>
-<span id="cb103-7"><a href="#cb103-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-8"><a href="#cb103-8" aria-hidden="true" tabindex="-1"></a>df_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"assets/data/datensatz_workshop.csv"</span>)</span>
-<span id="cb103-9"><a href="#cb103-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-10"><a href="#cb103-10" aria-hidden="true" tabindex="-1"></a>df_spss <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"assets/data/spss_datensatz_workshop.sav"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a>df_csv  <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"assets/data/datensatz_workshop.csv"</span>)</span>
+<span id="cb103-5"><a href="#cb103-5" aria-hidden="true" tabindex="-1"></a>df_spss <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"assets/data/spss_datensatz_workshop.sav"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1716,7 +1696,7 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Was fällt dir auf, wenn du die <strong>Datensätze</strong> vergleichst?</p>
+<p>Was fällt dir auf, wenn du die <strong>beiden Datensätze</strong> vergleichst?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -1732,8 +1712,8 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 22%">
-<col style="width: 20%">
-<col style="width: 56%">
+<col style="width: 22%">
+<col style="width: 54%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1746,10 +1726,10 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 <tr class="odd">
 <td><code>cannot open file</code></td>
 <td>falscher Pfad</td>
-<td>Projektordner prüfen, Datei-Pfad anpassen</td>
+<td>Projektordner prüfen, Dateipfad anpassen</td>
 </tr>
 <tr class="even">
-<td>Umlaute „kaputt“</td>
+<td>Umlaute „kaputt”</td>
 <td>Encoding</td>
 <td><code>locale = locale(encoding = "UTF-8")</code> testen</td>
 </tr>
@@ -1766,20 +1746,19 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 <section id="datenaufbereitung" class="level2">
 <h2 class="anchored" data-anchor-id="datenaufbereitung">Datenaufbereitung</h2>
 <p>Nachdem wir den Datensatz erfolgreich importiert haben, beginnt ein zentraler Schritt der Datenanalyse: die <strong>Datenaufbereitung</strong>.</p>
-<p>Daten liegen in der Praxis selten sofort in der Form vor, in der sie analysiert oder ausgewertet werden können. Häufig müssen Variablen ausgewählt, Fälle gefiltert, Werte umkodiert oder neue Variablen erstellt werden.</p>
+<p>Daten liegen in der Praxis selten sofort in der Form vor, in der sie analysiert werden können. Häufig müssen Variablen ausgewählt, Fälle gefiltert, Werte umkodiert oder neue Variablen erstellt werden.</p>
 <p>Für diese Arbeitsschritte verwenden wir das Paket <strong>dplyr</strong>.</p>
 <section id="überblick-datensatz" class="level3">
 <h3 class="anchored" data-anchor-id="überblick-datensatz">Überblick Datensatz</h3>
 <hr>
-<p>Bevor wir Daten aufbereiten oder verändern, sollten wir uns immer zuerst einen <strong>Überblick über den Datensatz</strong> verschaffen.</p>
-<p>So können wir prüfen, - ob die Daten korrekt importiert wurden, - welche Variablen enthalten sind, - welche Datentypen vorliegen, - und ob es offensichtliche Auffälligkeiten gibt.</p>
+<p>Bevor wir Daten aufbereiten oder verändern, sollten wir uns immer zuerst einen <strong>Überblick</strong> verschaffen.</p>
+<p>So können wir prüfen: - ob die Daten korrekt importiert wurden - welche Variablen enthalten sind - welche Datentypen vorliegen - ob es offensichtliche Auffälligkeiten gibt</p>
 <section id="schneller-überblick" class="level4">
 <h4 class="anchored" data-anchor-id="schneller-überblick">Schneller Überblick</h4>
 <hr>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_csv)</span>
-<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
@@ -2050,12 +2029,10 @@ Nur so funktionieren die folgenden Import-Befehle ohne Probleme.</p>
 </div>
 </div>
 </div>
-<p><code>summary()</code> gibt uns eine erste <strong>Zusammenfassung der Variablen</strong><br>
-(z. B. Min/Max-Werte, Mittelwerte, Häufigkeiten). Aber es wirkt sehr unübersichtlich, daher verwenden wir <strong><code>glimpse()</code></strong>.</p>
+<p><code>summary()</code> gibt uns eine erste <strong>Zusammenfassung der Variablen</strong> (z. B. Min/Max-Werte, Mittelwerte, Häufigkeiten). Es wirkt jedoch schnell unübersichtlich – daher verwenden wir <strong><code>glimpse()</code></strong>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_csv)</span>
-<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb109-3"><a href="#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_spss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
@@ -2228,8 +2205,7 @@ $ gkpol    &lt;dbl+lbl&gt;  3,  3,  3,  2,  3,  6,  7,  1,  3,  3,  2,  4, NA,  
 <h3 class="anchored" data-anchor-id="exkurs-datensatzstruktur">Exkurs: Datensatzstruktur</h3>
 <hr>
 <p>Bevor wir mit der Datenaufbereitung weitermachen, schauen wir uns an, <strong>wie ein Datensatz in R grundsätzlich aufgebaut ist</strong> und wie wir auf einzelne Variablen zugreifen können.</p>
-<p>Ein Datensatz (Data Frame) ist in R eine <strong>Sammlung von Variablen</strong>,<br>
-die jeweils als Spalten organisiert sind.</p>
+<p>Ein Datensatz (Data Frame) ist in R eine <strong>Sammlung von Variablen</strong>, die jeweils als Spalten organisiert sind.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2242,16 +2218,12 @@ die jeweils als Spalten organisiert sind.</p>
 </div>
 <div id="callout-40" class="callout-40-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Wir können auch einzelne oder mehre Objekte wieder aus unserem Environment entfernen, dafür nutzen wir die Funktion <code>rm()</code>.</p>
+<p>Einzelne oder mehrere Objekte lassen sich mit <code>rm()</code> aus dem Environment entfernen.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(x)</span>
 <span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Mehrere Variablen aufeinmal</span></span>
-<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-5"><a href="#cb114-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(x,y,m,s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in rm(x, y, m, s): object 'x' not found</code></pre>
-</div>
+<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Mehrere Objekte auf einmal</span></span>
+<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(x, y, m, s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2259,41 +2231,40 @@ die jeweils als Spalten organisiert sind.</p>
 <section id="zugriff-auf-variablen-mit" class="level4">
 <h4 class="anchored" data-anchor-id="zugriff-auf-variablen-mit">Zugriff auf Variablen mit <strong><code>$</code></strong></h4>
 <hr>
-<p>In Base R greifen wir auf einzelne Variablen eines Datensatzes<br>
-mit dem <strong>Dollar-Zeichen <code>$</code></strong> zu.</p>
-<p>Dafür schauen wir uns unser Environment mit unseren Datensätzen an.</p>
+<p>In Base R greifen wir auf einzelne Variablen eines Datensatzes mit dem <strong>Dollar-Zeichen <code>$</code></strong> zu.</p>
+<p>Dafür schauen wir uns unser Environment mit den Datensätzen an.</p>
 <hr>
 <p><img src="assets/images/datastr_environ1.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
-<p>Wir sehen zunächst, dass <strong>RStudio</strong> direkt zwischen <span style="color: darkred; font-weight: bold;">Values (einzelne Werte)</span> und <span style="color: green; font-weight: bold;">Data (Datensätzen, Tabellen und anderen Objekten)</span> unterscheden kann.</p>
+<p>Wir sehen, dass <strong>RStudio</strong> direkt zwischen <span style="color: darkred; font-weight: bold;">Values (einzelne Werte)</span> und <span style="color: green; font-weight: bold;">Data (Datensätze, Tabellen und andere Objekte)</span> unterscheiden kann.</p>
 <hr>
 <p><img src="assets/images/datastr_environ2.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
-<p>Wir schauen uns jetzt mal unseren Datensatzobjekt genauer an. <span style="color: green; font-weight: bold;">Klicke</span> einfach auf den Datensatz <code>df_csv</code> und neben deinem Script sollte sich nun der Datensatz öffnen.</p>
+<p>Schauen wir uns unser Datensatz-Objekt genauer an. <span style="color: green; font-weight: bold;">Klicke</span> einfach auf <code>df_csv</code> – neben deinem Skript sollte sich nun der Datensatz öffnen.</p>
 <hr>
 <p><img src="assets/images/datastr_environ3.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
-<p>Mit <strong><code>view(df_csv)</code></strong> würden wir auf das selbe Ergebnis kommen. Jetzt kannst du dir deinen Datensatz im Detail anschauen.</p>
+<p>Mit <strong><code>View(df_csv)</code></strong> kämen wir zum selben Ergebnis. Jetzt kannst du den Datensatz im Detail anschauen.</p>
 <hr>
 <p><img src="assets/images/datastr_environ4.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
-<p>Zurück zum Environment! Mit einem <span style="color: green; font-weight: bold;">Klick</span> auf den blauen Pfeil neben dem Objektnamen, öffnest du ein Dropdown mit mehr Informationen zu diesem Objekt <strong>→</strong> Struktur und Inhalte des Objekts!</p>
+<p>Zurück zum Environment! Mit einem <span style="color: green; font-weight: bold;">Klick</span> auf den blauen Pfeil neben dem Objektnamen öffnest du ein Dropdown mit mehr Informationen – Struktur und Inhalte des Objekts.</p>
 <hr>
 <p><img src="assets/images/datastr_environ5.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
-<p>Was wir nun erkennen ist ein logischer Aufbau des Objekts. Wir sehen <span style="color: green; font-weight: bold;">den Objektnamen als übergeordnete Struktur</span> und die Inhalte des Objekts, in diesem Fall, die Variablen als untergeordnete Struktur. Getrennt werden diese zwei <strong>“Ebenen”</strong> durch das <strong><code>$</code></strong>.</p>
+<p>Wir sehen einen logischen Aufbau: <span style="color: green; font-weight: bold;">der Objektname als übergeordnete Struktur</span> und die Variablen als untergeordnete Ebene. Getrennt werden diese zwei Ebenen durch das <strong><code>$</code></strong>.</p>
 <hr>
-<p>Wie können wir nun explizit auf unsere Variable zugreifen? Wenn wir nun die Logik des Aufbaus anschauen, kommen wir zum Schluss:</p>
+<p>Der Zugriff auf eine Variable folgt dieser Logik:</p>
 <ol type="1">
-<li>Erst den Objektnamen eintippen <strong>→</strong> <strong><code>df_csv</code></strong></li>
-<li>Dann die untere Ebene “aufmachen” <strong>→</strong> <strong><code>$</code></strong></li>
-<li>Dann <strong>Variablennamen</strong> eintippen, die ich ansteuern möchte <strong>→</strong> <strong><code>age</code></strong></li>
+<li>Erst den Objektnamen eintippen → <strong><code>df_csv</code></strong></li>
+<li>Dann die untere Ebene „aufmachen” → <strong><code>$</code></strong></li>
+<li>Dann den <strong>Variablennamen</strong> eintippen → <strong><code>age</code></strong></li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>df_csv<span class="sc">$</span>age</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>df_csv<span class="sc">$</span>age</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>In eurem Output, sollten nun alle Altersangaben der Teilnehmden Personen dieser Studie als Vektor angezeigt werden.</p>
+<p>Im Output sollten nun alle Altersangaben der teilnehmenden Personen als Vektor erscheinen.</p>
 </section>
 </section>
 </section>
 <section id="übung-4" class="level2">
 <h2 class="anchored" data-anchor-id="übung-4">Übung</h2>
-<p>Deine Aufgabe ist es nun, das Durchschnittsalter (Mean) und die Standardabweichung des Durschnittsalters (SD) zu berechnen.</p>
+<p>Berechne das <strong>Durchschnittsalter</strong> (Mean) und die <strong>Standardabweichung</strong> (SD) des Alters.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2311,11 +2282,11 @@ mit dem <strong>Dollar-Zeichen <code>$</code></strong> zu.</p>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_csv<span class="sc">$</span>age, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_csv<span class="sc">$</span>age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 53.27089</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(df_csv<span class="sc">$</span>age, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(df_csv<span class="sc">$</span>age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 17.64202</code></pre>
 </div>
@@ -2323,9 +2294,8 @@ mit dem <strong>Dollar-Zeichen <code>$</code></strong> zu.</p>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
-<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(df_csv<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(df_csv<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   vars    n  mean    sd median trimmed   mad min max range skew kurtosis   se
 X1    1 5301 53.27 17.64     55   53.44 19.27  18  96    78 -0.1    -0.86 0.24</code></pre>
@@ -2342,16 +2312,16 @@ X1    1 5301 53.27 17.64     55   53.44 19.27  18  96    78 -0.1    -0.86 0.24</
 <hr>
 <p><code>dplyr</code> ist Teil des <strong><code>tidyverse</code></strong> und bietet Funktionen,<br>
 mit denen sich Datensätze <strong>lesbar, konsistent und effizient</strong> bearbeiten lassen.</p>
-<p>Der Fokus liegt dabei auf: - klarer, gut nachvollziehbarer Syntax<br>
+<p>Der Fokus liegt auf: - klarer, gut nachvollziehbarer Syntax<br>
 - schrittweisem Arbeiten<br>
-- einer einheitlichen „Grammatik“ für Datenmanipulation</p>
+- einer einheitlichen „Grammatik” für Datenmanipulation</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Wichtigsten Funktionen:
+<span class="screen-reader-only">Important</span>Wichtigste Funktionen
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2368,10 +2338,9 @@ mit denen sich Datensätze <strong>lesbar, konsistent und effizient</strong> bea
 </ul>
 </div>
 </div>
-<p>Bevor wir mehrere Schritte kombinieren,<br>
-schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
+<p>Bevor wir mehrere Schritte kombinieren, schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(df_csv, age, sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(df_csv, age, sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5,342 × 2
      age   sex
@@ -2389,7 +2358,7 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 # ℹ 5,332 more rows</code></pre>
 </div>
 </div>
-<p>Der <code>select()</code> wählt Variablen aus und macht aus den einen neuen Datensatz (<code>tibble</code> fungiert genauso wie ein <code>Data Frame</code>).</p>
+<p><code>select()</code> wählt Variablen aus und gibt einen neuen Datensatz zurück (<code>tibble</code> fungiert dabei genauso wie ein Data Frame).</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2400,11 +2369,10 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ohne die <strong>korrekte Zuweisung</strong>, wird <strong>kein neues Objekt</strong> erstellt!</p>
+<p>Ohne eine <strong>Zuweisung</strong> wird <strong>kein neues Objekt</strong> erstellt!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> <span class="fu">select</span>(df_csv, age, sex)</span>
-<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>df_2var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> <span class="fu">select</span>(df_csv, age, sex)</span>
+<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a>df_2var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5,342 × 2
      age   sex
@@ -2424,27 +2392,21 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 </div>
 </div>
 </div>
-<p>Die Logik ist relativ klar!</p>
-<ol type="1">
-<li>Nenne das Objekt (Datensatz)</li>
-<li>Reihe die Variablen aneinander, die ausgewählt werden sollen</li>
-</ol>
 <p>Die Datenaufbereitung besteht meistens aus <strong>mehreren Schritten:</strong></p>
 <ul>
 <li>Variablen auswählen</li>
 <li>Fälle filtern</li>
-<li>neue Variablen erstellen (Summenwerte)</li>
+<li>neue Variablen erstellen</li>
 <li>Variablen umbenennen</li>
 </ul>
-<p>Wir wählen nun wieder unsere Variablen aus und filtern diese aber nun. Wir wollen nun alle Personen über 30 Jahre behalten.</p>
+<p>Wir wählen nun unsere Variablen aus und filtern gleichzeitig: Wir wollen alle Personen <strong>ab 30 Jahren</strong> behalten.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Alternative 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">Alternative 2</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> <span class="fu">select</span>(df_csv, age, sex)</span>
-<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a>df_2var </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> <span class="fu">select</span>(df_csv, age, sex)</span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a>df_2var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5,342 × 2
      age   sex
@@ -2465,11 +2427,8 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> <span class="fu">filter</span>(<span class="fu">select</span>(df_csv, age, sex), age <span class="sc">&gt;=</span> <span class="dv">30</span>)</span>
-<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a>df_2var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> <span class="fu">filter</span>(<span class="fu">select</span>(df_csv, age, sex), age <span class="sc">&gt;=</span> <span class="dv">30</span>)</span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a>df_2var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4,683 × 2
      age   sex
@@ -2490,31 +2449,21 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 </div>
 </div>
 </div>
-<p>Die Logik des Befehls <strong>“Alternative 2”</strong> ist wie folgt aufgebaut:</p>
-<ul>
-<li><code>filter()</code> den neuen Datensatz, welcher durch <code>select()</code> erstellt wurde</li>
-</ul>
-<p><strong>oder</strong></p>
-<ul>
-<li>Wähle erst die Variablen aus und filter anschließend (<strong>Alternative 1</strong>)</li>
-</ul>
-<p><strong>Alternative 2</strong> wirkt auf den ersten Blick effizienter, jedoch liest es sich auch sehr kompliziert. Gerade wenn man mehrere Schritte durchführen möchte.</p>
-<p>Auch dafür gibt es in <strong>Rstudio</strong> eine effiziente Lösung <strong>→</strong> <strong>Pipes</strong></p>
+<p><strong>Alternative 2</strong> wirkt auf den ersten Blick effizienter, ist aber schwieriger zu lesen – besonders wenn viele Schritte folgen.</p>
+<p>Auch dafür gibt es in R eine elegante Lösung: <strong>Pipes</strong>.</p>
 </section>
 </section>
 <section id="pipes" class="level2">
 <h2 class="anchored" data-anchor-id="pipes">Pipes</h2>
-<p>Pipes in R sind ein Operator (z.B. <code>%&gt;%</code> oder <code>|&gt;</code>), mit dem das Ergebnis <strong>eines Schritts direkt</strong> an den <strong>nächsten Befehl „weitergereicht“</strong> wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich <strong>Datenbearbeitungsschritte</strong> wie in einer Kette von links nach rechts lesen, was den <strong>Code meist kürzer und besser lesbar</strong> macht, besonders im <code>tidyverse</code>-Kontext.</p>
-<p>Man kann sich Pipes vorstellen wie die Röhren (Pipes) aus Super Mario:</p>
+<p>Pipes in R sind ein Operator (<code>%&gt;%</code> oder <code>|&gt;</code>), mit dem das Ergebnis <strong>eines Schritts direkt</strong> an den <strong>nächsten Befehl weitergereicht</strong> wird, ohne Zwischenergebnisse extra zu speichern. Dadurch lassen sich <strong>Datenverarbeitungsschritte</strong> wie in einer Kette lesen – der Code wird kürzer und übersichtlicher.</p>
+<p>Man kann sich Pipes vorstellen wie die Röhren aus Super Mario:</p>
 <p><img src="assets/images/generated-image_pipes3.png" class="img-fluid" style="border: 2px solid darkblue;;width:100.0%"></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
-<span id="cb131-4"><a href="#cb131-4" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(age, sex) <span class="sc">|&gt;</span></span>
-<span id="cb131-5"><a href="#cb131-5" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(age <span class="sc">&gt;=</span> <span class="dv">30</span>)</span>
-<span id="cb131-6"><a href="#cb131-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb131-7"><a href="#cb131-7" aria-hidden="true" tabindex="-1"></a>df_2var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>df_2var <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age, sex) <span class="sc">|&gt;</span></span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&gt;=</span> <span class="dv">30</span>)</span>
+<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a>df_2var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4,683 × 2
      age   sex
@@ -2532,14 +2481,14 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 # ℹ 4,673 more rows</code></pre>
 </div>
 </div>
-<p>Wie wir sehen, haben wir eine klare Struktur und wir müssen den Befehlen innerhalb unserer eigenen <strong>Pipes</strong> nicht dauernd “erklären”, welchen Datensatz wir heranziehen!</p>
+<p>Die Struktur ist klar und wir müssen den Befehlen innerhalb der <strong>Pipe</strong> nicht ständig erklären, welchen Datensatz wir heranziehen.</p>
 </section>
 <section id="übung-5" class="level2">
 <h2 class="anchored" data-anchor-id="übung-5">Übung</h2>
 <ol type="1">
-<li>Erstelle zunächst eine neue Variable <code>soz.u</code>, diese Besteht aus den Variablen <code>im17</code> bis <code>im21</code> –&gt; bilde dafür einen Summenwert</li>
-<li>Erstelle einen neuen Datensatz <code>df_analyse</code> mit folgenden Variablen <code>Alter, Geschlecht, Bildung, Berufstätigkeit und Sozialeungleichheit</code></li>
-<li>Filtere nur die Personen, die <code>weiblich</code>angegeben haben in einen neuen Datensatz <code>df_analyse_w</code></li>
+<li>Erstelle zunächst eine neue Variable <code>soz.u</code> aus den Variablen <code>im17</code> bis <code>im21</code> → bilde dafür einen <strong>Summenwert</strong></li>
+<li>Erstelle einen neuen Datensatz <code>df_analyse</code> mit den Variablen <strong>Alter, Geschlecht, Bildung, Berufstätigkeit und Soziale Ungleichheit</strong></li>
+<li>Filtere nur die Personen, die <strong>weiblich</strong> angegeben haben, in einen neuen Datensatz <code>df_analyse_w</code></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -2547,16 +2496,16 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><strong>TIPP</strong>
+<span class="screen-reader-only">Note</span><strong>Tipp</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Nutze das <strong>Codebook!</strong></li>
-<li><strong>Erinnere</strong> dich an die wichtigsten Funktionen von <code>dplyr</code></li>
-<li>Verwende <strong>Pipes</strong>, wenn du diese brauchst</li>
+<li>Nutze das <strong>Codebuch!</strong></li>
+<li>Erinnere dich an die wichtigsten Funktionen von <code>dplyr</code></li>
+<li>Verwende <strong>Pipes</strong>, wenn du sie brauchst</li>
 </ul>
-<p>Das wichtigste: <strong>LEARNING BY DOING!</strong></p>
+<p>Das Wichtigste: <strong>Learning by doing!</strong></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -2576,21 +2525,19 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 1</span></span>
-<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a>df_csv <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
-<span id="cb133-4"><a href="#cb133-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">soz.u =</span> im17<span class="sc">+</span>im18<span class="sc">+</span>im19<span class="sc">+</span>im20<span class="sc">+</span>im21)</span>
-<span id="cb133-5"><a href="#cb133-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-6"><a href="#cb133-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_csv<span class="sc">$</span>soz.u, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 1</span></span>
+<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a>df_csv <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
+<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">soz.u =</span> im17 <span class="sc">+</span> im18 <span class="sc">+</span> im19 <span class="sc">+</span> im20 <span class="sc">+</span> im21)</span>
+<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_csv<span class="sc">$</span>soz.u, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 14 15 11 13 13 14 13 15 15 15</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 2</span></span>
-<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a>df_analyse <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
-<span id="cb135-4"><a href="#cb135-4" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(age, sex, educ, work, soz.u)</span>
-<span id="cb135-5"><a href="#cb135-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb135-6"><a href="#cb135-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 2</span></span>
+<span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>df_analyse <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
+<span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age, sex, educ, work, soz.u)</span>
+<span id="cb134-4"><a href="#cb134-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-5"><a href="#cb134-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 5
      age   sex  educ  work soz.u
@@ -2606,12 +2553,11 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
  9    68     1     3     4    15
 10    51     2     3     2    15</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 3</span></span>
-<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a>df_analyse_w <span class="ot">&lt;-</span> df_analyse <span class="sc">|&gt;</span></span>
-<span id="cb137-4"><a href="#cb137-4" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(sex <span class="sc">==</span> <span class="dv">2</span>)</span>
-<span id="cb137-5"><a href="#cb137-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-6"><a href="#cb137-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse_w, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 3</span></span>
+<span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a>df_analyse_w <span class="ot">&lt;-</span> df_analyse <span class="sc">|&gt;</span></span>
+<span id="cb136-3"><a href="#cb136-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb136-4"><a href="#cb136-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb136-5"><a href="#cb136-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse_w, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 5
      age   sex  educ  work soz.u
@@ -2631,11 +2577,11 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>df_analyse <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
-<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">soz.u =</span> im17 <span class="sc">+</span> im18 <span class="sc">+</span> im19 <span class="sc">+</span> im20 <span class="sc">+</span> im21) <span class="sc">|&gt;</span></span>
-<span id="cb139-3"><a href="#cb139-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age, sex, educ, work, soz.u)</span>
-<span id="cb139-4"><a href="#cb139-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb139-5"><a href="#cb139-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>df_analyse <span class="ot">&lt;-</span> df_csv <span class="sc">|&gt;</span></span>
+<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">soz.u =</span> im17 <span class="sc">+</span> im18 <span class="sc">+</span> im19 <span class="sc">+</span> im20 <span class="sc">+</span> im21) <span class="sc">|&gt;</span></span>
+<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age, sex, educ, work, soz.u)</span>
+<span id="cb138-4"><a href="#cb138-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-5"><a href="#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 5
      age   sex  educ  work soz.u
@@ -2651,10 +2597,10 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
  9    68     1     3     4    15
 10    51     2     3     2    15</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>df_analyse_w <span class="ot">&lt;-</span> df_analyse <span class="sc">|&gt;</span></span>
-<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="dv">2</span>)</span>
-<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-4"><a href="#cb141-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse_w, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a>df_analyse_w <span class="ot">&lt;-</span> df_analyse <span class="sc">|&gt;</span></span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_analyse_w, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 5
      age   sex  educ  work soz.u
@@ -2704,7 +2650,7 @@ schauen wir uns ein <strong>einzelnes, einfaches Beispiel</strong> an.</p>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Morgen bauen wir auf diesen Grundlagen auf und gehen einen Schritt weiter in Richtung „echter Analyse-Workflow“:</p>
+<p>Morgen bauen wir auf diesen Grundlagen auf und gehen einen Schritt weiter in Richtung „echter Analyse-Workflow”:</p>
 <ul>
 <li><strong>Recap</strong> (kurzer Rückblick &amp; Fragen)</li>
 <li><strong>Umkodieren</strong> (neue Kategorien, Skalen, Re-Codes)</li>
