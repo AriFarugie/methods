@@ -40,7 +40,6 @@ body { background: #f7f6f2 !important; }
   padding: 0;
   position: relative;
   overflow: hidden;
-  min-height: 420px;
   display: flex;
   flex-direction: column;
 }
@@ -74,9 +73,9 @@ body { background: #f7f6f2 !important; }
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 860px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 5rem 2rem 4.5rem;
+  padding: 5rem 2rem 0;
   width: 100%;
 }
 
@@ -137,6 +136,7 @@ body { background: #f7f6f2 !important; }
   padding: .55rem 1.2rem;
   text-decoration: none;
   transition: all .2s;
+  margin-bottom: 3.5rem;
 }
 
 .hero-cta svg { flex-shrink: 0; }
@@ -147,47 +147,51 @@ body { background: #f7f6f2 !important; }
   background: rgba(168,213,194,.06);
 }
 
-/* ── MAIN CONTENT ── */
-.main {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 4rem 2rem 2rem;
+/* ── CARDS STRIP IM HERO ── */
+.hero-cards-strip {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 2.5rem 2rem 3.5rem;
 }
 
-/* section headers */
-.sh {
+.hero-cards-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-sh {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
-.sh-label {
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .18em;
+.hero-sh-label {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: #a8d5c2;
   white-space: nowrap;
 }
 
-.sh-line {
+.hero-sh-line {
   flex: 1;
   height: 1px;
-  background: var(--border);
+  background: rgba(255,255,255,.1);
 }
 
-/* ── CARDS ── */
-.cards {
+.hero-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 1.25rem;
-  margin-bottom: 3.5rem;
 }
 
-.card {
-  background: var(--white);
-  border: 1px solid var(--border);
+.hero-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
   border-radius: 14px;
   padding: 2rem;
   text-decoration: none;
@@ -197,27 +201,29 @@ body { background: #f7f6f2 !important; }
   gap: .9rem;
   position: relative;
   overflow: hidden;
-  transition: box-shadow .25s, transform .25s;
+  transition: box-shadow .25s, transform .25s, background .25s, border-color .25s;
 }
 
-.card-accent-bar {
+.hero-card-accent-bar {
   position: absolute;
   left: 0; top: 0; bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
+  background: linear-gradient(to bottom, #a8d5c2, transparent);
   transform: scaleY(0);
   transform-origin: top;
   transition: transform .3s ease;
 }
 
-.card:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,.09);
+.hero-card:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(168,213,194,.25);
+  box-shadow: 0 12px 40px rgba(0,0,0,.3);
   transform: translateY(-3px);
 }
 
-.card:hover .card-accent-bar { transform: scaleY(1); }
+.hero-card:hover .hero-card-accent-bar { transform: scaleY(1); }
 
-.card-status {
+.hero-card-status {
   display: inline-flex;
   align-items: center;
   gap: .35rem;
@@ -225,60 +231,89 @@ body { background: #f7f6f2 !important; }
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-light);
+  color: #a8d5c2;
+  background: rgba(168,213,194,.12);
   border-radius: 100px;
   padding: .28rem .8rem;
   width: fit-content;
 }
 
-.card-status::before {
+.hero-card-status::before {
   content: '';
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--accent);
+  background: #a8d5c2;
 }
 
-.card h2 {
+.hero-card h2 {
   font-family: 'Lora', serif;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.35;
-  color: var(--ink);
+  color: #ffffff;
 }
 
-.card-desc {
+.hero-card-desc {
   font-size: .88rem;
-  color: var(--muted);
+  color: rgba(255,255,255,.5);
   line-height: 1.7;
   flex: 1;
 }
 
-.card-tags {
+.hero-card-tags {
   display: flex;
   flex-wrap: wrap;
   gap: .4rem;
 }
 
-.ctag {
+.hero-ctag {
   font-size: .68rem;
   font-weight: 600;
-  color: var(--muted);
-  background: var(--bg);
-  border: 1px solid var(--border);
+  color: rgba(255,255,255,.4);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
   border-radius: 100px;
   padding: .18rem .65rem;
 }
 
-.card-footer {
+.hero-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: .5rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,.08);
   font-size: .8rem;
   font-weight: 700;
+  color: #a8d5c2;
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+}
+
+.sh {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sh-label {
+  font-size: .85rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
   color: var(--accent);
+  white-space: nowrap;
+}
+
+.sh-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
 }
 
 /* ── INFO GRID ── */
@@ -315,7 +350,7 @@ body { background: #f7f6f2 !important; }
 /* ── FOOTER ── */
 .lp-footer {
   border-top: 1px solid var(--border);
-  max-width: 860px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 1.75rem 2rem;
   display: flex;
@@ -331,9 +366,10 @@ body { background: #f7f6f2 !important; }
 .lp-footer a:hover { text-decoration: underline; }
 
 @media (max-width: 580px) {
-  .hero-inner { padding: 3.5rem 1.25rem 3rem; }
+  .hero-inner { padding: 3.5rem 1.25rem 0; }
+  .hero-cards-strip { padding: 2rem 1.25rem 2.5rem; }
+  .hero-cards { grid-template-columns: 1fr; }
   .main { padding: 3rem 1.25rem 1.5rem; }
-  .cards { grid-template-columns: 1fr; }
   .lp-footer { flex-direction: column; align-items: flex-start; }
 }
 </style>
@@ -345,78 +381,83 @@ body { background: #f7f6f2 !important; }
     <div class="hero-noise"></div>
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
+
     <div class="hero-inner">
       <div class="hero-eyebrow">
         <div class="hero-eyebrow-line"></div>
-        <span>Goethe-Universität Frankfurt &nbsp;·&nbsp; Methoden &amp; Statistik</span>
+        <span>Arieja Farugie &nbsp;·&nbsp; Methoden &amp; Statistik</span>
       </div>
       <h1>Workshops für<br><em>empirische Methoden</em><br>in R</h1>
       <p class="hero-desc">
         Praxisnahe Materialien für Studierende der Sozialwissenschaften –
         von den Grundlagen in R bis zum vollständigen, reproduzierbaren Analyse-Workflow.
       </p>
-      <a class="hero-cta" href="mailto:farugie@psych.uni-frankfurt.de">
+      <a class="hero-cta" href="mailto:farugie[at]psych.uni-frankfurt.de">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-        farugie@psych.uni-frankfurt.de
+        farugie[at]psych.uni-frankfurt.de
       </a>
     </div>
+
+    <!-- CARDS IM HERO -->
+    <div class="hero-cards-strip">
+      <div class="hero-cards-inner">
+        <div class="hero-sh">
+          <span class="hero-sh-label">Workshops</span>
+          <div class="hero-sh-line"></div>
+        </div>
+        <div class="hero-cards">
+
+          <a class="hero-card" href="workshops/ws1/index.html">
+            <div class="hero-card-accent-bar"></div>
+            <div class="hero-card-status">Verfügbar</div>
+            <h2>Einführung in R &amp; RStudio</h2>
+            <p class="hero-card-desc">
+              Zweitägiger Einstieg in R und RStudio: Grundlagen, Datenimport,
+              Datenaufbereitung mit dplyr, Umkodieren, Joins und fehlende Werte –
+              mit Mini-Projekt zum Abschluss.
+            </p>
+            <div class="hero-card-tags">
+              <span class="hero-ctag">2 Tage</span>
+              <span class="hero-ctag">Einsteiger</span>
+              <span class="hero-ctag">dplyr</span>
+              <span class="hero-ctag">haven</span>
+              <span class="hero-ctag">psych</span>
+            </div>
+            <div class="hero-card-footer">
+              Zum Workshop
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+
+          <a class="hero-card" href="workshops/ws2/index.html">
+            <div class="hero-card-accent-bar"></div>
+            <div class="hero-card-status">Verfügbar</div>
+            <h2>Datenvisualisierung mit ggplot2</h2>
+            <p class="hero-card-desc">
+              Zweitägiger Workshop zur Grammar of Graphics: Schicht für Schicht
+              zu professionellen Grafiken – von Streudiagrammen bis zu kombinierten
+              Layouts mit patchwork.
+            </p>
+            <div class="hero-card-tags">
+              <span class="hero-ctag">2 Tage</span>
+              <span class="hero-ctag">Grundkenntnisse R</span>
+              <span class="hero-ctag">ggplot2</span>
+              <span class="hero-ctag">patchwork</span>
+            </div>
+            <div class="hero-card-footer">
+              Zum Workshop
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
   </header>
 
-  <!-- WORKSHOPS -->
+  <!-- HINWEISE -->
   <main class="main">
-    <div class="sh">
-      <span class="sh-label">Workshops</span>
-      <div class="sh-line"></div>
-    </div>
-
-    <div class="cards">
-
-      <a class="card" href="workshops/ws1/index.html">
-        <div class="card-accent-bar"></div>
-        <div class="card-status">Verfügbar</div>
-        <h2>Einführung in R &amp; RStudio</h2>
-        <p class="card-desc">
-          Zweitägiger Einstieg in R und RStudio: Grundlagen, Datenimport,
-          Datenaufbereitung mit dplyr, Umkodieren, Joins und fehlende Werte –
-          mit Mini-Projekt zum Abschluss.
-        </p>
-        <div class="card-tags">
-          <span class="ctag">2 Tage</span>
-          <span class="ctag">Einsteiger</span>
-          <span class="ctag">dplyr</span>
-          <span class="ctag">haven</span>
-          <span class="ctag">psych</span>
-        </div>
-        <div class="card-footer">
-          Zu den Materialien
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
-
-      <a class="card" href="workshops/ws2/index.html">
-        <div class="card-accent-bar"></div>
-        <div class="card-status">Verfügbar</div>
-        <h2>Datenvisualisierung mit ggplot2</h2>
-        <p class="card-desc">
-          Zweitägiger Workshop zur Grammar of Graphics: Schicht für Schicht
-          zu professionellen Grafiken – von Streudiagrammen bis zu kombinierten
-          Layouts mit patchwork.
-        </p>
-        <div class="card-tags">
-          <span class="ctag">2 Tage</span>
-          <span class="ctag">Grundkenntnisse R</span>
-          <span class="ctag">ggplot2</span>
-          <span class="ctag">patchwork</span>
-        </div>
-        <div class="card-footer">
-          Zu den Materialien
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- HINWEISE -->
     <div class="sh">
       <span class="sh-label">Hinweise</span>
       <div class="sh-line"></div>
@@ -425,11 +466,11 @@ body { background: #f7f6f2 !important; }
     <div class="info-grid">
       <div class="info-card">
         <div class="info-label">Zielgruppe</div>
-        <div class="info-val">Studierende der Sozialwissenschaften</div>
+        <div class="info-val">Studierende und Forschende der empirischen Wissenschaften</div>
       </div>
       <div class="info-card">
         <div class="info-label">Voraussetzungen</div>
-        <div class="info-val">Keine Vorkenntnisse für WS1 nötig</div>
+        <div class="info-val">Siehe Workshopseiten</div>
       </div>
       <div class="info-card">
         <div class="info-label">Software</div>
@@ -440,13 +481,7 @@ body { background: #f7f6f2 !important; }
         <div class="info-val">Passwortgeschützt – auf Anfrage</div>
       </div>
     </div>
-
   </main>
-
-  <footer class="lp-footer">
-    <span>© 2026 Arieja Farugie &nbsp;·&nbsp; Goethe-Universität Frankfurt</span>
-    <a href="mailto:farugie@psych.uni-frankfurt.de">farugie@psych.uni-frankfurt.de</a>
-  </footer>
 
 </div>
 ```
