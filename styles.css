@@ -92,18 +92,16 @@ body {
    SIDEBAR – TOC oben, Navigation darunter
    ========================================================= */
 
-/* Linke Spalte als Flex-Container */
-.quarto-sidebar {
-  display: flex;
-  flex-direction: column;
-  background: var(--white) !important;
-  border-right: 1px solid var(--border) !important;
-  font-family: 'Mulish', sans-serif;
+/* sidebar-menu-container (Navigation) nach unten */
+#quarto-sidebar > .sidebar-menu-container {
+  order: 2;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
 }
 
 /* TOC nach oben */
-.quarto-margin-sidebar,
-#TOC {
+#quarto-sidebar > nav#TOC {
   order: 1;
 }
 
