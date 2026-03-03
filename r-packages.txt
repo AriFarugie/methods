@@ -1,0 +1,11 @@
+knitr
+rmarkdown
+tidyverse
+haven
+sjPlot
+sjmisc
+psych
+rstatix
+naniar
+patchwork
+RColorBrewer
