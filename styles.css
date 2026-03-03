@@ -415,29 +415,57 @@ tbody td  { padding: .6rem .75rem; color: var(--ink); vertical-align: top; }
 }
 
 /* =========================================================
-   SIDEBAR – TOC oben, Navigation unten
+   SIDEBAR – Navigation unter TOC
    ========================================================= */
-.quarto-sidebar {
-  display: flex;
-  flex-direction: column;
+.quarto-sidebar,
+#quarto-sidebar {
+  background: var(--white) !important;
+  border-right: 1px solid var(--border) !important;
+  font-family: 'Mulish', sans-serif;
 }
 
-/* TOC zuerst */
-#TOC {
-  order: 1;
-  padding-bottom: 1.25rem;
-  margin-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border);
-}
-
-/* Sidebar-Navigation danach */
-.sidebar-navigation {
-  order: 2;
-}
-
-.quarto-sidebar, #quarto-sidebar {
+/* Sidebar-Body als Flex-Container */
+.sidebar-menu-container,
+.quarto-sidebar > .sidebar-menu-container {
   display: flex !important;
   flex-direction: column !important;
 }
-#TOC { order: 1; padding-bottom: 1.25rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
-.sidebar-navigation { order: 2; }
+
+/* TOC zuerst – natürliche Reihenfolge */
+.quarto-sidebar .sidebar-toc {
+  order: 1 !important;
+}
+
+/* Navigation nach unten */
+.quarto-sidebar .sidebar-navigation {
+  order: 2 !important;
+  padding-top: 1.25rem !important;
+  margin-top: 1rem !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+.sidebar-navigation .sidebar-item a,
+.sidebar .nav-link,
+#quarto-sidebar .nav-link {
+  font-size: .85rem !important;
+  font-weight: 600 !important;
+  color: var(--muted) !important;
+  border-radius: 6px !important;
+  padding: .38rem .75rem !important;
+  transition: background .15s, color .15s;
+  text-decoration: none;
+}
+
+.sidebar-navigation .sidebar-item a:hover,
+.sidebar .nav-link:hover,
+#quarto-sidebar .nav-link:hover {
+  background: var(--accent-light) !important;
+  color: var(--accent) !important;
+}
+
+.sidebar-navigation .sidebar-item a.active,
+#quarto-sidebar .nav-link.active {
+  background: var(--accent-light) !important;
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+}
