@@ -18,10 +18,6 @@
   --bs-body-bg:   #f7f6f2;
 }
 
-
-/* =========================================================
-   BASE
-   ========================================================= */
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
@@ -32,16 +28,12 @@ body {
   line-height: 1.7;
 }
 
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
+/* NAVBAR */
 .navbar {
   background: var(--ink) !important;
   border-bottom: 1px solid rgba(255,255,255,.07) !important;
   padding: .75rem 2rem !important;
 }
-
 .navbar-brand {
   font-family: 'Mulish', sans-serif !important;
   font-weight: 800 !important;
@@ -49,7 +41,6 @@ body {
   color: #ffffff !important;
   letter-spacing: .02em;
 }
-
 .navbar .nav-link {
   color: rgba(255,255,255,.65) !important;
   font-size: 1rem !important;
@@ -58,12 +49,8 @@ body {
   padding: .4rem .9rem !important;
   transition: color .2s;
 }
-
 .navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: #a8d5c2 !important;
-}
-
+.navbar .nav-link.active { color: #a8d5c2 !important; }
 .navbar .dropdown-menu {
   background: #252533 !important;
   border: 1px solid rgba(255,255,255,.1) !important;
@@ -72,7 +59,6 @@ body {
   padding: .4rem !important;
   margin-top: .4rem !important;
 }
-
 .navbar .dropdown-item {
   color: rgba(255,255,255,.7) !important;
   font-size: .85rem !important;
@@ -81,36 +67,46 @@ body {
   padding: .5rem .9rem !important;
   transition: background .15s, color .15s;
 }
-
 .navbar .dropdown-item:hover {
   background: rgba(168,213,194,.1) !important;
   color: #a8d5c2 !important;
 }
 
-
 /* =========================================================
-   SIDEBAR
+   SIDEBAR – Navigation UNTER dem TOC
    ========================================================= */
-#quarto-sidebar {
+#quarto-sidebar,
+.quarto-sidebar {
   background: var(--white) !important;
   border-right: 1px solid var(--border) !important;
   font-family: 'Mulish', sans-serif;
+}
+
+/* Wrapper als Flex-Column → ermöglicht order-Steuerung */
+#quarto-sidebar .sidebar-menu-container,
+.sidebar-menu-container {
   display: flex !important;
   flex-direction: column !important;
+  height: 100% !important;
 }
 
-#quarto-sidebar #TOC {
+/* TOC zuerst */
+#quarto-sidebar #TOC,
+.sidebar-toc {
   order: 1 !important;
-  padding-bottom: 1.25rem !important;
-  margin-bottom: .25rem !important;
+  flex-shrink: 0;
 }
 
-#quarto-sidebar nav.sidebar-navigation {
-  order: 2 !important;
+/* Navigation ans Ende */
+#quarto-sidebar nav.sidebar-navigation,
+.sidebar-navigation {
+  order: 99 !important;
   padding-top: 1rem !important;
+  margin-top: 1rem !important;
   border-top: 1px solid var(--border) !important;
 }
 
+/* Sidebar-Links */
 .sidebar-navigation .sidebar-item a,
 #quarto-sidebar .nav-link {
   font-size: .85rem !important;
@@ -121,13 +117,11 @@ body {
   transition: background .15s, color .15s;
   text-decoration: none;
 }
-
 .sidebar-navigation .sidebar-item a:hover,
 #quarto-sidebar .nav-link:hover {
   background: var(--accent-light) !important;
   color: var(--accent) !important;
 }
-
 .sidebar-navigation .sidebar-item a.active,
 #quarto-sidebar .nav-link.active {
   background: var(--accent-light) !important;
@@ -135,19 +129,14 @@ body {
   font-weight: 700 !important;
 }
 
-
-/* =========================================================
-   TOC
-   ========================================================= */
+/* TOC */
 #TOC {
   font-family: 'Mulish', sans-serif;
   border-left: 2px solid var(--border);
   padding-left: 1rem;
 }
-
 #TOC > ul { padding-left: 0; }
 #TOC li   { list-style: none; margin: .2rem 0; }
-
 #TOC a {
   font-size: .82rem;
   font-weight: 600;
@@ -157,10 +146,8 @@ body {
   display: block;
   padding: .15rem 0;
 }
-
 #TOC a:hover  { color: var(--accent); }
 #TOC a.active { color: var(--accent); font-weight: 700; }
-
 .toc-title {
   font-size: .65rem !important;
   font-weight: 800 !important;
@@ -170,31 +157,23 @@ body {
   margin-bottom: .75rem !important;
 }
 
-
-/* =========================================================
-   CONTENT
-   ========================================================= */
+/* CONTENT */
 main.content,
 .quarto-container main,
 #quarto-document-content {
   max-width: 860px;
   padding: 2.5rem 2rem;
 }
-
 h1, h2, h3, h4 {
   font-family: 'Mulish', sans-serif;
   font-weight: 800;
   color: var(--ink);
   line-height: 1.3;
 }
-
 h1 { font-size: 2rem;    margin-bottom: 1.5rem; }
 h2 { font-size: 1.45rem; margin-top: 2.5rem;  margin-bottom: 1rem; }
 h3 { font-size: 1.15rem; margin-top: 2rem;    margin-bottom: .75rem; }
-
 hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
-
-/* Inline code */
 code:not(.sourceCode) {
   background: var(--accent-light);
   color: var(--accent);
@@ -203,12 +182,7 @@ code:not(.sourceCode) {
   font-size: .88em;
 }
 
-
-/* =========================================================
-   CODE BLOCKS  (hell + kontrastreich für Projektionen)
-   ========================================================= */
-
-/* Äußere Box */
+/* CODE BLOCKS */
 div.sourceCode {
   background: #f0f4f2 !important;
   border: 1.5px solid #c8ddd6 !important;
@@ -217,8 +191,6 @@ div.sourceCode {
   padding: 1.35rem 1.5rem !important;
   box-shadow: 0 2px 12px rgba(0,0,0,.05) !important;
 }
-
-/* Inneres pre – keinen eigenen Rahmen */
 div.sourceCode pre.sourceCode {
   background: transparent !important;
   border: none !important;
@@ -227,8 +199,6 @@ div.sourceCode pre.sourceCode {
   box-shadow: none !important;
   margin: 0 !important;
 }
-
-/* Code-Text */
 pre.sourceCode code,
 div.sourceCode code {
   background: transparent !important;
@@ -238,24 +208,18 @@ div.sourceCode code {
   padding: 0 !important;
   font-weight: 500 !important;
 }
-
-/* Syntax-Farben */
-code span.fu { color: #1a5c8a !important; font-weight: 700 !important; }   /* Funktionen  */
-code span.st { color: #2d6a4f !important; font-weight: 600 !important; }   /* Strings     */
+code span.fu { color: #1a5c8a !important; font-weight: 700 !important; }
+code span.st { color: #2d6a4f !important; font-weight: 600 !important; }
 code span.dv,
-code span.fl { color: #b5500a !important; font-weight: 700 !important; }   /* Zahlen      */
-code span.co { color: #9a9aaa !important; font-style: italic !important; font-weight: 400 !important; } /* Kommentare */
-code span.kw { color: var(--ink) !important; font-weight: 700 !important; } /* Keywords   */
-code span.op { color: var(--accent) !important; font-weight: 700 !important; } /* Operatoren */
-code span.va { color: var(--ink) !important; }                              /* Variablen   */
-
+code span.fl { color: #b5500a !important; font-weight: 700 !important; }
+code span.co { color: #9a9aaa !important; font-style: italic !important; font-weight: 400 !important; }
+code span.kw { color: var(--ink) !important; font-weight: 700 !important; }
+code span.op { color: var(--accent) !important; font-weight: 700 !important; }
+code span.va { color: var(--ink) !important; }
 .code-copy-button       { color: var(--muted)  !important; }
 .code-copy-button:hover { color: var(--accent) !important; }
 
-
-/* =========================================================
-   CALLOUTS
-   ========================================================= */
+/* CALLOUTS */
 .callout {
   border-radius: 10px !important;
   border: 1px solid var(--border) !important;
@@ -264,13 +228,11 @@ code span.va { color: var(--ink) !important; }                              /* V
   font-size: .9rem;
   margin: 1.25rem 0;
 }
-
 .callout-note      { border-left-color: var(--accent) !important; }
 .callout-tip       { border-left-color: var(--gold)   !important; }
 .callout-warning   { border-left-color: #d4860a       !important; }
 .callout-caution   { border-left-color: #b94040       !important; }
 .callout-important { border-left-color: var(--ink)    !important; }
-
 .callout-note      .callout-icon::before,
 .callout-note      > .callout-header { color: var(--accent) !important; }
 .callout-tip       .callout-icon::before,
@@ -281,7 +243,6 @@ code span.va { color: var(--ink) !important; }                              /* V
 .callout-caution   > .callout-header { color: #b94040       !important; }
 .callout-important .callout-icon::before,
 .callout-important > .callout-header { color: var(--ink)    !important; }
-
 .callout-header {
   font-family: 'Mulish', sans-serif !important;
   font-weight: 700 !important;
@@ -290,18 +251,13 @@ code span.va { color: var(--ink) !important; }                              /* V
   background: transparent !important;
   padding-bottom: .25rem !important;
 }
-
 .callout-body { color: var(--ink); }
 
-
-/* =========================================================
-   PANEL TABSET
-   ========================================================= */
+/* PANEL TABSET */
 .panel-tabset .nav-tabs {
   border-bottom: 2px solid var(--border) !important;
   gap: .25rem;
 }
-
 .panel-tabset .nav-tabs .nav-link {
   font-family: 'Mulish', sans-serif !important;
   font-size: .82rem !important;
@@ -316,23 +272,17 @@ code span.va { color: var(--ink) !important; }                              /* V
   transition: color .15s, border-color .15s;
   background: transparent !important;
 }
-
 .panel-tabset .nav-tabs .nav-link:hover {
   color: var(--accent) !important;
   border-bottom-color: var(--accent-light) !important;
 }
-
 .panel-tabset .nav-tabs .nav-link.active {
   color: var(--accent) !important;
   border-bottom-color: var(--accent) !important;
 }
-
 .panel-tabset .tab-content { padding-top: 1.25rem; }
 
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+/* BUTTONS */
 .btn-primary {
   background: var(--accent) !important;
   border-color: var(--accent) !important;
@@ -345,14 +295,12 @@ code span.va { color: var(--ink) !important; }                              /* V
   padding: .55rem 1.4rem !important;
   transition: opacity .2s, transform .2s;
 }
-
 .btn-primary:hover {
   opacity: .88;
   transform: translateY(-1px);
   background: var(--accent) !important;
   border-color: var(--accent) !important;
 }
-
 .btn-secondary {
   background: transparent !important;
   border: 1.5px solid var(--accent) !important;
@@ -365,26 +313,20 @@ code span.va { color: var(--ink) !important; }                              /* V
   padding: .55rem 1.4rem !important;
   transition: background .2s, color .2s, transform .2s;
 }
-
 .btn-secondary:hover {
   background: var(--accent-light) !important;
   color: var(--accent) !important;
   transform: translateY(-1px);
 }
 
-
-/* =========================================================
-   TABLES
-   ========================================================= */
+/* TABLES */
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: .88rem;
   margin: 1.25rem 0;
 }
-
 thead tr  { border-bottom: 2px solid var(--accent); }
-
 thead th {
   font-family: 'Mulish', sans-serif;
   font-weight: 800;
@@ -395,15 +337,11 @@ thead th {
   padding: .6rem .75rem;
   text-align: left;
 }
-
 tbody tr  { border-bottom: 1px solid var(--border); transition: background .15s; }
 tbody tr:hover { background: var(--accent-light); }
 tbody td  { padding: .6rem .75rem; color: var(--ink); vertical-align: top; }
 
-
-/* =========================================================
-   PAGE FOOTER
-   ========================================================= */
+/* PAGE FOOTER */
 .nav-footer {
   background: var(--ink) !important;
   border-top: 1px solid rgba(255,255,255,.07) !important;
@@ -411,72 +349,12 @@ tbody td  { padding: .6rem .75rem; color: var(--ink); vertical-align: top; }
   font-family: 'Mulish', sans-serif !important;
   font-size: .8rem !important;
 }
-
 .nav-footer a       { color: #a8d5c2 !important; text-decoration: none; }
 .nav-footer a:hover { text-decoration: underline; }
 
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   main.content { padding: 1.75rem 1.25rem; }
   h1 { font-size: 1.6rem; }
   h2 { font-size: 1.25rem; }
-}
-
-/* =========================================================
-   SIDEBAR – Navigation unter TOC
-   ========================================================= */
-.quarto-sidebar,
-#quarto-sidebar {
-  background: var(--white) !important;
-  border-right: 1px solid var(--border) !important;
-  font-family: 'Mulish', sans-serif;
-}
-
-/* Sidebar-Body als Flex-Container */
-.sidebar-menu-container,
-.quarto-sidebar > .sidebar-menu-container {
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-/* TOC zuerst – natürliche Reihenfolge */
-.quarto-sidebar .sidebar-toc {
-  order: 1 !important;
-}
-
-/* Navigation nach unten */
-.quarto-sidebar .sidebar-navigation {
-  order: 2 !important;
-  padding-top: 1.25rem !important;
-  margin-top: 1rem !important;
-  border-top: 1px solid var(--border) !important;
-}
-
-.sidebar-navigation .sidebar-item a,
-.sidebar .nav-link,
-#quarto-sidebar .nav-link {
-  font-size: .85rem !important;
-  font-weight: 600 !important;
-  color: var(--muted) !important;
-  border-radius: 6px !important;
-  padding: .38rem .75rem !important;
-  transition: background .15s, color .15s;
-  text-decoration: none;
-}
-
-.sidebar-navigation .sidebar-item a:hover,
-.sidebar .nav-link:hover,
-#quarto-sidebar .nav-link:hover {
-  background: var(--accent-light) !important;
-  color: var(--accent) !important;
-}
-
-.sidebar-navigation .sidebar-item a.active,
-#quarto-sidebar .nav-link.active {
-  background: var(--accent-light) !important;
-  color: var(--accent) !important;
-  font-weight: 700 !important;
 }
