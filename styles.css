@@ -414,3 +414,24 @@ tbody td  { padding: .6rem .75rem; color: var(--ink); vertical-align: top; }
   h1 { font-size: 1.6rem; }
   h2 { font-size: 1.25rem; }
 }
+
+/* =========================================================
+   SIDEBAR – TOC oben, Navigation unten
+   ========================================================= */
+.quarto-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOC zuerst */
+#TOC {
+  order: 1;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Sidebar-Navigation danach */
+.sidebar-navigation {
+  order: 2;
+}
