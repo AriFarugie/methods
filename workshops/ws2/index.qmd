@@ -1,0 +1,75 @@
+---
+title: "Datenvisualisierung mit ggplot2"
+format:
+  html:
+    toc: true
+    toc-title: "Inhalte dieser Seite"
+    toc-location: left
+
+sidebar: workshop2
+---
+
+# Kurzbeschreibung
+___
+
+Der zweitägige Workshop **„Datenvisualisierung mit ggplot2"** richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten **professionell und reproduzierbar visualisieren** möchten.
+
+Der Workshop setzt grundlegende Kenntnisse in R und dem `tidyverse` voraus (z. B. aus dem Workshop „Einführung in R & RStudio"), ist aber so aufgebaut, dass auch Einsteiger:innen in `ggplot2` gut folgen können.
+
+Im Workshop lernen die Teilnehmenden Schritt für Schritt:
+
+- wie `ggplot2` aufgebaut ist und nach welcher **Logik** Grafiken entstehen,
+- wie man die wichtigsten **Diagrammtypen** erstellt (Streudiagramm, Balkendiagramm, Histogramm, Boxplot),
+- wie man Grafiken durch **Aesthetics, Themes und Farbpaletten** gestaltet,
+- wie man mit **Faceting** mehrere Grafiken kombiniert,
+- und wie man mit **patchwork** Plots zu einer zusammenhängenden Abbildung zusammenfügt.
+
+Der Schwerpunkt liegt auf **praxisnaher Anwendung** mit dem Workshop-Datensatz aus dem ersten Workshop – alle Schritte sind direkt übertragbar auf eigene Projekte.
+
+**Benötigte Vorkenntnisse:** Grundkenntnisse in R und `tidyverse` (z. B. `select()`, `filter()`, `mutate()`, Pipes).
+
+# Lernziele
+___
+
+Nach dem Workshop können Teilnehmende …
+
+- die **Grammatik von Grafiken** (`Grammar of Graphics`) erklären und anwenden
+- mit `ggplot()` und `aes()` eine Grafik schichtweise aufbauen
+- die wichtigsten **Geome** einsetzen: `geom_point()`, `geom_bar()`, `geom_histogram()`, `geom_boxplot()`, `geom_smooth()`
+- **Aesthetics** gezielt einsetzen: `color`, `fill`, `size`, `shape`, `alpha`
+- Grafiken mit **Labels, Titeln und Achsenbeschriftungen** versehen (`labs()`)
+- mit `facet_wrap()` und `facet_grid()` **Gruppenvergleiche** visualisieren
+- **statistische Kennwerte** direkt in Grafiken einzeichnen (`stat_summary()`)
+- **Koordinatensysteme** anpassen (`coord_flip()`, `coord_cartesian()`, `coord_polar()`)
+- **Themes** anpassen und eigene Designs erstellen
+- **Farbpaletten** aus `RColorBrewer` und `viridis` verwenden
+- mit dem Paket **`patchwork`** mehrere Plots kombinieren
+- Grafiken als **Datei exportieren** (`ggsave()`, PNG, PDF)
+
+# Ablauf
+___
+
+## Tag 1 – Grundlagen der Grammar of Graphics
+
+1. **Ankommen & Überblick** – Warum Datenvisualisierung?
+2. **Was ist ggplot2?** – Grammar of Graphics als roter Faden
+3. **🗂️ Layer 1: Data** – Datenbasis und Pipe in ggplot2
+4. **🎨 Layer 2: Aesthetics** – Variablen auf visuelle Eigenschaften mappen
+5. **🎨 Aesthetics vertieft** – color vs. fill, alpha, size, shape
+6. **📐 Layer 3: Geometries** – geom_point(), geom_histogram(), geom_bar(), geom_boxplot()
+7. **Beschriftungen** – labs() mit Titel, Achsen und Caption
+8. **Übungen**
+
+## Tag 2 – Facets, Statistics, Coordinates & Theme
+
+1. **Recap & offene Fragen**
+2. **🔲 Layer 4: Faceting** – facet_wrap() und facet_grid()
+3. **📊 Layer 5: Statistics** – stat_summary() für Kennwerte in der Grafik
+4. **📏 Layer 6: Coordinates** – Achsen anpassen, coord_flip(), coord_polar()
+5. **🖌️ Layer 7: Theme & Styling** – Fertige Themes, eigenes Theme, Farbpaletten
+6. **patchwork** – Plots kombinieren
+7. **Export** – ggsave()
+8. **Mini-Projekt**
+
+---
+[➡️ Weiter zu Tag 1](day1.qmd){.btn .btn-primary} **-** [➡️ Weiter zu Tag 2](day2.qmd){.btn .btn-secondary}
