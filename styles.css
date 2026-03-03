@@ -89,44 +89,30 @@ body {
 
 
 /* =========================================================
-   SIDEBAR – Navigation UNTER dem TOC
-   =========================================================
-   Quarto rendert die sidebar-navigation VOR dem TOC im DOM.
-   Lösung: Navigation per flex-order ans Ende schieben.
-   Wir setzen display:flex auf den Sidebar-Scroll-Container,
-   der beide Elemente direkt enthält.
+   SIDEBAR – TOC oben, Navigation darunter
    ========================================================= */
 
-#quarto-sidebar,
+/* Linke Spalte als Flex-Container */
 .quarto-sidebar {
+  display: flex;
+  flex-direction: column;
   background: var(--white) !important;
   border-right: 1px solid var(--border) !important;
   font-family: 'Mulish', sans-serif;
 }
 
-/* Der scrollbare innere Container */
-#quarto-sidebar > .sidebar-menu-container {
-  display: flex !important;
-  flex-direction: column !important;
-  min-height: 100% !important;
+/* TOC nach oben */
+.quarto-margin-sidebar,
+#TOC {
+  order: 1;
 }
 
-/* Alle direkten Kinder standardmäßig oben */
-#quarto-sidebar > .sidebar-menu-container > * {
+/* Sidebar-Navigation nach unten */
+.quarto-sidebar .sidebar-navigation,
+.quarto-sidebar nav.sidebar-navigation {
   order: 2;
-}
-
-/* TOC explizit nach oben */
-#quarto-sidebar > .sidebar-menu-container > nav#TOC,
-#quarto-sidebar > .sidebar-menu-container > .sidebar-toc-active {
-  order: 1 !important;
-}
-
-/* Navigation explizit nach unten */
-#quarto-sidebar > .sidebar-menu-container > nav.sidebar-navigation {
-  order: 3 !important;
   padding-top: 1rem !important;
-  margin-top: auto !important;
+  margin-top: 1rem !important;
   border-top: 1px solid var(--border) !important;
 }
 
