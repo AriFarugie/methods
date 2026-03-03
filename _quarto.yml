@@ -51,6 +51,7 @@ format:
     linestretch: 1.7
     toc: true
     toc-depth: 2
+    toc-location: left
     smooth-scroll: true
     code-copy: true
     code-overflow: scroll
