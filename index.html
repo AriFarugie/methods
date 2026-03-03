@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Willkommen – Methods</title>
+<title>Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -117,48 +117,460 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Willkommen</h1>
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Mulish:wght@300;400;600;700&display=swap');
+
+.quarto-title, h1.title, #title-block-header { display: none !important; }
+#quarto-content { padding: 0 !important; }
+.page-layout-full main { padding: 0 !important; max-width: 100% !important; }
+body { background: #f7f6f2 !important; }
+
+:root {
+  --ink:     #1c1c27;
+  --muted:   #6b6b82;
+  --bg:      #f7f6f2;
+  --white:   #ffffff;
+  --accent:  #2d5f4f;
+  --accent-light: #d4ede4;
+  --gold:    #c9a84c;
+  --border:  #e3e1da;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.lp {
+  font-family: 'Mulish', sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--ink);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: .4;
+  pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+  top: -120px; right: -60px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(45,95,79,.4) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-glow2 {
+  position: absolute;
+  bottom: -100px; left: 20%;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(201,168,76,.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4.5rem;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero-eyebrow-line {
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-eyebrow span {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.18;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: #a8d5c2;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.62);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: rgba(255,255,255,.45);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 100px;
+  padding: .55rem 1.2rem;
+  text-decoration: none;
+  transition: all .2s;
+}
+
+.hero-cta svg { flex-shrink: 0; }
+
+.hero-cta:hover {
+  color: #a8d5c2;
+  border-color: rgba(168,213,194,.5);
+  background: rgba(168,213,194,.06);
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+}
+
+/* section headers */
+.sh {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sh-label {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.sh-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── CARDS ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow .25s, transform .25s;
+}
+
+.card-accent-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,.09);
+  transform: translateY(-3px);
+}
+
+.card:hover .card-accent-bar { transform: scaleY(1); }
+
+.card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  border-radius: 100px;
+  padding: .28rem .8rem;
+  width: fit-content;
+}
+
+.card-status::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.card h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.card-desc {
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.ctag {
+  font-size: .68rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: .18rem .65rem;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: .5rem;
+  border-top: 1px solid var(--border);
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ── INFO GRID ── */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.info-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.3rem 1.4rem;
+}
+
+.info-label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .55rem;
+}
+
+.info-val {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+/* ── FOOTER ── */
+.lp-footer {
+  border-top: 1px solid var(--border);
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .75rem;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+.lp-footer a { color: var(--accent); text-decoration: none; }
+.lp-footer a:hover { text-decoration: underline; }
+
+@media (max-width: 580px) {
+  .hero-inner { padding: 3.5rem 1.25rem 3rem; }
+  .main { padding: 3rem 1.25rem 1.5rem; }
+  .cards { grid-template-columns: 1fr; }
+  .lp-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+
+<div class="lp">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-noise"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>Goethe-Universität Frankfurt &nbsp;·&nbsp; Methoden &amp; Statistik</span>
+      </div>
+      <h1>Workshops für<br><em>empirische Methoden</em><br>in R</h1>
+      <p class="hero-desc">
+        Praxisnahe Materialien für Studierende der Sozialwissenschaften –
+        von den Grundlagen in R bis zum vollständigen, reproduzierbaren Analyse-Workflow.
+      </p>
+      <a class="hero-cta" href="mailto:farugie@psych.uni-frankfurt.de">
+        <svg width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 7 10-7"></path></svg>
+        farugie@psych.uni-frankfurt.de
+      </a>
+    </div>
+  </header>
+
+  <!-- WORKSHOPS -->
+  <main class="main">
+    <div class="sh">
+      <span class="sh-label">Workshops</span>
+      <div class="sh-line"></div>
+    </div>
+
+    <div class="cards">
+
+      <a class="card" href="workshops/ws1/index.html">
+        <div class="card-accent-bar"></div>
+        <div class="card-status">Verfügbar</div>
+        <h2 class="anchored">Einführung in R &amp; RStudio</h2>
+        <p class="card-desc">
+          Zweitägiger Einstieg in R und RStudio: Grundlagen, Datenimport,
+          Datenaufbereitung mit dplyr, Umkodieren, Joins und fehlende Werte –
+          mit Mini-Projekt zum Abschluss.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">2 Tage</span>
+          <span class="ctag">Einsteiger</span>
+          <span class="ctag">dplyr</span>
+          <span class="ctag">haven</span>
+          <span class="ctag">psych</span>
+        </div>
+        <div class="card-footer">
+          Zu den Materialien
+          <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </div>
+      </a>
+
+      <a class="card" href="workshops/ws2/index.html">
+        <div class="card-accent-bar"></div>
+        <div class="card-status">Verfügbar</div>
+        <h2 class="anchored">Datenvisualisierung mit ggplot2</h2>
+        <p class="card-desc">
+          Zweitägiger Workshop zur Grammar of Graphics: Schicht für Schicht
+          zu professionellen Grafiken – von Streudiagrammen bis zu kombinierten
+          Layouts mit patchwork.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">2 Tage</span>
+          <span class="ctag">Grundkenntnisse R</span>
+          <span class="ctag">ggplot2</span>
+          <span class="ctag">patchwork</span>
+        </div>
+        <div class="card-footer">
+          Zu den Materialien
+          <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- HINWEISE -->
+    <div class="sh">
+      <span class="sh-label">Hinweise</span>
+      <div class="sh-line"></div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Zielgruppe</div>
+        <div class="info-val">Studierende der Sozialwissenschaften</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Voraussetzungen</div>
+        <div class="info-val">Keine Vorkenntnisse für WS1 nötig</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Software</div>
+        <div class="info-val">R &amp; RStudio (kostenlos)</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Zugang</div>
+        <div class="info-val">Passwortgeschützt – auf Anfrage</div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="lp-footer">
+    <span>© 2026 Arieja Farugie &nbsp;·&nbsp; Goethe-Universität Frankfurt</span>
+    <a href="mailto:farugie@psych.uni-frankfurt.de">farugie@psych.uni-frankfurt.de</a>
+  </footer>
+
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>Willkommen auf meiner Workshop-Seite!<br>
-Hier findest du Infos zu meinen <strong>Methoden-Workshops</strong>.</p>
-<section id="aktuelle-workshops" class="level1">
-<h1>🔍 Aktuelle Workshops</h1>
-<hr>
-<ul>
-<li><a href="./workshops/ws1/index.html"><strong>Einführung in R &amp; RStudio</strong></a></li>
-</ul>
-</section>
-<section id="kontakt" class="level1">
-<h1>📬 Kontakt</h1>
-<hr>
-<p>Bei Fragen, Wünschen und Anregungen erreichst du mich jederzeit unter: farugie[at]psych.uni-frankfurt.de</p>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
