@@ -20,13 +20,14 @@ jobs:
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.4.0'
+          use-public-rspm: true
 
-      # ── Cache: R-Pakete zwischen Runs wiederverwenden ──────────────────
+      # ── Cache: nur neu installieren wenn r-packages.txt sich ändert ────
       - name: Cache R packages
         uses: actions/cache@v4
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: r-pkgs-${{ runner.os }}-${{ hashFiles('**/DESCRIPTION', '.github/workflows/quarto-publish.yml') }}
+          key: r-pkgs-${{ runner.os }}-${{ hashFiles('r-packages.txt') }}
           restore-keys: |
             r-pkgs-${{ runner.os }}-
 
@@ -38,22 +39,78 @@ jobs:
       - name: Install R packages
         run: |
           Rscript -e '
-            pkgs <- c("knitr", "rmarkdown", "tidyverse", "haven",
-                      "sjPlot", "sjmisc", "psych", "rstatix",
-                      "naniar", "patchwork", "RColorBrewer")
+            lib <- Sys.getenv("R_LIBS_USER")
+            dir.create(lib, showWarnings = FALSE, recursive = TRUE)
+            .libPaths(lib)
+            pkgs <- readLines("r-packages.txt")
+            pkgs <- pkgs[nchar(trimws(pkgs)) > 0]
             missing <- pkgs[!pkgs %in% installed.packages()[,"Package"]]
             if (length(missing) > 0) {
-              install.packages(missing, repos = "https://cloud.r-project.org")
+              install.packages(missing,
+                               lib = lib,
+                               repos = "https://packagemanager.posit.co/cran/__linux__/noble/latest")
             } else {
-              message("Alle Pakete bereits im Cache – keine Installation nötig.")
+              message("Alle Pakete bereits im Cache – keine Installation noetig.")
             }
           '
+
+      # ── .Rprofile: stellt sicher dass Quarto dieselbe Library findet ──
+      - name: Set R library path for Quarto
+        run: |
+          echo '.libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))' > .Rprofile
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render site
         uses: quarto-dev/quarto-actions/render@v2
+
+      # ── Staticrypt: Seiten automatisch verschlüsseln ───────────────────
+      - name: Install Staticrypt
+        run: npm install -g staticrypt
+
+      # Workshop 1
+      - name: Encrypt Workshop 1 – Tag 1
+        run: |
+          staticrypt _site/workshops/ws1/day1.html \
+            -p "${{ secrets.WS1_PASSWORD }}" \
+            -o _site/workshops/ws1/day1.html \
+            --title "Einführung in R & RStudio – Tag 1" \
+            --instructions "Bitte gib das Workshop-Passwort ein."
+
+      - name: Encrypt Workshop 1 – Tag 2
+        run: |
+          staticrypt _site/workshops/ws1/day2.html \
+            -p "${{ secrets.WS1_PASSWORD }}" \
+            -o _site/workshops/ws1/day2.html \
+            --title "Einführung in R & RStudio – Tag 2" \
+            --instructions "Bitte gib das Workshop-Passwort ein."
+
+      # Workshop 2
+      - name: Encrypt Workshop 2 – Tag 1
+        run: |
+          staticrypt _site/workshops/ws2/day1.html \
+            -p "${{ secrets.WS2_PASSWORD }}" \
+            -o _site/workshops/ws2/day1.html \
+            --title "Datenvisualisierung mit ggplot2 – Tag 1" \
+            --instructions "Bitte gib das Workshop-Passwort ein."
+
+      - name: Encrypt Workshop 2 – Tag 2
+        run: |
+          staticrypt _site/workshops/ws2/day2.html \
+            -p "${{ secrets.WS2_PASSWORD }}" \
+            -o _site/workshops/ws2/day2.html \
+            --title "Datenvisualisierung mit ggplot2 – Tag 2" \
+            --instructions "Bitte gib das Workshop-Passwort ein."
+
+      # Workshop 3 – Beispiel für zukünftige Erweiterung:
+      # - name: Encrypt Workshop 3 – Tag 1
+      #   run: |
+      #     staticrypt _site/workshops/ws3/day1.html \
+      #       -p "${{ secrets.WS3_PASSWORD }}" \
+      #       -o _site/workshops/ws3/day1.html \
+      #       --title "Workshop 3 – Tag 1" \
+      #       --instructions "Bitte gib das Workshop-Passwort ein."
 
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
