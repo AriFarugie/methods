@@ -208,7 +208,6 @@ code:not(.sourceCode) {
 }
 
 /* Code blocks – hell & kontrastreich (gut für Projektionen) */
-pre.sourceCode,
 div.sourceCode {
   background: #f0f4f2 !important;
   border: 1.5px solid #c8ddd6 !important;
@@ -216,6 +215,16 @@ div.sourceCode {
   border-radius: 10px !important;
   padding: 1.35rem 1.5rem !important;
   box-shadow: 0 2px 12px rgba(0,0,0,.05) !important;
+}
+
+/* inneres pre – kein eigener Rahmen */
+div.sourceCode pre.sourceCode {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
 }
 
 pre.sourceCode code,
