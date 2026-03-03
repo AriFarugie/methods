@@ -1,35 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://AriFarugie.github.io/methods/workshops/ws1/workshop.html</loc>
-    <lastmod>2026-01-20T14:04:21.079Z</lastmod>
+    <loc>https://AriFarugie.github.io/methods/workshops/ws1/day1.html</loc>
+    <lastmod>2026-03-03T12:23:20.126Z</lastmod>
   </url>
   <url>
     <loc>https://AriFarugie.github.io/methods/workshops/ws1/day2.html</loc>
-    <lastmod>2026-01-20T14:13:34.340Z</lastmod>
+    <lastmod>2026-03-03T12:23:20.126Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AriFarugie.github.io/methods/workshops/ws2/day1.html</loc>
+    <lastmod>2026-03-03T12:23:20.140Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AriFarugie.github.io/methods/workshops/ws2/index.html</loc>
+    <lastmod>2026-03-03T12:23:20.141Z</lastmod>
   </url>
   <url>
     <loc>https://AriFarugie.github.io/methods/test.html</loc>
-    <lastmod>2026-01-20T14:04:20.953Z</lastmod>
+    <lastmod>2026-03-03T12:23:20.087Z</lastmod>
   </url>
   <url>
     <loc>https://AriFarugie.github.io/methods/index.html</loc>
-    <lastmod>2026-01-20T14:08:00.966Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AriFarugie.github.io/methods/about.html</loc>
-    <lastmod>2026-01-20T14:04:20.938Z</lastmod>
+    <lastmod>2026-03-03T12:23:20.086Z</lastmod>
   </url>
   <url>
     <loc>https://AriFarugie.github.io/methods/materials.html</loc>
-    <lastmod>2026-01-20T14:04:20.945Z</lastmod>
+    <lastmod>2026-03-03T12:23:20.086Z</lastmod>
   </url>
   <url>
-    <loc>https://AriFarugie.github.io/methods/workshops/ws1/day1.html</loc>
-    <lastmod>2026-01-20T14:34:06.630Z</lastmod>
+    <loc>https://AriFarugie.github.io/methods/about.html</loc>
+    <lastmod>2026-03-03T12:23:20.082Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AriFarugie.github.io/methods/workshops/ws2/day2.html</loc>
+    <lastmod>2026-03-03T12:23:20.140Z</lastmod>
   </url>
   <url>
     <loc>https://AriFarugie.github.io/methods/workshops/ws1/index.html</loc>
-    <lastmod>2026-01-20T14:08:03.407Z</lastmod>
+    <lastmod>2026-03-03T12:23:20.127Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AriFarugie.github.io/methods/workshops/ws1/workshop.html</loc>
+    <lastmod>2026-03-03T12:23:20.127Z</lastmod>
   </url>
 </urlset>

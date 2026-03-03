@@ -1,311 +1,5 @@
 [
   {
-    "objectID": "workshops/ws1/workshop.html",
-    "href": "workshops/ws1/workshop.html",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "",
-    "text": "Dieser Teil enthält die inhaltlichen Materialien zum Workshop „Einführung in R & RStudio“.\nEr ist so aufgebaut, dass du ihn als Begleitunterlage im Workshop oder zur Nachbereitung nutzen kannst.\n\n\n\nR ist eine freie Programmiersprache für statistische Analysen, Visualisierung und Datenverarbeitung.\nRStudio ist eine integrierte Entwicklungsumgebung (IDE), die die Arbeit mit R übersichtlicher und komfortabler macht.\n\n\nTypischerweise besteht RStudio aus vier Bereichen („Panes“):\n\nSource / Editor – hier schreibst du Skripte (.R, .qmd usw.).\n\nConsole – hier werden Befehle direkt ausgeführt.\n\nEnvironment / History – hier siehst du deine Objekte und Befehls-Historie.\n\nFiles / Plots / Packages / Help / Viewer – Dateien, Grafiken, installierte Pakete, Hilfe usw.\n\n\n\n\n\n2 + 2\n\n[1] 4\n\n10 / 3\n\n[1] 3.333333\n\nsqrt(49)\n\n[1] 7\n\n\nPLATZHALTER\n\n\n\n\n\n\nNoteÜbung 1 – R als Taschenrechner\n\n\n\n\nBerechne: 5^2 + 3.\n\nWas ergibt sqrt(144)*75?\n\nFühre die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#einleitung",
-    "href": "workshops/ws1/workshop.html#einleitung",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "",
-    "text": "R ist eine freie Programmiersprache für statistische Analysen, Visualisierung und Datenverarbeitung.\nRStudio ist eine integrierte Entwicklungsumgebung (IDE), die die Arbeit mit R übersichtlicher und komfortabler macht.\n\n\nTypischerweise besteht RStudio aus vier Bereichen („Panes“):\n\nSource / Editor – hier schreibst du Skripte (.R, .qmd usw.).\n\nConsole – hier werden Befehle direkt ausgeführt.\n\nEnvironment / History – hier siehst du deine Objekte und Befehls-Historie.\n\nFiles / Plots / Packages / Help / Viewer – Dateien, Grafiken, installierte Pakete, Hilfe usw.\n\n\n\n\n\n2 + 2\n\n[1] 4\n\n10 / 3\n\n[1] 3.333333\n\nsqrt(49)\n\n[1] 7\n\n\nPLATZHALTER\n\n\n\n\n\n\nNoteÜbung 1 – R als Taschenrechner\n\n\n\n\nBerechne: 5^2 + 3.\n\nWas ergibt sqrt(144)*75?\n\nFühre die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#objekte-anlegen",
-    "href": "workshops/ws1/workshop.html#objekte-anlegen",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "Objekte anlegen",
-    "text": "Objekte anlegen\n\nx &lt;- 5\ny &lt;- c(1, 2, 3, 4, 5)\n\n\n\n\n\n\n\nNote\n\n\n\nHinweis\n\n&lt;- ist der Zuweisungspfeil („wird zugewiesen“).\n\ny ist ein Vektor aus mehreren Zahlen.\n\n\n\n\nFunktionen verwenden\n\nmean(y)\n\n[1] 3\n\nsum(y)\n\n[1] 15\n\nlength(y)\n\n[1] 5\n\nround(3.14159, digits = 2)\n\n[1] 3.14\n\n\n\n\n\n\n\n\nNoteÜbung 2 – Objekte & Funktionen\n\n\n\n\nErstelle ein Objekt z mit mindestens fünf Zahlen.\n\nBerechne Mittelwert, Summe und Länge von z.\n\nErzeuge ein Objekt pi_gerundet, das pi auf 3 Nachkommastellen rundet.\n\n\n\n\n\n\n\n\n\nWarningHäufige Fehler\n\n\n\n\nFunktion falsch geschrieben: Mean(y) statt mean(y)\n\nKlammern vergessen: mean y statt mean(y)\n\n&lt;- vergessen oder = inkonsistent verwendet\n\nIm falschen Fenster tippen (Konsole statt Skript oder umgekehrt)"
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#datentypen",
-    "href": "workshops/ws1/workshop.html#datentypen",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "3. Datentypen & Datenstrukturen",
-    "text": "3. Datentypen & Datenstrukturen\n\nWichtige Datentypen\n\n\n\n\n\n\nNote\n\n\n\n\nnumeric / double (Kommazahlen)\n\ninteger (Ganze Zahlen, z.B. 1L)\n\ncharacter (Text)\n\nlogical (TRUE/FALSE)\n\nfactor (kategorische Daten)\n\n\n\n\n\nWichtige Datenstrukturen\n\nVektor: geordnete Liste von Werten\n\nData Frame / tibble: Tabelle mit Zeilen (Fälle) und Spalten (Variablen)\n\n\n\nBeispiel\n\nlibrary(tibble)\n\nWarning: package 'tibble' was built under R version 4.4.3\n\ndf &lt;- tibble( name = c(\"Anna\", \"Ben\", \"Clara\"), alter = c(23, 25, 22), studierend = c(TRUE, TRUE, FALSE), speed = c(12.6, 10.1 ,9.5) )\n\ndf\n\n# A tibble: 3 × 4\n  name  alter studierend speed\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt;      &lt;dbl&gt;\n1 Anna     23 TRUE        12.6\n2 Ben      25 TRUE        10.1\n3 Clara    22 FALSE        9.5\n\n\nPlatzhalter\n\nstr(df) \n\ntibble [3 × 4] (S3: tbl_df/tbl/data.frame)\n $ name      : chr [1:3] \"Anna\" \"Ben\" \"Clara\"\n $ alter     : num [1:3] 23 25 22\n $ studierend: logi [1:3] TRUE TRUE FALSE\n $ speed     : num [1:3] 12.6 10.1 9.5\n\nsummary(df) \n\n     name               alter       studierend          speed      \n Length:3           Min.   :22.00   Mode :logical   Min.   : 9.50  \n Class :character   1st Qu.:22.50   FALSE:1         1st Qu.: 9.80  \n Mode  :character   Median :23.00   TRUE :2         Median :10.10  \n                    Mean   :23.33                   Mean   :10.73  \n                    3rd Qu.:24.00                   3rd Qu.:11.35  \n                    Max.   :25.00                   Max.   :12.60  \n\ndplyr::glimpse(df)\n\nRows: 3\nColumns: 4\n$ name       &lt;chr&gt; \"Anna\", \"Ben\", \"Clara\"\n$ alter      &lt;dbl&gt; 23, 25, 22\n$ studierend &lt;lgl&gt; TRUE, TRUE, FALSE\n$ speed      &lt;dbl&gt; 12.6, 10.1, 9.5\n\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 3 – Eigene Tabelle\n\n\n\n\nErstelle einen eigenen tibble mit\n\nmindestens 3 Variablen (z. B. fach, alter, geschlecht)\n\nmindestens 5 Fällen.\n\n\nUntersuche danach mit str() und summary() die Struktur."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#import",
-    "href": "workshops/ws1/workshop.html#import",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "4. Daten importieren",
-    "text": "4. Daten importieren\nWir verwenden Funktionen aus dem tidyverse, um Daten zu importieren und zu bearbeiten.\n\nlibrary(readr)# für CSV \nlibrary(readxl)# für Excel \n\nWarning: package 'readxl' was built under R version 4.4.3\n\nlibrary(haven) # für SPSS-Dateien\n\nWarning: package 'haven' was built under R version 4.4.3\n\n#Einfacher mit \nlibrary(tidyverse)\n\nWarning: package 'tidyverse' was built under R version 4.4.3\n\n\nWarning: package 'ggplot2' was built under R version 4.4.3\n\n\nWarning: package 'purrr' was built under R version 4.4.3\n\n\nWarning: package 'stringr' was built under R version 4.4.3\n\n\nWarning: package 'forcats' was built under R version 4.4.3\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ purrr     1.1.0\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tidyr     1.3.1\n✔ lubridate 1.9.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nPlatzhalter\n\n### CSV-Dateien einlesen\n\ndaten_csv &lt;- read_csv(\"data/workshop1-dataset.csv\")\n\ntext\n\n### Excel-Dateien einlesen\n\ndaten_xlsx &lt;- read_excel(\"data/workshop1-dataset.xlsx\")\n\ntext\n\n### SPSS-Dateien einlesen\n\ndaten_sav &lt;- read_sav(\"data/workshop1-dataset.sav\")\n\ntext\n\n\n\n\n\n\n\nWarningTypische Probleme & Lösungen\n\n\n\n\n\n\n\n\n\n\n\nProblem\nMögliche Ursache\nMögliche Lösung\n\n\n\n\ncannot open file\nfalscher Pfad\nProjektordner prüfen, Datei-Pfad anpassen\n\n\nUmlaute „kaputt“\nEncoding\nlocale = locale(encoding = \"UTF-8\") testen\n\n\nalles character\nTyp falsch erkannt\nnachträglich mit mutate() umwandeln\n\n\n\n\n\n\n\n\n\n\n\nNoteÜbung 4 – Datensatz importieren\n\n\n\n\nImportiere den bereitgestellten Übungsdatensatz.\n\nPrüfe: nrow(), ncol(), head(), summary().\n\nNotiere dir, welche Variablen welcher Art sind."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#aufbereitung",
-    "href": "workshops/ws1/workshop.html#aufbereitung",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "5. Datenaufbereitung mit dplyr",
-    "text": "5. Datenaufbereitung mit dplyr\nWir verwenden das Paket dplyr, um Daten lesbar zu transformieren.\n\nlibrary(dplyr)\n\nPlatzhalter\n\n\n\n\n\n\nImportant\n\n\n\nWichtige Funktionen:\n\nselect() – Variablen auswählen\n\nfilter() – Fälle auswählen\n\nmutate() – neue Variablen erstellen\n\narrange() – sortieren\n\nrename() – Variablen umbenennen\n\n\n\n\nBeispiel-Workflow\n\ndaten_clean &lt;- daten_csv |&gt; \n  select(id, alter, geschlecht, score) |&gt; \n  filter(alter &gt;= 18) |&gt; \n  mutate(score_z = as.numeric(scale(score))) |&gt; \n  arrange(desc(score_z))\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 5 – Erste Transformationen\n\n\n\n\nWähle 3–5 Variablen aus deinem Datensatz aus.\n\nFiltere alle Personen heraus, die jünger als 18 sind.\n\nErstelle eine neue Variable, z. B. eine kategorisierte Altersgruppe."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#fehlende-werte",
-    "href": "workshops/ws1/workshop.html#fehlende-werte",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "6. Fehlende Werte (NA)",
-    "text": "6. Fehlende Werte (NA)\nFehlende Werte werden in R als NA kodiert.\n\nNAs zählen\n\nsum(is.na(daten_csv$score))\n\nPlatzhalter\n\n\nAlle Zeilen mit NA in einer Variablen anzeigen\n\ndaten_csv |&gt; filter(is.na(score))\n\nPlatzhalter\n\n\nFehlercodes in NA umwandeln\n\ndaten_clean2 &lt;- daten_csv |&gt; \n  mutate( score = ifelse(score == 99, NA, score) )\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 6 – Missing Values\n\n\n\n\nFinde heraus, in welchen Variablen NAs vorkommen.\n\nIdentifiziere einen möglichen Fehlercode (z. B. 99, 999) und wandle ihn in NA um.\n\nDiskutiere Strategien (Löschen vs. Imputieren)."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#joins",
-    "href": "workshops/ws1/workshop.html#joins",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "7. Datensätze verbinden (Joins)",
-    "text": "7. Datensätze verbinden (Joins)\nOft liegen Daten in mehreren Tabellen vor (z. B. Stammdaten + Skalen).\n\n### Beispiel: `left_join()`\n\nstammdaten &lt;- tibble( id = c(1, 2, 3), alter = c(23, 25, 22) )\n\nskalen &lt;- tibble( id = c(1, 2, 3), depressions_score = c(10, 15, 8) )\n\ndaten_joined &lt;- left_join(stammdaten, skalen, by = \"id\") daten_joined\n\nPlatzhalter\n\n\n\n\n\n\nTipWeitere Join-Varianten\n\n\n\n\ninner_join() - behält alles links\nright_join()\n\nfull_join()\n\n\n\n\n\n\n\n\n\nNoteÜbung 7 – Tabellen verbinden\n\n\n\n\nErzeuge zwei kleine Tabellen mit einer gemeinsamen ID-Spalte.\n\nFühre sie mit left_join() zusammen.\n\nÜberlege: Was passiert, wenn ein ID-Wert nur in einer Tabelle vorkommt?"
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#workflow",
-    "href": "workshops/ws1/workshop.html#workflow",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "8. Reproduzierbare Workflows",
-    "text": "8. Reproduzierbare Workflows\nZiel ist ein gut dokumentierter, nachvollziehbarer Analyseschritt.\n\nProjektstruktur\n\n\n\n\n\n\nTipEine mögliche Struktur\n\n\n\n\nprojektname/\n\ndata/\n\nscripts/\n\noutput/\n\nprojektname.Rproj\n\n\n\nSkripte sinnvoll gliedern\n\n01_import.R\n\n02_cleaning.R\n\n03_analysis.R\n\n04_plots.R\n\n\n\n\n\n\nKommentare nutzen\nSchritt 1: Daten importieren daten &lt;- read_csv(“data/workshop1-dataset.csv”)\nSchritt 2: Bereinigung daten_clean &lt;- daten |&gt; filter(alter &gt;= 18)\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 8 – Dein eigenes Skript\n\n\n\n\nErstelle ein neues Skript, in dem du Import, erste Bereinigung und Export zusammenfasst.\n\nStrukturiere das Skript in logisch benannte Abschnitte."
-  },
-  {
-    "objectID": "workshops/ws1/workshop.html#miniprojekt",
-    "href": "workshops/ws1/workshop.html#miniprojekt",
-    "title": "Einführung in R & RStudio: Workshop - Tag 1",
-    "section": "9. Mini-Projekt: Eigener Datenaufbereitungs-Workflow",
-    "text": "9. Mini-Projekt: Eigener Datenaufbereitungs-Workflow\nIm Mini-Projekt kombinierst du die gelernten Schritte zu einem kleinen Workflow.\n\nZiel\nEin bereinigter Datensatz, der für eine einfache Analyse oder Visualisierung bereit ist.\n\n\n\n\n\n\nTipMöglicher Ablauf\n\n\n\n\nDaten importieren\n\nVariablen auswählen (select)\n\nFälle filtern (filter)\n\nFehlende Werte behandeln (is.na, ifelse, drop_na)\n\nNeue Variablen erstellen (mutate)\n\nDatensätze verbinden (falls notwendig, left_join)\n\nDatensatz exportieren (write_csv)\n\n\n\n\n### Beispiel: Export\n\nwrite_csv(daten_clean, \"output/workshop1_clean_data.csv\")\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 9 – Abschluss\n\n\n\n\nDokumentiere deinen gesamten Workflow in einem Skript.\n\nExportiere deinen finalen Datensatz in den Ordner output/.\n\nNotiere dir in eigenen Worten, welche Entscheidungen du bei der Bereinigung getroffen hast.\n\n\n\n\nEnde des Workshop-1-Inhaltmoduls.\nquarto preview git add . git commit -m “Änderungen” git push"
-  },
-  {
-    "objectID": "workshops/ws1/day2.html",
-    "href": "workshops/ws1/day2.html",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "",
-    "text": "Willkommen zurück 👋\nWir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#umkodieren-invertierter-items",
-    "href": "workshops/ws1/day2.html#umkodieren-invertierter-items",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Umkodieren invertierter Items",
-    "text": "Umkodieren invertierter Items\nIn Fragebögen kommen häufig invertierte Items vor. Das bedeutet: Hohe Werte drücken geringe Zustimmung aus – oder umgekehrt.\nDamit alle Items in dieselbe Richtung zeigen, müssen invertierte Items umkodiert werden.\n\nBeispiel\nDie Items hs04 bis hs07 und hs09 Fragen die mentale Gesundheit in den letzten vier Wochen ab:\n\n\n\nVariable\nInhalt\nSkalierung\n\n\n\n\nhs04\n“Hetze, unter Zeitdruck”\n1 = “Immer” bis 5 = “Nie”\n\n\nhs05\n“Niedergeschlage”\n1 = “Immer” bis 5 = “Nie”\n\n\nhs06\n“Ruhig, Ausgeglichen”\n1 = “Immer” bis 5 = “Nie”\n\n\nhs07\n“Jede menge Energie”\n1 = “Immer” bis 5 = “Nie”\n\n\nhs09\n“Einsam”\n1 = “Immer” bis 5 = “Nie”\n\n\n\nWie wir sehen, sind einige Items invertiert formuliert. Würden wir daraus, eine Skala bilden bspw. Disstress, könnten wir mit dem mutate()Befehl, keine adäquate Skala bilden.\nWir müssen also entscheiden, was nun hohe Werte und was niedrige Werte darstellen sollen. Damit es intuitiver ist, wollen wir nun die Variablen hs04, hs05 und hs09umkodieren, damit später ein hoher Wert auf der Skala “viel Disstress” darstellen kann.\nDoch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakete wieder ein, bzw. haben diese schon im Environment!\n\n#install.packages(\"labelled\", repos = \"https://cloud.r-project.org\")\n\nlibrary(tidyverse)\nlibrary(haven)\nlibrary(labelled)\n\ndf_csv &lt;- read_csv(\"assets/data/datensatz_workshop.csv\")\n\ndf_spss &lt;- read_sav(\"assets/data/spss_datensatz_workshop.sav\")\n\nhead(df_csv, 10)\n\n# A tibble: 10 × 66\n   respid eastwest german   sex   age  agec  dg10  dg03  educ isced97 iscd11\n    &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n 1      1        1      1     2    54     3     1     4     5       5      5\n 2      2        1      1     1    53     3     8     4     5       5      6\n 3      3        1      1     2    89     5     7     4     4       4      4\n 4      4        2      1     1    79     5    17     1     4       5      5\n 5      5        1      1     2    62     4     8     4     2       3      3\n 6      6        1      1     1    23     1     2     4     7      NA     NA\n 7      7        1      1     2    31     2     8     4     5       6      8\n 8      8        1      1     2    57     3    12     2     4       5      5\n 9      9        2      1     1    68     4    17     1     3       5      7\n10     10        1      1     2    51     3     7     4     3       3      3\n# ℹ 55 more variables: work &lt;dbl&gt;, isco08 &lt;dbl&gt;, siops08 &lt;dbl&gt;, isei08 &lt;dbl&gt;,\n#   dw15 &lt;dbl&gt;, dw16 &lt;dbl&gt;, dw19c &lt;dbl&gt;, dw03 &lt;dbl&gt;, mstat &lt;dbl&gt;, dp01 &lt;dbl&gt;,\n#   di01a &lt;dbl&gt;, di02a &lt;dbl&gt;, incc &lt;dbl&gt;, di01b &lt;dbl&gt;, di02b &lt;dbl&gt;, di05 &lt;dbl&gt;,\n#   di06 &lt;dbl&gt;, hhincc &lt;dbl&gt;, dh01 &lt;dbl&gt;, dh11 &lt;dbl&gt;, aq01 &lt;dbl&gt;, gs01 &lt;dbl&gt;,\n#   gd01 &lt;dbl&gt;, gd02 &lt;dbl&gt;, dg13 &lt;dbl&gt;, dg08 &lt;dbl&gt;, dg09 &lt;dbl&gt;, dg11 &lt;dbl&gt;,\n#   ls01 &lt;dbl&gt;, id02 &lt;dbl&gt;, id01 &lt;dbl&gt;, im01 &lt;dbl&gt;, im17 &lt;dbl&gt;, im18 &lt;dbl&gt;,\n#   im19 &lt;dbl&gt;, im20 &lt;dbl&gt;, im21 &lt;dbl&gt;, iw04 &lt;dbl&gt;, pd11 &lt;dbl&gt;, pi07 &lt;dbl&gt;, …\n\n\nZum besseren Verständnis verkleinern wir erstmal unseren Datensatz: Erstelle den Datensatz df_diss mit nur den Items die wir benötigen.\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf_diss &lt;- df_csv |&gt;\nselect(hs04,hs05,hs06,hs07,hs09)\n\nhead(df_diss, 10)\n\n# A tibble: 10 × 5\n    hs04  hs05  hs06  hs07  hs09\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     3     2     3     3     5\n 2    NA    NA    NA    NA    NA\n 3    NA    NA    NA    NA    NA\n 4     4     4     5     3     5\n 5     3     3     2     3     4\n 6     2     3     3     3     3\n 7     1     2     3     4     3\n 8     3     2     4     4     4\n 9     4     3     3     4     4\n10     2     2     4     4     5\n\n\n\n\n\nNun können wir in diesem neuen Datensatz, getrennt von den Rohdaten, üben!\n\nAlternative 1Alternative 2Alternative 3\n\n\n\n# jede Variable einzeln und manuell\n\ndf_diss$hs04_inv &lt;- 6 - df_diss$hs04\n\nhead(df_diss$hs04,10)\n\n [1]  3 NA NA  4  3  2  1  3  4  2\n\nhead(df_diss$hs04_inv,10)\n\n [1]  3 NA NA  2  3  4  5  3  2  4\n\n\n\n\n\n\n\n\nNoteHinweis\n\n\n\n\n\nBei der Intertierung, wird… - der Wert1 zu 5 - der Wert 2 zu 4 - der Wert 3bleibt 3 - der Wert 4 zu 2 - der Wert 5 zu 1\nDie oben vorgstellte Alternative 1 basiert auf der Annahme “maximaler Skalenwert” + 1 - “Skalenwert der Person”.\n\n\n\n\n\n\n df_diss&lt;-df_diss|&gt;\n    mutate(hs04_inv = recode(hs04,\n                             \"1\"=5,\n                             \"2\"=4,\n                             \"3\"=3,\n                             \"4\"=2,\n                             \"5\"=1),\n           hs05_inv = recode(hs05,\n                             \"1\"=5,\n                             \"2\"=4,\n                             \"3\"=3,\n                             \"4\"=2,\n                             \"5\"=1),\n           hs09_inv = recode(hs09,\n                            \"1\"=5,\n                            \"2\"=4,\n                            \"3\"=3,\n                            \"4\"=2,\n                            \"5\"=1),\n           )\n\nhead(df_diss, 10)           \n\n# A tibble: 10 × 8\n    hs04  hs05  hs06  hs07  hs09 hs04_inv hs05_inv hs09_inv\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n 1     3     2     3     3     5        3        4        1\n 2    NA    NA    NA    NA    NA       NA       NA       NA\n 3    NA    NA    NA    NA    NA       NA       NA       NA\n 4     4     4     5     3     5        2        2        1\n 5     3     3     2     3     4        3        3        2\n 6     2     3     3     3     3        4        3        3\n 7     1     2     3     4     3        5        4        3\n 8     3     2     4     4     4        3        4        2\n 9     4     3     3     4     4        2        3        2\n10     2     2     4     4     5        4        4        1\n\n\n\n\n\ninstall.packages(\"sjmisc\")\n\n\nlibrary(sjmisc)\n\ndf_diss &lt;- df_diss|&gt;\n            mutate(hs04_inv = rec(hs04, rec = \"rev\"),\n                  hs05_inv = rec(hs05, rec = \"rev\"),\n                  hs09_inv = rec(hs09, rec = \"rev\")\n                  )\n\nhead(df_diss, 10)\n\n# A tibble: 10 × 8\n    hs04  hs05  hs06  hs07  hs09 hs04_inv hs05_inv hs09_inv\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n 1     3     2     3     3     5        3        4        1\n 2    NA    NA    NA    NA    NA       NA       NA       NA\n 3    NA    NA    NA    NA    NA       NA       NA       NA\n 4     4     4     5     3     5        2        2        1\n 5     3     3     2     3     4        3        3        2\n 6     2     3     3     3     3        4        3        3\n 7     1     2     3     4     3        5        4        3\n 8     3     2     4     4     4        3        4        2\n 9     4     3     3     4     4        2        3        2\n10     2     2     4     4     5        4        4        1\n\n\n\n\n\n\n\n\nNoteHinweis\n\n\n\n\n\nWir haben hier einen Befehl aus einem anderen Paket genutzt. Wie du sehen kannst, sind Pakete auch miteinander kombinierbar!\nHier handelt es sich um den rec() Befehl aus dem Paket sjmisc.",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#umkodieren-von-gruppen-und-faktoren",
-    "href": "workshops/ws1/day2.html#umkodieren-von-gruppen-und-faktoren",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Umkodieren von Gruppen und Faktoren",
-    "text": "Umkodieren von Gruppen und Faktoren\nBisher haben wir Variablen umkodiert, die numerisch skaliert sind (z. B. Zustimmungsskalen von 1 bis 5). In der Praxis arbeiten wir jedoch sehr häufig auch mit kategorialen Variablen, zum Beispiel:\n\nGeschlecht\n\nBildungsabschluss\n\nWohnort\n\nErwerbsstatus\n\nDiese Variablen sind meist als Faktoren kodiert oder sollen als solche behandelt werden. Beim Umkodieren von Faktorvariablen geht es weniger um Rechnen, sondern darum, Kategorien sinnvoll zusammenzufassen oder neu zu benennen.\nIn diesem Abschnitt schauen wir uns daher an, wie wir Faktorvariablen gezielt umkodieren, zum Beispiel indem wir:\n\nmehrere Kategorien zu einer Gruppe zusammenfassen oder\n\nneue, besser interpretierbare Gruppen bilden. ___ Wir erstellen nun erneut einen Datensatz und nennen es df_rec. Diesmal fügen wir zu unseren Disstress Variablen weitere hinzu. Folgende Variablen sollen hinzugenommen werden:\ngs01 - Selbsbeschreibung des Wohnorts\neduc - Allgemeiner Schulabschluss\nmstat - Familienstand\nim17 bis im21 - Einstellung zur sozialen Ungleichheit\n\n\n\n\n\n\n\nImportantBeschreibungen der Variablen\n\n\n\n\n\n\nWohnortSchulabschlussFamilienstandSoziale Ungleichheit\n\n\n\n\n\n\n\n\n\n\nVariable\nInhalt\nSkalierung\n\n\n\n\ngs01\n“Selbsbeschreibung des Wohnorts”\n1 = Großstadt 2 = Vorort Großstadt 3 = Mittel-/Kleinstadt 4 = ländl. Dorf 5 = Allein stehendes Haus auf dem Land\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nInhalt\nSkalierung\n\n\n\n\neduc\n“Allgemeiner Schulabschluss”\n1 = Ohne Abschluss 2 = Volks-/Hauptschule 3 = Mittelere Reife 4 = Fachhochschulreife 5 = Hochschulreife 6 = Anderer Abschluss 7 = Noch Schüler*in\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nInhalt\nSkalierung\n\n\n\n\nmstat\n“Familienstand”\n1 = Verheiratet (zsm.lebend) 2 = Verheiratet (getrennt) 3 = Verwitwet 4 = Geschieden 5 = Ledig 6 = Lebensp. (zsm.lebend) 7 = Lebensp. (getrennt) 8 = Lebensp. verstorben Lebensp. aufgehoben\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nInhalt\nSkalierung\n\n\n\n\nim17\n“Was man im Leben bekommt, hängt gar nicht so sehr von den eigenen Anstrengungen ab, sondern von der Wirtschaftslage, der Lage auf dem Arbeitsmarkt, den Tarifabschlüssen und den Sozialleistungen des Staates.”\n1 = “Stimme voll zu” bis 4 = “Stimme überhaupt nicht zu”\n\n\nim18\n“Das Einkommen sollte sich nicht allein nach der Leistung des Einzelnen richten. Vielmehr sollte jeder das haben, was er mit seiner Familie für ein anständiges Leben braucht.”\n1 = “Stimme voll zu” bis 4 = “Stimme überhaupt nicht zu”\n\n\nim19\n“Nur wenn die Unterschiede im Einkommen und im sozialen Ansehen groß genug sind, gibt es auch einen Anreiz für persönliche Leistungen.”\n1 = “Stimme voll zu” bis 4 = “Stimme überhaupt nicht zu”\n\n\nim20\n“Die Rangunterschiede zwischen den Menschen sind akzeptabel, weil sie im Wesentlichen ausdrücken, was man aus den Chancen, die man hatte, gemacht hat.”\n1 = “Stimme voll zu” bis 4 = “Stimme überhaupt nicht zu”\n\n\nim21\n“Ich finde die sozialen Unterschiede in unserem Land im Großen und Ganzen gerecht.”\n1 = “Stimme voll zu” bis 4 = “Stimme überhaupt nicht zu”\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\nlibrary(tidyverse)\n\ndf_rec&lt;-df_csv|&gt;\n  select(gs01,educ,mstat,\n         hs04,hs05,hs06,hs07,hs09,\n         im17,im18,im19,im20,im21)\n\nhead(df_rec, 10)\n\n# A tibble: 10 × 13\n    gs01  educ mstat  hs04  hs05  hs06  hs07  hs09  im17  im18  im19  im20  im21\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     4     5     5     3     2     3     3     5     2     1     4     3     4\n 2     3     5     5    NA    NA    NA    NA    NA     4     4     1     3     3\n 3     3     4     3    NA    NA    NA    NA    NA     3     4     2     1     1\n 4     3     4     1     4     4     5     3     5     2     3     2     3     3\n 5     4     2     1     3     3     2     3     4     2     2     3     3     3\n 6     1     7     5     2     3     3     3     3     3     4     3     2     2\n 7     1     5     5     1     2     3     4     3     2     2     3     3     3\n 8     4     4     1     3     2     4     4     4     3     2     3     3     4\n 9     3     3     1     4     3     3     4     4     2     2     4     3     4\n10     4     3     5     2     2     4     4     5     2     3     3     3     4\n\n\n\n\n\nNun schauen wir uns die Umkodierung von Faktoren am Beispiel des Wohnortes an:\n\nAlternative 1Alternative 2Alternative 3Alternative 4\n\n\n\ndf_rec &lt;- df_rec |&gt;\n  mutate(\n    wohnort = recode(\n      gs01,\n      \"1\"= 1,\n      \"2\" = 1,\n      \"3\" = 1,\n      \"4\" = 2,\n      \"5\" = 2\n    ))\n\ndf_rec |&gt;\n  select(gs01, wohnort) |&gt;\n  head(10)\n\n# A tibble: 10 × 2\n    gs01 wohnort\n   &lt;dbl&gt;   &lt;dbl&gt;\n 1     4       2\n 2     3       1\n 3     3       1\n 4     3       1\n 5     4       2\n 6     1       1\n 7     1       1\n 8     4       2\n 9     3       1\n10     4       2\n\n\n\n\n\n\n\n\nNoteBeschreibung\n\n\n\n\n\nWir haben nun hier aus fünf Gruppen zwei Gruppen gemacht. Wir unterscheiden nun zwischen 1 = Urban und 2 = Rural.\n\n\n\n\n\n\ndf_rec &lt;- df_rec |&gt;\n  mutate(\n    wohnort2 = factor(\n      wohnort,\n      levels = c(1, 2),\n      labels = c(\"Urban\", \"Rural\")\n    )\n  )\n\ndf_rec |&gt;\n  select(gs01, wohnort2) |&gt;\n  head(10)\n\n# A tibble: 10 × 2\n    gs01 wohnort2\n   &lt;dbl&gt; &lt;fct&gt;   \n 1     4 Rural   \n 2     3 Urban   \n 3     3 Urban   \n 4     3 Urban   \n 5     4 Rural   \n 6     1 Urban   \n 7     1 Urban   \n 8     4 Rural   \n 9     3 Urban   \n10     4 Rural   \n\n\n\n\n\n\n\n\nNoteBeschreibung\n\n\n\n\n\nWir haben hier die zuvor erstellten Gruppen (1 und 2) nun als Faktor mit Labeln gemacht.\n\n\n\n\n\n\ndf_rec &lt;- df_rec |&gt;\n  mutate(\n    wohnort3 = recode(\n      gs01,\n      \"1\" = 1,\n      \"2\" = 1,\n      \"3\" = 1,\n      \"4\" = 2,\n      \"5\" = 2\n    ) |&gt; factor(labels = c(\"Urban\", \"Rural\"))\n  )\n\ndf_rec |&gt;\n  select(gs01, wohnort3) |&gt;\n  head(10)\n\n# A tibble: 10 × 2\n    gs01 wohnort3\n   &lt;dbl&gt; &lt;fct&gt;   \n 1     4 Rural   \n 2     3 Urban   \n 3     3 Urban   \n 4     3 Urban   \n 5     4 Rural   \n 6     1 Urban   \n 7     1 Urban   \n 8     4 Rural   \n 9     3 Urban   \n10     4 Rural   \n\n\n\n\n\n\n\n\nNoteBeschreibung\n\n\n\n\n\nHier haben wir es in einem Schritt getan.\n\n\n\n\n\n\ndf_rec &lt;- df_rec |&gt;\n  mutate(\n    wohnort4 = recode(\n      gs01,\n      \"1\" = \"Urban\",\n      \"2\" = \"Urban\",\n      \"3\" = \"Urban\",\n      \"4\" = \"Rural\",\n      \"5\" = \"Rural\"\n    ) |&gt; factor(levels = c(\"Urban\", \"Rural\"))\n  )\n\ndf_rec |&gt;\n  select(gs01, wohnort4) |&gt;\n  head(10)\n\n# A tibble: 10 × 2\n    gs01 wohnort4\n   &lt;dbl&gt; &lt;fct&gt;   \n 1     4 Rural   \n 2     3 Urban   \n 3     3 Urban   \n 4     3 Urban   \n 5     4 Rural   \n 6     1 Urban   \n 7     1 Urban   \n 8     4 Rural   \n 9     3 Urban   \n10     4 Rural   \n\n\n\n\n\n\n\n\nNoteBeschreibung\n\n\n\n\n\nHier haben wir erst “gelabled” und dann Levels hinzugefügt.",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#übung",
-    "href": "workshops/ws1/day2.html#übung",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Übung",
-    "text": "Übung\nSchaut euch die Variablen im neuen Datensatz df_rec an. Eure Aufgabe ist es nun neue Variablen zu erstellen, die sinnvoll sind und die wir dann weiter nutzen werden.\n\nErstellt eine neue Variable von educ (nennt diese abschluss) die vierstufig ist (niedriger, mittlere, hoher und anderer)\nErstellt einen Skalenwert für Distress und Soziale Unterstützung. Achtet darauf, dass der Summenwert sinnvol interpretierbar ist.\n\n\n\n\n\n\n\nTipTipp\n\n\n\n\n\n\nSchaut euch das Codebuch genauer an, um die Variablen besser zu verstehen.\nGuckt euch nochmal die Skalierung der Skalenitems an!\n\n\n\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\nAbschlussDistressSoziale UngleichheitAlles in einem Schritt\n\n\n\ndf_rec &lt;- df_rec |&gt;\n  mutate(\n    abschluss = recode(\n      educ,\n      \"1\" = 1,\n      \"2\" = 1,\n      \"3\" = 2,\n      \"4\" = 3,\n      \"5\" = 3,\n      \"6\" = 4,\n      \"7\" = 1\n    ) |&gt; factor(labels = c(\"Niedriger\", \"Mittlerer\", \"Hoher\", \"Anderer\"))\n  )\n\ndf_rec |&gt;\n  select(educ, abschluss) |&gt;\n  head(10)\n\n# A tibble: 10 × 2\n    educ abschluss\n   &lt;dbl&gt; &lt;fct&gt;    \n 1     5 Hoher    \n 2     5 Hoher    \n 3     4 Hoher    \n 4     4 Hoher    \n 5     2 Niedriger\n 6     7 Niedriger\n 7     5 Hoher    \n 8     4 Hoher    \n 9     3 Mittlerer\n10     3 Mittlerer\n\n\n\n\n\nlibrary(sjmisc)\n\ndf_rec&lt;-df_rec|&gt;\n  mutate(\n    hs04_r = rec(hs04, rec = \"rev\"),\n    hs05_r = rec(hs05, rec = \"rev\"),\n    hs09_r = rec(hs09, rec = \"rev\"),\n    disstress = hs04_r + hs05_r + hs06 + hs07+ hs09_r\n  )\n\ndf_rec |&gt;\n  select(hs04, hs04_r, hs05, hs05_r, hs06, hs07, hs09, hs09_r, disstress)|&gt;\n  head(10)\n\n# A tibble: 10 × 9\n    hs04 hs04_r  hs05 hs05_r  hs06  hs07  hs09 hs09_r disstress\n   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;\n 1     3      3     2      4     3     3     5      1        14\n 2    NA     NA    NA     NA    NA    NA    NA     NA        NA\n 3    NA     NA    NA     NA    NA    NA    NA     NA        NA\n 4     4      2     4      2     5     3     5      1        13\n 5     3      3     3      3     2     3     4      2        13\n 6     2      4     3      3     3     3     3      3        16\n 7     1      5     2      4     3     4     3      3        19\n 8     3      3     2      4     4     4     4      2        17\n 9     4      2     3      3     3     4     4      2        14\n10     2      4     2      4     4     4     5      1        17\n\n\n\n\n\ndf_rec&lt;-df_rec|&gt;\n  mutate(\n    im17_r = 5 - im17,\n    im18_r = 5 - im18,\n    im19_r = 5 - im19,\n    im20_r = 5 - im20,\n    im21_r = 5 - im21,\n    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))\n  )\n\ndf_rec |&gt;\n  select(im17:im21, im17_r:im21_r, soz.u) |&gt;\n  head(10)\n\n# A tibble: 10 × 11\n    im17  im18  im19  im20  im21 im17_r im18_r im19_r im20_r im21_r soz.u\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1     2     1     4     3     4      3      4      1      2      1    11\n 2     4     4     1     3     3      1      1      4      2      2    10\n 3     3     4     2     1     1      2      1      3      4      4    14\n 4     2     3     2     3     3      3      2      3      2      2    12\n 5     2     2     3     3     3      3      3      2      2      2    12\n 6     3     4     3     2     2      2      1      2      3      3    11\n 7     2     2     3     3     3      3      3      2      2      2    12\n 8     3     2     3     3     4      2      3      2      2      1    10\n 9     2     2     4     3     4      3      3      1      2      1    10\n10     2     3     3     3     4      3      2      2      2      1    10\n\n\n\n\n\ndf_rec&lt;-df_rec|&gt;\n  mutate(\n    abschluss = recode(\n      educ,\n      \"1\" = 1,\n      \"2\" = 1,\n      \"3\" = 2,\n      \"4\" = 3,\n      \"5\" = 3,\n      \"6\" = 4,\n      \"7\" = 1\n    ) |&gt; factor(labels = c(\"Niedriger\", \"Mittlerer\", \"Hoher\", \"Anderer\")),\n    hs04_r = rec(hs04, rec = \"rev\"),\n    hs05_r = rec(hs05, rec = \"rev\"),\n    hs09_r = rec(hs09, rec = \"rev\"),\n    distress = hs04_r + hs05_r + hs06 + hs07+ hs09_r,\n    im17_r = 5 - im17,\n    im18_r = 5 - im18,\n    im19_r = 5 - im19,\n    im20_r = 5 - im20,\n    im21_r = 5 - im21,\n    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))\n  )\n\ndf_rec |&gt;\n  select(abschluss, disstress, soz.u) |&gt;\n  head(10)\n\n# A tibble: 10 × 3\n   abschluss disstress soz.u\n   &lt;fct&gt;         &lt;dbl&gt; &lt;dbl&gt;\n 1 Hoher            14    11\n 2 Hoher            NA    10\n 3 Hoher            NA    14\n 4 Hoher            13    12\n 5 Niedriger        13    12\n 6 Niedriger        16    11\n 7 Hoher            19    12\n 8 Hoher            17    10\n 9 Mittlerer        14    10\n10 Mittlerer        17    10",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#übung-1",
-    "href": "workshops/ws1/day2.html#übung-1",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Übung",
-    "text": "Übung\nErstellt erneut euren Datensatz aus der letzten Aufgabe und speichert ihn diesmal unter dem Namen df_rec2. Achtet darauf, dass ihr eine eindeutige Schlüsselvariable mitübernehmt.\nFührt anschließend dieselben Umkodierungen durch wie zuvor bei df_rec.\nZum Schluss fügt ihr den Hauptdatensatz und df_rec2 zu einem neuen Datensatz mit dem Namen df_analyse zusammen.\n\n\n\n\n\n\nTipTipp\n\n\n\nCodebuch 😉\n\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\n# Erstellen von df_rec2\n\ndf_rec2&lt;-df_csv|&gt;\n  select(respid,gs01,educ,mstat,\n         hs04,hs05,hs06,hs07,hs09,\n         im17,im18,im19,im20,im21)\n\nhead(df_rec2, 10)\n\n# A tibble: 10 × 14\n   respid  gs01  educ mstat  hs04  hs05  hs06  hs07  hs09  im17  im18  im19\n    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1      1     4     5     5     3     2     3     3     5     2     1     4\n 2      2     3     5     5    NA    NA    NA    NA    NA     4     4     1\n 3      3     3     4     3    NA    NA    NA    NA    NA     3     4     2\n 4      4     3     4     1     4     4     5     3     5     2     3     2\n 5      5     4     2     1     3     3     2     3     4     2     2     3\n 6      6     1     7     5     2     3     3     3     3     3     4     3\n 7      7     1     5     5     1     2     3     4     3     2     2     3\n 8      8     4     4     1     3     2     4     4     4     3     2     3\n 9      9     3     3     1     4     3     3     4     4     2     2     4\n10     10     4     3     5     2     2     4     4     5     2     3     3\n# ℹ 2 more variables: im20 &lt;dbl&gt;, im21 &lt;dbl&gt;\n\n# Umkodieren und Summenwerte erstellen\n\ndf_rec2 &lt;-df_rec2|&gt;\n  mutate(\n    wohnort = recode(gs01,\n      \"1\" = 1,\n      \"2\" = 1,\n      \"3\" = 1,\n      \"4\" = 2,\n      \"5\" = 2\n    ) |&gt; factor(labels = c(\"Urban\", \"Rural\")),\n    abschluss = recode(\n      educ,\n      \"1\" = 1,\n      \"2\" = 1,\n      \"3\" = 2,\n      \"4\" = 3,\n      \"5\" = 3,\n      \"6\" = 4,\n      \"7\" = 1\n    ) |&gt; factor(labels = c(\"Niedriger\", \"Mittlerer\", \"Hoher\", \"Anderer\")),\n    hs04_r = rec(hs04, rec = \"rev\"),\n    hs05_r = rec(hs05, rec = \"rev\"),\n    hs09_r = rec(hs09, rec = \"rev\"),\n    distress = hs04_r + hs05_r + hs06 + hs07+ hs09_r,\n    im17_r = 5 - im17,\n    im18_r = 5 - im18,\n    im19_r = 5 - im19,\n    im20_r = 5 - im20,\n    im21_r = 5 - im21,\n    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))\n  )\n\ndf_rec2 |&gt;\n  select(15:26) |&gt;\n  head(10)\n\n# A tibble: 10 × 12\n   wohnort abschluss hs04_r hs05_r hs09_r distress im17_r im18_r im19_r im20_r\n   &lt;fct&gt;   &lt;fct&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1 Rural   Hoher          3      4      1       14      3      4      1      2\n 2 Urban   Hoher         NA     NA     NA       NA      1      1      4      2\n 3 Urban   Hoher         NA     NA     NA       NA      2      1      3      4\n 4 Urban   Hoher          2      2      1       13      3      2      3      2\n 5 Rural   Niedriger      3      3      2       13      3      3      2      2\n 6 Urban   Niedriger      4      3      3       16      2      1      2      3\n 7 Urban   Hoher          5      4      3       19      3      3      2      2\n 8 Rural   Hoher          3      4      2       17      2      3      2      2\n 9 Urban   Mittlerer      2      3      2       14      3      3      1      2\n10 Rural   Mittlerer      4      4      1       17      3      2      2      2\n# ℹ 2 more variables: im21_r &lt;dbl&gt;, soz.u &lt;dbl&gt;\n\n# Neuer Datensatz df_analyse\n\ndf_analyse &lt;- left_join(df_csv, df_rec2, by=\"respid\")\n\ndf_analyse |&gt;\n  select(81:91) |&gt;\n  head(10)\n\n# A tibble: 10 × 11\n   abschluss hs04_r hs05_r hs09_r distress im17_r im18_r im19_r im20_r im21_r\n   &lt;fct&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1 Hoher          3      4      1       14      3      4      1      2      1\n 2 Hoher         NA     NA     NA       NA      1      1      4      2      2\n 3 Hoher         NA     NA     NA       NA      2      1      3      4      4\n 4 Hoher          2      2      1       13      3      2      3      2      2\n 5 Niedriger      3      3      2       13      3      3      2      2      2\n 6 Niedriger      4      3      3       16      2      1      2      3      3\n 7 Hoher          5      4      3       19      3      3      2      2      2\n 8 Hoher          3      4      2       17      2      3      2      2      1\n 9 Mittlerer      2      3      2       14      3      3      1      2      1\n10 Mittlerer      4      4      1       17      3      2      2      2      1\n# ℹ 1 more variable: soz.u &lt;dbl&gt;\n\n\n\n\n\n\n\n\nTipTip\n\n\n\n\n\nFür eine saubere Lösung ohne Duplikate:\n\ndupl_vars &lt;- setdiff(names(df_rec2), names(df_csv))\n\ndf_analyse &lt;- df_csv |&gt;\n  left_join(df_rec2 |&gt; select(respid, all_of(dupl_vars)), by = \"respid\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportantMerkhilfe der Join-Befehle\n\n\n\n\n\n\nleft_join()\nDer linke Datensatz ist die Basis.\n\nalle Fälle aus dem linken Datensatz bleiben erhalten\n\npassende Informationen aus dem rechten Datensatz werden ergänzt\n\nnicht gefundene Werte werden als NA ergänzt\n\n👉 Der am häufigsten verwendete Join in der Praxis.\n\n\nright_join()\nDer rechte Datensatz ist die Basis.\n\nalle Fälle aus dem rechten Datensatz bleiben erhalten\n\npassende Informationen aus dem linken Datensatz werden ergänzt\n\nnicht gefundene Werte werden als NA ergänzt\n\n👉 Funktional das Gegenstück zu left_join().\n\n\ninner_join()\nEs bleiben nur die gemeinsamen Fälle erhalten.\n\nFälle kommen nur dann ins Ergebnis, wenn sie in beiden Datensätzen vorkommen\n\nalle anderen Fälle werden verworfen\n\n👉 Strenger Join – gut für saubere Überschneidungen.\n\n\nfull_join()\nAlle Fälle aus beiden Datensätzen bleiben erhalten.\n\nalle Fälle aus links und rechts\n\nwo es keine Entsprechung gibt → NA\n\n👉 Maximale Information, aber oft viele fehlende Werte.",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#was-ist-na",
-    "href": "workshops/ws1/day2.html#was-ist-na",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Was ist NA?",
-    "text": "Was ist NA?\nIn R steht NA für Not Available – also fehlender Wert.\n\nNA ist keine 0\n\nNA ist kein leerer Text\n\nNA bedeutet: Es liegt kein Wert vor\n\nR behandelt NA sehr strikt – und das ist auch gut so.",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#fehlende-werte-identifizieren",
-    "href": "workshops/ws1/day2.html#fehlende-werte-identifizieren",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Fehlende Werte identifizieren",
-    "text": "Fehlende Werte identifizieren\nBevor wir mit Berechnungen arbeiten, sollten wir immer prüfen, ob und wo fehlende Werte vorkommen. Dafür erstellen wir aus unserem Analysedatensatz df_analyse einen kleineren handlicheren Datensatz mit den Variablen die wir für unsere Analysen wirklich benötigen und nennen es df_analyse2.\nNehme folgende Variablen mit rein: - respid - wohnort - isced97 - work - dw15 - mstat - hhincc - disstress und dazugehörigen Variablen - soz.u und dazugehörigen Variablen\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf_analyse2 &lt;- df_analyse |&gt;\n  select(respid,age,sex,wohnort,isced97,work,dw15,\n         mstat,hhincc,hs04_r,hs06,hs07,hs05_r,hs09_r,distress,\n         im17_r,im18_r,im19_r,im20_r,im21_r,soz.u)\n\ndf_analyse2 |&gt;\n  head(10)\n\n# A tibble: 10 × 21\n   respid   age   sex wohnort isced97  work  dw15 mstat hhincc hs04_r  hs06\n    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1      1    54     2 Rural         5     1  35       5     10      3     3\n 2      2    53     1 Urban         5     1  62       5     19     NA    NA\n 3      3    89     2 Urban         4     4  NA       3     NA     NA    NA\n 4      4    79     1 Urban         5     4  NA       1     15      2     5\n 5      5    62     2 Rural         3     4  NA       1     19      3     2\n 6      6    23     1 Urban        NA     4  NA       5     12      4     3\n 7      7    31     2 Urban         6     2  32       5     23      5     3\n 8      8    57     2 Rural         5     1  39.5     1     20      3     4\n 9      9    68     1 Urban         5     4  NA       1     14      2     3\n10     10    51     2 Rural         3     2  30       5     NA      4     4\n# ℹ 10 more variables: hs07 &lt;dbl&gt;, hs05_r &lt;dbl&gt;, hs09_r &lt;dbl&gt;, distress &lt;dbl&gt;,\n#   im17_r &lt;dbl&gt;, im18_r &lt;dbl&gt;, im19_r &lt;dbl&gt;, im20_r &lt;dbl&gt;, im21_r &lt;dbl&gt;,\n#   soz.u &lt;dbl&gt;\n\n\n\n\n\n\n\n\n\n\n\nImportantHinweis\n\n\n\n\n\n\nSchaut im Codebuch nach, was die Variablen bedeuten.\nAchtet darauf, dass ihr die richtigen Variablennamen nehmt!\n\n\n\n\nWir schauen nun unseren Datensatz an:\n\nBase RPackage naniar\n\n\n\nis.na(df_analyse2)\n\n\n\n\n\n\n\nCautionAchtung\n\n\n\nSehr unübersichtlich, da R hier für jede Zeile und jeder Variable einen logischen Vektor mit TRUEoder FALSE erstellt.\n\n\n\n\n\ninstall.packages(\"naniar\", repos=\"https://cloud.r-project.org\")\n\npackage 'naniar' successfully unpacked and MD5 sums checked\n\nThe downloaded binary packages are in\n    C:\\Users\\farugie\\AppData\\Local\\Temp\\Rtmp8W8T8G\\downloaded_packages\n\nlibrary(naniar)\n\nany_na(df_analyse2)\n\n[1] TRUE\n\n\n\n\n\n\n\n\nCautionHinweis\n\n\n\nMit diesem Befehl, bekommen wir eine schnelle Rückmeldung, ob unser Datensatz fehlende Werte hat.\n\n\n\n\n\n\nEinzelne Variable prüfen\n\n\nBase RPackage naniar\n\n\n\nis.na(df_analyse2$age)\n\n\n\n\n\n\n\nCautionAchtung\n\n\n\nSehr unübersichtlich, da R hier für **jede Zeile einen logischen Vektor mit TRUEoder FALSE erstellt.\n\n\n\n\n\nany_na(df_analyse2$age)\n\n[1] TRUE\n\n\n\n\n\n\n\n\nCautionHinweis\n\n\n\nMit diesem Befehl, bekommen wir eine schnelle Rückmeldung, ob in er spezifischen Variable fehlende Werte hat.\n\n\n\n\n\nUm herauszufinden, wie viele fehlende Werte die Variable hat, gehen wir wie folgt vor:\n\nBase RPackage naniar\n\n\n\nsum(is.na(df_analyse2$age))\n\n[1] 41\n\n\n\n\n\nn_miss(df_analyse2$age)\n\n[1] 41\n\n\n\n\n\n\n\nÜberblick mehrer Variablen\n\nWir können auch mehrere spezifische Variablen anschauen:\n\nBase RÜberblick (grafisch)\n\n\n\ndf_analyse2 |&gt;\n  summarise(\n    across(\n      c(distress, soz.u),\n      ~ sum(is.na(.))\n    )\n  )\n\n# A tibble: 1 × 2\n  distress soz.u\n     &lt;int&gt; &lt;int&gt;\n1     1829   339\n\n\n\n\n\n\n\n\nNote\n\n\n\nHier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable existieren.\n\n\n\n\n\ngg_miss_var(df_analyse2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nHier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable im gesamten Datensatz sind.",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#was-passiert-bei-berechnungen-mit-na",
-    "href": "workshops/ws1/day2.html#was-passiert-bei-berechnungen-mit-na",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Was passiert bei Berechnungen mit NA?",
-    "text": "Was passiert bei Berechnungen mit NA?\nEin häufiger Stolperstein ist der Umgang mit fehlenden Werten (NA) bei Berechnungen.\n👉 Schon ein einziges NA reicht aus, damit das gesamte Ergebnis NA wird.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA))\n\n[1] NA\n\n1+5+8+10+NA+20+12+13+NA\n\n[1] NA\n\n\n\nWarum ist das so?\n\nR kann nicht erraten, wie mit fehlenden Werten umgegangen werden soll:\n\nSoll das NA ignoriert werden?\nSoll das Ergebnis trotzdem berechnet werden?\nOder ist das Ergebnis nicht sinnvoll interpretierbar?\n\nOhne eine klare Anweisung entscheidet sich R für die sichere Variante und gibt NA zurück.\nDas gilt für viele Funktionen, zum Beispiel:\n\nsum()\nmean()\nrowSums()\nrowMeans()\n\n👉 Wichtig: Wenn fehlende Werte ignoriert werden sollen, muss man das explizit angeben.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)\n\n[1] 69\n\n\n\n\n\n\n\n\nImportantWas bedeutet na.rm?\n\n\n\nna.rm = TRUE bedeutet:\nfehlende Werte (NA) werden bei der Berechnung ignoriert.\n\n\nna.rm = TRUE entfernt NA-Werte aus der Berechnung, damit Summen trotzdem berechnet werden können.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)\n\n[1] 69\n\n1+5+8+10+20+12+13\n\n[1] 69\n\n\nWir wissen, dass wir auf einigen Skalen, die wir gebildet haben, viele Missings haben.\n\ngg_miss_var(df_analyse2)\n\n\n\n\n\n\n\n\nWir schauen uns das mal genauer an:\n\ndf_analyse2 &lt;- df_analyse2 |&gt;\n  mutate(\n    soz.u_na = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r)),\n    soz.u_rmt = rowSums(\n      cbind(im17_r, im18_r, im19_r, im20_r, im21_r),\n      na.rm = TRUE)\n  )\n\ndf_analyse2 |&gt;\n  select(soz.u_na, soz.u_rmt) |&gt;\n  gg_miss_var()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarningAchtung\n\n\n\nna.rm = TRUE bedeutet nicht automatisch „besser“.\nWenn sehr viele Items fehlen, kann ein Skalenwert inhaltlich verzerrt sein!\n\n\n\n\nWann ist na.rm = TRUE sinnvoll?\n\n\nwenn nur wenige Werte fehlen\nwenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist\nfür erste Auswertungen und Exploration",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#wie-mit-fehlenden-werten-umgehen",
-    "href": "workshops/ws1/day2.html#wie-mit-fehlenden-werten-umgehen",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Wie mit fehlenden Werten umgehen?",
-    "text": "Wie mit fehlenden Werten umgehen?\nIn der empirischen Forschung gibt es verschiedene Strategien, um mit fehlenden Werten umzugehen.\nWelche sinnvoll ist, hängt unter anderem ab von:\n\nder Anzahl der fehlenden Werte\n\ndem Datentyp (Item, Skala, Hintergrundvariable)\n\nder Fragestellung der Analyse\n\nMögliche Ansätze sind zum Beispiel:\n\nfehlende Werte ignorieren (na.rm = TRUE)\nFälle mit fehlenden Werten ausschließen\nfehlende Werte schätzen oder imputieren (z. B. Mittelwert, multiple Imputation)\n\n👉 Wichtig:\nDiese Entscheidungen haben inhaltliche Konsequenzen und sollten immer bewusst getroffen werden.\n\nFokus im Workshop\n\nIn diesem Workshop konzentrieren wir uns bewusst auf einen einfachen und transparenten Umgang mit fehlenden Werten:\n👉 Fälle mit fehlenden Werten werden ausgeschlossen, wenn sie für die jeweilige Analyse nicht sinnvoll nutzbar sind.\nWarum?\n\nleicht nachvollziehbar\n\ngut geeignet für den Einstieg\nhäufig ausreichend bei großen Stichproben\n\nKomplexere Verfahren wie Imputation sind wichtig, gehen aber über den Rahmen dieses Workshops hinaus. Es lohnt sich aber hier methodisch einzuarbeiten!\n👉 Multiple Imputation",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#fehlende-werte-entfernen",
-    "href": "workshops/ws1/day2.html#fehlende-werte-entfernen",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Fehlende Werte entfernen",
-    "text": "Fehlende Werte entfernen\nWie oben angesprochen, entfernen wir bei ausreichender Datengrundlage die Personen, die einen fehlende Werte auf die uns wichtigen Variablen haben.\n\nGanze Zeilen entfernen (drop_na())\n\nMit drop_na() entfernen wir alle Zeilen, in denen mindestens ein NA in den angegebenen Variablen vorkommt.\n\ndf_clean &lt;- df_analyse2 |&gt;\n  drop_na(soz.u_na)\n\ndf_clean |&gt;\n  dim()\n\n[1] 5003   23\n\n  df_analyse2 |&gt;\n  dim()\n\n[1] 5342   23\n\n\n👉 Ergebnis: Nur Fälle ohne fehlende Werte in soz.u bleiben erhalten.\n\n\n\n\n\n\nTipTipp\n\n\n\n\n\nUm zu schauen, wie viele Personen damit ausgeschlossen wurden, kann man folgendes machen:\n\nnrow(df_analyse2) - nrow(df_clean)\n\n[1] 339",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#übung-2",
-    "href": "workshops/ws1/day2.html#übung-2",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Übung",
-    "text": "Übung\nErstelle einen Datensatz df_clean, welcher frei von NA's ist für die Variablen distress und soz.u.\n\nWie viele Beobachtungen werden final ausgeschlossen?\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf_analyse2 &lt;- df_analyse2 |&gt;\n  mutate(\n    distress_na = rowSums(cbind(hs04_r,hs06,hs07,hs05_r,hs09_r)),\n    distress_rmt = rowSums(\n      cbind(hs04_r,hs06,hs07,hs05_r,hs09_r),\n      na.rm = TRUE)\n  )\n\ndf_clean &lt;- df_analyse2 |&gt;\n  drop_na(distress_na, soz.u_na)\n\nnrow(df_analyse2) - nrow(df_clean) \n\n[1] 2091\n\n\n\n\n\n\n\n\n\n\n\nTipTipps\n\n\n\n\nGute PraxisMerksatz\n\n\nNach dem Entfernen von NA immer prüfen:\n\nWie viele Fälle sind übrig?\nIst die Fallzahl noch ausreichend?\nBetrifft das Entfernen bestimmte Gruppen stärker als andere?\n\n\n\nEs gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist,\n\nbewusst zu entscheiden,\ntransparent zu dokumentieren,\nund die Konsequenzen zu kennen.",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#workflow",
-    "href": "workshops/ws1/day2.html#workflow",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Workflow",
-    "text": "Workflow\nZiel ist ein gut dokumentierter und jederzeit nachvollziehbarer Analyse-Workflow:\nJemand anderes (oder du in 3 Monaten) soll verstehen, was du gemacht hast, warum du es gemacht hast und wie du zu deinen Ergebnissen kommst.\n\nProjektstrukturSkripte sinnvoll gliedernKommentare nutzen\n\n\nEine mögliche Struktur:\n\nprojektname/\n\ndata/ (Rohdaten & ggf. bereinigte Daten)\n\nscripts/ (alle R-Skripte)\n\noutput/ (Tabellen, Abbildungen, Reports)\n\nprojektname.Rproj\n\n\n\n\nStatt ein langes Skript:\n\n01_import.R (Daten laden, erste Checks)\n\n02_cleaning.R (Umkodieren, Skalen, Missing neue Variablen)\n\n03_analysis.R (Modelle, Tests, Kennwerte)\n\n04_plots.R (Visualisierungen, Export)\n\nSo kannst du jeden Schritt einzeln ausführen, testen und bei Fehlern gezielt zurückspringen.\n\n\nKommentiere kurz, was passiert und warum:\n\nWas wird hier gemacht?\n\nWelche Annahme steckt dahinter?\n\nWelche Variablen/Skalen sind wichtig?\n\nBeispiel:\n\n# Invertiere hs04/hs05/hs09, damit hohe Werte = mehr Distress bedeuten\n# Skala: 1–5, deshalb: 6 - Wert",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#exkurs-datensatz-speichern",
-    "href": "workshops/ws1/day2.html#exkurs-datensatz-speichern",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Exkurs: Datensatz Speichern",
-    "text": "Exkurs: Datensatz Speichern\nNach der Datenaufbereitung oder Analyse ist es sinnvoll, Zwischenergebnisse zu speichern (z. B. bereinigte Datensätze oder finale Analyse-Daten).\nSo kannst du später direkt weiterarbeiten, ohne alle Schritte erneut ausführen zu müssen.\n\nCSVSPSS\n\n\n\nplattformunabhängig\ngut für Weitergabe und Dokumentation\n\n\nwrite_csv(df_clean, file = \"assets/data/output/Datensatz_clean.csv\")\n\n\n\n\npraktisch für Zusammenarbeit mit SPSS-Nutzer:innen\nVariablenlabels bleiben erhalten\n\n\nwrite_sav(df_clean, path = \"assets/data/output/spss_Datensatz_clean.sav\")",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#aufgabenstellung",
-    "href": "workshops/ws1/day2.html#aufgabenstellung",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Aufgabenstellung",
-    "text": "Aufgabenstellung\nIhr erstellt euch einen eigenen Datensatz df_mini, der am Ende „analysefertig“ ist.\nSchritt 1: Datensatz laden und Überblick verschaffen\n\nlade df_csv (und ggf. df_spss)\nverschaffe dir einen Überblick:\n\nglimpse()\nsummary() ___ Schritt 2: Skala auswählen (Codebuch!)\n\n\nWählt eine Skala eurer Wahl aus dem Codebuch:\n\nSkala aus mindestens 3 Items\nachtet auf die Skalierung (z. B. 1–4 oder 1–5)\nprüft, ob es invertierte Items gibt (und entscheidet, was „hoch“ bedeuten soll)\n\n👉 Speichert eure Entscheidung kurz als Kommentar im Skript\n\n# Bildung der Skala _______ (Items: __, __, __)\n## Hohe Werte sollen _______ bedeuten.\n\n\nSchritt 3: Datensatz erstellen (Auswahl der Variablen)\nErstellt df_mini mit:\n\nrespid (Schlüsselvariable!)\nmindestens 2 demographische Variablen (z. B. age, sex, work, mstat, wohnort)\nalle Items eurer ausgewählten Skala ___ Schritt 4: Umkodieren & Skalenwert bilden\nfalls nötig: invertiert Items\nbildet einen Summen- oder Mittelwert:\n\nrowSums(..., na.rm = TRUE) oder\nrowMeans(..., na.rm = TRUE)\n\n\n👉 Gebt der Skala einen sinnvollen Namen (z. B. skala_x_sum oder skala_x_mean) ___ Schritt 5: Missing Values kurz checken\n\nprüft: Gibt es NA im Datensatz?\nprüft: Wie viele NA in eurer Skala?\nentscheidet euch für einen einfachen Schritt:\n\nentweder na.rm = TRUE in der Skala reicht oder\ndrop_na() für die Skala (für „saubere“ Analyse) ___ Schritt 6: Join anwenden\n\n\nFührt einen left_join() mit dem Armutsdatensatz durch (wie zuvor):\n\nSchlüsselvariable anpassen und erstellen (falls nötig)\ndanach prüfen, ob neue Variablen angekommen sind\n\n\n\n\n\n\n\nTipOptional andere Kontextvariablen\n\n\n\n\n\nAuf der Seite von INKAR könnt ihr andere Kontextvariablen euch aussuchen und auf Bundeslandebene runterladen.\n\n\n\n\nSchritt 7: Datensatz speichern\nSpeichert euren finalen Datensatz:\n\nals CSV (write_csv())\noptional als SPSS (write_sav())",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#mini-analyse-deskriptive-statistik",
-    "href": "workshops/ws1/day2.html#mini-analyse-deskriptive-statistik",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Mini-Analyse: Deskriptive Statistik",
-    "text": "Mini-Analyse: Deskriptive Statistik\nErstellt zum Schluss eine kurze deskriptive Auswertung:\nHintergrundvariablen (Beispiele)\n\nage: Mittelwert + SD\nsex oder work oder abschluss: Häufigkeiten\n\n\n\n\n\n\n\nNoteTipp: Deskriptive Statistik\n\n\n\n\n\nSchaut euch die Funktionen aus dem psych und dem janitorPackages an!\n\ninstall.packages(\"janitor\", repos = \"https://cloud.r-project.org\")\ninstall.packages(\"psych\", repos = \"https://cloud.r-project.org\")\n\nKategorische Variablen\n\njanitor::tabyl()\n\nNumerische Variablen\n\npsych::describe()\n\n\n\n\nEure Skala\n\nMittelwert + SD\nMin/Max (optional)\nMissing-Anteil (optional)",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#checkliste",
-    "href": "workshops/ws1/day2.html#checkliste",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Checkliste",
-    "text": "Checkliste\nAm Ende sollten bei euch vorhanden sein:\n\nein Datensatz df_mini (oder df_mini_clean)\neine selbst gebildete Skala (*_sum oder *_mean)\nein kurzer Deskriptiv-Output (Mittelwert/SD + Häufigkeiten)\nein gespeicherter Output (.csv, optional .sav)",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "workshops/ws1/day2.html#always-remember",
-    "href": "workshops/ws1/day2.html#always-remember",
-    "title": "Einführung in R & RStudio – Tag 2",
-    "section": "Always Remember",
-    "text": "Always Remember\n\n\n⬅️ Zurück zu Tag 1",
-    "crumbs": [
-      "Home",
-      "Zum Workshop - Tag 2"
-    ]
-  },
-  {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "Test – Sidebar Proof",
-    "section": "",
-    "text": "Das ist Abschnitt A."
-  },
-  {
-    "objectID": "test.html#a",
-    "href": "test.html#a",
-    "title": "Test – Sidebar Proof",
-    "section": "",
-    "text": "Das ist Abschnitt A."
-  },
-  {
-    "objectID": "test.html#b",
-    "href": "test.html#b",
-    "title": "Test – Sidebar Proof",
-    "section": "Abschnitt B",
-    "text": "Abschnitt B\nDas ist Abschnitt B."
-  },
-  {
-    "objectID": "test.html#c",
-    "href": "test.html#c",
-    "title": "Test – Sidebar Proof",
-    "section": "Abschnitt C",
-    "text": "Abschnitt C\nDas ist Abschnitt C."
-  },
-  {
-    "objectID": "test.html#D",
-    "href": "test.html#D",
-    "title": "Test – Sidebar Proof",
-    "section": "Abschnitt D",
-    "text": "Abschnitt D\nDas ist Abschnitt D."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Willkommen",
-    "section": "",
-    "text": "Willkommen auf meiner Workshop-Seite!\nHier findest du Infos zu meinen Methoden-Workshops.\n\n🔍 Aktuelle Workshops\n\n\nEinführung in R & RStudio\n\n\n\n📬 Kontakt\n\nBei Fragen, Wünschen und Anregungen erreichst du mich jederzeit unter: farugie[at]psych.uni-frankfurt.de"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Über mich",
-    "section": "",
-    "text": "Hallo! Ich bin Arieja Farugie, diese Seite befindet sich im Aufbau."
-  },
-  {
     "objectID": "workshops/ws1/day1.html",
     "href": "workshops/ws1/day1.html",
     "title": "Einführung in R & RStudio – Tag 1",
@@ -504,6 +198,725 @@
     ]
   },
   {
+    "objectID": "workshops/ws1/day2.html",
+    "href": "workshops/ws1/day2.html",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "",
+    "text": "Willkommen zurück 👋\nWir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#umkodieren-invertierter-items",
+    "href": "workshops/ws1/day2.html#umkodieren-invertierter-items",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Umkodieren invertierter Items",
+    "text": "Umkodieren invertierter Items\nIn Fragebögen kommen häufig invertierte Items vor. Das bedeutet: Hohe Werte drücken geringe Zustimmung aus – oder umgekehrt.\nDamit alle Items in dieselbe Richtung zeigen, müssen invertierte Items umkodiert werden.\n\nBeispiel\nDie Items hs04 bis hs07 und hs09 Fragen die mentale Gesundheit in den letzten vier Wochen ab:\n\n\n\nVariable\nInhalt\nSkalierung\n\n\n\n\nhs04\n“Hetze, unter Zeitdruck”\n1 = “Immer” bis 5 = “Nie”\n\n\nhs05\n“Niedergeschlage”\n1 = “Immer” bis 5 = “Nie”\n\n\nhs06\n“Ruhig, Ausgeglichen”\n1 = “Immer” bis 5 = “Nie”\n\n\nhs07\n“Jede menge Energie”\n1 = “Immer” bis 5 = “Nie”\n\n\nhs09\n“Einsam”\n1 = “Immer” bis 5 = “Nie”\n\n\n\nWie wir sehen, sind einige Items invertiert formuliert. Würden wir daraus, eine Skala bilden bspw. Disstress, könnten wir mit dem mutate()Befehl, keine adäquate Skala bilden.\nWir müssen also entscheiden, was nun hohe Werte und was niedrige Werte darstellen sollen. Damit es intuitiver ist, wollen wir nun die Variablen hs04, hs05 und hs09umkodieren, damit später ein hoher Wert auf der Skala “viel Disstress” darstellen kann.\nDoch bevor wir Anfangen, laden wir zunächst unseren Datensatz und die Pakete wieder ein, bzw. haben diese schon im Environment!\n\n#install.packages(\"labelled\", repos = \"https://cloud.r-project.org\")\n\nlibrary(tidyverse)\nlibrary(haven)\nlibrary(labelled)\n\ndf_csv &lt;- read_csv(\"assets/data/datensatz_workshop.csv\")\n\ndf_spss &lt;- read_sav(\"assets/data/spss_datensatz_workshop.sav\")\n\nhead(df_csv, 10)\n\n# A tibble: 10 × 66\n   respid eastwest german   sex   age  agec  dg10  dg03  educ isced97 iscd11\n    &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n 1      1        1      1     2    54     3     1     4     5       5      5\n 2      2        1      1     1    53     3     8     4     5       5      6\n 3      3        1      1     2    89     5     7     4     4       4      4\n 4      4        2      1     1    79     5    17     1     4       5      5\n 5      5        1      1     2    62     4     8     4     2       3      3\n 6      6        1      1     1    23     1     2     4     7      NA     NA\n 7      7        1      1     2    31     2     8     4     5       6      8\n 8      8        1      1     2    57     3    12     2     4       5      5\n 9      9        2      1     1    68     4    17     1     3       5      7\n10     10        1      1     2    51     3     7     4     3       3      3\n# ℹ 55 more variables: work &lt;dbl&gt;, isco08 &lt;dbl&gt;, siops08 &lt;dbl&gt;, isei08 &lt;dbl&gt;,\n#   dw15 &lt;dbl&gt;, dw16 &lt;dbl&gt;, dw19c &lt;dbl&gt;, dw03 &lt;dbl&gt;, mstat &lt;dbl&gt;, dp01 &lt;dbl&gt;,\n#   di01a &lt;dbl&gt;, di02a &lt;dbl&gt;, incc &lt;dbl&gt;, di01b &lt;dbl&gt;, di02b &lt;dbl&gt;, di05 &lt;dbl&gt;,\n#   di06 &lt;dbl&gt;, hhincc &lt;dbl&gt;, dh01 &lt;dbl&gt;, dh11 &lt;dbl&gt;, aq01 &lt;dbl&gt;, gs01 &lt;dbl&gt;,\n#   gd01 &lt;dbl&gt;, gd02 &lt;dbl&gt;, dg13 &lt;dbl&gt;, dg08 &lt;dbl&gt;, dg09 &lt;dbl&gt;, dg11 &lt;dbl&gt;,\n#   ls01 &lt;dbl&gt;, id02 &lt;dbl&gt;, id01 &lt;dbl&gt;, im01 &lt;dbl&gt;, im17 &lt;dbl&gt;, im18 &lt;dbl&gt;,\n#   im19 &lt;dbl&gt;, im20 &lt;dbl&gt;, im21 &lt;dbl&gt;, iw04 &lt;dbl&gt;, pd11 &lt;dbl&gt;, pi07 &lt;dbl&gt;, …\n\n\nZum besseren Verständnis verkleinern wir erstmal unseren Datensatz: Erstelle den Datensatz df_diss mit nur den Items die wir benötigen.\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf_diss &lt;- df_csv |&gt;\nselect(hs04,hs05,hs06,hs07,hs09)\n\nhead(df_diss, 10)\n\n# A tibble: 10 × 5\n    hs04  hs05  hs06  hs07  hs09\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     3     2     3     3     5\n 2    NA    NA    NA    NA    NA\n 3    NA    NA    NA    NA    NA\n 4     4     4     5     3     5\n 5     3     3     2     3     4\n 6     2     3     3     3     3\n 7     1     2     3     4     3\n 8     3     2     4     4     4\n 9     4     3     3     4     4\n10     2     2     4     4     5\n\n\n\n\n\nNun können wir in diesem neuen Datensatz, getrennt von den Rohdaten, üben!\n\nAlternative 1Alternative 2Alternative 3\n\n\n\n# jede Variable einzeln und manuell\n\ndf_diss$hs04_inv &lt;- 6 - df_diss$hs04\n\nhead(df_diss$hs04,10)\n\n [1]  3 NA NA  4  3  2  1  3  4  2\n\nhead(df_diss$hs04_inv,10)\n\n [1]  3 NA NA  2  3  4  5  3  2  4\n\n\n\n\n\n\n\n\nNoteHinweis\n\n\n\n\n\nBei der Intertierung, wird… - der Wert1 zu 5 - der Wert 2 zu 4 - der Wert 3bleibt 3 - der Wert 4 zu 2 - der Wert 5 zu 1\nDie oben vorgstellte Alternative 1 basiert auf der Annahme “maximaler Skalenwert” + 1 - “Skalenwert der Person”.\n\n\n\n\n\n\n df_diss&lt;-df_diss|&gt;\n    mutate(hs04_inv = recode(hs04,\n                             \"1\"=5,\n                             \"2\"=4,\n                             \"3\"=3,\n                             \"4\"=2,\n                             \"5\"=1),\n           hs05_inv = recode(hs05,\n                             \"1\"=5,\n                             \"2\"=4,\n                             \"3\"=3,\n                             \"4\"=2,\n                             \"5\"=1),\n           hs09_inv = recode(hs09,\n                            \"1\"=5,\n                            \"2\"=4,\n                            \"3\"=3,\n                            \"4\"=2,\n                            \"5\"=1),\n           )\n\nhead(df_diss, 10)           \n\n# A tibble: 10 × 8\n    hs04  hs05  hs06  hs07  hs09 hs04_inv hs05_inv hs09_inv\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n 1     3     2     3     3     5        3        4        1\n 2    NA    NA    NA    NA    NA       NA       NA       NA\n 3    NA    NA    NA    NA    NA       NA       NA       NA\n 4     4     4     5     3     5        2        2        1\n 5     3     3     2     3     4        3        3        2\n 6     2     3     3     3     3        4        3        3\n 7     1     2     3     4     3        5        4        3\n 8     3     2     4     4     4        3        4        2\n 9     4     3     3     4     4        2        3        2\n10     2     2     4     4     5        4        4        1\n\n\n\n\n\ninstall.packages(\"sjmisc\")\n\n\nlibrary(sjmisc)\n\ndf_diss &lt;- df_diss|&gt;\n            mutate(hs04_inv = rec(hs04, rec = \"rev\"),\n                  hs05_inv = rec(hs05, rec = \"rev\"),\n                  hs09_inv = rec(hs09, rec = \"rev\")\n                  )\n\nhead(df_diss, 10)\n\n# A tibble: 10 × 8\n    hs04  hs05  hs06  hs07  hs09 hs04_inv hs05_inv hs09_inv\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n 1     3     2     3     3     5        3        4        1\n 2    NA    NA    NA    NA    NA       NA       NA       NA\n 3    NA    NA    NA    NA    NA       NA       NA       NA\n 4     4     4     5     3     5        2        2        1\n 5     3     3     2     3     4        3        3        2\n 6     2     3     3     3     3        4        3        3\n 7     1     2     3     4     3        5        4        3\n 8     3     2     4     4     4        3        4        2\n 9     4     3     3     4     4        2        3        2\n10     2     2     4     4     5        4        4        1\n\n\n\n\n\n\n\n\nNoteHinweis\n\n\n\n\n\nWir haben hier einen Befehl aus einem anderen Paket genutzt. Wie du sehen kannst, sind Pakete auch miteinander kombinierbar!\nHier handelt es sich um den rec() Befehl aus dem Paket sjmisc.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#umkodieren-von-gruppen-und-faktoren",
+    "href": "workshops/ws1/day2.html#umkodieren-von-gruppen-und-faktoren",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Umkodieren von Gruppen und Faktoren",
+    "text": "Umkodieren von Gruppen und Faktoren\nBisher haben wir Variablen umkodiert, die numerisch skaliert sind (z. B. Zustimmungsskalen von 1 bis 5). In der Praxis arbeiten wir jedoch sehr häufig auch mit kategorialen Variablen, zum Beispiel:\n\nGeschlecht\n\nBildungsabschluss\n\nWohnort\n\nErwerbsstatus\n\nDiese Variablen sind meist als Faktoren kodiert oder sollen als solche behandelt werden. Beim Umkodieren von Faktorvariablen geht es weniger um Rechnen, sondern darum, Kategorien sinnvoll zusammenzufassen oder neu zu benennen.\nIn diesem Abschnitt schauen wir uns daher an, wie wir Faktorvariablen gezielt umkodieren, zum Beispiel indem wir:\n\nmehrere Kategorien zu einer Gruppe zusammenfassen oder\n\nneue, besser interpretierbare Gruppen bilden. ___ Wir erstellen nun erneut einen Datensatz und nennen es df_rec. Diesmal fügen wir zu unseren Disstress Variablen weitere hinzu. Folgende Variablen sollen hinzugenommen werden:\ngs01 - Selbsbeschreibung des Wohnorts\neduc - Allgemeiner Schulabschluss\nmstat - Familienstand\nim17 bis im21 - Einstellung zur sozialen Ungleichheit\n\n\n\n\n\n\n\nImportantBeschreibungen der Variablen\n\n\n\n\n\n\nWohnortSchulabschlussFamilienstandSoziale Ungleichheit\n\n\n\n\n\n\n\n\n\n\nVariable\nInhalt\nSkalierung\n\n\n\n\ngs01\n“Selbsbeschreibung des Wohnorts”\n1 = Großstadt 2 = Vorort Großstadt 3 = Mittel-/Kleinstadt 4 = ländl. Dorf 5 = Allein stehendes Haus auf dem Land\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nInhalt\nSkalierung\n\n\n\n\neduc\n“Allgemeiner Schulabschluss”\n1 = Ohne Abschluss 2 = Volks-/Hauptschule 3 = Mittelere Reife 4 = Fachhochschulreife 5 = Hochschulreife 6 = Anderer Abschluss 7 = Noch Schüler*in\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nInhalt\nSkalierung\n\n\n\n\nmstat\n“Familienstand”\n1 = Verheiratet (zsm.lebend) 2 = Verheiratet (getrennt) 3 = Verwitwet 4 = Geschieden 5 = Ledig 6 = Lebensp. (zsm.lebend) 7 = Lebensp. (getrennt) 8 = Lebensp. verstorben Lebensp. aufgehoben\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nInhalt\nSkalierung\n\n\n\n\nim17\n“Was man im Leben bekommt, hängt gar nicht so sehr von den eigenen Anstrengungen ab, sondern von der Wirtschaftslage, der Lage auf dem Arbeitsmarkt, den Tarifabschlüssen und den Sozialleistungen des Staates.”\n1 = “Stimme voll zu” bis 4 = “Stimme überhaupt nicht zu”\n\n\nim18\n“Das Einkommen sollte sich nicht allein nach der Leistung des Einzelnen richten. Vielmehr sollte jeder das haben, was er mit seiner Familie für ein anständiges Leben braucht.”\n1 = “Stimme voll zu” bis 4 = “Stimme überhaupt nicht zu”\n\n\nim19\n“Nur wenn die Unterschiede im Einkommen und im sozialen Ansehen groß genug sind, gibt es auch einen Anreiz für persönliche Leistungen.”\n1 = “Stimme voll zu” bis 4 = “Stimme überhaupt nicht zu”\n\n\nim20\n“Die Rangunterschiede zwischen den Menschen sind akzeptabel, weil sie im Wesentlichen ausdrücken, was man aus den Chancen, die man hatte, gemacht hat.”\n1 = “Stimme voll zu” bis 4 = “Stimme überhaupt nicht zu”\n\n\nim21\n“Ich finde die sozialen Unterschiede in unserem Land im Großen und Ganzen gerecht.”\n1 = “Stimme voll zu” bis 4 = “Stimme überhaupt nicht zu”\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\nlibrary(tidyverse)\n\ndf_rec&lt;-df_csv|&gt;\n  select(gs01,educ,mstat,\n         hs04,hs05,hs06,hs07,hs09,\n         im17,im18,im19,im20,im21)\n\nhead(df_rec, 10)\n\n# A tibble: 10 × 13\n    gs01  educ mstat  hs04  hs05  hs06  hs07  hs09  im17  im18  im19  im20  im21\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     4     5     5     3     2     3     3     5     2     1     4     3     4\n 2     3     5     5    NA    NA    NA    NA    NA     4     4     1     3     3\n 3     3     4     3    NA    NA    NA    NA    NA     3     4     2     1     1\n 4     3     4     1     4     4     5     3     5     2     3     2     3     3\n 5     4     2     1     3     3     2     3     4     2     2     3     3     3\n 6     1     7     5     2     3     3     3     3     3     4     3     2     2\n 7     1     5     5     1     2     3     4     3     2     2     3     3     3\n 8     4     4     1     3     2     4     4     4     3     2     3     3     4\n 9     3     3     1     4     3     3     4     4     2     2     4     3     4\n10     4     3     5     2     2     4     4     5     2     3     3     3     4\n\n\n\n\n\nNun schauen wir uns die Umkodierung von Faktoren am Beispiel des Wohnortes an:\n\nAlternative 1Alternative 2Alternative 3Alternative 4\n\n\n\ndf_rec &lt;- df_rec |&gt;\n  mutate(\n    wohnort = recode(\n      gs01,\n      \"1\"= 1,\n      \"2\" = 1,\n      \"3\" = 1,\n      \"4\" = 2,\n      \"5\" = 2\n    ))\n\ndf_rec |&gt;\n  select(gs01, wohnort) |&gt;\n  head(10)\n\n# A tibble: 10 × 2\n    gs01 wohnort\n   &lt;dbl&gt;   &lt;dbl&gt;\n 1     4       2\n 2     3       1\n 3     3       1\n 4     3       1\n 5     4       2\n 6     1       1\n 7     1       1\n 8     4       2\n 9     3       1\n10     4       2\n\n\n\n\n\n\n\n\nNoteBeschreibung\n\n\n\n\n\nWir haben nun hier aus fünf Gruppen zwei Gruppen gemacht. Wir unterscheiden nun zwischen 1 = Urban und 2 = Rural.\n\n\n\n\n\n\ndf_rec &lt;- df_rec |&gt;\n  mutate(\n    wohnort2 = factor(\n      wohnort,\n      levels = c(1, 2),\n      labels = c(\"Urban\", \"Rural\")\n    )\n  )\n\ndf_rec |&gt;\n  select(gs01, wohnort2) |&gt;\n  head(10)\n\n# A tibble: 10 × 2\n    gs01 wohnort2\n   &lt;dbl&gt; &lt;fct&gt;   \n 1     4 Rural   \n 2     3 Urban   \n 3     3 Urban   \n 4     3 Urban   \n 5     4 Rural   \n 6     1 Urban   \n 7     1 Urban   \n 8     4 Rural   \n 9     3 Urban   \n10     4 Rural   \n\n\n\n\n\n\n\n\nNoteBeschreibung\n\n\n\n\n\nWir haben hier die zuvor erstellten Gruppen (1 und 2) nun als Faktor mit Labeln gemacht.\n\n\n\n\n\n\ndf_rec &lt;- df_rec |&gt;\n  mutate(\n    wohnort3 = recode(\n      gs01,\n      \"1\" = 1,\n      \"2\" = 1,\n      \"3\" = 1,\n      \"4\" = 2,\n      \"5\" = 2\n    ) |&gt; factor(labels = c(\"Urban\", \"Rural\"))\n  )\n\ndf_rec |&gt;\n  select(gs01, wohnort3) |&gt;\n  head(10)\n\n# A tibble: 10 × 2\n    gs01 wohnort3\n   &lt;dbl&gt; &lt;fct&gt;   \n 1     4 Rural   \n 2     3 Urban   \n 3     3 Urban   \n 4     3 Urban   \n 5     4 Rural   \n 6     1 Urban   \n 7     1 Urban   \n 8     4 Rural   \n 9     3 Urban   \n10     4 Rural   \n\n\n\n\n\n\n\n\nNoteBeschreibung\n\n\n\n\n\nHier haben wir es in einem Schritt getan.\n\n\n\n\n\n\ndf_rec &lt;- df_rec |&gt;\n  mutate(\n    wohnort4 = recode(\n      gs01,\n      \"1\" = \"Urban\",\n      \"2\" = \"Urban\",\n      \"3\" = \"Urban\",\n      \"4\" = \"Rural\",\n      \"5\" = \"Rural\"\n    ) |&gt; factor(levels = c(\"Urban\", \"Rural\"))\n  )\n\ndf_rec |&gt;\n  select(gs01, wohnort4) |&gt;\n  head(10)\n\n# A tibble: 10 × 2\n    gs01 wohnort4\n   &lt;dbl&gt; &lt;fct&gt;   \n 1     4 Rural   \n 2     3 Urban   \n 3     3 Urban   \n 4     3 Urban   \n 5     4 Rural   \n 6     1 Urban   \n 7     1 Urban   \n 8     4 Rural   \n 9     3 Urban   \n10     4 Rural   \n\n\n\n\n\n\n\n\nNoteBeschreibung\n\n\n\n\n\nHier haben wir erst “gelabled” und dann Levels hinzugefügt.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#übung",
+    "href": "workshops/ws1/day2.html#übung",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Übung",
+    "text": "Übung\nSchaut euch die Variablen im neuen Datensatz df_rec an. Eure Aufgabe ist es nun neue Variablen zu erstellen, die sinnvoll sind und die wir dann weiter nutzen werden.\n\nErstellt eine neue Variable von educ (nennt diese abschluss) die vierstufig ist (niedriger, mittlere, hoher und anderer)\nErstellt einen Skalenwert für Distress und Soziale Unterstützung. Achtet darauf, dass der Summenwert sinnvol interpretierbar ist.\n\n\n\n\n\n\n\nTipTipp\n\n\n\n\n\n\nSchaut euch das Codebuch genauer an, um die Variablen besser zu verstehen.\nGuckt euch nochmal die Skalierung der Skalenitems an!\n\n\n\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\nAbschlussDistressSoziale UngleichheitAlles in einem Schritt\n\n\n\ndf_rec &lt;- df_rec |&gt;\n  mutate(\n    abschluss = recode(\n      educ,\n      \"1\" = 1,\n      \"2\" = 1,\n      \"3\" = 2,\n      \"4\" = 3,\n      \"5\" = 3,\n      \"6\" = 4,\n      \"7\" = 1\n    ) |&gt; factor(labels = c(\"Niedriger\", \"Mittlerer\", \"Hoher\", \"Anderer\"))\n  )\n\ndf_rec |&gt;\n  select(educ, abschluss) |&gt;\n  head(10)\n\n# A tibble: 10 × 2\n    educ abschluss\n   &lt;dbl&gt; &lt;fct&gt;    \n 1     5 Hoher    \n 2     5 Hoher    \n 3     4 Hoher    \n 4     4 Hoher    \n 5     2 Niedriger\n 6     7 Niedriger\n 7     5 Hoher    \n 8     4 Hoher    \n 9     3 Mittlerer\n10     3 Mittlerer\n\n\n\n\n\nlibrary(sjmisc)\n\ndf_rec&lt;-df_rec|&gt;\n  mutate(\n    hs04_r = rec(hs04, rec = \"rev\"),\n    hs05_r = rec(hs05, rec = \"rev\"),\n    hs09_r = rec(hs09, rec = \"rev\"),\n    disstress = hs04_r + hs05_r + hs06 + hs07+ hs09_r\n  )\n\ndf_rec |&gt;\n  select(hs04, hs04_r, hs05, hs05_r, hs06, hs07, hs09, hs09_r, disstress)|&gt;\n  head(10)\n\n# A tibble: 10 × 9\n    hs04 hs04_r  hs05 hs05_r  hs06  hs07  hs09 hs09_r disstress\n   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;\n 1     3      3     2      4     3     3     5      1        14\n 2    NA     NA    NA     NA    NA    NA    NA     NA        NA\n 3    NA     NA    NA     NA    NA    NA    NA     NA        NA\n 4     4      2     4      2     5     3     5      1        13\n 5     3      3     3      3     2     3     4      2        13\n 6     2      4     3      3     3     3     3      3        16\n 7     1      5     2      4     3     4     3      3        19\n 8     3      3     2      4     4     4     4      2        17\n 9     4      2     3      3     3     4     4      2        14\n10     2      4     2      4     4     4     5      1        17\n\n\n\n\n\ndf_rec&lt;-df_rec|&gt;\n  mutate(\n    im17_r = 5 - im17,\n    im18_r = 5 - im18,\n    im19_r = 5 - im19,\n    im20_r = 5 - im20,\n    im21_r = 5 - im21,\n    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))\n  )\n\ndf_rec |&gt;\n  select(im17:im21, im17_r:im21_r, soz.u) |&gt;\n  head(10)\n\n# A tibble: 10 × 11\n    im17  im18  im19  im20  im21 im17_r im18_r im19_r im20_r im21_r soz.u\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1     2     1     4     3     4      3      4      1      2      1    11\n 2     4     4     1     3     3      1      1      4      2      2    10\n 3     3     4     2     1     1      2      1      3      4      4    14\n 4     2     3     2     3     3      3      2      3      2      2    12\n 5     2     2     3     3     3      3      3      2      2      2    12\n 6     3     4     3     2     2      2      1      2      3      3    11\n 7     2     2     3     3     3      3      3      2      2      2    12\n 8     3     2     3     3     4      2      3      2      2      1    10\n 9     2     2     4     3     4      3      3      1      2      1    10\n10     2     3     3     3     4      3      2      2      2      1    10\n\n\n\n\n\ndf_rec&lt;-df_rec|&gt;\n  mutate(\n    abschluss = recode(\n      educ,\n      \"1\" = 1,\n      \"2\" = 1,\n      \"3\" = 2,\n      \"4\" = 3,\n      \"5\" = 3,\n      \"6\" = 4,\n      \"7\" = 1\n    ) |&gt; factor(labels = c(\"Niedriger\", \"Mittlerer\", \"Hoher\", \"Anderer\")),\n    hs04_r = rec(hs04, rec = \"rev\"),\n    hs05_r = rec(hs05, rec = \"rev\"),\n    hs09_r = rec(hs09, rec = \"rev\"),\n    distress = hs04_r + hs05_r + hs06 + hs07+ hs09_r,\n    im17_r = 5 - im17,\n    im18_r = 5 - im18,\n    im19_r = 5 - im19,\n    im20_r = 5 - im20,\n    im21_r = 5 - im21,\n    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))\n  )\n\ndf_rec |&gt;\n  select(abschluss, disstress, soz.u) |&gt;\n  head(10)\n\n# A tibble: 10 × 3\n   abschluss disstress soz.u\n   &lt;fct&gt;         &lt;dbl&gt; &lt;dbl&gt;\n 1 Hoher            14    11\n 2 Hoher            NA    10\n 3 Hoher            NA    14\n 4 Hoher            13    12\n 5 Niedriger        13    12\n 6 Niedriger        16    11\n 7 Hoher            19    12\n 8 Hoher            17    10\n 9 Mittlerer        14    10\n10 Mittlerer        17    10",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#übung-1",
+    "href": "workshops/ws1/day2.html#übung-1",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Übung",
+    "text": "Übung\nErstellt erneut euren Datensatz aus der letzten Aufgabe und speichert ihn diesmal unter dem Namen df_rec2. Achtet darauf, dass ihr eine eindeutige Schlüsselvariable mitübernehmt.\nFührt anschließend dieselben Umkodierungen durch wie zuvor bei df_rec.\nZum Schluss fügt ihr den Hauptdatensatz und df_rec2 zu einem neuen Datensatz mit dem Namen df_analyse zusammen.\n\n\n\n\n\n\nTipTipp\n\n\n\nCodebuch 😉\n\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\n# Erstellen von df_rec2\n\ndf_rec2&lt;-df_csv|&gt;\n  select(respid,gs01,educ,mstat,\n         hs04,hs05,hs06,hs07,hs09,\n         im17,im18,im19,im20,im21)\n\nhead(df_rec2, 10)\n\n# A tibble: 10 × 14\n   respid  gs01  educ mstat  hs04  hs05  hs06  hs07  hs09  im17  im18  im19\n    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1      1     4     5     5     3     2     3     3     5     2     1     4\n 2      2     3     5     5    NA    NA    NA    NA    NA     4     4     1\n 3      3     3     4     3    NA    NA    NA    NA    NA     3     4     2\n 4      4     3     4     1     4     4     5     3     5     2     3     2\n 5      5     4     2     1     3     3     2     3     4     2     2     3\n 6      6     1     7     5     2     3     3     3     3     3     4     3\n 7      7     1     5     5     1     2     3     4     3     2     2     3\n 8      8     4     4     1     3     2     4     4     4     3     2     3\n 9      9     3     3     1     4     3     3     4     4     2     2     4\n10     10     4     3     5     2     2     4     4     5     2     3     3\n# ℹ 2 more variables: im20 &lt;dbl&gt;, im21 &lt;dbl&gt;\n\n# Umkodieren und Summenwerte erstellen\n\ndf_rec2 &lt;-df_rec2|&gt;\n  mutate(\n    wohnort = recode(gs01,\n      \"1\" = 1,\n      \"2\" = 1,\n      \"3\" = 1,\n      \"4\" = 2,\n      \"5\" = 2\n    ) |&gt; factor(labels = c(\"Urban\", \"Rural\")),\n    abschluss = recode(\n      educ,\n      \"1\" = 1,\n      \"2\" = 1,\n      \"3\" = 2,\n      \"4\" = 3,\n      \"5\" = 3,\n      \"6\" = 4,\n      \"7\" = 1\n    ) |&gt; factor(labels = c(\"Niedriger\", \"Mittlerer\", \"Hoher\", \"Anderer\")),\n    hs04_r = rec(hs04, rec = \"rev\"),\n    hs05_r = rec(hs05, rec = \"rev\"),\n    hs09_r = rec(hs09, rec = \"rev\"),\n    distress = hs04_r + hs05_r + hs06 + hs07+ hs09_r,\n    im17_r = 5 - im17,\n    im18_r = 5 - im18,\n    im19_r = 5 - im19,\n    im20_r = 5 - im20,\n    im21_r = 5 - im21,\n    soz.u = rowSums(cbind(im17_r,im18_r,im19_r,im20_r,im21_r))\n  )\n\ndf_rec2 |&gt;\n  select(15:26) |&gt;\n  head(10)\n\n# A tibble: 10 × 12\n   wohnort abschluss hs04_r hs05_r hs09_r distress im17_r im18_r im19_r im20_r\n   &lt;fct&gt;   &lt;fct&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1 Rural   Hoher          3      4      1       14      3      4      1      2\n 2 Urban   Hoher         NA     NA     NA       NA      1      1      4      2\n 3 Urban   Hoher         NA     NA     NA       NA      2      1      3      4\n 4 Urban   Hoher          2      2      1       13      3      2      3      2\n 5 Rural   Niedriger      3      3      2       13      3      3      2      2\n 6 Urban   Niedriger      4      3      3       16      2      1      2      3\n 7 Urban   Hoher          5      4      3       19      3      3      2      2\n 8 Rural   Hoher          3      4      2       17      2      3      2      2\n 9 Urban   Mittlerer      2      3      2       14      3      3      1      2\n10 Rural   Mittlerer      4      4      1       17      3      2      2      2\n# ℹ 2 more variables: im21_r &lt;dbl&gt;, soz.u &lt;dbl&gt;\n\n# Neuer Datensatz df_analyse\n\ndf_analyse &lt;- left_join(df_csv, df_rec2, by=\"respid\")\n\ndf_analyse |&gt;\n  select(81:91) |&gt;\n  head(10)\n\n# A tibble: 10 × 11\n   abschluss hs04_r hs05_r hs09_r distress im17_r im18_r im19_r im20_r im21_r\n   &lt;fct&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1 Hoher          3      4      1       14      3      4      1      2      1\n 2 Hoher         NA     NA     NA       NA      1      1      4      2      2\n 3 Hoher         NA     NA     NA       NA      2      1      3      4      4\n 4 Hoher          2      2      1       13      3      2      3      2      2\n 5 Niedriger      3      3      2       13      3      3      2      2      2\n 6 Niedriger      4      3      3       16      2      1      2      3      3\n 7 Hoher          5      4      3       19      3      3      2      2      2\n 8 Hoher          3      4      2       17      2      3      2      2      1\n 9 Mittlerer      2      3      2       14      3      3      1      2      1\n10 Mittlerer      4      4      1       17      3      2      2      2      1\n# ℹ 1 more variable: soz.u &lt;dbl&gt;\n\n\n\n\n\n\n\n\nTipTip\n\n\n\n\n\nFür eine saubere Lösung ohne Duplikate:\n\ndupl_vars &lt;- setdiff(names(df_rec2), names(df_csv))\n\ndf_analyse &lt;- df_csv |&gt;\n  left_join(df_rec2 |&gt; select(respid, all_of(dupl_vars)), by = \"respid\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportantMerkhilfe der Join-Befehle\n\n\n\n\n\n\nleft_join()\nDer linke Datensatz ist die Basis.\n\nalle Fälle aus dem linken Datensatz bleiben erhalten\n\npassende Informationen aus dem rechten Datensatz werden ergänzt\n\nnicht gefundene Werte werden als NA ergänzt\n\n👉 Der am häufigsten verwendete Join in der Praxis.\n\n\nright_join()\nDer rechte Datensatz ist die Basis.\n\nalle Fälle aus dem rechten Datensatz bleiben erhalten\n\npassende Informationen aus dem linken Datensatz werden ergänzt\n\nnicht gefundene Werte werden als NA ergänzt\n\n👉 Funktional das Gegenstück zu left_join().\n\n\ninner_join()\nEs bleiben nur die gemeinsamen Fälle erhalten.\n\nFälle kommen nur dann ins Ergebnis, wenn sie in beiden Datensätzen vorkommen\n\nalle anderen Fälle werden verworfen\n\n👉 Strenger Join – gut für saubere Überschneidungen.\n\n\nfull_join()\nAlle Fälle aus beiden Datensätzen bleiben erhalten.\n\nalle Fälle aus links und rechts\n\nwo es keine Entsprechung gibt → NA\n\n👉 Maximale Information, aber oft viele fehlende Werte.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#was-ist-na",
+    "href": "workshops/ws1/day2.html#was-ist-na",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Was ist NA?",
+    "text": "Was ist NA?\nIn R steht NA für Not Available – also fehlender Wert.\n\nNA ist keine 0\n\nNA ist kein leerer Text\n\nNA bedeutet: Es liegt kein Wert vor\n\nR behandelt NA sehr strikt – und das ist auch gut so.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#fehlende-werte-identifizieren",
+    "href": "workshops/ws1/day2.html#fehlende-werte-identifizieren",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Fehlende Werte identifizieren",
+    "text": "Fehlende Werte identifizieren\nBevor wir mit Berechnungen arbeiten, sollten wir immer prüfen, ob und wo fehlende Werte vorkommen. Dafür erstellen wir aus unserem Analysedatensatz df_analyse einen kleineren handlicheren Datensatz mit den Variablen die wir für unsere Analysen wirklich benötigen und nennen es df_analyse2.\nNehme folgende Variablen mit rein: - respid - wohnort - isced97 - work - dw15 - mstat - hhincc - disstress und dazugehörigen Variablen - soz.u und dazugehörigen Variablen\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf_analyse2 &lt;- df_analyse |&gt;\n  select(respid,age,sex,wohnort,isced97,work,dw15,\n         mstat,hhincc,hs04_r,hs06,hs07,hs05_r,hs09_r,distress,\n         im17_r,im18_r,im19_r,im20_r,im21_r,soz.u)\n\ndf_analyse2 |&gt;\n  head(10)\n\n# A tibble: 10 × 21\n   respid   age   sex wohnort isced97  work  dw15 mstat hhincc hs04_r  hs06\n    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1      1    54     2 Rural         5     1  35       5     10      3     3\n 2      2    53     1 Urban         5     1  62       5     19     NA    NA\n 3      3    89     2 Urban         4     4  NA       3     NA     NA    NA\n 4      4    79     1 Urban         5     4  NA       1     15      2     5\n 5      5    62     2 Rural         3     4  NA       1     19      3     2\n 6      6    23     1 Urban        NA     4  NA       5     12      4     3\n 7      7    31     2 Urban         6     2  32       5     23      5     3\n 8      8    57     2 Rural         5     1  39.5     1     20      3     4\n 9      9    68     1 Urban         5     4  NA       1     14      2     3\n10     10    51     2 Rural         3     2  30       5     NA      4     4\n# ℹ 10 more variables: hs07 &lt;dbl&gt;, hs05_r &lt;dbl&gt;, hs09_r &lt;dbl&gt;, distress &lt;dbl&gt;,\n#   im17_r &lt;dbl&gt;, im18_r &lt;dbl&gt;, im19_r &lt;dbl&gt;, im20_r &lt;dbl&gt;, im21_r &lt;dbl&gt;,\n#   soz.u &lt;dbl&gt;\n\n\n\n\n\n\n\n\n\n\n\nImportantHinweis\n\n\n\n\n\n\nSchaut im Codebuch nach, was die Variablen bedeuten.\nAchtet darauf, dass ihr die richtigen Variablennamen nehmt!\n\n\n\n\nWir schauen nun unseren Datensatz an:\n\nBase RPackage naniar\n\n\n\nis.na(df_analyse2)\n\n\n\n\n\n\n\nCautionAchtung\n\n\n\nSehr unübersichtlich, da R hier für jede Zeile und jeder Variable einen logischen Vektor mit TRUEoder FALSE erstellt.\n\n\n\n\n\ninstall.packages(\"naniar\", repos=\"https://cloud.r-project.org\")\n\nlibrary(naniar)\n\nany_na(df_analyse2)\n\n[1] TRUE\n\n\n\n\n\n\n\n\nCautionHinweis\n\n\n\nMit diesem Befehl, bekommen wir eine schnelle Rückmeldung, ob unser Datensatz fehlende Werte hat.\n\n\n\n\n\n\nEinzelne Variable prüfen\n\n\nBase RPackage naniar\n\n\n\nis.na(df_analyse2$age)\n\n\n\n\n\n\n\nCautionAchtung\n\n\n\nSehr unübersichtlich, da R hier für **jede Zeile einen logischen Vektor mit TRUEoder FALSE erstellt.\n\n\n\n\n\nany_na(df_analyse2$age)\n\n[1] TRUE\n\n\n\n\n\n\n\n\nCautionHinweis\n\n\n\nMit diesem Befehl, bekommen wir eine schnelle Rückmeldung, ob in er spezifischen Variable fehlende Werte hat.\n\n\n\n\n\nUm herauszufinden, wie viele fehlende Werte die Variable hat, gehen wir wie folgt vor:\n\nBase RPackage naniar\n\n\n\nsum(is.na(df_analyse2$age))\n\n[1] 41\n\n\n\n\n\nn_miss(df_analyse2$age)\n\n[1] 41\n\n\n\n\n\n\n\nÜberblick mehrer Variablen\n\nWir können auch mehrere spezifische Variablen anschauen:\n\nBase RÜberblick (grafisch)\n\n\n\ndf_analyse2 |&gt;\n  summarise(\n    across(\n      c(distress, soz.u),\n      ~ sum(is.na(.))\n    )\n  )\n\n# A tibble: 1 × 2\n  distress soz.u\n     &lt;int&gt; &lt;int&gt;\n1     1829   339\n\n\n\n\n\n\n\n\nNote\n\n\n\nHier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable existieren.\n\n\n\n\n\ngg_miss_var(df_analyse2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nHier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable im gesamten Datensatz sind.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#was-passiert-bei-berechnungen-mit-na",
+    "href": "workshops/ws1/day2.html#was-passiert-bei-berechnungen-mit-na",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Was passiert bei Berechnungen mit NA?",
+    "text": "Was passiert bei Berechnungen mit NA?\nEin häufiger Stolperstein ist der Umgang mit fehlenden Werten (NA) bei Berechnungen.\n👉 Schon ein einziges NA reicht aus, damit das gesamte Ergebnis NA wird.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA))\n\n[1] NA\n\n1+5+8+10+NA+20+12+13+NA\n\n[1] NA\n\n\n\nWarum ist das so?\n\nR kann nicht erraten, wie mit fehlenden Werten umgegangen werden soll:\n\nSoll das NA ignoriert werden?\nSoll das Ergebnis trotzdem berechnet werden?\nOder ist das Ergebnis nicht sinnvoll interpretierbar?\n\nOhne eine klare Anweisung entscheidet sich R für die sichere Variante und gibt NA zurück.\nDas gilt für viele Funktionen, zum Beispiel:\n\nsum()\nmean()\nrowSums()\nrowMeans()\n\n👉 Wichtig: Wenn fehlende Werte ignoriert werden sollen, muss man das explizit angeben.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)\n\n[1] 69\n\n\n\n\n\n\n\n\nImportantWas bedeutet na.rm?\n\n\n\nna.rm = TRUE bedeutet:\nfehlende Werte (NA) werden bei der Berechnung ignoriert.\n\n\nna.rm = TRUE entfernt NA-Werte aus der Berechnung, damit Summen trotzdem berechnet werden können.\n\nrowSums(cbind(1,5,8,10,NA,20,12,13,NA), na.rm = TRUE)\n\n[1] 69\n\n1+5+8+10+20+12+13\n\n[1] 69\n\n\nWir wissen, dass wir auf einigen Skalen, die wir gebildet haben, viele Missings haben.\n\ngg_miss_var(df_analyse2)\n\n\n\n\n\n\n\n\nWir schauen uns das mal genauer an:\n\ndf_analyse2 &lt;- df_analyse2 |&gt;\n  mutate(\n    soz.u_na = rowSums(cbind(im17_r, im18_r, im19_r, im20_r, im21_r)),\n    soz.u_rmt = rowSums(\n      cbind(im17_r, im18_r, im19_r, im20_r, im21_r),\n      na.rm = TRUE)\n  )\n\ndf_analyse2 |&gt;\n  select(soz.u_na, soz.u_rmt) |&gt;\n  gg_miss_var()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarningAchtung\n\n\n\nna.rm = TRUE bedeutet nicht automatisch „besser“.\nWenn sehr viele Items fehlen, kann ein Skalenwert inhaltlich verzerrt sein!\n\n\n\n\nWann ist na.rm = TRUE sinnvoll?\n\n\nwenn nur wenige Werte fehlen\nwenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist\nfür erste Auswertungen und Exploration",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#wie-mit-fehlenden-werten-umgehen",
+    "href": "workshops/ws1/day2.html#wie-mit-fehlenden-werten-umgehen",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Wie mit fehlenden Werten umgehen?",
+    "text": "Wie mit fehlenden Werten umgehen?\nIn der empirischen Forschung gibt es verschiedene Strategien, um mit fehlenden Werten umzugehen.\nWelche sinnvoll ist, hängt unter anderem ab von:\n\nder Anzahl der fehlenden Werte\n\ndem Datentyp (Item, Skala, Hintergrundvariable)\n\nder Fragestellung der Analyse\n\nMögliche Ansätze sind zum Beispiel:\n\nfehlende Werte ignorieren (na.rm = TRUE)\nFälle mit fehlenden Werten ausschließen\nfehlende Werte schätzen oder imputieren (z. B. Mittelwert, multiple Imputation)\n\n👉 Wichtig:\nDiese Entscheidungen haben inhaltliche Konsequenzen und sollten immer bewusst getroffen werden.\n\nFokus im Workshop\n\nIn diesem Workshop konzentrieren wir uns bewusst auf einen einfachen und transparenten Umgang mit fehlenden Werten:\n👉 Fälle mit fehlenden Werten werden ausgeschlossen, wenn sie für die jeweilige Analyse nicht sinnvoll nutzbar sind.\nWarum?\n\nleicht nachvollziehbar\n\ngut geeignet für den Einstieg\nhäufig ausreichend bei großen Stichproben\n\nKomplexere Verfahren wie Imputation sind wichtig, gehen aber über den Rahmen dieses Workshops hinaus. Es lohnt sich aber hier methodisch einzuarbeiten!\n👉 Multiple Imputation",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#fehlende-werte-entfernen",
+    "href": "workshops/ws1/day2.html#fehlende-werte-entfernen",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Fehlende Werte entfernen",
+    "text": "Fehlende Werte entfernen\nWie oben angesprochen, entfernen wir bei ausreichender Datengrundlage die Personen, die einen fehlende Werte auf die uns wichtigen Variablen haben.\n\nGanze Zeilen entfernen (drop_na())\n\nMit drop_na() entfernen wir alle Zeilen, in denen mindestens ein NA in den angegebenen Variablen vorkommt.\n\ndf_clean &lt;- df_analyse2 |&gt;\n  drop_na(soz.u_na)\n\ndf_clean |&gt;\n  dim()\n\n[1] 5003   23\n\n  df_analyse2 |&gt;\n  dim()\n\n[1] 5342   23\n\n\n👉 Ergebnis: Nur Fälle ohne fehlende Werte in soz.u bleiben erhalten.\n\n\n\n\n\n\nTipTipp\n\n\n\n\n\nUm zu schauen, wie viele Personen damit ausgeschlossen wurden, kann man folgendes machen:\n\nnrow(df_analyse2) - nrow(df_clean)\n\n[1] 339",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#übung-2",
+    "href": "workshops/ws1/day2.html#übung-2",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Übung",
+    "text": "Übung\nErstelle einen Datensatz df_clean, welcher frei von NA's ist für die Variablen distress und soz.u.\n\nWie viele Beobachtungen werden final ausgeschlossen?\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf_analyse2 &lt;- df_analyse2 |&gt;\n  mutate(\n    distress_na = rowSums(cbind(hs04_r,hs06,hs07,hs05_r,hs09_r)),\n    distress_rmt = rowSums(\n      cbind(hs04_r,hs06,hs07,hs05_r,hs09_r),\n      na.rm = TRUE)\n  )\n\ndf_clean &lt;- df_analyse2 |&gt;\n  drop_na(distress_na, soz.u_na)\n\nnrow(df_analyse2) - nrow(df_clean) \n\n[1] 2091\n\n\n\n\n\n\n\n\n\n\n\nTipTipps\n\n\n\n\nGute PraxisMerksatz\n\n\nNach dem Entfernen von NA immer prüfen:\n\nWie viele Fälle sind übrig?\nIst die Fallzahl noch ausreichend?\nBetrifft das Entfernen bestimmte Gruppen stärker als andere?\n\n\n\nEs gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist,\n\nbewusst zu entscheiden,\ntransparent zu dokumentieren,\nund die Konsequenzen zu kennen.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#workflow",
+    "href": "workshops/ws1/day2.html#workflow",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Workflow",
+    "text": "Workflow\nZiel ist ein gut dokumentierter und jederzeit nachvollziehbarer Analyse-Workflow:\nJemand anderes (oder du in 3 Monaten) soll verstehen, was du gemacht hast, warum du es gemacht hast und wie du zu deinen Ergebnissen kommst.\n\nProjektstrukturSkripte sinnvoll gliedernKommentare nutzen\n\n\nEine mögliche Struktur:\n\nprojektname/\n\ndata/ (Rohdaten & ggf. bereinigte Daten)\n\nscripts/ (alle R-Skripte)\n\noutput/ (Tabellen, Abbildungen, Reports)\n\nprojektname.Rproj\n\n\n\n\nStatt ein langes Skript:\n\n01_import.R (Daten laden, erste Checks)\n\n02_cleaning.R (Umkodieren, Skalen, Missing neue Variablen)\n\n03_analysis.R (Modelle, Tests, Kennwerte)\n\n04_plots.R (Visualisierungen, Export)\n\nSo kannst du jeden Schritt einzeln ausführen, testen und bei Fehlern gezielt zurückspringen.\n\n\nKommentiere kurz, was passiert und warum:\n\nWas wird hier gemacht?\n\nWelche Annahme steckt dahinter?\n\nWelche Variablen/Skalen sind wichtig?\n\nBeispiel:\n\n# Invertiere hs04/hs05/hs09, damit hohe Werte = mehr Distress bedeuten\n# Skala: 1–5, deshalb: 6 - Wert",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#exkurs-datensatz-speichern",
+    "href": "workshops/ws1/day2.html#exkurs-datensatz-speichern",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Exkurs: Datensatz Speichern",
+    "text": "Exkurs: Datensatz Speichern\nNach der Datenaufbereitung oder Analyse ist es sinnvoll, Zwischenergebnisse zu speichern (z. B. bereinigte Datensätze oder finale Analyse-Daten).\nSo kannst du später direkt weiterarbeiten, ohne alle Schritte erneut ausführen zu müssen.\n\nCSVSPSS\n\n\n\nplattformunabhängig\ngut für Weitergabe und Dokumentation\n\n\nwrite_csv(df_clean, file = \"assets/data/output/Datensatz_clean.csv\")\n\n\n\n\npraktisch für Zusammenarbeit mit SPSS-Nutzer:innen\nVariablenlabels bleiben erhalten\n\n\nwrite_sav(df_clean, path = \"assets/data/output/spss_Datensatz_clean.sav\")",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#aufgabenstellung",
+    "href": "workshops/ws1/day2.html#aufgabenstellung",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Aufgabenstellung",
+    "text": "Aufgabenstellung\nIhr erstellt euch einen eigenen Datensatz df_mini, der am Ende „analysefertig“ ist.\nSchritt 1: Datensatz laden und Überblick verschaffen\n\nlade df_csv (und ggf. df_spss)\nverschaffe dir einen Überblick:\n\nglimpse()\nsummary() ___ Schritt 2: Skala auswählen (Codebuch!)\n\n\nWählt eine Skala eurer Wahl aus dem Codebuch:\n\nSkala aus mindestens 3 Items\nachtet auf die Skalierung (z. B. 1–4 oder 1–5)\nprüft, ob es invertierte Items gibt (und entscheidet, was „hoch“ bedeuten soll)\n\n👉 Speichert eure Entscheidung kurz als Kommentar im Skript\n\n# Bildung der Skala _______ (Items: __, __, __)\n## Hohe Werte sollen _______ bedeuten.\n\n\nSchritt 3: Datensatz erstellen (Auswahl der Variablen)\nErstellt df_mini mit:\n\nrespid (Schlüsselvariable!)\nmindestens 2 demographische Variablen (z. B. age, sex, work, mstat, wohnort)\nalle Items eurer ausgewählten Skala ___ Schritt 4: Umkodieren & Skalenwert bilden\nfalls nötig: invertiert Items\nbildet einen Summen- oder Mittelwert:\n\nrowSums(..., na.rm = TRUE) oder\nrowMeans(..., na.rm = TRUE)\n\n\n👉 Gebt der Skala einen sinnvollen Namen (z. B. skala_x_sum oder skala_x_mean) ___ Schritt 5: Missing Values kurz checken\n\nprüft: Gibt es NA im Datensatz?\nprüft: Wie viele NA in eurer Skala?\nentscheidet euch für einen einfachen Schritt:\n\nentweder na.rm = TRUE in der Skala reicht oder\ndrop_na() für die Skala (für „saubere“ Analyse) ___ Schritt 6: Join anwenden\n\n\nFührt einen left_join() mit dem Armutsdatensatz durch (wie zuvor):\n\nSchlüsselvariable anpassen und erstellen (falls nötig)\ndanach prüfen, ob neue Variablen angekommen sind\n\n\n\n\n\n\n\nTipOptional andere Kontextvariablen\n\n\n\n\n\nAuf der Seite von INKAR könnt ihr andere Kontextvariablen euch aussuchen und auf Bundeslandebene runterladen.\n\n\n\n\nSchritt 7: Datensatz speichern\nSpeichert euren finalen Datensatz:\n\nals CSV (write_csv())\noptional als SPSS (write_sav())",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#mini-analyse-deskriptive-statistik",
+    "href": "workshops/ws1/day2.html#mini-analyse-deskriptive-statistik",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Mini-Analyse: Deskriptive Statistik",
+    "text": "Mini-Analyse: Deskriptive Statistik\nErstellt zum Schluss eine kurze deskriptive Auswertung:\nHintergrundvariablen (Beispiele)\n\nage: Mittelwert + SD\nsex oder work oder abschluss: Häufigkeiten\n\n\n\n\n\n\n\nNoteTipp: Deskriptive Statistik\n\n\n\n\n\nSchaut euch die Funktionen aus dem psych und dem janitorPackages an!\n\ninstall.packages(\"janitor\", repos = \"https://cloud.r-project.org\")\ninstall.packages(\"psych\", repos = \"https://cloud.r-project.org\")\n\nKategorische Variablen\n\njanitor::tabyl()\n\nNumerische Variablen\n\npsych::describe()\n\n\n\n\nEure Skala\n\nMittelwert + SD\nMin/Max (optional)\nMissing-Anteil (optional)",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#checkliste",
+    "href": "workshops/ws1/day2.html#checkliste",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Checkliste",
+    "text": "Checkliste\nAm Ende sollten bei euch vorhanden sein:\n\nein Datensatz df_mini (oder df_mini_clean)\neine selbst gebildete Skala (*_sum oder *_mean)\nein kurzer Deskriptiv-Output (Mittelwert/SD + Häufigkeiten)\nein gespeicherter Output (.csv, optional .sav)",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws1/day2.html#always-remember",
+    "href": "workshops/ws1/day2.html#always-remember",
+    "title": "Einführung in R & RStudio – Tag 2",
+    "section": "Always Remember",
+    "text": "Always Remember\n\n\n⬅️ Zurück zu Tag 1",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html",
+    "href": "workshops/ws2/day1.html",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "",
+    "text": "Willkommen zum Workshop „Datenvisualisierung mit ggplot2” 👋\nAn Tag 1 legen wir das Fundament – theoretisch und praktisch.\nZiele für heute\n\nverstehen, warum Datenvisualisierung wichtig ist\ndie Grammatik der Grafiken als roten Faden kennenlernen\ndie ersten drei Schichten praktisch umsetzen: Data → Aesthetics → Geometries\n\n\nBevor wir starten, laden wir alle benötigten Pakete und den Datensatz.\n➡️ Workshop-Datensatz herunterladen (CSV)\n➡️ Workshop-Datensatz herunterladen (SPSS)\nHier kannst du das Codebuch zum Datensatz runterladen, für eine bessere Übersicht, über die Variablen im Datensatz.\n➡️ Codebuch Workshop Datensatz (PDF)\n\n\n\n\n\n\nTipSetup: Pakete & Daten laden\n\n\n\n\nlibrary(tidyverse)  # enthält ggplot2\nlibrary(haven)\nlibrary(sjmisc)\nlibrary(naniar)\n\ndf &lt;- read_csv(\"assets/data/datensatz_workshop.csv\")\n\ndf &lt;- df |&gt;\n  mutate(\n    # ── Skalenwerte (Distress & Soziale Ungleichheit) ──────────────────\n    # Invertierte Items umkodieren (1=Immer → 5=Nie, hohe Werte = mehr Distress)\n    hs04_r   = rec(hs04, rec = \"rev\"),   # Hetze/Zeitdruck\n    hs05_r   = rec(hs05, rec = \"rev\"),   # Niedergeschlagen\n    hs09_r   = rec(hs09, rec = \"rev\"),   # Einsam\n    # Distress-Summenwert: 5 (kein Distress) bis 25 (hoher Distress)\n    distress = hs04_r + hs05_r + hs06 + hs07 + hs09_r,\n    \n    # Soziale Ungleichheit: alle Items invertieren (hohe Werte = Akzeptanz)\n    im17_r   = 5 - im17,\n    im18_r   = 5 - im18,\n    im19_r   = 5 - im19,\n    im20_r   = 5 - im20,\n    im21_r   = 5 - im21,\n    soz_u    = im17_r + im18_r + im19_r + im20_r + im21_r,\n    \n    # ── Faktoren ──────────────────────────────────────────────────────\n    geschlecht = factor(sex,\n      levels = c(1, 2),\n      labels = c(\"Männlich\", \"Weiblich\")\n    ),\n    \n    # Altersgruppen\n    altersgruppe = factor(agec,\n      levels = 1:6,\n      labels = c(\"18–29\", \"30–44\", \"45–59\", \"60–74\", \"75–89\", \"90+\")\n    ),\n    \n    # Bildungsniveau (ISCED 1997)\n    bildung = factor(isced97,\n      levels = 1:6,\n      labels = c(\"Primär\", \"Niedrig\", \"Mittel\", \"Post-Sek.\", \"Tertiär I\", \"Tertiär II\")\n    ),\n    \n    # Erwerbsstatus\n    erwerbsstatus = factor(work,\n      levels = 1:4,\n      labels = c(\"Vollzeit\", \"Teilzeit\", \"Nebenher\", \"Nicht erwerb.\")\n    ),\n    \n    # Wohnort (Selbstbeschreibung)\n    wohnort = factor(gs01,\n      levels = 1:5,\n      labels = c(\"Großstadt\", \"Vorort\", \"Mittel-/Kleinstadt\", \"Dorf\", \"Einzelhaus\")\n    ),\n    \n    # Erhebungsgebiet Ost/West\n    gebiet = factor(\n      eastwest,\n      levels = 1:2,\n      labels = c(\"West\", \"Ost\")\n    ),\n    \n    # Subjektiver allgemeiner Gesundheitszustand\n    gesundheit = factor(hs01,\n      levels = 1:5,\n      labels = c(\"Sehr gut\", \"Gut\", \"Zufriedenstellend\", \"Weniger gut\", \"Schlecht\"),\n      ordered = TRUE\n    ),\n    \n    # Subjektive Schichteinstufung\n    schicht = factor(id02,\n      levels = 1:5,\n      labels = c(\"Unterschicht\", \"Arbeiterschicht\", \"Mittelschicht\",\n                 \"Ob. Mittelschicht\", \"Oberschicht\"),\n      ordered = TRUE\n    ),\n    \n    # Lebenszufriedenheit: negative Codes → NA\n    lebenszuf = ls01,\n    \n    # Sozioökonomischer Index des beruflichen Status (aus Einkommen, Bildung und Beruf)\n    sei = isei08\n  ) |&gt;\n  drop_na(distress, soz_u, geschlecht)",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#ziele-der-datenvisualisierung",
+    "href": "workshops/ws2/day1.html#ziele-der-datenvisualisierung",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "Ziele der Datenvisualisierung",
+    "text": "Ziele der Datenvisualisierung\nEine gute Visualisierung verfolgt klare Ziele:\nVerständliche Repräsentation von Daten\nKomplexe Zusammenhänge, Verteilungen oder Muster werden durch eine Grafik\nauf einen Blick erfassbar – ohne dass man Zahlen mühsam interpretieren muss.\nÜbersichtliche Repräsentation von Daten\nGroße Datenmengen lassen sich in einer einzigen Abbildung komprimieren und\nstrukturiert darstellen, anstatt in hunderten Zeilen einer Tabelle zu verschwinden.\nVisualisierung als Teil der Analyse und Kommunikation\nGrafiken sind kein Anhang zur Analyse – sie sind ein zentraler Bestandteil davon.\nSie helfen sowohl beim Verstehen der eigenen Daten als auch beim Vermitteln\nvon Ergebnissen an andere.\n\n\n\n\n\n\nNoteMerksatz\n\n\n\n\n„The simple graph has brought more information to the data analyst’s mind\nthan any other device.” — John Tukey\n\nGrafiken sind Denkwerkzeuge – nicht nur Präsentationsmittel.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#verständnis-der-daten",
+    "href": "workshops/ws2/day1.html#verständnis-der-daten",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "1. Verständnis der Daten",
+    "text": "1. Verständnis der Daten\nBevor wir Hypothesen testen oder Modelle rechnen, müssen wir unsere Daten kennen und verstehen.\nWie sind Variablen verteilt? Gibt es ungewöhnliche Muster? Sind die Daten überhaupt so, wie wir sie erwartet haben?\nEine Grafik beantwortet diese Fragen in Sekunden – eine Tabelle mit Kennwerten oft nicht.\n\n\n\n\n\nHistogramm und Boxplot des Distress-Scores. Beide Grafiken zeigen auf einen Blick: Die Verteilung ist leicht rechtsschief, es gibt vereinzelte hohe Ausreißer.\n\n\n\n\n\n\n\n\n\n\nNoteWas sehen wir hier?\n\n\n\nMit einem Histogramm und einem Boxplot erkennen wir sofort:\n\nDie meisten Personen haben eher niedrige Distress-Werte\nEs gibt Ausreißer mit sehr hohen Werten\nDie Verteilung ist rechtsschief – das wäre aus einem Mittelwert allein nicht erkennbar\n\nDieses Wissen ist wichtig, bevor wir statistische Tests rechnen.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#kommunikation",
+    "href": "workshops/ws2/day1.html#kommunikation",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "2. Kommunikation",
+    "text": "2. Kommunikation\nForschungsergebnisse müssen anderen vermittelt werden – Kommiliton:innen, Gutachter:innen,\nder Öffentlichkeit oder Entscheidungsträger:innen.\nEine gut gestaltete Grafik transportiert Befunde oft klarer und schneller als eine Tabelle.\n\n\n\n\n\nVergleich des mittleren Distress-Scores nach Bildungsniveau. Die Grafik zeigt auf einen Blick, dass Personen mit niedrigerem Bildungsniveau tendenziell höhere Distress-Werte berichten.\n\n\n\n\n\n\n\n\n\n\nNoteWas sehen wir hier?\n\n\n\nDieser Befund könnte auch als Tabelle mit Mittelwerten und Standardfehlern präsentiert werden –\naber die Grafik macht das Muster sofort sichtbar: Bildung und Distress hängen zusammen.\nLeser:innen erfassen das ohne jede statistische Vorkenntnisse.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#entscheidungsfindung",
+    "href": "workshops/ws2/day1.html#entscheidungsfindung",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "3. Entscheidungsfindung",
+    "text": "3. Entscheidungsfindung\nVisualisierungen helfen nicht nur beim Verstehen von Daten – sie unterstützen auch\nkonkrete Entscheidungen: Welche Gruppe braucht besondere Aufmerksamkeit?\nWo liegen Unterschiede? Welche Zusammenhänge sind relevant?\n\n\n\n\n\nZusammenhang zwischen Alter und Distress, getrennt nach Geschlecht. Für jede Gruppe ist ein eigener linearer Trend eingezeichnet.\n\n\n\n\n\n\n\n\n\n\nNoteWas sehen wir hier?\n\n\n\nDie Grafik zeigt auf einen Blick:\n\nBei welcher Gruppe steigt Distress mit dem Alter stärker an?\nWo unterscheiden sich die Gruppen besonders deutlich?\nLohnt es sich, diese Gruppen getrennt zu analysieren?\n\nSolche Entscheidungen lassen sich auf Basis einer Grafik viel schneller und sicherer treffen\nals auf Basis von Tabellen mit Mittelwerten.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#fehlererkennung",
+    "href": "workshops/ws2/day1.html#fehlererkennung",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "4. Fehlererkennung",
+    "text": "4. Fehlererkennung\nDaten aus Fragebögen, Messungen oder Datenbanken enthalten fast immer Fehler:\nfalsch kodierte Werte, vergessene Umkodierungen, unplausible Ausreißer oder\nfehlerhafte Dateneingaben. Visualisierungen machen solche Probleme sofort sichtbar.\n\n\n\n\n\nStreudiagramm zweier Skalenvariablen. Ungewöhnliche Cluster oder Ausreißer – z. B. Werte weit außerhalb des gültigen Bereichs – fallen in einer Grafik sofort auf.\n\n\n\n\n\n\n\n\n\n\nNoteWas sehen wir hier?\n\n\n\nBevor wir mit einer Analyse loslegen, schauen wir uns die Rohdaten an:\n\nGibt es Punkte weit außerhalb des erwarteten Bereichs? → mögliche Eingabefehler\nGibt es seltsame Cluster? → mögliche Kodierungsfehler\nSieht die Verteilung plausibel aus? → Plausibilitätsprüfung\n\nEin kurzer Blick auf ein Streudiagramm kann Stunden der Fehlersuche ersparen.\n\n\n\n\n\n\n\n\nWarningWas macht eine gute Visualisierung aus?\n\n\n\nEine gute Grafik ist:\n\nkorrekt → sie stellt die Daten wahrheitsgemäß dar (keine abgeschnittenen Achsen, keine 3D-Effekte)\nklar → sie ist auf den ersten Blick verständlich\nvollständig → sie enthält alle notwendigen Informationen: Titel, Achsenbeschriftungen, Quelle\nsparsam → sie zeigt nur, was für die Aussage nötig ist – kein „chart junk”\n\n\n\n\n\n\n\n\n\nNote📎 Exkurs: Das Anscombe-Quartett\n\n\n\n\n\nEin klassisches Beispiel aus der Statistik zeigt eindrucksvoll, warum Visualisierung unverzichtbar ist.\nFrancis Anscombe konstruierte 1973 vier Datensätze, die nahezu identische statistische Kennwerte haben:\n\n\n\nKennwert\nWert\n\n\n\n\nMittelwert von x\n9.0\n\n\nMittelwert von y\n7.5\n\n\nVarianz von x\n11.0\n\n\nVarianz von y\n4.12\n\n\nKorrelation (x, y)\n0.816\n\n\nRegressionsgerade\ny = 3 + 0.5x\n\n\n\nWürde man nur diese Tabelle sehen, würde man denken: „Die vier Datensätze sind gleich.”\nDoch ein Blick auf die Grafiken zeigt etwas völlig anderes:\n\n\n\n\n\n\n\n\n\nWas zeigen uns die vier Datensätze?\n\nDatensatz 1 → klassischer linearer Zusammenhang, gut geeignet für eine Regression\nDatensatz 2 → deutlich nichtlinearer Zusammenhang – eine Regressionslinie ist hier irreführend\nDatensatz 3 → ein einzelner Ausreißer verzerrt die gesamte Regressionslinie\nDatensatz 4 → alle Punkte liegen auf einer Geraden, außer einem einzigen Hebelwert – die Korrelation entsteht durch genau diesen einen Punkt\n\nHätten wir nur die Kennwerte betrachtet, hätten wir bei allen vier Datensätzen dieselbe Schlussfolgerung gezogen. Die Visualisierung zeigt: Das wäre in drei von vier Fällen falsch gewesen.\n👉 Schau dir deine Daten immer zuerst grafisch an – bevor du Kennwerte berechnest oder Modelle formulierst.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#wie-sieht-das-im-code-aus",
+    "href": "workshops/ws2/day1.html#wie-sieht-das-im-code-aus",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "Wie sieht das im Code aus?",
+    "text": "Wie sieht das im Code aus?\nDie Grundstruktur eines ggplot2-Befehls folgt immer demselben Muster:\n\nggplot(data = DATENSATZ, aes(x = VARIABLE_X, y = VARIABLE_Y)) +  # Data + Aesthetics\n  geom_DIAGRAMMTYP() +                                            # Geometries\n  facet_wrap(~ GRUPPENVARIABLE) +                                 # Facets\n  stat_TRANSFORMATION() +                                         # Statistics\n  coord_SYSTEM() +                                                # Coordinates\n  theme_DESIGN()                                                  # Theme\n\n\n\n\n\n\n\nNoteDer +-Operator\n\n\n\nIn ggplot2 werden Schichten mit + verbunden – nicht mit der Pipe |&gt;.\nDas + muss immer am Ende der Zeile stehen, nie am Anfang.\n\n# ✅ richtig\nggplot(data = df, aes(x = age)) +\n  geom_histogram()\n\n# ❌ falsch – + am Anfang der Zeile\nggplot(data = df, aes(x = age))\n  + geom_histogram()\n\n\n\nIn der Praxis braucht man nicht immer alle Schichten. Pflicht sind nur die ersten drei: Data, Aesthetics, Geometries. Alle anderen sind optional und werden je nach Bedarf ergänzt.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#daten-vorbereiten-vor-dem-plotten",
+    "href": "workshops/ws2/day1.html#daten-vorbereiten-vor-dem-plotten",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "Daten vorbereiten vor dem Plotten",
+    "text": "Daten vorbereiten vor dem Plotten\nHäufig bereiten wir Daten direkt vor dem Plot mit einer Pipe auf – z. B. um fehlende Werte zu entfernen oder Gruppen zu filtern:\n\ndf |&gt;\n  ggplot(aes(x = distress))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipPipe in ggplot2\n\n\n\nMan kann die tidyverse-Pipe |&gt; nutzen, um Daten direkt in ggplot() zu leiten.\nDas ist besonders praktisch bei schnellen explorativen Grafiken.\nAber Achtung: Innerhalb der ggplot()-Funktion gilt wieder +, nicht |&gt;.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#die-wichtigsten-aesthetics",
+    "href": "workshops/ws2/day1.html#die-wichtigsten-aesthetics",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "Die wichtigsten Aesthetics",
+    "text": "Die wichtigsten Aesthetics\n\n\n\n\n\n\nNoteAesthetic-Überblick\n\n\n\n\n\n\n\n\n\n\n\nAesthetic\nBeschreibung\nBeispiel\n\n\n\n\nx\nPosition auf der x-Achse\naes(x = age)\n\n\ny\nPosition auf der y-Achse\naes(y = distress)\n\n\ncolor\nFarbe von Punkten, Linien, Rändern\naes(color = geschlecht)\n\n\nfill\nFüllfarbe von Flächen (Balken, Boxen)\naes(fill = bildung)\n\n\nsize\nGröße von Punkten\naes(size = age)\n\n\nshape\nForm von Punkten\naes(shape = geschlecht)\n\n\nalpha\nTransparenz\naes(alpha = distress)\n\n\nlinetype\nLinientyp (solid, dashed…)\naes(linetype = gruppe)",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#global-vs.-lokal",
+    "href": "workshops/ws2/day1.html#global-vs.-lokal",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "Global vs. lokal",
+    "text": "Global vs. lokal\nAesthetics können global (für alle Geome) oder lokal (nur für ein Geom) gesetzt werden:\n\n# Global: color gilt für geom_point() UND geom_smooth()\ndf |&gt;\nggplot(\n  aes(x = age, y = distress, color = geschlecht)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE)\n\n# Lokal: color gilt nur für geom_point()\n\ndf |&gt;\nggplot(\n  aes(x = age, y = distress)) +\n  geom_point(aes(color = geschlecht)) +\n  geom_smooth(method = \"lm\", se = FALSE)\n\n\n\n\n\n\n\nWarningInnerhalb vs. außerhalb von aes() – der häufigste Fehler\n\n\n\n\nInnerhalb aes() → Wert hängt von einer Variable ab → Legende wird erzeugt\nAußerhalb aes() → Wert ist fix für alle Beobachtungen → keine Legende\n\n\n# ✅ Farbe nach Variable (Legende erscheint)\nggplot(df, aes(x = age, y = distress, color = geschlecht)) +\n  geom_point()\n\n# ✅ Feste Farbe für alle Punkte (keine Legende)\nggplot(df, aes(x = age, y = distress)) +\n  geom_point(color = \"steelblue\")\n\n# ❌ Häufiger Fehler: feste Farbe innerhalb aes()\nggplot(df, aes(x = age, y = distress, color = \"steelblue\")) +\n  geom_point()",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#übung",
+    "href": "workshops/ws2/day1.html#übung",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "Übung",
+    "text": "Übung\n\nErstelle einen leeren ggplot()-Canvas mit df\nFüge aes(x = age, y = distress) hinzu\nFüge aes(x = geschlecht, y = distress) hinzu – was verändert sich?\nBeobachte: Ohne Geom sieht man noch keine Punkte – aber die Achsen und Legende erscheinen bereits.\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\n# Schritt 1: leere Leinwand\nggplot(data = df)\n\n\n\n\n\n\n\n# Schritt 2: Achsen definieren\nggplot(data = df, aes(x = age, y = distress))\n\n\n\n\n\n\n\n# Schritt 3: Faktoren auf Achsen\nggplot(data = df, aes(x = geschlecht, y = distress))",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#color-fill",
+    "href": "workshops/ws2/day1.html#color-fill",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "color & fill",
+    "text": "color & fill\ncolor färbt Punkte, Linien und Ränder.\nfill füllt Flächen (Balken, Boxen, Histogramme).\n\nFeste Farbe – außerhalb von aes()\nWenn eine Farbe für alle Elemente gleich sein soll, kommt sie außerhalb von aes():\n\nggplot(data = df, aes(x = age)) +\n  geom_histogram(binwidth = 5, fill = \"steelblue\", color = \"white\")\n\n\n\n\n\n\n\n\n\n\nFarbe nach Variable – innerhalb von aes()\nWenn die Farbe von einer Variable abhängen soll, kommt sie innerhalb von aes():\n\ndf |&gt;\nggplot(\n  aes(x = age, y = distress, color = geschlecht)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarningcolor vs. fill – der häufigste Verwechsler\n\n\n\n\ngeom_point() / geom_line() → color für die Farbe\ngeom_bar() / geom_histogram() / geom_boxplot() → fill für die Fläche, color für den Rand\n\n\n# fill färbt die Box, color den Rand\n\ndf |&gt;\nggplot(\n  aes(x = geschlecht, y = distress, fill = geschlecht)) +\n  geom_boxplot(color = \"gray30\")",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#alpha-transparenz",
+    "href": "workshops/ws2/day1.html#alpha-transparenz",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "alpha – Transparenz",
+    "text": "alpha – Transparenz\nBei vielen Beobachtungen überlappen sich Datenpunkte schnell.\nMit alpha steuert man die Transparenz – Überlappungen werden dadurch sichtbar:\n\nggplot(data = df, aes(x = age, y = distress)) +\n  geom_point(alpha = 0.3)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipWie viel Transparenz?\n\n\n\nEin alpha zwischen 0.2 und 0.5 ist ein guter Ausgangspunkt bei größeren Datensätzen.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#size-shape",
+    "href": "workshops/ws2/day1.html#size-shape",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "size & shape",
+    "text": "size & shape\nsize steuert die Größe von Punkten (Standardwert: 1.5).\nshape steuert die Form der Punkte.\n\ndf |&gt;\nggplot(\n  aes(x = age, y = distress, color = geschlecht, shape = geschlecht)) +\n  geom_point(size = 2, alpha = 0.5)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotePunktformen in R\n\n\n\nR bietet 25 verschiedene Punktformen (0–25).\nDie gebräuchlichsten: 16 = Kreis (Standard), 17 = Dreieck, 15 = Quadrat, 18 = Raute.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#geom_point-streudiagramm",
+    "href": "workshops/ws2/day1.html#geom_point-streudiagramm",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "geom_point() – Streudiagramm",
+    "text": "geom_point() – Streudiagramm\nEin Streudiagramm zeigt den Zusammenhang zwischen zwei numerischen Variablen.\nJeder Punkt steht für eine Beobachtung.\n\nggplot(data = df, aes(x = age, y = distress)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipWarum Streudiagramme?\n\n\n\nStreudiagramme sind ideal, um Muster, Cluster oder Ausreißer zu erkennen – und um zu prüfen, ob ein Zusammenhang überhaupt linear ist.\n\n\n\nPunkte + Trendlinie\nGeome lassen sich stapeln – mehrere Geome auf einmal:\n\nggplot(data = df, aes(x = age, y = distress)) +\n  geom_point(alpha = 0.3) +\n  geom_smooth(method = \"lm\", se = TRUE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotegeom_smooth()\n\n\n\n\nmethod = \"lm\" → lineare Regressionslinie\nmethod = \"loess\" → geglättete Kurve (gut für nichtlineare Zusammenhänge)\nse = TRUE → zeigt das Konfidenzintervall als Band\nse = FALSE → nur die Linie, ohne Band",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#geom_histogram-histogramm",
+    "href": "workshops/ws2/day1.html#geom_histogram-histogramm",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "geom_histogram() – Histogramm",
+    "text": "geom_histogram() – Histogramm\nEin Histogramm zeigt die Verteilung einer numerischen Variable.\nEs teilt die Werte in Klassen (Bins) ein und zählt, wie viele Beobachtungen in jede Klasse fallen.\n\nggplot(data = df, aes(x = age)) +\n  geom_histogram(binwidth = 5, fill = \"steelblue\", color = \"white\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebinwidth vs. bins\n\n\n\n\nbinwidth → legt die Breite jeder Klasse fest (z. B. 5 Jahre)\nbins → legt die Anzahl der Klassen fest (Standard: 30)\n\nFür inhaltlich sinnvolle Histogramme ist binwidth meist besser geeignet.\n\n\n\nHistogramm + Dichtekurve\n\nggplot(data = df , aes(x = distress)) +\n  geom_histogram(aes(y = after_stat(density)),\n                 binwidth = 2, fill = \"steelblue\", color = \"white\") +\n  geom_density(color = \"darkred\", linewidth = 1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteafter_stat(density)\n\n\n\nDamit Histogramm und Dichtekurve auf derselben Skala dargestellt werden können,\nmuss die y-Achse des Histogramms von Häufigkeit auf Dichte umgestellt werden.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#geom_bar-balkendiagramm",
+    "href": "workshops/ws2/day1.html#geom_bar-balkendiagramm",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "geom_bar() – Balkendiagramm",
+    "text": "geom_bar() – Balkendiagramm\ngeom_bar() zählt automatisch, wie oft jede Kategorie vorkommt.\nEs braucht nur eine Variable (auf der x-Achse).\n\ndf |&gt;\nggplot(\n  aes(x = geschlecht)) +\n  geom_bar(fill = \"steelblue\")\n\n\n\n\n\n\n\n\n\nGestapeltes / nebeneinander stehendes Balkendiagramm\nMit fill innerhalb von aes() lassen sich Balken nach einer zweiten Variable aufteilen:\n\ndf |&gt; filter(!is.na(bildung)) |&gt;\nggplot(\n  aes(x = bildung, fill = geschlecht)) +\n  geom_bar(position = \"dodge\") +\n  theme(axis.text.x = element_text(angle = 30, hjust = 1))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteposition in geom_bar()\n\n\n\n\nposition = \"stack\" → gestapelt (Standard)\nposition = \"dodge\" → nebeneinander\nposition = \"fill\" → gestapelt auf 100 % (Anteile vergleichen)",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#geom_boxplot-boxplot",
+    "href": "workshops/ws2/day1.html#geom_boxplot-boxplot",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "geom_boxplot() – Boxplot",
+    "text": "geom_boxplot() – Boxplot\nBoxplots zeigen die Verteilung einer Variable kompakt und eignen sich besonders gut für Gruppenvergleiche.\n\ndf |&gt;\nggplot(\n  aes(x = geschlecht, y = distress)) +\n  geom_boxplot(fill = \"steelblue\", alpha = 0.7)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteWas zeigt ein Boxplot?\n\n\n\n\nLinie in der Box → Median\nUntere/obere Kante → 1. und 3. Quartil (IQR)\nWhisker → 1,5 × IQR nach oben/unten\nPunkte außerhalb → Ausreißer\n\n\n\n\nBoxplot + Rohdaten\nBoxplots können mit den echten Datenpunkten kombiniert werden,\num zu zeigen, wie viele Beobachtungen hinter jeder Box stecken:\n\ndf |&gt;\nggplot(\n  aes(x = geschlecht, y = distress)) +\n  geom_boxplot(fill = \"steelblue\", alpha = 0.5, outlier.shape = NA) +\n  geom_jitter(width = 0.2, alpha = 0.2, color = \"steelblue\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTipps\n\n\n\ngeom_jitter() ist wie geom_point(), aber die Punkte werden leicht horizontal versetzt dargestellt, damit sie sich nicht überlagern.\noutlier.shape = NA im Boxplot verhindert, dass Ausreißer doppelt gezeigt werden.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#übung-1-schichten-aufbauen",
+    "href": "workshops/ws2/day1.html#übung-1-schichten-aufbauen",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "Übung 1: Schichten aufbauen",
+    "text": "Übung 1: Schichten aufbauen\nBaue einen Plot Schritt für Schritt auf und beobachte, was jede Schicht bewirkt:\n\nStarte mit ggplot(data = df) → leere Leinwand\nFüge aes(x = age, y = distress) hinzu → Achsen erscheinen\nFüge color = geschlecht in aes() hinzu → Legende erscheint\nFüge + geom_point(alpha = 0.4) hinzu → Punkte erscheinen\nFüge + labs(title = \"...\", x = \"...\", y = \"...\") hinzu → Beschriftungen\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf |&gt;\nggplot(\n  aes(x = age, y = distress, color = geschlecht)) +\n  geom_point(alpha = 0.4) +\n  labs(\n    title   = \"Alter und Distress nach Geschlecht\",\n    x       = \"Alter (in Jahren)\",\n    y       = \"Distress-Score\",\n    color   = \"Geschlecht\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\"\n  )",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#übung-2-geome-kennenlernen",
+    "href": "workshops/ws2/day1.html#übung-2-geome-kennenlernen",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "Übung 2: Geome kennenlernen",
+    "text": "Übung 2: Geome kennenlernen\nErstelle für jedes der vier Geome eine eigene Grafik mit anderen Variablen als in den Beispielen:\n\ngeom_point(): age (x) vs. soz_u (y) – mit Trendlinie\ngeom_histogram(): Verteilung von lebenszuf mit sinnvollem binwidth\ngeom_bar(): Häufigkeit der Variable wohnort\ngeom_boxplot(): soz_u nach erwerbsstatus – mit Rohdaten (geom_jitter)\n\nFüge bei jeder Grafik passende labs() hinzu.\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\n1. Streudiagramm2. Histogramm3. Balkendiagramm4. Boxplot + Rohdaten\n\n\n\nggplot(data = df, aes(x = age, y = soz_u)) +\n  geom_point(alpha = 0.3, color = \"steelblue\") +\n  geom_smooth(method = \"lm\", se = TRUE, color = \"darkred\") +\n  labs(\n    title   = \"Alter und Einstellung zu sozialer Ungleichheit\",\n    x       = \"Alter (in Jahren)\",\n    y       = \"Soziale Ungleichheit (Summenwert)\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\"\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = df, aes(x = lebenszuf)) +\n  geom_histogram(binwidth = 1, fill = \"steelblue\", color = \"white\") +\n  labs(\n    title   = \"Verteilung der Lebenszufriedenheit\",\n    x       = \"Lebenszufriedenheit (0 = unzufrieden, 10 = zufrieden)\",\n    y       = \"Häufigkeit\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\"\n  )\n\n\n\n\n\n\n\n\n\n\n\ndf |&gt; filter(!is.na(wohnort)) |&gt;\nggplot(\n  aes(x = wohnort)) +\n  geom_bar(fill = \"steelblue\") +\n  labs(\n    title   = \"Wohnort der Befragten (Selbstbeschreibung)\",\n    x       = \"Wohnorttyp\",\n    y       = \"Häufigkeit\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\"\n  ) +\n  theme(axis.text.x = element_text(angle = 20, hjust = 1))\n\n\n\n\n\n\n\n\n\n\n\ndf |&gt; filter(!is.na(erwerbsstatus)) |&gt;\nggplot(\n  aes(x = erwerbsstatus, y = soz_u)) +\n  geom_boxplot(fill = \"steelblue\", alpha = 0.5, outlier.shape = NA) +\n  geom_jitter(width = 0.2, alpha = 0.2, color = \"steelblue\") +\n  labs(\n    title   = \"Einstellung zu sozialer Ungleichheit nach Erwerbsstatus\",\n    x       = \"Erwerbsstatus\",\n    y       = \"Soz. Ungleichheit (Summenwert)\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\"\n  )",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day1.html#übung-3-aesthetics-gruppen",
+    "href": "workshops/ws2/day1.html#übung-3-aesthetics-gruppen",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 1",
+    "section": "Übung 3: Aesthetics & Gruppen",
+    "text": "Übung 3: Aesthetics & Gruppen\nErstelle einen Scatter-Plot von age (x) und lebenszuf (y):\n\nFärbe die Punkte nach gebiet ein (color = gebiet in aes())\nSetze alpha = 0.4 außerhalb von aes()\nFüge je eine Trendlinie pro Gruppe hinzu (geom_smooth)\nErgänze passende labs()\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\ndf |&gt; filter(!is.na(gebiet)) |&gt;\nggplot(\n  aes(x = age, y = lebenszuf, color = gebiet)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(\n    title   = \"Alter und Lebenszufriedenheit nach Erhebungsgebiet\",\n    x       = \"Alter (in Jahren)\",\n    y       = \"Lebenszufriedenheit (0–10)\",\n    color   = \"Erhebungsgebiet\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarningHäufige Fehler\n\n\n\n\n+ am Anfang einer Zeile statt am Ende der vorherigen → Fehlermeldung\nFeste Farbe innerhalb aes() → aes(color = \"steelblue\") erzeugt keine blauen Punkte\ncolor statt fill bei Boxplots/Histogrammen → nur der Rand wird eingefärbt, nicht die Fläche\nNAs vergessen → filter(!is.na(variable)) vor dem Plot nicht vergessen",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 1"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/index.html",
+    "href": "workshops/ws2/index.html",
+    "title": "Datenvisualisierung mit ggplot2",
+    "section": "",
+    "text": "Der zweitägige Workshop „Datenvisualisierung mit ggplot2” richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten professionell und reproduzierbar visualisieren möchten.\nDer Workshop setzt grundlegende Kenntnisse in R und dem tidyverse voraus (z. B. aus dem Workshop „Einführung in R & RStudio”), ist aber so aufgebaut, dass auch Einsteiger:innen in ggplot2 gut folgen können.\nIm Workshop lernen die Teilnehmenden Schritt für Schritt:\n\nwie ggplot2 aufgebaut ist und nach welcher Logik Grafiken entstehen,\nwie man die wichtigsten Diagrammtypen erstellt (Streudiagramm, Balkendiagramm, Histogramm, Boxplot),\nwie man Grafiken durch Aesthetics, Themes und Farbpaletten gestaltet,\nwie man mit Faceting mehrere Grafiken kombiniert,\nund wie man mit patchwork Plots zu einer zusammenhängenden Abbildung zusammenfügt.\n\nDer Schwerpunkt liegt auf praxisnaher Anwendung mit dem Workshop-Datensatz aus dem ersten Workshop – alle Schritte sind direkt übertragbar auf eigene Projekte.\nBenötigte Vorkenntnisse: Grundkenntnisse in R und tidyverse (z. B. select(), filter(), mutate(), Pipes)."
+  },
+  {
+    "objectID": "workshops/ws2/index.html#tag-1-grundlagen-der-grammar-of-graphics",
+    "href": "workshops/ws2/index.html#tag-1-grundlagen-der-grammar-of-graphics",
+    "title": "Datenvisualisierung mit ggplot2",
+    "section": "Tag 1 – Grundlagen der Grammar of Graphics",
+    "text": "Tag 1 – Grundlagen der Grammar of Graphics\n\nAnkommen & Überblick – Warum Datenvisualisierung?\nWas ist ggplot2? – Grammar of Graphics als roter Faden\n🗂️ Layer 1: Data – Datenbasis und Pipe in ggplot2\n🎨 Layer 2: Aesthetics – Variablen auf visuelle Eigenschaften mappen\n🎨 Aesthetics vertieft – color vs. fill, alpha, size, shape\n📐 Layer 3: Geometries – geom_point(), geom_histogram(), geom_bar(), geom_boxplot()\nBeschriftungen – labs() mit Titel, Achsen und Caption\nÜbungen"
+  },
+  {
+    "objectID": "workshops/ws2/index.html#tag-2-facets-statistics-coordinates-theme",
+    "href": "workshops/ws2/index.html#tag-2-facets-statistics-coordinates-theme",
+    "title": "Datenvisualisierung mit ggplot2",
+    "section": "Tag 2 – Facets, Statistics, Coordinates & Theme",
+    "text": "Tag 2 – Facets, Statistics, Coordinates & Theme\n\nRecap & offene Fragen\n🔲 Layer 4: Faceting – facet_wrap() und facet_grid()\n📊 Layer 5: Statistics – stat_summary() für Kennwerte in der Grafik\n📏 Layer 6: Coordinates – Achsen anpassen, coord_flip(), coord_polar()\n🖌️ Layer 7: Theme & Styling – Fertige Themes, eigenes Theme, Farbpaletten\npatchwork – Plots kombinieren\nExport – ggsave()\nMini-Projekt\n\n\n➡️ Weiter zu Tag 1 - ➡️ Weiter zu Tag 2"
+  },
+  {
+    "objectID": "test.html",
+    "href": "test.html",
+    "title": "Test – Sidebar Proof",
+    "section": "",
+    "text": "Das ist Abschnitt A."
+  },
+  {
+    "objectID": "test.html#a",
+    "href": "test.html#a",
+    "title": "Test – Sidebar Proof",
+    "section": "",
+    "text": "Das ist Abschnitt A."
+  },
+  {
+    "objectID": "test.html#b",
+    "href": "test.html#b",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt B",
+    "text": "Abschnitt B\nDas ist Abschnitt B."
+  },
+  {
+    "objectID": "test.html#c",
+    "href": "test.html#c",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt C",
+    "text": "Abschnitt C\nDas ist Abschnitt C."
+  },
+  {
+    "objectID": "test.html#D",
+    "href": "test.html#D",
+    "title": "Test – Sidebar Proof",
+    "section": "Abschnitt D",
+    "text": "Abschnitt D\nDas ist Abschnitt D."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Willkommen",
+    "section": "",
+    "text": "Willkommen auf meiner Workshop-Seite!\nHier findest du Infos zu meinen Methoden-Workshops.\n\n🔍 Aktuelle Workshops\n\n\nEinführung in R & RStudio\n\n\n\n📬 Kontakt\n\nBei Fragen, Wünschen und Anregungen erreichst du mich jederzeit unter: farugie[at]psych.uni-frankfurt.de"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Über mich",
+    "section": "",
+    "text": "Hallo! Ich bin Arieja Farugie, diese Seite befindet sich im Aufbau."
+  },
+  {
+    "objectID": "workshops/ws2/day2.html",
+    "href": "workshops/ws2/day2.html",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "",
+    "text": "Willkommen zurück 👋\nWir starten mit einem kurzen Recap von Tag 1 und klären offene Fragen.\nGestern haben wir die ersten drei Layer der Grammar of Graphics kennengelernt.\nHeute arbeiten wir uns die restlichen vier Layer hoch:\nBevor wir starten, laden wir wieder alle Pakete und den Datensatz, falls nicht schon geschehen oder machen einfach da weiter, wo wir gestern aufgehört haben:\nlibrary(tidyverse)  # enthält ggplot2\nlibrary(haven)\nlibrary(sjmisc)\nlibrary(naniar)\n\ndf &lt;- read_csv(\"assets/data/datensatz_workshop.csv\")\n\ndf &lt;- df |&gt;\n  mutate(\n    # ── Skalenwerte (Distress & Soziale Ungleichheit) ──────────────────\n    # Invertierte Items umkodieren (1=Immer → 5=Nie, hohe Werte = mehr Distress)\n    hs04_r   = rec(hs04, rec = \"rev\"),   # Hetze/Zeitdruck\n    hs05_r   = rec(hs05, rec = \"rev\"),   # Niedergeschlagen\n    hs09_r   = rec(hs09, rec = \"rev\"),   # Einsam\n    # Distress-Summenwert: 5 (kein Distress) bis 25 (hoher Distress)\n    distress = hs04_r + hs05_r + hs06 + hs07 + hs09_r,\n    \n    # Soziale Ungleichheit: alle Items invertieren (hohe Werte = Akzeptanz)\n    im17_r   = 5 - im17,\n    im18_r   = 5 - im18,\n    im19_r   = 5 - im19,\n    im20_r   = 5 - im20,\n    im21_r   = 5 - im21,\n    soz_u    = im17_r + im18_r + im19_r + im20_r + im21_r,\n    \n    # ── Faktoren ──────────────────────────────────────────────────────\n    geschlecht = factor(sex,\n      levels = c(1, 2),\n      labels = c(\"Männlich\", \"Weiblich\")\n    ),\n    \n    # Altersgruppen\n    altersgruppe = factor(agec,\n      levels = 1:6,\n      labels = c(\"18–29\", \"30–44\", \"45–59\", \"60–74\", \"75–89\", \"90+\")\n    ),\n    \n    # Bildungsniveau (ISCED 1997)\n    bildung = factor(isced97,\n      levels = 1:6,\n      labels = c(\"Primär\", \"Niedrig\", \"Mittel\", \"Post-Sek.\", \"Tertiär I\", \"Tertiär II\")\n    ),\n    \n    # Erwerbsstatus\n    erwerbsstatus = factor(work,\n      levels = 1:4,\n      labels = c(\"Vollzeit\", \"Teilzeit\", \"Nebenher\", \"Nicht erwerb.\")\n    ),\n    \n    # Wohnort (Selbstbeschreibung)\n    wohnort = factor(gs01,\n      levels = 1:5,\n      labels = c(\"Großstadt\", \"Vorort\", \"Mittel-/Kleinstadt\", \"Dorf\", \"Einzelhaus\")\n    ),\n    \n    # Erhebungsgebiet Ost/West\n    gebiet = factor(\n      eastwest,\n      levels = 1:2,\n      labels = c(\"West\", \"Ost\")\n    ),\n    \n    # Subjektiver allgemeiner Gesundheitszustand\n    gesundheit = factor(hs01,\n      levels = 1:5,\n      labels = c(\"Sehr gut\", \"Gut\", \"Zufriedenstellend\", \"Weniger gut\", \"Schlecht\"),\n      ordered = TRUE\n    ),\n    \n    # Subjektive Schichteinstufung\n    schicht = factor(id02,\n      levels = 1:5,\n      labels = c(\"Unterschicht\", \"Arbeiterschicht\", \"Mittelschicht\",\n                 \"Ob. Mittelschicht\", \"Oberschicht\"),\n      ordered = TRUE\n    ),\n    \n    # Lebenszufriedenheit: negative Codes → NA\n    lebenszuf = ls01,\n    \n    # Sozioökonomischer Index des beruflichen Status (aus Einkommen, Bildung und Beruf)\n    sei = isei08\n  ) |&gt;\n  drop_na(distress, soz_u, geschlecht)",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#facet_wrap",
+    "href": "workshops/ws2/day2.html#facet_wrap",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "facet_wrap()",
+    "text": "facet_wrap()\n\nggplot(data = df |&gt; filter(!is.na(geschlecht) & !is.na(distress)),\n       aes(x = distress)) +\n  geom_histogram(binwidth = 2, fill = \"steelblue\", color = \"white\") +\n  facet_wrap(~ geschlecht) +\n  labs(\n    title = \"Verteilung von Distress nach Geschlecht\",\n    x     = \"Distress-Score\",\n    y     = \"Häufigkeit\"\n  ) \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteNützliche Argumente für facet_wrap()\n\n\n\n\nncol = 2 → Anzahl der Spalten festlegen\nscales = \"free_x\" / \"free_y\" / \"free\" → Achsen pro Panel frei skalieren\nlabeller = label_both → zeigt auch den Variablennamen im Panel-Titel",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#facet_grid",
+    "href": "workshops/ws2/day2.html#facet_grid",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "facet_grid()",
+    "text": "facet_grid()\nfacet_grid() erstellt ein zweidimensionales Raster – eine Variable für Zeilen, eine für Spalten.\n\ndf |&gt; filter(!is.na(altersgruppe)) |&gt;\nggplot(aes(x = distress)) +\n  geom_histogram(binwidth = 2, fill = \"steelblue\", color = \"white\") +\n  facet_grid(altersgruppe ~ geschlecht) +\n  labs(\n    title = \"Distress nach Altersgruppe und Geschlecht\",\n    x     = \"Distress-Score\",\n    y     = \"Häufigkeit\"\n  )",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#übung",
+    "href": "workshops/ws2/day2.html#übung",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Übung",
+    "text": "Übung\nErstelle ein facettiertes Streudiagramm:\n\nNutze age auf der x-Achse und soz_u auf der y-Achse\nFacettiere nach bildung mit facet_wrap()\nFüge eine Regressionslinie hinzu (geom_smooth(method = \"lm\", se = FALSE))\nFüge die passenden labs() hinzu (Titel, Achsenbeschriftungen, Caption)\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\nggplot(data = df |&gt; filter(!is.na(bildung) & !is.na(soz_u)),\n       aes(x = age, y = soz_u)) +\n  geom_point(alpha = 0.3, color = \"steelblue\") +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"darkred\") +\n  facet_wrap(~ bildung, ncol = 3) +\n  labs(\n    title   = \"Soziale Ungleichheit und Alter nach Bildungsniveau\",\n    x       = \"Alter (in Jahren)\",\n    y       = \"Einstellung zu sozialer Ungleichheit\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\"\n  )",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#stat_summary-kennwerte-direkt-in-der-grafik",
+    "href": "workshops/ws2/day2.html#stat_summary-kennwerte-direkt-in-der-grafik",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "stat_summary() – Kennwerte direkt in der Grafik",
+    "text": "stat_summary() – Kennwerte direkt in der Grafik\nMit stat_summary() können wir statistische Kennwerte direkt in eine Grafik einzeichnen –\nz. B. Mittelwerte, Konfidenzintervalle oder Standardfehler.\n\nggplot(data = df, aes(x = geschlecht, y = distress)) +\n  stat_summary(fun = mean, geom = \"point\", size = 4, color = \"darkred\") +\n  stat_summary(fun.data = mean_se, geom = \"errorbar\", width = 0.2, color = \"darkred\") +\n  labs(\n    title   = \"Mittlerer Distress nach Geschlecht (mit Standardfehler)\",\n    x       = \"Geschlecht\",\n    y       = \"Distress-Score (Mittelwert ± SE)\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotestat_summary() – Wichtige Argumente\n\n\n\n\n\n\n\n\n\n\nArgument\nFunktion\n\n\n\n\nfun\nFunktion für den Punktschätzer (z. B. mean, median)\n\n\nfun.data\nFunktion für Punkt + Intervall (z. B. mean_se, mean_cl_boot)\n\n\ngeom\nWie wird der Kennwert dargestellt? (\"point\", \"errorbar\", \"bar\", \"line\")\n\n\n\n\n\n\nBoxplot + Mittelwert kombiniert\n\n\nggplot(data = df, aes(x = geschlecht, y = distress, fill = geschlecht)) +\n  geom_boxplot(alpha = 0.5, outlier.shape = NA) +\n  stat_summary(fun = mean, geom = \"point\",\n               shape = 23, size = 3, fill = \"white\", color = \"black\") +\n  scale_fill_brewer(palette = \"Set2\") +\n  labs(\n    title    = \"Distress nach Geschlecht\",\n    subtitle = \"Box = Median/IQR, Raute = Mittelwert\",\n    x = \"Geschlecht\", y = \"Distress-Score\", fill = \"Geschlecht\"\n  )",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#übung-1",
+    "href": "workshops/ws2/day2.html#übung-1",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Übung",
+    "text": "Übung\nErstelle einen Plot mit stat_summary():\n\nNutze geschlecht auf der x-Achse und soz_u auf der y-Achse\nZeige den Mittelwert als Punkt (fun = mean, geom = \"point\")\nFüge Fehlerbalken (Standardfehler) hinzu (fun.data = mean_se, geom = \"errorbar\")\nFüge die passenden labs() hinzu (Titel, Achsenbeschriftungen, Caption)\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\nggplot(data = df, aes(x = geschlecht, y = soz_u, color = geschlecht)) +\n  stat_summary(fun = mean, geom = \"point\", size = 4) +\n  stat_summary(fun.data = mean_se, geom = \"errorbar\", width = 0.25) +\n  scale_color_brewer(palette = \"Set2\") +\n  labs(\n    title    = \"Einstellung zu sozialer Ungleichheit nach Geschlecht\",\n    subtitle = \"Mittelwert ± Standardfehler\",\n    x        = \"Geschlecht\",\n    y        = \"Soziale Ungleichheit (Summenwert)\",\n    color    = \"Geschlecht\",\n    caption  = \"Eigene Darstellung | Workshop-Datensatz\"\n  )",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#achsenlimits-setzen-coord_cartesian",
+    "href": "workshops/ws2/day2.html#achsenlimits-setzen-coord_cartesian",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Achsenlimits setzen – coord_cartesian()",
+    "text": "Achsenlimits setzen – coord_cartesian()\n\nggplot(data = df, aes(x = distress)) +\n  geom_histogram(binwidth = 2, fill = \"steelblue\", color = \"white\") +\n  coord_cartesian(xlim = c(5, 25)) +\n  labs(title = \"Distress-Score (nur Bereich 5–25)\", x = \"Distress\", y = \"Häufigkeit\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarningcoord_cartesian() vs. xlim() / ylim()\n\n\n\n\ncoord_cartesian(xlim = ...) → zoomt in den Bereich, alle Daten bleiben erhalten\nxlim() / scale_x_continuous(limits = ...) → entfernt Datenpunkte außerhalb des Bereichs\n\n👉 Für Boxplots und geom_smooth() immer coord_cartesian() bevorzugen,\ndamit die statistischen Berechnungen auf allen Daten basieren.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#achsen-umdrehen-coord_flip",
+    "href": "workshops/ws2/day2.html#achsen-umdrehen-coord_flip",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Achsen umdrehen – coord_flip()",
+    "text": "Achsen umdrehen – coord_flip()\n\nggplot(data = df, aes(x = bildung)) +\n  geom_bar(fill = \"steelblue\") +\n  coord_flip() +\n  labs(title = \"Bildungsniveau der Befragten\", x = NULL, y = \"Häufigkeit\") \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\ncoord_flip() ist besonders praktisch bei Balkendiagrammen mit langen Kategorienamen – die Beschriftungen auf der y-Achse sind horizontal und damit leichter lesbar.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#achsentransformation-scale_x_log10",
+    "href": "workshops/ws2/day2.html#achsentransformation-scale_x_log10",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Achsentransformation – scale_x_log10()",
+    "text": "Achsentransformation – scale_x_log10()\nMit scale_x_log10() oder scale_y_log10() können Achsen logarithmisch skaliert werden – sinnvoll bei stark rechtsschiefen Verteilungen:\n\nggplot(data = df, aes(x = distress)) +\n  geom_histogram(binwidth = 0.1, fill = \"steelblue\", color = \"white\") +\n  scale_x_log10() +\n  labs(\n    title   = \"Distress-Score (log-skaliert)\",\n    x       = \"Distress (log10)\",\n    y       = \"Häufigkeit\",\n    caption = \"Hinweis: log10-Transformation der x-Achse\"\n  )",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#tortendiagramm-coord_polar",
+    "href": "workshops/ws2/day2.html#tortendiagramm-coord_polar",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Tortendiagramm – coord_polar()",
+    "text": "Tortendiagramm – coord_polar()\nTortendiagramme sind in der wissenschaftlichen Praxis wenig empfohlen – sie machen Proportionen schwerer vergleichbar als Balkendiagramme. Trotzdem kommen sie in Berichten und Präsentationen vor.\nIn ggplot2 entsteht ein Tortendiagramm aus einem geom_bar() mit einem Trick: coord_polar(theta = \"y\") „wickelt” einen gestapelten Balken zu einem Kreis.\n\ndf |&gt;\n  count(geschlecht) |&gt;\n  mutate(anteil = n / sum(n),\n         label  = paste0(geschlecht, \"\\n\", scales::percent(anteil, accuracy = 1))) |&gt;\n  ggplot(aes(x = \"\", y = anteil, fill = geschlecht)) +\n  geom_col(color = \"white\", linewidth = 0.5) +\n  coord_polar(theta = \"y\") +\n  geom_text(aes(label = label),\n            position = position_stack(vjust = 0.5),\n            size = 3.5, color = \"white\", fontface = \"bold\") +\n  scale_fill_brewer(palette = \"Set2\") +\n  labs(\n    title   = \"Geschlechterverteilung der Befragten\",\n    fill    = \"Geschlecht\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\"\n  ) +\n  theme_void() +\n  theme(\n    plot.title      = element_text(size = 13, face = \"bold\", hjust = 0.5),\n    legend.position = \"bottom\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarningWann lieber kein Tortendiagramm?\n\n\n\n\nbei mehr als 4–5 Kategorien → Segmente werden zu schmal\nwenn genaue Werte verglichen werden sollen → Balkendiagramm ist besser\nbei ähnlich großen Anteilen → kaum unterscheidbar\n\n👉 Als Faustregel: Wenn du ein Tortendiagramm machen möchtest, überleg zuerst, ob ein geom_bar(position = \"fill\") nicht klarer wäre.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#fertige-themes",
+    "href": "workshops/ws2/day2.html#fertige-themes",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Fertige Themes",
+    "text": "Fertige Themes\n\np &lt;- ggplot(data = df, aes(x = geschlecht, y = distress, fill = geschlecht)) +\n  geom_boxplot() +\n  labs(title = \"Distress nach Geschlecht\", x = \"Geschlecht\", y = \"Distress-Score\")\n\n\ntheme_gray() (Standard)theme_bw()theme_minimal()theme_classic()theme_void()\n\n\n\np + theme_gray()\n\n\n\n\n\n\n\n\n\n\n\np + theme_bw()\n\n\n\n\n\n\n\n\n\n\n\np + theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\np + theme_classic()\n\n\n\n\n\n\n\n\n\n\n\np + theme_void()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipEmpfehlung für wissenschaftliche Grafiken\n\n\n\ntheme_minimal() oder theme_bw() sind häufig die beste Wahl für Publikationen – sie sind schlicht, gut lesbar und lenken nicht vom Inhalt ab.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#theme-eigene-anpassungen",
+    "href": "workshops/ws2/day2.html#theme-eigene-anpassungen",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "theme() – Eigene Anpassungen",
+    "text": "theme() – Eigene Anpassungen\nMit theme() kannst du einzelne Elemente gezielt anpassen:\n\np +\n  theme_minimal() +\n  theme(\n    plot.title      = element_text(size = 14, face = \"bold\"),\n    axis.title      = element_text(size = 11),\n    axis.text       = element_text(size = 10),\n    legend.position = \"bottom\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteWichtige theme()-Elemente\n\n\n\n\n\n\nElement\nFunktion\n\n\n\n\nplot.title\nHaupttitel\n\n\nplot.subtitle\nUntertitel\n\n\naxis.title\nAchsentitel (beide)\n\n\naxis.text\nAchsenbeschriftungen\n\n\nlegend.position\n\"right\", \"left\", \"bottom\", \"none\"\n\n\npanel.grid\nGitterlinien\n\n\nplot.background\nHintergrund der gesamten Grafik\n\n\n\nDiese werden mit element_text(), element_line(), element_rect() oder element_blank() konfiguriert.",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#eigenes-theme-definieren",
+    "href": "workshops/ws2/day2.html#eigenes-theme-definieren",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Eigenes Theme definieren",
+    "text": "Eigenes Theme definieren\nIn größeren Projekten lohnt es sich, ein eigenes Standard-Theme einmal zu definieren und für alle Grafiken wiederzuverwenden:\n\nmein_theme &lt;- theme_minimal() +\n  theme(\n    plot.title       = element_text(size = 14, face = \"bold\", color = \"#1a1a2e\"),\n    plot.subtitle    = element_text(size = 11, color = \"#555555\"),\n    axis.title       = element_text(size = 10, color = \"#333333\"),\n    axis.text        = element_text(size = 9),\n    legend.position  = \"bottom\",\n    panel.grid.minor = element_blank()\n  )\n\np + mein_theme",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#farbpaletten",
+    "href": "workshops/ws2/day2.html#farbpaletten",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Farbpaletten",
+    "text": "Farbpaletten\n\nRColorBrewer\n\n\nlibrary(RColorBrewer)\n\np + scale_fill_brewer(palette = \"Set2\") + mein_theme\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotePalettentypen\n\n\n\n\nQualitativ (kategoriale Variablen): \"Set1\", \"Set2\", \"Dark2\", \"Pastel1\"\nSequenziell (geordnete Werte): \"Blues\", \"Greens\", \"YlOrRd\"\nDivergierend (Werte mit Mitte): \"RdBu\", \"PiYG\", \"BrBG\"\n\n\n\n\n\nviridis – farbenblind-freundlich\n\n\nggplot(data = df,aes(x = age, y = distress, color = soz_u)) +\n  geom_point(alpha = 0.5) +\n  scale_color_viridis_c(option = \"plasma\") +\n  labs(\n    title  = \"Alter, Distress und Soziale Ungleichheit\",\n    x      = \"Alter\",\n    y      = \"Distress\",\n    color  = \"Soz. Ungleichheit\"\n  ) +\n  mein_theme\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteviridis-Varianten\n\n\n\nFür diskrete Variablen: scale_color_viridis_d() / scale_fill_viridis_d()\nFür kontinuierliche Variablen: scale_color_viridis_c() / scale_fill_viridis_c()\nOptionen: \"viridis\", \"plasma\", \"magma\", \"inferno\", \"cividis\"\n\n\n\n\nManuelle Farbpalette\n\n\neigene_farben &lt;- c(\"Männlich\" = \"#2196F3\", \"Weiblich\" = \"#E91E63\", \"Divers\" = \"#4CAF50\")\n\np + scale_fill_manual(values = eigene_farben) + mein_theme",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#übung-2",
+    "href": "workshops/ws2/day2.html#übung-2",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Übung",
+    "text": "Übung\nGestalte einen eigenen Plot vollständig:\n\nErstelle einen Boxplot von lebenszuf nach wohnort (mit fill = wohnort)\nErstelle ein eigenes mein_theme und wende es an\nNutze eine Farbpalette deiner Wahl (scale_fill_brewer oder scale_fill_viridis_d)\nPasse den Titel auf Schriftgröße 14 und fett an\nBlende die Legende mit legend.position = \"none\" aus (da die x-Achse bereits ausreichend informiert)\n\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\nggplot(data = df |&gt; filter(!is.na(wohnort) & !is.na(lebenszuf)),\n       aes(x = wohnort, y = lebenszuf, fill = wohnort)) +\n  geom_boxplot(alpha = 0.8, outlier.shape = NA) +\n  geom_jitter(width = 0.2, alpha = 0.15, size = 0.8) +\n  scale_fill_brewer(palette = \"Set2\") +\n  labs(\n    title   = \"Lebenszufriedenheit nach Wohnorttyp\",\n    x       = NULL,\n    y       = \"Lebenszufriedenheit (0–10)\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\"\n  ) +\n  mein_theme +\n  theme(\n    plot.title      = element_text(size = 14, face = \"bold\"),\n    legend.position = \"none\",\n    axis.text.x     = element_text(angle = 15, hjust = 1)\n  )",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#grundlegende-syntax",
+    "href": "workshops/ws2/day2.html#grundlegende-syntax",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Grundlegende Syntax",
+    "text": "Grundlegende Syntax\nMit patchwork werden Plots mit +, / und | kombiniert:\n\np1 &lt;- ggplot(data = df, aes(x = distress)) +\n  geom_histogram(binwidth = 2, fill = \"steelblue\", color = \"white\") +\n  labs(title = \"Verteilung Distress\", x = \"Distress-Score\", y = \"Häufigkeit\") +\n  mein_theme\n\np2 &lt;- ggplot(data = df, aes(x = geschlecht, y = distress, fill = geschlecht)) +\n  geom_boxplot() +\n  scale_fill_brewer(palette = \"Set2\") +\n  labs(title = \"Distress nach Geschlecht\", x = NULL, y = \"Distress-Score\") +\n  mein_theme +\n  theme(legend.position = \"none\")\n\n# Nebeneinander:\np1 | p2\n\n\n\n\n\n\n\n\n\n# Untereinander:\np1 / p2",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#layouts-anmerkungen",
+    "href": "workshops/ws2/day2.html#layouts-anmerkungen",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Layouts & Anmerkungen",
+    "text": "Layouts & Anmerkungen\n\np3 &lt;- ggplot(data = df, aes(x = distress, y = soz_u)) +\n  geom_point(alpha = 0.3, color = \"steelblue\") +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"darkred\") +\n  labs(title = \"Distress & Soziale Ungleichheit\", x = \"Distress\", y = \"Soz. Ungleichheit\") +\n  mein_theme\n\n# Kombiniertes Layout: oben zwei, unten einer\n(p1 | p2) / p3 +\n  plot_annotation(\n    title   = \"Abbildung 1: Überblick Distress und Soziale Ungleichheit\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\",\n    theme   = theme(plot.title = element_text(size = 14, face = \"bold\"))\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotepatchwork – Kurzreferenz\n\n\n\n\n\n\nOperator\nBedeutung\n\n\n\n\np1 | p2\nnebeneinander\n\n\np1 / p2\nuntereinander\n\n\n(p1 | p2) / p3\nkombinierte Layouts\n\n\nplot_annotation()\nGesamttitel, Caption\n\n\nplot_layout(widths = c(2, 1))\nVerhältnis der Breiten",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#übung-3",
+    "href": "workshops/ws2/day2.html#übung-3",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Übung",
+    "text": "Übung\nErstelle eine kombinierte Abbildung mit drei Plots:\n\nHistogramm von lebenszuf\nBoxplot von lebenszuf nach gebiet (Ost/West)\nScatter-Plot von age und lebenszuf\n\nKombiniere sie sinnvoll mit patchwork und füge einen Gesamttitel via plot_annotation() hinzu.\n\n\n\n\n\n\nTipLösung\n\n\n\n\n\n\npa &lt;- ggplot(data = df, aes(x = lebenszuf)) +\n  geom_histogram(binwidth = 1, fill = \"#2196F3\", color = \"white\") +\n  labs(title = \"Verteilung\", x = \"Lebenszufriedenheit (0–10)\", y = \"Häufigkeit\") +\n  mein_theme\n\npb &lt;- ggplot(data = df, aes(x = gebiet, y = lebenszuf, fill = gebiet)) +\n  geom_boxplot() +\n  scale_fill_brewer(palette = \"Set2\") +\n  labs(title = \"Ost vs. West\", x = NULL, y = NULL) +\n  mein_theme +\n  theme(legend.position = \"none\")\n\npc &lt;- ggplot(data = df, aes(x = age, y = lebenszuf)) +\n  geom_point(alpha = 0.3, color = \"#E91E63\") +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"#333333\") +\n  labs(title = \"Alter & Lebenszufriedenheit\", x = \"Alter\", y = \"Lebenszufriedenheit\") +\n  mein_theme\n\n(pa | pb) / pc +\n  plot_annotation(\n    title   = \"Abbildung: Lebenszufriedenheit im Überblick\",\n    caption = \"Eigene Darstellung | Workshop-Datensatz\",\n    theme   = theme(plot.title = element_text(size = 13, face = \"bold\"))\n  )",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#aufgabenstellung",
+    "href": "workshops/ws2/day2.html#aufgabenstellung",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Aufgabenstellung",
+    "text": "Aufgabenstellung\nSchritt 1: Fragestellung wählen\nWählt eine inhaltliche Frage aus dem Datensatz, z. B.:\n\nUnterscheiden sich Distress oder Soziale Ungleichheit nach Bildung, Geschlecht oder Wohnort?\nGibt es einen Zusammenhang zwischen Alter und Distress, der sich nach Geschlecht unterscheidet?\nWie verteilt sich eine Variable über verschiedene Gruppen?\n\n👉 Haltet eure Fragestellung kurz als Kommentar im Skript fest.\n\nSchritt 2: Datensatz vorbereiten\nWählt die relevanten Variablen aus und bereitet sie auf:\n\nfilter() für fehlende Werte\nFaktor-Labels setzen (falls noch nicht geschehen)\nggf. neue Variablen erstellen (siehe Codebook)\n\n\nSchritt 3: Drei Grafiken erstellen\nErstellt mindestens drei thematisch zusammenpassende Grafiken:\n\nmindestens ein Histogramm oder Boxplot\nmindestens ein Streudiagramm (mit geom_smooth, wenn sinnvoll)\nmindestens ein Balkendiagramm oder eine facettierte Grafik\n\nAnforderungen an jede Grafik:\n\nlabs() mit Titel, Achsenbeschriftungen und Caption\neigenes mein_theme angewendet\nsinnvolle Farbpalette gewählt\n\n\nSchritt 4: Plots kombinieren\nKombiniert eure drei Grafiken mit patchwork:\n\nwählt ein sinnvolles Layout (|, /, oder kombiniert)\nfügt einen Gesamttitel mit plot_annotation() hinzu\n\n\nSchritt 5: Exportieren\nSpeichert eure kombinierte Abbildung mit ggsave():\n\nFormat: PNG oder PDF\nAuflösung: dpi = 300\nDatei im Ordner output/",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#checkliste",
+    "href": "workshops/ws2/day2.html#checkliste",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Checkliste",
+    "text": "Checkliste\nAm Ende sollten bei euch vorhanden sein:\n\ndrei Einzelgrafiken (als Objekte p1, p2, p3 gespeichert)\neine kombinierte patchwork-Abbildung mit Gesamttitel\neine exportierte Datei in output/\nein dokumentiertes Skript mit Kommentaren\n\n\n\n\n\n\n\nTipTipps für das Mini-Projekt\n\n\n\n\nFangt einfach an – erst der Grundplot, dann das Styling\nGreift auf euer mein_theme-Objekt zurück\nBeim Export: erst ggsave() testen, dann die Auflösung hochsetzen\nNutzt facet_wrap() wenn ihr viele Gruppen vergleichen wollt",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
+    "objectID": "workshops/ws2/day2.html#weiterführende-ressourcen",
+    "href": "workshops/ws2/day2.html#weiterführende-ressourcen",
+    "title": "Datenvisualisierung mit ggplot2 – Tag 2",
+    "section": "Weiterführende Ressourcen",
+    "text": "Weiterführende Ressourcen\n\n📘 ggplot2-Dokumentation\n📘 R for Data Science – Visualization\n🎨 ColorBrewer2.org – Paletten interaktiv auswählen\n🎨 ggplot2 extensions – Überblick über Erweiterungspakete\n\n\n⬅️ Zurück zu Tag 1",
+    "crumbs": [
+      "Home",
+      "Zum Workshop - Tag 2"
+    ]
+  },
+  {
     "objectID": "workshops/ws1/index.html",
     "href": "workshops/ws1/index.html",
     "title": "Einführung in R & RStudio",
@@ -523,5 +936,75 @@
     "title": "Einführung in R & RStudio",
     "section": "Tag 2 - Datenaufbereitung",
     "text": "Tag 2 - Datenaufbereitung\n\nRecap & offene Fragen\nUmkodieren\nDatensätze zusammenführen\n\nFehlende Werte\nWorkflows\n\nMini-Projekt\n\n\n➡️ Weiter zu Tag 1 - ➡️ Weiter zu Tag 2"
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html",
+    "href": "workshops/ws1/workshop.html",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "",
+    "text": "Dieser Teil enthält die inhaltlichen Materialien zum Workshop „Einführung in R & RStudio“.\nEr ist so aufgebaut, dass du ihn als Begleitunterlage im Workshop oder zur Nachbereitung nutzen kannst.\n\n\n\nR ist eine freie Programmiersprache für statistische Analysen, Visualisierung und Datenverarbeitung.\nRStudio ist eine integrierte Entwicklungsumgebung (IDE), die die Arbeit mit R übersichtlicher und komfortabler macht.\n\n\nTypischerweise besteht RStudio aus vier Bereichen („Panes“):\n\nSource / Editor – hier schreibst du Skripte (.R, .qmd usw.).\n\nConsole – hier werden Befehle direkt ausgeführt.\n\nEnvironment / History – hier siehst du deine Objekte und Befehls-Historie.\n\nFiles / Plots / Packages / Help / Viewer – Dateien, Grafiken, installierte Pakete, Hilfe usw.\n\n\n\n\n\n2 + 2\n\n[1] 4\n\n10 / 3\n\n[1] 3.333333\n\nsqrt(49)\n\n[1] 7\n\n\nPLATZHALTER\n\n\n\n\n\n\nNoteÜbung 1 – R als Taschenrechner\n\n\n\n\nBerechne: 5^2 + 3.\n\nWas ergibt sqrt(144)*75?\n\nFühre die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#einleitung",
+    "href": "workshops/ws1/workshop.html#einleitung",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "",
+    "text": "R ist eine freie Programmiersprache für statistische Analysen, Visualisierung und Datenverarbeitung.\nRStudio ist eine integrierte Entwicklungsumgebung (IDE), die die Arbeit mit R übersichtlicher und komfortabler macht.\n\n\nTypischerweise besteht RStudio aus vier Bereichen („Panes“):\n\nSource / Editor – hier schreibst du Skripte (.R, .qmd usw.).\n\nConsole – hier werden Befehle direkt ausgeführt.\n\nEnvironment / History – hier siehst du deine Objekte und Befehls-Historie.\n\nFiles / Plots / Packages / Help / Viewer – Dateien, Grafiken, installierte Pakete, Hilfe usw.\n\n\n\n\n\n2 + 2\n\n[1] 4\n\n10 / 3\n\n[1] 3.333333\n\nsqrt(49)\n\n[1] 7\n\n\nPLATZHALTER\n\n\n\n\n\n\nNoteÜbung 1 – R als Taschenrechner\n\n\n\n\nBerechne: 5^2 + 3.\n\nWas ergibt sqrt(144)*75?\n\nFühre die Befehle einmal direkt in der Konsole und einmal aus einem Skript aus."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#objekte-anlegen",
+    "href": "workshops/ws1/workshop.html#objekte-anlegen",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "Objekte anlegen",
+    "text": "Objekte anlegen\n\nx &lt;- 5\ny &lt;- c(1, 2, 3, 4, 5)\n\n\n\n\n\n\n\nNote\n\n\n\nHinweis\n\n&lt;- ist der Zuweisungspfeil („wird zugewiesen“).\n\ny ist ein Vektor aus mehreren Zahlen.\n\n\n\n\nFunktionen verwenden\n\nmean(y)\n\n[1] 3\n\nsum(y)\n\n[1] 15\n\nlength(y)\n\n[1] 5\n\nround(3.14159, digits = 2)\n\n[1] 3.14\n\n\n\n\n\n\n\n\nNoteÜbung 2 – Objekte & Funktionen\n\n\n\n\nErstelle ein Objekt z mit mindestens fünf Zahlen.\n\nBerechne Mittelwert, Summe und Länge von z.\n\nErzeuge ein Objekt pi_gerundet, das pi auf 3 Nachkommastellen rundet.\n\n\n\n\n\n\n\n\n\nWarningHäufige Fehler\n\n\n\n\nFunktion falsch geschrieben: Mean(y) statt mean(y)\n\nKlammern vergessen: mean y statt mean(y)\n\n&lt;- vergessen oder = inkonsistent verwendet\n\nIm falschen Fenster tippen (Konsole statt Skript oder umgekehrt)"
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#datentypen",
+    "href": "workshops/ws1/workshop.html#datentypen",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "3. Datentypen & Datenstrukturen",
+    "text": "3. Datentypen & Datenstrukturen\n\nWichtige Datentypen\n\n\n\n\n\n\nNote\n\n\n\n\nnumeric / double (Kommazahlen)\n\ninteger (Ganze Zahlen, z.B. 1L)\n\ncharacter (Text)\n\nlogical (TRUE/FALSE)\n\nfactor (kategorische Daten)\n\n\n\n\n\nWichtige Datenstrukturen\n\nVektor: geordnete Liste von Werten\n\nData Frame / tibble: Tabelle mit Zeilen (Fälle) und Spalten (Variablen)\n\n\n\nBeispiel\n\nlibrary(tibble)\n\ndf &lt;- tibble( name = c(\"Anna\", \"Ben\", \"Clara\"), alter = c(23, 25, 22), studierend = c(TRUE, TRUE, FALSE), speed = c(12.6, 10.1 ,9.5) )\n\ndf\n\n# A tibble: 3 × 4\n  name  alter studierend speed\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt;      &lt;dbl&gt;\n1 Anna     23 TRUE        12.6\n2 Ben      25 TRUE        10.1\n3 Clara    22 FALSE        9.5\n\n\nPlatzhalter\n\nstr(df) \n\ntibble [3 × 4] (S3: tbl_df/tbl/data.frame)\n $ name      : chr [1:3] \"Anna\" \"Ben\" \"Clara\"\n $ alter     : num [1:3] 23 25 22\n $ studierend: logi [1:3] TRUE TRUE FALSE\n $ speed     : num [1:3] 12.6 10.1 9.5\n\nsummary(df) \n\n     name               alter       studierend          speed      \n Length:3           Min.   :22.00   Mode :logical   Min.   : 9.50  \n Class :character   1st Qu.:22.50   FALSE:1         1st Qu.: 9.80  \n Mode  :character   Median :23.00   TRUE :2         Median :10.10  \n                    Mean   :23.33                   Mean   :10.73  \n                    3rd Qu.:24.00                   3rd Qu.:11.35  \n                    Max.   :25.00                   Max.   :12.60  \n\ndplyr::glimpse(df)\n\nRows: 3\nColumns: 4\n$ name       &lt;chr&gt; \"Anna\", \"Ben\", \"Clara\"\n$ alter      &lt;dbl&gt; 23, 25, 22\n$ studierend &lt;lgl&gt; TRUE, TRUE, FALSE\n$ speed      &lt;dbl&gt; 12.6, 10.1, 9.5\n\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 3 – Eigene Tabelle\n\n\n\n\nErstelle einen eigenen tibble mit\n\nmindestens 3 Variablen (z. B. fach, alter, geschlecht)\n\nmindestens 5 Fällen.\n\n\nUntersuche danach mit str() und summary() die Struktur."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#import",
+    "href": "workshops/ws1/workshop.html#import",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "4. Daten importieren",
+    "text": "4. Daten importieren\nWir verwenden Funktionen aus dem tidyverse, um Daten zu importieren und zu bearbeiten.\n\nlibrary(readr)# für CSV \nlibrary(readxl)# für Excel \nlibrary(haven) # für SPSS-Dateien\n\n#Einfacher mit \nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.0     ✔ purrr     1.2.1\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.2     ✔ tidyr     1.3.2\n✔ lubridate 1.9.5     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nPlatzhalter\n\n### CSV-Dateien einlesen\n\ndaten_csv &lt;- read_csv(\"data/workshop1-dataset.csv\")\n\ntext\n\n### Excel-Dateien einlesen\n\ndaten_xlsx &lt;- read_excel(\"data/workshop1-dataset.xlsx\")\n\ntext\n\n### SPSS-Dateien einlesen\n\ndaten_sav &lt;- read_sav(\"data/workshop1-dataset.sav\")\n\ntext\n\n\n\n\n\n\n\nWarningTypische Probleme & Lösungen\n\n\n\n\n\n\n\n\n\n\n\nProblem\nMögliche Ursache\nMögliche Lösung\n\n\n\n\ncannot open file\nfalscher Pfad\nProjektordner prüfen, Datei-Pfad anpassen\n\n\nUmlaute „kaputt“\nEncoding\nlocale = locale(encoding = \"UTF-8\") testen\n\n\nalles character\nTyp falsch erkannt\nnachträglich mit mutate() umwandeln\n\n\n\n\n\n\n\n\n\n\n\nNoteÜbung 4 – Datensatz importieren\n\n\n\n\nImportiere den bereitgestellten Übungsdatensatz.\n\nPrüfe: nrow(), ncol(), head(), summary().\n\nNotiere dir, welche Variablen welcher Art sind."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#aufbereitung",
+    "href": "workshops/ws1/workshop.html#aufbereitung",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "5. Datenaufbereitung mit dplyr",
+    "text": "5. Datenaufbereitung mit dplyr\nWir verwenden das Paket dplyr, um Daten lesbar zu transformieren.\n\nlibrary(dplyr)\n\nPlatzhalter\n\n\n\n\n\n\nImportant\n\n\n\nWichtige Funktionen:\n\nselect() – Variablen auswählen\n\nfilter() – Fälle auswählen\n\nmutate() – neue Variablen erstellen\n\narrange() – sortieren\n\nrename() – Variablen umbenennen\n\n\n\n\nBeispiel-Workflow\n\ndaten_clean &lt;- daten_csv |&gt; \n  select(id, alter, geschlecht, score) |&gt; \n  filter(alter &gt;= 18) |&gt; \n  mutate(score_z = as.numeric(scale(score))) |&gt; \n  arrange(desc(score_z))\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 5 – Erste Transformationen\n\n\n\n\nWähle 3–5 Variablen aus deinem Datensatz aus.\n\nFiltere alle Personen heraus, die jünger als 18 sind.\n\nErstelle eine neue Variable, z. B. eine kategorisierte Altersgruppe."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#fehlende-werte",
+    "href": "workshops/ws1/workshop.html#fehlende-werte",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "6. Fehlende Werte (NA)",
+    "text": "6. Fehlende Werte (NA)\nFehlende Werte werden in R als NA kodiert.\n\nNAs zählen\n\nsum(is.na(daten_csv$score))\n\nPlatzhalter\n\n\nAlle Zeilen mit NA in einer Variablen anzeigen\n\ndaten_csv |&gt; filter(is.na(score))\n\nPlatzhalter\n\n\nFehlercodes in NA umwandeln\n\ndaten_clean2 &lt;- daten_csv |&gt; \n  mutate( score = ifelse(score == 99, NA, score) )\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 6 – Missing Values\n\n\n\n\nFinde heraus, in welchen Variablen NAs vorkommen.\n\nIdentifiziere einen möglichen Fehlercode (z. B. 99, 999) und wandle ihn in NA um.\n\nDiskutiere Strategien (Löschen vs. Imputieren)."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#joins",
+    "href": "workshops/ws1/workshop.html#joins",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "7. Datensätze verbinden (Joins)",
+    "text": "7. Datensätze verbinden (Joins)\nOft liegen Daten in mehreren Tabellen vor (z. B. Stammdaten + Skalen).\n\n### Beispiel: `left_join()`\n\nstammdaten &lt;- tibble( id = c(1, 2, 3), alter = c(23, 25, 22) )\n\nskalen &lt;- tibble( id = c(1, 2, 3), depressions_score = c(10, 15, 8) )\n\ndaten_joined &lt;- left_join(stammdaten, skalen, by = \"id\") daten_joined\n\nPlatzhalter\n\n\n\n\n\n\nTipWeitere Join-Varianten\n\n\n\n\ninner_join() - behält alles links\nright_join()\n\nfull_join()\n\n\n\n\n\n\n\n\n\nNoteÜbung 7 – Tabellen verbinden\n\n\n\n\nErzeuge zwei kleine Tabellen mit einer gemeinsamen ID-Spalte.\n\nFühre sie mit left_join() zusammen.\n\nÜberlege: Was passiert, wenn ein ID-Wert nur in einer Tabelle vorkommt?"
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#workflow",
+    "href": "workshops/ws1/workshop.html#workflow",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "8. Reproduzierbare Workflows",
+    "text": "8. Reproduzierbare Workflows\nZiel ist ein gut dokumentierter, nachvollziehbarer Analyseschritt.\n\nProjektstruktur\n\n\n\n\n\n\nTipEine mögliche Struktur\n\n\n\n\nprojektname/\n\ndata/\n\nscripts/\n\noutput/\n\nprojektname.Rproj\n\n\n\nSkripte sinnvoll gliedern\n\n01_import.R\n\n02_cleaning.R\n\n03_analysis.R\n\n04_plots.R\n\n\n\n\n\n\nKommentare nutzen\nSchritt 1: Daten importieren daten &lt;- read_csv(“data/workshop1-dataset.csv”)\nSchritt 2: Bereinigung daten_clean &lt;- daten |&gt; filter(alter &gt;= 18)\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 8 – Dein eigenes Skript\n\n\n\n\nErstelle ein neues Skript, in dem du Import, erste Bereinigung und Export zusammenfasst.\n\nStrukturiere das Skript in logisch benannte Abschnitte."
+  },
+  {
+    "objectID": "workshops/ws1/workshop.html#miniprojekt",
+    "href": "workshops/ws1/workshop.html#miniprojekt",
+    "title": "Einführung in R & RStudio: Workshop - Tag 1",
+    "section": "9. Mini-Projekt: Eigener Datenaufbereitungs-Workflow",
+    "text": "9. Mini-Projekt: Eigener Datenaufbereitungs-Workflow\nIm Mini-Projekt kombinierst du die gelernten Schritte zu einem kleinen Workflow.\n\nZiel\nEin bereinigter Datensatz, der für eine einfache Analyse oder Visualisierung bereit ist.\n\n\n\n\n\n\nTipMöglicher Ablauf\n\n\n\n\nDaten importieren\n\nVariablen auswählen (select)\n\nFälle filtern (filter)\n\nFehlende Werte behandeln (is.na, ifelse, drop_na)\n\nNeue Variablen erstellen (mutate)\n\nDatensätze verbinden (falls notwendig, left_join)\n\nDatensatz exportieren (write_csv)\n\n\n\n\n### Beispiel: Export\n\nwrite_csv(daten_clean, \"output/workshop1_clean_data.csv\")\n\nPlatzhalter\n\n\n\n\n\n\nNoteÜbung 9 – Abschluss\n\n\n\n\nDokumentiere deinen gesamten Workflow in einem Skript.\n\nExportiere deinen finalen Datensatz in den Ordner output/.\n\nNotiere dir in eigenen Worten, welche Entscheidungen du bei der Bereinigung getroffen hast.\n\n\n\n\nEnde des Workshop-1-Inhaltmoduls.\nquarto preview git add . git commit -m “Änderungen” git push"
   }
 ]
