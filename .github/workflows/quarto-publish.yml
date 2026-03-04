@@ -22,7 +22,6 @@ jobs:
           r-version: '4.4.0'
           use-public-rspm: true
 
-      # ── Cache: nur neu installieren wenn r-packages.txt sich ändert ────
       - name: Cache R packages
         uses: actions/cache@v4
         with:
@@ -54,7 +53,6 @@ jobs:
             }
           '
 
-      # ── .Rprofile: stellt sicher dass Quarto dieselbe Library findet ──
       - name: Set R library path for Quarto
         run: |
           echo '.libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))' > .Rprofile
@@ -65,56 +63,61 @@ jobs:
       - name: Render site
         uses: quarto-dev/quarto-actions/render@v2
 
-      # ── Staticrypt: Seiten automatisch verschlüsseln ───────────────────
-      - name: Install Staticrypt
+      # ── StaticCrypt: NACH dem Rendern, VOR dem Publishen ──────────────
+      - name: Install StaticCrypt
         run: npm install -g staticrypt
 
       # Workshop 1
       - name: Encrypt Workshop 1 – Tag 1
         run: |
           staticrypt _site/workshops/ws1/day1.html \
-            -p "${{ secrets.WS1_PASSWORD }}" \
-            -o _site/workshops/ws1/day1.html \
-            --title "Einführung in R & RStudio – Tag 1" \
-            --instructions "Bitte gib das Workshop-Passwort ein."
+            --password "${{ secrets.WS1_PASSWORD }}" \
+            --directory _site/workshops/ws1/ \
+            --short \
+            --template-title "Einführung in R & RStudio – Tag 1" \
+            --template-instructions "Bitte gib das Workshop-Passwort ein."
 
       - name: Encrypt Workshop 1 – Tag 2
         run: |
           staticrypt _site/workshops/ws1/day2.html \
-            -p "${{ secrets.WS1_PASSWORD }}" \
-            -o _site/workshops/ws1/day2.html \
-            --title "Einführung in R & RStudio – Tag 2" \
-            --instructions "Bitte gib das Workshop-Passwort ein."
+            --password "${{ secrets.WS1_PASSWORD }}" \
+            --directory _site/workshops/ws1/ \
+            --short \
+            --template-title "Einführung in R & RStudio – Tag 2" \
+            --template-instructions "Bitte gib das Workshop-Passwort ein."
 
       # Workshop 2
       - name: Encrypt Workshop 2 – Tag 1
         run: |
           staticrypt _site/workshops/ws2/day1.html \
-            -p "${{ secrets.WS2_PASSWORD }}" \
-            -o _site/workshops/ws2/day1.html \
-            --title "Datenvisualisierung mit ggplot2 – Tag 1" \
-            --instructions "Bitte gib das Workshop-Passwort ein."
+            --password "${{ secrets.WS2_PASSWORD }}" \
+            --directory _site/workshops/ws2/ \
+            --short \
+            --template-title "Datenvisualisierung mit ggplot2 – Tag 1" \
+            --template-instructions "Bitte gib das Workshop-Passwort ein."
 
       - name: Encrypt Workshop 2 – Tag 2
         run: |
           staticrypt _site/workshops/ws2/day2.html \
-            -p "${{ secrets.WS2_PASSWORD }}" \
-            -o _site/workshops/ws2/day2.html \
-            --title "Datenvisualisierung mit ggplot2 – Tag 2" \
-            --instructions "Bitte gib das Workshop-Passwort ein."
+            --password "${{ secrets.WS2_PASSWORD }}" \
+            --directory _site/workshops/ws2/ \
+            --short \
+            --template-title "Datenvisualisierung mit ggplot2 – Tag 2" \
+            --template-instructions "Bitte gib das Workshop-Passwort ein."
 
       # Workshop 3 – Beispiel für zukünftige Erweiterung:
       # - name: Encrypt Workshop 3 – Tag 1
       #   run: |
       #     staticrypt _site/workshops/ws3/day1.html \
-      #       -p "${{ secrets.WS3_PASSWORD }}" \
-      #       -o _site/workshops/ws3/day1.html \
-      #       --title "Workshop 3 – Tag 1" \
-      #       --instructions "Bitte gib das Workshop-Passwort ein."
+      #       --password "${{ secrets.WS3_PASSWORD }}" \
+      #       --directory _site/workshops/ws3/ \
+      #       --short \
+      #       --template-title "Workshop 3 – Tag 1" \
+      #       --template-instructions "Bitte gib das Workshop-Passwort ein."
 
+      # ── Publish: _site direkt pushen (mit verschlüsselten Dateien) ────
       - name: Publish to GitHub Pages
-        uses: quarto-dev/quarto-actions/publish@v2
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
