@@ -389,7 +389,7 @@ body { background: #f7f6f2 !important; }
       </div>
       <h1>Workshops für<br><em>empirische Methoden</em><br>in R</h1>
       <p class="hero-desc">
-        Praxisnahe Materialien für Studierende der Sozialwissenschaften –
+        Praxisnahe Materialien für Studierende und Forschende der empirischen Wissenschaften –
         von den Grundlagen in R bis zum vollständigen, reproduzierbaren Analyse-Workflow.
       </p>
       <a class="hero-cta" href="mailto:farugie[at]psych.uni-frankfurt.de">
