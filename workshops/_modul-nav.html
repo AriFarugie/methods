@@ -30,6 +30,11 @@
     var kopf = document.createElement('div'); kopf.className = 'modul-kopf';
     kopf.innerHTML = '<span class="mk-nr">Modul ' + (i + 1) + ' von ' + mods.length + '</span><div class="mk-titel">' + esc(titles[i]) + '</div>';
     m.insertBefore(kopf, m.firstChild);
+    var ub = Array.prototype.filter.call(m.querySelectorAll('h2'), function (h) { return /^Übung/.test(h.textContent.trim()); })[0];
+    if (ub) {
+      var ziel = ub.id ? ub : (ub.closest('section[id]') || ub);
+      if (ziel.id) kopf.insertAdjacentHTML('beforeend', '<a class="mk-uebung" href="#' + ziel.id + '">Zur Übung ↓</a>');
+    }
 
     var cf = m.querySelector('.checkfragen');
     if (cf) quiz(m, cf);

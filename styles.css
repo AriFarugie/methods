@@ -735,3 +735,8 @@ h2, h3, h4, .lp-sec h2, .lp-card h3, .lp-box h3, .lp-cta h3, .tm-card h3, .ws-ma
 .oc-tag { font-size: .68rem; font-weight: 600; color: rgba(255,255,255,.45); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 100px; padding: .18rem .65rem; }
 .oc-foot { display: flex; align-items: center; justify-content: space-between; padding-top: .5rem; border-top: 1px solid rgba(255,255,255,.08); font-size: .8rem; font-weight: 700; color: #a8d5c2; }
 @media (max-width: 800px) { .oc-cards { grid-template-columns: 1fr; } .oc-strip { padding: 0 1.25rem 2.5rem; } }
+
+.modul-kopf { position: relative; }
+.mk-uebung { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: .82rem; font-weight: 800; color: var(--accent) !important; background: var(--accent-light); border-radius: 999px; padding: .35rem .9rem; text-decoration: none; }
+.mk-uebung:hover { filter: brightness(.96); }
+@media (max-width: 600px) { .mk-uebung { position: static; transform: none; display: inline-block; margin-top: .5rem; } }

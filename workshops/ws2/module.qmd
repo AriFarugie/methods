@@ -501,7 +501,7 @@ die von unten nach oben aufgebaut werden:
 | 📏 **Coordinates** | Das Koordinatensystem (kartesisch, polar, …) |
 | 🖌️ **Theme** | Das visuelle Design (Hintergrund, Schrift, Gitterlinien, …) |
 
-::: callout-important
+::: callout-warning
 ## **Der rote Faden durch den Workshop**
 
 Wir arbeiten uns **Schicht für Schicht** durch dieses Modell:
@@ -837,7 +837,7 @@ Der dritte Layer ist die **sichtbare Schicht** – sie bestimmt, welche geometri
 
 Geome werden mit `geom_*()` hinzugefügt und mit `+` an die vorherigen Layer gehängt.
 
-::: callout-important
+::: callout-warning
 ## **Die wichtigsten Geome im Überblick**
 
 | Geom | Diagrammtyp | Wann sinnvoll? |
@@ -1254,7 +1254,7 @@ ___
 **Faceting** ermöglicht es, **dieselbe Grafik für verschiedene Gruppen** nebeneinander zu zeichnen.  
 So lassen sich Muster zwischen Gruppen direkt vergleichen.
 
-::: callout-important
+::: callout-warning
 ## **Die zwei Faceting-Funktionen**
 
 - `facet_wrap(~ Variable)` → Panels werden in einer **flexiblen Reihe/Spalte** angeordnet
