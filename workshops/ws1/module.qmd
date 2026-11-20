@@ -16,6 +16,10 @@ body-classes: modul-seite
 
 :::::::: {.modul #modul-0 data-titel="Optional: R & RStudio im Detail" data-optional="true"}
 
+::: {.mk-ziel}
+**Darum geht’s:** Du lernst, was R und RStudio sind und wie die RStudio-Oberfläche aufgebaut ist.
+:::
+
 # Was ist R und RStudio?
 ___
 **R** ist eine freie Programmiersprache, mit der man *Daten analysieren, auswerten und grafisch* darstellen kann.
@@ -189,9 +193,22 @@ Dieser Bereich zeigt dir:
 Im nächsten Abschnitt legen wir unser erstes **Projekt** an!
 :::
 
+
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- R ist eine freie Programmiersprache zur Analyse und Darstellung von Daten.
+- RStudio ist keine eigene Sprache, sondern ein „Schreibtisch“ für R.
+- RStudio hat vier Bereiche: Skript-Editor, Konsole, Environment/History und Files/Plots/Packages/Help.
+:::
+
 ::::::::
 
 :::::::: {.modul #modul-1 data-titel="Projekt anlegen & erstes Skript"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du legst ein RStudio-Projekt an und führst erste Befehle in einem R-Skript aus.
+:::
 
 # Ankommen & Setup
 ___
@@ -354,6 +371,14 @@ sqrt(196) + 3^3
 ```
 ::: 
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Ein neues Projekt bedeutet einen neuen, sauberen Arbeitskontext: Alle Dateien liegen an einem festen Ort.
+- Code gehört ins Skript, damit deine Arbeit nachvollziehbar und wiederverwendbar ist.
+- Mit **Strg + Enter** führst du die aktuelle Zeile oder Auswahl aus.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -378,6 +403,10 @@ sqrt(196) + 3^3
 ::::::::
 
 :::::::: {.modul #modul-2 data-titel="Grundprinzipien von R"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du lernst, wie R mit Objekten und Funktionen arbeitet, und berechnest erste Kennwerte.
+:::
 
 # Grundprinzipien von R
 ___
@@ -562,6 +591,14 @@ ci_y
 - Im falschen Fenster tippen (Konsole statt Skript oder umgekehrt)
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Mit `<-` speicherst du Ergebnisse in Objekten.
+- Funktionen wie `mean()` oder `sd()` bekommen Argumente in runden Klammern.
+- Kennwerte wie Standardfehler, Varianz, z-Werte und Konfidenzintervall lassen sich Schritt für Schritt aus Hilfsobjekten berechnen.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -586,6 +623,10 @@ ci_y
 ::::::::
 
 :::::::: {.modul #modul-3 data-titel="Datentypen & Datenstrukturen"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du lernst die wichtigsten Datentypen und Datenstrukturen kennen und erfährst, wie du ein Objekt in R untersuchst.
+:::
 
 ## Datentypen & Datenstrukturen
 
@@ -779,6 +820,14 @@ str(ci_y)
 3. `str()` → Wie ist das Objekt **aufgebaut** und welche Inhalte hat es?
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Typische Datentypen sind numeric, character und logical.
+- Typische Datenstrukturen sind Vektor, Matrix und Data Frame.
+- Mit `class()` und `str()` findest du heraus, was ein Objekt ist.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -804,6 +853,10 @@ str(ci_y)
 ::::::::
 
 :::::::: {.modul #modul-4 data-titel="Einen Datensatz erstellen & Pakete"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du erstellst mit `data.frame()` einen eigenen Datensatz und lernst, wie du Pakete installierst und lädst.
+:::
 
 ## Einen ersten Datensatz in R erstellen
 
@@ -1029,6 +1082,14 @@ Es enthält unter anderem:
 die in der empirischen Forschung regelmäßig benötigt werden.
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- `data.frame()` fügt gleich lange Vektoren zu einer Tabelle zusammen.
+- `install.packages()` installierst du einmal, `library()` brauchst du in jeder Sitzung.
+- Pakete erweitern R um zusätzliche Funktionen.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="1"}
@@ -1054,6 +1115,10 @@ die in der empirischen Forschung regelmäßig benötigt werden.
 ::::::::
 
 :::::::: {.modul #modul-5 data-titel="Datenimport & Datenaufbereitung"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du importierst Daten aus CSV- und SPSS-Dateien, prüfst sie auf Plausibilität und bereitest sie mit `dplyr` auf.
+:::
 
 ## Datenimport
 
@@ -1394,6 +1459,14 @@ df_2var
 
 Auch dafür gibt es in R eine elegante Lösung: **Pipes**.
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- CSV-Dateien liest du mit `read_csv()` ein, SPSS-Dateien mit `read_sav()` aus `haven`.
+- Nach dem Import prüfst du die Daten mit `summary()`, `glimpse()` oder `str()`.
+- `select()` wählt Variablen aus, `filter()` wählt Fälle aus.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -1419,6 +1492,10 @@ Auch dafür gibt es in R eine elegante Lösung: **Pipes**.
 ::::::::
 
 :::::::: {.modul #modul-6 data-titel="Pipes"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du verkettest mehrere Arbeitsschritte mit der Pipe `|>`, ohne Zwischenergebnisse speichern zu müssen.
+:::
 
 ## Pipes
 
@@ -1511,6 +1588,14 @@ head(df_analyse_w, 10)
 :::
 ::: 
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Die Pipe gibt das Ergebnis eines Schritts direkt an den nächsten Befehl weiter.
+- Pipes machen Code kürzer und lesbarer.
+- `mutate()`, `select()` und `filter()` lassen sich gut in einer Pipe kombinieren.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -1536,6 +1621,10 @@ head(df_analyse_w, 10)
 ::::::::
 
 :::::::: {.modul #modul-7 data-titel="Umkodieren"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du invertierst Items und fasst Ausprägungen zu Gruppen und Faktoren zusammen.
+:::
 
 # Recap – Grundlagen
 ___
@@ -1989,6 +2078,14 @@ df_rec |>
 :::
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Invertierte Items müssen umgepolt werden, bevor du Skalenwerte bildest.
+- Mit `recode()` fasst du Kategorien zusammen, mit `factor()` vergibst du Labels.
+- Das Ergebnis speicherst du mit `mutate()` als neue Variable, z. B. `hs04_inv`.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="3"}
@@ -2014,6 +2111,10 @@ df_rec |>
 ::::::::
 
 :::::::: {.modul #modul-8 data-titel="Joins – Datensätze zusammenführen"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du führst zwei Datensätze über eine gemeinsame Schlüsselvariable zusammen.
+:::
 
 # Joins – Datensätze zusammenführen
 ___
@@ -2267,6 +2368,14 @@ Alle Fälle aus **beiden Datensätzen** bleiben erhalten.
 👉 Maximale Information, aber oft viele fehlende Werte.
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Joins verbinden Datensätze über eine Schlüsselvariable, z. B. `respid` oder `kzf`.
+- `left_join()` behält alle Fälle des linken Datensatzes.
+- Die Join-Typen unterscheiden sich darin, welche Fälle erhalten bleiben.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -2292,6 +2401,10 @@ Alle Fälle aus **beiden Datensätzen** bleiben erhalten.
 ::::::::
 
 :::::::: {.modul #modul-9 data-titel="Fehlende Werte (NA)"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du erkennst fehlende Werte, verstehst ihre Wirkung auf Berechnungen und lernst, wie du mit ihnen umgehst.
+:::
 
 # Fehlende Werte (NA)
 ___
@@ -2695,6 +2808,14 @@ Es gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist:
 :::
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- `NA` steht in R für einen fehlenden Wert.
+- Berechnungen mit `NA` ergeben `NA`, außer du setzt `na.rm = TRUE`.
+- Mit `drop_na()` entfernst du Fälle mit fehlenden Werten. Prüfe danach, ob die Fallzahl noch ausreicht.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="1"}
@@ -2720,6 +2841,10 @@ Es gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist:
 ::::::::
 
 :::::::: {.modul #modul-10 data-titel="Workflow & Mini-Projekt"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du strukturierst ein eigenes Projekt und wendest alles Gelernte in einer kleinen Analyse an.
+:::
 
 # Recap Workshop
 ___
@@ -2991,6 +3116,14 @@ Guter Code ist nicht der „kürzeste" – sondern der, den du (und andere) spä
 ## Always Remember
 
 ![](assets/images/rmeme.jpg){width=100% style="border: 2px solid darkblue;"}
+
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Eine klare Projektstruktur, gegliederte Skripte und Kommentare machen deine Arbeit nachvollziehbar.
+- Aufbereitete Datensätze speicherst du als CSV oder SPSS-Datei.
+- Das Mini-Projekt verbindet Import, Aufbereitung und deskriptive Statistik zu einem Workflow.
+:::
 
 ::::: {.checkfragen}
 

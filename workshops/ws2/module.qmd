@@ -16,6 +16,10 @@ body-classes: modul-seite
 
 :::::::: {.modul #modul-1 data-titel="Warum Datenvisualisierung?"}
 
+::: {.mk-ziel}
+**Darum geht’s:** Du lernst, wozu Datenvisualisierung dient und was eine gute Grafik ausmacht.
+:::
+
 # Ankommen & Überblick
 ___
 Willkommen zum Workshop „Datenvisualisierung mit ggplot2" 👋  
@@ -429,6 +433,14 @@ Hätten wir nur die Kennwerte betrachtet, hätten wir bei allen vier Datensätze
 👉 **Schau dir deine Daten immer zuerst grafisch an – bevor du Kennwerte berechnest oder Modelle formulierst.**
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Visualisierung hilft beim Verstehen, Kommunizieren, Entscheiden und Erkennen von Fehlern.
+- Das Anscombe-Quartett zeigt: Gleiche Kennwerte können sehr unterschiedliche Daten verbergen.
+- Eine gute Grafik ist korrekt, klar, vollständig und sparsam.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -454,6 +466,10 @@ Hätten wir nur die Kennwerte betrachtet, hätten wir bei allen vier Datensätze
 ::::::::
 
 :::::::: {.modul #modul-2 data-titel="ggplot2: Grammatik, Data & Aesthetics"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du lernst die Grammar of Graphics kennen und baust mit Data und Aesthetics erste Plots.
+:::
 
 # Was ist ggplot2?
 ___
@@ -804,6 +820,14 @@ R bietet 25 verschiedene Punktformen (0–25).
 Die gebräuchlichsten: `16` = Kreis (Standard), `17` = Dreieck, `15` = Quadrat, `18` = Raute.
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Ein Plot entsteht Schicht für Schicht, die Schichten werden mit `+` verbunden.
+- In `aes()` ordnest du Variablen visuellen Eigenschaften wie x, y, color und fill zu.
+- Feste Werte gehören außerhalb von `aes()`. Das ist der häufigste Fehler.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -829,6 +853,10 @@ Die gebräuchlichsten: `16` = Kreis (Standard), `17` = Dreieck, `15` = Quadrat, 
 ::::::::
 
 :::::::: {.modul #modul-3 data-titel="Geometries & Beschriftungen"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du lernst die wichtigsten Geome kennen und beschriftest Grafiken mit `labs()`.
+:::
 
 # 📐 Layer 3: Geometries
 ___
@@ -1213,6 +1241,14 @@ ggplot(
 - **NAs vergessen** → `filter(!is.na(variable))` vor dem Plot nicht vergessen
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- `geom_point()`, `geom_histogram()`, `geom_bar()` und `geom_boxplot()` decken die häufigsten Grafiktypen ab.
+- Mehrere Geome lassen sich übereinanderlegen, z. B. ein Boxplot plus Rohdaten.
+- `labs()` setzt Titel, Achsen- und Legendenbeschriftungen.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="3"}
@@ -1238,6 +1274,10 @@ ggplot(
 ::::::::
 
 :::::::: {.modul #modul-4 data-titel="Layer 4: Faceting"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du teilst eine Grafik mit Facets in Teilgrafiken für Gruppen auf.
+:::
 
 ::: callout-tip
 ## **Recap-Fragen**
@@ -1336,6 +1376,14 @@ ggplot(data = df |> filter(!is.na(bildung) & !is.na(soz_u)),
 ```
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- `facet_wrap()` teilt nach einer Variable auf.
+- `facet_grid()` teilt nach zwei Variablen in Zeilen und Spalten auf.
+- Facets machen Gruppenvergleiche auf einen Blick möglich.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -1361,6 +1409,10 @@ ggplot(data = df |> filter(!is.na(bildung) & !is.na(soz_u)),
 ::::::::
 
 :::::::: {.modul #modul-5 data-titel="Layer 5: Statistics"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du lernst, welche Statistik hinter jedem Geom steckt, und zeigst Kennwerte direkt in der Grafik.
+:::
 
 # 📊 Layer 5: Statistics
 ___
@@ -1461,6 +1513,13 @@ ggplot(data = df, aes(x = geschlecht, y = soz_u, color = geschlecht)) +
 ```
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Viele Geome berechnen im Hintergrund eine Statistik, z. B. zählt `geom_bar()` Häufigkeiten.
+- `stat_summary()` zeigt Kennwerte wie Mittelwerte direkt im Plot an.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -1486,6 +1545,10 @@ ggplot(data = df, aes(x = geschlecht, y = soz_u, color = geschlecht)) +
 ::::::::
 
 :::::::: {.modul #modul-6 data-titel="Coordinates, Theme & Farben"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du passt Koordinatensystem, Erscheinungsbild und Farben deiner Grafiken an.
+:::
 
 # 📏 Layer 6: Coordinates
 ___
@@ -1813,6 +1876,14 @@ ggplot(data = df |> filter(!is.na(wohnort) & !is.na(lebenszuf)),
 ```
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- `coord_cartesian()` zoomt, ohne Daten zu entfernen, anders als `xlim()` und `ylim()`.
+- Fertige Themes wie `theme_minimal()` und eigene Anpassungen mit `theme()` bestimmen den Look.
+- Farbpaletten aus `RColorBrewer` und `viridis` sorgen für gut lesbare Farben.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="1"}
@@ -1838,6 +1909,10 @@ ggplot(data = df |> filter(!is.na(wohnort) & !is.na(lebenszuf)),
 ::::::::
 
 :::::::: {.modul #modul-7 data-titel="patchwork & Export"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du kombinierst mehrere Plots zu einer Abbildung und exportierst Grafiken als Datei.
+:::
 
 # patchwork – Plots kombinieren
 ___
@@ -1999,6 +2074,13 @@ ggsave("output/boxplot_distress.pdf", plot = p2, width = 6, height = 4)
 - Für **Veröffentlichungen**: `.pdf` oder `.svg` – verlustfreie Vektorgrafiken
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Mit `patchwork` kombinierst du Plots über Operatoren wie `+` und `/`.
+- `ggsave()` speichert Grafiken z. B. als PNG oder PDF.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="3"}
@@ -2024,6 +2106,10 @@ ggsave("output/boxplot_distress.pdf", plot = p2, width = 6, height = 4)
 ::::::::
 
 :::::::: {.modul #modul-8 data-titel="Mini-Projekt & Abschluss"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du erstellst eine eigene Abbildung von Anfang bis Ende und wiederholst alle Layer.
+:::
 
 # Mini-Projekt
 ___
@@ -2160,6 +2246,13 @@ sie zeigt **genau das, was wichtig ist**.
 - 📘 [R for Data Science – Visualization](https://r4ds.hadley.nz/data-visualize)
 - 🎨 [ColorBrewer2.org](https://colorbrewer2.org) – Paletten interaktiv auswählen
 - 🎨 [ggplot2 extensions](https://exts.ggplot2.tidyverse.org) – Überblick über Erweiterungspakete
+
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Eine Grafik entsteht in Schichten: Data, Aesthetics, Geometries, Facets, Statistics, Coordinates, Theme.
+- Die Checkliste hilft, die eigene Abbildung zu prüfen.
+:::
 
 ::::: {.checkfragen}
 
