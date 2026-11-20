@@ -664,7 +664,7 @@ body.modul-seite #quarto-content main#quarto-document-content { grid-column: scr
 }
 
 /* ── Termine & Anmeldung ─────────────────────────────────────── */
-.tm-row { display: grid; grid-template-columns: minmax(0, 1.5fr) 1fr; gap: 1rem; }
+.tm-row { display: grid; grid-template-columns: minmax(0, 1.5fr) 1fr; gap: 1rem; align-items: start; }
 .tm-side { display: grid; gap: 1rem; }
 .tm-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem 1.5rem; }
 .tm-card h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 1.2rem; margin: 0 0 .5rem; }
