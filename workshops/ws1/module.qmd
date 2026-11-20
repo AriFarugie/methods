@@ -14,29 +14,79 @@ format:
 body-classes: modul-seite
 ---
 
-:::::::: {.modul #modul-1 data-titel="R & RStudio kennenlernen"}
-
-# Ankommen & Setup
-___
-Willkommen zum Workshop „Einführung in R & RStudio" 👋  
-
-**Ziele**
-
-- RStudio-Oberfläche kennenlernen
-- verstehen, wie R „denkt"
-- erste eigene Objekte und Daten erzeugen
+:::::::: {.modul #modul-0 data-titel="Optional: R & RStudio im Detail" data-optional="true"}
 
 # Was ist R und RStudio?
 ___
+**R** ist eine freie Programmiersprache, mit der man *Daten analysieren, auswerten und grafisch* darstellen kann.
+
+<u>**Du kannst mit R zum Beispiel:**</u>
+
+- Tabellen mit vielen Zahlen auswerten
+- Mittelwerte, Häufigkeiten oder Korrelationen berechnen
+- Diagramme und Grafiken erstellen
+- Daten aufbereiten, filtern und umformen
+
+**R** wird häufig in den Sozialwissenschaften, der Psychologie, der Medizin und vielen anderen Forschungsbereichen genutzt, unabhängig ob ***quantitativ oder qualitativ*** gearbeitet wird.  
+Der große Vorteil von **R** ist, dass alle Analyseschritte transparent, nachvollziehbar und reproduzierbar sind – man kann also genau sehen, wie ein Ergebnis entstanden ist.
+
+**RStudio** ist ***keine eigene Programmiersprache***, sondern ein Programm, das die Arbeit mit R erleichtert.  
+Man kann sich **RStudio** wie einen Schreibtisch für *R* vorstellen.
+
+<u>**RStudio hilft dir dabei:**</u>
+
+- Code übersichtlich zu schreiben
+- Befehle auszuführen und Ergebnisse zu sehen
+- Daten, Objekte und Grafiken im Blick zu behalten
+- Dateien und Projekte organisiert zu verwalten
+
+Ohne ***RStudio*** müsstest du **R** über ein sehr einfaches Fenster bedienen. Mit RStudio bekommst du eine strukturierte Oberfläche, die besonders für Einsteiger:innen viel angenehmer ist.
+
+## R GUI – erste Ansicht
+
+Schauen wir uns zunächst die **R-Oberfläche** ***(ohne RStudio)*** an.
+
+::: columns
+::: column
+![](assets/images/r-gui-console.png){height=250 style="border: 2px solid red;"}
+:::
+
+::: column
+![](assets/images/r-gui-zoom.png){height=250 style="border: 2px solid red;"}
+:::
+:::
+
+**Was sehen wir hier?**
+
+- ***Linkes Bild***
+  - Die „normale" **R-Oberfläche**
+    - Sie besteht zunächst nur aus einer ***R Console***
+- ***Rechtes Bild***
+  - Die **R Console**
+    - Hier werden Befehle direkt eingegeben
+    - Ergebnisse erscheinen sofort darunter
+
 ::: callout-note
-# Kurz gesagt
-- **R** ist eine freie Programmiersprache, mit der man *Daten analysieren, auswerten und grafisch* darstellen kann – alle Analyseschritte sind transparent, nachvollziehbar und reproduzierbar.
-- **RStudio** ist ***keine eigene Programmiersprache***, sondern ein Programm, das die Arbeit mit R erleichtert. Man kann sich **RStudio** wie einen Schreibtisch für *R* vorstellen.
+# **Hinweis**
+
+Alles, was du in die Konsole eingibst, wird sofort von R ausgeführt. Das Ergebnis siehst du direkt unter der eingegebenen Zeile.
+
+***Beispiel***
+
+- gib `13` ein
+- gib `a` ein
+- gib `13 + 15` ein
+:::
+
+::: callout-warning
+**ABER**
+
+Wir brauchen ***R GUI*** nicht, sondern nutzen **RStudio!**
 :::
 
 ## RStudio – Unser Cockpit 🎛️
 
-Schauen wir uns nun die Oberfläche von **RStudio** an. Startet einfach **RStudio**. Ihr solltet nun das folgende Bild sehen:
+Schauen wir uns nun die Oberfläche von **RStudio** an. Startet einfach **RStudio** ***(nicht R GUI!)***. Ihr solltet nun das folgende Bild sehen:
 
 ![](assets/images/rstudio-1.png){width=100% style="border: 2px solid darkblue;"}
 
@@ -97,7 +147,7 @@ Alles Wichtige gehört ins **Skript**, nicht nur in die Konsole.
 ___
 ![](assets/images/rstudio-console-pane.png){width=100% style="border: 2px solid darkblue;"}
 
-
+Die ***Konsole*** kennen wir im Grunde schon – es ist dieselbe Konsole wie bei **R GUI**.
 
 - hier führt R Befehle aus
 - Ergebnisse erscheinen direkt darunter
@@ -138,6 +188,20 @@ Dieser Bereich zeigt dir:
 ::: callout-warning
 Im nächsten Abschnitt legen wir unser erstes **Projekt** an!
 :::
+
+::::::::
+
+:::::::: {.modul #modul-1 data-titel="Projekt anlegen & erstes Skript"}
+
+# Ankommen & Setup
+___
+Willkommen zum Workshop „Einführung in R & RStudio" 👋  
+
+**Ziele**
+
+- RStudio-Oberfläche kennenlernen
+- verstehen, wie R „denkt"
+- erste eigene Objekte und Daten erzeugen
 
 # Projekt anlegen
 ___
@@ -293,11 +357,11 @@ sqrt(196) + 3^3
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
-**Zum Inhalt:** Was ist RStudio?
+**Zum Inhalt:** Warum solltest du für jede Analyse ein eigenes RStudio-Projekt anlegen?
 
-1. Eine eigene Programmiersprache, die R ersetzt
-2. Ein Programm, das die Arbeit mit R erleichtert – eine Art Schreibtisch für R
-3. Ein R-Paket für Grafiken
+1. Weil R ohne Projekt nicht gestartet werden kann
+2. Weil alle Dateien an einem festen Ort liegen und R immer weiß, wo es sie findet
+3. Weil Projekte die Berechnungen in R beschleunigen
 ::::
 
 :::: {.frage data-richtig="3"}

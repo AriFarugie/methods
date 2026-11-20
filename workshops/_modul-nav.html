@@ -2,6 +2,8 @@
 (function () {
   var mods = Array.prototype.slice.call(document.querySelectorAll('.modul'));
   if (!mods.length) return;
+  var req = mods.filter(function (m) { return !m.hasAttribute('data-optional'); });
+  function nr(m) { return m.hasAttribute('data-optional') ? 0 : req.indexOf(m) + 1; }
   var key = 'modul-fortschritt:' + location.pathname.replace(/[^\/]*$/, '');
   var done = {};
   try { done = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) {}
@@ -24,11 +26,11 @@
 
   mods.forEach(function (m, i) {
     var li = document.createElement('li');
-    li.innerHTML = '<a href="#' + m.id + '"><span class="mn-nr">' + (i + 1) + '</span><span class="mn-t">' + esc(titles[i]) + '</span></a>';
+    li.innerHTML = '<a href="#' + m.id + '"><span class="mn-nr">' + nr(m) + '</span><span class="mn-t">' + esc(titles[i]) + '</span></a>';
     list.appendChild(li);
 
     var kopf = document.createElement('div'); kopf.className = 'modul-kopf';
-    kopf.innerHTML = '<span class="mk-nr">Modul ' + (i + 1) + ' von ' + mods.length + '</span><div class="mk-titel">' + esc(titles[i]) + '</div>';
+    kopf.innerHTML = '<span class="mk-nr">' + (nr(m) ? 'Modul ' + nr(m) + ' von ' + req.length : 'Modul 0 · optional') + '</span><div class="mk-titel">' + esc(titles[i]) + '</div>';
     m.insertBefore(kopf, m.firstChild);
     var ub = Array.prototype.filter.call(m.querySelectorAll('h2'), function (h) { return /^Übung/.test(h.textContent.trim()); })[0];
     if (ub) {
@@ -92,9 +94,9 @@
   }
 
   function update() {
-    var n = mods.filter(function (m) { return done[m.id]; }).length;
-    nav.querySelector('.mn-bar span').style.width = (100 * n / mods.length) + '%';
-    nav.querySelector('.mn-count').textContent = n + ' von ' + mods.length + ' Modulen abgeschlossen';
+    var n = req.filter(function (m) { return done[m.id]; }).length;
+    nav.querySelector('.mn-bar span').style.width = (100 * n / req.length) + '%';
+    nav.querySelector('.mn-count').textContent = n + ' von ' + req.length + ' Modulen abgeschlossen';
     mods.forEach(function (m, i) { list.children[i].classList.toggle('fertig', !!done[m.id]); });
   }
 
@@ -109,7 +111,7 @@
     if (!h) { try { h = localStorage.getItem(key + 'zuletzt') || ''; } catch (e) {} }
     var el = h ? document.getElementById(h) : null;
     var m = el ? el.closest('.modul') : null;
-    if (!m) { if (location.hash && el) return; m = mods[0]; el = m; }
+    if (!m) { if (location.hash && el) return; m = req[0]; el = m; }
     if (!location.hash) history.replaceState(null, '', '#' + m.id);
     show(mods.indexOf(m), el === m ? null : el);
   }
