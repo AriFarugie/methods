@@ -12,7 +12,7 @@ sidebar: workshop2
 # Kurzbeschreibung
 ___
 
-Der zweitägige Workshop **„Datenvisualisierung mit ggplot2"** richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten **professionell und reproduzierbar visualisieren** möchten.
+Der Workshop **„Datenvisualisierung mit ggplot2"** richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten **professionell und reproduzierbar visualisieren** möchten.
 
 Der Workshop setzt grundlegende Kenntnisse in R und dem `tidyverse` voraus (z. B. aus dem Workshop „Einführung in R & RStudio"), ist aber so aufgebaut, dass auch Einsteiger:innen in `ggplot2` gut folgen können.
 

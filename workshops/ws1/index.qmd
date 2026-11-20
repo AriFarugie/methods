@@ -12,7 +12,7 @@ sidebar: workshop1
 # Kurzbeschreibung
 ___
 
-Der zweitägige Workshop **„Einführung in R & RStudio“** richtet sich an Studierende der Sozialwissenschaften, die R für **empirische Arbeiten**, Haus- oder Abschlussarbeiten nutzen möchten.  
+Der Workshop **„Einführung in R & RStudio“** richtet sich an Studierende der Sozialwissenschaften, die R für **empirische Arbeiten**, Haus- oder Abschlussarbeiten nutzen möchten.  
 
 Im Workshop lernen die Teilnehmenden Schritt für Schritt:
 

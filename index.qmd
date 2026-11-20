@@ -45,7 +45,7 @@ format:
         <p>Vom ersten Skript bis zum eigenen Analyse-Workflow: Datenimport, Datenaufbereitung mit dplyr,
            Umkodieren, Joins und fehlende Werte – mit Mini-Projekt zum Abschluss.</p>
         <div class="lp-pills">
-          <span class="lp-hl">2 Tage</span><span class="lp-hl">keine Vorkenntnisse</span>
+          <span class="lp-hl">10 Module</span><span class="lp-hl">keine Vorkenntnisse</span>
           <span>dplyr</span><span>haven</span><span>psych</span>
         </div>
         <div class="lp-more">Zum Workshop →</div>
@@ -59,7 +59,7 @@ format:
         <p>Grammar of Graphics Schicht für Schicht – von Streudiagrammen bis zu
            kombinierten Layouts mit patchwork.</p>
         <div class="lp-pills">
-          <span class="lp-hl">2 Tage</span><span class="lp-hl">Grundkenntnisse R</span>
+          <span class="lp-hl">8 Module</span><span class="lp-hl">Grundkenntnisse R</span>
           <span>ggplot2</span><span>patchwork</span>
         </div>
         <div class="lp-more">Zum Workshop →</div>
