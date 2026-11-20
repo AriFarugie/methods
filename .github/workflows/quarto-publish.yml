@@ -6,7 +6,8 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-latest
+    # Fest auf 24.04, passend zu den R-Binärpaketen (noble) unten
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
       pages: write
@@ -26,9 +27,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: r-pkgs-${{ runner.os }}-${{ hashFiles('r-packages.txt') }}
+          key: r-pkgs-ubuntu-24.04-${{ hashFiles('r-packages.txt') }}
           restore-keys: |
-            r-pkgs-${{ runner.os }}-
+            r-pkgs-ubuntu-24.04-
 
       - name: Install system dependencies
         run: |
