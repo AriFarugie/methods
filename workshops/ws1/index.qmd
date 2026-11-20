@@ -13,7 +13,6 @@ body-classes: lp-page ws-page
   <div class="lp-w lp-page-head ws-head">
     <div class="lp-kick">Workshop · Einstieg</div>
     <h1>Einführung in R &amp; RStudio</h1>
-    <p>Der Workshop <b>„Einführung in R &amp; RStudio“</b> richtet sich an Studierende der Sozialwissenschaften, die R für <b>empirische Arbeiten</b>, Haus- oder Abschlussarbeiten nutzen möchten.</p>
     <div class="ws-pills"><span class="hl">10 Module</span><span>kostenfrei · offen für alle</span><span>Methodenzentrum</span></div>
   </div>
 </section>
@@ -21,22 +20,9 @@ body-classes: lp-page ws-page
 
 ::::: {.ws-lay}
 :::: {.ws-main}
-## Dein Lernpfad
+## Kurzbeschreibung
 
-::: {.ws-path}
-1. [R & RStudio kennenlernen <span class="ws-t">R GUI · RStudio-Oberfläche · Projekt anlegen · R Script</span>](module.qmd#modul-1)
-2. [Grundprinzipien von R <span class="ws-t">Objekte · Funktionen · Kennwerte berechnen</span>](module.qmd#modul-2)
-3. [Datentypen & Datenstrukturen <span class="ws-t">Datentypen · Vektor, Matrix, Data Frame · class(), str()</span>](module.qmd#modul-3)
-4. [Einen Datensatz erstellen & Pakete <span class="ws-t">data.frame() · install.packages() · library()</span>](module.qmd#modul-4)
-5. [Datenimport & Datenaufbereitung <span class="ws-t">CSV & SPSS · summary(), glimpse() · dplyr</span>](module.qmd#modul-5)
-6. [Pipes <span class="ws-t">|> · select(), filter(), mutate()</span>](module.qmd#modul-6)
-7. [Umkodieren <span class="ws-t">Invertierte Items · Gruppen & Faktoren · Skalenwerte</span>](module.qmd#modul-7)
-8. [Joins – Datensätze zusammenführen <span class="ws-t">Schlüsselvariable · left_join() · Join-Typen</span>](module.qmd#modul-8)
-9. [Fehlende Werte (NA) <span class="ws-t">NA erkennen · na.rm · drop_na()</span>](module.qmd#modul-9)
-10. [Workflow & Mini-Projekt <span class="ws-t">Projektstruktur · Datensatz speichern · Mini-Projekt</span>](module.qmd#modul-10)
-:::
-
-## Worum es geht
+Der zweitägige Workshop **„Einführung in R & RStudio“** richtet sich an Studierende der Sozialwissenschaften, die R für **empirische Arbeiten**, Haus- oder Abschlussarbeiten nutzen möchten.  
 
 Im Workshop lernen die Teilnehmenden Schritt für Schritt:
 
@@ -61,6 +47,21 @@ Nach dem Workshop können Teilnehmende …
 - Datensätze über Schlüsselvariablen zusammenführen
 - Projekte & Skripte nachvollziehbar strukturieren und Zwischenergebnisse speichern
 - einen kleinen, vollständigen Datenbereinigungs- und Analyse-Workflow eigenständig umsetzen
+
+## Module im Überblick
+
+::: {.ws-modlist}
+1. [R & RStudio kennenlernen](module.qmd#modul-1)
+2. [Grundprinzipien von R](module.qmd#modul-2)
+3. [Datentypen & Datenstrukturen](module.qmd#modul-3)
+4. [Einen Datensatz erstellen & Pakete](module.qmd#modul-4)
+5. [Datenimport & Datenaufbereitung](module.qmd#modul-5)
+6. [Pipes](module.qmd#modul-6)
+7. [Umkodieren](module.qmd#modul-7)
+8. [Joins – Datensätze zusammenführen](module.qmd#modul-8)
+9. [Fehlende Werte (NA)](module.qmd#modul-9)
+10. [Workflow & Mini-Projekt](module.qmd#modul-10)
+:::
 ::::
 
 :::: {.ws-side}
@@ -86,14 +87,3 @@ Zugang
 ::::
 :::::
 
-```{=html}
-<script>
-(function () {
-  var done = {};
-  try { done = JSON.parse(localStorage.getItem('modul-fortschritt:' + location.pathname.replace(/[^\/]*$/, ''))) || {}; } catch (e) {}
-  document.querySelectorAll('.ws-path li').forEach(function (li, i) {
-    if (done['modul-' + (i + 1)]) li.classList.add('fertig');
-  });
-})();
-</script>
-```

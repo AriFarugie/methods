@@ -13,7 +13,6 @@ body-classes: lp-page ws-page
   <div class="lp-w lp-page-head ws-head">
     <div class="lp-kick">Workshop · Aufbau</div>
     <h1>Datenvisualisierung mit ggplot2</h1>
-    <p>Der Workshop <b>„Datenvisualisierung mit ggplot2"</b> richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten <b>professionell und reproduzierbar visualisieren</b> möchten.</p>
     <div class="ws-pills"><span class="hl">8 Module</span><span>kostenfrei · offen für alle</span><span>Methodenzentrum</span></div>
   </div>
 </section>
@@ -21,20 +20,9 @@ body-classes: lp-page ws-page
 
 ::::: {.ws-lay}
 :::: {.ws-main}
-## Dein Lernpfad
+## Kurzbeschreibung
 
-::: {.ws-path}
-1. [Warum Datenvisualisierung? <span class="ws-t">Ziele · vier Gründe · Anscombe-Quartett · Setup</span>](module.qmd#modul-1)
-2. [ggplot2: Grammatik, Data & Aesthetics <span class="ws-t">Grammar of Graphics · ggplot() · aes() · color & fill</span>](module.qmd#modul-2)
-3. [Geometries & Beschriftungen <span class="ws-t">geom_point() · geom_histogram() · geom_bar() · geom_boxplot() · labs()</span>](module.qmd#modul-3)
-4. [Layer 4: Faceting <span class="ws-t">facet_wrap() · facet_grid()</span>](module.qmd#modul-4)
-5. [Layer 5: Statistics <span class="ws-t">stat_summary() · Kennwerte in der Grafik</span>](module.qmd#modul-5)
-6. [Coordinates, Theme & Farben <span class="ws-t">coord_cartesian() · coord_flip() · Themes · Farbpaletten</span>](module.qmd#modul-6)
-7. [patchwork & Export <span class="ws-t">Plots kombinieren · ggsave()</span>](module.qmd#modul-7)
-8. [Mini-Projekt & Abschluss <span class="ws-t">Eigene Abbildung von Anfang bis Ende · Recap</span>](module.qmd#modul-8)
-:::
-
-## Worum es geht
+Der zweitägige Workshop **„Datenvisualisierung mit ggplot2"** richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten **professionell und reproduzierbar visualisieren** möchten.
 
 Der Workshop setzt grundlegende Kenntnisse in R und dem `tidyverse` voraus (z. B. aus dem Workshop „Einführung in R & RStudio"), ist aber so aufgebaut, dass auch Einsteiger:innen in `ggplot2` gut folgen können.
 
@@ -64,6 +52,19 @@ Nach dem Workshop können Teilnehmende …
 - **Farbpaletten** aus `RColorBrewer` und `viridis` verwenden
 - mit dem Paket **`patchwork`** mehrere Plots kombinieren
 - Grafiken als **Datei exportieren** (`ggsave()`, PNG, PDF)
+
+## Module im Überblick
+
+::: {.ws-modlist}
+1. [Warum Datenvisualisierung?](module.qmd#modul-1)
+2. [ggplot2: Grammatik, Data & Aesthetics](module.qmd#modul-2)
+3. [Geometries & Beschriftungen](module.qmd#modul-3)
+4. [Layer 4: Faceting](module.qmd#modul-4)
+5. [Layer 5: Statistics](module.qmd#modul-5)
+6. [Coordinates, Theme & Farben](module.qmd#modul-6)
+7. [patchwork & Export](module.qmd#modul-7)
+8. [Mini-Projekt & Abschluss](module.qmd#modul-8)
+:::
 ::::
 
 :::: {.ws-side}
@@ -89,14 +90,3 @@ Zugang
 ::::
 :::::
 
-```{=html}
-<script>
-(function () {
-  var done = {};
-  try { done = JSON.parse(localStorage.getItem('modul-fortschritt:' + location.pathname.replace(/[^\/]*$/, ''))) || {}; } catch (e) {}
-  document.querySelectorAll('.ws-path li').forEach(function (li, i) {
-    if (done['modul-' + (i + 1)]) li.classList.add('fertig');
-  });
-})();
-</script>
-```
