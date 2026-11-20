@@ -10,10 +10,15 @@ body-classes: lp-page ws-page
 ```{=html}
 <section class="lp-top">
   <div class="lp-glow"></div>
-  <div class="lp-w lp-page-head ws-head">
+  <div class="lp-w lp-page-head ws-head ws-hero"><div>
     <div class="lp-kick">Workshop · Aufbau</div>
     <h1>Datenvisualisierung mit ggplot2</h1>
     <div class="ws-pills"><span class="hl">8 Module</span><span>kostenfrei · offen für alle</span><span>Methodenzentrum</span></div>
+  </div>
+  <div class="ws-code"><span class="c"># Datenvisualisierung mit ggplot2</span>
+&gt; ggplot(df, aes(x = age, y = distress)) +
+    geom_point(alpha = 0.4) +
+    facet_wrap(~ bildung)</div>
   </div>
 </section>
 ```
@@ -40,6 +45,7 @@ Der Schwerpunkt liegt auf **praxisnaher Anwendung** mit dem Workshop-Datensatz a
 
 Nach dem Workshop können Teilnehmende …
 
+::: {.ws-goals}
 - die **Grammatik von Grafiken** (`Grammar of Graphics`) erklären und anwenden
 - mit `ggplot()` und `aes()` eine Grafik schichtweise aufbauen
 - die wichtigsten **Geome** einsetzen: `geom_point()`, `geom_bar()`, `geom_histogram()`, `geom_boxplot()`, `geom_smooth()`
@@ -89,4 +95,4 @@ Zugang
 
 ::::
 :::::
-
+:::

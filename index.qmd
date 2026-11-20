@@ -79,7 +79,7 @@ format:
       </div>
       <div class="tm-side">
         <div class="tm-card"><h3>Anmeldung</h3><p>Per Mail an <b>womeps@uni-frankfurt.de</b> – mit Workshop und Termin.</p><a class="tm-btn" href="mailto:womeps@uni-frankfurt.de?subject=Anmeldung%20Workshop">Mail schreiben</a></div>
-        <div class="tm-card tm-wish"><h3>Workshop wünschen</h3><p>Thema fehlt oder Workshop für deine Gruppe? Schreib mir.</p><a class="tm-btn" href="mailto:womeps@uni-frankfurt.de?subject=Workshop-Wunsch">Wunsch senden</a></div>
+        <div class="tm-card tm-wish"><h3>Workshop wünschen</h3><p>Thema fehlt oder Workshop für deine Gruppe? Schreib mir.</p><a class="tm-btn" href="kontakt.html">Wunsch senden</a></div>
       </div>
     </div>
   </section>

@@ -10,10 +10,16 @@ body-classes: lp-page ws-page
 ```{=html}
 <section class="lp-top">
   <div class="lp-glow"></div>
-  <div class="lp-w lp-page-head ws-head">
+  <div class="lp-w lp-page-head ws-head ws-hero"><div>
     <div class="lp-kick">Workshop · Einstieg</div>
     <h1>Einführung in R &amp; RStudio</h1>
     <div class="ws-pills"><span class="hl">10 Module</span><span>kostenfrei · offen für alle</span><span>Methodenzentrum</span></div>
+  </div>
+  <div class="ws-code"><span class="c"># Einführung in R &amp; RStudio</span>
+&gt; df &lt;- read_csv("daten.csv")
+&gt; df |&gt;
+    filter(age &gt;= 30) |&gt;
+    select(age, sex)</div>
   </div>
 </section>
 ```
@@ -37,6 +43,7 @@ Der Schwerpunkt liegt auf **praxisnahen Beispielen** und einem **reproduzierbare
 
 Nach dem Workshop können Teilnehmende …
 
+::: {.ws-goals}
 - die RStudio-Oberfläche sicher bedienen (Script, Console, Environment, Plots/Files/Help)
 - grundlegende R-Konzepte anwenden (**Objekte**, **Funktionen**, **Vektoren**, **Data Frames**)
 - Daten aus **CSV** und **SPSS** importieren und einen **Plausibilitätscheck** durchführen
@@ -86,4 +93,4 @@ Zugang
 
 ::::
 :::::
-
+:::
