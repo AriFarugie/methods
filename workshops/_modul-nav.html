@@ -39,7 +39,34 @@
     }
 
     var cf = m.querySelector('.checkfragen');
-    if (cf) quiz(m, cf);
+    function teilListe(sel) {
+      return Array.prototype.filter.call(m.querySelectorAll(sel), function (h) {
+        return (h.id || (h.closest('section[id]') || {}).id) && !h.closest('.callout, .checkfragen') && !/^(Übung|Lösung)/.test(h.textContent.trim());
+      });
+    }
+    var codes = Array.prototype.filter.call(m.querySelectorAll('div.sourceCode pre code, pre.sourceCode code'), function (c) { return c.closest('.cell, .sourceCode') && !c.closest('.cell-output'); });
+    if (codes.length) {
+      var dl = document.createElement('a'); dl.className = 'mk-skript'; dl.textContent = 'R-Skript ↓';
+      dl.download = 'modul-' + nr(m) + '.R';
+      dl.addEventListener('click', function () {
+        var txt = '# ' + titles[i] + '\n\n' + codes.map(function (c) { return c.textContent.replace(/\s+$/, ''); }).join('\n\n# ----\n\n') + '\n';
+        dl.href = URL.createObjectURL(new Blob([txt], { type: 'text/plain' }));
+      });
+      kopf.appendChild(dl);
+    }
+    var teile = teilListe('h1');
+    if (teile.length < 3) teile = teilListe('h2');
+    if (teile.length >= 2) {
+      var tn = document.createElement('nav'); tn.className = 'mk-teile';
+      tn.innerHTML = '<span>In diesem Modul</span>' + teile.map(function (h, k) {
+        var id = h.id || h.closest('section[id]').id;
+        return '<a href="#' + id + '"><b>' + (k + 1) + '</b>' + esc(h.textContent.trim()) + '</a>';
+      }).join('');
+      kopf.parentNode.insertBefore(tn, kopf.nextSibling);
+    }
+    if (cf) {
+      quiz(m, cf);
+    }
 
     var fuss = document.createElement('div'); fuss.className = 'modul-fuss';
     fuss.innerHTML = (i > 0 ? '<a class="mf-prev" href="#' + mods[i - 1].id + '">← ' + esc(titles[i - 1]) + '</a>' : '<span></span>') +
