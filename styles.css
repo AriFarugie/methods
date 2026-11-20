@@ -623,3 +623,115 @@ body.modul-seite #quarto-content main#quarto-document-content { grid-column: scr
 @media (max-width: 900px) {
   .modul-app > .modul-main { grid-column: 1; grid-row: 2; }
 }
+@media (max-width: 600px) {
+  .navbar-brand .navbar-title { font-size: .92rem; }
+}
+
+/* ── Workshop-Übersicht (Lernpfad) ───────────────────────────── */
+.ws-head p { max-width: 680px; }
+.ws-pills span {
+  display: inline-block; border: 1px solid rgba(255,255,255,.25); border-radius: 999px;
+  padding: .2rem .8rem; font-size: .82rem; margin: .2rem .4rem 0 0; color: #fff;
+}
+.ws-pills span.hl { background: var(--accent-light); color: var(--ink); border-color: var(--accent-light); font-weight: 700; }
+.ws-lay {
+  display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 2.5rem; align-items: start;
+  max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem;
+}
+.ws-main h2 { font-family: 'Lora', serif; font-weight: 400; font-size: 1.7rem; border: 0; margin: 2.2rem 0 1rem; }
+.ws-main h2:first-child { margin-top: 0; }
+.ws-modlist ol { columns: 2; column-gap: 2rem; padding-left: 1.3rem; margin: 0; }
+.ws-modlist li { break-inside: avoid; margin-bottom: .35rem; }
+.ws-modlist a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--border); }
+.ws-modlist a:hover { border-color: var(--accent); }
+.ws-side {
+  position: sticky; top: 80px; background: #fff; border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.4rem; font-size: .92rem;
+}
+.ws-side > p:first-child strong { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 600; }
+.ws-side dl { margin: .4rem 0 1.2rem; }
+.ws-side dt { font-weight: 800; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-top: .6rem; }
+.ws-side dd { margin: 0; }
+.ws-side a.ws-start {
+  display: block; text-align: center; background: var(--accent-light); color: var(--ink);
+  font-weight: 800; padding: .7rem 1rem; border-radius: 999px; text-decoration: none; margin-bottom: 1rem;
+}
+.ws-side ul { padding-left: 1.1rem; margin: .3rem 0 0; }
+@media (max-width: 900px) {
+  .ws-modlist ol { columns: 1; }
+  .ws-lay { grid-template-columns: 1fr; padding: 2rem 1.2rem 3rem; }
+  .ws-side { position: static; }
+}
+
+/* ── Termine & Anmeldung ─────────────────────────────────────── */
+.tm-row { display: grid; grid-template-columns: minmax(0, 1.5fr) 1fr; gap: 1rem; align-items: start; }
+.tm-side { display: grid; gap: 1rem; }
+.tm-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem 1.5rem; }
+.tm-card h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 1.2rem; margin: 0 0 .5rem; }
+.tm-card p { font-size: .93rem; margin: 0; }
+.tm-empty { border: 1px dashed #c9c6bd; border-radius: 10px; padding: 1rem; color: var(--muted); background: #faf9f6; }
+.tm-item { display: flex; gap: 1rem; align-items: center; padding: .8rem 0; border-top: 1px solid #efede7; }
+.tm-date { flex: 0 0 4rem; text-align: center; border-radius: 10px; background: #f1efe9; padding: .4rem 0; font-weight: 800; line-height: 1.1; }
+.tm-date small { display: block; font-weight: 600; font-size: .7rem; color: var(--muted); }
+.tm-btn { display: inline-block; margin-top: .7rem; background: var(--ink); color: #fff !important; font-weight: 800; padding: .55rem 1.1rem; border-radius: 999px; text-decoration: none; font-size: .9rem; }
+.tm-wish { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tm-wish h3 { color: #fff; }
+.tm-wish p { color: #e2efe9; }
+.tm-wish .tm-btn { background: var(--accent-light); color: var(--ink) !important; }
+@media (max-width: 800px) { .tm-row { grid-template-columns: 1fr; } }
+
+/* ── Beschreibungsseite lebendiger ───────────────────────────── */
+.ws-hero { display: grid !important; grid-template-columns: minmax(0, 1fr) 380px; gap: 2.5rem; align-items: center; }
+.ws-code {
+  background: #11131a; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 1.2rem 1.3rem;
+  font-family: 'JetBrains Mono', monospace; font-variant-ligatures: none; font-size: .85rem; color: #8fd3b6;
+  white-space: pre; line-height: 1.7; box-shadow: 0 20px 50px rgba(0,0,0,.35); overflow: hidden;
+}
+.ws-code .c { color: #6b6b82; }
+.ws-main h2 { position: relative; padding-left: 1rem; }
+.ws-main h2::before { content: ""; position: absolute; left: 0; top: .25em; bottom: .25em; width: 4px; border-radius: 2px; background: var(--gold); }
+.ws-goals ul { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.ws-goals li {
+  position: relative; background: #fff; border: 1px solid var(--border); border-radius: 12px;
+  padding: .75rem .9rem .75rem 2.9rem; font-size: .92rem; line-height: 1.45;
+}
+.ws-goals li::before {
+  content: "✓"; position: absolute; left: .85rem; top: .75rem; width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  background: var(--accent-light); color: var(--accent); font-weight: 800; font-size: .8rem;
+  display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 900px) {
+  .ws-hero { grid-template-columns: 1fr; }
+  .ws-code { display: none; }
+  .ws-goals ul { grid-template-columns: 1fr; }
+}
+
+/* ── Schrift: Serifen nur in der großen Überschrift oben ─────── */
+h2, h3, h4, .lp-sec h2, .lp-card h3, .lp-box h3, .lp-cta h3, .tm-card h3, .ws-main h2,
+.mn-head, .mk-titel, .cf-kopf b, .ws-side > p:first-child strong, .quarto-title h1.title {
+  font-family: 'Mulish', sans-serif !important; font-weight: 800 !important; letter-spacing: -.01em;
+}
+
+/* ── Workshop-Karten (Stil der alten Startseite) ─────────────── */
+.oc-strip { background: var(--ink); color: #fff; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding: 0 2rem 3.5rem; margin-top: -1px; }
+.oc-inner { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.08); padding-top: 2.5rem; }
+.oc-sh { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.75rem; }
+.oc-sh span { font-size: 1.05rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #a8d5c2; }
+.oc-sh div { flex: 1; height: 1px; background: rgba(255,255,255,.1); }
+.oc-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.25rem; }
+.oc-card {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 2rem;
+  text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: .9rem; position: relative; overflow: hidden;
+  transition: box-shadow .25s, transform .25s, background .25s, border-color .25s;
+}
+.oc-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #a8d5c2, transparent); transform: scaleY(0); transform-origin: top; transition: transform .3s ease; }
+.oc-card:hover { background: rgba(255,255,255,.09); border-color: rgba(168,213,194,.25); box-shadow: 0 12px 40px rgba(0,0,0,.3); transform: translateY(-3px); }
+.oc-card:hover .oc-bar { transform: scaleY(1); }
+.oc-status { display: inline-flex; align-items: center; gap: .35rem; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #a8d5c2; background: rgba(168,213,194,.12); border-radius: 100px; padding: .28rem .8rem; width: fit-content; }
+.oc-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #a8d5c2; }
+.lp .oc-card h3 { font-size: 1.25rem; line-height: 1.35; color: #fff; margin: 0; }
+.oc-desc { font-size: .88rem; color: rgba(255,255,255,.55); line-height: 1.7; flex: 1; margin: 0; }
+.oc-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.oc-tag { font-size: .68rem; font-weight: 600; color: rgba(255,255,255,.45); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 100px; padding: .18rem .65rem; }
+.oc-foot { display: flex; align-items: center; justify-content: space-between; padding-top: .5rem; border-top: 1px solid rgba(255,255,255,.08); font-size: .8rem; font-weight: 700; color: #a8d5c2; }
+@media (max-width: 800px) { .oc-cards { grid-template-columns: 1fr; } .oc-strip { padding: 0 1.25rem 2.5rem; } }

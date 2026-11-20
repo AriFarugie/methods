@@ -15,7 +15,7 @@ format:
   <div class="lp-glow"></div>
   <div class="lp-w lp-hero">
     <div>
-      <div class="lp-kick">Methoden &amp; Statistik · Frankfurt</div>
+      <div class="lp-kick">Methoden &amp; Statistik</div>
       <h1>Mit Daten arbeiten lernen – <em>Schritt für Schritt</em> und zum Mitmachen.</h1>
       <p>Workshops für Studierende und Forschende der empirischen Wissenschaften.
          Kurze Inputs, viel Ausprobieren und Materialien zum Weiterarbeiten.</p>
@@ -33,39 +33,50 @@ format:
     </div>
   </div>
 </section>
+<section class="oc-strip" id="workshops">
+  <div class="oc-inner">
+    <div class="oc-sh"><span>Workshops</span><div></div></div>
+    <div class="oc-cards">
+      <a class="oc-card" href="workshops/ws1/index.html">
+        <div class="oc-bar"></div>
+        <div class="oc-status">Verfügbar</div>
+        <h3>Einführung in R &amp; RStudio</h3>
+        <p class="oc-desc">Vom ersten Skript bis zum eigenen Analyse-Workflow: Datenimport, Datenaufbereitung mit dplyr, Umkodieren, Joins und fehlende Werte – mit Mini-Projekt zum Abschluss.</p>
+        <div class="oc-tags"><span class="oc-tag">10 Module</span><span class="oc-tag">Einsteiger</span><span class="oc-tag">dplyr</span><span class="oc-tag">haven</span><span class="oc-tag">psych</span></div>
+        <div class="oc-foot">Zum Workshop <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a class="oc-card" href="workshops/ws2/index.html">
+        <div class="oc-bar"></div>
+        <div class="oc-status">Verfügbar</div>
+        <h3>Datenvisualisierung mit ggplot2</h3>
+        <p class="oc-desc">Grammar of Graphics Schicht für Schicht – von Streudiagrammen bis zu kombinierten Layouts mit patchwork.</p>
+        <div class="oc-tags"><span class="oc-tag">8 Module</span><span class="oc-tag">Grundkenntnisse R</span><span class="oc-tag">ggplot2</span><span class="oc-tag">patchwork</span></div>
+        <div class="oc-foot">Zum Workshop <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 
 <div class="lp-w">
 
-  <div class="lp-cards" id="workshops">
-    <a class="lp-card" href="workshops/ws1/index.html">
-      <div class="lp-code">&gt; library(tidyverse)
-&gt; daten |&gt; count(gruppe)</div>
-      <div class="lp-bd">
-        <h3>Einführung in R &amp; RStudio</h3>
-        <p>Vom ersten Skript bis zum eigenen Analyse-Workflow: Datenimport, Datenaufbereitung mit dplyr,
-           Umkodieren, Joins und fehlende Werte – mit Mini-Projekt zum Abschluss.</p>
-        <div class="lp-pills">
-          <span class="lp-hl">2 Tage</span><span class="lp-hl">keine Vorkenntnisse</span>
-          <span>dplyr</span><span>haven</span><span>psych</span>
-        </div>
-        <div class="lp-more">Zum Workshop →</div>
+  <section class="lp-sec" id="termine">
+    <div class="lp-lbl">Termine &amp; Anmeldung</div>
+    <h2>Nächste Termine</h2>
+    <div class="tm-row">
+      <div class="tm-card tm-list">
+        <div class="tm-empty">Neue Termine erscheinen Anfang 2027 hier.</div>
+        <!-- Termin eintragen: Zeile kopieren, Datum/Workshop/Ort anpassen und den Hinweis oben löschen
+        <div class="tm-item"><div class="tm-date">15<small>März</small></div><div><b>Einführung in R &amp; RStudio</b><br><small>Uhrzeit · Ort</small></div></div>
+        -->
       </div>
-    </a>
-    <a class="lp-card" href="workshops/ws2/index.html">
-      <div class="lp-code lp-v">&gt; ggplot(daten, aes(x, y)) +
-    geom_point()</div>
-      <div class="lp-bd">
-        <h3>Datenvisualisierung mit ggplot2</h3>
-        <p>Grammar of Graphics Schicht für Schicht – von Streudiagrammen bis zu
-           kombinierten Layouts mit patchwork.</p>
-        <div class="lp-pills">
-          <span class="lp-hl">2 Tage</span><span class="lp-hl">Grundkenntnisse R</span>
-          <span>ggplot2</span><span>patchwork</span>
-        </div>
-        <div class="lp-more">Zum Workshop →</div>
+      <div class="tm-side">
+        <div class="tm-card"><h3>Anmeldung</h3><p>Per Mail an <b>womeps@uni-frankfurt.de</b> – mit Workshop und Termin.</p><a class="tm-btn" href="mailto:womeps@uni-frankfurt.de?subject=Anmeldung%20Workshop">Mail schreiben</a></div>
+        <div class="tm-card tm-wish"><h3>Workshop wünschen</h3><p>Thema fehlt oder Workshop für deine Gruppe? Schreib mir.</p><a class="tm-btn" href="kontakt.html">Wunsch senden</a></div>
       </div>
-    </a>
-  </div>
+    </div>
+  </section>
 
   <section class="lp-sec">
     <div class="lp-lbl">So laufen meine Workshops</div>

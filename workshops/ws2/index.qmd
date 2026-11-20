@@ -2,17 +2,34 @@
 title: "Datenvisualisierung mit ggplot2"
 format:
   html:
-    toc: true
-    toc-title: "Inhalte dieser Seite"
-    toc-location: left
-
-sidebar: workshop2
+    toc: false
+    page-layout: full
+body-classes: lp-page ws-page
 ---
 
-# Kurzbeschreibung
-___
+```{=html}
+<section class="lp-top">
+  <div class="lp-glow"></div>
+  <div class="lp-w lp-page-head ws-head ws-hero"><div>
+    <div class="lp-kick">Workshop · Aufbau</div>
+    <h1>Datenvisualisierung mit ggplot2</h1>
+    <div class="ws-pills"><span class="hl">8 Module</span><span>kostenfrei · offen für alle</span><span>Methodenzentrum</span></div>
+  </div>
+  <div class="ws-code"><span class="c"># Datenvisualisierung mit ggplot2</span>
+&gt; ggplot(df, aes(x = age, y = distress)) +
+    geom_point(alpha = 0.4) +
+    facet_wrap(~ bildung)</div>
+  </div>
+</section>
+```
 
-Der zweitägige Workshop **„Datenvisualisierung mit ggplot2"** richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten **professionell und reproduzierbar visualisieren** möchten.
+::::: {.ws-lay}
+:::: {.ws-main}
+## Kurzbeschreibung
+
+Der Workshop **„Datenvisualisierung mit ggplot2"** richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten **professionell und reproduzierbar visualisieren** möchten.
+
+Der Workshop ist **modular aufgebaut**: 8 Module, jedes mit Übung und Checkfragen, die du in deinem eigenen Tempo durcharbeiten kannst.
 
 Der Workshop setzt grundlegende Kenntnisse in R und dem `tidyverse` voraus (z. B. aus dem Workshop „Einführung in R & RStudio"), ist aber so aufgebaut, dass auch Einsteiger:innen in `ggplot2` gut folgen können.
 
@@ -26,13 +43,11 @@ Im Workshop lernen die Teilnehmenden Schritt für Schritt:
 
 Der Schwerpunkt liegt auf **praxisnaher Anwendung** mit dem Workshop-Datensatz aus dem ersten Workshop – alle Schritte sind direkt übertragbar auf eigene Projekte.
 
-**Benötigte Vorkenntnisse:** Grundkenntnisse in R und `tidyverse` (z. B. `select()`, `filter()`, `mutate()`, Pipes).
-
-# Lernziele
-___
+## Lernziele
 
 Nach dem Workshop können Teilnehmende …
 
+::: {.ws-goals}
 - die **Grammatik von Grafiken** (`Grammar of Graphics`) erklären und anwenden
 - mit `ggplot()` und `aes()` eine Grafik schichtweise aufbauen
 - die wichtigsten **Geome** einsetzen: `geom_point()`, `geom_bar()`, `geom_histogram()`, `geom_boxplot()`, `geom_smooth()`
@@ -45,20 +60,29 @@ Nach dem Workshop können Teilnehmende …
 - **Farbpaletten** aus `RColorBrewer` und `viridis` verwenden
 - mit dem Paket **`patchwork`** mehrere Plots kombinieren
 - Grafiken als **Datei exportieren** (`ggsave()`, PNG, PDF)
+:::
 
-# Module
-___
+::::
 
-Der Workshop ist in Module aufgeteilt, die du in deinem eigenen Tempo durcharbeiten kannst. Jedes Modul endet mit zwei Checkfragen.
+:::: {.ws-side}
+**Auf einen Blick**
 
-1. [Warum Datenvisualisierung?](module.qmd#modul-1)
-2. [ggplot2: Grammatik, Data & Aesthetics](module.qmd#modul-2)
-3. [Geometries & Beschriftungen](module.qmd#modul-3)
-4. [Layer 4: Faceting](module.qmd#modul-4)
-5. [Layer 5: Statistics](module.qmd#modul-5)
-6. [Coordinates, Theme & Farben](module.qmd#modul-6)
-7. [patchwork & Export](module.qmd#modul-7)
-8. [Mini-Projekt & Abschluss](module.qmd#modul-8)
+Umfang
+: 8 Module, jedes mit Übung und Checkfragen
 
----
-[➡️ Zum Workshop](module.qmd){.btn .btn-primary}
+Vorkenntnisse
+: Grundkenntnisse in R und tidyverse
+
+Software
+: R & RStudio (kostenlos)
+
+Teilnahme
+: kostenfrei · offen für alle
+
+Zugang
+: passwortgeschützt – auf Anfrage
+
+[Workshop starten →](module.qmd){.ws-start}
+
+::::
+:::::

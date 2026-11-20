@@ -231,7 +231,7 @@ ___
 1. Klicke oben auf **File → New Project…** in der Menü-Leiste
 2. Wähle **New Directory**
 3. Wähle **New Project**
-4. Vergib einen **sinnvollen Namen** (z. B. `r_workshop_tag1`)
+4. Vergib einen **sinnvollen Namen** (z. B. `r_workshop`)
 5. Wähle einen Speicherort auf deinem Rechner
 6. Klicke auf **Create Project**
 
@@ -267,7 +267,7 @@ ___
 ::: callout-tip
 👉 **Tipp:**  
 Der Projektname sollte **keine Leerzeichen** enthalten  
-(z. B. `r_workshop_tag1` statt `R Workshop Tag 1`)
+(z. B. `r_workshop` statt `R Workshop`)
 :::
 
 **RStudio startet nun neu – du arbeitest jetzt** ***innerhalb deines Projekts.***
