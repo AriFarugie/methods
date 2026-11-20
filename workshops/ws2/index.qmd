@@ -29,6 +29,8 @@ body-classes: lp-page ws-page
 
 Der Workshop **„Datenvisualisierung mit ggplot2"** richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten **professionell und reproduzierbar visualisieren** möchten.
 
+Der Workshop ist **modular aufgebaut**: 8 Module, jedes mit Übung und Checkfragen, die du in deinem eigenen Tempo durcharbeiten kannst.
+
 Der Workshop setzt grundlegende Kenntnisse in R und dem `tidyverse` voraus (z. B. aus dem Workshop „Einführung in R & RStudio"), ist aber so aufgebaut, dass auch Einsteiger:innen in `ggplot2` gut folgen können.
 
 Im Workshop lernen die Teilnehmenden Schritt für Schritt:
@@ -58,19 +60,8 @@ Nach dem Workshop können Teilnehmende …
 - **Farbpaletten** aus `RColorBrewer` und `viridis` verwenden
 - mit dem Paket **`patchwork`** mehrere Plots kombinieren
 - Grafiken als **Datei exportieren** (`ggsave()`, PNG, PDF)
-
-## Module im Überblick
-
-::: {.ws-modlist}
-1. [Warum Datenvisualisierung?](module.qmd#modul-1)
-2. [ggplot2: Grammatik, Data & Aesthetics](module.qmd#modul-2)
-3. [Geometries & Beschriftungen](module.qmd#modul-3)
-4. [Layer 4: Faceting](module.qmd#modul-4)
-5. [Layer 5: Statistics](module.qmd#modul-5)
-6. [Coordinates, Theme & Farben](module.qmd#modul-6)
-7. [patchwork & Export](module.qmd#modul-7)
-8. [Mini-Projekt & Abschluss](module.qmd#modul-8)
 :::
+
 ::::
 
 :::: {.ws-side}
@@ -95,4 +86,3 @@ Zugang
 
 ::::
 :::::
-:::
