@@ -15,7 +15,7 @@ format:
   <div class="lp-glow"></div>
   <div class="lp-w lp-hero">
     <div>
-      <div class="lp-kick">Methoden &amp; Statistik · Frankfurt</div>
+      <div class="lp-kick">Methoden &amp; Statistik</div>
       <h1>Mit Daten arbeiten lernen – <em>Schritt für Schritt</em> und zum Mitmachen.</h1>
       <p>Workshops für Studierende und Forschende der empirischen Wissenschaften.
          Kurze Inputs, viel Ausprobieren und Materialien zum Weiterarbeiten.</p>
