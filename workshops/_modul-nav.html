@@ -104,7 +104,8 @@
     if (!h) { try { h = localStorage.getItem(key + 'zuletzt') || ''; } catch (e) {} }
     var el = h ? document.getElementById(h) : null;
     var m = el ? el.closest('.modul') : null;
-    if (!m) { if (location.hash && el) return; show(0); return; }
+    if (!m) { if (location.hash && el) return; m = mods[0]; el = m; }
+    if (!location.hash) history.replaceState(null, '', '#' + m.id);
     show(mods.indexOf(m), el === m ? null : el);
   }
   nav.querySelector('.mn-reset').addEventListener('click', function () {
