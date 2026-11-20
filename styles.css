@@ -711,3 +711,27 @@ h2, h3, h4, .lp-sec h2, .lp-card h3, .lp-box h3, .lp-cta h3, .tm-card h3, .ws-ma
 .mn-head, .mk-titel, .cf-kopf b, .ws-side > p:first-child strong, .quarto-title h1.title {
   font-family: 'Mulish', sans-serif !important; font-weight: 800 !important; letter-spacing: -.01em;
 }
+
+/* ── Workshop-Karten (Stil der alten Startseite) ─────────────── */
+.oc-strip { background: var(--ink); color: #fff; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding: 0 2rem 3.5rem; margin-top: -1px; }
+.oc-inner { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.08); padding-top: 2.5rem; }
+.oc-sh { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.75rem; }
+.oc-sh span { font-size: 1.05rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #a8d5c2; }
+.oc-sh div { flex: 1; height: 1px; background: rgba(255,255,255,.1); }
+.oc-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.25rem; }
+.oc-card {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 2rem;
+  text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: .9rem; position: relative; overflow: hidden;
+  transition: box-shadow .25s, transform .25s, background .25s, border-color .25s;
+}
+.oc-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #a8d5c2, transparent); transform: scaleY(0); transform-origin: top; transition: transform .3s ease; }
+.oc-card:hover { background: rgba(255,255,255,.09); border-color: rgba(168,213,194,.25); box-shadow: 0 12px 40px rgba(0,0,0,.3); transform: translateY(-3px); }
+.oc-card:hover .oc-bar { transform: scaleY(1); }
+.oc-status { display: inline-flex; align-items: center; gap: .35rem; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #a8d5c2; background: rgba(168,213,194,.12); border-radius: 100px; padding: .28rem .8rem; width: fit-content; }
+.oc-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #a8d5c2; }
+.lp .oc-card h3 { font-size: 1.25rem; line-height: 1.35; color: #fff; margin: 0; }
+.oc-desc { font-size: .88rem; color: rgba(255,255,255,.55); line-height: 1.7; flex: 1; margin: 0; }
+.oc-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.oc-tag { font-size: .68rem; font-weight: 600; color: rgba(255,255,255,.45); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 100px; padding: .18rem .65rem; }
+.oc-foot { display: flex; align-items: center; justify-content: space-between; padding-top: .5rem; border-top: 1px solid rgba(255,255,255,.08); font-size: .8rem; font-weight: 700; color: #a8d5c2; }
+@media (max-width: 800px) { .oc-cards { grid-template-columns: 1fr; } .oc-strip { padding: 0 1.25rem 2.5rem; } }
