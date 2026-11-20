@@ -14,17 +14,11 @@ format:
 body-classes: modul-seite
 ---
 
-:::::::: {.modul #modul-1 data-titel="R & RStudio kennenlernen"}
+:::::::: {.modul #modul-0 data-titel="Optional: R & RStudio im Detail" data-optional="true"}
 
-# Ankommen & Setup
-___
-Willkommen zum Workshop „Einführung in R & RStudio" 👋  
-
-**Ziele**
-
-- RStudio-Oberfläche kennenlernen
-- verstehen, wie R „denkt"
-- erste eigene Objekte und Daten erzeugen
+::: {.mk-ziel}
+**Darum geht’s:** Du lernst, was R und RStudio sind und wie die RStudio-Oberfläche aufgebaut ist.
+:::
 
 # Was ist R und RStudio?
 ___
@@ -88,7 +82,7 @@ Alles, was du in die Konsole eingibst, wird sofort von R ausgeführt. Das Ergebn
 - gib `13 + 15` ein
 :::
 
-::: callout-caution
+::: callout-warning
 **ABER**
 
 Wir brauchen ***R GUI*** nicht, sondern nutzen **RStudio!**
@@ -195,9 +189,36 @@ Dieser Bereich zeigt dir:
 
 👉 Hier findest du fast alles, was R zusätzlich ausgibt – und wo es gespeichert ist.
 
-::: callout-important
+::: callout-warning
 Im nächsten Abschnitt legen wir unser erstes **Projekt** an!
 :::
+
+
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- R ist eine freie Programmiersprache zur Analyse und Darstellung von Daten.
+- RStudio ist keine eigene Sprache, sondern ein „Schreibtisch“ für R.
+- RStudio hat vier Bereiche: Skript-Editor, Konsole, Environment/History und Files/Plots/Packages/Help.
+:::
+
+::::::::
+
+:::::::: {.modul #modul-1 data-titel="Projekt anlegen & erstes Skript"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du legst ein RStudio-Projekt an und führst erste Befehle in einem R-Skript aus.
+:::
+
+# Ankommen & Setup
+___
+Willkommen zum Workshop „Einführung in R & RStudio" 👋  
+
+**Ziele**
+
+- RStudio-Oberfläche kennenlernen
+- verstehen, wie R „denkt"
+- erste eigene Objekte und Daten erzeugen
 
 # Projekt anlegen
 ___
@@ -350,14 +371,22 @@ sqrt(196) + 3^3
 ```
 ::: 
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Ein neues Projekt bedeutet einen neuen, sauberen Arbeitskontext: Alle Dateien liegen an einem festen Ort.
+- Code gehört ins Skript, damit deine Arbeit nachvollziehbar und wiederverwendbar ist.
+- Mit **Strg + Enter** führst du die aktuelle Zeile oder Auswahl aus.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
-**Zum Inhalt:** Was ist RStudio?
+**Zum Inhalt:** Warum solltest du für jede Analyse ein eigenes RStudio-Projekt anlegen?
 
-1. Eine eigene Programmiersprache, die R ersetzt
-2. Ein Programm, das die Arbeit mit R erleichtert – eine Art Schreibtisch für R
-3. Ein R-Paket für Grafiken
+1. Weil R ohne Projekt nicht gestartet werden kann
+2. Weil alle Dateien an einem festen Ort liegen und R immer weiß, wo es sie findet
+3. Weil Projekte die Berechnungen in R beschleunigen
 ::::
 
 :::: {.frage data-richtig="3"}
@@ -374,6 +403,10 @@ sqrt(196) + 3^3
 ::::::::
 
 :::::::: {.modul #modul-2 data-titel="Grundprinzipien von R"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du lernst, wie R mit Objekten und Funktionen arbeitet, und berechnest erste Kennwerte.
+:::
 
 # Grundprinzipien von R
 ___
@@ -558,6 +591,14 @@ ci_y
 - Im falschen Fenster tippen (Konsole statt Skript oder umgekehrt)
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Mit `<-` speicherst du Ergebnisse in Objekten.
+- Funktionen wie `mean()` oder `sd()` bekommen Argumente in runden Klammern.
+- Kennwerte wie Standardfehler, Varianz, z-Werte und Konfidenzintervall lassen sich Schritt für Schritt aus Hilfsobjekten berechnen.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -582,6 +623,10 @@ ci_y
 ::::::::
 
 :::::::: {.modul #modul-3 data-titel="Datentypen & Datenstrukturen"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du lernst die wichtigsten Datentypen und Datenstrukturen kennen und erfährst, wie du ein Objekt in R untersuchst.
+:::
 
 ## Datentypen & Datenstrukturen
 
@@ -775,6 +820,14 @@ str(ci_y)
 3. `str()` → Wie ist das Objekt **aufgebaut** und welche Inhalte hat es?
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Typische Datentypen sind numeric, character und logical.
+- Typische Datenstrukturen sind Vektor, Matrix und Data Frame.
+- Mit `class()` und `str()` findest du heraus, was ein Objekt ist.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -800,6 +853,10 @@ str(ci_y)
 ::::::::
 
 :::::::: {.modul #modul-4 data-titel="Einen Datensatz erstellen & Pakete"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du erstellst mit `data.frame()` einen eigenen Datensatz und lernst, wie du Pakete installierst und lädst.
+:::
 
 ## Einen ersten Datensatz in R erstellen
 
@@ -845,7 +902,7 @@ occupation <- c(
 Jeder dieser Vektoren stellt eine **Variable** dar.  
 Die einzelnen Werte gehören jeweils **zur gleichen Person** – also zur gleichen Zeile im späteren Datensatz.
 
-::: callout-important
+::: callout-warning
 # Wichtig 
 Alle Vektoren müssen **die gleiche Länge** haben.
 
@@ -870,7 +927,7 @@ data <- data.frame(
 data
 ```
 
-::: callout-caution
+::: callout-warning
 # Achtung
 
 Aufbau der Funktion `data.frame()`:
@@ -1025,6 +1082,14 @@ Es enthält unter anderem:
 die in der empirischen Forschung regelmäßig benötigt werden.
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- `data.frame()` fügt gleich lange Vektoren zu einer Tabelle zusammen.
+- `install.packages()` installierst du einmal, `library()` brauchst du in jeder Sitzung.
+- Pakete erweitern R um zusätzliche Funktionen.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="1"}
@@ -1050,6 +1115,10 @@ die in der empirischen Forschung regelmäßig benötigt werden.
 ::::::::
 
 :::::::: {.modul #modul-5 data-titel="Datenimport & Datenaufbereitung"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du importierst Daten aus CSV- und SPSS-Dateien, prüfst sie auf Plausibilität und bereitest sie mit `dplyr` auf.
+:::
 
 ## Datenimport
 
@@ -1284,9 +1353,8 @@ Berechne das **Durchschnittsalter** (Mean) und die **Standardabweichung** (SD) d
 ::: {.callout-tip collapse="true"}
 # **Lösung**
 
-::: {.panel-tabset}
+**Empfohlene Lösung**
 
-# Alternative 1
 
 ```{r}
 #| echo: true
@@ -1294,6 +1362,11 @@ Berechne das **Durchschnittsalter** (Mean) und die **Standardabweichung** (SD) d
 mean(df_csv$age, na.rm = TRUE)
 sd(df_csv$age, na.rm = TRUE)
 ```
+
+::: {.callout-note collapse="true"}
+# Alternativen
+
+::: {.panel-tabset}
 
 # Alternative 2
 
@@ -1304,6 +1377,8 @@ sd(df_csv$age, na.rm = TRUE)
 library(psych)
 describe(df_csv$age)
 ```
+:::
+
 :::
 
 :::
@@ -1319,7 +1394,7 @@ Der Fokus liegt auf:
 - schrittweisem Arbeiten  
 - einer einheitlichen „Grammatik" für Datenmanipulation
 
-::: callout-important
+::: callout-warning
 # Wichtigste Funktionen
 
 - `select()` – Variablen auswählen  
@@ -1339,7 +1414,7 @@ select(df_csv, age, sex)
 
 `select()` wählt Variablen aus und gibt einen neuen Datensatz zurück (`tibble` fungiert dabei genauso wie ein Data Frame).
 
-::: callout-caution
+::: callout-warning
 # **Achtung**
 
 Ohne eine **Zuweisung** wird **kein neues Objekt** erstellt!
@@ -1384,6 +1459,14 @@ df_2var
 
 Auch dafür gibt es in R eine elegante Lösung: **Pipes**.
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- CSV-Dateien liest du mit `read_csv()` ein, SPSS-Dateien mit `read_sav()` aus `haven`.
+- Nach dem Import prüfst du die Daten mit `summary()`, `glimpse()` oder `str()`.
+- `select()` wählt Variablen aus, `filter()` wählt Fälle aus.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -1409,6 +1492,10 @@ Auch dafür gibt es in R eine elegante Lösung: **Pipes**.
 ::::::::
 
 :::::::: {.modul #modul-6 data-titel="Pipes"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du verkettest mehrere Arbeitsschritte mit der Pipe `|>`, ohne Zwischenergebnisse speichern zu müssen.
+:::
 
 ## Pipes
 
@@ -1449,8 +1536,8 @@ Das Wichtigste: **Learning by doing!**
 ::: {.callout-tip collapse="true"}
 # **Lösung**
 
-:::{.panel-tabset}
-# Alternative 1
+**Empfohlene Lösung**
+
 
 ```{r}
 #| echo: true
@@ -1474,6 +1561,11 @@ df_analyse_w <- df_analyse |>
 head(df_analyse_w, 10)
 ```
 
+::: {.callout-note collapse="true"}
+# Alternativen
+
+::: {.panel-tabset}
+
 # Alternative 2
 
 ```{r}
@@ -1492,7 +1584,17 @@ head(df_analyse_w, 10)
 ```
 
 :::
+
+:::
 ::: 
+
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Die Pipe gibt das Ergebnis eines Schritts direkt an den nächsten Befehl weiter.
+- Pipes machen Code kürzer und lesbarer.
+- `mutate()`, `select()` und `filter()` lassen sich gut in einer Pipe kombinieren.
+:::
 
 ::::: {.checkfragen}
 
@@ -1519,6 +1621,10 @@ head(df_analyse_w, 10)
 ::::::::
 
 :::::::: {.modul #modul-7 data-titel="Umkodieren"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du invertierst Items und fasst Ausprägungen zu Gruppen und Faktoren zusammen.
+:::
 
 # Recap – Grundlagen
 ___
@@ -1622,7 +1728,33 @@ head(df_dist, 10)
 
 Nun können wir in diesem neuen Datensatz, getrennt von den Rohdaten, üben!
 
-:::{.panel-tabset}
+**Empfohlene Lösung**
+
+
+```{r}
+#| echo: true
+#| warning: false
+
+library(sjmisc)
+
+df_dist <- df_dist |>
+  mutate(
+    hs04_inv = rec(hs04, rec = "rev"),
+    hs05_inv = rec(hs05, rec = "rev"),
+    hs09_inv = rec(hs09, rec = "rev")
+  )
+
+head(df_dist, 10)
+```
+
+:::{.callout-note collapse="true"}
+# **Hinweis**
+Wir nutzen hier den `rec()`-Befehl aus dem Paket **sjmisc**. Wie du siehst, lassen sich Pakete gut miteinander kombinieren!
+:::
+::: {.callout-note collapse="true"}
+# Alternativen
+
+::: {.panel-tabset}
 
 # Alternative 1
 
@@ -1663,28 +1795,8 @@ df_dist <- df_dist |>
 head(df_dist, 10)
 ```
 
-# Alternative 3
-
-```{r}
-#| echo: true
-#| warning: false
-
-library(sjmisc)
-
-df_dist <- df_dist |>
-  mutate(
-    hs04_inv = rec(hs04, rec = "rev"),
-    hs05_inv = rec(hs05, rec = "rev"),
-    hs09_inv = rec(hs09, rec = "rev")
-  )
-
-head(df_dist, 10)
-```
-
-:::{.callout-note collapse="true"}
-# **Hinweis**
-Wir nutzen hier den `rec()`-Befehl aus dem Paket **sjmisc**. Wie du siehst, lassen sich Pakete gut miteinander kombinieren!
 :::
+
 :::
 
 ## Umkodieren von Gruppen und Faktoren
@@ -1714,7 +1826,7 @@ Wir erstellen nun einen neuen Datensatz `df_rec`. Folgende Variablen sollen enth
 - `mstat` – Familienstand
 - `im17` bis `im21` – Einstellung zur sozialen Ungleichheit
 
-:::{.callout-important collapse="true"}
+:::{.callout-warning collapse="true"}
 # **Beschreibungen der Variablen**
 
 :::{.panel-tabset}
@@ -1762,7 +1874,33 @@ head(df_rec, 10)
 
 Nun schauen wir uns die Umkodierung von Faktoren am Beispiel des Wohnorts an:
 
-:::{.panel-tabset}
+**Empfohlene Lösung**
+
+```{r}
+
+df_rec <- df_rec |>
+  mutate(
+    wohnort3 = recode(gs01,
+      "1" = 1, "2" = 1, "3" = 1,
+      "4" = 2, "5" = 2
+    ) |> factor(labels = c("Urban", "Rural"))
+  )
+
+df_rec |>
+  select(gs01, wohnort3) |>
+  head(10)
+```
+
+:::{.callout-note collapse="true"}
+# Beschreibung
+Hier haben wir Umkodieren und Faktor-Definition in einem Schritt kombiniert.
+:::
+
+::: {.callout-note collapse="true"}
+# Alternativen
+
+::: {.panel-tabset}
+
 # Alternative 1
 ```{r}
 
@@ -1806,27 +1944,6 @@ df_rec |>
 Wir haben die zuvor erstellten Gruppen (`1` und `2`) als **Faktor mit Labels** definiert.
 :::
 
-# Alternative 3
-```{r}
-
-df_rec <- df_rec |>
-  mutate(
-    wohnort3 = recode(gs01,
-      "1" = 1, "2" = 1, "3" = 1,
-      "4" = 2, "5" = 2
-    ) |> factor(labels = c("Urban", "Rural"))
-  )
-
-df_rec |>
-  select(gs01, wohnort3) |>
-  head(10)
-```
-
-:::{.callout-note collapse="true"}
-# Beschreibung
-Hier haben wir Umkodieren und Faktor-Definition in einem Schritt kombiniert.
-:::
-
 # Alternative 4
 
 ```{r}
@@ -1848,6 +1965,8 @@ df_rec |>
 # Beschreibung
 Hier wurden zuerst Labels vergeben und anschließend Levels definiert.
 :::
+:::
+
 :::
 
 ## Übung
@@ -1959,6 +2078,14 @@ df_rec |>
 :::
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Invertierte Items müssen umgepolt werden, bevor du Skalenwerte bildest.
+- Mit `recode()` fasst du Kategorien zusammen, mit `factor()` vergibst du Labels.
+- Das Ergebnis speicherst du mit `mutate()` als neue Variable, z. B. `hs04_inv`.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="3"}
@@ -1984,6 +2111,10 @@ df_rec |>
 ::::::::
 
 :::::::: {.modul #modul-8 data-titel="Joins – Datensätze zusammenführen"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du führst zwei Datensätze über eine gemeinsame Schlüsselvariable zusammen.
+:::
 
 # Joins – Datensätze zusammenführen
 ___
@@ -2197,7 +2328,7 @@ df_analyse <- df_csv |>
 
 :::
 
-:::{.callout-important collapse="true"}
+:::{.callout-warning collapse="true"}
 # **Merkhilfe der Join-Befehle**
 
 ### `left_join()`
@@ -2237,6 +2368,14 @@ Alle Fälle aus **beiden Datensätzen** bleiben erhalten.
 👉 Maximale Information, aber oft viele fehlende Werte.
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Joins verbinden Datensätze über eine Schlüsselvariable, z. B. `respid` oder `kzf`.
+- `left_join()` behält alle Fälle des linken Datensatzes.
+- Die Join-Typen unterscheiden sich darin, welche Fälle erhalten bleiben.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="2"}
@@ -2262,6 +2401,10 @@ Alle Fälle aus **beiden Datensätzen** bleiben erhalten.
 ::::::::
 
 :::::::: {.modul #modul-9 data-titel="Fehlende Werte (NA)"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du erkennst fehlende Werte, verstehst ihre Wirkung auf Berechnungen und lernst, wie du mit ihnen umgehst.
+:::
 
 # Fehlende Werte (NA)
 ___
@@ -2324,7 +2467,7 @@ df_analyse2 |>
 ```
 :::
 
-:::{.callout-important collapse="true"}
+:::{.callout-warning collapse="true"}
 # **Hinweis**
 - Schaut im **Codebuch** nach, was die Variablen bedeuten.
 - Achtet auf die richtigen **Variablennamen**!
@@ -2343,7 +2486,7 @@ Wir schauen nun unseren Datensatz an:
 is.na(df_analyse2)
 ```
 
-:::{.callout-caution}
+:::{.callout-warning}
 # **Achtung**
 
 Sehr **unübersichtlich**, da R für **jede Zeile und jede Variable** einen logischen Vektor mit `TRUE` oder `FALSE` ausgibt.
@@ -2359,7 +2502,7 @@ library(naniar)
 any_na(df_analyse2)
 ```
 
-:::{.callout-caution}
+:::{.callout-warning}
 # **Hinweis**
 Mit `any_na()` bekommen wir eine schnelle Rückmeldung, **ob** unser Datensatz fehlende Werte enthält.
 :::
@@ -2379,7 +2522,7 @@ ___
 is.na(df_analyse2$age)
 ```
 
-:::{.callout-caution}
+:::{.callout-warning}
 # **Achtung**
 
 Sehr **unübersichtlich**, da R für jede Zeile einen logischen Vektor mit `TRUE` oder `FALSE` ausgibt.
@@ -2393,7 +2536,7 @@ Sehr **unübersichtlich**, da R für jede Zeile einen logischen Vektor mit `TRUE
 any_na(df_analyse2$age)
 ```
 
-:::{.callout-caution}
+:::{.callout-warning}
 # **Hinweis**
 Mit `any_na()` bekommen wir eine schnelle Rückmeldung, **ob** eine bestimmte Variable fehlende Werte enthält.
 :::
@@ -2497,7 +2640,7 @@ Das gilt für viele Funktionen, zum Beispiel:
 rowSums(cbind(1, 5, 8, 10, NA, 20, 12, 13, NA), na.rm = TRUE)
 ```
 
-:::{.callout-important}
+:::{.callout-warning}
 # **Was bedeutet `na.rm`?**
 
 `na.rm = TRUE` bedeutet:  
@@ -2665,6 +2808,14 @@ Es gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist:
 :::
 :::
 
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- `NA` steht in R für einen fehlenden Wert.
+- Berechnungen mit `NA` ergeben `NA`, außer du setzt `na.rm = TRUE`.
+- Mit `drop_na()` entfernst du Fälle mit fehlenden Werten. Prüfe danach, ob die Fallzahl noch ausreicht.
+:::
+
 ::::: {.checkfragen}
 
 :::: {.frage data-richtig="1"}
@@ -2690,6 +2841,10 @@ Es gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist:
 ::::::::
 
 :::::::: {.modul #modul-10 data-titel="Workflow & Mini-Projekt"}
+
+::: {.mk-ziel}
+**Darum geht’s:** Du strukturierst ein eigenes Projekt und wendest alles Gelernte in einer kleinen Analyse an.
+:::
 
 # Recap Workshop
 ___
@@ -2961,6 +3116,14 @@ Guter Code ist nicht der „kürzeste" – sondern der, den du (und andere) spä
 ## Always Remember
 
 ![](assets/images/rmeme.jpg){width=100% style="border: 2px solid darkblue;"}
+
+::: {.mk-wichtig}
+**Das Wichtigste**
+
+- Eine klare Projektstruktur, gegliederte Skripte und Kommentare machen deine Arbeit nachvollziehbar.
+- Aufbereitete Datensätze speicherst du als CSV oder SPSS-Datei.
+- Das Mini-Projekt verbindet Import, Aufbereitung und deskriptive Statistik zu einem Workflow.
+:::
 
 ::::: {.checkfragen}
 
