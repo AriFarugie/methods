@@ -41,27 +41,21 @@ Nach dem Workshop können Teilnehmende …
 - Projekte & Skripte nachvollziehbar strukturieren und Zwischenergebnisse speichern
 - einen kleinen, vollständigen Datenbereinigungs- und Analyse-Workflow eigenständig umsetzen
 
-# Ablauf
+# Module
 ___
 
-## Tag 1 – Grundlagen
+Der Workshop ist in Module aufgeteilt, die du in deinem eigenen Tempo durcharbeiten kannst. Jedes Modul endet mit zwei Checkfragen.
 
-1. **Ankommen & Setup**  
-2. **Was ist R und RStudio?** 
-3. **Grundprinzipien von R**  
-4. **Datenimport & Überblick**  
-5. **Erste Schritte der Datenaufbereitung**
-
-## Tag 2 - Datenaufbereitung
-
-1. **Recap & offene Fragen**
-2. **Umkodieren** 
-3. **Datensätze zusammenführen**   
-4. **Fehlende Werte**
-5. **Workflows**   
-6. **Mini-Projekt**
+1. [R & RStudio kennenlernen](module.qmd#modul-1)
+2. [Grundprinzipien von R](module.qmd#modul-2)
+3. [Datentypen & Datenstrukturen](module.qmd#modul-3)
+4. [Einen Datensatz erstellen & Pakete](module.qmd#modul-4)
+5. [Datenimport & Datenaufbereitung](module.qmd#modul-5)
+6. [Pipes](module.qmd#modul-6)
+7. [Umkodieren](module.qmd#modul-7)
+8. [Joins – Datensätze zusammenführen](module.qmd#modul-8)
+9. [Fehlende Werte (NA)](module.qmd#modul-9)
+10. [Workflow & Mini-Projekt](module.qmd#modul-10)
 
 ---
-[➡️ Weiter zu Tag 1](day1.qmd){.btn .btn-primary} **-** [➡️ Weiter zu Tag 2](day2.qmd){.btn .btn-secondary}
-
- 
+[➡️ Zum Workshop](module.qmd){.btn .btn-primary}

@@ -28,20 +28,20 @@ website:
       style: docked
       background: white
       contents:
-        - text: "Zum Workshop – Tag 1"
-          href: workshops/ws1/day1.qmd
-        - text: "Zum Workshop – Tag 2"
-          href: workshops/ws1/day2.qmd
+        - text: "Übersicht"
+          href: workshops/ws1/index.qmd
+        - text: "Zum Workshop"
+          href: workshops/ws1/module.qmd
 
     - id: workshop2
       title: ""
       style: docked
       background: white
       contents:
-        - text: "Zum Workshop – Tag 1"
-          href: workshops/ws2/day1.qmd
-        - text: "Zum Workshop – Tag 2"
-          href: workshops/ws2/day2.qmd
+        - text: "Übersicht"
+          href: workshops/ws2/index.qmd
+        - text: "Zum Workshop"
+          href: workshops/ws2/module.qmd
 
   page-footer:
     left: "© 2026 Arieja Farugie"
