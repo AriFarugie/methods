@@ -67,52 +67,32 @@ jobs:
       - name: Install StaticCrypt
         run: npm install -g staticrypt
 
-      # Workshop 1
-      - name: Encrypt Workshop 1 – Tag 1
+      - name: Encrypt Workshop 1
         run: |
-          staticrypt _site/workshops/ws1/day1.html \
+          staticrypt _site/workshops/ws1/module.html \
             --password "${{ secrets.WS1_PASSWORD }}" \
             --directory _site/workshops/ws1/ \
             --short \
-            --template-title "Einführung in R & RStudio – Tag 1" \
+            --template-title "Einführung in R & RStudio" \
             --template-instructions "Bitte gib das Workshop-Passwort ein."
 
-      - name: Encrypt Workshop 1 – Tag 2
+      - name: Encrypt Workshop 2
         run: |
-          staticrypt _site/workshops/ws1/day2.html \
-            --password "${{ secrets.WS1_PASSWORD }}" \
-            --directory _site/workshops/ws1/ \
-            --short \
-            --template-title "Einführung in R & RStudio – Tag 2" \
-            --template-instructions "Bitte gib das Workshop-Passwort ein."
-
-      # Workshop 2
-      - name: Encrypt Workshop 2 – Tag 1
-        run: |
-          staticrypt _site/workshops/ws2/day1.html \
+          staticrypt _site/workshops/ws2/module.html \
             --password "${{ secrets.WS2_PASSWORD }}" \
             --directory _site/workshops/ws2/ \
             --short \
-            --template-title "Datenvisualisierung mit ggplot2 – Tag 1" \
-            --template-instructions "Bitte gib das Workshop-Passwort ein."
-
-      - name: Encrypt Workshop 2 – Tag 2
-        run: |
-          staticrypt _site/workshops/ws2/day2.html \
-            --password "${{ secrets.WS2_PASSWORD }}" \
-            --directory _site/workshops/ws2/ \
-            --short \
-            --template-title "Datenvisualisierung mit ggplot2 – Tag 2" \
+            --template-title "Datenvisualisierung mit ggplot2" \
             --template-instructions "Bitte gib das Workshop-Passwort ein."
 
       # Workshop 3 – Beispiel für zukünftige Erweiterung:
-      # - name: Encrypt Workshop 3 – Tag 1
+      # - name: Encrypt Workshop 3
       #   run: |
-      #     staticrypt _site/workshops/ws3/day1.html \
+      #     staticrypt _site/workshops/ws3/module.html \
       #       --password "${{ secrets.WS3_PASSWORD }}" \
       #       --directory _site/workshops/ws3/ \
       #       --short \
-      #       --template-title "Workshop 3 – Tag 1" \
+      #       --template-title "Workshop 3" \
       #       --template-instructions "Bitte gib das Workshop-Passwort ein."
 
       # ── Publish: _site direkt pushen (mit verschlüsselten Dateien) ────

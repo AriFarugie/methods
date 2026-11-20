@@ -46,30 +46,19 @@ Nach dem Workshop können Teilnehmende …
 - mit dem Paket **`patchwork`** mehrere Plots kombinieren
 - Grafiken als **Datei exportieren** (`ggsave()`, PNG, PDF)
 
-# Ablauf
+# Module
 ___
 
-## Tag 1 – Grundlagen der Grammar of Graphics
+Der Workshop ist in Module aufgeteilt, die du in deinem eigenen Tempo durcharbeiten kannst. Jedes Modul endet mit zwei Checkfragen.
 
-1. **Ankommen & Überblick** – Warum Datenvisualisierung?
-2. **Was ist ggplot2?** – Grammar of Graphics als roter Faden
-3. **🗂️ Layer 1: Data** – Datenbasis und Pipe in ggplot2
-4. **🎨 Layer 2: Aesthetics** – Variablen auf visuelle Eigenschaften mappen
-5. **🎨 Aesthetics vertieft** – color vs. fill, alpha, size, shape
-6. **📐 Layer 3: Geometries** – geom_point(), geom_histogram(), geom_bar(), geom_boxplot()
-7. **Beschriftungen** – labs() mit Titel, Achsen und Caption
-8. **Übungen**
-
-## Tag 2 – Facets, Statistics, Coordinates & Theme
-
-1. **Recap & offene Fragen**
-2. **🔲 Layer 4: Faceting** – facet_wrap() und facet_grid()
-3. **📊 Layer 5: Statistics** – stat_summary() für Kennwerte in der Grafik
-4. **📏 Layer 6: Coordinates** – Achsen anpassen, coord_flip(), coord_polar()
-5. **🖌️ Layer 7: Theme & Styling** – Fertige Themes, eigenes Theme, Farbpaletten
-6. **patchwork** – Plots kombinieren
-7. **Export** – ggsave()
-8. **Mini-Projekt**
+1. [Warum Datenvisualisierung?](module.qmd#modul-1)
+2. [ggplot2: Grammatik, Data & Aesthetics](module.qmd#modul-2)
+3. [Geometries & Beschriftungen](module.qmd#modul-3)
+4. [Layer 4: Faceting](module.qmd#modul-4)
+5. [Layer 5: Statistics](module.qmd#modul-5)
+6. [Coordinates, Theme & Farben](module.qmd#modul-6)
+7. [patchwork & Export](module.qmd#modul-7)
+8. [Mini-Projekt & Abschluss](module.qmd#modul-8)
 
 ---
-[➡️ Weiter zu Tag 1](day1.qmd){.btn .btn-primary} **-** [➡️ Weiter zu Tag 2](day2.qmd){.btn .btn-secondary}
+[➡️ Zum Workshop](module.qmd){.btn .btn-primary}

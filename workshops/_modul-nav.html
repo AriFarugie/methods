@@ -1,0 +1,119 @@
+<script>
+(function () {
+  var mods = Array.prototype.slice.call(document.querySelectorAll('.modul'));
+  if (!mods.length) return;
+  var key = 'modul-fortschritt:' + location.pathname.replace(/[^\/]*$/, '');
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) {}
+  function save() { try { localStorage.setItem(key, JSON.stringify(done)); } catch (e) {} }
+  function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  var app = document.createElement('div'); app.className = 'modul-app';
+  var nav = document.createElement('div'); nav.className = 'modul-nav';
+  var main = document.createElement('div'); main.className = 'modul-main';
+  mods[0].parentNode.insertBefore(app, mods[0]);
+  app.appendChild(nav); app.appendChild(main);
+  mods.forEach(function (m) { main.appendChild(m); });
+
+  nav.innerHTML = '<div class="mn-head">Module</div>' +
+    '<div class="mn-prog"><div class="mn-bar"><span></span></div><div class="mn-count"></div></div>' +
+    '<ol class="mn-list"></ol>' +
+    '<button class="mn-reset" type="button">Fortschritt zurücksetzen</button>';
+  var list = nav.querySelector('.mn-list');
+  var titles = mods.map(function (m, i) { return m.getAttribute('data-titel') || ('Modul ' + (i + 1)); });
+
+  mods.forEach(function (m, i) {
+    var li = document.createElement('li');
+    li.innerHTML = '<a href="#' + m.id + '"><span class="mn-nr">' + (i + 1) + '</span><span class="mn-t">' + esc(titles[i]) + '</span></a>';
+    list.appendChild(li);
+
+    var kopf = document.createElement('div'); kopf.className = 'modul-kopf';
+    kopf.innerHTML = '<span class="mk-nr">Modul ' + (i + 1) + ' von ' + mods.length + '</span><div class="mk-titel">' + esc(titles[i]) + '</div>';
+    m.insertBefore(kopf, m.firstChild);
+
+    var cf = m.querySelector('.checkfragen');
+    if (cf) quiz(m, cf);
+
+    var fuss = document.createElement('div'); fuss.className = 'modul-fuss';
+    fuss.innerHTML = (i > 0 ? '<a class="mf-prev" href="#' + mods[i - 1].id + '">← ' + esc(titles[i - 1]) + '</a>' : '<span></span>') +
+      (i < mods.length - 1 ? '<a class="mf-next" href="#' + mods[i + 1].id + '">' + esc(titles[i + 1]) + ' →</a>' : '<span></span>');
+    m.appendChild(fuss);
+  });
+
+  function quiz(m, cf) {
+    var fr = Array.prototype.slice.call(cf.querySelectorAll('.frage'));
+    var kopf = document.createElement('div'); kopf.className = 'cf-kopf';
+    kopf.innerHTML = '<b>Checkpoint</b><span>Beantworte ' + (fr.length === 2 ? 'beide Fragen' : 'alle Fragen') + ' richtig, um das Modul abzuschließen.</span>';
+    cf.insertBefore(kopf, cf.firstChild);
+    fr.forEach(function (q) {
+      var ol = q.querySelector('ol'); if (!ol) return;
+      var right = parseInt(q.getAttribute('data-richtig'), 10);
+      var opts = document.createElement('div'); opts.className = 'cf-opts';
+      var fb = document.createElement('div'); fb.className = 'cf-fb';
+      Array.prototype.slice.call(ol.children).forEach(function (li, k) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'cf-opt'; b.innerHTML = li.innerHTML;
+        if (k + 1 === right) b.setAttribute('data-ok', '1');
+        b.addEventListener('click', function () {
+          if (q.classList.contains('ok')) return;
+          if (k + 1 === right) {
+            q.classList.add('ok'); b.classList.add('richtig'); fb.textContent = 'Richtig!';
+            opts.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+            check();
+          } else {
+            b.classList.add('falsch'); b.disabled = true;
+            fb.textContent = 'Leider nicht richtig – schau dir den Abschnitt noch einmal an und versuch es erneut.';
+          }
+        });
+        opts.appendChild(b);
+      });
+      ol.parentNode.replaceChild(opts, ol);
+      q.appendChild(fb);
+    });
+    var ok = document.createElement('div'); ok.className = 'cf-ok';
+    ok.textContent = '✓ Modul abgeschlossen';
+    cf.appendChild(ok);
+    function check() {
+      if (fr.every(function (q) { return q.classList.contains('ok'); })) {
+        done[m.id] = true; save(); cf.classList.add('fertig'); update();
+      }
+    }
+    if (done[m.id]) {
+      fr.forEach(function (q) {
+        q.classList.add('ok');
+        q.querySelectorAll('.cf-opt').forEach(function (b) { b.disabled = true; if (b.getAttribute('data-ok')) b.classList.add('richtig'); });
+      });
+      cf.classList.add('fertig');
+    }
+  }
+
+  function update() {
+    var n = mods.filter(function (m) { return done[m.id]; }).length;
+    nav.querySelector('.mn-bar span').style.width = (100 * n / mods.length) + '%';
+    nav.querySelector('.mn-count').textContent = n + ' von ' + mods.length + ' Modulen abgeschlossen';
+    mods.forEach(function (m, i) { list.children[i].classList.toggle('fertig', !!done[m.id]); });
+  }
+
+  function show(idx, el) {
+    mods.forEach(function (m, k) { m.classList.toggle('aktiv', k === idx); list.children[k].classList.toggle('aktiv', k === idx); });
+    try { localStorage.setItem(key + 'zuletzt', mods[idx].id); } catch (e) {}
+    if (el) el.scrollIntoView();
+    else window.scrollTo(0, Math.max(0, app.getBoundingClientRect().top + window.pageYOffset - 90));
+  }
+  function route() {
+    var h = decodeURIComponent(location.hash.slice(1));
+    if (!h) { try { h = localStorage.getItem(key + 'zuletzt') || ''; } catch (e) {} }
+    var el = h ? document.getElementById(h) : null;
+    var m = el ? el.closest('.modul') : null;
+    if (!m) { if (location.hash && el) return; show(0); return; }
+    show(mods.indexOf(m), el === m ? null : el);
+  }
+  nav.querySelector('.mn-reset').addEventListener('click', function () {
+    if (!confirm('Fortschritt für diesen Workshop wirklich zurücksetzen?')) return;
+    try { localStorage.removeItem(key); } catch (e) {}
+    location.reload();
+  });
+  window.addEventListener('hashchange', route);
+  update();
+  route();
+})();
+</script>
