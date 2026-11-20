@@ -623,3 +623,6 @@ body.modul-seite #quarto-content main#quarto-document-content { grid-column: scr
 @media (max-width: 900px) {
   .modul-app > .modul-main { grid-column: 1; grid-row: 2; }
 }
+@media (max-width: 600px) {
+  .navbar-brand .navbar-title { font-size: .92rem; }
+}

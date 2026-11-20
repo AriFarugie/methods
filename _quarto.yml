@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Arieja Farugie"
+  title: "Methoden & Statistik · Arieja Farugie"
   navbar:
     right:
       - text: "Start"
