@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshops zu R &amp; RStudio</title>
+<title>Arieja Farugie – Workshops zu Methoden &amp; R – Arieja Farugie</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -32,15 +38,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a9f4c35eb201b63b75a51fc67c9ff80a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5592254f5ee5173c29076b54c01937e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,26 +80,25 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="docked nav-fixed quarto-light">
+<body class="docked nav-fixed lp-page quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Workshops zu R &amp; RStudio</span>
+    <span class="navbar-title">Arieja Farugie</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">Start</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -110,10 +115,23 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./materials.html"> 
+<span class="menu-text">Materialien</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Über mich</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./kontakt.html"> 
+<span class="menu-text">Kontakt</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -125,487 +143,101 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Mulish:wght@300;400;600;700&display=swap');
-
-.quarto-title, h1.title, #title-block-header { display: none !important; }
-#quarto-content { padding: 0 !important; }
-.page-layout-full main { padding: 0 !important; max-width: 100% !important; }
-body { background: #f7f6f2 !important; }
-
-:root {
-  --ink:     #1c1c27;
-  --muted:   #6b6b82;
-  --bg:      #f7f6f2;
-  --white:   #ffffff;
-  --accent:  #2d5f4f;
-  --accent-light: #d4ede4;
-  --gold:    #c9a84c;
-  --border:  #e3e1da;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-.lp {
-  font-family: 'Mulish', sans-serif;
-  color: var(--ink);
-  background: var(--bg);
-}
-
-/* ── HERO ── */
-.hero {
-  background: var(--ink);
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-noise {
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: .4;
-  pointer-events: none;
-}
-
-.hero-glow {
-  position: absolute;
-  top: -120px; right: -60px;
-  width: 500px; height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(45,95,79,.4) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.hero-glow2 {
-  position: absolute;
-  bottom: -100px; left: 20%;
-  width: 300px; height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(201,168,76,.12) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 5rem 2rem 0;
-  width: 100%;
-}
-
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  margin-bottom: 1.75rem;
-}
-
-.hero-eyebrow-line {
-  width: 32px;
-  height: 1px;
-  background: var(--gold);
-}
-
-.hero-eyebrow span {
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.hero h1 {
-  font-family: 'Lora', serif;
-  font-weight: 400;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  line-height: 1.18;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: #a8d5c2;
-}
-
-.hero-desc {
-  font-size: 1rem;
-  font-weight: 300;
-  color: rgba(255,255,255,.62);
-  line-height: 1.75;
-  max-width: 520px;
-  margin-bottom: 2.5rem;
-}
-
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: .6rem;
-  font-size: .82rem;
-  font-weight: 600;
-  letter-spacing: .04em;
-  color: rgba(255,255,255,.45);
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 100px;
-  padding: .55rem 1.2rem;
-  text-decoration: none;
-  transition: all .2s;
-  margin-bottom: 3.5rem;
-}
-
-.hero-cta svg { flex-shrink: 0; }
-
-.hero-cta:hover {
-  color: #a8d5c2;
-  border-color: rgba(168,213,194,.5);
-  background: rgba(168,213,194,.06);
-}
-
-/* ── CARDS STRIP IM HERO ── */
-.hero-cards-strip {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  border-top: 1px solid rgba(255,255,255,.08);
-  padding: 2.5rem 2rem 3.5rem;
-}
-
-.hero-cards-inner {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.hero-sh {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.75rem;
-}
-
-.hero-sh-label {
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: #a8d5c2;
-  white-space: nowrap;
-}
-
-.hero-sh-line {
-  flex: 1;
-  height: 1px;
-  background: rgba(255,255,255,.1);
-}
-
-.hero-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 1.25rem;
-}
-
-.hero-card {
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 14px;
-  padding: 2rem;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  gap: .9rem;
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow .25s, transform .25s, background .25s, border-color .25s;
-}
-
-.hero-card-accent-bar {
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, #a8d5c2, transparent);
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform .3s ease;
-}
-
-.hero-card:hover {
-  background: rgba(255,255,255,.09);
-  border-color: rgba(168,213,194,.25);
-  box-shadow: 0 12px 40px rgba(0,0,0,.3);
-  transform: translateY(-3px);
-}
-
-.hero-card:hover .hero-card-accent-bar { transform: scaleY(1); }
-
-.hero-card-status {
-  display: inline-flex;
-  align-items: center;
-  gap: .35rem;
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #a8d5c2;
-  background: rgba(168,213,194,.12);
-  border-radius: 100px;
-  padding: .28rem .8rem;
-  width: fit-content;
-}
-
-.hero-card-status::before {
-  content: '';
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #a8d5c2;
-}
-
-.hero-card h2 {
-  font-family: 'Lora', serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.35;
-  color: #ffffff;
-}
-
-.hero-card-desc {
-  font-size: .88rem;
-  color: rgba(255,255,255,.5);
-  line-height: 1.7;
-  flex: 1;
-}
-
-.hero-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem;
-}
-
-.hero-ctag {
-  font-size: .68rem;
-  font-weight: 600;
-  color: rgba(255,255,255,.4);
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 100px;
-  padding: .18rem .65rem;
-}
-
-.hero-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: .5rem;
-  border-top: 1px solid rgba(255,255,255,.08);
-  font-size: .8rem;
-  font-weight: 700;
-  color: #a8d5c2;
-}
-
-/* ── MAIN CONTENT ── */
-.main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 4rem 2rem 2rem;
-}
-
-.sh {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.sh-label {
-  font-size: .85rem;
-  font-weight: 800;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  white-space: nowrap;
-}
-
-.sh-line {
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-/* ── INFO GRID ── */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-  gap: 1rem;
-  margin-bottom: 4rem;
-}
-
-.info-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.3rem 1.4rem;
-}
-
-.info-label {
-  font-size: .65rem;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: .55rem;
-}
-
-.info-val {
-  font-family: 'Lora', serif;
-  font-size: 1rem;
-  color: var(--ink);
-  line-height: 1.45;
-}
-
-/* ── FOOTER ── */
-.lp-footer {
-  border-top: 1px solid var(--border);
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1.75rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: .75rem;
-  font-size: .78rem;
-  color: var(--muted);
-}
-
-.lp-footer a { color: var(--accent); text-decoration: none; }
-.lp-footer a:hover { text-decoration: underline; }
-
-@media (max-width: 580px) {
-  .hero-inner { padding: 3.5rem 1.25rem 0; }
-  .hero-cards-strip { padding: 2rem 1.25rem 2.5rem; }
-  .hero-cards { grid-template-columns: 1fr; }
-  .main { padding: 3rem 1.25rem 1.5rem; }
-  .lp-footer { flex-direction: column; align-items: flex-start; }
-}
-</style>
 
 <div class="lp">
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-noise"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-glow2"></div>
-
-    <div class="hero-inner">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        <span>Arieja Farugie &nbsp;·&nbsp; Methoden &amp; Statistik</span>
+<section class="lp-top">
+  <div class="lp-glow"></div>
+  <div class="lp-w lp-hero">
+    <div>
+      <div class="lp-kick">Methoden &amp; Statistik · Frankfurt</div>
+      <h1>Mit Daten arbeiten lernen – <em>Schritt für Schritt</em> und zum Mitmachen.</h1>
+      <p>Workshops für Studierende und Forschende der empirischen Wissenschaften.
+         Kurze Inputs, viel Ausprobieren und Materialien zum Weiterarbeiten.</p>
+      <div class="lp-btns">
+        <a class="lp-btn" href="#workshops">Workshops entdecken</a>
+        <a class="lp-btn lp-o" href="kontakt.html">Kontakt</a>
       </div>
-      <h1>Workshops für<br><em>empirische Methoden</em><br>in R</h1>
-      <p class="hero-desc">
-        Praxisnahe Materialien für Studierende und Forschende der empirischen Wissenschaften –
-        von den Grundlagen in R bis zum vollständigen, reproduzierbaren Analyse-Workflow.
-      </p>
-      <a class="hero-cta" href="mailto:farugie[at]psych.uni-frankfurt.de">
-        <svg width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 7 10-7"></path></svg>
-        farugie[at]psych.uni-frankfurt.de
-      </a>
     </div>
+    <div class="lp-profil">
+      <!-- Foto: Bild unter assets/images/profil.jpg ablegen und die nächste Zeile ersetzen durch
+           <img class="lp-foto" src="assets/images/profil.jpg" alt="Arieja Farugie"> -->
+      <div class="lp-foto">AF</div>
+      <b>Arieja Farugie</b>
+      <span>Psychologie · Methoden · R</span>
+    </div>
+  </div>
+</section>
 
-    <!-- CARDS IM HERO -->
-    <div class="hero-cards-strip">
-      <div class="hero-cards-inner">
-        <div class="hero-sh">
-          <span class="hero-sh-label">Workshops</span>
-          <div class="hero-sh-line"></div>
+<div class="lp-w">
+
+  <div class="lp-cards" id="workshops">
+    <a class="lp-card" href="workshops/ws1/index.html">
+      <div class="lp-code">&gt; library(tidyverse)
+&gt; daten |&gt; count(gruppe)</div>
+      <div class="lp-bd">
+        <h3 class="anchored">Einführung in R &amp; RStudio</h3>
+        <p>Vom ersten Skript bis zum eigenen Analyse-Workflow: Datenimport, Datenaufbereitung mit dplyr,
+           Umkodieren, Joins und fehlende Werte – mit Mini-Projekt zum Abschluss.</p>
+        <div class="lp-pills">
+          <span class="lp-hl">2 Tage</span><span class="lp-hl">keine Vorkenntnisse</span>
+          <span>dplyr</span><span>haven</span><span>psych</span>
         </div>
-        <div class="hero-cards">
-
-          <a class="hero-card" href="workshops/ws1/index.html">
-            <div class="hero-card-accent-bar"></div>
-            <div class="hero-card-status">Verfügbar</div>
-            <h2 class="anchored">Einführung in R &amp; RStudio</h2>
-            <p class="hero-card-desc">
-              Zweitägiger Einstieg in R und RStudio: Grundlagen, Datenimport,
-              Datenaufbereitung mit dplyr, Umkodieren, Joins und fehlende Werte –
-              mit Mini-Projekt zum Abschluss.
-            </p>
-            <div class="hero-card-tags">
-              <span class="hero-ctag">2 Tage</span>
-              <span class="hero-ctag">Einsteiger</span>
-              <span class="hero-ctag">dplyr</span>
-              <span class="hero-ctag">haven</span>
-              <span class="hero-ctag">psych</span>
-            </div>
-            <div class="hero-card-footer">
-              Zum Workshop
-              <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-            </div>
-          </a>
-
-          <a class="hero-card" href="workshops/ws2/index.html">
-            <div class="hero-card-accent-bar"></div>
-            <div class="hero-card-status">Verfügbar</div>
-            <h2 class="anchored">Datenvisualisierung mit ggplot2</h2>
-            <p class="hero-card-desc">
-              Zweitägiger Workshop zur Grammar of Graphics: Schicht für Schicht
-              zu professionellen Grafiken – von Streudiagrammen bis zu kombinierten
-              Layouts mit patchwork.
-            </p>
-            <div class="hero-card-tags">
-              <span class="hero-ctag">2 Tage</span>
-              <span class="hero-ctag">Grundkenntnisse R</span>
-              <span class="hero-ctag">ggplot2</span>
-              <span class="hero-ctag">patchwork</span>
-            </div>
-            <div class="hero-card-footer">
-              Zum Workshop
-              <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-            </div>
-          </a>
-
+        <div class="lp-more">Zum Workshop →</div>
+      </div>
+    </a>
+    <a class="lp-card" href="workshops/ws2/index.html">
+      <div class="lp-code lp-v">&gt; ggplot(daten, aes(x, y)) +
+    geom_point()</div>
+      <div class="lp-bd">
+        <h3 class="anchored">Datenvisualisierung mit ggplot2</h3>
+        <p>Grammar of Graphics Schicht für Schicht – von Streudiagrammen bis zu
+           kombinierten Layouts mit patchwork.</p>
+        <div class="lp-pills">
+          <span class="lp-hl">2 Tage</span><span class="lp-hl">Grundkenntnisse R</span>
+          <span>ggplot2</span><span>patchwork</span>
         </div>
+        <div class="lp-more">Zum Workshop →</div>
       </div>
+    </a>
+  </div>
+
+  <section class="lp-sec">
+    <div class="lp-lbl">So laufen meine Workshops</div>
+    <h2 class="anchored">Weniger Folien, mehr Ausprobieren</h2>
+    <div class="lp-how">
+      <div><b>Input</b><p>Kurze Erklärbausteine mit Live-Code.</p></div>
+      <div><b>Übung</b><p>Direkt selbst machen – mit echten Datensätzen.</p></div>
+      <div><b>Lösung</b><p>Zum Aufklappen, wenn du hängst oder vergleichen willst.</p></div>
+      <div><b>Mitnehmen</b><p>Skripte und Materialien zum Weiterarbeiten.</p></div>
     </div>
+  </section>
 
-  </header>
-
-  <!-- HINWEISE -->
-  <main class="main">
-    <div class="sh">
-      <span class="sh-label">Hinweise</span>
-      <div class="sh-line"></div>
+  <section class="lp-sec">
+    <div class="lp-lbl">Gut zu wissen</div>
+    <div class="lp-info">
+      <div><small>Zielgruppe</small><span>Studierende und Forschende der empirischen Wissenschaften</span></div>
+      <div><small>Software</small><span>R &amp; RStudio (kostenlos)</span></div>
+      <div><small>Zugang</small><span>Passwortgeschützt – auf Anfrage</span></div>
     </div>
+  </section>
 
-    <div class="info-grid">
-      <div class="info-card">
-        <div class="info-label">Zielgruppe</div>
-        <div class="info-val">Studierende und Forschende der empirischen Wissenschaften</div>
-      </div>
-      <div class="info-card">
-        <div class="info-label">Voraussetzungen</div>
-        <div class="info-val">Siehe Workshopseiten</div>
-      </div>
-      <div class="info-card">
-        <div class="info-label">Software</div>
-        <div class="info-val">R &amp; RStudio (kostenlos)</div>
-      </div>
-      <div class="info-card">
-        <div class="info-label">Zugang</div>
-        <div class="info-val">Passwortgeschützt – auf Anfrage</div>
-      </div>
-    </div>
-  </main>
+  <!-- Stimmen von Teilnehmenden – bei Bedarf einkommentieren:
+  <section class="lp-sec">
+    <div class="lp-box"><p>„…“</p><p class="lp-ph">— Teilnehmer:in, Workshop R &amp; RStudio</p></div>
+  </section>
+  -->
 
+  <div class="lp-cta">
+    <h3 class="anchored">Workshop für deine Gruppe oder Fragen zu den Materialien?</h3>
+    <a href="kontakt.html">Schreib mir</a>
+  </div>
+
+</div>
 </div>
 
 
@@ -689,7 +321,8 @@ body { background: #f7f6f2 !important; }
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -698,8 +331,69 @@ body { background: #f7f6f2 !important; }
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -713,6 +407,7 @@ body { background: #f7f6f2 !important; }
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -875,44 +570,54 @@ body { background: #f7f6f2 !important; }
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1011,6 +716,9 @@ body { background: #f7f6f2 !important; }
     }
   });
   </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1021,8 +729,14 @@ body { background: #f7f6f2 !important; }
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Made with <a href="https://quarto.org">Quarto</a></p>
-</div>
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./kontakt.html">
+<p>Kontakt</p>
+</a>
+  </li>  
+</ul>
+    </div>
   </div>
 </footer>
 
