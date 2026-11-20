@@ -662,3 +662,20 @@ body.modul-seite #quarto-content main#quarto-document-content { grid-column: scr
   .ws-lay { grid-template-columns: 1fr; padding: 2rem 1.2rem 3rem; }
   .ws-side { position: static; }
 }
+
+/* ── Termine & Anmeldung ─────────────────────────────────────── */
+.tm-row { display: grid; grid-template-columns: minmax(0, 1.5fr) 1fr; gap: 1rem; }
+.tm-side { display: grid; gap: 1rem; }
+.tm-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem 1.5rem; }
+.tm-card h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 1.2rem; margin: 0 0 .5rem; }
+.tm-card p { font-size: .93rem; margin: 0; }
+.tm-empty { border: 1px dashed #c9c6bd; border-radius: 10px; padding: 1rem; color: var(--muted); background: #faf9f6; }
+.tm-item { display: flex; gap: 1rem; align-items: center; padding: .8rem 0; border-top: 1px solid #efede7; }
+.tm-date { flex: 0 0 4rem; text-align: center; border-radius: 10px; background: #f1efe9; padding: .4rem 0; font-weight: 800; line-height: 1.1; }
+.tm-date small { display: block; font-weight: 600; font-size: .7rem; color: var(--muted); }
+.tm-btn { display: inline-block; margin-top: .7rem; background: var(--ink); color: #fff !important; font-weight: 800; padding: .55rem 1.1rem; border-radius: 999px; text-decoration: none; font-size: .9rem; }
+.tm-wish { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tm-wish h3 { color: #fff; }
+.tm-wish p { color: #e2efe9; }
+.tm-wish .tm-btn { background: var(--accent-light); color: var(--ink) !important; }
+@media (max-width: 800px) { .tm-row { grid-template-columns: 1fr; } }
