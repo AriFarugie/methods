@@ -1,0 +1,26 @@
+---
+title: "Kontakt"
+format:
+  html:
+    toc: false
+    page-layout: full
+    body-classes: lp-page
+---
+
+```{=html}
+<div class="lp">
+<section class="lp-top"><div class="lp-glow"></div>
+  <div class="lp-w lp-page-head">
+    <div class="lp-kick">Kontakt</div>
+    <h1>Schreib mir</h1>
+    <p>Fragen zu den Workshops, zum Passwort oder ein Workshop für deine Arbeitsgruppe? Melde dich gern per E-Mail.</p>
+  </div>
+</section>
+<div class="lp-w lp-body">
+  <div class="lp-info">
+    <div><small>E-Mail</small><span>farugie[at]psych.uni-frankfurt.de</span></div>
+    <div><small>Ort</small><span>Goethe-Universität Frankfurt</span></div>
+  </div>
+</div>
+</div>
+```
