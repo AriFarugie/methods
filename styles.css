@@ -1,7 +1,7 @@
 /* =========================================================
    FONTS
    ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Mulish:wght@300;400;600;700;800&display=swap');
 
 /* =========================================================
    DESIGN TOKENS
@@ -43,9 +43,9 @@ body {
 }
 
 .navbar-brand {
-  font-family: 'Mulish', sans-serif !important;
-  font-weight: 800 !important;
-  font-size: 1.2rem !important;
+  font-family: 'Lora', serif !important;
+  font-weight: 600 !important;
+  font-size: 1.25rem !important;
   color: #ffffff !important;
   letter-spacing: .02em;
 }
@@ -191,6 +191,14 @@ h1, h2, h3, h4 {
   color: var(--ink);
   line-height: 1.3;
 }
+
+h1.title {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: 2.3rem;
+}
+
+.subtitle { color: var(--muted); }
 
 h1 { font-size: 2rem;    margin-bottom: 1.5rem; }
 h2 { font-size: 1.45rem; margin-top: 2.5rem;  margin-bottom: 1rem; }
@@ -422,4 +430,118 @@ tbody td  { padding: .6rem .75rem; color: var(--ink); vertical-align: top; }
   main.content { padding: 1.75rem 1.25rem; }
   h1 { font-size: 1.6rem; }
   h2 { font-size: 1.25rem; }
+}
+
+/* =========================================================
+   STARTSEITE & UNTERSEITEN (.lp)
+   ========================================================= */
+.lp-page .quarto-title, .lp-page #title-block-header { display: none !important; }
+.lp-page #quarto-content { padding: 0 !important; }
+.lp-page main.content, .lp-page #quarto-document-content {
+  padding: 0 !important; margin: 0 !important; max-width: none !important;
+}
+
+.lp { font-family: 'Mulish', sans-serif; color: var(--ink); }
+.lp a { color: var(--accent); }
+.lp-w { max-width: 1040px; margin: 0 auto; padding: 0 1.75rem; }
+
+.lp-top {
+  background: var(--ink); color: #fff; position: relative; overflow: hidden;
+  margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+}
+.lp-page { overflow-x: hidden; }
+.lp-glow {
+  position: absolute; top: -160px; right: -120px; width: 560px; height: 560px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(45,95,79,.45) 0%, transparent 65%); pointer-events: none;
+}
+.lp-hero {
+  position: relative; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem;
+  align-items: center; padding: 4.5rem 0 6.5rem;
+}
+.lp-kick {
+  color: var(--gold); font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+}
+.lp-hero h1 {
+  font-family: 'Lora', serif; font-weight: 400; color: #fff;
+  font-size: clamp(2.1rem, 4.6vw, 3rem); line-height: 1.16; margin: .9rem 0 1.2rem;
+}
+.lp-hero h1 em { color: #a8d5c2; }
+.lp-hero p { color: rgba(255,255,255,.66); font-size: 1.05rem; max-width: 530px; margin: 0; }
+.lp-btns { margin-top: 1.8rem; display: flex; gap: .7rem; flex-wrap: wrap; }
+.lp-btn {
+  display: inline-block; padding: .75rem 1.4rem; border-radius: 100px; font-weight: 800; font-size: .95rem;
+  text-decoration: none; background: #a8d5c2; color: var(--ink) !important; transition: transform .2s, opacity .2s;
+}
+.lp-btn:hover { transform: translateY(-1px); opacity: .9; }
+.lp-btn.lp-o { background: transparent; color: #fff !important; border: 1px solid rgba(255,255,255,.3); }
+
+.lp-profil {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 18px; padding: 1.8rem; text-align: center;
+}
+.lp-foto {
+  width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 1rem; object-fit: cover;
+  background: #2f4a41; color: #a8d5c2; display: grid; place-items: center;
+  font-family: 'Lora', serif; font-size: 2.6rem;
+}
+.lp-profil b { font-family: 'Lora', serif; font-weight: 600; font-size: 1.25rem; display: block; color: #fff; }
+.lp-profil span { color: rgba(255,255,255,.55); font-size: .9rem; }
+
+.lp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.4rem; margin-top: -3.8rem; position: relative; }
+.lp-card {
+  background: #fff; border-radius: 16px; overflow: hidden; text-decoration: none !important; color: inherit !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08); display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s;
+}
+.lp-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,.13); }
+.lp-code {
+  height: 118px; padding: 1.1rem 1.3rem; font-family: 'JetBrains Mono', monospace; font-size: .85rem; line-height: 1.6;
+  background: linear-gradient(135deg, #2d5f4f, #1c1c27); color: #a8d5c2; white-space: pre;
+  font-variant-ligatures: none;
+}
+.lp-code.lp-v { background: linear-gradient(135deg, #c9a84c, #2d5f4f); color: #fff; }
+.lp-bd { padding: 1.4rem 1.5rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.lp-bd h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 1.3rem; margin: 0 0 .5rem; }
+.lp-bd p { color: #555566; font-size: .93rem; margin: 0; flex: 1; }
+.lp-pills { margin: .9rem 0 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.lp-pills span { font-size: .75rem; border: 1px solid #ddd; border-radius: 100px; padding: .1rem .65rem; color: #555; }
+.lp-pills span.lp-hl { background: var(--accent-light); border-color: var(--accent-light); color: var(--accent); font-weight: 700; }
+.lp-more { margin-top: 1.1rem; color: var(--accent); font-weight: 800; font-size: .95rem; }
+
+.lp-sec { padding: 3.5rem 0 0; }
+.lp-lbl { color: var(--accent); font-weight: 800; letter-spacing: .12em; font-size: .8rem; text-transform: uppercase; margin-bottom: .3rem; }
+.lp-sec h2 { font-family: 'Lora', serif; font-weight: 400; font-size: 2rem; margin: 0 0 1.5rem; border: 0; padding: 0; }
+.lp-how { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; }
+.lp-how div { border-left: 3px solid var(--gold); padding: .2rem 0 .2rem 1rem; }
+.lp-how b { display: block; font-size: 1rem; }
+.lp-how p { color: var(--muted); font-size: .9rem; margin: .2rem 0 0; }
+
+.lp-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.lp-info div { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.3rem; }
+.lp-info small { display: block; font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: .35rem; }
+.lp-info span { font-family: 'Lora', serif; font-size: 1.02rem; }
+
+.lp-cta {
+  background: var(--accent); color: #fff; border-radius: 18px; padding: 2.2rem 2.4rem; margin: 3.5rem 0 3rem;
+  display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+.lp-cta h3 { font-family: 'Lora', serif; font-weight: 400; font-size: 1.6rem; color: #fff; margin: 0; }
+.lp-cta a { background: #fff; color: var(--accent) !important; padding: .75rem 1.4rem; border-radius: 100px; font-weight: 800; text-decoration: none; }
+
+/* Unterseiten (Über mich, Materialien, Kontakt) */
+.lp-page-head { padding: 3.5rem 0 3rem; }
+.lp-page-head h1 { font-family: 'Lora', serif; font-weight: 400; color: #fff; font-size: 2.4rem; margin: .6rem 0 0; border: 0; padding: 0; }
+.lp-page-head p { color: rgba(255,255,255,.66); max-width: 600px; margin: .8rem 0 0; }
+.lp-body { padding: 2.8rem 0 3rem; }
+.lp-about { display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; align-items: start; }
+.lp-about .lp-foto { width: 200px; height: 200px; margin: 0; font-size: 3.4rem; }
+.lp-box { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem 1.7rem; margin-bottom: 1rem; }
+.lp-box h3 { font-family: 'Lora', serif; font-weight: 600; font-size: 1.2rem; margin: 0 0 .5rem; }
+.lp-box p, .lp-box li { color: #4a4a5a; }
+.lp-ph { color: var(--muted); font-style: italic; }
+
+@media (max-width: 800px) {
+  .lp-hero { grid-template-columns: 1fr; padding: 3rem 0 5.5rem; }
+  .lp-profil { display: none; }
+  .lp-about { grid-template-columns: 1fr; }
+  .lp-cards { grid-template-columns: 1fr; }
 }

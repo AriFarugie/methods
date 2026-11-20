@@ -1,5 +1,34 @@
 ---
 title: "Materialien"
+format:
+  html:
+    toc: false
+    page-layout: full
+    body-classes: lp-page
 ---
 
-![](assets/images/generated-image_undercon.png){width=100% style="border: 2px solid darkblue;"}
+```{=html}
+<div class="lp">
+<section class="lp-top"><div class="lp-glow"></div>
+  <div class="lp-w lp-page-head">
+    <div class="lp-kick">Materialien</div>
+    <h1>Zum Nachschlagen &amp; Weiterarbeiten</h1>
+    <p>Hier entsteht eine Sammlung von Skripten, Cheatsheets und Übungsdaten.</p>
+  </div>
+</section>
+<div class="lp-w lp-body">
+  <div class="lp-box">
+    <h3>Workshop-Materialien</h3>
+    <p>Die Materialien zu den Workshops findest du direkt auf den Workshop-Seiten:</p>
+    <ul>
+      <li><a href="workshops/ws1/index.html">Einführung in R &amp; RStudio</a></li>
+      <li><a href="workshops/ws2/index.html">Datenvisualisierung mit ggplot2</a></li>
+    </ul>
+  </div>
+  <div class="lp-box">
+    <h3>Weitere Materialien</h3>
+    <p class="lp-ph">Kommt bald.</p>
+  </div>
+</div>
+</div>
+```

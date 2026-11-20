@@ -2,10 +2,10 @@ project:
   type: website
 
 website:
-  title: "Workshops zu R & RStudio"
+  title: "Arieja Farugie"
   navbar:
     right:
-      - text: "Home"
+      - text: "Start"
         href: index.qmd
       - text: "Workshops"
         menu:
@@ -15,6 +15,12 @@ website:
             href: workshops/ws2/index.qmd
           #- text: "Reproduzierbare Berichte mit Quarto"
           #  href: workshops/ws3/index.qmd
+      - text: "Materialien"
+        href: materials.qmd
+      - text: "Über mich"
+        href: about.qmd
+      - text: "Kontakt"
+        href: kontakt.qmd
 
   sidebar:
     - id: workshop1
@@ -39,7 +45,9 @@ website:
 
   page-footer:
     left: "© 2026 Arieja Farugie"
-    right: "Made with [Quarto](https://quarto.org)"
+    right:
+      - text: "Kontakt"
+        href: kontakt.qmd
 
 format:
   html:

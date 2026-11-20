@@ -1,9 +1,41 @@
 ---
 title: "Über mich"
+format:
+  html:
+    toc: false
+    page-layout: full
+    body-classes: lp-page
 ---
 
-Hallo! 
-Ich bin Arieja Farugie, diese Seite befindet sich im Aufbau.
-
-
-![](assets/images/generated-image_undercon.png){width=100% style="border: 2px solid darkblue;"}
+```{=html}
+<div class="lp">
+<section class="lp-top"><div class="lp-glow"></div>
+  <div class="lp-w lp-page-head">
+    <div class="lp-kick">Über mich</div>
+    <h1>Arieja Farugie</h1>
+    <p>Psychologie · Methoden · R</p>
+  </div>
+</section>
+<div class="lp-w lp-body">
+  <div class="lp-about">
+    <!-- Foto: <img class="lp-foto" src="assets/images/profil.jpg" alt="Arieja Farugie"> -->
+    <div class="lp-foto">AF</div>
+    <div>
+      <div class="lp-box">
+        <h3>Wer ich bin</h3>
+        <p class="lp-ph">Platzhalter: kurzer Text über dich – Hintergrund, aktuelle Tätigkeit, was dich an Methoden begeistert.</p>
+      </div>
+      <div class="lp-box">
+        <h3>Schwerpunkte</h3>
+        <p class="lp-ph">Platzhalter: z. B. Datenaufbereitung und -analyse mit R, Datenvisualisierung, reproduzierbares Arbeiten.</p>
+      </div>
+      <div class="lp-box">
+        <h3>Lehre &amp; Workshops</h3>
+        <p>Ich gebe Workshops zu <a href="workshops/ws1/index.html">R &amp; RStudio</a> und
+           <a href="workshops/ws2/index.html">Datenvisualisierung mit ggplot2</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+```
