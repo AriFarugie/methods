@@ -545,3 +545,81 @@ tbody td  { padding: .6rem .75rem; color: var(--ink); vertical-align: top; }
   .lp-about { grid-template-columns: 1fr; }
   .lp-cards { grid-template-columns: 1fr; }
 }
+
+/* ── Workshop-Module ─────────────────────────────────────────── */
+.modul { display: none; }
+.modul.aktiv { display: block; }
+.modul-app {
+  display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 2.5rem;
+  max-width: 1200px; margin: 0 auto; align-items: start;
+  grid-column: 1 / -1; width: 100%; padding: 0 1.5rem;
+}
+.modul-main { max-width: 860px; min-width: 0; }
+.modul-nav {
+  position: sticky; top: 80px; max-height: calc(100vh - 100px); overflow-y: auto;
+  background: #fff; border: 1px solid #e6e3dc; border-radius: 14px; padding: 1.1rem 1rem;
+  font-size: .9rem;
+}
+.mn-head { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 600; margin-bottom: .6rem; }
+.mn-bar { height: 6px; background: #ece9e2; border-radius: 3px; overflow: hidden; }
+.mn-bar span { display: block; height: 100%; width: 0; background: #2e7d5b; transition: width .3s; }
+.mn-count { font-size: .78rem; color: #6b6b6b; margin: .35rem 0 .8rem; }
+.mn-list { list-style: none; padding: 0; margin: 0; }
+.mn-list li a {
+  display: flex; gap: .6rem; align-items: flex-start; padding: .45rem .5rem; border-radius: 8px;
+  color: #1f2328; text-decoration: none; line-height: 1.35;
+}
+.mn-list li a:hover { background: #f3f1ec; }
+.mn-list li.aktiv a { background: #e3f1ea; font-weight: 700; }
+.mn-nr {
+  flex: 0 0 1.5rem; height: 1.5rem; border-radius: 50%; background: #ece9e2; color: #444;
+  font-size: .75rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+}
+.mn-list li.fertig .mn-nr { background: #2e7d5b; color: #fff; font-size: 0; }
+.mn-list li.fertig .mn-nr::after { content: "✓"; font-size: .8rem; }
+.mn-reset {
+  margin-top: .9rem; background: none; border: 0; padding: 0; color: #8a8a8a;
+  font-size: .75rem; text-decoration: underline; cursor: pointer;
+}
+.modul-kopf { border-bottom: 1px solid #e6e3dc; padding-bottom: .8rem; margin-bottom: 1.5rem; }
+.mk-nr { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: #2e7d5b; font-weight: 700; }
+.mk-titel { font-family: 'Lora', serif; font-size: 2rem; line-height: 1.2; margin-top: .2rem; }
+
+.checkfragen {
+  margin: 3rem 0 1.5rem; padding: 1.4rem 1.5rem; border-radius: 14px;
+  background: #f4faf7; border: 1px solid #cfe6da;
+}
+.cf-kopf { display: flex; flex-direction: column; margin-bottom: 1rem; }
+.cf-kopf b { font-family: 'Lora', serif; font-size: 1.25rem; }
+.cf-kopf span { font-size: .9rem; color: #555; }
+.frage { background: #fff; border: 1px solid #e3e8e5; border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: .9rem; }
+.frage p { margin-bottom: .6rem; }
+.cf-opts { display: grid; gap: .45rem; }
+.cf-opt {
+  text-align: left; background: #fff; border: 1px solid #d5d9d7; border-radius: 8px;
+  padding: .55rem .8rem; font: inherit; font-size: .93rem; cursor: pointer; color: #1f2328;
+}
+.cf-opt:hover:not(:disabled) { border-color: #2e7d5b; background: #f4faf7; }
+.cf-opt:disabled { cursor: default; }
+.cf-opt.richtig { border-color: #2e7d5b; background: #e3f1ea; font-weight: 700; }
+.cf-opt.falsch { border-color: #c0392b; background: #fbecea; color: #8a2a20; opacity: .8; }
+.cf-fb { font-size: .85rem; margin-top: .5rem; min-height: 1.2em; color: #555; }
+.frage.ok .cf-fb { color: #2e7d5b; font-weight: 700; }
+.cf-ok { display: none; margin-top: .4rem; padding: .7rem 1rem; border-radius: 8px; background: #2e7d5b; color: #fff; font-weight: 700; }
+.checkfragen.fertig .cf-ok { display: block; }
+.modul-fuss { display: flex; justify-content: space-between; gap: 1rem; margin: 1.5rem 0 3rem; }
+.modul-fuss a {
+  padding: .6rem 1rem; border-radius: 999px; border: 1px solid #d5d9d7; text-decoration: none;
+  font-weight: 600; font-size: .9rem; color: #1f2328;
+}
+.modul-fuss a.mf-next { background: #1c1f26; color: #fff; border-color: #1c1f26; }
+@media (max-width: 900px) {
+  .modul-app { grid-template-columns: 1fr; gap: 1.2rem; }
+  .modul-nav { position: static; max-height: none; }
+}
+body.modul-seite #quarto-content main#quarto-document-content { grid-column: screen-start-inset / screen-end-inset !important; max-width: none; width: auto; }
+.modul-app > .modul-nav { grid-column: 1 !important; grid-row: 1; }
+.modul-app > .modul-main { grid-column: 2; grid-row: 1; }
+@media (max-width: 900px) {
+  .modul-app > .modul-main { grid-column: 1; grid-row: 2; }
+}
