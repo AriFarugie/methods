@@ -48,10 +48,8 @@
     if (codes.length) {
       var dl = document.createElement('a'); dl.className = 'mk-skript'; dl.textContent = 'R-Skript ↓';
       dl.download = 'modul-' + nr(m) + '.R';
-      dl.addEventListener('click', function () {
-        var txt = '# ' + titles[i] + '\n\n' + codes.map(function (c) { return c.textContent.replace(/\s+$/, ''); }).join('\n\n# ----\n\n') + '\n';
-        dl.href = URL.createObjectURL(new Blob([txt], { type: 'text/plain' }));
-      });
+      var txt = '# ' + titles[i] + '\n\n' + codes.map(function (c) { return c.textContent.replace(/\s+$/, ''); }).join('\n\n# ----\n\n') + '\n';
+      dl.href = URL.createObjectURL(new Blob([txt], { type: 'text/plain' }));
       kopf.appendChild(dl);
     }
     var teile = teilListe('h1');
