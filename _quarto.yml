@@ -22,27 +22,6 @@ website:
       - text: "Kontakt"
         href: kontakt.qmd
 
-  sidebar:
-    - id: workshop1
-      title: ""
-      style: docked
-      background: white
-      contents:
-        - text: "Übersicht"
-          href: workshops/ws1/index.qmd
-        - text: "Zum Workshop"
-          href: workshops/ws1/module.qmd
-
-    - id: workshop2
-      title: ""
-      style: docked
-      background: white
-      contents:
-        - text: "Übersicht"
-          href: workshops/ws2/index.qmd
-        - text: "Zum Workshop"
-          href: workshops/ws2/module.qmd
-
   page-footer:
     left: "© 2026 Arieja Farugie"
     right:

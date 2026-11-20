@@ -626,3 +626,49 @@ body.modul-seite #quarto-content main#quarto-document-content { grid-column: scr
 @media (max-width: 600px) {
   .navbar-brand .navbar-title { font-size: .92rem; }
 }
+
+/* ── Workshop-Übersicht (Lernpfad) ───────────────────────────── */
+.ws-head p { max-width: 680px; }
+.ws-pills span {
+  display: inline-block; border: 1px solid rgba(255,255,255,.25); border-radius: 999px;
+  padding: .2rem .8rem; font-size: .82rem; margin: .2rem .4rem 0 0; color: #fff;
+}
+.ws-pills span.hl { background: var(--accent-light); color: var(--ink); border-color: var(--accent-light); font-weight: 700; }
+.ws-lay {
+  display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 2.5rem; align-items: start;
+  max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem;
+}
+.ws-main h2 { font-family: 'Lora', serif; font-weight: 400; font-size: 1.7rem; border: 0; margin: 2.2rem 0 1rem; }
+.ws-main h2:first-child { margin-top: 0; }
+.ws-path ol { list-style: none; padding: 0; margin: 0; counter-reset: ws; position: relative; }
+.ws-path ol::before { content: ""; position: absolute; left: 1.15rem; top: .8rem; bottom: .8rem; width: 2px; background: var(--border); }
+.ws-path li { counter-increment: ws; position: relative; padding-left: 3.4rem; margin-bottom: .7rem; }
+.ws-path li::before {
+  content: counter(ws); position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 2.4rem; height: 2.4rem; border-radius: 50%; background: #ece9e2; border: 3px solid var(--bg);
+  font-weight: 800; font-size: .85rem; display: flex; align-items: center; justify-content: center; z-index: 1;
+}
+.ws-path li.fertig::before { content: "✓"; background: var(--accent); color: #fff; }
+.ws-path li a {
+  display: block; background: #fff; border: 1px solid var(--border); border-radius: 14px;
+  padding: .75rem 1.1rem; color: var(--ink); font-weight: 700; text-decoration: none;
+}
+.ws-path li a:hover { border-color: var(--accent); }
+.ws-path .ws-t { display: block; font-size: .85rem; color: var(--muted); font-weight: 400; margin-top: .1rem; }
+.ws-side {
+  position: sticky; top: 80px; background: #fff; border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.4rem; font-size: .92rem;
+}
+.ws-side > p:first-child strong { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 600; }
+.ws-side dl { margin: .4rem 0 1.2rem; }
+.ws-side dt { font-weight: 800; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-top: .6rem; }
+.ws-side dd { margin: 0; }
+.ws-side a.ws-start {
+  display: block; text-align: center; background: var(--accent-light); color: var(--ink);
+  font-weight: 800; padding: .7rem 1rem; border-radius: 999px; text-decoration: none; margin-bottom: 1rem;
+}
+.ws-side ul { padding-left: 1.1rem; margin: .3rem 0 0; }
+@media (max-width: 900px) {
+  .ws-lay { grid-template-columns: 1fr; padding: 2rem 1.2rem 3rem; }
+  .ws-side { position: static; }
+}
