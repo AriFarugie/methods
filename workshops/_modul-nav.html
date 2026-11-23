@@ -44,7 +44,7 @@
         return (h.id || (h.closest('section[id]') || {}).id) && !h.closest('.callout, .checkfragen') && !/^(Übung|Lösung)/.test(h.textContent.trim());
       });
     }
-    var codes = Array.prototype.filter.call(m.querySelectorAll('div.sourceCode pre code, pre.sourceCode code'), function (c) { return c.closest('.cell, .sourceCode') && !c.closest('.cell-output'); });
+    var codes = Array.prototype.filter.call(m.querySelectorAll('div.sourceCode pre code, pre.sourceCode code'), function (c) { return c.closest('.cell, .sourceCode') && !c.closest('.cell-output') && !c.closest('.fehler, .tipp:not(.loesung)'); });
     if (codes.length) {
       var dl = document.createElement('a'); dl.className = 'mk-skript'; dl.textContent = 'R-Skript ↓';
       dl.download = 'modul-' + nr(m) + '.R';
@@ -52,9 +52,11 @@
       dl.href = URL.createObjectURL(new Blob([txt], { type: 'text/plain' }));
       kopf.appendChild(dl);
     }
+    var sch = Array.prototype.filter.call(m.querySelectorAll('.schritt'), function (x) { return x.parentNode.closest('.modul') === m && !x.parentNode.closest('.schritt'); });
     var teile = teilListe('h1');
     if (teile.length < 3) teile = teilListe('h2');
-    if (teile.length >= 2) {
+    if (sch.length) schritte(m, kopf, sch);
+    else if (teile.length >= 2) {
       var tn = document.createElement('nav'); tn.className = 'mk-teile';
       tn.innerHTML = '<span>In diesem Modul</span>' + teile.map(function (h, k) {
         var id = h.id || h.closest('section[id]').id;
@@ -70,6 +72,78 @@
     fuss.innerHTML = (i > 0 ? '<a class="mf-prev" href="#' + mods[i - 1].id + '">← ' + esc(titles[i - 1]) + '</a>' : '<span></span>') +
       (i < mods.length - 1 ? '<a class="mf-next" href="#' + mods[i + 1].id + '">' + esc(titles[i + 1]) + ' →</a>' : '<span></span>');
     m.appendChild(fuss);
+  });
+
+  function schritte(m, kopf, sch) {
+    var sk = key + 'schritt:' + m.id, gk = key + 'gesehen:' + m.id, gesehen = {};
+    try { gesehen = JSON.parse(localStorage.getItem(gk)) || {}; } catch (e) {}
+    var tg = document.createElement('label'); tg.className = 'ms-alle';
+    tg.innerHTML = '<input type="checkbox"><span class="ms-sw"></span>Alle Schritte anzeigen';
+    tg.querySelector('input').addEventListener('change', function () { alleSchritte(this.checked); });
+    var bar = document.createElement('nav'); bar.className = 'ms-bar';
+    sch.forEach(function (s, k) {
+      var t = s.getAttribute('data-titel') || ('Schritt ' + (k + 1));
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ms-st';
+      b.innerHTML = '<b>' + (k + 1) + '</b>' + esc(t);
+      b.addEventListener('click', function () { zeige(k, true); });
+      bar.appendChild(b);
+      var nv = document.createElement('div'); nv.className = 'ms-nav';
+      nv.innerHTML = (k > 0 ? '<button type="button" class="ms-prev">← ' + esc(sch[k - 1].getAttribute('data-titel') || '') + '</button>' : '<span></span>') +
+        (k < sch.length - 1 ? '<button type="button" class="ms-next">Weiter: ' + esc(sch[k + 1].getAttribute('data-titel') || '') + ' →</button>' : '<span></span>');
+      var pv = nv.querySelector('.ms-prev'), nx = nv.querySelector('.ms-next');
+      if (pv) pv.addEventListener('click', function () { zeige(k - 1, true); });
+      if (nx) nx.addEventListener('click', function () { gesehen[k] = 1; zeige(k + 1, true); });
+      s.appendChild(nv);
+    });
+    sch[0].parentNode.insertBefore(bar, sch[0]);
+    bar.parentNode.insertBefore(tg, bar);
+    function zeige(k, scroll) {
+      sch.forEach(function (s, j) { s.classList.toggle('aktiv', j === k); bar.children[j].classList.toggle('aktiv', j === k); bar.children[j].classList.toggle('gesehen', !!gesehen[j] && j !== k); });
+      try { localStorage.setItem(sk, k); localStorage.setItem(gk, JSON.stringify(gesehen)); } catch (e) {}
+      if (scroll) window.scrollTo(0, Math.max(0, bar.getBoundingClientRect().top + window.pageYOffset - 90));
+    }
+    m._zeigeSchritt = function (el) { var s = el.closest('.schritt'); var k = sch.indexOf(s); if (k >= 0) zeige(k, false); };
+    var k0 = 0; try { k0 = Math.min(sch.length - 1, parseInt(localStorage.getItem(sk), 10) || 0); } catch (e) {}
+    zeige(k0, false);
+  }
+  function alleSchritte(an) {
+    try { localStorage.setItem(key + 'alle', an ? '1' : ''); } catch (e) {}
+    mods.forEach(function (x) { x.classList.toggle('alle', an); var c = x.querySelector('.ms-alle input'); if (c) c.checked = an; });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.raten'), function (r) {
+    var ol = r.querySelector('ol'); if (!ol) return;
+    var right = parseInt(r.getAttribute('data-richtig'), 10);
+    var opts = document.createElement('div'); opts.className = 'cf-opts ra-opts';
+    var auf = r.querySelector('.aufloesung');
+    Array.prototype.slice.call(ol.children).forEach(function (li, k) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'cf-opt'; b.innerHTML = li.innerHTML;
+      b.addEventListener('click', function () {
+        opts.querySelectorAll('button').forEach(function (x, j) { x.disabled = true; if (j + 1 === right) x.classList.add('richtig'); });
+        if (k + 1 !== right) b.classList.add('falsch');
+        if (auf) auf.classList.add('offen');
+      });
+      opts.appendChild(b);
+    });
+    ol.parentNode.replaceChild(opts, ol);
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.tipps'), function (box) {
+    var tt = Array.prototype.filter.call(box.children, function (x) { return x.classList.contains('tipp'); });
+    var row = document.createElement('div'); row.className = 'tp-row';
+    tt.forEach(function (t, k) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'tp-btn';
+      b.textContent = t.getAttribute('data-titel') || (t.classList.contains('loesung') ? 'Lösung' : 'Tipp ' + (k + 1));
+      b.setAttribute('aria-expanded', 'false');
+      if (k > 0) b.disabled = true;
+      b.addEventListener('click', function () {
+        var auf = !t.classList.contains('offen');
+        t.classList.toggle('offen', auf); b.classList.toggle('offen', auf); b.setAttribute('aria-expanded', auf);
+        if (auf && row.children[k + 1]) row.children[k + 1].disabled = false;
+      });
+      row.appendChild(b);
+    });
+    box.insertBefore(row, box.firstChild);
   });
 
   function quiz(m, cf) {
@@ -128,6 +202,7 @@
   function show(idx, el) {
     mods.forEach(function (m, k) { m.classList.toggle('aktiv', k === idx); list.children[k].classList.toggle('aktiv', k === idx); });
     try { localStorage.setItem(key + 'zuletzt', mods[idx].id); } catch (e) {}
+    if (el && mods[idx]._zeigeSchritt) mods[idx]._zeigeSchritt(el);
     if (el) el.scrollIntoView();
     else window.scrollTo(0, Math.max(0, app.getBoundingClientRect().top + window.pageYOffset - 90));
   }
@@ -150,13 +225,16 @@
     if (!a || ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey) return;
     var id = decodeURIComponent(a.getAttribute('href').slice(1));
     var el = id && document.getElementById(id);
-    if (!el || !el.closest('.modul') || el.closest('.modul.aktiv') === el.closest('.modul') && el !== el.closest('.modul')) return;
+    var st = el && el.closest('.schritt');
+    var versteckt = st && !st.classList.contains('aktiv') && !st.closest('.modul').classList.contains('alle');
+    if (!el || !el.closest('.modul') || !versteckt && el.closest('.modul.aktiv') === el.closest('.modul') && el !== el.closest('.modul')) return;
     ev.preventDefault(); ev.stopPropagation();
     history.pushState(null, '', '#' + id);
     route();
   }, true);
   window.addEventListener('hashchange', route);
   window.addEventListener('popstate', route);
+  try { if (localStorage.getItem(key + 'alle')) alleSchritte(true); } catch (e) {}
   update();
   route();
 })();

@@ -2406,6 +2406,8 @@ Alle Fälle aus **beiden Datensätzen** bleiben erhalten.
 **Darum geht’s:** Du erkennst fehlende Werte, verstehst ihre Wirkung auf Berechnungen und lernst, wie du mit ihnen umgehst.
 :::
 
+:::::::: {.schritt data-titel="Was ist NA?"}
+
 # Fehlende Werte (NA)
 ___
 Nachdem wir Datensätze **umkodiert** und **zusammengeführt** haben, kommen wir zu einem Thema, das in der Praxis **immer** eine Rolle spielt:
@@ -2439,6 +2441,10 @@ In R steht `NA` für **Not Available** – also *fehlender Wert*.
 - `NA` bedeutet: ***Es liegt kein Wert vor***
 
 R behandelt `NA` **sehr strikt** – und das ist auch gut so.
+
+::::::::
+
+:::::::: {.schritt data-titel="Identifizieren"}
 
 ## Fehlende Werte identifizieren
 
@@ -2599,9 +2605,70 @@ Hier sehen wir auf einen Blick, wie viele fehlende Werte pro Variable im **gesam
 :::
 :::
 
+:::: {.jetzt-du}
+Wie viele fehlende Werte hat die Variable `hhincc`? Probiere beide Wege aus: Base R und `naniar`.
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Du kannst genau den Code von `age` verwenden und nur den Variablennamen austauschen.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
+```{r}
+#| echo: true
+#| warning: false
+
+sum(is.na(df_analyse2$hhincc))
+
+n_miss(df_analyse2$hhincc)
+```
+:::
+:::
+::::
+
+:::: {.fehler}
+Dieser Code soll die fehlenden Werte in `age` zählen, liefert aber nur `NA`. Warum?
+
+```r
+sum(df_analyse2$age == NA)
+```
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Denk an den Satz von oben: R behandelt `NA` **sehr strikt**. Was kommt heraus, wenn man einen Wert mit „kein Wert“ vergleicht?
+:::
+::: {.tipp .loesung data-titel="Auflösung"}
+`age == NA` ergibt für **jede Zeile** `NA`, weil R nicht wissen kann, ob ein fehlender Wert gleich irgendetwas ist. Deshalb ist auch die Summe `NA`. Zum Prüfen auf fehlende Werte immer `is.na()` verwenden:
+
+```r
+sum(is.na(df_analyse2$age))
+```
+:::
+:::
+::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Berechnungen"}
+
 ## Was passiert bei Berechnungen mit `NA`?
 
 Ein häufiger Stolperstein ist der Umgang mit fehlenden Werten bei Berechnungen.
+
+:::: {.raten data-richtig="2"}
+Was gibt dieser Code aus?
+
+```r
+rowSums(cbind(1, 5, 8, 10, NA, 20, 12, 13, NA))
+```
+
+1. `69`
+2. `NA`
+3. eine Fehlermeldung
+
+::: {.aufloesung}
+Richtig ist `NA`. Warum das so ist, siehst du direkt hier.
+:::
+::::
 
 👉 Schon ein einziges `NA` reicht aus, damit das gesamte Ergebnis `NA` wird.
 
@@ -2695,6 +2762,37 @@ ___
 - wenn ein Skalenwert auch mit 1–2 fehlenden Items sinnvoll ist
 - für erste Auswertungen und Exploration
 
+:::: {.jetzt-du}
+Erstelle genauso wie bei `soz.u` die Variablen `distress_na` (ohne `na.rm`) und `distress_rmt` (mit `na.rm = TRUE`) aus den Items `hs04_r`, `hs06`, `hs07`, `hs05_r` und `hs09_r`. Vergleiche beide mit `gg_miss_var()`.
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Kopiere den Code für `soz.u_na` und `soz.u_rmt` und tausche Variablennamen und Items aus.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
+```{r}
+#| echo: true
+#| warning: false
+
+df_analyse2 <- df_analyse2 |>
+  mutate(
+    distress_na  = rowSums(cbind(hs04_r, hs06, hs07, hs05_r, hs09_r)),
+    distress_rmt = rowSums(cbind(hs04_r, hs06, hs07, hs05_r, hs09_r),
+                           na.rm = TRUE)
+  )
+
+df_analyse2 |>
+  select(distress_na, distress_rmt) |>
+  gg_miss_var()
+```
+:::
+:::
+::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Umgang"}
+
 ## Wie mit fehlenden Werten umgehen?
 
 In der empirischen Forschung gibt es **verschiedene Strategien**, um mit fehlenden Werten umzugehen.  
@@ -2728,6 +2826,14 @@ Warum?
 
 Komplexere Verfahren wie **multiple Imputation** sind wichtig, gehen aber über den Rahmen dieses Workshops hinaus.
 
+::: {.besprechen}
+Bei einer Person fehlt 1 von 5 Items der Skala `soz.u`, bei einer anderen fehlen 4 von 5. Würdest du in beiden Fällen gleich vorgehen? Tausch dich kurz mit deinem Nachbarn aus.
+:::
+
+::::::::
+
+:::::::: {.schritt data-titel="Entfernen"}
+
 ## Fehlende Werte entfernen
 
 ### Ganze Zeilen entfernen (`drop_na()`)
@@ -2747,8 +2853,14 @@ df_analyse2 |> dim()
 
 👉 Ergebnis: Nur Fälle ohne fehlende Werte in `soz.u` bleiben erhalten.
 
-:::{.callout-tip collapse="true"}
-# Tipp
+:::: {.jetzt-du}
+Wie viele Personen wurden durch `drop_na(soz.u_na)` ausgeschlossen?
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Vergleiche die Anzahl der Zeilen von `df_analyse2` und `df_clean`, z. B. mit `nrow()`.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 Um zu sehen, wie viele Personen ausgeschlossen wurden:
 
 ```{r}
@@ -2758,15 +2870,33 @@ Um zu sehen, wie viele Personen ausgeschlossen wurden:
 nrow(df_analyse2) - nrow(df_clean)
 ```
 :::
+:::
+::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
 
 ## Übung
 
+::::: {.stufe data-titel="1 · Machen"}
 Erstelle einen Datensatz `df_clean`, der frei von `NA`s für die Variablen `distress` und `soz.u` ist.
 
 - Wie viele Beobachtungen werden insgesamt ausgeschlossen?
 
-:::{.callout-tip collapse="true"}
-# **Lösung**
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Du brauchst `distress_na` aus dem Schritt „Berechnungen“. Mit `drop_na()` aus dem Schritt „Entfernen“ kannst du mehrere Variablen auf einmal angeben.
+:::
+::: {.tipp data-titel="Tipp 2"}
+```r
+df_clean <- df_analyse2 |>
+  ___(distress_na, ___)
+
+nrow(df_analyse2) - nrow(___)
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 ```{r}
 #| echo: true
@@ -2785,6 +2915,28 @@ df_clean <- df_analyse2 |>
 nrow(df_analyse2) - nrow(df_clean)
 ```
 :::
+::::
+:::::
+
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Ist die Fallzahl nach dem Entfernen noch ausreichend? Was bedeutet das für deine weitere Auswertung?
+:::
+
+::::: {.stufe .s3 data-titel="3 · Übertragen – Bonus"}
+Betrifft das Entfernen bestimmte Gruppen stärker als andere? Vergleiche zum Beispiel die Verteilung von `sex` in `df_analyse2` und `df_clean`.
+
+:::: {.tipps}
+::: {.tipp .loesung data-titel="Lösungsidee"}
+```{r}
+#| echo: true
+#| warning: false
+
+table(df_analyse2$sex)
+table(df_clean$sex)
+```
+:::
+::::
+:::::
 
 :::{.callout-tip}
 # **Tipps**
@@ -2807,6 +2959,10 @@ Es gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist:
 - Konsequenzen kennen
 :::
 :::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -2837,6 +2993,8 @@ Es gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist:
 ::::
 
 :::::
+
+::::::::
 
 ::::::::
 
