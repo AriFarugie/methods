@@ -760,7 +760,7 @@ h2, h3, h4, .lp-sec h2, .lp-card h3, .lp-box h3, .lp-cta h3, .tm-card h3, .ws-ma
 .modul .schritt.aktiv, .modul.alle .schritt { display: block; }
 .modul.alle .ms-bar, .modul.alle .ms-nav { display: none; }
 .modul.alle .schritt + .schritt { border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1rem; }
-.ms-bar { display: flex; flex-wrap: wrap; gap: .4rem; margin: -.4rem 0 1.6rem; }
+.ms-bar { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.8rem; }
 .ms-st { flex: 1 1 0; min-width: 7rem; font: inherit; font-size: .8rem; text-align: left; color: var(--muted); background: #f1efe9; border: 1px solid transparent; border-radius: 10px; padding: .45rem .6rem; cursor: pointer; line-height: 1.25; }
 .ms-st b { display: block; font-size: .7rem; letter-spacing: .06em; }
 .ms-st:hover { border-color: var(--accent); }
@@ -770,7 +770,7 @@ h2, h3, h4, .lp-sec h2, .lp-card h3, .lp-box h3, .lp-cta h3, .tm-card h3, .ws-ma
 .ms-nav { display: flex; justify-content: space-between; gap: 1rem; margin: 2rem 0 1rem; }
 .ms-nav button { font: inherit; font-size: .88rem; font-weight: 700; border-radius: 8px; padding: .5rem 1rem; cursor: pointer; border: 1px solid var(--border); background: #f1efe9; color: var(--ink); }
 .ms-nav .ms-next { background: var(--accent); border-color: var(--accent); color: #fff; }
-.ms-alle { width: fit-content; margin: -.6rem 0 .8rem auto; display: flex; align-items: center; gap: .45rem; font-size: .8rem; font-weight: 700; color: var(--ink); cursor: pointer; margin: 0; }
+.ms-alle { width: fit-content; margin: -.4rem 0 .9rem auto; display: flex; align-items: center; gap: .45rem; font-size: .8rem; font-weight: 700; color: var(--ink); cursor: pointer; }
 .ms-alle input { position: absolute; opacity: 0; }
 .ms-sw { width: 30px; height: 16px; border-radius: 10px; background: #ccd3cf; position: relative; transition: background .2s; }
 .ms-sw::after { content: ""; position: absolute; width: 12px; height: 12px; border-radius: 50%; background: #fff; top: 2px; left: 2px; transition: left .2s; }
