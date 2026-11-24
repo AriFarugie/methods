@@ -222,6 +222,7 @@
     try {
       Object.keys(localStorage).forEach(function (k) { if (k === key || k.indexOf(key + 'schritt:') === 0 || k.indexOf(key + 'gesehen:') === 0) localStorage.removeItem(k); });
     } catch (e) {}
+    history.replaceState(null, '', location.pathname + location.search);
     location.reload();
   });
   document.addEventListener('click', function (ev) {
