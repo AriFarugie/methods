@@ -210,6 +210,8 @@ Im nächsten Abschnitt legen wir unser erstes **Projekt** an!
 **Darum geht’s:** Du legst ein RStudio-Projekt an und führst erste Befehle in einem R-Skript aus.
 :::
 
+:::::::: {.schritt data-titel="Ankommen"}
+
 # Ankommen & Setup
 ___
 Willkommen zum Workshop „Einführung in R & RStudio" 👋  
@@ -219,6 +221,10 @@ Willkommen zum Workshop „Einführung in R & RStudio" 👋
 - RStudio-Oberfläche kennenlernen
 - verstehen, wie R „denkt"
 - erste eigene Objekte und Daten erzeugen
+
+::::::::
+
+:::::::: {.schritt data-titel="Projekt anlegen"}
 
 # Projekt anlegen
 ___
@@ -293,6 +299,20 @@ Der Projektname sollte **keine Leerzeichen** enthalten
 
 **RStudio startet nun neu – du arbeitest jetzt** ***innerhalb deines Projekts.***
 
+:::: {.jetzt-du}
+Lege jetzt selbst ein Projekt mit dem Namen `r_workshop` an. Folge dazu den Schritten 1 bis 6 oben.
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Achte auf den Projektnamen: **keine Leerzeichen**, also `r_workshop` statt `R Workshop`.
+:::
+:::
+::::
+
+
+::::::::
+
+:::::::: {.schritt data-titel="R-Skript"}
 
 # R Script
 ___
@@ -314,6 +334,20 @@ Mit **Strg + Enter** wird der Befehl **in der Zeile ausgeführt, in der dein Cur
 du musst den Code **nicht markieren** und **nicht auf „Run" klicken**.
 :::
 
+:::: {.jetzt-du}
+Öffne in deinem Projekt ein neues R Script und speichere es, z. B. als `workshop.R`.
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Ein neues Skript öffnest du über **File → New File → R Script**. Speichern kannst du es mit **Strg + S**.
+:::
+:::
+::::
+
+
+::::::::
+
+:::::::: {.schritt data-titel="Taschenrechner"}
 
 ## RStudio als Taschenrechner
 
@@ -326,6 +360,19 @@ So lernst du schnell:
 - wie R mit Zahlen umgeht
 - dass R immer auf **Eingaben reagiert**
 
+
+::: {.raten data-richtig="2"}
+Was gibt R bei `10 / 3` aus?
+
+1. `3`
+2. `3.333333`
+3. eine Fehlermeldung
+
+::: {.aufloesung}
+Richtig ist `3.333333`. R rechnet mit Dezimalzahlen und zeigt das Ergebnis mit mehreren Nachkommastellen an.
+:::
+:::
+
 ```{r}
 #| echo: true
 
@@ -333,6 +380,10 @@ So lernst du schnell:
 10 / 3
 sqrt(49)
 ```
+
+::: {.jetzt-du}
+Schreib die drei Rechnungen in dein Skript und führe sie Zeile für Zeile mit **Strg + Enter** aus.
+:::
 
 ::: {.callout-warning collapse="true"}
 # **Warum ins Skript schreiben?**
@@ -347,8 +398,13 @@ Schreibst du deine Rechnungen **in ein R Script**, bleiben sie erhalten:
 - deine Arbeit ist nachvollziehbar und reproduzierbar
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
 
+::::: {.stufe data-titel="1 · Machen"}
 1. Berechne den Ausdruck `((8 + 4)^2 - 10) / 2`.
 2. Berechne anschließend `sqrt(196) + 3^3`.
 3. Führe **alle Rechnungen**
@@ -357,9 +413,11 @@ Schreibst du deine Rechnungen **in ein R Script**, bleiben sie erhalten:
 
 Beobachte, was gleich ist und was sich unterscheidet.
 
-::: {.callout-tip collapse="true"}
-# **Lösung**
-
+:::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Denk an die Rechenregeln: Zuerst wird gerechnet, was in Klammern steht, dann die Potenz `^`, danach Punkt vor Strich.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 ```{r}
 #| echo: true
 
@@ -369,7 +427,14 @@ Beobachte, was gleich ist und was sich unterscheidet.
 # Aufgabe 2
 sqrt(196) + 3^3
 ```
-::: 
+:::
+::::
+:::::
+
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -402,11 +467,15 @@ sqrt(196) + 3^3
 
 ::::::::
 
+::::::::
+
 :::::::: {.modul #modul-2 data-titel="Grundprinzipien von R"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du lernst, wie R mit Objekten und Funktionen arbeitet, und berechnest erste Kennwerte.
 :::
+
+:::::::: {.schritt data-titel="Objekte"}
 
 # Grundprinzipien von R
 ___
@@ -427,6 +496,28 @@ y <- c(23, 12, 11, 9, 13)
 - `y` ist der **Name des Objekts**. Das Objekt selbst ist ein **Vektor**, der mehrere Zahlen enthält.
 :::
 
+:::: {.jetzt-du}
+Lege ein eigenes Objekt `alter` mit drei Zahlen an und lass es dir anzeigen, indem du den Namen ausführst.
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Du brauchst `<-` und `c()`, genau wie bei `y`.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
+```{r}
+#| echo: true
+
+alter <- c(25, 31, 47)
+alter
+```
+:::
+:::
+::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Funktionen"}
+
 ## Funktionen verwenden
 
 Funktionen sind **vordefinierte Befehle**, mit denen R etwas für uns erledigt.  
@@ -438,6 +529,19 @@ Je nach Aufgabe benutzen wir ein anderes Werkzeug.
 In R werden Funktionen immer mit **runden Klammern `()`** aufgerufen.
 
 Im Folgenden verwenden wir einige **grundlegende Funktionen**, die R bereits mitbringt:
+
+
+::: {.raten data-richtig="1"}
+Was gibt `length(y)` aus? Zur Erinnerung: `y <- c(23, 12, 11, 9, 13)`
+
+1. `5`
+2. `68`
+3. `13.6`
+
+::: {.aufloesung}
+Richtig ist `5`: `length()` zählt die Werte. `68` wäre die Summe (`sum(y)`), `13.6` der Mittelwert (`mean(y)`).
+:::
+:::
 
 ```{r}
 #| echo: true
@@ -469,6 +573,28 @@ length(y)
 Es gibt eine Vielzahl **Base R-Funktionen** – erkunde sie gerne!
 :::
 
+
+:::: {.fehler}
+Dieser Code soll den Mittelwert von `y` berechnen, liefert aber eine Fehlermeldung. Warum?
+
+```r
+Mean(y)
+```
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Vergleiche genau mit der Liste oben: Wie ist die Funktion dort geschrieben?
+:::
+::: {.tipp .loesung data-titel="Auflösung"}
+R unterscheidet zwischen **Groß- und Kleinschreibung**. Die Funktion heißt `mean()`, nicht `Mean()`:
+
+```r
+mean(y)
+```
+:::
+:::
+::::
+
 Funktionen können nicht nur einzeln, sondern auch **miteinander kombiniert** werden.  
 Das Ergebnis einer Funktion kann dabei **direkt als Eingabe** für eine andere dienen.
 
@@ -482,8 +608,13 @@ max(y) - min(y)
 In der nächsten Übung nutzen wir diese Grundfunktionen,  
 um eigene Kennwerte zu berechnen und die Ergebnisse **als Objekte zu speichern**.
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
 
+::::: {.stufe data-titel="1 · Machen"}
 Nutze den Vektor `y` und berechne folgende Kennwerte:
 
 1. Den **Standardfehler des Mittelwerts**  
@@ -493,10 +624,8 @@ Nutze den Vektor `y` und berechne folgende Kennwerte:
 
 Speichere alle Ergebnisse als eigene Objekte, z. B.: `se_y`, `var_y`, `z_y`, `ci_y`.
 
-
-::: {.callout-tip collapse="true"}
-# **Tipp: Formeln für die Berechnung**
-
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1 · Formeln"}
 Du darfst dir für die Berechnung **Hilfsobjekte** anlegen.
 
 :::{.panel-tabset}
@@ -535,10 +664,18 @@ $$
 - $\pm$ = untere und obere Grenze des Intervalls
 :::
 :::
+::: {.tipp data-titel="Tipp 2"}
+```r
+n <- length(y)
+m <- mean(y)
+s <- sd(y)
 
-::: {.callout-tip collapse="true"}
-# **Lösung**
-
+se_y  <- ___ / sqrt(___)
+var_y <- sum((y - ___)^2) / (___ - 1)
+z_y   <- (y - ___) / ___
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 :::{.panel-tabset}
 # Hilfsobjekte
 ```{r}
@@ -580,6 +717,9 @@ ci_y
 ```
 :::
 :::
+::::
+:::::
+
 
 
 ::: callout-warning
@@ -590,6 +730,14 @@ ci_y
 - `<-` vergessen oder `=` inkonsistent verwendet  
 - Im falschen Fenster tippen (Konsole statt Skript oder umgekehrt)
 :::
+
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Was sagt dir das Konfidenzintervall `ci_y` über den Mittelwert von `y`?
+:::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -622,11 +770,15 @@ ci_y
 
 ::::::::
 
+::::::::
+
 :::::::: {.modul #modul-3 data-titel="Datentypen & Datenstrukturen"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du lernst die wichtigsten Datentypen und Datenstrukturen kennen und erfährst, wie du ein Objekt in R untersuchst.
 :::
+
+:::::::: {.schritt data-titel="Datentypen"}
 
 ## Datentypen & Datenstrukturen
 
@@ -671,6 +823,23 @@ Der Datentyp ist wichtig, weil er bestimmt,
   Kategorische Daten mit festen Ausprägungen, z. B. Geschlecht oder Schulabschluss.
 :::
 
+::: {.raten data-richtig="2"}
+Welchen Datentyp hat der Wert `"42"`?
+
+1. `numeric`
+2. `character`
+3. `logical`
+
+::: {.aufloesung}
+Richtig ist `character`: Durch die Anführungszeichen ist `"42"` ein Text, auch wenn es wie eine Zahl aussieht. Mit Text kann man **nicht rechnen**.
+:::
+:::
+
+
+
+::::::::
+
+:::::::: {.schritt data-titel="Datenstrukturen"}
 
 ### Wichtige Datenstrukturen
 ___
@@ -714,6 +883,14 @@ Die Datenstrukturen bauen **konzeptionell** aufeinander auf,
 werden in der Praxis aber **nicht automatisch ineinander umgewandelt**.
 :::
 
+::: {.besprechen}
+Ein Datensatz aus einer Befragung enthält Alter, Geschlecht und Wohnort. Welche Datenstruktur passt dafür: Vektor, Matrix oder Data Frame? Warum? Tausch dich kurz mit deinem Nachbarn aus.
+:::
+
+::::::::
+
+:::::::: {.schritt data-titel="Objekt prüfen"}
+
 ### Welchen Datentyp oder welche Datenstruktur hat mein Objekt?
 ___
 In R können wir jederzeit überprüfen, **was für eine Art von Objekt** wir im Environment haben. Das ist besonders hilfreich, wenn wir mit vielen Objekten arbeiten oder unsicher sind, wie R ein Objekt interpretiert.
@@ -731,6 +908,19 @@ Für **Funktionen**:
 
 Im Folgenden betrachten wir unsere zuvor erstellten Objekte `x` und `y` genauer:
 
+
+::: {.raten data-richtig="1"}
+Was gibt `class(y)` aus?
+
+1. `numeric`
+2. `vector`
+3. `double`
+
+::: {.aufloesung}
+Richtig ist `numeric`. `class()` gibt die allgemeine Einordnung zurück. `typeof()` zeigt dagegen, wie R das Objekt intern speichert, nämlich als `double`.
+:::
+:::
+
 ```{r}
 #| echo: true
 
@@ -745,8 +935,13 @@ str(y)
 ```
 
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
 
+::::: {.stufe data-titel="1 · Machen"}
 Im bisherigen Verlauf haben wir mehrere **Objekte und Hilfsobjekte** erstellt.
 
 1. Überprüfe für jedes dieser Objekte den **Datentyp** und die **Datenstruktur**.
@@ -755,9 +950,18 @@ Im bisherigen Verlauf haben wir mehrere **Objekte und Hilfsobjekte** erstellt.
    - Welche Objekte sind **einzelne Werte**?  
    - Welche Objekte sind **Vektoren**?
 
-::: {.callout-tip collapse="true"}
-# **Lösung**
-
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Die Objekte stammen aus der Übung in Modul 2: `n`, `m`, `s`, `se_y`, `var_y`, `z_y` und `ci_y`. Du siehst sie auch im Environment oben rechts.
+:::
+::: {.tipp data-titel="Tipp 2"}
+```r
+class(___)
+typeof(___)
+str(___)
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 :::{.panel-tabset}
 
 # Mittelwert
@@ -812,6 +1016,9 @@ str(ci_y)
 ```
 :::
 :::
+::::
+:::::
+
 
 ::: callout-tip
 # **Faustregel: Ein Objekt in R verstehen**
@@ -819,6 +1026,10 @@ str(ci_y)
 2. `typeof()` → Wie wird das Objekt **intern gespeichert**?
 3. `str()` → Wie ist das Objekt **aufgebaut** und welche Inhalte hat es?
 :::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -852,11 +1063,15 @@ str(ci_y)
 
 ::::::::
 
+::::::::
+
 :::::::: {.modul #modul-4 data-titel="Einen Datensatz erstellen & Pakete"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du erstellst mit `data.frame()` einen eigenen Datensatz und lernst, wie du Pakete installierst und lädst.
 :::
+
+:::::::: {.schritt data-titel="Datensatz erstellen"}
 
 ## Einen ersten Datensatz in R erstellen
 
@@ -909,6 +1124,28 @@ Alle Vektoren müssen **die gleiche Länge** haben.
 Überprüfe das!
 :::
 
+:::: {.jetzt-du}
+Überprüfe mit `length()`, ob alle sechs Vektoren gleich lang sind.
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+`length()` kennst du aus Modul 2. Wende es auf jeden Vektor einzeln an.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
+```{r}
+#| echo: true
+
+length(age)
+length(gender)
+length(hair_color)
+length(height_cm)
+length(weight_kg)
+length(occupation)
+```
+:::
+:::
+::::
+
 Im nächsten Schritt fassen wir die einzelnen Variablen zu einem **gemeinsamen Datensatz** zusammen.  
 Dabei verwenden wir zunächst **Base R**, also Funktionen, die ohne zusätzliche Pakete verfügbar sind.
 
@@ -946,6 +1183,26 @@ Die einzelnen Vektoren sind nun zu einem **Datensatz** zusammengeführt worden:
 `data.frame()` ist die klassische Tabellenstruktur in Base R  
 und bildet die Grundlage für viele weitere Analyseschritte.
 
+:::: {.fehler}
+Dieser Code soll einen Datensatz erstellen, liefert aber eine Fehlermeldung. Warum?
+
+```r
+data_test <- data.frame(
+  age    = c(23, 29, 35),
+  gender = c("female", "male")
+)
+```
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Zähle die Werte in jeder Zeile.
+:::
+::: {.tipp .loesung data-titel="Auflösung"}
+`age` hat 3 Werte, `gender` nur 2. Alle Variablen eines Data Frames müssen **gleich viele Werte** haben.
+:::
+:::
+::::
+
 ::: callout-note
 # **Erinnerung**
 
@@ -953,15 +1210,37 @@ Auch ein einzelner Wert ist in R ein **Vektor der Länge 1**. Mit der `c()`-Funk
 :::
 
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
 
+::::: {.stufe data-titel="1 · Machen"}
 Bisher haben wir einen Datensatz mit sechs Variablen erstellt. Erstelle nun zwei weitere **Variablen** und füge sie zum Datensatz hinzu. Nenne die eine Variable `numbers` und die andere `chars`.
 
 - `numbers` sollen zufällige Zahlen sein, die du dir ausdenkst
 - `chars` sollen einfach Namen sein, die dir einfallen
 
-::: {.callout-tip collapse="true"}
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Lege zuerst `numbers` und `chars` mit `c()` an, jeweils mit **6 Werten**, weil der Datensatz 6 Personen hat. Danach ergänzt du beide in `data.frame()`.
+:::
+::: {.tipp data-titel="Tipp 2"}
+```r
+numbers <- c(___)
+chars   <- c(___)
 
+data <- data.frame(
+  age        = age,
+  # ... die übrigen Variablen wie oben ...
+  occupation = occupation,
+  nmbrs      = ___,
+  chars      = ___
+)
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 # **Lösung**
 
 ```{r}
@@ -983,6 +1262,9 @@ data <- data.frame(
 )
 ```
 :::
+::::
+:::::
+
 
 ::: callout-warning
 # **Typische Fehler beim Erstellen eines Data Frames**
@@ -996,6 +1278,24 @@ data <- data.frame(
 - **Unterschiedliche Längen der Vektoren**  
   → alle Variablen müssen **gleich viele Werte** haben
 :::
+
+::::: {.stufe .s3 data-titel="2 · Übertragen – Bonus"}
+Prüfe mit `str(data)`, welchen Datentyp `nmbrs` und `chars` haben. Passt das zu dem, was du in Modul 3 gelernt hast?
+
+::: {.tipps}
+::: {.tipp .loesung data-titel="Lösungsidee"}
+```{r}
+#| echo: true
+
+str(data)
+```
+:::
+:::
+:::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Pakete"}
 
 ## Exkurs: Pakete
 
@@ -1038,6 +1338,17 @@ damit ihre Funktionen zur Verfügung stehen.
 library(tidyverse)
 library(psych)
 ```
+
+
+:::: {.jetzt-du}
+Lade die Pakete `tidyverse` und `psych` mit `library()`. Erscheint eine Fehlermeldung, ist das Paket vermutlich noch nicht installiert.
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Fehlt ein Paket, installierst du es einmal mit `install.packages("psych")` und lädst es danach mit `library(psych)`.
+:::
+:::
+::::
 
 ::: callout-tip
 # **Merksatz**
@@ -1082,6 +1393,10 @@ Es enthält unter anderem:
 die in der empirischen Forschung regelmäßig benötigt werden.
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
+
 ::: {.mk-wichtig}
 **Das Wichtigste**
 
@@ -1111,6 +1426,8 @@ die in der empirischen Forschung regelmäßig benötigt werden.
 ::::
 
 :::::
+
+::::::::
 
 ::::::::
 

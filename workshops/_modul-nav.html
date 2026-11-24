@@ -84,6 +84,8 @@
     sch.forEach(function (s, k) {
       var t = s.getAttribute('data-titel') || ('Schritt ' + (k + 1));
       var b = document.createElement('button'); b.type = 'button'; b.className = 'ms-st';
+      if (/^Übung/.test(t)) b.classList.add('uebung');
+      else if (s.querySelector('.jetzt-du, .raten, .fehler, .besprechen')) b.classList.add('mitmachen');
       b.innerHTML = '<b>' + (k + 1) + '</b>' + esc(t);
       b.addEventListener('click', function () { zeige(k, true); });
       bar.appendChild(b);
