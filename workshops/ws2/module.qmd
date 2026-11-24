@@ -2411,7 +2411,7 @@ Drehe die Achsen mit `coord_flip()`, damit die Wohnorttypen gut lesbar sind, und
 
 ggplot(data = df |> filter(!is.na(wohnort) & !is.na(lebenszuf)),
        aes(x = wohnort, y = lebenszuf, fill = wohnort)) +
-  geom_boxplot(alpha = 0.8, outlier.shape = NA) +
+  geom_boxplot(alpha = 0.8) +
   scale_fill_viridis_d() +
   coord_flip() +
   mein_theme +
