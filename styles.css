@@ -766,6 +766,10 @@ h2, h3, h4, .lp-sec h2, .lp-card h3, .lp-box h3, .lp-cta h3, .tm-card h3, .ws-ma
 .ms-st { flex: 1 1 0; min-width: 7rem; font: inherit; font-size: .8rem; text-align: left; color: var(--muted); background: #f1efe9; border: 1px solid transparent; border-radius: 10px; padding: .45rem .6rem; cursor: pointer; line-height: 1.25; }
 .ms-st b { display: block; font-size: .7rem; letter-spacing: .06em; }
 .ms-st:hover { border-color: var(--accent); }
+.ms-st.uebung { background: #fbf6e6; color: #9a7a14; border-color: var(--gold); }
+.ms-st.uebung b::after { content: " ✎"; }
+.ms-st.mitmachen b::after { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-left: .35rem; vertical-align: middle; }
+.ms-st.aktiv.mitmachen b::after { background: #fff; }
 .ms-st.gesehen { background: var(--accent-light); color: var(--accent); }
 .ms-st.gesehen b::before { content: "✓ "; }
 .ms-st.aktiv { background: var(--accent); color: #fff; font-weight: 700; }
