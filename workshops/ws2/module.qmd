@@ -2530,6 +2530,8 @@ Fehlermeldung zum Pfad? Prüfe, ob es in deinem Projekt den Ordner `output/` gib
 
 ggsave("output/mein_plot.png", width = 8, height = 5, dpi = 300)
 ```
+
+Führe `ggsave()` direkt nach deiner kombinierten Abbildung aus. Ohne `plot =` speichert es den zuletzt angezeigten Plot.
 :::
 :::
 ::::
@@ -2609,7 +2611,7 @@ Wählt eine inhaltliche Frage aus dem Datensatz, z. B.:
 
 ::: {.tipps}
 ::: {.tipp data-titel="Tipp"}
-Welche Variablen es gibt, steht im Codebuch aus Modul 1 (Schritt „Ankommen“). Ein Kommentar im Skript beginnt mit `#`.
+Welche Variablen es gibt, steht im Codebuch aus Modul 1 (Schritt „Setup“). Ein Kommentar im Skript beginnt mit `#`.
 :::
 :::
 
