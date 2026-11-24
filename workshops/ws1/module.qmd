@@ -3622,4 +3622,8 @@ Guter Code ist nicht der „kürzeste" – sondern der, den du (und andere) spä
 
 :::::
 
+::: {.gesamtskript}
+**Gesamtskript zum Nachschlagen:** alle Codebeispiele und empfohlenen Lösungen aus Modul 1–10 in einer kommentierten R-Datei.
+:::
+
 ::::::::
