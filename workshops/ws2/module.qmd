@@ -14,11 +14,13 @@ format:
 body-classes: modul-seite
 ---
 
-:::::::: {.modul #modul-1 data-titel="Warum Datenvisualisierung?"}
+::::::::: {.modul #modul-1 data-titel="Warum Datenvisualisierung?"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du lernst, wozu Datenvisualisierung dient und was eine gute Grafik ausmacht.
 :::
+
+:::::::: {.schritt data-titel="Ankommen"}
 
 # Ankommen & Überblick
 ___
@@ -31,6 +33,10 @@ Willkommen zum Workshop „Datenvisualisierung mit ggplot2" 👋
 - die ersten drei Schichten praktisch umsetzen: **Data → Aesthetics → Geometries**
 
 ___
+
+::::::::
+
+:::::::: {.schritt .uebung data-titel="Setup"}
 
 **Bevor wir starten, laden wir alle benötigten Pakete und den Datensatz.**
 
@@ -137,7 +143,22 @@ df <- df |>
 ```
 :::
 
+:::: {.jetzt-du}
+Lade den Datensatz herunter, speichere ihn in deinem Ordner `data/` und führe den Setup-Code aus. Erscheint `df` im Fenster **Environment**?
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Fehlermeldung `cannot open file`? Prüfe, ob die Datei wirklich in deinem Projekt unter `data/` liegt. Fehlt ein Paket, installierst du es einmal mit `install.packages()`.
+:::
+:::
+::::
+
+
 ___
+
+::::::::
+
+:::::::: {.schritt data-titel="Was ist Datenvisualisierung?"}
 
 # Was ist Datenvisualisierung?
 ___
@@ -175,11 +196,20 @@ von Ergebnissen an andere.
 Grafiken sind **Denkwerkzeuge** – nicht nur Präsentationsmittel.
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Vier Gründe"}
+
 # Warum Datenvisualisierung?
 ___
 
 Es gibt vier zentrale Gründe, warum Datenvisualisierung in der empirischen Forschung  
 unverzichtbar ist. Zu jedem Grund schauen wir uns direkt ein konkretes Beispiel an.
+
+::: {.besprechen}
+Schau dir bei jedem der vier Beispiele zuerst die Grafik an: Was zeigt sie? Tausch dich kurz mit deinem Nachbarn aus und klapp erst danach **„Was sehen wir hier?“** auf.
+:::
+
 
 ## 1. Verständnis der Daten
 
@@ -214,7 +244,7 @@ p_box <- ggplot(data = df, aes(y = distress)) +
 p_hist | p_box
 ```
 
-::: callout-note
+::: {.callout-note collapse="true"}
 ## **Was sehen wir hier?**
 
 Mit einem Histogramm und einem Boxplot erkennen wir sofort:
@@ -265,7 +295,7 @@ df |>
   )
 ```
 
-::: callout-note
+::: {.callout-note collapse="true"}
 ## **Was sehen wir hier?**
 
 Dieser Befund könnte auch als Tabelle mit Mittelwerten und Standardfehlern präsentiert werden –  
@@ -306,7 +336,7 @@ df |>
   )
 ```
 
-::: callout-note
+::: {.callout-note collapse="true"}
 ## **Was sehen wir hier?**
 
 Die Grafik zeigt auf einen Blick:
@@ -347,7 +377,7 @@ df |>
   theme(plot.title = element_text(face = "bold", size = 11))
 ```
 
-::: callout-note
+::: {.callout-note collapse="true"}
 ## **Was sehen wir hier?**
 
 Bevor wir mit einer Analyse loslegen, schauen wir uns die Rohdaten an:
@@ -358,6 +388,10 @@ Bevor wir mit einer Analyse loslegen, schauen wir uns die Rohdaten an:
 
 Ein kurzer Blick auf ein Streudiagramm kann Stunden der Fehlersuche ersparen.
 :::
+
+::::::::
+
+:::::::: {.schritt data-titel="Gute Grafik & Anscombe"}
 
 ::: callout-warning
 ## **Was macht eine gute Visualisierung aus?**
@@ -433,6 +467,10 @@ Hätten wir nur die Kennwerte betrachtet, hätten wir bei allen vier Datensätze
 👉 **Schau dir deine Daten immer zuerst grafisch an – bevor du Kennwerte berechnest oder Modelle formulierst.**
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
+
 ::: {.mk-wichtig}
 **Das Wichtigste**
 
@@ -465,11 +503,15 @@ Hätten wir nur die Kennwerte betrachtet, hätten wir bei allen vier Datensätze
 
 ::::::::
 
-:::::::: {.modul #modul-2 data-titel="ggplot2: Grammatik, Data & Aesthetics"}
+:::::::::
+
+::::::::: {.modul #modul-2 data-titel="ggplot2: Grammatik, Data & Aesthetics"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du lernst die Grammar of Graphics kennen und baust mit Data und Aesthetics erste Plots.
 :::
+
+:::::::: {.schritt data-titel="ggplot2 & Grammatik"}
 
 # Was ist ggplot2?
 ___
@@ -568,6 +610,10 @@ In der Praxis braucht man **nicht immer alle Schichten**. Pflicht sind nur die e
 
 ___
 
+::::::::
+
+:::::::: {.schritt data-titel="Data"}
+
 # 🗂️ Layer 1: Data
 ___
 
@@ -613,7 +659,31 @@ Das ist besonders praktisch bei schnellen explorativen Grafiken.
 Aber Achtung: **Innerhalb** der `ggplot()`-Funktion gilt wieder `+`, nicht `|>`.
 :::
 
+:::: {.fehler}
+Dieser Code soll ein Histogramm zeichnen, liefert aber eine Fehlermeldung. Warum?
+
+```r
+df |>
+  ggplot(aes(x = distress))
+  + geom_histogram()
+```
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Schau dir an, wo das `+` steht.
+:::
+::: {.tipp .loesung data-titel="Auflösung"}
+Das `+` steht am **Anfang** der Zeile statt am **Ende** der vorherigen. R hält den Befehl nach der zweiten Zeile für fertig. Richtig ist `ggplot(aes(x = distress)) +` und darunter `geom_histogram()`.
+:::
+:::
+::::
+
+
 ___
+
+::::::::
+
+:::::::: {.schritt data-titel="Aesthetics"}
 
 # 🎨 Layer 2: Aesthetics
 ___
@@ -675,6 +745,24 @@ ggplot(
   geom_smooth(method = "lm", se = FALSE)
 ```
 
+
+:::: {.raten data-richtig="2"}
+Was passiert bei diesem Code?
+
+```r
+ggplot(df, aes(x = age, y = distress, color = "steelblue")) +
+  geom_point()
+```
+
+1. Alle Punkte werden blau
+2. Es entsteht eine Legende mit dem Eintrag „steelblue“, aber keine blauen Punkte
+3. eine Fehlermeldung
+
+::: {.aufloesung}
+Richtig ist 2. Innerhalb von `aes()` wird `"steelblue"` wie eine Variable behandelt. Warum das so ist, steht im Kasten direkt darunter.
+:::
+::::
+
 ::: callout-warning
 ## **Innerhalb vs. außerhalb von `aes()` – der häufigste Fehler**
 
@@ -699,15 +787,33 @@ ggplot(df, aes(x = age, y = distress, color = "steelblue")) +
 ```
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## **Übung**
+
+::::: {.stufe data-titel="1 · Machen"}
 
 1. Erstelle einen leeren `ggplot()`-Canvas mit `df`
 2. Füge `aes(x = age, y = distress)` hinzu
 3. Füge `aes(x = geschlecht, y = distress)` hinzu – was verändert sich?
-4. Beobachte: Ohne Geom sieht man noch keine Punkte – aber die Achsen und Legende erscheinen bereits.
+4. Beobachte: Ohne Geom sieht man noch keine Punkte – aber die Achsen erscheinen bereits.
 
-::: {.callout-tip collapse="true"}
-## **Lösung**
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Alle Schritte brauchen nur `ggplot()` und `aes()` aus diesem Modul, noch kein Geom. Führe nach jedem Schritt den Code aus und vergleiche.
+:::
+::: {.tipp data-titel="Tipp 2"}
+```r
+ggplot(data = ___)
+
+ggplot(data = df, aes(x = ___, y = ___))
+
+ggplot(data = df, aes(x = ___, y = distress))
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 ```{r}
 #| echo: true
@@ -723,8 +829,14 @@ ggplot(data = df, aes(x = age, y = distress))
 ggplot(data = df, aes(x = geschlecht, y = distress))
 ```
 :::
+::::
+:::::
 
 ___
+::::::::
+
+:::::::: {.schritt data-titel="Aesthetics vertieft"}
+
 # 🎨 *Aesthetics vertieft*
 ___
 
@@ -820,6 +932,10 @@ R bietet 25 verschiedene Punktformen (0–25).
 Die gebräuchlichsten: `16` = Kreis (Standard), `17` = Dreieck, `15` = Quadrat, `18` = Raute.
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
+
 ::: {.mk-wichtig}
 **Das Wichtigste**
 
@@ -852,11 +968,15 @@ Die gebräuchlichsten: `16` = Kreis (Standard), `17` = Dreieck, `15` = Quadrat, 
 
 ::::::::
 
-:::::::: {.modul #modul-3 data-titel="Geometries & Beschriftungen"}
+:::::::::
+
+::::::::: {.modul #modul-3 data-titel="Geometries & Beschriftungen"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du lernst die wichtigsten Geome kennen und beschriftest Grafiken mit `labs()`.
 :::
+
+:::::::: {.schritt data-titel="Geome"}
 
 # 📐 Layer 3: Geometries
 ___
@@ -990,6 +1110,19 @@ ggplot(
   theme(axis.text.x = element_text(angle = 30, hjust = 1))
 ```
 
+
+:::: {.raten data-richtig="2"}
+Was passiert, wenn du im Balkendiagramm oben `position = "dodge"` durch `position = "fill"` ersetzt?
+
+1. Die Balken stehen nebeneinander
+2. Die Balken werden auf 100 % gestapelt, so lassen sich Anteile vergleichen
+3. Die Balken werden mit einer Farbe gefüllt
+
+::: {.aufloesung}
+Richtig ist 2. Alle drei Möglichkeiten für `position` siehst du im Kasten direkt darunter.
+:::
+::::
+
 ::: callout-note
 ## **`position` in `geom_bar()`**
 
@@ -1041,7 +1174,30 @@ ggplot(
 `outlier.shape = NA` im Boxplot verhindert, dass Ausreißer doppelt gezeigt werden.
 :::
 
+:::: {.fehler}
+Die Boxen sollen blau gefüllt werden, aber nur der Rand ist blau. Warum?
+
+```r
+ggplot(data = df, aes(x = geschlecht, y = distress)) +
+  geom_boxplot(color = "steelblue")
+```
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Welches Aesthetic färbt Flächen, welches Ränder? Schau in Modul 2 unter „color & fill“.
+:::
+::: {.tipp .loesung data-titel="Auflösung"}
+`color` färbt beim Boxplot nur den **Rand**. Für die Fläche brauchst du `fill = "steelblue"`.
+:::
+:::
+::::
+
+
 ___
+
+::::::::
+
+:::::::: {.schritt data-titel="Beschriftungen"}
 
 # Beschriftungen mit labs()
 ___
@@ -1084,10 +1240,16 @@ ggplot(
 
 ___
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung 1"}
+
 # Übungen
 ___
 
 ## Übung 1: Schichten aufbauen
+
+::::: {.stufe data-titel="1 · Machen"}
 
 Baue einen Plot **Schritt für Schritt** auf und beobachte, was jede Schicht bewirkt:
 
@@ -1097,8 +1259,18 @@ Baue einen Plot **Schritt für Schritt** auf und beobachte, was jede Schicht bew
 4. Füge `+ geom_point(alpha = 0.4)` hinzu → Punkte erscheinen
 5. Füge `+ labs(title = "...", x = "...", y = "...")` hinzu → Beschriftungen
 
-::: {.callout-tip collapse="true"}
-## **Lösung**
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Die Schritte bauen aufeinander auf: Ergänze nach jedem Schritt deinen Code und führe ihn erneut aus.
+:::
+::: {.tipp data-titel="Tipp 2"}
+```r
+ggplot(data = df, aes(x = age, y = distress, color = ___)) +
+  geom_point(alpha = ___) +
+  labs(title = "___", x = "___", y = "___")
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 ```{r}
 #| echo: true
@@ -1116,8 +1288,16 @@ ggplot(
   )
 ```
 :::
+::::
+:::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Übung 2"}
 
 ## Übung 2: Geome kennenlernen
+
+::::: {.stufe data-titel="1 · Machen"}
 
 Erstelle für jedes der vier Geome eine eigene Grafik mit **anderen Variablen** als in den Beispielen:
 
@@ -1128,8 +1308,21 @@ Erstelle für jedes der vier Geome eine eigene Grafik mit **anderen Variablen** 
 
 Füge bei jeder Grafik passende `labs()` hinzu.
 
-::: {.callout-tip collapse="true"}
-## **Lösung**
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Nimm die Beispiele aus dem Schritt „Geome“ als Vorlage und tausche die Variablen aus. Für die Trendlinie brauchst du `geom_smooth()`, für die Rohdaten `geom_jitter()`.
+:::
+::: {.tipp data-titel="Tipp 2"}
+Beispiel für das Streudiagramm:
+
+```r
+ggplot(data = df, aes(x = ___, y = ___)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = "___") +
+  labs(title = "___", x = "___", y = "___")
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 :::{.panel-tabset}
 
@@ -1200,8 +1393,16 @@ ggplot(
 ```
 :::
 :::
+::::
+:::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Übung 3"}
 
 ## Übung 3: Aesthetics & Gruppen
+
+::::: {.stufe data-titel="1 · Machen"}
 
 Erstelle einen **Scatter-Plot** von `age` (x) und `lebenszuf` (y):
 
@@ -1210,8 +1411,21 @@ Erstelle einen **Scatter-Plot** von `age` (x) und `lebenszuf` (y):
 3. Füge je eine **Trendlinie pro Gruppe** hinzu (`geom_smooth`)
 4. Ergänze passende `labs()`
 
-::: {.callout-tip collapse="true"}
-## Lösung
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Steht `color = gebiet` in `aes()` innerhalb von `ggplot()`, gilt die Farbe global, also auch für `geom_smooth()`. So entsteht automatisch eine Trendlinie pro Gruppe (siehe „Global vs. lokal“ in Modul 2).
+:::
+::: {.tipp data-titel="Tipp 2"}
+```r
+df |> filter(!is.na(gebiet)) |>
+ggplot(
+  aes(x = age, y = lebenszuf, color = ___)) +
+  geom_point(alpha = ___) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(___)
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 ```{r}
 #| echo: true
@@ -1231,6 +1445,8 @@ ggplot(
   )
 ```
 :::
+::::
+:::::
 
 ::: callout-warning
 ## **Häufige Fehler**
@@ -1240,6 +1456,10 @@ ggplot(
 - **`color` statt `fill`** bei Boxplots/Histogrammen → nur der Rand wird eingefärbt, nicht die Fläche
 - **NAs vergessen** → `filter(!is.na(variable))` vor dem Plot nicht vergessen
 :::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -1273,11 +1493,15 @@ ggplot(
 
 ::::::::
 
-:::::::: {.modul #modul-4 data-titel="Layer 4: Faceting"}
+:::::::::
+
+::::::::: {.modul #modul-4 data-titel="Layer 4: Faceting"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du teilst eine Grafik mit Facets in Teilgrafiken für Gruppen auf.
 :::
+
+:::::::: {.schritt data-titel="Recap"}
 
 ::: callout-tip
 ## **Recap-Fragen**
@@ -1288,6 +1512,15 @@ ggplot(
 - Was ist der Unterschied zwischen `color` und `fill`?
 - Wofür brauchen wir `labs()`?
 :::
+
+::: {.besprechen}
+Geht die Recap-Fragen zu zweit durch. Bei welcher Frage seid ihr unsicher? Schaut dort noch einmal in Modul 2 oder 3 nach.
+:::
+
+
+::::::::
+
+:::::::: {.schritt data-titel="facet_wrap"}
 
 # 🔲 Layer 4: Faceting
 ___
@@ -1326,6 +1559,34 @@ ggplot(data = df |> filter(!is.na(geschlecht) & !is.na(distress)),
 - `labeller = label_both` → zeigt auch den Variablennamen im Panel-Titel
 :::
 
+:::: {.jetzt-du}
+Ergänze im Beispiel oben in `facet_wrap()` das Argument `ncol = 1` und danach `scales = "free_y"`. Was verändert sich?
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Beide Argumente gehören in die Klammer von `facet_wrap()`, durch Komma getrennt.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
+Mit `ncol = 1` stehen die Panels untereinander, mit `scales = "free_y"` hat jedes Panel eine eigene y-Achse.
+
+```{r}
+#| echo: true
+#| warning: false
+
+ggplot(data = df |> filter(!is.na(geschlecht) & !is.na(distress)),
+       aes(x = distress)) +
+  geom_histogram(binwidth = 2, fill = "steelblue", color = "white") +
+  facet_wrap(~ geschlecht, ncol = 1, scales = "free_y")
+```
+:::
+:::
+::::
+
+
+::::::::
+
+:::::::: {.schritt data-titel="facet_grid"}
+
 ## facet_grid()
 
 `facet_grid()` erstellt ein **zweidimensionales Raster** – eine Variable für Zeilen, eine für Spalten.
@@ -1345,7 +1606,13 @@ ggplot(aes(x = distress)) +
   )
 ```
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
+
+::::: {.stufe data-titel="1 · Machen"}
 
 Erstelle ein facettiertes Streudiagramm:
 
@@ -1354,8 +1621,21 @@ Erstelle ein facettiertes Streudiagramm:
 3. Füge eine **Regressionslinie** hinzu (`geom_smooth(method = "lm", se = FALSE)`)
 4. Füge die passenden `labs()` hinzu (Titel, Achsenbeschriftungen, Caption)
 
-::: {.callout-tip collapse="true"}
-## **Lösung**
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Baue zuerst das Streudiagramm mit Trendlinie wie in Modul 3, Übung 2. Danach hängst du `facet_wrap()` mit `+` an.
+:::
+::: {.tipp data-titel="Tipp 2"}
+```r
+ggplot(data = df |> filter(!is.na(bildung) & !is.na(soz_u)),
+       aes(x = ___, y = ___)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~ ___) +
+  labs(title = "___", x = "___", y = "___", caption = "___")
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 ```{r}
 #| echo: true
@@ -1375,6 +1655,12 @@ ggplot(data = df |> filter(!is.na(bildung) & !is.na(soz_u)),
   )
 ```
 :::
+::::
+:::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -1408,11 +1694,15 @@ ggplot(data = df |> filter(!is.na(bildung) & !is.na(soz_u)),
 
 ::::::::
 
-:::::::: {.modul #modul-5 data-titel="Layer 5: Statistics"}
+:::::::::
+
+::::::::: {.modul #modul-5 data-titel="Layer 5: Statistics"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du lernst, welche Statistik hinter jedem Geom steckt, und zeigst Kennwerte direkt in der Grafik.
 :::
+
+:::::::: {.schritt data-titel="Versteckte Stats"}
 
 # 📊 Layer 5: Statistics
 ___
@@ -1420,6 +1710,19 @@ ___
 Der Layer **Statistics** beschreibt **statistische Transformationen**, die `ggplot2` auf die Rohdaten anwendet, bevor sie gezeichnet werden.
 
 Viele Geome wenden bereits intern eine statistische Transformation an – oft ohne dass wir es bemerken:
+
+
+:::: {.raten data-richtig="2"}
+Was macht `geom_bar()` im Hintergrund, bevor die Balken gezeichnet werden?
+
+1. nichts, es zeichnet die Werte direkt
+2. es zählt, wie oft jede Kategorie vorkommt
+3. es berechnet den Mittelwert
+
+::: {.aufloesung}
+Richtig ist 2: `geom_bar()` zählt automatisch, das kennst du aus Modul 3. Welche Statistik in den anderen Geomen steckt, zeigt die Tabelle direkt darunter.
+:::
+::::
 
 ::: callout-note
 ## **Geome und ihre versteckten Stats**
@@ -1432,6 +1735,10 @@ Viele Geome wenden bereits intern eine statistische Transformation an – oft oh
 | `geom_smooth()` | `stat_smooth()` – berechnet Trendlinie |
 | `geom_point()` | `stat_identity()` – keine Transformation |
 :::
+
+::::::::
+
+:::::::: {.schritt data-titel="stat_summary"}
 
 ## stat_summary() – Kennwerte direkt in der Grafik
 
@@ -1482,7 +1789,13 @@ ggplot(data = df, aes(x = geschlecht, y = distress, fill = geschlecht)) +
   )
 ```
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
+
+::::: {.stufe data-titel="1 · Machen"}
 
 Erstelle einen Plot mit `stat_summary()`:
 
@@ -1491,8 +1804,19 @@ Erstelle einen Plot mit `stat_summary()`:
 3. Füge **Fehlerbalken** (Standardfehler) hinzu (`fun.data = mean_se`, `geom = "errorbar"`)
 4. Füge die passenden `labs()` hinzu (Titel, Achsenbeschriftungen, Caption)
 
-::: {.callout-tip collapse="true"}
-## **Lösung**
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Du brauchst zweimal `stat_summary()`: einmal mit `fun = mean` für den Punkt und einmal mit `fun.data = mean_se` für die Fehlerbalken. Das erste Beispiel oben ist deine Vorlage.
+:::
+::: {.tipp data-titel="Tipp 2"}
+```r
+ggplot(data = df, aes(x = ___, y = ___)) +
+  stat_summary(fun = ___, geom = "point", size = 4) +
+  stat_summary(fun.data = ___, geom = "errorbar", width = 0.25) +
+  labs(title = "___", x = "___", y = "___", caption = "___")
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 ```{r}
 #| echo: true
@@ -1512,6 +1836,12 @@ ggplot(data = df, aes(x = geschlecht, y = soz_u, color = geschlecht)) +
   ) 
 ```
 :::
+::::
+:::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -1544,11 +1874,15 @@ ggplot(data = df, aes(x = geschlecht, y = soz_u, color = geschlecht)) +
 
 ::::::::
 
-:::::::: {.modul #modul-6 data-titel="Coordinates, Theme & Farben"}
+:::::::::
+
+::::::::: {.modul #modul-6 data-titel="Coordinates, Theme & Farben"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du passt Koordinatensystem, Erscheinungsbild und Farben deiner Grafiken an.
 :::
+
+:::::::: {.schritt data-titel="Coordinates"}
 
 # 📏 Layer 6: Coordinates
 ___
@@ -1570,6 +1904,19 @@ ggplot(data = df, aes(x = distress)) +
   coord_cartesian(xlim = c(5, 25)) +
   labs(title = "Distress-Score (nur Bereich 5–25)", x = "Distress", y = "Häufigkeit")
 ```
+
+
+:::: {.raten data-richtig="2"}
+Was ist der Unterschied zwischen `coord_cartesian(xlim = c(5, 25))` und `xlim(5, 25)`?
+
+1. keiner, beide zoomen nur
+2. `coord_cartesian()` zoomt, `xlim()` entfernt die Datenpunkte außerhalb des Bereichs
+3. `xlim()` zoomt, `coord_cartesian()` entfernt die Datenpunkte außerhalb des Bereichs
+
+::: {.aufloesung}
+Richtig ist 2. Warum das wichtig ist, steht im Kasten direkt darunter.
+:::
+::::
 
 ::: callout-warning
 ## **`coord_cartesian()` vs. `xlim()` / `ylim()`**
@@ -1659,6 +2006,10 @@ df |>
 👉 Als Faustregel: Wenn du ein Tortendiagramm machen möchtest, überleg zuerst, ob ein `geom_bar(position = "fill")` nicht klarer wäre.
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Themes"}
+
 # 🖌️ Layer 7: Theme & Styling
 ___
 
@@ -1722,6 +2073,17 @@ p + theme_void()
 `theme_minimal()` oder `theme_bw()` sind häufig die beste Wahl für Publikationen – sie sind schlicht, gut lesbar und lenken nicht vom Inhalt ab.
 :::
 
+:::: {.jetzt-du}
+Probiere am Plot `p` die fünf fertigen Themes selbst aus. Welches würdest du für eine Hausarbeit nehmen?
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Ein Theme hängst du mit `+` an, z. B. `p + theme_bw()`. Eine Empfehlung steht im Kasten oben.
+:::
+:::
+::::
+
+
 ## theme() – Eigene Anpassungen
 
 Mit `theme()` kannst du **einzelne Elemente** gezielt anpassen:
@@ -1776,6 +2138,10 @@ mein_theme <- theme_minimal() +
 
 p + mein_theme
 ```
+
+::::::::
+
+:::::::: {.schritt data-titel="Farbpaletten"}
 
 ## Farbpaletten
 
@@ -1839,7 +2205,13 @@ eigene_farben <- c("Männlich" = "#2196F3", "Weiblich" = "#E91E63", "Divers" = "
 p + scale_fill_manual(values = eigene_farben) + mein_theme
 ```
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
+
+::::: {.stufe data-titel="1 · Machen"}
 
 Gestalte einen eigenen Plot vollständig:
 
@@ -1849,8 +2221,25 @@ Gestalte einen eigenen Plot vollständig:
 4. Passe den **Titel** auf Schriftgröße 14 und fett an
 5. Blende die Legende mit `legend.position = "none"` aus (da die x-Achse bereits ausreichend informiert)
 
-::: {.callout-tip collapse="true"}
-## **Lösung**
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Für `mein_theme` kannst du das Theme von oben übernehmen und anpassen. Titelgröße und Legende stellst du mit `theme()` ein, siehe „Wichtige `theme()`-Elemente“.
+:::
+::: {.tipp data-titel="Tipp 2"}
+```r
+ggplot(data = df |> filter(!is.na(wohnort) & !is.na(lebenszuf)),
+       aes(x = ___, y = ___, fill = ___)) +
+  geom_boxplot() +
+  scale_fill_brewer(palette = "___") +
+  labs(title = "___") +
+  mein_theme +
+  theme(
+    plot.title      = element_text(size = ___, face = "___"),
+    legend.position = "___"
+  )
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 ```{r}
 #| echo: true
@@ -1875,6 +2264,12 @@ ggplot(data = df |> filter(!is.na(wohnort) & !is.na(lebenszuf)),
   )
 ```
 :::
+::::
+:::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -1908,11 +2303,15 @@ ggplot(data = df |> filter(!is.na(wohnort) & !is.na(lebenszuf)),
 
 ::::::::
 
-:::::::: {.modul #modul-7 data-titel="patchwork & Export"}
+:::::::::
+
+::::::::: {.modul #modul-7 data-titel="patchwork & Export"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du kombinierst mehrere Plots zu einer Abbildung und exportierst Grafiken als Datei.
 :::
+
+:::::::: {.schritt data-titel="patchwork"}
 
 # patchwork – Plots kombinieren
 ___
@@ -1962,6 +2361,19 @@ p1 / p2
 
 ## Layouts & Anmerkungen
 
+:::: {.raten data-richtig="2"}
+Wie werden die Plots bei `(p1 | p2) / p3` angeordnet?
+
+1. Alle drei Plots stehen nebeneinander
+2. `p1` und `p2` stehen nebeneinander, `p3` darunter
+3. Alle drei Plots stehen untereinander
+
+::: {.aufloesung}
+Richtig ist 2: `|` heißt nebeneinander, `/` untereinander. Das Ergebnis siehst du direkt darunter.
+:::
+::::
+
+
 ```{r}
 #| echo: true
 #| warning: false
@@ -1994,7 +2406,13 @@ p3 <- ggplot(data = df, aes(x = distress, y = soz_u)) +
 | `plot_layout(widths = c(2, 1))` | Verhältnis der Breiten |
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
+
+::::: {.stufe data-titel="1 · Machen"}
 
 Erstelle eine **kombinierte Abbildung** mit drei Plots:
 
@@ -2004,8 +2422,26 @@ Erstelle eine **kombinierte Abbildung** mit drei Plots:
 
 Kombiniere sie sinnvoll mit `patchwork` und füge einen **Gesamttitel** via `plot_annotation()` hinzu.
 
-::: {.callout-tip collapse="true"}
-## **Lösung**
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Speichere jeden Plot zuerst als Objekt, z. B. `pa`, `pb` und `pc`, so wie `p1`, `p2` und `p3` oben. Danach kombinierst du sie mit `|` und `/`.
+:::
+::: {.tipp data-titel="Tipp 2"}
+```r
+pa <- ggplot(data = df, aes(x = ___)) +
+  geom_histogram()
+
+pb <- ggplot(data = df, aes(x = ___, y = ___)) +
+  geom_boxplot()
+
+pc <- ggplot(data = df, aes(x = ___, y = ___)) +
+  geom_point()
+
+(pa | ___) / ___ +
+  plot_annotation(title = "___")
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 ```{r}
 #| echo: true
@@ -2038,6 +2474,12 @@ pc <- ggplot(data = df, aes(x = age, y = lebenszuf)) +
   )
 ```
 :::
+::::
+:::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Export"}
 
 # Grafiken exportieren
 ___
@@ -2074,6 +2516,29 @@ ggsave("output/boxplot_distress.pdf", plot = p2, width = 6, height = 4)
 - Für **Veröffentlichungen**: `.pdf` oder `.svg` – verlustfreie Vektorgrafiken
 :::
 
+:::: {.jetzt-du}
+Speichere deine kombinierte Abbildung aus der Übung mit `ggsave()` als PNG in deinem Ordner `output/`. Ist die Datei im Fenster **Files** angekommen?
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Fehlermeldung zum Pfad? Prüfe, ob es in deinem Projekt den Ordner `output/` gibt.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
+```{r}
+#| echo: true
+#| eval: false
+
+ggsave("output/mein_plot.png", width = 8, height = 5, dpi = 300)
+```
+:::
+:::
+::::
+
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
+
 ::: {.mk-wichtig}
 **Das Wichtigste**
 
@@ -2105,11 +2570,15 @@ ggsave("output/boxplot_distress.pdf", plot = p2, width = 6, height = 4)
 
 ::::::::
 
-:::::::: {.modul #modul-8 data-titel="Mini-Projekt & Abschluss"}
+:::::::::
+
+::::::::: {.modul #modul-8 data-titel="Mini-Projekt & Abschluss"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du erstellst eine eigene Abbildung von Anfang bis Ende und wiederholst alle Layer.
 :::
+
+:::::::: {.schritt .uebung data-titel="Mini-Projekt"}
 
 # Mini-Projekt
 ___
@@ -2138,6 +2607,13 @@ Wählt eine inhaltliche Frage aus dem Datensatz, z. B.:
 
 👉 Haltet eure Fragestellung kurz als Kommentar im Skript fest.
 
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Welche Variablen es gibt, steht im Codebuch aus Modul 1 (Schritt „Ankommen“). Ein Kommentar im Skript beginnt mit `#`.
+:::
+:::
+
+
 ___
 **Schritt 2: Datensatz vorbereiten**
 
@@ -2146,6 +2622,13 @@ Wählt die relevanten Variablen aus und bereitet sie auf:
 - `filter()` für fehlende Werte
 - Faktor-Labels setzen (falls noch nicht geschehen)
 - ggf. neue Variablen erstellen (siehe Codebook)
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Fehlende Werte filterst du wie in den Übungen mit `filter(!is.na(variable))`. Die Faktoren mit Labels, z. B. `geschlecht`, `bildung` oder `wohnort`, sind im Setup aus Modul 1 schon angelegt.
+:::
+:::
+
 
 ___
 **Schritt 3: Drei Grafiken erstellen**
@@ -2162,6 +2645,13 @@ Anforderungen an jede Grafik:
 - eigenes `mein_theme` angewendet
 - sinnvolle Farbpalette gewählt
 
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Die Geome findest du in Modul 3, Facets in Modul 4, `mein_theme` und Farbpaletten in Modul 6. Speichere jede Grafik als Objekt (`p1`, `p2`, `p3`), dann kannst du sie später kombinieren.
+:::
+:::
+
+
 ___
 **Schritt 4: Plots kombinieren**
 
@@ -2169,6 +2659,13 @@ Kombiniert eure drei Grafiken mit `patchwork`:
 
 - wählt ein sinnvolles **Layout** (`|`, `/`, oder kombiniert)
 - fügt einen **Gesamttitel** mit `plot_annotation()` hinzu
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Layouts mit `|` und `/` und den Gesamttitel mit `plot_annotation()` findest du in Modul 7.
+:::
+:::
+
 
 ___
 **Schritt 5: Exportieren**
@@ -2178,6 +2675,13 @@ Speichert eure kombinierte Abbildung mit `ggsave()`:
 - Format: **PNG** oder **PDF**
 - Auflösung: `dpi = 300`
 - Datei im Ordner `output/`
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+`ggsave()` mit `plot`, `width`, `height` und `dpi` steht in Modul 7 im Schritt „Export“.
+:::
+:::
+
 
 ## Checkliste
 
@@ -2196,6 +2700,10 @@ Am Ende sollten bei euch vorhanden sein:
 - Beim Export: erst `ggsave()` testen, dann die Auflösung hochsetzen
 - Nutzt `facet_wrap()` wenn ihr viele Gruppen vergleichen wollt
 :::
+
+::::::::
+
+:::::::: {.schritt data-titel="Recap"}
 
 # Recap Workshop
 ___
@@ -2225,6 +2733,10 @@ ___
 - **Export**: `ggsave()` mit `dpi`, `width`, `height`
 :::
 :::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 # Abschluss
 ___
@@ -2277,3 +2789,5 @@ sie zeigt **genau das, was wichtig ist**.
 :::::
 
 ::::::::
+
+:::::::::
