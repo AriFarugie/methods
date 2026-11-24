@@ -309,6 +309,16 @@ Achte auf den Projektnamen: **keine Leerzeichen**, also `r_workshop` statt `R Wo
 :::
 ::::
 
+:::: {.jetzt-du}
+Lege in deinem Projekt die Ordner `data/` und `output/` an. In `data/` speicherst du später die Workshop-Daten, in `output/` deine Ergebnisse.
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Im Fenster **Files** (unten rechts) gibt es den Button **New Folder**. Die beiden Ordner sind Teil der Projektstruktur, die du in Modul 10 genauer kennenlernst.
+:::
+:::
+::::
+
 
 ::::::::
 
@@ -1437,6 +1447,8 @@ die in der empirischen Forschung regelmäßig benötigt werden.
 **Darum geht’s:** Du importierst Daten aus CSV- und SPSS-Dateien, prüfst sie auf Plausibilität und bereitest sie mit `dplyr` auf.
 :::
 
+:::::::: {.schritt data-titel="Datenimport"}
+
 ## Datenimport
 
 Bisher haben wir Datensätze selbst erstellt, um zu verstehen,  
@@ -1488,14 +1500,14 @@ für reale Daten und typische Workflows.
 
 Für die folgenden Schritte arbeiten wir mit einem **vorgegebenen Datensatz**.
 
-Bitte lade den Datensatz herunter und speichere ihn **in deinem Projektordner**, zum Beispiel im Unterordner `data/`.
+Bitte lade den Datensatz herunter und speichere ihn **in deinem Projektordner** im Unterordner `data/`, den du in Modul 1 angelegt hast.
 
-➡️ **[Workshop-Datensatz herunterladen (CSV)](../ws1/assets/data/datensatz_workshop.csv)**  
-➡️ **[Workshop-Datensatz herunterladen (SPSS)](../ws1/assets/data/spss_datensatz_workshop.sav)**
+➡️ **[Workshop-Datensatz herunterladen (CSV)](../ws1/data/datensatz_workshop.csv)**  
+➡️ **[Workshop-Datensatz herunterladen (SPSS)](../ws1/data/spss_datensatz_workshop.sav)**
 
 Hier kannst du das **Codebuch** zum Datensatz herunterladen, für einen besseren Überblick über die Variablen im Datensatz.
 
-➡️ **[Codebuch Workshop-Datensatz (PDF)](../ws1/assets/data/codebook_workshop_datensatz.pdf)**
+➡️ **[Codebuch Workshop-Datensatz (PDF)](../ws1/data/codebook_workshop_datensatz.pdf)**
 
 ::: callout-warning
 # **Wichtig**
@@ -1513,8 +1525,8 @@ Jetzt importieren wir die Daten:
 library(tidyverse)
 library(haven)
 
-df_csv  <- read_csv("assets/data/datensatz_workshop.csv")
-df_spss <- read_sav("assets/data/spss_datensatz_workshop.sav")
+df_csv  <- read_csv("data/datensatz_workshop.csv")
+df_spss <- read_sav("data/spss_datensatz_workshop.sav")
 ```
 
 ::: callout-note
@@ -1532,6 +1544,21 @@ Was fällt dir auf, wenn du die **beiden Datensätze** vergleichst?
 | Umlaute „kaputt"   | Encoding           | `locale = locale(encoding = "UTF-8")` testen |
 | alles `character`  | Typ falsch erkannt | nachträglich mit `mutate()` umwandeln         |
 :::
+
+:::: {.jetzt-du}
+Speichere beide Datensätze in deinem Projektordner und führe den Import-Code aus. Erscheinen `df_csv` und `df_spss` im Environment?
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Bekommst du `cannot open file`? Dann stimmt der Pfad nicht. Schau in die Tabelle „Typische Probleme & Lösungen“ oben.
+:::
+:::
+::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Überblick"}
+
 
 ## Datenaufbereitung
 
@@ -1586,6 +1613,24 @@ glimpse(df_csv)
 glimpse(df_spss)
 ```
 :::
+
+:::: {.jetzt-du}
+Führe `glimpse(df_csv)` aus. Welchen Datentyp hat `age`?
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Der Datentyp steht in spitzen Klammern direkt hinter dem Variablennamen.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
+`age` ist `<dbl>`, also eine Zahl (`numeric`). Das kennst du aus Modul 3.
+:::
+:::
+::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Datensatzstruktur"}
+
 
 ### Exkurs: Datensatzstruktur
 ___
@@ -1662,14 +1707,46 @@ df_csv$age
 
 Im Output sollten nun alle Altersangaben der teilnehmenden Personen als Vektor erscheinen.
 
+:::: {.jetzt-du}
+Greife mit `$` auf die Variable `sex` in `df_csv` zu.
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Erst der Objektname, dann `$`, dann der Variablenname.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
+```{r}
+#| echo: true
+#| eval: false
+
+df_csv$sex
+```
+:::
+:::
+::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
 
 ## Übung
 
+::::: {.stufe data-titel="1 · Machen"}
 Berechne das **Durchschnittsalter** (Mean) und die **Standardabweichung** (SD) des Alters.
 
-::: {.callout-tip collapse="true"}
-# **Lösung**
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+Mit `$` greifst du auf `age` zu. `mean()` und `sd()` kennst du aus Modul 2.
+:::
+::: {.tipp data-titel="Tipp 2"}
+In `age` gibt es fehlende Werte. Deshalb brauchst du `na.rm = TRUE`, mehr dazu in Modul 9.
 
+```r
+mean(___$___, na.rm = TRUE)
+sd(___$___, na.rm = TRUE)
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 **Empfohlene Lösung**
 
 
@@ -1699,7 +1776,12 @@ describe(df_csv$age)
 :::
 
 :::
+::::
+:::::
 
+::::::::
+
+:::::::: {.schritt data-titel="dplyr"}
 
 ### Einführung dplyr
 ___
@@ -1774,7 +1856,28 @@ df_2var
 
 **Alternative 2** wirkt auf den ersten Blick effizienter, ist aber schwieriger zu lesen – besonders wenn viele Schritte folgen.
 
+:::: {.fehler}
+Dieser Code soll alle Personen behalten, die genau 30 Jahre alt sind, liefert aber eine Fehlermeldung. Warum?
+
+```r
+filter(df_csv, age = 30)
+```
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Vergleiche das Zeichen mit `age >= 30` oben.
+:::
+::: {.tipp .loesung data-titel="Auflösung"}
+Für einen Vergleich brauchst du `==`. Ein einzelnes `=` versteht `filter()` nicht als Vergleich und meldet: *Did you mean `age == 30`?*
+:::
+:::
+::::
+
 Auch dafür gibt es in R eine elegante Lösung: **Pipes**.
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -1808,11 +1911,15 @@ Auch dafür gibt es in R eine elegante Lösung: **Pipes**.
 
 ::::::::
 
+::::::::
+
 :::::::: {.modul #modul-6 data-titel="Pipes"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du verkettest mehrere Arbeitsschritte mit der Pipe `|>`, ohne Zwischenergebnisse speichern zu müssen.
 :::
+
+:::::::: {.schritt data-titel="Pipes"}
 
 ## Pipes
 
@@ -1834,25 +1941,60 @@ df_2var
 
 Die Struktur ist klar und wir müssen den Befehlen innerhalb der **Pipe** nicht ständig erklären, welchen Datensatz wir heranziehen.
 
+::: {.raten data-richtig="2"}
+Was passiert, wenn du die Reihenfolge tauschst?
+
+```r
+df_csv |>
+  select(sex) |>
+  filter(age >= 30)
+```
+
+1. Es kommt dasselbe heraus
+2. Eine Fehlermeldung
+3. R überspringt `filter()`
+
+::: {.aufloesung}
+Richtig ist die Fehlermeldung: Nach `select(sex)` gibt es `age` nicht mehr im Datensatz. Jeder Schritt arbeitet mit dem Ergebnis des vorherigen.
+:::
+:::
+
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
 
+::::: {.stufe data-titel="1 · Machen"}
 1. Erstelle zunächst eine neue Variable `soz.u` aus den Variablen `im17` bis `im21` → bilde dafür einen **Summenwert**
 2. Erstelle einen neuen Datensatz `df_analyse` mit den Variablen **Alter, Geschlecht, Bildung, Berufstätigkeit und Soziale Ungleichheit**
 3. Filtere nur die Personen, die **weiblich** angegeben haben, in einen neuen Datensatz `df_analyse_w`
 
-::: callout-note
-# **Tipp**
+
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
 - Nutze das **Codebuch!**
 - Erinnere dich an die wichtigsten Funktionen von `dplyr`
 - Verwende **Pipes**, wenn du sie brauchst
 
 Das Wichtigste: **Learning by doing!**
 :::
+::: {.tipp data-titel="Tipp 2"}
+```r
+# Aufgabe 1
+df_csv <- df_csv |>
+  mutate(soz.u = ___)
 
+# Aufgabe 2
+df_analyse <- df_csv |>
+  select(___)
 
-::: {.callout-tip collapse="true"}
-# **Lösung**
-
+# Aufgabe 3
+df_analyse_w <- df_analyse |>
+  filter(___)
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 **Empfohlene Lösung**
 
 
@@ -1903,7 +2045,13 @@ head(df_analyse_w, 10)
 :::
 
 :::
-::: 
+:::
+::::
+:::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -1937,11 +2085,15 @@ head(df_analyse_w, 10)
 
 ::::::::
 
+::::::::
+
 :::::::: {.modul #modul-7 data-titel="Umkodieren"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du invertierst Items und fasst Ausprägungen zu Gruppen und Faktoren zusammen.
 :::
+
+:::::::: {.schritt data-titel="Recap"}
 
 # Recap – Grundlagen
 ___
@@ -1963,6 +2115,10 @@ Fehler zu machen ist völlig normal (auch wenn es manchmal frustrierend ist).
 Für fast jedes Problem gibt es **eine Lösung, eine Erklärung oder ein Paket** 😊
 :::
 
+
+::::::::
+
+:::::::: {.schritt data-titel="Invertierte Items"}
 
 # Umkodieren
 ___
@@ -2022,17 +2178,22 @@ library(tidyverse)
 library(haven)
 library(labelled)
 
-df_csv  <- read_csv("assets/data/datensatz_workshop.csv")
-df_spss <- read_sav("assets/data/spss_datensatz_workshop.sav")
+df_csv  <- read_csv("data/datensatz_workshop.csv")
+df_spss <- read_sav("data/spss_datensatz_workshop.sav")
 
 head(df_csv, 10)
 ```
 
-Zum besseren Verständnis verkleinern wir zunächst unseren Datensatz: Erstelle den Datensatz `df_dist` mit nur den Items, die wir benötigen.
+Zum besseren Verständnis verkleinern wir zunächst unseren Datensatz:
 
-:::{.callout-tip collapse="true"}
-# **Lösung**
+:::: {.jetzt-du}
+Erstelle den Datensatz `df_dist` mit nur den Items, die wir benötigen.
 
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Du brauchst die fünf Items aus der Tabelle oben. Mit `select()` aus Modul 5 wählst du sie aus.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 ```{r}
 
 df_dist <- df_csv |>
@@ -2040,8 +2201,9 @@ df_dist <- df_csv |>
 
 head(df_dist, 10)
 ```
-
 :::
+:::
+::::
 
 Nun können wir in diesem neuen Datensatz, getrennt von den Rohdaten, üben!
 
@@ -2116,6 +2278,10 @@ head(df_dist, 10)
 
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Gruppen & Faktoren"}
+
 ## Umkodieren von Gruppen und Faktoren
 
 Bisher haben wir Variablen umkodiert, die **numerisch skaliert** sind (z. B. Zustimmungsskalen von 1 bis 5).
@@ -2136,6 +2302,7 @@ In diesem Abschnitt schauen wir uns an, wie wir **Faktorvariablen gezielt umkodi
 
 ___
 
+::::: {.jetzt-du}
 Wir erstellen nun einen neuen Datensatz `df_rec`. Folgende Variablen sollen enthalten sein:
 
 - `gs01` – Selbstbeschreibung des Wohnorts
@@ -2174,8 +2341,11 @@ Wir erstellen nun einen neuen Datensatz `df_rec`. Folgende Variablen sollen enth
 :::
 :::
 
-:::{.callout-tip collapse="true"}
-# **Lösung**
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Wie bei `df_dist` mit `select()`. Nimm zusätzlich die Distress-Items `hs04`, `hs05`, `hs06`, `hs07` und `hs09` mit, die brauchst du später in der Übung.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 ```{r}
 #| echo: true
 #| warning: false
@@ -2188,6 +2358,8 @@ df_rec <- df_csv |>
 head(df_rec, 10)
 ```
 :::
+:::
+:::::
 
 Nun schauen wir uns die Umkodierung von Faktoren am Beispiel des Wohnorts an:
 
@@ -2286,22 +2458,41 @@ Hier wurden zuerst Labels vergeben und anschließend Levels definiert.
 
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
 
+::::: {.stufe data-titel="1 · Machen"}
 Schaut euch die Variablen im Datensatz `df_rec` an. Eure Aufgabe ist es, neue Variablen zu erstellen, die sinnvoll sind und die wir weiter nutzen werden.
 
 1. Erstellt eine neue Variable aus `educ` (nennt diese `abschluss`), die **vierstufig** ist: niedrig, mittel, hoch und anderer Abschluss.
 2. Erstellt je einen **Skalenwert für Distress und Soziale Ungleichheit**. Achtet darauf, dass der Summenwert sinnvoll interpretierbar ist.
 
-:::{.callout-tip collapse="true"}
-# **Tipp**
-
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
 - Schaut euch das Codebuch genauer an, um die Variablen zu verstehen.
 - Achtet auf die Skalierung der Items – sind alle in dieselbe Richtung kodiert?
 :::
+::: {.tipp data-titel="Tipp 2"}
+`hs04`, `hs05` und `hs09` polt ihr wie oben mit `rec()` um. Die Items `im17` bis `im21` gehen von 1 bis 4 und werden mit `5 - Wert` umgepolt.
 
-::: {.callout-tip collapse="true"}
-# **Lösung**
+```r
+df_rec <- df_rec |>
+  mutate(
+    abschluss = recode(educ, "1" = ___, "2" = ___, ...) |>
+      factor(labels = c("Niedrig", "Mittel", "Hoch", "Anderer")),
+    hs04_r   = rec(hs04, rec = "rev"),
+    # ... hs05_r und hs09_r ebenso
+    distress = ___,
+    im17_r   = 5 - im17,
+    # ... im18_r bis im21_r ebenso
+    soz.u    = ___
+  )
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 :::{.panel-tabset}
 
@@ -2394,6 +2585,17 @@ df_rec |>
 ```
 :::
 :::
+::::
+:::::
+
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Was bedeutet ein hoher Wert auf `distress`? Was wäre passiert, wenn ihr `hs04`, `hs05` und `hs09` nicht umgepolt hättet?
+:::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
+
 
 ::: {.mk-wichtig}
 **Das Wichtigste**
@@ -2427,11 +2629,15 @@ df_rec |>
 
 ::::::::
 
+::::::::
+
 :::::::: {.modul #modul-8 data-titel="Joins – Datensätze zusammenführen"}
 
 ::: {.mk-ziel}
 **Darum geht’s:** Du führst zwei Datensätze über eine gemeinsame Schlüsselvariable zusammen.
 :::
+
+:::::::: {.schritt data-titel="Grundidee"}
 
 # Joins – Datensätze zusammenführen
 ___
@@ -2476,15 +2682,19 @@ Wir schauen uns den am **häufigsten** verwendeten Join an: **`left_join()`**.
 - `by` → **Schlüsselvariable**
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Schlüsselvariable"}
+
 Doch bevor wir Datensätze zusammenführen, brauchen wir einen zweiten Datensatz.
 
-➡️ **[Datensatz für Kinderarmut und Altersarmut nach Bundesländern](../ws1/assets/data/armutdaten.csv)**
+➡️ **[Datensatz für Kinderarmut und Altersarmut nach Bundesländern](../ws1/data/armutdaten.csv)**
 
 ```{r}
 #| echo: true
 #| warning: false
 
-df_armut <- read_csv("assets/data/armutdaten.csv")
+df_armut <- read_csv("data/armutdaten.csv")
 head(df_armut, 10)
 ```
 
@@ -2504,10 +2714,14 @@ df_spss |>
 ```
 :::
 
+:::: {.jetzt-du}
 Wir schauen uns die Kodierung im **Codebuch** an und erstellen eine neue Variable `kzf` im SPSS-Datensatz.
 
-:::{.callout-tip collapse="true"}
-# **Lösung**
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+`rec()` aus `sjmisc` kennst du aus Modul 7. Ordne jedem Wert von `land` eine Kennziffer zu, z. B. `10 = 1`. Achtung: `111` und `112` werden beide zu `11`.
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 ```{r}
 #| echo: true
@@ -2538,6 +2752,13 @@ df_spss |>
   head(10)
 ```
 :::
+:::
+::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Zusammenführen"}
+
 
 Bevor wir die Datensätze zusammenführen, prüfen wir, ob die Schlüsselvariable in beiden vorhanden ist:
 
@@ -2547,6 +2768,18 @@ Bevor wir die Datensätze zusammenführen, prüfen wir, ob die Schlüsselvariabl
 
 intersect(names(df_spss), names(df_armut))
 ```
+
+::: {.raten data-richtig="2"}
+`df_spss` enthält Personen, `df_armut` eine Zeile pro Bundesland. Wie viele Zeilen hat das Ergebnis von `left_join(df_spss, df_armut, by = "kzf")`?
+
+1. So viele wie `df_armut` (16)
+2. So viele wie `df_spss`
+3. Beide zusammen
+
+::: {.aufloesung}
+Richtig: so viele wie `df_spss`. `left_join()` behält alle Fälle des linken Datensatzes, und jede Person bekommt die Armutsdaten ihres Bundeslandes dazu.
+:::
+:::
 
 Nun führen wir die **beiden Datensätze** zusammen:
 
@@ -2567,21 +2800,36 @@ df_spss_armut |>
 `select(66:70)` wählt die Spalten **66 bis 70** im neuen Datensatz aus – praktisch um zu prüfen, ob die neuen Variablen angekommen sind.
 :::
 
+::::::::
+
+:::::::: {.schritt data-titel="Übung"}
+
 ## Übung
 
+::::: {.stufe data-titel="1 · Machen"}
 Erstellt erneut euren Datensatz aus der letzten Aufgabe und speichert ihn diesmal unter dem Namen **`df_rec2`**. Achtet darauf, dass ihr eine **eindeutige Schlüsselvariable** mitübernehmt.
 
 Führt anschließend **dieselben Umkodierungen** durch wie zuvor bei `df_rec`.
 
 Zum Schluss **fügt ihr den Hauptdatensatz und `df_rec2` zu einem neuen Datensatz `df_analyse`** zusammen.
 
-:::{.callout-tip}
-# **Tipp**
-**Codebuch** 😉
+:::: {.tipps}
+::: {.tipp data-titel="Tipp 1"}
+**Codebuch** 😉 Gesucht ist eine Variable, die jede Person eindeutig kennzeichnet.
 :::
+::: {.tipp data-titel="Tipp 2"}
+```r
+df_rec2 <- df_csv |>
+  select(___, gs01, educ, mstat,
+         hs04, hs05, hs06, hs07, hs09,
+         im17, im18, im19, im20, im21)
 
-:::{.callout-tip collapse="true"}
-# **Lösung**
+# ... Umkodierungen wie bei df_rec
+
+df_analyse <- left_join(___, ___, by = "___")
+```
+:::
+::: {.tipp .loesung data-titel="Lösung"}
 
 ```{r}
 #| echo: true
@@ -2644,6 +2892,13 @@ df_analyse <- df_csv |>
 :::
 
 :::
+::::
+:::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
+
 
 :::{.callout-warning collapse="true"}
 # **Merkhilfe der Join-Befehle**
@@ -2714,6 +2969,8 @@ Alle Fälle aus **beiden Datensätzen** bleiben erhalten.
 ::::
 
 :::::
+
+::::::::
 
 ::::::::
 
@@ -3425,7 +3682,7 @@ Nach der Datenaufbereitung oder Analyse ist es sinnvoll, **Zwischenergebnisse zu
 #| echo: true
 #| warning: false
 
-write_csv(df_clean, file = "assets/data/output/Datensatz_clean.csv")
+write_csv(df_clean, file = "output/Datensatz_clean.csv")
 ```
 
 # SPSS
@@ -3437,7 +3694,7 @@ write_csv(df_clean, file = "assets/data/output/Datensatz_clean.csv")
 #| echo: true
 #| warning: false
 
-write_sav(df_clean, path = "assets/data/output/spss_Datensatz_clean.sav")
+write_sav(df_clean, path = "output/spss_Datensatz_clean.sav")
 ```
 :::
 

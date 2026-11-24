@@ -34,12 +34,12 @@ ___
 
 **Bevor wir starten, laden wir alle benötigten Pakete und den Datensatz.**
 
-➡️ **[Workshop-Datensatz herunterladen (CSV)](../ws2/assets/data/datensatz_workshop.csv)**  
-➡️ **[Workshop-Datensatz herunterladen (SPSS)](../ws2/assets/data/spss_datensatz_workshop.sav)**
+➡️ **[Workshop-Datensatz herunterladen (CSV)](../ws2/data/datensatz_workshop.csv)**  
+➡️ **[Workshop-Datensatz herunterladen (SPSS)](../ws2/data/spss_datensatz_workshop.sav)**
 
 Hier kannst du das **Codebuch** zum Datensatz runterladen, für eine **bessere Übersicht**, über die Variablen im Datensatz.
 
-➡️ **[Codebuch Workshop Datensatz (PDF)](../ws2/assets/data/codebook_workshop_datensatz.pdf)**
+➡️ **[Codebuch Workshop Datensatz (PDF)](../ws2/data/codebook_workshop_datensatz.pdf)**
 
 
 ::: callout-tip
@@ -55,7 +55,7 @@ library(haven)
 library(sjmisc)
 library(naniar)
 
-df <- read_csv("assets/data/datensatz_workshop.csv")
+df <- read_csv("data/datensatz_workshop.csv")
 
 df <- df |>
   mutate(
