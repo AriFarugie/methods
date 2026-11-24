@@ -832,6 +832,30 @@ ggplot(data = df, aes(x = geschlecht, y = distress))
 ::::
 :::::
 
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Vergleiche die x-Achse aus Schritt 2 (`age`) und Schritt 3 (`geschlecht`). Wie unterscheidet sie sich, und woran liegt das?
+:::
+
+::::: {.stufe .s3 data-titel="3 · Übertragen – Bonus"}
+Ergänze `color = geschlecht` in `aes()`. Erscheint schon eine Legende? Hänge danach `+ geom_point()` an und vergleiche.
+
+:::: {.tipps}
+::: {.tipp .loesung data-titel="Lösungsidee"}
+```{r}
+#| echo: true
+#| warning: false
+
+ggplot(data = df, aes(x = age, y = distress, color = geschlecht))
+
+ggplot(data = df, aes(x = age, y = distress, color = geschlecht)) +
+  geom_point()
+```
+
+Ohne Geom erscheint keine Legende, erst mit `geom_point()`.
+:::
+::::
+:::::
+
 ___
 ::::::::
 
@@ -1291,6 +1315,10 @@ ggplot(
 ::::
 :::::
 
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Warum steht `color = geschlecht` in `aes()`, `alpha = 0.4` aber direkt in `geom_point()`?
+:::
+
 ::::::::
 
 :::::::: {.schritt data-titel="Übung 2"}
@@ -1396,6 +1424,34 @@ ggplot(
 ::::
 :::::
 
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Welche deiner vier Grafiken zeigt eine Verteilung, welche einen Zusammenhang, welche einen Gruppenvergleich?
+:::
+
+::::: {.stufe .s3 data-titel="3 · Übertragen – Bonus"}
+Zeige die Häufigkeit von `wohnort` getrennt nach `gebiet`: mit `fill = gebiet` und `position = "dodge"`. Probiere danach `position = "fill"`.
+
+:::: {.tipps}
+::: {.tipp .loesung data-titel="Lösungsidee"}
+```{r}
+#| echo: true
+#| warning: false
+
+df |> filter(!is.na(wohnort) & !is.na(gebiet)) |>
+ggplot(
+  aes(x = wohnort, fill = gebiet)) +
+  geom_bar(position = "dodge") +
+  labs(
+    title = "Wohnort nach Erhebungsgebiet",
+    x     = "Wohnorttyp",
+    y     = "Häufigkeit",
+    fill  = "Erhebungsgebiet"
+  )
+```
+:::
+::::
+:::::
+
 ::::::::
 
 :::::::: {.schritt data-titel="Übung 3"}
@@ -1444,6 +1500,32 @@ ggplot(
     caption = "Eigene Darstellung | Workshop-Datensatz"
   )
 ```
+:::
+::::
+:::::
+
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Verlaufen die Trendlinien für Ost und West ähnlich oder unterschiedlich? Was sagt das über Alter und Lebenszufriedenheit in den beiden Gebieten?
+:::
+
+::::: {.stufe .s3 data-titel="3 · Übertragen – Bonus"}
+Setze `color = gebiet` nur in `geom_point()` statt in `ggplot()`. Wie viele Trendlinien siehst du jetzt, und warum?
+
+:::: {.tipps}
+::: {.tipp .loesung data-titel="Lösungsidee"}
+```{r}
+#| echo: true
+#| warning: false
+#| message: false
+
+df |> filter(!is.na(gebiet)) |>
+ggplot(
+  aes(x = age, y = lebenszuf)) +
+  geom_point(aes(color = gebiet), alpha = 0.4) +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+Jetzt gibt es nur noch eine Trendlinie für alle, weil `color` nur lokal für die Punkte gilt.
 :::
 ::::
 :::::
@@ -1658,6 +1740,30 @@ ggplot(data = df |> filter(!is.na(bildung) & !is.na(soz_u)),
 ::::
 :::::
 
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Unterscheidet sich die Regressionslinie zwischen den Bildungsgruppen? In welchem Panel gibt es nur wenige Punkte, und wie sehr würdest du der Linie dort trauen?
+:::
+
+::::: {.stufe .s3 data-titel="3 · Übertragen – Bonus"}
+Teile zusätzlich nach `geschlecht` auf, mit `facet_grid(geschlecht ~ bildung)`.
+
+:::: {.tipps}
+::: {.tipp .loesung data-titel="Lösungsidee"}
+```{r}
+#| echo: true
+#| warning: false
+#| message: false
+
+ggplot(data = df |> filter(!is.na(bildung) & !is.na(soz_u) & !is.na(geschlecht)),
+       aes(x = age, y = soz_u)) +
+  geom_point(alpha = 0.3, color = "steelblue") +
+  geom_smooth(method = "lm", se = FALSE, color = "darkred") +
+  facet_grid(geschlecht ~ bildung)
+```
+:::
+::::
+:::::
+
 ::::::::
 
 :::::::: {.schritt data-titel="Abschluss"}
@@ -1834,6 +1940,27 @@ ggplot(data = df, aes(x = geschlecht, y = soz_u, color = geschlecht)) +
     color    = "Geschlecht",
     caption  = "Eigene Darstellung | Workshop-Datensatz"
   ) 
+```
+:::
+::::
+:::::
+
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Wie groß ist der Unterschied zwischen den Mittelwerten von Männern und Frauen, gemessen an der Skala von `soz_u`? Was zeigen die Fehlerbalken zusätzlich?
+:::
+
+::::: {.stufe .s3 data-titel="3 · Übertragen – Bonus"}
+Ersetze `geschlecht` durch `bildung`. Welche Gruppe hat den größten Fehlerbalken?
+
+:::: {.tipps}
+::: {.tipp .loesung data-titel="Lösungsidee"}
+```{r}
+#| echo: true
+#| warning: false
+
+ggplot(data = df |> filter(!is.na(bildung)), aes(x = bildung, y = soz_u)) +
+  stat_summary(fun = mean, geom = "point", size = 4) +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.25)
 ```
 :::
 ::::
@@ -2267,6 +2394,31 @@ ggplot(data = df |> filter(!is.na(wohnort) & !is.na(lebenszuf)),
 ::::
 :::::
 
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Prüfe deine Grafik mit den vier Kriterien aus Modul 1: Ist sie korrekt, klar, vollständig und sparsam? Warum ist die Legende hier überflüssig?
+:::
+
+::::: {.stufe .s3 data-titel="3 · Übertragen – Bonus"}
+Drehe die Achsen mit `coord_flip()`, damit die Wohnorttypen gut lesbar sind, und probiere die jeweils andere Palette aus (`scale_fill_viridis_d()` oder `scale_fill_brewer()`).
+
+:::: {.tipps}
+::: {.tipp .loesung data-titel="Lösungsidee"}
+```{r}
+#| echo: true
+#| warning: false
+
+ggplot(data = df |> filter(!is.na(wohnort) & !is.na(lebenszuf)),
+       aes(x = wohnort, y = lebenszuf, fill = wohnort)) +
+  geom_boxplot(alpha = 0.8, outlier.shape = NA) +
+  scale_fill_viridis_d() +
+  coord_flip() +
+  mein_theme +
+  theme(legend.position = "none")
+```
+:::
+::::
+:::::
+
 ::::::::
 
 :::::::: {.schritt data-titel="Abschluss"}
@@ -2472,6 +2624,29 @@ pc <- ggplot(data = df, aes(x = age, y = lebenszuf)) +
     caption = "Eigene Darstellung | Workshop-Datensatz",
     theme   = theme(plot.title = element_text(size = 13, face = "bold"))
   )
+```
+:::
+::::
+:::::
+
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Was lässt sich aus den drei Teilen zusammen über die Lebenszufriedenheit ablesen? Passt dein Gesamttitel zu dieser Aussage?
+:::
+
+::::: {.stufe .s3 data-titel="3 · Übertragen – Bonus"}
+Speichere die kombinierte Abbildung als Objekt und exportiere sie mit `plot =` als PDF nach `output/`.
+
+:::: {.tipps}
+::: {.tipp .loesung data-titel="Lösungsidee"}
+```{r}
+#| echo: true
+#| warning: false
+#| eval: false
+
+abbildung <- (pa | pb) / pc +
+  plot_annotation(title = "Abbildung: Lebenszufriedenheit im Überblick")
+
+ggsave("output/lebenszufriedenheit.pdf", plot = abbildung, width = 10, height = 7)
 ```
 :::
 ::::
@@ -2694,6 +2869,10 @@ Am Ende sollten bei euch vorhanden sein:
 - eine exportierte Datei in `output/`
 - ein dokumentiertes Skript mit Kommentaren
 
+
+::: {.stufe .s2 data-titel="2 · Interpretieren – mit deinem Nachbarn"}
+Stellt euch gegenseitig eure Abbildung vor: Welche Fragestellung beantwortet sie? Prüft gemeinsam die vier Kriterien aus Modul 1: korrekt, klar, vollständig, sparsam.
+:::
 ::: callout-tip
 ## **Tipps für das Mini-Projekt**
 
