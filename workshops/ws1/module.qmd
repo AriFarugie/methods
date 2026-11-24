@@ -3578,6 +3578,8 @@ Es gibt keinen automatisch richtigen Umgang mit fehlenden Werten. Wichtig ist:
 **Darum geht’s:** Du strukturierst ein eigenes Projekt und wendest alles Gelernte in einer kleinen Analyse an.
 :::
 
+:::::::: {.schritt data-titel="Recap"}
+
 # Recap Workshop
 ___
 Bevor wir ins **Mini-Projekt** starten, fassen wir kurz zusammen, was wir in den Modulen erarbeitet haben.
@@ -3621,6 +3623,10 @@ Bevor wir ins **Mini-Projekt** starten, fassen wir kurz zusammen, was wir in den
   - `drop_na()` als einfacher Workflow-Schritt für saubere Analysedaten
 :::
 :::
+
+::::::::
+
+:::::::: {.schritt data-titel="Workflow"}
 
 ## Workflow
 
@@ -3668,6 +3674,21 @@ Beispiel:
 ```
 :::
 
+
+:::: {.jetzt-du}
+Öffne dein Skript aus Modul 7 und schreibe über deinen Umkodier-Code einen kurzen Kommentar: **Was** passiert dort und **warum**?
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Orientiere dich am Beispiel oben: `# Invertiere hs04/hs05/hs09, damit hohe Werte = mehr Distress bedeuten`.
+:::
+:::
+::::
+
+::::::::
+
+:::::::: {.schritt data-titel="Speichern"}
+
 ## Exkurs: Datensatz speichern
 
 Nach der Datenaufbereitung oder Analyse ist es sinnvoll, **Zwischenergebnisse zu speichern** (z. B. bereinigte Datensätze oder finale Analyse-Daten).
@@ -3699,6 +3720,21 @@ write_sav(df_clean, path = "output/spss_Datensatz_clean.sav")
 :::
 
 
+
+:::: {.jetzt-du}
+Speichere `df_clean` als CSV-Datei in deinem Ordner `output/`. Ist die Datei im Fenster **Files** angekommen?
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Bekommst du eine Fehlermeldung zum Pfad? Prüfe, ob es den Ordner `output/` gibt. Du hast ihn in Modul 1 angelegt.
+:::
+:::
+::::
+
+::::::::
+
+:::::::: {.schritt .uebung data-titel="Mini-Projekt"}
+
 # Mini-Projekt
 ___
 Zum Abschluss setzen wir alles, was wir in den Modulen gelernt haben, in einem kleinen, realistischen Workflow zusammen.
@@ -3724,6 +3760,12 @@ Ihr erstellt einen eigenen Datensatz `df_mini`, der am Ende „analysefertig" is
 - lade `df_csv` (und ggf. `df_spss`)
 - verschaffe dir einen Überblick mit `glimpse()` und `summary()`
 
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Den Import-Code findest du in Modul 5 im Schritt „Datenimport“, `glimpse()` und `summary()` im Schritt „Überblick“.
+:::
+:::
+
 ___
 
 **Schritt 2: Skala auswählen (Codebuch!)**
@@ -3743,6 +3785,12 @@ Wählt eine Skala eurer Wahl:
 # Hohe Werte sollen _______ bedeuten.
 ```
 
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Im Codebuch stehen zu jeder Skala die Items und ihre Antwortskala. Invertierte Items erkennst du daran, dass ein hoher Wert das Gegenteil bedeutet, wie bei `hs04`, `hs05` und `hs09` in Modul 7.
+:::
+:::
+
 ___
 
 **Schritt 3: Datensatz erstellen**
@@ -3753,6 +3801,12 @@ Erstellt `df_mini` mit:
 - mindestens 2 **demographische Variablen**
 - alle Items eurer Skala
 
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Mit `select()` aus Modul 5 wählst du die Variablen aus, so wie bei `df_rec` in Modul 7.
+:::
+:::
+
 ___
 
 **Schritt 4: Umkodieren & Skalenwert bilden**
@@ -3760,6 +3814,12 @@ ___
 - falls nötig: Items invertieren
 - bildet einen **Summen- oder Mittelwert** (`rowSums()` oder `rowMeans()`)
 - gebt der Skala einen sinnvollen Namen
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Umpolen wie in Modul 7: mit `rec(…, rec = "rev")` oder rechnerisch, bei einer Skala von 1–5 mit `6 - Wert`, bei 1–4 mit `5 - Wert`. Den Skalenwert bildest du in `mutate()`, so wie `distress` und `soz.u` in Modul 7.
+:::
+:::
 
 ___
 
@@ -3769,6 +3829,12 @@ ___
 - Wie viele `NA` in eurer Skala?
 - Entscheidet euch: `na.rm = TRUE` oder `drop_na()`?
 
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+`any_na()` und `n_miss()` kennst du aus Modul 9, ebenso den Unterschied zwischen `na.rm = TRUE` und `drop_na()`.
+:::
+:::
+
 ___
 
 **Schritt 6: Join anwenden**
@@ -3777,6 +3843,12 @@ Führt einen `left_join()` mit dem Armutsdatensatz durch:
 
 - Schlüsselvariable anpassen (falls nötig)
 - prüfen, ob neue Variablen angekommen sind
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Der Armutsdatensatz hat `kzf` als Schlüssel. Wie du `kzf` aus `land` erstellst und mit `left_join()` zusammenführst, steht in Modul 8.
+:::
+:::
 
 :::{.callout-tip collapse="true"}
 # **Optional: andere Kontextvariablen**
@@ -3790,6 +3862,16 @@ ___
 
 - als CSV (`write_csv()`)
 - optional als SPSS (`write_sav()`)
+
+::: {.tipps}
+::: {.tipp data-titel="Tipp"}
+Den Code dazu findest du in diesem Modul im Schritt „Speichern“. Die Datei landet in deinem Ordner `output/`.
+:::
+:::
+
+::::::::
+
+:::::::: {.schritt .uebung data-titel="Mini-Analyse"}
 
 ## Mini-Analyse: Deskriptive Statistik
 
@@ -3823,6 +3905,10 @@ install.packages("psych")
 - Min/Max *(optional)*
 - Missing-Anteil *(optional)*
 
+::: {.besprechen}
+Stellt eurem Nachbarn kurz eure Skala vor: Welche Items habt ihr gewählt, was bedeuten hohe Werte, und was sagt euer Mittelwert inhaltlich?
+:::
+
 ## Checkliste
 
 Am Ende sollten bei euch vorhanden sein:
@@ -3831,6 +3917,10 @@ Am Ende sollten bei euch vorhanden sein:
 - eine selbst gebildete Skala (`*_sum` oder `*_mean`)
 - ein kurzer Deskriptiv-Output (Mittelwert/SD + Häufigkeiten)
 - ein gespeicherter Output (`.csv`, optional `.sav`)
+
+::::::::
+
+:::::::: {.schritt data-titel="Abschluss"}
 
 # Abschluss
 ___
@@ -3882,5 +3972,7 @@ Guter Code ist nicht der „kürzeste" – sondern der, den du (und andere) spä
 ::: {.gesamtskript}
 **Gesamtskript zum Nachschlagen:** alle Codebeispiele und empfohlenen Lösungen aus Modul 1–10 in einer kommentierten R-Datei.
 :::
+
+::::::::
 
 ::::::::
