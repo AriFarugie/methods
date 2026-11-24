@@ -1,59 +1,17 @@
 [
   {
-    "objectID": "kontakt.html",
-    "href": "kontakt.html",
-    "title": "Kontakt",
-    "section": "",
-    "text": "Kontakt\n    Schreib mir\n    Fragen zu den Workshops, zum Passwort oder ein Workshop für deine Arbeitsgruppe? Melde dich gern per E-Mail.\n  \n\n\n  \n    E-Mailfarugie[at]psych.uni-frankfurt.de\n    OrtGoethe-Universität Frankfurt"
-  },
-  {
-    "objectID": "workshops/ws1/index.html",
-    "href": "workshops/ws1/index.html",
-    "title": "Einführung in R & RStudio",
-    "section": "",
-    "text": "Workshop · Einstieg\n    \n    10 Modulekostenfrei · offen für alleMethodenzentrum\n  \n  # Einführung in R & RStudio\n&gt; df &lt;- read_csv(\"daten.csv\")\n&gt; df |&gt;\n    filter(age &gt;= 30) |&gt;\n    select(age, sex)"
-  },
-  {
-    "objectID": "workshops/ws1/index.html#kurzbeschreibung",
-    "href": "workshops/ws1/index.html#kurzbeschreibung",
-    "title": "Einführung in R & RStudio",
-    "section": "Kurzbeschreibung",
-    "text": "Kurzbeschreibung\nDer Workshop „Einführung in R & RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nDer Workshop ist modular aufgebaut: 10 Module, jedes mit Übung und Checkfragen, die du in deinem eigenen Tempo durcharbeiten kannst.\nIm Workshop lernen die Teilnehmenden Schritt für Schritt:\n\nwie RStudio aufgebaut ist und wie man sicher darin arbeitet,\nwie R „denkt“ (Objekte, Datentypen, Datenstrukturen),\nwie Daten importiert und plausibilisiert werden,\nund wie man einen ersten Analyse-Workflow umsetzt (Umkodieren, Skalen bilden, Joins, Umgang mit NA).\n\nDer Schwerpunkt liegt auf praxisnahen Beispielen und einem reproduzierbaren Workflow, der später in eigenen Projekten weiterverwendet werden kann."
-  },
-  {
-    "objectID": "workshops/ws1/index.html#lernziele",
-    "href": "workshops/ws1/index.html#lernziele",
-    "title": "Einführung in R & RStudio",
-    "section": "Lernziele",
-    "text": "Lernziele\nNach dem Workshop können Teilnehmende …\n\n\ndie RStudio-Oberfläche sicher bedienen (Script, Console, Environment, Plots/Files/Help)\ngrundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)\nDaten aus CSV und SPSS importieren und einen Plausibilitätscheck durchführen\nDaten mit aufbereiten\nVariablen umkodieren\nSkalenwerte berechnen und die Interpretation prüfen\nfehlende Werte erkennen und damit umgehen\nDatensätze über Schlüsselvariablen zusammenführen\nProjekte & Skripte nachvollziehbar strukturieren und Zwischenergebnisse speichern\neinen kleinen, vollständigen Datenbereinigungs- und Analyse-Workflow eigenständig umsetzen"
-  },
-  {
-    "objectID": "workshops/ws2/index.html",
-    "href": "workshops/ws2/index.html",
-    "title": "Datenvisualisierung mit ggplot2",
-    "section": "",
-    "text": "Workshop · Aufbau\n    \n    8 Modulekostenfrei · offen für alleMethodenzentrum\n  \n  # Datenvisualisierung mit ggplot2\n&gt; ggplot(df, aes(x = age, y = distress)) +\n    geom_point(alpha = 0.4) +\n    facet_wrap(~ bildung)"
-  },
-  {
-    "objectID": "workshops/ws2/index.html#kurzbeschreibung",
-    "href": "workshops/ws2/index.html#kurzbeschreibung",
-    "title": "Datenvisualisierung mit ggplot2",
-    "section": "Kurzbeschreibung",
-    "text": "Kurzbeschreibung\nDer Workshop „Datenvisualisierung mit ggplot2” richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten professionell und reproduzierbar visualisieren möchten.\nDer Workshop ist modular aufgebaut: 8 Module, jedes mit Übung und Checkfragen, die du in deinem eigenen Tempo durcharbeiten kannst.\nDer Workshop setzt grundlegende Kenntnisse in R und dem tidyverse voraus (z. B. aus dem Workshop „Einführung in R & RStudio”), ist aber so aufgebaut, dass auch Einsteiger:innen in ggplot2 gut folgen können.\nIm Workshop lernen die Teilnehmenden Schritt für Schritt:\n\nwie ggplot2 aufgebaut ist und nach welcher Logik Grafiken entstehen,\nwie man die wichtigsten Diagrammtypen erstellt (Streudiagramm, Balkendiagramm, Histogramm, Boxplot),\nwie man Grafiken durch Aesthetics, Themes und Farbpaletten gestaltet,\nwie man mit Faceting mehrere Grafiken kombiniert,\nund wie man mit patchwork Plots zu einer zusammenhängenden Abbildung zusammenfügt.\n\nDer Schwerpunkt liegt auf praxisnaher Anwendung mit dem Workshop-Datensatz aus dem ersten Workshop – alle Schritte sind direkt übertragbar auf eigene Projekte."
-  },
-  {
-    "objectID": "workshops/ws2/index.html#lernziele",
-    "href": "workshops/ws2/index.html#lernziele",
-    "title": "Datenvisualisierung mit ggplot2",
-    "section": "Lernziele",
-    "text": "Lernziele\nNach dem Workshop können Teilnehmende …\n\n\ndie Grammatik von Grafiken (Grammar of Graphics) erklären und anwenden\nmit ggplot() und aes() eine Grafik schichtweise aufbauen\ndie wichtigsten Geome einsetzen: geom_point(), geom_bar(), geom_histogram(), geom_boxplot(), geom_smooth()\nAesthetics gezielt einsetzen: color, fill, size, shape, alpha\nGrafiken mit Labels, Titeln und Achsenbeschriftungen versehen (labs())\nmit facet_wrap() und facet_grid() Gruppenvergleiche visualisieren\nstatistische Kennwerte direkt in Grafiken einzeichnen (stat_summary())\nKoordinatensysteme anpassen (coord_flip(), coord_cartesian(), coord_polar())\nThemes anpassen und eigene Designs erstellen\nFarbpaletten aus RColorBrewer und viridis verwenden\nmit dem Paket patchwork mehrere Plots kombinieren\nGrafiken als Datei exportieren (ggsave(), PNG, PDF)"
-  },
-  {
     "objectID": "materials.html",
     "href": "materials.html",
     "title": "Materialien",
     "section": "",
     "text": "Materialien\n    Zum Nachschlagen & Weiterarbeiten\n    Hier entsteht eine Sammlung von Skripten, Cheatsheets und Übungsdaten.\n  \n\n\n  \n    Workshop-Materialien\n    Die Materialien zu den Workshops findest du direkt auf den Workshop-Seiten:\n    \n      Einführung in R & RStudio\n      Datenvisualisierung mit ggplot2\n    \n  \n  \n    Weitere Materialien\n    Kommt bald."
+  },
+  {
+    "objectID": "kontakt.html",
+    "href": "kontakt.html",
+    "title": "Kontakt",
+    "section": "",
+    "text": "Kontakt\n    Schreib mir\n    Fragen zu den Workshops, zum Passwort oder ein Workshop für deine Arbeitsgruppe? Melde dich gern per E-Mail.\n  \n\n\n  \n    E-Mailfarugie[at]psych.uni-frankfurt.de\n    OrtGoethe-Universität Frankfurt"
   },
   {
     "objectID": "test.html",
@@ -91,6 +49,13 @@
     "text": "Abschnitt D\nDas ist Abschnitt D."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mit Daten arbeiten lernen – Schritt für Schritt und zum Mitmachen.",
+    "section": "",
+    "text": "Methoden & Statistik\n      Mit Daten arbeiten lernen – Schritt für Schritt und zum Mitmachen.\n      Workshops für Studierende und Forschende der empirischen Wissenschaften.\n         Kurze Inputs, viel Ausprobieren und Materialien zum Weiterarbeiten.\n      \n        Workshops entdecken\n        Kontakt\n      \n    \n    \n      \n      AF\n      Arieja Farugie\n      Psychologie · Methoden · R\n    \n  \n\n\n  \n    Workshops\n    \n      \n        \n        Verfügbar\n        Einführung in R & RStudio\n        Vom ersten Skript bis zum eigenen Analyse-Workflow: Datenimport, Datenaufbereitung mit dplyr, Umkodieren, Joins und fehlende Werte – mit Mini-Projekt zum Abschluss.\n        10 ModuleEinsteigerdplyrhavenpsych\n        Zum Workshop \n      \n      \n        \n        Verfügbar\n        Datenvisualisierung mit ggplot2\n        Grammar of Graphics Schicht für Schicht – von Streudiagrammen bis zu kombinierten Layouts mit patchwork.\n        8 ModuleGrundkenntnisse Rggplot2patchwork\n        Zum Workshop \n      \n    \n  \n\n\n\n\n\n\n  \n    Termine & Anmeldung\n    Nächste Termine\n    \n      \n        Neue Termine erscheinen Anfang 2027 hier.\n        \n      \n      \n        AnmeldungPer Mail an womeps@uni-frankfurt.de – mit Workshop und Termin.Mail schreiben\n        Workshop wünschenThema fehlt oder Workshop für deine Gruppe? Schreib mir.Wunsch senden\n      \n    \n  \n\n  \n    So laufen meine Workshops\n    Weniger Folien, mehr Ausprobieren\n    \n      InputKurze Erklärbausteine mit Live-Code.\n      ÜbungDirekt selbst machen – mit echten Datensätzen.\n      LösungZum Aufklappen, wenn du hängst oder vergleichen willst.\n      MitnehmenSkripte und Materialien zum Weiterarbeiten.\n    \n  \n\n  \n    Gut zu wissen\n    \n      ZielgruppeStudierende und Forschende der empirischen Wissenschaften\n      SoftwareR & RStudio (kostenlos)\n      ZugangPasswortgeschützt – auf Anfrage\n    \n  \n\n  \n\n  \n    Workshop für deine Gruppe oder Fragen zu den Materialien?\n    Schreib mir"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Über mich",
@@ -98,10 +63,45 @@
     "text": "Über mich\n    Arieja Farugie\n    Psychologie · Methoden · R\n  \n\n\n  \n    \n    AF\n    \n      \n        Wer ich bin\n        Platzhalter: kurzer Text über dich – Hintergrund, aktuelle Tätigkeit, was dich an Methoden begeistert.\n      \n      \n        Schwerpunkte\n        Platzhalter: z. B. Datenaufbereitung und -analyse mit R, Datenvisualisierung, reproduzierbares Arbeiten.\n      \n      \n        Lehre & Workshops\n        Ich gebe Workshops zu R & RStudio und\n           Datenvisualisierung mit ggplot2."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Mit Daten arbeiten lernen – Schritt für Schritt und zum Mitmachen.",
+    "objectID": "workshops/ws2/index.html",
+    "href": "workshops/ws2/index.html",
+    "title": "Datenvisualisierung mit ggplot2",
     "section": "",
-    "text": "Methoden & Statistik\n      Mit Daten arbeiten lernen – Schritt für Schritt und zum Mitmachen.\n      Workshops für Studierende und Forschende der empirischen Wissenschaften.\n         Kurze Inputs, viel Ausprobieren und Materialien zum Weiterarbeiten.\n      \n        Workshops entdecken\n        Kontakt\n      \n    \n    \n      \n      AF\n      Arieja Farugie\n      Psychologie · Methoden · R\n    \n  \n\n\n  \n    Workshops\n    \n      \n        \n        Verfügbar\n        Einführung in R & RStudio\n        Vom ersten Skript bis zum eigenen Analyse-Workflow: Datenimport, Datenaufbereitung mit dplyr, Umkodieren, Joins und fehlende Werte – mit Mini-Projekt zum Abschluss.\n        10 ModuleEinsteigerdplyrhavenpsych\n        Zum Workshop \n      \n      \n        \n        Verfügbar\n        Datenvisualisierung mit ggplot2\n        Grammar of Graphics Schicht für Schicht – von Streudiagrammen bis zu kombinierten Layouts mit patchwork.\n        8 ModuleGrundkenntnisse Rggplot2patchwork\n        Zum Workshop \n      \n    \n  \n\n\n\n\n\n\n  \n    Termine & Anmeldung\n    Nächste Termine\n    \n      \n        Neue Termine erscheinen Anfang 2027 hier.\n        \n      \n      \n        AnmeldungPer Mail an womeps@uni-frankfurt.de – mit Workshop und Termin.Mail schreiben\n        Workshop wünschenThema fehlt oder Workshop für deine Gruppe? Schreib mir.Wunsch senden\n      \n    \n  \n\n  \n    So laufen meine Workshops\n    Weniger Folien, mehr Ausprobieren\n    \n      InputKurze Erklärbausteine mit Live-Code.\n      ÜbungDirekt selbst machen – mit echten Datensätzen.\n      LösungZum Aufklappen, wenn du hängst oder vergleichen willst.\n      MitnehmenSkripte und Materialien zum Weiterarbeiten.\n    \n  \n\n  \n    Gut zu wissen\n    \n      ZielgruppeStudierende und Forschende der empirischen Wissenschaften\n      SoftwareR & RStudio (kostenlos)\n      ZugangPasswortgeschützt – auf Anfrage\n    \n  \n\n  \n\n  \n    Workshop für deine Gruppe oder Fragen zu den Materialien?\n    Schreib mir"
+    "text": "Workshop · Aufbau\n    \n    8 Modulekostenfrei · offen für alleMethodenzentrum\n  \n  # Datenvisualisierung mit ggplot2\n&gt; ggplot(df, aes(x = age, y = distress)) +\n    geom_point(alpha = 0.4) +\n    facet_wrap(~ bildung)"
+  },
+  {
+    "objectID": "workshops/ws2/index.html#kurzbeschreibung",
+    "href": "workshops/ws2/index.html#kurzbeschreibung",
+    "title": "Datenvisualisierung mit ggplot2",
+    "section": "Kurzbeschreibung",
+    "text": "Kurzbeschreibung\nDer Workshop „Datenvisualisierung mit ggplot2” richtet sich an Studierende und Forschende der Sozialwissenschaften, die ihre Daten professionell und reproduzierbar visualisieren möchten.\nDer Workshop ist modular aufgebaut: 8 Module, jedes mit Übung und Checkfragen, die du in deinem eigenen Tempo durcharbeiten kannst.\nDer Workshop setzt grundlegende Kenntnisse in R und dem tidyverse voraus (z. B. aus dem Workshop „Einführung in R & RStudio”), ist aber so aufgebaut, dass auch Einsteiger:innen in ggplot2 gut folgen können.\nIm Workshop lernen die Teilnehmenden Schritt für Schritt:\n\nwie ggplot2 aufgebaut ist und nach welcher Logik Grafiken entstehen,\nwie man die wichtigsten Diagrammtypen erstellt (Streudiagramm, Balkendiagramm, Histogramm, Boxplot),\nwie man Grafiken durch Aesthetics, Themes und Farbpaletten gestaltet,\nwie man mit Faceting mehrere Grafiken kombiniert,\nund wie man mit patchwork Plots zu einer zusammenhängenden Abbildung zusammenfügt.\n\nDer Schwerpunkt liegt auf praxisnaher Anwendung mit dem Workshop-Datensatz aus dem ersten Workshop – alle Schritte sind direkt übertragbar auf eigene Projekte."
+  },
+  {
+    "objectID": "workshops/ws2/index.html#lernziele",
+    "href": "workshops/ws2/index.html#lernziele",
+    "title": "Datenvisualisierung mit ggplot2",
+    "section": "Lernziele",
+    "text": "Lernziele\nNach dem Workshop können Teilnehmende …\n\n\ndie Grammatik von Grafiken (Grammar of Graphics) erklären und anwenden\nmit ggplot() und aes() eine Grafik schichtweise aufbauen\ndie wichtigsten Geome einsetzen: geom_point(), geom_bar(), geom_histogram(), geom_boxplot(), geom_smooth()\nAesthetics gezielt einsetzen: color, fill, size, shape, alpha\nGrafiken mit Labels, Titeln und Achsenbeschriftungen versehen (labs())\nmit facet_wrap() und facet_grid() Gruppenvergleiche visualisieren\nstatistische Kennwerte direkt in Grafiken einzeichnen (stat_summary())\nKoordinatensysteme anpassen (coord_flip(), coord_cartesian(), coord_polar())\nThemes anpassen und eigene Designs erstellen\nFarbpaletten aus RColorBrewer und viridis verwenden\nmit dem Paket patchwork mehrere Plots kombinieren\nGrafiken als Datei exportieren (ggsave(), PNG, PDF)"
+  },
+  {
+    "objectID": "workshops/ws1/index.html",
+    "href": "workshops/ws1/index.html",
+    "title": "Einführung in R & RStudio",
+    "section": "",
+    "text": "Workshop · Einstieg\n    \n    10 Modulekostenfrei · offen für alleMethodenzentrum\n  \n  # Einführung in R & RStudio\n&gt; df &lt;- read_csv(\"daten.csv\")\n&gt; df |&gt;\n    filter(age &gt;= 30) |&gt;\n    select(age, sex)"
+  },
+  {
+    "objectID": "workshops/ws1/index.html#kurzbeschreibung",
+    "href": "workshops/ws1/index.html#kurzbeschreibung",
+    "title": "Einführung in R & RStudio",
+    "section": "Kurzbeschreibung",
+    "text": "Kurzbeschreibung\nDer Workshop „Einführung in R & RStudio“ richtet sich an Studierende der Sozialwissenschaften, die R für empirische Arbeiten, Haus- oder Abschlussarbeiten nutzen möchten.\nDer Workshop ist modular aufgebaut: 10 Module, jedes mit Übung und Checkfragen, die du in deinem eigenen Tempo durcharbeiten kannst.\nIm Workshop lernen die Teilnehmenden Schritt für Schritt:\n\nwie RStudio aufgebaut ist und wie man sicher darin arbeitet,\nwie R „denkt“ (Objekte, Datentypen, Datenstrukturen),\nwie Daten importiert und plausibilisiert werden,\nund wie man einen ersten Analyse-Workflow umsetzt (Umkodieren, Skalen bilden, Joins, Umgang mit NA).\n\nDer Schwerpunkt liegt auf praxisnahen Beispielen und einem reproduzierbaren Workflow, der später in eigenen Projekten weiterverwendet werden kann."
+  },
+  {
+    "objectID": "workshops/ws1/index.html#lernziele",
+    "href": "workshops/ws1/index.html#lernziele",
+    "title": "Einführung in R & RStudio",
+    "section": "Lernziele",
+    "text": "Lernziele\nNach dem Workshop können Teilnehmende …\n\n\ndie RStudio-Oberfläche sicher bedienen (Script, Console, Environment, Plots/Files/Help)\ngrundlegende R-Konzepte anwenden (Objekte, Funktionen, Vektoren, Data Frames)\nDaten aus CSV und SPSS importieren und einen Plausibilitätscheck durchführen\nDaten mit aufbereiten\nVariablen umkodieren\nSkalenwerte berechnen und die Interpretation prüfen\nfehlende Werte erkennen und damit umgehen\nDatensätze über Schlüsselvariablen zusammenführen\nProjekte & Skripte nachvollziehbar strukturieren und Zwischenergebnisse speichern\neinen kleinen, vollständigen Datenbereinigungs- und Analyse-Workflow eigenständig umsetzen"
   }
 ]
