@@ -102,7 +102,7 @@
     function zeige(k, scroll) {
       sch.forEach(function (s, j) { s.classList.toggle('aktiv', j === k); bar.children[j].classList.toggle('aktiv', j === k); bar.children[j].classList.toggle('gesehen', !!gesehen[j] && j !== k); });
       try { localStorage.setItem(sk, k); localStorage.setItem(gk, JSON.stringify(gesehen)); } catch (e) {}
-      if (scroll) window.scrollTo(0, Math.max(0, bar.getBoundingClientRect().top + window.pageYOffset - 90));
+      if (scroll) { if (location.hash.slice(1) !== m.id) history.replaceState(null, '', '#' + m.id); window.scrollTo(0, Math.max(0, bar.getBoundingClientRect().top + window.pageYOffset - 90)); }
     }
     m._zeigeSchritt = function (el) { var s = el.closest('.schritt'); var k = sch.indexOf(s); if (k >= 0) zeige(k, false); };
     var k0 = 0; try { k0 = Math.min(sch.length - 1, parseInt(localStorage.getItem(sk), 10) || 0); } catch (e) {}
@@ -219,7 +219,10 @@
   }
   nav.querySelector('.mn-reset').addEventListener('click', function () {
     if (!confirm('Fortschritt für diesen Workshop wirklich zurücksetzen?')) return;
-    try { localStorage.removeItem(key); } catch (e) {}
+    try {
+      Object.keys(localStorage).forEach(function (k) { if (k === key || k.indexOf(key + 'schritt:') === 0 || k.indexOf(key + 'gesehen:') === 0) localStorage.removeItem(k); });
+    } catch (e) {}
+    history.replaceState(null, '', location.pathname + location.search);
     location.reload();
   });
   document.addEventListener('click', function (ev) {
