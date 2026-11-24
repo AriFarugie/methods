@@ -86,7 +86,7 @@
     var kopf = document.createElement('div'); kopf.className = 'modul-kopf';
     kopf.innerHTML = '<span class="mk-nr">' + (nr(m) ? 'Modul ' + nr(m) + ' von ' + req.length : 'Modul 0 · optional') + '</span><div class="mk-titel">' + esc(titles[i]) + '</div>';
     m.insertBefore(kopf, m.firstChild);
-    var ub = Array.prototype.filter.call(m.querySelectorAll('h2'), function (h) { return /^Übung/.test(h.textContent.trim()); })[0];
+    var ub = Array.prototype.filter.call(m.querySelectorAll('h2'), function (h) { return /^Übung/.test(h.textContent.trim()); })[0] || m.querySelector('.schritt.uebung h1, .schritt.uebung h2');
     if (ub) {
       var ziel = ub.id ? ub : (ub.closest('section[id]') || ub);
       if (ziel.id) kopf.insertAdjacentHTML('beforeend', '<a class="mk-uebung" href="#' + ziel.id + '">Zur Übung ↓</a>');
@@ -138,7 +138,7 @@
     sch.forEach(function (s, k) {
       var t = s.getAttribute('data-titel') || ('Schritt ' + (k + 1));
       var b = document.createElement('button'); b.type = 'button'; b.className = 'ms-st';
-      if (/^Übung/.test(t)) b.classList.add('uebung');
+      if (/^Übung/.test(t) || s.classList.contains('uebung')) b.classList.add('uebung');
       else if (s.querySelector('.jetzt-du, .raten, .fehler, .besprechen')) b.classList.add('mitmachen');
       b.innerHTML = '<b>' + (k + 1) + '</b>' + esc(t);
       b.addEventListener('click', function () { zeige(k, true); });
