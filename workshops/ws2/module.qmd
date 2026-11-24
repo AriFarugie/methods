@@ -223,7 +223,7 @@ Eine Grafik beantwortet diese Fragen in Sekunden – eine Tabelle mit Kennwerten
 #| warning: false
 #| fig-width: 8
 #| fig-height: 4
-#| fig-cap: "Histogramm und Boxplot des Distress-Scores. Beide Grafiken zeigen auf einen Blick: Die Verteilung ist leicht rechtsschief, es gibt vereinzelte hohe Ausreißer."
+#| fig-cap: "Histogramm und Boxplot des Distress-Scores."
 
 library(patchwork)
 
@@ -267,7 +267,7 @@ Eine gut gestaltete Grafik transportiert Befunde oft **klarer und schneller** al
 #| warning: false
 #| fig-width: 7
 #| fig-height: 4
-#| fig-cap: "Vergleich des mittleren Distress-Scores nach Bildungsniveau. Die Grafik zeigt auf einen Blick, dass Personen mit niedrigerem Bildungsniveau tendenziell höhere Distress-Werte berichten."
+#| fig-cap: "Vergleich des mittleren Distress-Scores nach Bildungsniveau."
 
 df |>
   filter(!is.na(bildung)) |>
@@ -360,7 +360,7 @@ fehlerhafte Dateneingaben. Visualisierungen machen solche Probleme **sofort sich
 #| warning: false
 #| fig-width: 8
 #| fig-height: 4
-#| fig-cap: "Streudiagramm zweier Skalenvariablen. Ungewöhnliche Cluster oder Ausreißer – z. B. Werte weit außerhalb des gültigen Bereichs – fallen in einer Grafik sofort auf."
+#| fig-cap: "Streudiagramm zweier Skalenvariablen."
 
 df |>
   ggplot(aes(x = distress, y = soz_u)) +
@@ -2530,6 +2530,8 @@ Fehlermeldung zum Pfad? Prüfe, ob es in deinem Projekt den Ordner `output/` gib
 
 ggsave("output/mein_plot.png", width = 8, height = 5, dpi = 300)
 ```
+
+Führe `ggsave()` direkt nach deiner kombinierten Abbildung aus. Ohne `plot =` speichert es den zuletzt angezeigten Plot.
 :::
 :::
 ::::
@@ -2609,7 +2611,7 @@ Wählt eine inhaltliche Frage aus dem Datensatz, z. B.:
 
 ::: {.tipps}
 ::: {.tipp data-titel="Tipp"}
-Welche Variablen es gibt, steht im Codebuch aus Modul 1 (Schritt „Ankommen“). Ein Kommentar im Skript beginnt mit `#`.
+Welche Variablen es gibt, steht im Codebuch aus Modul 1 (Schritt „Setup“). Ein Kommentar im Skript beginnt mit `#`.
 :::
 :::
 
