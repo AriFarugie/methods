@@ -51,6 +51,7 @@
       var tt = titelVon(el);
       if (tt.some(function (t) { return ohneTitel.test(t); })) return;
       var code = el.textContent.replace(/\s+$/, '');
+      if (el.closest('.nur-zeigen')) code = code.replace(/^/gm, '# ');
       if (/___/.test(code)) return;
       [2, 3].forEach(function (lv) {
         if (hs[lv] && hs[lv].neu) { out.push('\n' + (lv === 2 ? '## ' : '### ') + hs[lv].t + ' ----'); hs[lv].neu = false; kontext = ''; }
