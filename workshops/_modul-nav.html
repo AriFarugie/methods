@@ -86,8 +86,9 @@
     var kopf = document.createElement('div'); kopf.className = 'modul-kopf';
     kopf.innerHTML = '<span class="mk-nr">' + (nr(m) ? 'Modul ' + nr(m) + ' von ' + req.length : 'Modul 0 · optional') + '</span><div class="mk-titel">' + esc(titles[i]) + '</div>';
     m.insertBefore(kopf, m.firstChild);
-    var ub = Array.prototype.filter.call(m.querySelectorAll('h2'), function (h) { return /^Übung/.test(h.textContent.trim()); })[0] || m.querySelector('.schritt.uebung h1, .schritt.uebung h2');
+    var ub = Array.prototype.filter.call(m.querySelectorAll('h2'), function (h) { return /^Übung/.test(h.textContent.trim()); })[0] || m.querySelector('.schritt.uebung h1, .schritt.uebung h2') || m.querySelector('.schritt.uebung');
     if (ub) {
+      if (ub.classList.contains('schritt') && !ub.id) ub.id = m.id + '-uebung';
       var ziel = ub.id ? ub : (ub.closest('section[id]') || ub);
       if (ziel.id) kopf.insertAdjacentHTML('beforeend', '<a class="mk-uebung" href="#' + ziel.id + '">Zur Übung ↓</a>');
     }
