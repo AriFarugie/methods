@@ -24,6 +24,60 @@
   var list = nav.querySelector('.mn-list');
   var titles = mods.map(function (m, i) { return m.getAttribute('data-titel') || ('Modul ' + (i + 1)); });
 
+  var wsTitel = ((document.querySelector('h1.title') || {}).textContent || document.title).trim();
+  var gesamt = [];
+  var ohneTitel = /^(Alternative|Alles in einem Schritt|Output|Objekte entfernen)/;
+  function titelVon(el) {
+    var co = el.closest('.callout'), tp = el.closest('.tab-pane'), t = [];
+    while (co) {
+      var h = co.querySelector('.callout-title-container');
+      if (h) t.unshift(h.textContent.trim());
+      co = co.parentNode.closest('.callout');
+    }
+    if (tp) { var a = document.querySelector('[data-bs-target="#' + tp.id + '"], [href="#' + tp.id + '"]'); if (a) t.push(a.textContent.trim()); }
+    return t;
+  }
+  function skriptText(m) {
+    var out = [], hs = {}, kontext = '';
+    m.querySelectorAll('h1, h2, h3, div.sourceCode pre code, pre.sourceCode code').forEach(function (el) {
+      if (/^H\d$/.test(el.tagName)) {
+        if (el.closest('.callout, .tab-pane, .checkfragen, .stufe, .tipps')) return;
+        var lv = el.tagName === 'H3' ? 3 : 2;
+        hs[lv] = { t: el.textContent.trim(), neu: true };
+        if (lv === 2) delete hs[3];
+        return;
+      }
+      if (!el.closest('.cell, .sourceCode') || el.closest('.cell-output, .fehler, .raten, .tipp:not(.loesung)')) return;
+      var tt = titelVon(el);
+      if (tt.some(function (t) { return ohneTitel.test(t); })) return;
+      var code = el.textContent.replace(/\s+$/, '');
+      if (/___/.test(code)) return;
+      [2, 3].forEach(function (lv) {
+        if (hs[lv] && hs[lv].neu) { out.push('\n' + (lv === 2 ? '## ' : '### ') + hs[lv].t + ' ----'); hs[lv].neu = false; kontext = ''; }
+      });
+      var box = el.closest('.jetzt-du, .stufe');
+      var bt = box && (box.classList.contains('jetzt-du') ? 'Jetzt du' : box.getAttribute('data-titel'));
+      if (bt && /^1 ·/.test(bt)) { bt = ''; box = null; }
+      if (bt) tt.unshift(bt);
+      if (el.closest('.tipp.loesung') && !tt.some(function (t) { return /^Lösung/.test(t); })) tt.splice(box ? 1 : 0, 0, 'Lösung');
+      var k = tt.join(' · ');
+      if (k !== kontext) { if (k) out.push('\n# ' + k); kontext = k; }
+      out.push((k ? '' : '\n') + code.replace(/^install\.packages\(/gm, '# install.packages('));
+    });
+    if (!out.length) return '';
+    var t = (nr(m) ? 'Modul ' + nr(m) + ': ' : '') + m.getAttribute('data-titel');
+    return '\n# ' + t + ' ' + '='.repeat(Math.max(4, 70 - t.length)) + '\n' + out.join('\n') + '\n';
+  }
+  function gesamtSkript() {
+    var txt = gesamt.join('\n'), pk = {};
+    txt.replace(/(?:library|install\.packages)\(\s*"?([A-Za-z0-9.]+)"?/g, function (_, p) { pk[p] = 1; });
+    var liste = Object.keys(pk).map(function (p) { return '"' + p + '"'; }).join(', ');
+    return '# ' + wsTitel + ' – Gesamtskript\n' +
+      '# Alle Codebeispiele und empfohlenen Lösungen aus Modul 1–' + req.length + '.\n' +
+      '# Abschnitte lassen sich in RStudio über die Gliederung (Strg + Shift + O) ansteuern.\n' +
+      (liste ? '#\n# Pakete einmalig installieren:\n# install.packages(c(' + liste + '))\n' : '') + txt;
+  }
+
   mods.forEach(function (m, i) {
     var li = document.createElement('li');
     li.innerHTML = '<a href="#' + m.id + '"><span class="mn-nr">' + nr(m) + '</span><span class="mn-t">' + esc(titles[i]) + '</span></a>';
@@ -44,13 +98,13 @@
         return (h.id || (h.closest('section[id]') || {}).id) && !h.closest('.callout, .checkfragen') && !/^(Übung|Lösung)/.test(h.textContent.trim());
       });
     }
-    var codes = Array.prototype.filter.call(m.querySelectorAll('div.sourceCode pre code, pre.sourceCode code'), function (c) { return c.closest('.cell, .sourceCode') && !c.closest('.cell-output') && !c.closest('.fehler, .tipp:not(.loesung)'); });
-    if (codes.length) {
+    var skript = skriptText(m);
+    if (skript) {
       var dl = document.createElement('a'); dl.className = 'mk-skript'; dl.textContent = 'R-Skript ↓';
       dl.download = 'modul-' + nr(m) + '.R';
-      var txt = '# ' + titles[i] + '\n\n' + codes.map(function (c) { return c.textContent.replace(/\s+$/, ''); }).join('\n\n# ----\n\n') + '\n';
-      dl.href = URL.createObjectURL(new Blob([txt], { type: 'text/plain' }));
+      dl.href = URL.createObjectURL(new Blob(['# ' + wsTitel + '\n' + skript], { type: 'text/plain' }));
       kopf.appendChild(dl);
+      if (nr(m)) gesamt.push(skript);
     }
     var sch = Array.prototype.filter.call(m.querySelectorAll('.schritt'), function (x) { return x.parentNode.closest('.modul') === m && !x.parentNode.closest('.schritt'); });
     var teile = teilListe('h1');
@@ -240,6 +294,13 @@
   window.addEventListener('hashchange', route);
   window.addEventListener('popstate', route);
   try { if (localStorage.getItem(key + 'alle')) alleSchritte(true); } catch (e) {}
+  document.querySelectorAll('.gesamtskript').forEach(function (g) {
+    if (!gesamt.length) return;
+    var a = document.createElement('a'); a.className = 'gs-btn'; a.textContent = 'Gesamtskript ↓';
+    a.download = 'gesamtskript.R';
+    a.href = URL.createObjectURL(new Blob([gesamtSkript()], { type: 'text/plain' }));
+    g.appendChild(a);
+  });
   update();
   route();
 })();

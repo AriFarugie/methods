@@ -806,3 +806,8 @@ h2, h3, h4, .lp-sec h2, .lp-card h3, .lp-box h3, .lp-cta h3, .tm-card h3, .ws-ma
 .tipp.loesung { background: #fff; border-left-color: var(--accent); }
 .tipp.offen { display: block; }
 .tipp > :last-child { margin-bottom: 0; }
+
+.gesamtskript { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; background: #eef6f2; border-left: 4px solid var(--accent); border-radius: 10px; padding: 1rem 1.3rem; margin: 2.5rem 0 1rem; font-size: .9rem; }
+.gesamtskript p { margin: 0; flex: 1 1 18rem; }
+.gs-btn { font-size: .82rem; font-weight: 800; color: #fff !important; background: var(--accent); border-radius: 999px; padding: .45rem 1.1rem; text-decoration: none; white-space: nowrap; }
+.gs-btn:hover { filter: brightness(1.08); }
