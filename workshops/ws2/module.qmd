@@ -575,6 +575,7 @@ Am Ende kannst du jede Schicht bewusst einsetzen und weißt genau, welche Stells
 Die Grundstruktur eines `ggplot2`-Befehls folgt immer demselben Muster:
 
 ```{r}
+#| classes: nur-zeigen
 #| echo: true
 #| eval: false
 
@@ -593,6 +594,7 @@ In `ggplot2` werden Schichten mit **`+`** verbunden – nicht mit der Pipe `|>`.
 Das `+` muss immer am **Ende der Zeile** stehen, nie am Anfang.
 
 ```{r}
+#| classes: nur-zeigen
 #| echo: true
 #| eval: false
 
@@ -2968,6 +2970,10 @@ sie zeigt **genau das, was wichtig ist**.
 ::::
 
 :::::
+
+::: {.gesamtskript}
+**Gesamtskript zum Nachschlagen:** alle Codebeispiele und empfohlenen Lösungen aus Modul 1–8 in einer kommentierten R-Datei.
+:::
 
 ::::::::
 
